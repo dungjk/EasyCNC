@@ -103,3 +103,15 @@ void CNCxy::setAbsolPos(){
   pos_type = false;
 }
 
+void CNCxy::searchHomePos(){
+  
+}
+
+void CNCxy::setLimitSwitchX(uint8_t pin){
+  
+}
+
+void CNCxy::setLimitSwitchY(uint8_t pin){
+  
+}
+

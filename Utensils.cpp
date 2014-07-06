@@ -8,21 +8,21 @@
 
 #include "Utensils.h"
 
-// *******************
-// ***** PLOTTER *****
-// *******************
-#ifdef _PLOTTER
+// *******************************
+// ***** PLOTTER WITH SERVO  *****
+// *******************************
+#ifdef _PLOTTER_SERVO
 
 
-PenControl::PenControl(uint8_t p, uint8_t dv, uint8_t uv) : pin(p), down_val(dv), up_val(uv){}
+PlotterServo::PlotterServo(uint8_t p, uint8_t dv, uint8_t uv) : pin(p), down_val(dv), up_val(uv){}
 
-void PenControl::init(){
+void PlotterServo::init(){
   servo_pen.attach(pin);
   state = UP;
   servo_pen.write(up_val);
 }
 
-boolean PenControl::up(){
+boolean PlotterServo::up(){
   boolean ret = (state != UP);
   if(ret) {
     state = UP;
@@ -32,7 +32,7 @@ boolean PenControl::up(){
   return ret;
 }
 
-boolean PenControl::down(){
+boolean PlotterServo::down(){
   boolean ret = (state != DOWN);
   if(ret) {
     state = DOWN;

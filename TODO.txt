@@ -1,0 +1,5 @@
+Easy CNC TODO:
+
+Implementazione:
+
+- in CNCxy: setLimitSwitchX, setLimitSwitchY, searchHomePos

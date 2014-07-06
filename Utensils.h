@@ -11,11 +11,11 @@
 
 #include "config.h"
 
-// *******************
-// ***** PLOTTER *****
-// *******************
+// ******************************
+// ***** PLOTTER WHIT SERVO *****
+// ******************************
 
-#ifdef _PLOTTER
+#ifdef _PLOTTER_SERVO
 
 #include <Servo.h>
 #include <Arduino.h>
@@ -25,7 +25,7 @@
 #define DOWN true
 #define UP false
 
-class PenControl {
+class PlotterServo {
   boolean state;
   uint8_t pin;
   Servo servo_pen;
@@ -33,7 +33,7 @@ class PenControl {
   
   public:
   
-  PenControl(uint8_t p, uint8_t dv, uint8_t uv);
+  PlotterServo(uint8_t p, uint8_t dv, uint8_t uv);
   void init();
   boolean up();
   boolean down();

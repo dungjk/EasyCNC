@@ -34,6 +34,9 @@ class CNCxy {
   void setMotorX(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);
   void setMotorY(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);
   
+  void setLimitSwitchX(uint8_t);
+  void setLimitSwitchY(uint8_t);
+  
   void resetPos();
   
   void moveTo(float px, float py);
@@ -45,6 +48,8 @@ class CNCxy {
   void lowPrecision();
   void setIncrPos();
   void setAbsolPos();
+  
+  void searchHomePos();
   
   boolean update();
   

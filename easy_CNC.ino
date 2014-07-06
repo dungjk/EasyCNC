@@ -10,7 +10,7 @@
 #include "Utensils.h"
 #include <Servo.h>
 #include "Position.h"
-#include "CNCxy.h"
+#include "CNCxy.h" 
 
 
 /*
@@ -22,12 +22,11 @@
 */
 
 
-PenControl mypen(3, 112, 80);
+PlotterServo mypen(_PLOTTER_SERVO_PIN, _PLOTTER_SERVO_UP_POS, _PLOTTER_SERVO_DOWN_POS);
 
-CNCxy mycnc(MX_STEPS_PER_ROUND, MY_STEPS_PER_ROUND, MX_SPEED, MY_SPEED);  //200.0 at lowPrecision
+CNCxy mycnc(ROUTER_MX_STEPS_PER_ROUND, ROUTER_MY_STEPS_PER_ROUND, ROUTER_MX_SPEED, ROUTER_MY_SPEED);  //200.0 at lowPrecision
 
 boolean end_task = false;
-
 
 
 void processPos(){
@@ -39,16 +38,17 @@ void processPos(){
 }
 
 void setup(){
-  mycnc.setMotorX(4, 5, 6, 7);
-  mycnc.setMotorY(8, 9, 10, 11);
+  mycnc.setMotorX(ROUTER_MX_P1, ROUTER_MX_P2, ROUTER_MX_P3, ROUTER_MX_P4);
+  mycnc.setMotorY(ROUTER_MY_P1, ROUTER_MY_P2, ROUTER_MY_P3, ROUTER_MY_P4);
+  mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
+  mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
   mycnc.resetPos();
   mycnc.highPrecision();
   mycnc.setAbsolPos();
   
   mypen.init();
-  //pen.write(80);
   
-  Serial.begin(9600);
+  Serial.begin(SERIAL_BOUND);
 
 }
 
@@ -80,105 +80,4 @@ void loop(){
   }
 
 }
-
-
-
-/*
-SMotor m1(4, 5, 6, 7);
-SMotor m2(8, 9, 10, 11);
-Servo pen;
-
-boolean vm1, vm2;
-
-boolean ok = false;
-
-int d;
-int s;
-int v;
-int p;
-
-void penUp(){
-  pen.write(80);
-  delay(500);
-}
-
-void penDown(){
-  pen.write(109);
-  delay(500);
-}
-
-
-void setup() {
-  
-  Serial.begin(9600);
-  
-   Serial.println("Setup...");
-   m1.print();
-   m2.print();
-   pen.attach(3);
-   pen.write(80);
-
-}
-
-void loop(){
-  vm1 = m1.update();
-  vm2 = m2.update();
-  
-  if( vm1 && vm2){
-    if(ok){
-      Serial.println("OK");
-      ok = false;
-    }
-    if (Serial.available() > 0) {
-      p = Serial.parseInt();
-      //Serial.print("Pen: ");
-      //Serial.println(p);
-      if(p == 0)
-        penUp();
-      else if(p == 1)
-        penDown();
-      
-      
-      d = Serial.parseInt();
-      //Serial.print("Dir: ");
-      //Serial.print(d);
-      
-      s = Serial.parseInt();
-      //Serial.print("; Steps: ");
-      //Serial.print(s);
-      
-      //Serial.print("; Speed: ");
-      v = Serial.parseInt();
-      //Serial.println(v);
-      
-      if(d == 1)
-        m1.forward(s, v*1000);
-      else if(d == -1)
-        m1.backward(s, v*1000);
-        
-      d = Serial.parseInt();
-      //Serial.print("Dir: ");
-      //Serial.print(d);
-      
-      s = Serial.parseInt();
-      //Serial.print("; Steps: ");
-      //Serial.print(s);
-      
-      //Serial.print("; Speed: ");
-      v = Serial.parseInt();
-      //Serial.println(v);
-      Serial.read();
-      
-      if(d == 1)
-        m2.forward(s, v*1000);
-      else if(d == -1)
-        m2.backward(s, v*1000);
-        
-      ok = true;
-    }
-  }
-
-}
-
-*/
 
