@@ -45,7 +45,6 @@ static int half_step_seq[8][4] = {
                 {LOW,  LOW,  LOW,  HIGH}
               };
 
-
 class SMotor {
   
   uint8_t p1, p2, p3, p4;

@@ -9,6 +9,7 @@
 #include "SMotor.h"
 
 
+
 //********** COSTRUCTOR **********
 SMotor::SMotor(){
    p1 = p2 = p3 = p4 = old_time = steps = tot_steps = spd = pos = dir = 0;

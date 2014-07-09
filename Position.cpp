@@ -6,6 +6,7 @@
 //  Project: Easy CNC
 //  versione: 0.0.1
 
+
 #include "Position.h"
 
   PositionXY::PositionXY(): x(0.0), y(0.0) {};

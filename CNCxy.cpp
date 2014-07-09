@@ -6,6 +6,7 @@
 //  Project: Easy CNC
 //  versione: 0.0.1
 
+
 #include "CNCxy.h"
 
 CNCxy::CNCxy(): mx(), my(), old_p(), end_p(), actual_p(), spmmx(0.0), spmmy(0.0), v_max_x(0.0), v_max_y(0.0) {}
