@@ -13,16 +13,7 @@
 #include "CNCxy.h" 
 
 
-/*
-#define MX_STEPS_PER_ROUND 48*2
-#define MY_STEPS_PER_ROUND 96*2
-// the unit for the speed is steps/s
-#define MX_SPEED 300.0
-#define MY_SPEED 300.0
-*/
-
-
-PlotterServo mypen(_PLOTTER_SERVO_PIN, _PLOTTER_SERVO_UP_POS, _PLOTTER_SERVO_DOWN_POS);
+PlotterServo mypen(_PLOTTER_SERVO_PIN,_PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS);
 
 CNCxy mycnc(ROUTER_MX_STEPS_PER_ROUND, ROUTER_MY_STEPS_PER_ROUND, ROUTER_MX_SPEED, ROUTER_MY_SPEED);  //200.0 at lowPrecision
 
@@ -40,15 +31,16 @@ void processPos(){
 void setup(){
   mycnc.setMotorX(ROUTER_MX_P1, ROUTER_MX_P2, ROUTER_MX_P3, ROUTER_MX_P4);
   mycnc.setMotorY(ROUTER_MY_P1, ROUTER_MY_P2, ROUTER_MY_P3, ROUTER_MY_P4);
-  mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
-  mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
+  //mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
+  //mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
   mycnc.resetPos();
   mycnc.highPrecision();
   mycnc.setAbsolPos();
   
   mypen.init();
   
-  Serial.begin(SERIAL_BOUND);
+  Serial.begin(9600);
+  Serial.println("OK1");
 
 }
 
@@ -60,7 +52,7 @@ void loop(){
       end_task = false;
     }
     
-    if(Serial.available()){
+    if(Serial.available() > 0){
       switch( Serial.parseInt() ) {
         case 0:
            mypen.up();

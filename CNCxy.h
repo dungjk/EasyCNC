@@ -14,10 +14,6 @@
 #include "Position.h"
 #include <stdint.h>
 
-//used by Position.h
-
-
-
 class CNCxy {
   
   SMotor mx, my; 

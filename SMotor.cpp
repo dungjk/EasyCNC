@@ -142,8 +142,9 @@ int32_t SMotor::update(){
      }else{
        backward_one();
      }   
+     return tot_steps - steps;
    }
-   return tot_steps - steps;
+   return -1;
 }  
 
 //********* DEBUGGING ***************

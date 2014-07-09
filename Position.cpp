@@ -13,9 +13,9 @@
   PositionXY::PositionXY(const PositionXY &p) : x(p.x), y(p.y){};
   
   inline float       PositionXY::X() const        { return x;}
-  PositionXY& PositionXY::X(float px)      { x = px; return *this;}
+  PositionXY&        PositionXY::X(float px)      { x = px; return *this;}
   inline float       PositionXY::Y() const        { return y;}
-  PositionXY& PositionXY::Y(float py)      {y = py; return *this;}
+  PositionXY&        PositionXY::Y(float py)      {y = py; return *this;}
   
   inline float PositionXY::dist(const PositionXY &p){
     return sqrt(sq(p.x - x) + sq(p.y - y));

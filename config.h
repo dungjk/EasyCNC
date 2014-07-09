@@ -33,7 +33,7 @@
 #define ROUTER_MY_P4 11
 // Limit switch pin mapping
 #define ROUTER_LIMIT_X 2
-#define ROUTER_LIMIT_Y 3
+#define ROUTER_LIMIT_Y 1
 // *****************************
 // *          UTENSILS         *
 // *****************************
@@ -51,6 +51,6 @@
 
 #define _PLOTTER_SERVO_PIN       3
 #define _PLOTTER_SERVO_UP_POS    80
-#define _PLOTTER_SERVO_DOWN_POS  112
+#define _PLOTTER_SERVO_DOWN_POS  136
 
 #endif
