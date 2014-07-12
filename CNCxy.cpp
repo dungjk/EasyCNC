@@ -9,8 +9,8 @@
 
 #include "CNCxy.h"
 
-CNCxy::CNCxy(): mx(), my(), old_p(), end_p(), actual_p(), spmmx(0.0), spmmy(0.0), v_max_x(0.0), v_max_y(0.0) {}
-CNCxy::CNCxy(float spx, float spy, float vmx, float vmy) : mx(), my(), old_p(), end_p(), actual_p(), spmmx(spx), spmmy(spy), v_max_x(vmx), v_max_y(vmy) {}
+CNCxy::CNCxy(): mx(), my(), old_p(), end_p(), actual_p(), spmmx(0.0), spmmy(0.0), v_max_x(0.0), v_max_y(0.0), pin_ls_x_down(-1), pin_ls_y_down(-1), pin_ls_x_up(-1), pin_ls_y_up(-1) {}
+CNCxy::CNCxy(float spx, float spy, float vmx, float vmy) : mx(), my(), old_p(), end_p(), actual_p(), spmmx(spx), spmmy(spy), v_max_x(vmx), v_max_y(vmy), pin_ls_x_down(-1), pin_ls_y_down(-1), pin_ls_x_up(-1), pin_ls_y_up(-1) {}
   
 void CNCxy::setMotorX(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4){
   mx.setPins(pin1, pin2, pin3, pin4);
@@ -20,7 +20,7 @@ void CNCxy::setMotorY(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4){
   my.setPins(pin1, pin2, pin3, pin4);
 }
 
-void CNCxy::resetPos() { actual_p = PositionXY(0.0, 0.0); }
+void CNCxy::resetPos() { old_p = end_p = actual_p = PositionXY(0.0, 0.0); }
   
 void CNCxy::moveTo(float px, float py){
   float dx, dy;
@@ -105,14 +105,43 @@ void CNCxy::setAbsolPos(){
 }
 
 void CNCxy::searchHomePos(){
+  mx.backward(100000, 1000000 / v_max_x);
+  while(digitalRead(pin_ls_x_down) != LOW){
+      mx.update();
+  }
+  mx.stop();
+  delay(500);
   
+  my.backward(100000, 1000000 / v_max_y);
+  while(digitalRead(pin_ls_y_down) != LOW){
+      my.update();
+  }
+  my.stop();
+  
+  resetPos();
 }
 
-void CNCxy::setLimitSwitchX(uint8_t pin){
+void CNCxy::setLimitSwitchX(int8_t dw, int8_t up){
+  pin_ls_x_down = dw;
+  if(pin_ls_x_down >= 0){
+    pinMode(pin_ls_x_down, INPUT_PULLUP);
+  }
   
+  pin_ls_x_up = up;
+  if(pin_ls_x_up >= 0){
+    pinMode(pin_ls_x_up, INPUT_PULLUP);
+  }
 }
 
-void CNCxy::setLimitSwitchY(uint8_t pin){
+void CNCxy::setLimitSwitchY(int8_t dw, int8_t up){
+   pin_ls_y_down = dw;
+  if(pin_ls_y_down >= 0){
+    pinMode(pin_ls_y_down, INPUT_PULLUP);
+  }
   
+  pin_ls_y_up = up;
+  if(pin_ls_y_up >= 0){
+    pinMode(pin_ls_y_up, INPUT_PULLUP);
+  }
 }
 

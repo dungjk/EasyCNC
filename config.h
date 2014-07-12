@@ -1,39 +1,54 @@
-//  Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione 
-//  - Condividi allo stesso modo 4.0 Internazionale. 
-//  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
-//
-//  Autor: Francesco Giurlanda
-//  Project: Easy CNC
-//  versione: 0.0.1
+/*! 
+    \file config.h
+    \brief The configuration file
+    \details   In this file there are all the configurable parameters.
+    \author    Francesco Giurlanda
+    \version   0.0.1
+    \date      2014
+    \warning   If you change Arduino board some parameters could change too.
+    \copyright Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione 
+               - Condividi allo stesso modo 4.0 Internazionale. Per leggere una copia della 
+               licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
+ */
 
 // ****************************
 // ***    GENERAL SETUP     ***
 // ****************************
+
+/*! \def SERIAL_BOUND
+    \brief Define the speed of the serial comunication.
+*/
+/*! \def INTERRUPT_STOP_MOTION
+    \brief Define the number of the interrupt which is attached the stop button.
+    
+    This value is different from the pin number at which the interrupt refers.
+    The pin depends on the arduino board version. See http://arduino.cc/en/Main/Products
+*/
 #define SERIAL_BOUND 9600
+#define INTERRUPT_STOP_MOTION 0
 
 
 // ****************************
 // *** ROUTER CONFIGURATION ***
 // ****************************
 
-// Nunber of steps to make a round
-#define ROUTER_MX_STEPS_PER_ROUND 48*2
-#define ROUTER_MY_STEPS_PER_ROUND 96*2
-// the unit for the speed is steps/s
-#define ROUTER_MX_SPEED 300.0
-#define ROUTER_MY_SPEED 300.0
-// Motor pin mapping
-#define ROUTER_MX_P1 4
-#define ROUTER_MX_P2 5
-#define ROUTER_MX_P3 6
-#define ROUTER_MX_P4 7
-#define ROUTER_MY_P1 8
-#define ROUTER_MY_P2 9
-#define ROUTER_MY_P3 10
-#define ROUTER_MY_P4 11
+#define ROUTER_MX_STEPS_PER_ROUND 48*2  /*!< \brief Nunber of steps to make a round for the motor of the X-axis */
+#define ROUTER_MY_STEPS_PER_ROUND 96*2  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis */
+#define ROUTER_MX_SPEED 300.0           /*!< \brief The maximum speet used to control the motor of X-axis. The unit is steps/s */
+#define ROUTER_MY_SPEED 300.0           /*!< \brief The maximum speet used to control the motor of Y-axis. The unit is steps/s */
+#define ROUTER_MX_COIL1 4                  /*!< \brief Pin connected to the coil 1 of the unipolar motor of X-axis*/
+#define ROUTER_MX_COIL2 5                  /*!< \brief Pin connected to the coil 2 of the unipolar motor of X-axis*/
+#define ROUTER_MX_COIL3 6                  /*!< \brief Pin connected to the coil 3 of the unipolar motor of X-axis*/
+#define ROUTER_MX_COIL4 7                  /*!< \brief Pin connected to the coil 4 of the unipolar motor of X-axis*/
+
+#define ROUTER_MY_COIL1 8                  /*!< \brief Pin connected to the coil 1 of the unipolar motor of Y-axis*/
+#define ROUTER_MY_COIL2 9                  /*!< \brief Pin connected to the coil 2 of the unipolar motor of Y-axis*/
+#define ROUTER_MY_COIL3 10                  /*!< \brief Pin connected to the coil 3 of the unipolar motor of Y-axis*/
+#define ROUTER_MY_COIL4 11                  /*!< \brief Pin connected to the coil 4 of the unipolar motor of Y-axis*/
+
 // Limit switch pin mapping
-#define ROUTER_LIMIT_X 2
-#define ROUTER_LIMIT_Y 1
+#define ROUTER_LIMIT_X 12
+#define ROUTER_LIMIT_Y 12
 // *****************************
 // *          UTENSILS         *
 // *****************************

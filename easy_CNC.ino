@@ -19,6 +19,10 @@ CNCxy mycnc(ROUTER_MX_STEPS_PER_ROUND, ROUTER_MY_STEPS_PER_ROUND, ROUTER_MX_SPEE
 boolean end_task = false;
 
 
+void stopButton(){
+  mycnc.stopMotion();
+}
+
 void processPos(){
   float new_x, new_y;
   new_x = Serial.parseFloat();
@@ -28,18 +32,20 @@ void processPos(){
 }
 
 void setup(){
-  mycnc.setMotorX(ROUTER_MX_P1, ROUTER_MX_P2, ROUTER_MX_P3, ROUTER_MX_P4);
-  mycnc.setMotorY(ROUTER_MY_P1, ROUTER_MY_P2, ROUTER_MY_P3, ROUTER_MY_P4);
-  //mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
-  //mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
+  mycnc.setMotorX(ROUTER_MX_COIL1, ROUTER_MX_COIL2, ROUTER_MX_COIL3, ROUTER_MX_COIL4);
+  mycnc.setMotorY(ROUTER_MY_COIL1, ROUTER_MY_COIL2, ROUTER_MY_COIL3, ROUTER_MY_COIL4);
   mycnc.resetPos();
   mycnc.highPrecision();
   mycnc.setAbsolPos();
+  mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
+  mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
+  
+  attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
+  digitalWrite(2, HIGH);
   
   mypen.init();
   
   Serial.begin(9600);
-  Serial.println("OK1");
 
 }
 
@@ -64,6 +70,8 @@ void loop(){
         case 2:
            mycnc.resetPos();
            break;
+        case 3: 
+           mycnc.searchHomePos();
       }
 
       end_task = true;

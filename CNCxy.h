@@ -24,6 +24,11 @@ class CNCxy {
   
   boolean pos_type;      // true = incremental; false = absolute;
   
+  //pins where are attached the limit switch
+  int8_t pin_ls_x_down, pin_ls_y_down, pin_ls_x_up, pin_ls_y_up;
+  
+  
+  
   public:
   CNCxy();
   CNCxy(float spx, float spy, float vmx, float vmy);
@@ -31,8 +36,8 @@ class CNCxy {
   void setMotorX(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);
   void setMotorY(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);
   
-  void setLimitSwitchX(uint8_t);
-  void setLimitSwitchY(uint8_t);
+  void setLimitSwitchX(int8_t dw, int8_t up = -1);
+  void setLimitSwitchY(int8_t dw, int8_t up = -1);
   
   void resetPos();
   
@@ -44,7 +49,8 @@ class CNCxy {
   void highPrecision();
   void lowPrecision();
   void setIncrPos();
-  void setAbsolPos();
+  void setAbsolPos(); 
+ 
   
   void searchHomePos();
   
