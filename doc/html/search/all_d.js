@@ -14,7 +14,7 @@ var searchData=
   ['smotor',['SMotor',['../class_s_motor.html',1,'SMotor'],['../class_s_motor.html#a29d1d10288f83e41d200e3623541a351',1,'SMotor::SMotor()'],['../class_s_motor.html#a5a01eb70ccd1c4e82e0cabcd574a0aad',1,'SMotor::SMotor(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)']]],
   ['smotor_2ecpp',['SMotor.cpp',['../_s_motor_8cpp.html',1,'']]],
   ['smotor_2eh',['SMotor.h',['../_s_motor_8h.html',1,'']]],
-  ['speed',['speed',['../class_s_motor.html#ad4daa775ee1c32bba5673b14961dd17e',1,'SMotor']]],
+  ['speed',['speed',['../class_s_motor.html#af87213cf4f416f8182a299e193c28fdc',1,'SMotor']]],
   ['stop',['stop',['../class_s_motor.html#afc966d69cfe8f90a0c640e1e24f7b2c6',1,'SMotor']]],
   ['stopmotion',['stopMotion',['../class_c_n_cxy.html#a1a20b3274b2cfcf28643ee50448d0406',1,'CNCxy']]]
 ];

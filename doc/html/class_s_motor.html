@@ -89,34 +89,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Multi Stepper Motor Control Class.  
+ <a href="class_s_motor.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_s_motor_8h_source.html">SMotor.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a29d1d10288f83e41d200e3623541a351"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a29d1d10288f83e41d200e3623541a351">SMotor</a> ()</td></tr>
+<tr class="memdesc:a29d1d10288f83e41d200e3623541a351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a29d1d10288f83e41d200e3623541a351">More...</a><br /></td></tr>
 <tr class="separator:a29d1d10288f83e41d200e3623541a351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a01eb70ccd1c4e82e0cabcd574a0aad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a5a01eb70ccd1c4e82e0cabcd574a0aad">SMotor</a> (uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)</td></tr>
+<tr class="memdesc:a5a01eb70ccd1c4e82e0cabcd574a0aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a5a01eb70ccd1c4e82e0cabcd574a0aad">More...</a><br /></td></tr>
 <tr class="separator:a5a01eb70ccd1c4e82e0cabcd574a0aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70263214c8602defd43293758a0e9765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a70263214c8602defd43293758a0e9765">forward</a> (uint32_t, uint32_t)</td></tr>
-<tr class="separator:a70263214c8602defd43293758a0e9765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae266c2af254d76012b8132bb7641628d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#ae266c2af254d76012b8132bb7641628d">forward</a> (uint32_t st, uint32_t sp)</td></tr>
+<tr class="memdesc:ae266c2af254d76012b8132bb7641628d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the motor to move forward.  <a href="#ae266c2af254d76012b8132bb7641628d">More...</a><br /></td></tr>
+<tr class="separator:ae266c2af254d76012b8132bb7641628d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d666d613dffcc324e0ae6e1e0a31a3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a9d666d613dffcc324e0ae6e1e0a31a3f">backward</a> (uint32_t, uint32_t)</td></tr>
+<tr class="memdesc:a9d666d613dffcc324e0ae6e1e0a31a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the motor to move backward.  <a href="#a9d666d613dffcc324e0ae6e1e0a31a3f">More...</a><br /></td></tr>
 <tr class="separator:a9d666d613dffcc324e0ae6e1e0a31a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab96b926a7df0a17fdc22946f9aa12fde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#ab96b926a7df0a17fdc22946f9aa12fde">setFullStep</a> ()</td></tr>
+<tr class="memdesc:ab96b926a7df0a17fdc22946f9aa12fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the full step control mode.  <a href="#ab96b926a7df0a17fdc22946f9aa12fde">More...</a><br /></td></tr>
 <tr class="separator:ab96b926a7df0a17fdc22946f9aa12fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c4101303e66c321fbaf0f7969906910"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a1c4101303e66c321fbaf0f7969906910">setHalfStep</a> ()</td></tr>
+<tr class="memdesc:a1c4101303e66c321fbaf0f7969906910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the half step control mode.  <a href="#a1c4101303e66c321fbaf0f7969906910">More...</a><br /></td></tr>
 <tr class="separator:a1c4101303e66c321fbaf0f7969906910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d76c875ebc8686bf6d1bc70aba7b652"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a9d76c875ebc8686bf6d1bc70aba7b652">setPins</a> (uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)</td></tr>
+<tr class="memdesc:a9d76c875ebc8686bf6d1bc70aba7b652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the pin mapping.  <a href="#a9d76c875ebc8686bf6d1bc70aba7b652">More...</a><br /></td></tr>
 <tr class="separator:a9d76c875ebc8686bf6d1bc70aba7b652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4daa775ee1c32bba5673b14961dd17e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#ad4daa775ee1c32bba5673b14961dd17e">speed</a> (uint32_t)</td></tr>
-<tr class="separator:ad4daa775ee1c32bba5673b14961dd17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87213cf4f416f8182a299e193c28fdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#af87213cf4f416f8182a299e193c28fdc">speed</a> (uint32_t sp)</td></tr>
+<tr class="memdesc:af87213cf4f416f8182a299e193c28fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the delay between each step.  <a href="#af87213cf4f416f8182a299e193c28fdc">More...</a><br /></td></tr>
+<tr class="separator:af87213cf4f416f8182a299e193c28fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc966d69cfe8f90a0c640e1e24f7b2c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#afc966d69cfe8f90a0c640e1e24f7b2c6">stop</a> ()</td></tr>
+<tr class="memdesc:afc966d69cfe8f90a0c640e1e24f7b2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop any motion.  <a href="#afc966d69cfe8f90a0c640e1e24f7b2c6">More...</a><br /></td></tr>
 <tr class="separator:afc966d69cfe8f90a0c640e1e24f7b2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aee8957f93b071ea7772e5d2c766500"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a4aee8957f93b071ea7772e5d2c766500">update</a> ()</td></tr>
+<tr class="memdesc:a4aee8957f93b071ea7772e5d2c766500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the motion of the motor.  <a href="#a4aee8957f93b071ea7772e5d2c766500">More...</a><br /></td></tr>
 <tr class="separator:a4aee8957f93b071ea7772e5d2c766500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70f9d62a3979a923b1e7c90deae30853"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_motor.html#a70f9d62a3979a923b1e7c90deae30853">print</a> ()</td></tr>
+<tr class="memdesc:a70f9d62a3979a923b1e7c90deae30853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print in the serial channel the state of all inner variables.  <a href="#a70f9d62a3979a923b1e7c90deae30853">More...</a><br /></td></tr>
 <tr class="separator:a70f9d62a3979a923b1e7c90deae30853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Multi Stepper Motor Control Class. </p>
+<p>The class allows the contemporary control of multi stepper motors. After the motor setup, you can drive the motor forward and backward, specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call in the main loop and, if the delay is expired, the function moves the motor of one step. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a29d1d10288f83e41d200e3623541a351"></a>
 <div class="memitem">
 <div class="memproto">
@@ -129,6 +146,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor. </p>
 
 </div>
 </div>
@@ -168,6 +187,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor. </p>
+<p>Setup the pins where are attached the four coils of the unipolar motor. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin1</td><td>the pin connected to the coil 1a </td></tr>
+    <tr><td class="paramname">pin2</td><td>the pin connected to the coil 2a </td></tr>
+    <tr><td class="paramname">pin3</td><td>the pin connected to the coil 1b </td></tr>
+    <tr><td class="paramname">pin4</td><td>the pin connected to the coil 2b </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -195,9 +225,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Configure the motor to move backward. </p>
+<p>The function moves backward the motor of a number of steps with a specified delay betweet each step </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>the number of steps </td></tr>
+    <tr><td class="paramname">sp</td><td>the delay between the steps in microseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_s_motor.html#ae266c2af254d76012b8132bb7641628d" title="Configure the motor to move forward. ">forward(uint32_t, uint32_t)</a> </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a70263214c8602defd43293758a0e9765"></a>
+<a class="anchor" id="ae266c2af254d76012b8132bb7641628d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -221,6 +261,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Configure the motor to move forward. </p>
+<p>The function moves forward the motor of a number of steps with a specified delay betweet each step </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">st</td><td>the number of steps </td></tr>
+    <tr><td class="paramname">sp</td><td>the delay between the steps in microseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_s_motor.html#a9d666d613dffcc324e0ae6e1e0a31a3f" title="Configure the motor to move backward. ">backward(uint32_t, uint32_t)</a> </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a70f9d62a3979a923b1e7c90deae30853"></a>
@@ -235,6 +285,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Print in the serial channel the state of all inner variables. </p>
 
 </div>
 </div>
@@ -251,6 +303,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set up the full step control mode. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1c4101303e66c321fbaf0f7969906910"></a>
@@ -265,6 +319,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set up the half step control mode. </p>
 
 </div>
 </div>
@@ -304,9 +360,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Change the pin mapping. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin1</td><td>the pin connected to the coil 1a </td></tr>
+    <tr><td class="paramname">pin2</td><td>the pin connected to the coil 2a </td></tr>
+    <tr><td class="paramname">pin3</td><td>the pin connected to the coil 1b </td></tr>
+    <tr><td class="paramname">pin4</td><td>the pin connected to the coil 2b </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="ad4daa775ee1c32bba5673b14961dd17e"></a>
+<a class="anchor" id="af87213cf4f416f8182a299e193c28fdc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -314,11 +381,20 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void SMotor::speed </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Change the delay between each step. </p>
+<p>This function can be used to change the speed during an operation of forward or backward. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>the delay in microseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_s_motor.html#ae266c2af254d76012b8132bb7641628d" title="Configure the motor to move forward. ">forward(uint32_t, uint32_t)</a>, <a class="el" href="class_s_motor.html#a9d666d613dffcc324e0ae6e1e0a31a3f" title="Configure the motor to move backward. ">backward(uint32_t, uint32_t)</a> </dd></dl>
 
 </div>
 </div>
@@ -335,6 +411,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Stop any motion. </p>
+
 </div>
 </div>
 <a class="anchor" id="a4aee8957f93b071ea7772e5d2c766500"></a>
@@ -350,6 +428,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Perform the motion of the motor. </p>
+<p>The function performs effectively the motor motion. It verifies that the specified delay from the last step is expired and than moves the motor of one step. The function must be call in the main loop with a frequency greater than 1/(delay*1000000). Greater is the frequency to call the function and higher is the precision of the the motion. </p><dl class="section return"><dt>Returns</dt><dd>the function number of steps made, up to the end of the motion. If the motion end the motor is idle and it can perform a new command. When the motor is idle the function returns -1. </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -359,7 +440,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 12 2014 20:24:13 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 16 2014 01:51:09 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

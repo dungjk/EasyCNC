@@ -1,10 +1,16 @@
-//  Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione 
-//  - Condividi allo stesso modo 4.0 Internazionale. 
-//  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
-//
-//  Autor: Francesco Giurlanda
-//  Project: Easy CNC
-//  versione: 0.0.1
+/*! 
+    \file      Position.h
+    \brief     Class to manage cartesian position 
+    \details   The class manages the position on a cartesian plane.
+    \author    Francesco Giurlanda
+    \version   0.0.1
+    \date      2014
+
+    \copyright Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione 
+               - Condividi allo stesso modo 4.0 Internazionale. Per leggere una copia della 
+               licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
+ */
+
 
 
 #ifndef Position_h
@@ -13,6 +19,10 @@
 #include "Arduino.h"
 #include <stdint.h>
 
+
+/*! \class PositionXY
+    \brief Class to manage cartesian position.
+*/
 class PositionXY{
   float x, y;
   public:
