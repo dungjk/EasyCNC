@@ -1,6 +1,11 @@
 \hypertarget{_utensils_8h}{\section{Utensils.\+h File Reference}
 \label{_utensils_8h}\index{Utensils.\+h@{Utensils.\+h}}
 }
+
+
+The file contains the classes which implement the control of different utensils.  
+
+
 {\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$Servo.\+h$>$}\\*
 {\ttfamily \#include $<$Arduino.\+h$>$}\\*
@@ -9,25 +14,53 @@
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_plotter_servo}{Plotter\+Servo}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class to control a plotter head. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{_utensils_8h_ab408b3651d52ec56131c460e1e19a2b6}{Utensilsl\+\_\+h}
 \item 
 \#define \hyperlink{_utensils_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}{D\+O\+W\+N}~true
-\item 
+\begin{DoxyCompactList}\small\item\em The state for the plotter head down. \end{DoxyCompactList}\item 
 \#define \hyperlink{_utensils_8h_a1965eaca47dbf3f87acdafc2208f04eb}{U\+P}~false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The state for the plotter head up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The file contains the classes which implement the control of different utensils. 
+
+The classes in this file allow to control different utensils, such as the head of a plotter, a spindle with a cutter bit, a blade to cut a paper sheet and so on. \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2014
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione
+\begin{DoxyItemize}
+\item Condividi allo stesso modo 4.\+0 Internazionale. Per leggere una copia della licenza visita il sito web \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
+\end{DoxyItemize}
+\end{DoxyCopyright}
 
 
 \subsection{Macro Definition Documentation}
 \hypertarget{_utensils_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}{\index{Utensils.\+h@{Utensils.\+h}!D\+O\+W\+N@{D\+O\+W\+N}}
 \index{D\+O\+W\+N@{D\+O\+W\+N}!Utensils.\+h@{Utensils.\+h}}
 \subsubsection[{D\+O\+W\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+O\+W\+N~true}}\label{_utensils_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}
+
+
+The state for the plotter head down. 
+
 \hypertarget{_utensils_8h_a1965eaca47dbf3f87acdafc2208f04eb}{\index{Utensils.\+h@{Utensils.\+h}!U\+P@{U\+P}}
 \index{U\+P@{U\+P}!Utensils.\+h@{Utensils.\+h}}
 \subsubsection[{U\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+P~false}}\label{_utensils_8h_a1965eaca47dbf3f87acdafc2208f04eb}
+
+
+The state for the plotter head up. 
+
 \hypertarget{_utensils_8h_ab408b3651d52ec56131c460e1e19a2b6}{\index{Utensils.\+h@{Utensils.\+h}!Utensilsl\+\_\+h@{Utensilsl\+\_\+h}}
 \index{Utensilsl\+\_\+h@{Utensilsl\+\_\+h}!Utensils.\+h@{Utensils.\+h}}
 \subsubsection[{Utensilsl\+\_\+h}]{\setlength{\rightskip}{0pt plus 5cm}\#define Utensilsl\+\_\+h}}\label{_utensils_8h_ab408b3651d52ec56131c460e1e19a2b6}

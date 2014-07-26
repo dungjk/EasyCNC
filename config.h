@@ -6,7 +6,7 @@
     \version   0.0.1
     \date      2014
     \warning   If you change Arduino board some parameters could change too.
-    \copyright Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione 
+    \copyright Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
                - Condividi allo stesso modo 4.0 Internazionale. Per leggere una copia della 
                licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
  */
@@ -32,22 +32,49 @@
 // *** ROUTER CONFIGURATION ***
 // ****************************
 
-#define ROUTER_MX_STEPS_PER_ROUND 48*2  /*!< \brief Nunber of steps to make a round for the motor of the X-axis. */
-#define ROUTER_MY_STEPS_PER_ROUND 96*2  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis. */
+//#define ULN2003A
+//#define A4988
+
+#define ROUTER_MX_STEPS_PER_ROUND 48  /*!< \brief Nunber of steps to make a round for the motor of the X-axis. */
+#define ROUTER_MY_STEPS_PER_ROUND 96  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis. */
 #define ROUTER_MX_SPEED 300.0           /*!< \brief The maximum speet used to control the motor of X-axis. The unit is steps/s. */
 #define ROUTER_MY_SPEED 300.0           /*!< \brief The maximum speet used to control the motor of Y-axis. The unit is steps/s. */
-#define ROUTER_MX_COIL1 4                  /*!< \brief Pin connected to the coil 1 of the unipolar motor of X-axis. */
-#define ROUTER_MX_COIL2 5                  /*!< \brief Pin connected to the coil 2 of the unipolar motor of X-axis. */
-#define ROUTER_MX_COIL3 6                  /*!< \brief Pin connected to the coil 3 of the unipolar motor of X-axis. */
-#define ROUTER_MX_COIL4 7                  /*!< \brief Pin connected to the coil 4 of the unipolar motor of X-axis. */
 
-#define ROUTER_MY_COIL1 8                  /*!< \brief Pin connected to the coil 1 of the unipolar motor of Y-axis. */
-#define ROUTER_MY_COIL2 9                  /*!< \brief Pin connected to the coil 2 of the unipolar motor of Y-axis. */
-#define ROUTER_MY_COIL3 10                 /*!< \brief Pin connected to the coil 3 of the unipolar motor of Y-axis. */
-#define ROUTER_MY_COIL4 11                 /*!< \brief Pin connected to the coil 4 of the unipolar motor of Y-axis. */
+#define ROUTER_MX_CONTROLLER_ULN2003A
+//#define ROUTER_MX_CONTROLLER_A4988
+
+#if defined(ROUTER_MX_CONTROLLER_ULN2003A)
+#define ROUTER_MX_COIL1_PIN 4                  /*!< \brief Pin connected to the coil 1 of the unipolar motor of X-axis through the ULN2003A controller. */
+#define ROUTER_MX_COIL2_PIN 5                  /*!< \brief Pin connected to the coil 2 of the unipolar motor of X-axis through the ULN2003A controller. */
+#define ROUTER_MX_COIL3_PIN 6                  /*!< \brief Pin connected to the coil 3 of the unipolar motor of X-axis through the ULN2003A controller. */
+#define ROUTER_MX_COIL4_PIN 7                  /*!< \brief Pin connected to the coil 4 of the unipolar motor of X-axis through the ULN2003A controller. */
+#endif
+
+#if defined(ROUTER_MX_CONTROLLER_A4988)
+#define ROUTE_MX_STEP_CONTROL_PIN 4    		 //!< \brief Pin connected to the step control pin of the A4988
+#define ROUTE_MX_DIRECTION_CONTROL_PIN 5	 //!< \brief Pin connected to the direction control pin of the A4988
+#define ROUTE_MX_ENABLE_CONTROL_PIN 6		 //!< \brief Pin connected to the enable pin of the A4988
+#endif
+
+#define ROUTER_MY_CONTROLLER_ULN2003A
+//#define ROUTER_MY_CONTROLLER_A4988
+
+#if defined(ROUTER_MX_CONTROLLER_ULN2003A)
+#define ROUTER_MY_COIL1_PIN 8                  /*!< \brief Pin connected to the coil 1 of the unipolar motor of Y-axis through the ULN2003A controller. */
+#define ROUTER_MY_COIL2_PIN 9                  /*!< \brief Pin connected to the coil 2 of the unipolar motor of Y-axis through the ULN2003A controller. */
+#define ROUTER_MY_COIL3_PIN 10                 /*!< \brief Pin connected to the coil 3 of the unipolar motor of Y-axis through the ULN2003A controller. */
+#define ROUTER_MY_COIL4_PIN 11                 /*!< \brief Pin connected to the coil 4 of the unipolar motor of Y-axis through the ULN2003A controller. */
+#endif
+
+#if defined(ROUTER_MY_CONTROLLER_A4988)
+#define ROUTE_MY_STEP_CONTROL_PIN 4    		 //!< \brief Pin connected to the step control pin of the A4988
+#define ROUTE_MY_DIRECTION_CONTROL_PIN 5	 //!< \brief Pin connected to the direction control pin of the A4988
+#define ROUTE_MY_ENABLE_CONTROL_PIN 6		 //!< \brief Pin connected to the enable pin of the A4988
+#endif
 
 #define ROUTER_LIMIT_X 12                  /*!< \brief The number of the pin which is connected to the limit switch of the X-axis. */
 #define ROUTER_LIMIT_Y 12                  /*!< \brief The number of the pin which is connected to the limit switch of the Y-axis. */
+
 // *****************************
 // *          UTENSILS         *
 // *****************************

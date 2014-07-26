@@ -1,0 +1,430 @@
+\hypertarget{class_m_s_m_c___a4988}{\section{M\+S\+M\+C\+\_\+\+A4988 Class Reference}
+\label{class_m_s_m_c___a4988}\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+}
+
+
+Multi Stepper Motor Control with A4988.  
+
+
+
+
+{\ttfamily \#include $<$M\+S\+M\+C\+\_\+\+A4988.\+h$>$}
+
+Inheritance diagram for M\+S\+M\+C\+\_\+\+A4988\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_s_m_c___a4988}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_s_m_c___a4988_a3ea9fb71304c6a21695947fde680ee48}{M\+S\+M\+C\+\_\+\+A4988} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_m_s_m_c___a4988_af2633e82e29d622a4fb5b5f8f6b77446}{M\+S\+M\+C\+\_\+\+A4988} (uint8\+\_\+t pst, uint8\+\_\+t pdr, uint8\+\_\+t pen)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward} (uint32\+\_\+t st, uint32\+\_\+t sp)
+\begin{DoxyCompactList}\small\item\em Configure the motor to move forward. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward} (uint32\+\_\+t st, uint32\+\_\+t sp)
+\begin{DoxyCompactList}\small\item\em Configure the motor to move backward. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a7aa6ddff4b561e47f09e4726b160294b}{set\+Pins} (uint8\+\_\+t pst, uint8\+\_\+t pdr, uint8\+\_\+t pen)
+\begin{DoxyCompactList}\small\item\em Set up the pins attached to the A4988. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_aa4b96442c0e7d68715c2322f5bdce782}{set\+Mode} (uint8\+\_\+t mod)
+\begin{DoxyCompactList}\small\item\em Set up the control mode. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___a4988_ab0004d7e88ada9fc74b21fd5886bdb54}{get\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Return the operative mode of the controller. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a6f9d236dc619342d16457aa029faeed9}{speed} (uint32\+\_\+t sp)
+\begin{DoxyCompactList}\small\item\em Change the delay between each step. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a4038481ce6b8131ea22d5e0d331ca6c7}{stop} ()
+\begin{DoxyCompactList}\small\item\em Stop any motion. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{class_m_s_m_c___a4988_a1f408597bc1daf8bb5e563d54bf32cdd}{update} ()
+\begin{DoxyCompactList}\small\item\em Perform the motion of the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_m_s_m_c___a4988_ac177dd03f28d347cfa6212bc54394027}{one\+\_\+step\+\_\+drive} (boolean v)
+\item 
+void \hyperlink{class_m_s_m_c___a4988_ab9bd155f40ee777f17d1c4b1a702a60a}{set\+Direction} ()
+\begin{DoxyCompactList}\small\item\em It drives the direction pin. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a1157e26b461a3689558cd205880ef3b9}{enable} ()
+\begin{DoxyCompactList}\small\item\em Enable the F\+E\+Ts of the A4988 that control the coils of the motor, the pin is low active.. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a525c9313ee313d9c6316fc743b7b4ae0}{disable} ()
+\begin{DoxyCompactList}\small\item\em Disable the F\+E\+Ts of the A4988 that control the coils of the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___a4988_a2ea61398ce88d1ee627b409a5965b478}{pin\+\_\+step}
+\begin{DoxyCompactList}\small\item\em The pin controls the step. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___a4988_a2bc9676a272bcd6604aaf8b08ac07109}{pin\+\_\+dir}
+\begin{DoxyCompactList}\small\item\em The pin controls the direction. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___a4988_a822c3db98367f3e60347a13d1d16170b}{pin\+\_\+enable}
+\begin{DoxyCompactList}\small\item\em The pin controls the enable pin of the A4988. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___a4988_a6453efb52d22739962c05b0d03f65aa7}{spd}
+\begin{DoxyCompactList}\small\item\em The delay between two steps in microseconds. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___a4988_aa85fc95facc940db652cd2f545f033cd}{steps}
+\begin{DoxyCompactList}\small\item\em The number of steps until the motion ends. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___a4988_aa7de83eb15a9f82533b898146921939b}{tot\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em The total steps set by \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward()} and \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward()}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___a4988_a60ff02342382a71526d14fb9e51ddc2a}{old\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The time value in microseconds set during the last step. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_m_s_m_c___a4988_a887a3d29966bdfc0d920d339b83e5346}{dir}
+\begin{DoxyCompactList}\small\item\em Specify the direction of the motor\+: -\/1 backward, 1 forward, 0 all pin out L\+O\+W. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_m_s_m_c___a4988_a86ef4c886ee6c7ed6fa87e27c0a7a9ea}{m\+\_\+ready}
+\begin{DoxyCompactList}\small\item\em True if the motor is ready to take a new command\+: \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward(uint32\+\_\+t, uint32\+\_\+t)} or \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward(uint32\+\_\+t, uint32\+\_\+t)}. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_m_s_m_c___a4988_a1ec86b6286b8827eca6d5703a02f65fd}{step\+\_\+pin\+\_\+val}
+\begin{DoxyCompactList}\small\item\em The value of the pin that drives the step advance. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___a4988_a819ff8eed30ef364c710a1fb1371d18e}{control\+\_\+mode}
+\begin{DoxyCompactList}\small\item\em Specify the control mode of the motor\+: 0 full step, 1 half step, 2 quarter step, 3 eighth step and 4 sixteenth step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Multi Stepper Motor Control with A4988. 
+
+The class allows the contemporary control of multi stepper motors using the I\+Cs A4988. After the motor setup, you can drive the motor forward and backward, specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call in the main loop and, if the delay is expired, the function moves the motor of one step. \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_m_s_m_c___a4988_a3ea9fb71304c6a21695947fde680ee48}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{M\+S\+M\+C\+\_\+\+A4988}]{\setlength{\rightskip}{0pt plus 5cm}M\+S\+M\+C\+\_\+\+A4988\+::\+M\+S\+M\+C\+\_\+\+A4988 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_m_s_m_c___a4988_a3ea9fb71304c6a21695947fde680ee48}
+
+
+Default constructor. 
+
+\hypertarget{class_m_s_m_c___a4988_af2633e82e29d622a4fb5b5f8f6b77446}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{M\+S\+M\+C\+\_\+\+A4988}]{\setlength{\rightskip}{0pt plus 5cm}M\+S\+M\+C\+\_\+\+A4988\+::\+M\+S\+M\+C\+\_\+\+A4988 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{pst, }
+\item[{uint8\+\_\+t}]{pdr, }
+\item[{uint8\+\_\+t}]{pen}
+\end{DoxyParamCaption}
+)}}\label{class_m_s_m_c___a4988_af2633e82e29d622a4fb5b5f8f6b77446}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pst} & The number of the pin which is attached to the step control pin of the A4988. \\
+\hline
+{\em pdr} & The number of the pin which is attached to the direction control pin of the A4988. \\
+\hline
+{\em pen} & The number of the pin which is attached to the enable pin of the A4988. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!backward@{backward}}
+\index{backward@{backward}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::backward (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{st, }
+\item[{uint32\+\_\+t}]{sp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}
+
+
+Configure the motor to move backward. 
+
+The function moves backward the motor of a number of steps with a specified delay between each step 
+\begin{DoxyParams}{Parameters}
+{\em st} & The number of steps \\
+\hline
+{\em sp} & The delay between the steps in microseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward(uint32\+\_\+t, uint32\+\_\+t)} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a389bfe7f7d05083cb4e95d73128c1c87}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_a525c9313ee313d9c6316fc743b7b4ae0}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!disable@{disable}}
+\index{disable@{disable}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{disable}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::disable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a525c9313ee313d9c6316fc743b7b4ae0}
+
+
+Disable the F\+E\+Ts of the A4988 that control the coils of the motor. 
+
+\hypertarget{class_m_s_m_c___a4988_a1157e26b461a3689558cd205880ef3b9}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!enable@{enable}}
+\index{enable@{enable}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{enable}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::enable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a1157e26b461a3689558cd205880ef3b9}
+
+
+Enable the F\+E\+Ts of the A4988 that control the coils of the motor, the pin is low active.. 
+
+\hypertarget{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!forward@{forward}}
+\index{forward@{forward}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::forward (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{st, }
+\item[{uint32\+\_\+t}]{sp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}
+
+
+Configure the motor to move forward. 
+
+The function moves forward the motor of a number of steps with a specified delay between each step 
+\begin{DoxyParams}{Parameters}
+{\em st} & The number of steps \\
+\hline
+{\em sp} & The delay between the steps in microseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward(uint32\+\_\+t, uint32\+\_\+t)} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a62615946a227d18ea3fc2f1329688d1f}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_ab0004d7e88ada9fc74b21fd5886bdb54}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!get\+Mode@{get\+Mode}}
+\index{get\+Mode@{get\+Mode}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{get\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::get\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_ab0004d7e88ada9fc74b21fd5886bdb54}
+
+
+Return the operative mode of the controller. 
+
+\begin{DoxyReturn}{Returns}
+An int that identifies the operative mode\+: \hyperlink{_m_s_m_c___u_l_n2003_a_8h_a65ffcc85557e6fc00e865d67e20f720e}{F\+U\+L\+L\+\_\+\+S\+T\+E\+P}, \hyperlink{_m_s_m_c___u_l_n2003_a_8h_af078dda416ad0114e9c81a6c36c0801f}{H\+A\+L\+F\+\_\+\+S\+T\+E\+P}, \hyperlink{_m_s_m_c___a4988_8h_a5bf980ea8dd6df6a0271f6d30d66931b}{Q\+U\+A\+R\+T\+E\+R\+\_\+\+S\+T\+E\+P}, \hyperlink{_m_s_m_c___a4988_8h_ac3f074c3e3b349fc9f6487a9d9a77399}{E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P} and \hyperlink{_m_s_m_c___a4988_8h_a8493986c329fb4bfde621461028b3a31}{S\+I\+X\+T\+E\+E\+N\+T\+H\+\_\+\+S\+T\+E\+P} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a5a1c4ee3498360946cc8e8d39436d0e3}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_ac177dd03f28d347cfa6212bc54394027}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!one\+\_\+step\+\_\+drive@{one\+\_\+step\+\_\+drive}}
+\index{one\+\_\+step\+\_\+drive@{one\+\_\+step\+\_\+drive}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{one\+\_\+step\+\_\+drive}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::one\+\_\+step\+\_\+drive (
+\begin{DoxyParamCaption}
+\item[{boolean}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_ac177dd03f28d347cfa6212bc54394027}
+\hypertarget{class_m_s_m_c___a4988_ab9bd155f40ee777f17d1c4b1a702a60a}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{set\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::set\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_ab9bd155f40ee777f17d1c4b1a702a60a}
+
+
+It drives the direction pin. 
+
+\hypertarget{class_m_s_m_c___a4988_aa4b96442c0e7d68715c2322f5bdce782}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!set\+Mode@{set\+Mode}}
+\index{set\+Mode@{set\+Mode}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{set\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::set\+Mode (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{mod}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_aa4b96442c0e7d68715c2322f5bdce782}
+
+
+Set up the control mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mod} & The mode used to control the motor. You can use the following macros\+:
+\begin{DoxyItemize}
+\item \hyperlink{_m_s_m_c___u_l_n2003_a_8h_a65ffcc85557e6fc00e865d67e20f720e}{F\+U\+L\+L\+\_\+\+S\+T\+E\+P}
+\item \hyperlink{_m_s_m_c___u_l_n2003_a_8h_af078dda416ad0114e9c81a6c36c0801f}{H\+A\+L\+F\+\_\+\+S\+T\+E\+P}
+\item \hyperlink{_m_s_m_c___a4988_8h_a5bf980ea8dd6df6a0271f6d30d66931b}{Q\+U\+A\+R\+T\+E\+R\+\_\+\+S\+T\+E\+P}
+\item \hyperlink{_m_s_m_c___a4988_8h_ac3f074c3e3b349fc9f6487a9d9a77399}{E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P}
+\item \hyperlink{_m_s_m_c___a4988_8h_a8493986c329fb4bfde621461028b3a31}{S\+I\+X\+T\+E\+E\+N\+T\+H\+\_\+\+S\+T\+E\+P} 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a85bd4abf542aecdf24bb90b9ea2a47e9}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_a7aa6ddff4b561e47f09e4726b160294b}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!set\+Pins@{set\+Pins}}
+\index{set\+Pins@{set\+Pins}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{set\+Pins}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::set\+Pins (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{pst, }
+\item[{uint8\+\_\+t}]{pdr, }
+\item[{uint8\+\_\+t}]{pen}
+\end{DoxyParamCaption}
+)}}\label{class_m_s_m_c___a4988_a7aa6ddff4b561e47f09e4726b160294b}
+
+
+Set up the pins attached to the A4988. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pst} & The number of the pin which is attached to the step control pin of the A4988. \\
+\hline
+{\em pdr} & The number of the pin which is attached to the direction control pin of the A4988. \\
+\hline
+{\em pen} & The number of the pin which is attached to the enable pin of the A4988. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_s_m_c___a4988_a6f9d236dc619342d16457aa029faeed9}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!speed@{speed}}
+\index{speed@{speed}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{speed}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::speed (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{sp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_a6f9d236dc619342d16457aa029faeed9}
+
+
+Change the delay between each step. 
+
+This function can be used to change the speed during an operation of forward or backward. 
+\begin{DoxyParams}{Parameters}
+{\em sp} & the delay in microseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward(uint32\+\_\+t, uint32\+\_\+t)}, \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward(uint32\+\_\+t, uint32\+\_\+t)} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a065e48c8e8f3b513bf6694e8eb1b28d5}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_a4038481ce6b8131ea22d5e0d331ca6c7}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!stop@{stop}}
+\index{stop@{stop}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_a4038481ce6b8131ea22d5e0d331ca6c7}
+
+
+Stop any motion. 
+
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a0b44d0a659550ba754bf9212294ba6d5}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_a1f408597bc1daf8bb5e563d54bf32cdd}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!update@{update}}
+\index{update@{update}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_a1f408597bc1daf8bb5e563d54bf32cdd}
+
+
+Perform the motion of the motor. 
+
+The function performs effectively the motor motion. It verifies that the specified delay from the last step is expired and than moves the motor of one step. The function must be call in the main loop with a frequency greater than 1/(delay$\ast$1000000). Greater is the frequency to call the function and higher is the precision of the the motion. \begin{DoxyReturn}{Returns}
+the function number of steps made, up to the end of the motion. If the motion end the motor is idle and it can perform a new command. When the motor is idle the function returns -\/1. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a44ca6bc355a269543606dd4eeb7ed06e}{M\+S\+M\+C}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_m_s_m_c___a4988_a819ff8eed30ef364c710a1fb1371d18e}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!control\+\_\+mode@{control\+\_\+mode}}
+\index{control\+\_\+mode@{control\+\_\+mode}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{control\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::control\+\_\+mode\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a819ff8eed30ef364c710a1fb1371d18e}
+
+
+Specify the control mode of the motor\+: 0 full step, 1 half step, 2 quarter step, 3 eighth step and 4 sixteenth step. 
+
+/$\ast$!\+It advances the motor of one step. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The value of the pin. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_s_m_c___a4988_a887a3d29966bdfc0d920d339b83e5346}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!dir@{dir}}
+\index{dir@{dir}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::dir\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a887a3d29966bdfc0d920d339b83e5346}
+
+
+Specify the direction of the motor\+: -\/1 backward, 1 forward, 0 all pin out L\+O\+W. 
+
+\hypertarget{class_m_s_m_c___a4988_a86ef4c886ee6c7ed6fa87e27c0a7a9ea}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!m\+\_\+ready@{m\+\_\+ready}}
+\index{m\+\_\+ready@{m\+\_\+ready}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{m\+\_\+ready}]{\setlength{\rightskip}{0pt plus 5cm}boolean M\+S\+M\+C\+\_\+\+A4988\+::m\+\_\+ready\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a86ef4c886ee6c7ed6fa87e27c0a7a9ea}
+
+
+True if the motor is ready to take a new command\+: \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward(uint32\+\_\+t, uint32\+\_\+t)} or \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward(uint32\+\_\+t, uint32\+\_\+t)}. 
+
+\hypertarget{class_m_s_m_c___a4988_a60ff02342382a71526d14fb9e51ddc2a}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!old\+\_\+time@{old\+\_\+time}}
+\index{old\+\_\+time@{old\+\_\+time}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{old\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::old\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a60ff02342382a71526d14fb9e51ddc2a}
+
+
+The time value in microseconds set during the last step. 
+
+\hypertarget{class_m_s_m_c___a4988_a2bc9676a272bcd6604aaf8b08ac07109}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!pin\+\_\+dir@{pin\+\_\+dir}}
+\index{pin\+\_\+dir@{pin\+\_\+dir}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{pin\+\_\+dir}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::pin\+\_\+dir\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a2bc9676a272bcd6604aaf8b08ac07109}
+
+
+The pin controls the direction. 
+
+\hypertarget{class_m_s_m_c___a4988_a822c3db98367f3e60347a13d1d16170b}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!pin\+\_\+enable@{pin\+\_\+enable}}
+\index{pin\+\_\+enable@{pin\+\_\+enable}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{pin\+\_\+enable}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::pin\+\_\+enable\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a822c3db98367f3e60347a13d1d16170b}
+
+
+The pin controls the enable pin of the A4988. 
+
+\hypertarget{class_m_s_m_c___a4988_a2ea61398ce88d1ee627b409a5965b478}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!pin\+\_\+step@{pin\+\_\+step}}
+\index{pin\+\_\+step@{pin\+\_\+step}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{pin\+\_\+step}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::pin\+\_\+step\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a2ea61398ce88d1ee627b409a5965b478}
+
+
+The pin controls the step. 
+
+\hypertarget{class_m_s_m_c___a4988_a6453efb52d22739962c05b0d03f65aa7}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!spd@{spd}}
+\index{spd@{spd}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{spd}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::spd\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a6453efb52d22739962c05b0d03f65aa7}
+
+
+The delay between two steps in microseconds. 
+
+\hypertarget{class_m_s_m_c___a4988_a1ec86b6286b8827eca6d5703a02f65fd}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!step\+\_\+pin\+\_\+val@{step\+\_\+pin\+\_\+val}}
+\index{step\+\_\+pin\+\_\+val@{step\+\_\+pin\+\_\+val}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{step\+\_\+pin\+\_\+val}]{\setlength{\rightskip}{0pt plus 5cm}boolean M\+S\+M\+C\+\_\+\+A4988\+::step\+\_\+pin\+\_\+val\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a1ec86b6286b8827eca6d5703a02f65fd}
+
+
+The value of the pin that drives the step advance. 
+
+\hypertarget{class_m_s_m_c___a4988_aa85fc95facc940db652cd2f545f033cd}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!steps@{steps}}
+\index{steps@{steps}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{steps}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::steps\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_aa85fc95facc940db652cd2f545f033cd}
+
+
+The number of steps until the motion ends. 
+
+\hypertarget{class_m_s_m_c___a4988_aa7de83eb15a9f82533b898146921939b}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!tot\+\_\+steps@{tot\+\_\+steps}}
+\index{tot\+\_\+steps@{tot\+\_\+steps}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{tot\+\_\+steps}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::tot\+\_\+steps\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_aa7de83eb15a9f82533b898146921939b}
+
+
+The total steps set by \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward()} and \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward()}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_m_s_m_c___a4988_8h}{M\+S\+M\+C\+\_\+\+A4988.\+h}\item 
+\hyperlink{_m_s_m_c___a4988_8cpp}{M\+S\+M\+C\+\_\+\+A4988.\+cpp}\end{DoxyCompactItemize}

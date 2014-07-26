@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['moveto',['moveTo',['../class_c_n_cxy.html#aeb30f9045a768b51b12521d032410631',1,'CNCxy::moveTo(float px, float py)'],['../class_c_n_cxy.html#a50739c5a639e2df4490725cb4893fe0d',1,'CNCxy::moveTo(const PositionXY &amp;np)']]]
+  ['init',['init',['../class_plotter_servo.html#ad35c8f57eaeeffa768340a777c105aeb',1,'PlotterServo']]],
+  ['initmotorx',['initMotorX',['../class_c_n_cxy.html#a385a87e56ea216c855b4d2df37da987b',1,'CNCxy']]],
+  ['initmotory',['initMotorY',['../class_c_n_cxy.html#ab580bbe83bb4af2e9cfceb7409804a5f',1,'CNCxy']]]
 ];

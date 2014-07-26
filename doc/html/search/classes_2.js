@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['smotor',['SMotor',['../class_s_motor.html',1,'']]]
+  ['plotterservo',['PlotterServo',['../class_plotter_servo.html',1,'']]],
+  ['positionxy',['PositionXY',['../class_position_x_y.html',1,'']]]
 ];

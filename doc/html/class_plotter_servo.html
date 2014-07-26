@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,26 +84,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_plotter_servo-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">PlotterServo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>Class to control a plotter head.  
+ <a href="class_plotter_servo.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_utensils_8h_source.html">Utensils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e1bb246a0c6b6df9f78b1a5a9343ef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#a3e1bb246a0c6b6df9f78b1a5a9343ef0">PlotterServo</a> (uint8_t p, uint8_t dv, uint8_t uv)</td></tr>
+<tr class="memdesc:a3e1bb246a0c6b6df9f78b1a5a9343ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a3e1bb246a0c6b6df9f78b1a5a9343ef0">More...</a><br /></td></tr>
 <tr class="separator:a3e1bb246a0c6b6df9f78b1a5a9343ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35c8f57eaeeffa768340a777c105aeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#ad35c8f57eaeeffa768340a777c105aeb">init</a> ()</td></tr>
+<tr class="memdesc:ad35c8f57eaeeffa768340a777c105aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the object. It must be call into the <a class="el" href="easy___c_n_c_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup()</a>.  <a href="#ad35c8f57eaeeffa768340a777c105aeb">More...</a><br /></td></tr>
 <tr class="separator:ad35c8f57eaeeffa768340a777c105aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d7dc74cd89c962a9cf27bdd210653f"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#ab3d7dc74cd89c962a9cf27bdd210653f">up</a> ()</td></tr>
+<tr class="memdesc:ab3d7dc74cd89c962a9cf27bdd210653f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It moves the head up.  <a href="#ab3d7dc74cd89c962a9cf27bdd210653f">More...</a><br /></td></tr>
 <tr class="separator:ab3d7dc74cd89c962a9cf27bdd210653f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06411670f5c5799ec84be0cffda3772b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#a06411670f5c5799ec84be0cffda3772b">down</a> ()</td></tr>
+<tr class="memdesc:a06411670f5c5799ec84be0cffda3772b"><td class="mdescLeft">&#160;</td><td class="mdescRight">It moves the head down.  <a href="#a06411670f5c5799ec84be0cffda3772b">More...</a><br /></td></tr>
 <tr class="separator:a06411670f5c5799ec84be0cffda3772b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3309473d867ae37982f1ff0caba0c86b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#a3309473d867ae37982f1ff0caba0c86b">state</a></td></tr>
+<tr class="memdesc:a3309473d867ae37982f1ff0caba0c86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state of the plotter head.  <a href="#a3309473d867ae37982f1ff0caba0c86b">More...</a><br /></td></tr>
+<tr class="separator:a3309473d867ae37982f1ff0caba0c86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c40d2afb9b5ae278deb8eab8b48a489"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#a9c40d2afb9b5ae278deb8eab8b48a489">pin</a></td></tr>
+<tr class="memdesc:a9c40d2afb9b5ae278deb8eab8b48a489"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin where is attached the servo motor.  <a href="#a9c40d2afb9b5ae278deb8eab8b48a489">More...</a><br /></td></tr>
+<tr class="separator:a9c40d2afb9b5ae278deb8eab8b48a489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ecf1d8c79d1c73c3977198bb28b55a7"><td class="memItemLeft" align="right" valign="top">Servo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#a9ecf1d8c79d1c73c3977198bb28b55a7">servo_pen</a></td></tr>
+<tr class="memdesc:a9ecf1d8c79d1c73c3977198bb28b55a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The object which control the servo motor.  <a href="#a9ecf1d8c79d1c73c3977198bb28b55a7">More...</a><br /></td></tr>
+<tr class="separator:a9ecf1d8c79d1c73c3977198bb28b55a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1150ec2c679af23d0a57cef4df7ff0a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#ad1150ec2c679af23d0a57cef4df7ff0a">down_val</a></td></tr>
+<tr class="memdesc:ad1150ec2c679af23d0a57cef4df7ff0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of the servo for the plotter head down (deg)  <a href="#ad1150ec2c679af23d0a57cef4df7ff0a">More...</a><br /></td></tr>
+<tr class="separator:ad1150ec2c679af23d0a57cef4df7ff0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a8cf60736715222a53a774c4e077f7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html#ac5a8cf60736715222a53a774c4e077f7">up_val</a></td></tr>
+<tr class="memdesc:ac5a8cf60736715222a53a774c4e077f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of the servo for the plotter head up (deg)  <a href="#ac5a8cf60736715222a53a774c4e077f7">More...</a><br /></td></tr>
+<tr class="separator:ac5a8cf60736715222a53a774c4e077f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class to control a plotter head. </p>
+<p>The class allows to control an utensil with a per or a pencil or a marker pen, moved up and down by a servo motor. This utensil requires a PWM signal which controls the servo. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3e1bb246a0c6b6df9f78b1a5a9343ef0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -133,6 +163,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The number of the pin where is attached the servo. </td></tr>
+    <tr><td class="paramname">dv</td><td>The value for the plotter head down. </td></tr>
+    <tr><td class="paramname">uv</td><td>The value for the plotter head up. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -149,6 +189,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It moves the head down. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad35c8f57eaeeffa768340a777c105aeb"></a>
@@ -163,6 +205,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize the object. It must be call into the <a class="el" href="easy___c_n_c_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup()</a>. </p>
 
 </div>
 </div>
@@ -179,6 +223,120 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It moves the head up. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ad1150ec2c679af23d0a57cef4df7ff0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t PlotterServo::down_val</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The position of the servo for the plotter head down (deg) </p>
+
+</div>
+</div>
+<a class="anchor" id="a9c40d2afb9b5ae278deb8eab8b48a489"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t PlotterServo::pin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The pin where is attached the servo motor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9ecf1d8c79d1c73c3977198bb28b55a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Servo PlotterServo::servo_pen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The object which control the servo motor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3309473d867ae37982f1ff0caba0c86b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean PlotterServo::state</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The state of the plotter head. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_utensils_8h.html#a4193cd1c8c2e6ebd0e056fa2364a663f" title="The state for the plotter head down. ">DOWN</a>, <a class="el" href="_utensils_8h.html#a1965eaca47dbf3f87acdafc2208f04eb" title="The state for the plotter head up. ">UP</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac5a8cf60736715222a53a774c4e077f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t PlotterServo::up_val</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The position of the servo for the plotter head up (deg) </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -188,7 +346,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 16 2014 01:51:09 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

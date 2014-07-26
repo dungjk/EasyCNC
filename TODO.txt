@@ -3,3 +3,74 @@ Easy CNC TODO:
 Implementazione:
 
 - in CNCxy: setLimitSwitchX, setLimitSwitchY, searchHomePos
+
+
+Documentazion
+
+FUNZIONI CON NUMERO DI PARAMETRI OPZIONALE
+
+Dunque, intanto devi includere <cstdarg> o il suo omologo in C <stdarg.h> che contiene alcune macro che sono utili per andare a maneggiare lo stack a run-time, dal momento che il compilatore non sa quanti saranno i parametri.
+
+
+Il prototipo di una funzione con n parametri, con n variabile è
+
+TR func(T1 param1, T2 param2, TN paramN, ... );
+
+dove i vari TR, T1 ... TN sono dei tipi qualunque per i parametri "fissi" ovvero quelli sempre presenti.
+
+per accedere ai parametri variabili è necessario sapere quanti parametri variabili sono presenti, di norma ciò si ottiene facendo in modo che uno dei parametri noti (param1 ... paramN) contenga informazioni sui parametri variabili.
+
+ad esempio printf("%s%d", "ciao", 2);
+
+l'unico parametro statico è il primo (la stringa di formato), analizzando la stringa di formato, printf sa che i parametri variabili saranno 2, di cui il primo di tipo stringa, e il 
+secondo di tipo int.
+
+Nota bene, che il compilatore accetta tranquillamente una 
+chiamata di 
+
+printf("%s%d", "Ciao"); /* manca l'ultimo il parametro variabile*/
+
+ovviamente printf in questo caso andrà a leggere nello stack 
+dei valori sconosciuti con alta probabilità di crash.
+
+Adesso vediamo la pratica.
+
+esempio
+
+
+/*
+stampa una sequenza di n int
+*/
+void printn(int n, ...)
+{
+va_list args; /* va_list è definito in stdarg.h */
+int paramN;
+
+/*
+La prima cosa da fare è inizializzare la lista di 
+parametri args, usando la macro va_start, i parametri 
+sono un oggetto di tipo va_list e il nome dell'ultimo 
+parametro definito prima della lista di parametri 
+variabile, per noi l'ultimo parametro è n, se il 
+prototipo della funzione fosse stato void 
+printn(int n, int k, ...) l'ultimo parametro prima di
+... sarebbe stato k, e avremmo richiamato 
+va_start(args, k);
+*/
+
+va_start( args, n);
+
+/* 
+siccome in n abbiamo il numero di parametri variabile che 
+ci aspettiamo di trovare dallo stack possiamo prelevare n 
+valori tramite la macro va_arg, ovviamente chi chiama la 
+funzione deve stare attento a non passare meno parametri 
+di quanto non sia dichiarato da n
+*/
+
+while( n-- > 0)
+{
+cout << va_arg( args, int);
+} 
+va_end( args ); 
+}

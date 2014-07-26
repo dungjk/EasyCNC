@@ -35,12 +35,51 @@ int32\+\_\+t \hyperlink{class_s_motor_a4aee8957f93b071ea7772e5d2c766500}{update}
 \begin{DoxyCompactList}\small\item\em Perform the motion of the motor. \end{DoxyCompactList}\item 
 void \hyperlink{class_s_motor_a70f9d62a3979a923b1e7c90deae30853}{print} ()
 \begin{DoxyCompactList}\small\item\em Print in the serial channel the state of all inner variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_s_motor_ad8a2e38a5f28bc482c26fc0865a1a421}{forward\+\_\+one} ()
+\begin{DoxyCompactList}\small\item\em Move the motor forward of one step. \end{DoxyCompactList}\item 
+void \hyperlink{class_s_motor_aa943e06297be50ff2eee785f11a57994}{backward\+\_\+one} ()
+\begin{DoxyCompactList}\small\item\em Move the motor backward of one step. \end{DoxyCompactList}\item 
+void \hyperlink{class_s_motor_a81c0aec48f08077b5b42fe03034e4f19}{coils\+Off} ()
+\begin{DoxyCompactList}\small\item\em Turn off all coils of the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_s_motor_a2c60b5c8fe692572070fdc95c6b4b51e}{p1}
+\item 
+uint8\+\_\+t \hyperlink{class_s_motor_a305bd59966c6596b977c2897cf6f3ee1}{p2}
+\item 
+uint8\+\_\+t \hyperlink{class_s_motor_a2ed385362a1d5701bb4f1a922838c986}{p3}
+\item 
+uint8\+\_\+t \hyperlink{class_s_motor_a9eeaaa8a47f74a6f2972650afa76d02f}{p4}
+\begin{DoxyCompactList}\small\item\em Pins where is mapped the coils of the unipolar motor. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_s_motor_a882d15d35626b66d6bb31a09c17b75b6}{spd}
+\begin{DoxyCompactList}\small\item\em The delay between two steps in microseconds. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_s_motor_a894a18a9c90ea2160d5790934491f346}{steps}
+\begin{DoxyCompactList}\small\item\em The number of steps until the motion ends. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_s_motor_acba02a638986e8e3e44302d824941692}{tot\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em The total steps setted by \hyperlink{class_s_motor_ae266c2af254d76012b8132bb7641628d}{forward()} and \hyperlink{class_s_motor_a9d666d613dffcc324e0ae6e1e0a31a3f}{backward()}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_s_motor_ae1327bd40d192a2fd84ab885a2b197bb}{old\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The time value in microseconds setted during the last step. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_s_motor_a994ea15ba154ccf166cdfefebae493bd}{pos}
+\begin{DoxyCompactList}\small\item\em A value among 0, 1, 2, 3 if the full step control is active, otherwise the value is one among 0, 1, 2, 3, ,4 ,5 ,6 7. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_s_motor_ad5bca9af6abc32a4c501ab8791c9b044}{dir}
+\begin{DoxyCompactList}\small\item\em Specifi the direction of the motor\+: -\/1 backward, 1 forward, 0 all pin out L\+O\+W. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_s_motor_a91a0e1b7858e925219aef3f01581a6df}{full\+\_\+step}
+\begin{DoxyCompactList}\small\item\em True if the class uses a full step control, false if it is half step control. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_s_motor_a387fdb2f979f0a98629f60e6d39e88eb}{m\+\_\+ready}
+\begin{DoxyCompactList}\small\item\em True if the motor is ready to take a new command\+: \hyperlink{class_s_motor_ae266c2af254d76012b8132bb7641628d}{forward()} or \hyperlink{class_s_motor_a9d666d613dffcc324e0ae6e1e0a31a3f}{backward()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Multi Stepper Motor Control Class. 
 
-The class allows the contemporary control of multi stepper motors. After the motor setup, you can drive the motor forward and backward, specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call in the main loop and, if the delay is expired, the function moves the motor of one step. 
+The class allows the contemporary control of multi stepper motors. After the motor setup, you can drive the motor forward and backward, specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call in the main loop and, if the delay is expired, the function moves the motor of one step. \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_s_motor_a29d1d10288f83e41d200e3623541a351}{\index{S\+Motor@{S\+Motor}!S\+Motor@{S\+Motor}}
@@ -104,6 +143,31 @@ The function moves backward the motor of a number of steps with a specified dela
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_s_motor_ae266c2af254d76012b8132bb7641628d}{forward(uint32\+\_\+t, uint32\+\_\+t)} 
 \end{DoxySeeAlso}
+\hypertarget{class_s_motor_aa943e06297be50ff2eee785f11a57994}{\index{S\+Motor@{S\+Motor}!backward\+\_\+one@{backward\+\_\+one}}
+\index{backward\+\_\+one@{backward\+\_\+one}!S\+Motor@{S\+Motor}}
+\subsubsection[{backward\+\_\+one}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Motor\+::backward\+\_\+one (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_aa943e06297be50ff2eee785f11a57994}
+
+
+Move the motor backward of one step. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_s_motor_ad8a2e38a5f28bc482c26fc0865a1a421}{forward\+\_\+one()} 
+\end{DoxySeeAlso}
+\hypertarget{class_s_motor_a81c0aec48f08077b5b42fe03034e4f19}{\index{S\+Motor@{S\+Motor}!coils\+Off@{coils\+Off}}
+\index{coils\+Off@{coils\+Off}!S\+Motor@{S\+Motor}}
+\subsubsection[{coils\+Off}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Motor\+::coils\+Off (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a81c0aec48f08077b5b42fe03034e4f19}
+
+
+Turn off all coils of the motor. 
+
 \hypertarget{class_s_motor_ae266c2af254d76012b8132bb7641628d}{\index{S\+Motor@{S\+Motor}!forward@{forward}}
 \index{forward@{forward}!S\+Motor@{S\+Motor}}
 \subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Motor\+::forward (
@@ -125,6 +189,20 @@ The function moves forward the motor of a number of steps with a specified delay
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_s_motor_a9d666d613dffcc324e0ae6e1e0a31a3f}{backward(uint32\+\_\+t, uint32\+\_\+t)} 
+\end{DoxySeeAlso}
+\hypertarget{class_s_motor_ad8a2e38a5f28bc482c26fc0865a1a421}{\index{S\+Motor@{S\+Motor}!forward\+\_\+one@{forward\+\_\+one}}
+\index{forward\+\_\+one@{forward\+\_\+one}!S\+Motor@{S\+Motor}}
+\subsubsection[{forward\+\_\+one}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Motor\+::forward\+\_\+one (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_ad8a2e38a5f28bc482c26fc0865a1a421}
+
+
+Move the motor forward of one step. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_s_motor_aa943e06297be50ff2eee785f11a57994}{backward\+\_\+one()} 
 \end{DoxySeeAlso}
 \hypertarget{class_s_motor_a70f9d62a3979a923b1e7c90deae30853}{\index{S\+Motor@{S\+Motor}!print@{print}}
 \index{print@{print}!S\+Motor@{S\+Motor}}
@@ -228,6 +306,81 @@ Perform the motion of the motor.
 The function performs effectively the motor motion. It verifies that the specified delay from the last step is expired and than moves the motor of one step. The function must be call in the main loop with a frequency greater than 1/(delay$\ast$1000000). Greater is the frequency to call the function and higher is the precision of the the motion. \begin{DoxyReturn}{Returns}
 the function number of steps made, up to the end of the motion. If the motion end the motor is idle and it can perform a new command. When the motor is idle the function returns -\/1. 
 \end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_s_motor_ad5bca9af6abc32a4c501ab8791c9b044}{\index{S\+Motor@{S\+Motor}!dir@{dir}}
+\index{dir@{dir}!S\+Motor@{S\+Motor}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t S\+Motor\+::dir\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_ad5bca9af6abc32a4c501ab8791c9b044}
+
+
+Specifi the direction of the motor\+: -\/1 backward, 1 forward, 0 all pin out L\+O\+W. 
+
+\hypertarget{class_s_motor_a91a0e1b7858e925219aef3f01581a6df}{\index{S\+Motor@{S\+Motor}!full\+\_\+step@{full\+\_\+step}}
+\index{full\+\_\+step@{full\+\_\+step}!S\+Motor@{S\+Motor}}
+\subsubsection[{full\+\_\+step}]{\setlength{\rightskip}{0pt plus 5cm}boolean S\+Motor\+::full\+\_\+step\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a91a0e1b7858e925219aef3f01581a6df}
+
+
+True if the class uses a full step control, false if it is half step control. 
+
+\hypertarget{class_s_motor_a387fdb2f979f0a98629f60e6d39e88eb}{\index{S\+Motor@{S\+Motor}!m\+\_\+ready@{m\+\_\+ready}}
+\index{m\+\_\+ready@{m\+\_\+ready}!S\+Motor@{S\+Motor}}
+\subsubsection[{m\+\_\+ready}]{\setlength{\rightskip}{0pt plus 5cm}boolean S\+Motor\+::m\+\_\+ready\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a387fdb2f979f0a98629f60e6d39e88eb}
+
+
+True if the motor is ready to take a new command\+: \hyperlink{class_s_motor_ae266c2af254d76012b8132bb7641628d}{forward()} or \hyperlink{class_s_motor_a9d666d613dffcc324e0ae6e1e0a31a3f}{backward()}. 
+
+\hypertarget{class_s_motor_ae1327bd40d192a2fd84ab885a2b197bb}{\index{S\+Motor@{S\+Motor}!old\+\_\+time@{old\+\_\+time}}
+\index{old\+\_\+time@{old\+\_\+time}!S\+Motor@{S\+Motor}}
+\subsubsection[{old\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t S\+Motor\+::old\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_ae1327bd40d192a2fd84ab885a2b197bb}
+
+
+The time value in microseconds setted during the last step. 
+
+\hypertarget{class_s_motor_a2c60b5c8fe692572070fdc95c6b4b51e}{\index{S\+Motor@{S\+Motor}!p1@{p1}}
+\index{p1@{p1}!S\+Motor@{S\+Motor}}
+\subsubsection[{p1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t S\+Motor\+::p1\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a2c60b5c8fe692572070fdc95c6b4b51e}
+\hypertarget{class_s_motor_a305bd59966c6596b977c2897cf6f3ee1}{\index{S\+Motor@{S\+Motor}!p2@{p2}}
+\index{p2@{p2}!S\+Motor@{S\+Motor}}
+\subsubsection[{p2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t S\+Motor\+::p2\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a305bd59966c6596b977c2897cf6f3ee1}
+\hypertarget{class_s_motor_a2ed385362a1d5701bb4f1a922838c986}{\index{S\+Motor@{S\+Motor}!p3@{p3}}
+\index{p3@{p3}!S\+Motor@{S\+Motor}}
+\subsubsection[{p3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t S\+Motor\+::p3\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a2ed385362a1d5701bb4f1a922838c986}
+\hypertarget{class_s_motor_a9eeaaa8a47f74a6f2972650afa76d02f}{\index{S\+Motor@{S\+Motor}!p4@{p4}}
+\index{p4@{p4}!S\+Motor@{S\+Motor}}
+\subsubsection[{p4}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t S\+Motor\+::p4\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a9eeaaa8a47f74a6f2972650afa76d02f}
+
+
+Pins where is mapped the coils of the unipolar motor. 
+
+\hypertarget{class_s_motor_a994ea15ba154ccf166cdfefebae493bd}{\index{S\+Motor@{S\+Motor}!pos@{pos}}
+\index{pos@{pos}!S\+Motor@{S\+Motor}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t S\+Motor\+::pos\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a994ea15ba154ccf166cdfefebae493bd}
+
+
+A value among 0, 1, 2, 3 if the full step control is active, otherwise the value is one among 0, 1, 2, 3, ,4 ,5 ,6 7. 
+
+\hypertarget{class_s_motor_a882d15d35626b66d6bb31a09c17b75b6}{\index{S\+Motor@{S\+Motor}!spd@{spd}}
+\index{spd@{spd}!S\+Motor@{S\+Motor}}
+\subsubsection[{spd}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t S\+Motor\+::spd\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a882d15d35626b66d6bb31a09c17b75b6}
+
+
+The delay between two steps in microseconds. 
+
+\hypertarget{class_s_motor_a894a18a9c90ea2160d5790934491f346}{\index{S\+Motor@{S\+Motor}!steps@{steps}}
+\index{steps@{steps}!S\+Motor@{S\+Motor}}
+\subsubsection[{steps}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t S\+Motor\+::steps\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_a894a18a9c90ea2160d5790934491f346}
+
+
+The number of steps until the motion ends. 
+
+\hypertarget{class_s_motor_acba02a638986e8e3e44302d824941692}{\index{S\+Motor@{S\+Motor}!tot\+\_\+steps@{tot\+\_\+steps}}
+\index{tot\+\_\+steps@{tot\+\_\+steps}!S\+Motor@{S\+Motor}}
+\subsubsection[{tot\+\_\+steps}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t S\+Motor\+::tot\+\_\+steps\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s_motor_acba02a638986e8e3e44302d824941692}
+
+
+The total steps setted by \hyperlink{class_s_motor_ae266c2af254d76012b8132bb7641628d}{forward()} and \hyperlink{class_s_motor_a9d666d613dffcc324e0ae6e1e0a31a3f}{backward()}. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

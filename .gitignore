@@ -1,3 +1,5 @@
 *.[ao]
 *~
 TODO.txt
+.DS_Store
+/Release

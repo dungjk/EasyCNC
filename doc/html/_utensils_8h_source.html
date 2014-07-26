@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,62 +84,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Utensils.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_utensils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//  Quest&#39;opera è stata rilasciata con licenza Creative Commons Attribuzione </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  - Condividi allo stesso modo 4.0 Internazionale. </span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Autor: Francesco Giurlanda</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Project: Easy CNC</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//  versione: 0.0.1</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef Utensils_h</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_utensils_8h.html#ab408b3651d52ec56131c460e1e19a2b6">   10</a></span>&#160;<span class="preprocessor">#define Utensilsl_h</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// ******************************</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// ***** PLOTTER WHIT SERVO *****</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// ******************************</span></div>
+<a href="_utensils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef Utensils_h</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_utensils_8h.html#ab408b3651d52ec56131c460e1e19a2b6">   16</a></span>&#160;<span class="preprocessor">#define Utensilsl_h</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef _PLOTTER_SERVO</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;Servo.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_utensils_8h.html#a4193cd1c8c2e6ebd0e056fa2364a663f">   25</a></span>&#160;<span class="preprocessor">#define DOWN true</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="_utensils_8h.html#a1965eaca47dbf3f87acdafc2208f04eb">   26</a></span>&#160;<span class="preprocessor">#define UP false</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_plotter_servo.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_plotter_servo.html">PlotterServo</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">boolean</span> state;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  uint8_t pin;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  Servo servo_pen;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  uint8_t down_val, up_val;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="class_plotter_servo.html#a3e1bb246a0c6b6df9f78b1a5a9343ef0">PlotterServo</a>(uint8_t p, uint8_t dv, uint8_t uv);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_plotter_servo.html#ad35c8f57eaeeffa768340a777c105aeb">init</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">boolean</span> <a class="code" href="class_plotter_servo.html#ab3d7dc74cd89c962a9cf27bdd210653f">up</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">boolean</span> <a class="code" href="class_plotter_servo.html#a06411670f5c5799ec84be0cffda3772b">down</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// ***********************</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// ******************************</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// ***** PLOTTER WHIT SERVO *****</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// ******************************</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef _PLOTTER_SERVO</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;Servo.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="_utensils_8h.html#a4193cd1c8c2e6ebd0e056fa2364a663f">   32</a></span>&#160;<span class="preprocessor">#define DOWN true  </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_utensils_8h.html#a1965eaca47dbf3f87acdafc2208f04eb">   33</a></span>&#160;<span class="preprocessor">#define UP false   </span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_plotter_servo.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_plotter_servo.html">PlotterServo</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_plotter_servo.html#a3309473d867ae37982f1ff0caba0c86b">   42</a></span>&#160;  <span class="keywordtype">boolean</span> <a class="code" href="class_plotter_servo.html#a3309473d867ae37982f1ff0caba0c86b">state</a>;              </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_plotter_servo.html#a9c40d2afb9b5ae278deb8eab8b48a489">   43</a></span>&#160;  uint8_t <a class="code" href="class_plotter_servo.html#a9c40d2afb9b5ae278deb8eab8b48a489">pin</a>;                </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_plotter_servo.html#a9ecf1d8c79d1c73c3977198bb28b55a7">   44</a></span>&#160;  Servo <a class="code" href="class_plotter_servo.html#a9ecf1d8c79d1c73c3977198bb28b55a7">servo_pen</a>;            </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_plotter_servo.html#ac5a8cf60736715222a53a774c4e077f7">   45</a></span>&#160;  uint8_t <a class="code" href="class_plotter_servo.html#ad1150ec2c679af23d0a57cef4df7ff0a">down_val</a>,           </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          <a class="code" href="class_plotter_servo.html#ac5a8cf60736715222a53a774c4e077f7">up_val</a>;             </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="class_plotter_servo.html#a3e1bb246a0c6b6df9f78b1a5a9343ef0">PlotterServo</a>(uint8_t p, uint8_t dv, uint8_t uv);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_plotter_servo.html#ad35c8f57eaeeffa768340a777c105aeb">init</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">boolean</span> <a class="code" href="class_plotter_servo.html#ab3d7dc74cd89c962a9cf27bdd210653f">up</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">boolean</span> <a class="code" href="class_plotter_servo.html#a06411670f5c5799ec84be0cffda3772b">down</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// ***********************</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_plotter_servo_html_a9c40d2afb9b5ae278deb8eab8b48a489"><div class="ttname"><a href="class_plotter_servo.html#a9c40d2afb9b5ae278deb8eab8b48a489">PlotterServo::pin</a></div><div class="ttdeci">uint8_t pin</div><div class="ttdoc">The pin where is attached the servo motor. </div><div class="ttdef"><b>Definition:</b> Utensils.h:43</div></div>
 <div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div><div class="ttdoc">The configuration file. </div></div>
-<div class="ttc" id="class_plotter_servo_html_ab3d7dc74cd89c962a9cf27bdd210653f"><div class="ttname"><a href="class_plotter_servo.html#ab3d7dc74cd89c962a9cf27bdd210653f">PlotterServo::up</a></div><div class="ttdeci">boolean up()</div><div class="ttdef"><b>Definition:</b> Utensils.cpp:24</div></div>
-<div class="ttc" id="class_plotter_servo_html_a06411670f5c5799ec84be0cffda3772b"><div class="ttname"><a href="class_plotter_servo.html#a06411670f5c5799ec84be0cffda3772b">PlotterServo::down</a></div><div class="ttdeci">boolean down()</div><div class="ttdef"><b>Definition:</b> Utensils.cpp:34</div></div>
-<div class="ttc" id="class_plotter_servo_html_a3e1bb246a0c6b6df9f78b1a5a9343ef0"><div class="ttname"><a href="class_plotter_servo.html#a3e1bb246a0c6b6df9f78b1a5a9343ef0">PlotterServo::PlotterServo</a></div><div class="ttdeci">PlotterServo(uint8_t p, uint8_t dv, uint8_t uv)</div><div class="ttdef"><b>Definition:</b> Utensils.cpp:16</div></div>
-<div class="ttc" id="class_plotter_servo_html"><div class="ttname"><a href="class_plotter_servo.html">PlotterServo</a></div><div class="ttdef"><b>Definition:</b> Utensils.h:28</div></div>
-<div class="ttc" id="class_plotter_servo_html_ad35c8f57eaeeffa768340a777c105aeb"><div class="ttname"><a href="class_plotter_servo.html#ad35c8f57eaeeffa768340a777c105aeb">PlotterServo::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> Utensils.cpp:18</div></div>
+<div class="ttc" id="class_plotter_servo_html_a9ecf1d8c79d1c73c3977198bb28b55a7"><div class="ttname"><a href="class_plotter_servo.html#a9ecf1d8c79d1c73c3977198bb28b55a7">PlotterServo::servo_pen</a></div><div class="ttdeci">Servo servo_pen</div><div class="ttdoc">The object which control the servo motor. </div><div class="ttdef"><b>Definition:</b> Utensils.h:44</div></div>
+<div class="ttc" id="class_plotter_servo_html_ab3d7dc74cd89c962a9cf27bdd210653f"><div class="ttname"><a href="class_plotter_servo.html#ab3d7dc74cd89c962a9cf27bdd210653f">PlotterServo::up</a></div><div class="ttdeci">boolean up()</div><div class="ttdoc">It moves the head up. </div><div class="ttdef"><b>Definition:</b> Utensils.cpp:24</div></div>
+<div class="ttc" id="class_plotter_servo_html_a06411670f5c5799ec84be0cffda3772b"><div class="ttname"><a href="class_plotter_servo.html#a06411670f5c5799ec84be0cffda3772b">PlotterServo::down</a></div><div class="ttdeci">boolean down()</div><div class="ttdoc">It moves the head down. </div><div class="ttdef"><b>Definition:</b> Utensils.cpp:34</div></div>
+<div class="ttc" id="class_plotter_servo_html_a3e1bb246a0c6b6df9f78b1a5a9343ef0"><div class="ttname"><a href="class_plotter_servo.html#a3e1bb246a0c6b6df9f78b1a5a9343ef0">PlotterServo::PlotterServo</a></div><div class="ttdeci">PlotterServo(uint8_t p, uint8_t dv, uint8_t uv)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> Utensils.cpp:16</div></div>
+<div class="ttc" id="class_plotter_servo_html_ad1150ec2c679af23d0a57cef4df7ff0a"><div class="ttname"><a href="class_plotter_servo.html#ad1150ec2c679af23d0a57cef4df7ff0a">PlotterServo::down_val</a></div><div class="ttdeci">uint8_t down_val</div><div class="ttdoc">The position of the servo for the plotter head down (deg) </div><div class="ttdef"><b>Definition:</b> Utensils.h:45</div></div>
+<div class="ttc" id="class_plotter_servo_html_ac5a8cf60736715222a53a774c4e077f7"><div class="ttname"><a href="class_plotter_servo.html#ac5a8cf60736715222a53a774c4e077f7">PlotterServo::up_val</a></div><div class="ttdeci">uint8_t up_val</div><div class="ttdoc">The position of the servo for the plotter head up (deg) </div><div class="ttdef"><b>Definition:</b> Utensils.h:45</div></div>
+<div class="ttc" id="class_plotter_servo_html"><div class="ttname"><a href="class_plotter_servo.html">PlotterServo</a></div><div class="ttdoc">Class to control a plotter head. </div><div class="ttdef"><b>Definition:</b> Utensils.h:41</div></div>
+<div class="ttc" id="class_plotter_servo_html_a3309473d867ae37982f1ff0caba0c86b"><div class="ttname"><a href="class_plotter_servo.html#a3309473d867ae37982f1ff0caba0c86b">PlotterServo::state</a></div><div class="ttdeci">boolean state</div><div class="ttdoc">The state of the plotter head. </div><div class="ttdef"><b>Definition:</b> Utensils.h:42</div></div>
+<div class="ttc" id="class_plotter_servo_html_ad35c8f57eaeeffa768340a777c105aeb"><div class="ttname"><a href="class_plotter_servo.html#ad35c8f57eaeeffa768340a777c105aeb">PlotterServo::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initialize the object. It must be call into the setup(). </div><div class="ttdef"><b>Definition:</b> Utensils.cpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 16 2014 01:51:09 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

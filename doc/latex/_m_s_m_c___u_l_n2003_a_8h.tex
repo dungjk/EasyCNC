@@ -1,0 +1,58 @@
+\hypertarget{_m_s_m_c___u_l_n2003_a_8h}{\section{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h File Reference}
+\label{_m_s_m_c___u_l_n2003_a_8h}\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h}}
+}
+
+
+Multi Stepper Motor Control with U\+L\+N2003\+A.  
+
+
+{\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}M\+S\+M\+C.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_m_s_m_c___u_l_n2003_a}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}
+\begin{DoxyCompactList}\small\item\em Multi Stepper Motor Control with U\+L\+N2003\+A. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_m_s_m_c___u_l_n2003_a_8h_a65ffcc85557e6fc00e865d67e20f720e}{F\+U\+L\+L\+\_\+\+S\+T\+E\+P}~1
+\item 
+\#define \hyperlink{_m_s_m_c___u_l_n2003_a_8h_af078dda416ad0114e9c81a6c36c0801f}{H\+A\+L\+F\+\_\+\+S\+T\+E\+P}~2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Multi Stepper Motor Control with U\+L\+N2003\+A. 
+
+The class allows the contemporary control of multi stepper motors using the I\+Cs U\+L\+N2003\+A. After the motor setup, you can drive the motor forward and backward, specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call in the main loop and, if the delay is expired, the function moves the motor of one step. \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2014
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione
+\begin{DoxyItemize}
+\item Condividi allo stesso modo 4.\+0 Internazionale. Per leggere una copia della licenza visita il sito web \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
+\end{DoxyItemize}
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_m_s_m_c___u_l_n2003_a_8h_a65ffcc85557e6fc00e865d67e20f720e}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h}!F\+U\+L\+L\+\_\+\+S\+T\+E\+P@{F\+U\+L\+L\+\_\+\+S\+T\+E\+P}}
+\index{F\+U\+L\+L\+\_\+\+S\+T\+E\+P@{F\+U\+L\+L\+\_\+\+S\+T\+E\+P}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h}}
+\subsubsection[{F\+U\+L\+L\+\_\+\+S\+T\+E\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+U\+L\+L\+\_\+\+S\+T\+E\+P~1}}\label{_m_s_m_c___u_l_n2003_a_8h_a65ffcc85557e6fc00e865d67e20f720e}
+Identify the full step mode, \begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_s_m_c___u_l_n2003_a_a8a7f8b7e0048b3a03c87bd830d4a455f}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::set\+Mode(uint8\+\_\+t)} 
+\end{DoxySeeAlso}
+\hypertarget{_m_s_m_c___u_l_n2003_a_8h_af078dda416ad0114e9c81a6c36c0801f}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h}!H\+A\+L\+F\+\_\+\+S\+T\+E\+P@{H\+A\+L\+F\+\_\+\+S\+T\+E\+P}}
+\index{H\+A\+L\+F\+\_\+\+S\+T\+E\+P@{H\+A\+L\+F\+\_\+\+S\+T\+E\+P}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h}}
+\subsubsection[{H\+A\+L\+F\+\_\+\+S\+T\+E\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+A\+L\+F\+\_\+\+S\+T\+E\+P~2}}\label{_m_s_m_c___u_l_n2003_a_8h_af078dda416ad0114e9c81a6c36c0801f}
+Identify the half step mode, \begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_s_m_c___u_l_n2003_a_a8a7f8b7e0048b3a03c87bd830d4a455f}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::set\+Mode(uint8\+\_\+t)} 
+\end{DoxySeeAlso}

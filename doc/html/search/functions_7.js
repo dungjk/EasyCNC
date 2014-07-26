@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lowprecision',['lowPrecision',['../class_c_n_cxy.html#ad03042cf9aca863757e9fa17e216ca5c',1,'CNCxy']]]
+  ['highprecision',['highPrecision',['../class_c_n_cxy.html#a223b08f9efc7dc01cd43d2f5ddcf579e',1,'CNCxy']]]
 ];

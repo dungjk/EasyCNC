@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,26 +89,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="class_c_n_cxy.html">CNCxy</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a00b982f5e1cdf7d14e2b812fe634381a">CNCxy</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#adf2aa57e924162dcd02728eca3ce6ad4">CNCxy</a>(float spx, float spy, float vmx, float vmy)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#ae9fd8205dff0ba54bb540d3c087f3648">actual_p</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a00b982f5e1cdf7d14e2b812fe634381a">CNCxy</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#adf2aa57e924162dcd02728eca3ce6ad4">CNCxy</a>(float spx, float spy, float vmx, float vmy)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a05e392fc9ee4a988a572d19e14b72cb6">end_p</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a223b08f9efc7dc01cd43d2f5ddcf579e">highPrecision</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a385a87e56ea216c855b4d2df37da987b">initMotorX</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#ab580bbe83bb4af2e9cfceb7409804a5f">initMotorY</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#ad03042cf9aca863757e9fa17e216ca5c">lowPrecision</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#aeb30f9045a768b51b12521d032410631">moveTo</a>(float px, float py)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a50739c5a639e2df4490725cb4893fe0d">moveTo</a>(const PositionXY &amp;np)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a82c1a00846aa58fd6418f5b2ee0461bf">mx</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#ab8a50121a78a388da72fb7afa7976ab6">my</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#aeb098f15e8a8b543000d9ef37e9feef9">old_p</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#ab1530ea424cc465cecb4c01319a550c5">pin_ls_x_down</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#aa54d319ebcd5aae9ff29dde28c6861ba">pin_ls_x_up</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#aef36e34352e9bc09b73f2de9e79fc2d8">pin_ls_y_down</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a95ad093d8baf86a612deba248f1e1226">pin_ls_y_up</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a045b5a37ac46c097865761673da78784">pos_type</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a2a0b5a7d65b3391a8e7e372aea2f670b">resetPos</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#abe9aebdad9261020e38f2b0490fa5221">searchHomePos</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a61a22cacc98260960d4a4baf07fc9fb0">setAbsolPos</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a8ce21ffa89d36b44eec760eadecf78d9">setIncrPos</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a32366595a9f719290e51bced4c50aef5">setLimitSwitchX</a>(int8_t dw, int8_t up=-1)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a0cb32c93e873b72091d8fadd8d6f00ca">setLimitSwitchY</a>(int8_t dw, int8_t up=-1)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a142e650698bd84530db0dc5c35a73df1">setMotorX</a>(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a9363dc5278db1600ddae0615b3a4b977">setMotorY</a>(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a3707e01e2d9c655ceb51e6cb92f07bc4">spmmx</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a3bdb499bf61a7b3de964626d54e842e5">spmmy</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a1a20b3274b2cfcf28643ee50448d0406">stopMotion</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#ab30c0d98fe52c61abd63e1abb2ae1b69">update</a>()</td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_n_cxy.html#a35226c5b9864068017c23c0d587baf6c">v_max_x</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_n_cxy.html#a90f4339997565bd4e336fbfe48496c92">v_max_y</a></td><td class="entry"><a class="el" href="class_c_n_cxy.html">CNCxy</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 16 2014 01:51:09 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

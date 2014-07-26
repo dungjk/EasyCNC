@@ -1,4 +1,4 @@
-//  Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione 
+//  Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
 //  - Condividi allo stesso modo 4.0 Internazionale. 
 //  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
 //
@@ -9,15 +9,24 @@
 
 #include "CNCxy.h"
 
-CNCxy::CNCxy(): mx(), my(), old_p(), end_p(), actual_p(), spmmx(0.0), spmmy(0.0), v_max_x(0.0), v_max_y(0.0), pin_ls_x_down(-1), pin_ls_y_down(-1), pin_ls_x_up(-1), pin_ls_y_up(-1) {}
-CNCxy::CNCxy(float spx, float spy, float vmx, float vmy) : mx(), my(), old_p(), end_p(), actual_p(), spmmx(spx), spmmy(spy), v_max_x(vmx), v_max_y(vmy), pin_ls_x_down(-1), pin_ls_y_down(-1), pin_ls_x_up(-1), pin_ls_y_up(-1) {}
-  
-void CNCxy::setMotorX(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4){
-  mx.setPins(pin1, pin2, pin3, pin4);
+CNCxy::CNCxy(): mx(), my(), old_p(), end_p(), actual_p(), spmmx(0.0), spmmy(0.0), v_max_x(0.0), v_max_y(0.0), pos_type(false), pin_ls_x_down(-1), pin_ls_y_down(-1), pin_ls_x_up(-1), pin_ls_y_up(-1) {}
+CNCxy::CNCxy(float spx, float spy, float vmx, float vmy) : mx(), my(), old_p(), end_p(), actual_p(), spmmx(spx), spmmy(spy), v_max_x(vmx), v_max_y(vmy), pos_type(false), pin_ls_x_down(-1), pin_ls_y_down(-1), pin_ls_x_up(-1), pin_ls_y_up(-1) {}
+
+
+void CNCxy::initMotorX(){
+#if defined(ROUTER_MX_CONTROLLER_ULN2003A)
+  mx.setPins(ROUTER_MX_COIL1_PIN, ROUTER_MX_COIL2_PIN, ROUTER_MX_COIL3_PIN, ROUTER_MX_COIL4_PIN);
+#elif defined(ROUTER_MX_CONTROLLER_A4988)
+  mx.setPins(ROUTE_MX_STEP_CONTROL_PIN, ROUTE_MX_DIRECTION_CONTROL_PIN, ROUTE_MX_ENABLE_CONTROL_PIN);
+#endif
 }
 
-void CNCxy::setMotorY(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4){
-  my.setPins(pin1, pin2, pin3, pin4);
+void CNCxy::initMotorY(){
+#if defined(ROUTER_MY_CONTROLLER_ULN2003A)
+  my.setPins(ROUTER_MY_COIL1_PIN, ROUTER_MY_COIL2_PIN, ROUTER_MY_COIL3_PIN, ROUTER_MY_COIL4_PIN);
+#elif defined(ROUTER_MY_CONTROLLER_A4988)
+  my.setPins(ROUTE_MY_STEP_CONTROL_PIN, ROUTE_MY_DIRECTION_CONTROL_PIN, ROUTE_MY_ENABLE_CONTROL_PIN);
+#endif
 }
 
 void CNCxy::resetPos() { old_p = end_p = actual_p = PositionXY(0.0, 0.0); }
@@ -36,8 +45,8 @@ void CNCxy::moveTo(float px, float py){
     dy = actual_p.distY(end_p);
   }
     
-  float steps_x = abs(dx * spmmx); // (mm * steps/mm = steps)
-  float steps_y = abs(dy * spmmy);
+  float steps_x = abs(dx * spmmx * mx.getMode()); // (mm * steps/mm * num = steps)
+  float steps_y = abs(dy * spmmy * my.getMode());
   
   float tx = steps_x / v_max_x;
   float ty = steps_y / v_max_y;
@@ -80,20 +89,30 @@ boolean CNCxy::update() {
   if(a == -1 || b == -1){
     actual_p = end_p;
   }else{
-    actual_p = old_p + PositionXY(a/spmmx, b/spmmy);
+    actual_p = old_p + PositionXY(a/(spmmx * mx.getMode()), b/(spmmy * my.getMode()));
   }
   
   return a == -1 && b == -1;
 }
 
 void CNCxy::highPrecision(){
-  mx.setHalfStep();
-  my.setHalfStep();
+#if defined(ROUTER_MX_CONTROLLER_ULN2003A)
+  mx.setMode(HALF_STEP);
+#elif defined(ROUTER_MX_CONTROLLER_A4988)
+  mx.setMode(EIGHTH_STEP);
+#endif
+
+#if defined(ROUTER_MY_CONTROLLER_ULN2003A)
+  my.setMode(HALF_STEP);
+#elif defined(ROUTER_MY_CONTROLLER_A4988)
+  my.setMode(EIGHTH_STEP);
+#endif
+
 }
 
 void CNCxy::lowPrecision(){
-  mx.setFullStep();
-  my.setFullStep();
+  mx.setMode(FULL_STEP);
+  my.setMode(FULL_STEP);
 }
 
 void CNCxy::setIncrPos(){

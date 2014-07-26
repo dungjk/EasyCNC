@@ -3,6 +3,11 @@
 }
 
 
+The class controls the motors of the xy router of the C\+N\+C.  
+
+
+
+
 {\ttfamily \#include $<$C\+N\+Cxy.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -12,9 +17,9 @@
 \item 
 \hyperlink{class_c_n_cxy_adf2aa57e924162dcd02728eca3ce6ad4}{C\+N\+Cxy} (float spx, float spy, float vmx, float vmy)
 \item 
-void \hyperlink{class_c_n_cxy_a142e650698bd84530db0dc5c35a73df1}{set\+Motor\+X} (uint8\+\_\+t pin1, uint8\+\_\+t pin2, uint8\+\_\+t pin3, uint8\+\_\+t pin4)
+void \hyperlink{class_c_n_cxy_a385a87e56ea216c855b4d2df37da987b}{init\+Motor\+X} ()
 \item 
-void \hyperlink{class_c_n_cxy_a9363dc5278db1600ddae0615b3a4b977}{set\+Motor\+Y} (uint8\+\_\+t pin1, uint8\+\_\+t pin2, uint8\+\_\+t pin3, uint8\+\_\+t pin4)
+void \hyperlink{class_c_n_cxy_ab580bbe83bb4af2e9cfceb7409804a5f}{init\+Motor\+Y} ()
 \item 
 void \hyperlink{class_c_n_cxy_a32366595a9f719290e51bced4c50aef5}{set\+Limit\+Switch\+X} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
 \item 
@@ -40,6 +45,45 @@ void \hyperlink{class_c_n_cxy_abe9aebdad9261020e38f2b0490fa5221}{search\+Home\+P
 \item 
 boolean \hyperlink{class_c_n_cxy_ab30c0d98fe52c61abd63e1abb2ae1b69}{update} ()
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_s_m_c___u_l_n2003_a}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A} \hyperlink{class_c_n_cxy_a82c1a00846aa58fd6418f5b2ee0461bf}{mx}
+\item 
+\hyperlink{class_m_s_m_c___u_l_n2003_a}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A} \hyperlink{class_c_n_cxy_ab8a50121a78a388da72fb7afa7976ab6}{my}
+\item 
+\hyperlink{class_position_x_y}{Position\+X\+Y} \hyperlink{class_c_n_cxy_aeb098f15e8a8b543000d9ef37e9feef9}{old\+\_\+p}
+\item 
+\hyperlink{class_position_x_y}{Position\+X\+Y} \hyperlink{class_c_n_cxy_a05e392fc9ee4a988a572d19e14b72cb6}{end\+\_\+p}
+\item 
+\hyperlink{class_position_x_y}{Position\+X\+Y} \hyperlink{class_c_n_cxy_ae9fd8205dff0ba54bb540d3c087f3648}{actual\+\_\+p}
+\item 
+float \hyperlink{class_c_n_cxy_a3707e01e2d9c655ceb51e6cb92f07bc4}{spmmx}
+\item 
+float \hyperlink{class_c_n_cxy_a3bdb499bf61a7b3de964626d54e842e5}{spmmy}
+\item 
+float \hyperlink{class_c_n_cxy_a35226c5b9864068017c23c0d587baf6c}{v\+\_\+max\+\_\+x}
+\item 
+float \hyperlink{class_c_n_cxy_a90f4339997565bd4e336fbfe48496c92}{v\+\_\+max\+\_\+y}
+\item 
+boolean \hyperlink{class_c_n_cxy_a045b5a37ac46c097865761673da78784}{pos\+\_\+type}
+\item 
+int8\+\_\+t \hyperlink{class_c_n_cxy_ab1530ea424cc465cecb4c01319a550c5}{pin\+\_\+ls\+\_\+x\+\_\+down}
+\item 
+int8\+\_\+t \hyperlink{class_c_n_cxy_aef36e34352e9bc09b73f2de9e79fc2d8}{pin\+\_\+ls\+\_\+y\+\_\+down}
+\item 
+int8\+\_\+t \hyperlink{class_c_n_cxy_aa54d319ebcd5aae9ff29dde28c6861ba}{pin\+\_\+ls\+\_\+x\+\_\+up}
+\item 
+int8\+\_\+t \hyperlink{class_c_n_cxy_a95ad093d8baf86a612deba248f1e1226}{pin\+\_\+ls\+\_\+y\+\_\+up}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class controls the motors of the xy router of the C\+N\+C. 
+
+T\+O\+D\+O \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -70,6 +114,20 @@ boolean \hyperlink{class_c_n_cxy_ab30c0d98fe52c61abd63e1abb2ae1b69}{update} ()
 {}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_cxy_a223b08f9efc7dc01cd43d2f5ddcf579e}
+\hypertarget{class_c_n_cxy_a385a87e56ea216c855b4d2df37da987b}{\index{C\+N\+Cxy@{C\+N\+Cxy}!init\+Motor\+X@{init\+Motor\+X}}
+\index{init\+Motor\+X@{init\+Motor\+X}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{init\+Motor\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+Cxy\+::init\+Motor\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_cxy_a385a87e56ea216c855b4d2df37da987b}
+\hypertarget{class_c_n_cxy_ab580bbe83bb4af2e9cfceb7409804a5f}{\index{C\+N\+Cxy@{C\+N\+Cxy}!init\+Motor\+Y@{init\+Motor\+Y}}
+\index{init\+Motor\+Y@{init\+Motor\+Y}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{init\+Motor\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+Cxy\+::init\+Motor\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_cxy_ab580bbe83bb4af2e9cfceb7409804a5f}
 \hypertarget{class_c_n_cxy_ad03042cf9aca863757e9fa17e216ca5c}{\index{C\+N\+Cxy@{C\+N\+Cxy}!low\+Precision@{low\+Precision}}
 \index{low\+Precision@{low\+Precision}!C\+N\+Cxy@{C\+N\+Cxy}}
 \subsubsection[{low\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+Cxy\+::low\+Precision (
@@ -136,26 +194,6 @@ boolean \hyperlink{class_c_n_cxy_ab30c0d98fe52c61abd63e1abb2ae1b69}{update} ()
 \item[{int8\+\_\+t}]{up = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_cxy_a0cb32c93e873b72091d8fadd8d6f00ca}
-\hypertarget{class_c_n_cxy_a142e650698bd84530db0dc5c35a73df1}{\index{C\+N\+Cxy@{C\+N\+Cxy}!set\+Motor\+X@{set\+Motor\+X}}
-\index{set\+Motor\+X@{set\+Motor\+X}!C\+N\+Cxy@{C\+N\+Cxy}}
-\subsubsection[{set\+Motor\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+Cxy\+::set\+Motor\+X (
-\begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{pin1, }
-\item[{uint8\+\_\+t}]{pin2, }
-\item[{uint8\+\_\+t}]{pin3, }
-\item[{uint8\+\_\+t}]{pin4}
-\end{DoxyParamCaption}
-)}}\label{class_c_n_cxy_a142e650698bd84530db0dc5c35a73df1}
-\hypertarget{class_c_n_cxy_a9363dc5278db1600ddae0615b3a4b977}{\index{C\+N\+Cxy@{C\+N\+Cxy}!set\+Motor\+Y@{set\+Motor\+Y}}
-\index{set\+Motor\+Y@{set\+Motor\+Y}!C\+N\+Cxy@{C\+N\+Cxy}}
-\subsubsection[{set\+Motor\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+Cxy\+::set\+Motor\+Y (
-\begin{DoxyParamCaption}
-\item[{uint8\+\_\+t}]{pin1, }
-\item[{uint8\+\_\+t}]{pin2, }
-\item[{uint8\+\_\+t}]{pin3, }
-\item[{uint8\+\_\+t}]{pin4}
-\end{DoxyParamCaption}
-)}}\label{class_c_n_cxy_a9363dc5278db1600ddae0615b3a4b977}
 \hypertarget{class_c_n_cxy_a1a20b3274b2cfcf28643ee50448d0406}{\index{C\+N\+Cxy@{C\+N\+Cxy}!stop\+Motion@{stop\+Motion}}
 \index{stop\+Motion@{stop\+Motion}!C\+N\+Cxy@{C\+N\+Cxy}}
 \subsubsection[{stop\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+Cxy\+::stop\+Motion (
@@ -170,6 +208,51 @@ boolean \hyperlink{class_c_n_cxy_ab30c0d98fe52c61abd63e1abb2ae1b69}{update} ()
 {}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_cxy_ab30c0d98fe52c61abd63e1abb2ae1b69}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_n_cxy_ae9fd8205dff0ba54bb540d3c087f3648}{\index{C\+N\+Cxy@{C\+N\+Cxy}!actual\+\_\+p@{actual\+\_\+p}}
+\index{actual\+\_\+p@{actual\+\_\+p}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{actual\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y} C\+N\+Cxy\+::actual\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_ae9fd8205dff0ba54bb540d3c087f3648}
+\hypertarget{class_c_n_cxy_a05e392fc9ee4a988a572d19e14b72cb6}{\index{C\+N\+Cxy@{C\+N\+Cxy}!end\+\_\+p@{end\+\_\+p}}
+\index{end\+\_\+p@{end\+\_\+p}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{end\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y} C\+N\+Cxy\+::end\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a05e392fc9ee4a988a572d19e14b72cb6}
+\hypertarget{class_c_n_cxy_a82c1a00846aa58fd6418f5b2ee0461bf}{\index{C\+N\+Cxy@{C\+N\+Cxy}!mx@{mx}}
+\index{mx@{mx}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{mx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A} C\+N\+Cxy\+::mx\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a82c1a00846aa58fd6418f5b2ee0461bf}
+\hypertarget{class_c_n_cxy_ab8a50121a78a388da72fb7afa7976ab6}{\index{C\+N\+Cxy@{C\+N\+Cxy}!my@{my}}
+\index{my@{my}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{my}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A} C\+N\+Cxy\+::my\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_ab8a50121a78a388da72fb7afa7976ab6}
+\hypertarget{class_c_n_cxy_aeb098f15e8a8b543000d9ef37e9feef9}{\index{C\+N\+Cxy@{C\+N\+Cxy}!old\+\_\+p@{old\+\_\+p}}
+\index{old\+\_\+p@{old\+\_\+p}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{old\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y} C\+N\+Cxy\+::old\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_aeb098f15e8a8b543000d9ef37e9feef9}
+\hypertarget{class_c_n_cxy_ab1530ea424cc465cecb4c01319a550c5}{\index{C\+N\+Cxy@{C\+N\+Cxy}!pin\+\_\+ls\+\_\+x\+\_\+down@{pin\+\_\+ls\+\_\+x\+\_\+down}}
+\index{pin\+\_\+ls\+\_\+x\+\_\+down@{pin\+\_\+ls\+\_\+x\+\_\+down}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{pin\+\_\+ls\+\_\+x\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+Cxy\+::pin\+\_\+ls\+\_\+x\+\_\+down\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_ab1530ea424cc465cecb4c01319a550c5}
+\hypertarget{class_c_n_cxy_aa54d319ebcd5aae9ff29dde28c6861ba}{\index{C\+N\+Cxy@{C\+N\+Cxy}!pin\+\_\+ls\+\_\+x\+\_\+up@{pin\+\_\+ls\+\_\+x\+\_\+up}}
+\index{pin\+\_\+ls\+\_\+x\+\_\+up@{pin\+\_\+ls\+\_\+x\+\_\+up}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{pin\+\_\+ls\+\_\+x\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+Cxy\+::pin\+\_\+ls\+\_\+x\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_aa54d319ebcd5aae9ff29dde28c6861ba}
+\hypertarget{class_c_n_cxy_aef36e34352e9bc09b73f2de9e79fc2d8}{\index{C\+N\+Cxy@{C\+N\+Cxy}!pin\+\_\+ls\+\_\+y\+\_\+down@{pin\+\_\+ls\+\_\+y\+\_\+down}}
+\index{pin\+\_\+ls\+\_\+y\+\_\+down@{pin\+\_\+ls\+\_\+y\+\_\+down}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{pin\+\_\+ls\+\_\+y\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+Cxy\+::pin\+\_\+ls\+\_\+y\+\_\+down\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_aef36e34352e9bc09b73f2de9e79fc2d8}
+\hypertarget{class_c_n_cxy_a95ad093d8baf86a612deba248f1e1226}{\index{C\+N\+Cxy@{C\+N\+Cxy}!pin\+\_\+ls\+\_\+y\+\_\+up@{pin\+\_\+ls\+\_\+y\+\_\+up}}
+\index{pin\+\_\+ls\+\_\+y\+\_\+up@{pin\+\_\+ls\+\_\+y\+\_\+up}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{pin\+\_\+ls\+\_\+y\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+Cxy\+::pin\+\_\+ls\+\_\+y\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a95ad093d8baf86a612deba248f1e1226}
+\hypertarget{class_c_n_cxy_a045b5a37ac46c097865761673da78784}{\index{C\+N\+Cxy@{C\+N\+Cxy}!pos\+\_\+type@{pos\+\_\+type}}
+\index{pos\+\_\+type@{pos\+\_\+type}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{pos\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}boolean C\+N\+Cxy\+::pos\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a045b5a37ac46c097865761673da78784}
+\hypertarget{class_c_n_cxy_a3707e01e2d9c655ceb51e6cb92f07bc4}{\index{C\+N\+Cxy@{C\+N\+Cxy}!spmmx@{spmmx}}
+\index{spmmx@{spmmx}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{spmmx}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+Cxy\+::spmmx\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a3707e01e2d9c655ceb51e6cb92f07bc4}
+\hypertarget{class_c_n_cxy_a3bdb499bf61a7b3de964626d54e842e5}{\index{C\+N\+Cxy@{C\+N\+Cxy}!spmmy@{spmmy}}
+\index{spmmy@{spmmy}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{spmmy}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+Cxy\+::spmmy\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a3bdb499bf61a7b3de964626d54e842e5}
+\hypertarget{class_c_n_cxy_a35226c5b9864068017c23c0d587baf6c}{\index{C\+N\+Cxy@{C\+N\+Cxy}!v\+\_\+max\+\_\+x@{v\+\_\+max\+\_\+x}}
+\index{v\+\_\+max\+\_\+x@{v\+\_\+max\+\_\+x}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{v\+\_\+max\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+Cxy\+::v\+\_\+max\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a35226c5b9864068017c23c0d587baf6c}
+\hypertarget{class_c_n_cxy_a90f4339997565bd4e336fbfe48496c92}{\index{C\+N\+Cxy@{C\+N\+Cxy}!v\+\_\+max\+\_\+y@{v\+\_\+max\+\_\+y}}
+\index{v\+\_\+max\+\_\+y@{v\+\_\+max\+\_\+y}!C\+N\+Cxy@{C\+N\+Cxy}}
+\subsubsection[{v\+\_\+max\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+Cxy\+::v\+\_\+max\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_cxy_a90f4339997565bd4e336fbfe48496c92}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

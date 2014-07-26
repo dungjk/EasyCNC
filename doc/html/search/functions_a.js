@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['plotterservo',['PlotterServo',['../class_plotter_servo.html#a3e1bb246a0c6b6df9f78b1a5a9343ef0',1,'PlotterServo']]],
-  ['positionxy',['PositionXY',['../class_position_x_y.html#a72c2bce8c3524d13a446e5f7bd00176b',1,'PositionXY::PositionXY()'],['../class_position_x_y.html#aa45af7bc859ed16de19470c46e476456',1,'PositionXY::PositionXY(float px, float py)'],['../class_position_x_y.html#a3f71105e1c27ad675a24062942866fd4',1,'PositionXY::PositionXY(const PositionXY &amp;p)']]],
-  ['print',['print',['../class_s_motor.html#a70f9d62a3979a923b1e7c90deae30853',1,'SMotor']]]
+  ['moveto',['moveTo',['../class_c_n_cxy.html#aeb30f9045a768b51b12521d032410631',1,'CNCxy::moveTo(float px, float py)'],['../class_c_n_cxy.html#a50739c5a639e2df4490725cb4893fe0d',1,'CNCxy::moveTo(const PositionXY &amp;np)']]],
+  ['msmc_5fa4988',['MSMC_A4988',['../class_m_s_m_c___a4988.html#a3ea9fb71304c6a21695947fde680ee48',1,'MSMC_A4988::MSMC_A4988()'],['../class_m_s_m_c___a4988.html#af2633e82e29d622a4fb5b5f8f6b77446',1,'MSMC_A4988::MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen)']]],
+  ['msmc_5fuln2003a',['MSMC_ULN2003A',['../class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a',1,'MSMC_ULN2003A::MSMC_ULN2003A()'],['../class_m_s_m_c___u_l_n2003_a.html#ae653d15c96f4e8ddfb4476cc77495ad1',1,'MSMC_ULN2003A::MSMC_ULN2003A(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)']]]
 ];

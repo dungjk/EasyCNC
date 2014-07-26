@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['router_5flimit_5fx',['ROUTER_LIMIT_X',['../config_8h.html#a59986bb7656ebf4e9f2865d0f41a3a61',1,'config.h']]],
+  ['router_5flimit_5fy',['ROUTER_LIMIT_Y',['../config_8h.html#abaa12423c2b641abd816339a240ab836',1,'config.h']]],
+  ['router_5fmx_5fcoil1_5fpin',['ROUTER_MX_COIL1_PIN',['../config_8h.html#a3e84564c9d567d528b0a94f10e4bfa88',1,'config.h']]],
+  ['router_5fmx_5fcoil2_5fpin',['ROUTER_MX_COIL2_PIN',['../config_8h.html#a677e73bb26960e54a94e24b13434805b',1,'config.h']]],
+  ['router_5fmx_5fcoil3_5fpin',['ROUTER_MX_COIL3_PIN',['../config_8h.html#a3e5ca863f6c653c283df7f1c9b948a1e',1,'config.h']]],
+  ['router_5fmx_5fcoil4_5fpin',['ROUTER_MX_COIL4_PIN',['../config_8h.html#a34b54395d5587bfd1a363fad8236b327',1,'config.h']]],
+  ['router_5fmx_5fcontroller_5fuln2003a',['ROUTER_MX_CONTROLLER_ULN2003A',['../config_8h.html#a4da93b1d161a9d99520010bf7b951315',1,'config.h']]],
+  ['router_5fmx_5fspeed',['ROUTER_MX_SPEED',['../config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad',1,'config.h']]],
+  ['router_5fmx_5fsteps_5fper_5fround',['ROUTER_MX_STEPS_PER_ROUND',['../config_8h.html#af30c7b107d77d612fa88c573d252c2c2',1,'config.h']]],
+  ['router_5fmy_5fcoil1_5fpin',['ROUTER_MY_COIL1_PIN',['../config_8h.html#a069e95df94bc428b5d6855cfe2b246ea',1,'config.h']]],
+  ['router_5fmy_5fcoil2_5fpin',['ROUTER_MY_COIL2_PIN',['../config_8h.html#afe054be9d67aa1c532ed141390c13c2e',1,'config.h']]],
+  ['router_5fmy_5fcoil3_5fpin',['ROUTER_MY_COIL3_PIN',['../config_8h.html#abdd117db6652e66cebd82b6b797056c5',1,'config.h']]],
+  ['router_5fmy_5fcoil4_5fpin',['ROUTER_MY_COIL4_PIN',['../config_8h.html#ad43a37ee05d01f824b40b8d6f64d1f0b',1,'config.h']]],
+  ['router_5fmy_5fcontroller_5fuln2003a',['ROUTER_MY_CONTROLLER_ULN2003A',['../config_8h.html#ac76bb852543867b5e53e6735bde92c71',1,'config.h']]],
+  ['router_5fmy_5fspeed',['ROUTER_MY_SPEED',['../config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee',1,'config.h']]],
+  ['router_5fmy_5fsteps_5fper_5fround',['ROUTER_MY_STEPS_PER_ROUND',['../config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f',1,'config.h']]]
+];

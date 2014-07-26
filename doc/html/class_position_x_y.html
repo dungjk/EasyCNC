@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,13 +84,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_position_x_y-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">PositionXY Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class to manage cartesian position.  
+<p>Class to manage Cartesian positions.  
  <a href="class_position_x_y.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_position_8h_source.html">Position.h</a>&gt;</code></p>
@@ -97,34 +99,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a72c2bce8c3524d13a446e5f7bd00176b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a72c2bce8c3524d13a446e5f7bd00176b">PositionXY</a> ()</td></tr>
+<tr class="memdesc:a72c2bce8c3524d13a446e5f7bd00176b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a72c2bce8c3524d13a446e5f7bd00176b">More...</a><br /></td></tr>
 <tr class="separator:a72c2bce8c3524d13a446e5f7bd00176b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa45af7bc859ed16de19470c46e476456"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#aa45af7bc859ed16de19470c46e476456">PositionXY</a> (float px, float py)</td></tr>
+<tr class="memdesc:aa45af7bc859ed16de19470c46e476456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aa45af7bc859ed16de19470c46e476456">More...</a><br /></td></tr>
 <tr class="separator:aa45af7bc859ed16de19470c46e476456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f71105e1c27ad675a24062942866fd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a3f71105e1c27ad675a24062942866fd4">PositionXY</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;p)</td></tr>
+<tr class="memdesc:a3f71105e1c27ad675a24062942866fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a3f71105e1c27ad675a24062942866fd4">More...</a><br /></td></tr>
 <tr class="separator:a3f71105e1c27ad675a24062942866fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02c862d5e5a643a6d774b1876a30cc5e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a02c862d5e5a643a6d774b1876a30cc5e">X</a> () const </td></tr>
+<tr class="memdesc:a02c862d5e5a643a6d774b1876a30cc5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the x-axis value.  <a href="#a02c862d5e5a643a6d774b1876a30cc5e">More...</a><br /></td></tr>
 <tr class="separator:a02c862d5e5a643a6d774b1876a30cc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecca3ffac58837cd223add02a6145496"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y.html">PositionXY</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#aecca3ffac58837cd223add02a6145496">X</a> (float px)</td></tr>
+<tr class="memdesc:aecca3ffac58837cd223add02a6145496"><td class="mdescLeft">&#160;</td><td class="mdescRight">It configures the x-axis value.  <a href="#aecca3ffac58837cd223add02a6145496">More...</a><br /></td></tr>
 <tr class="separator:aecca3ffac58837cd223add02a6145496"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6bceb45b13566b4a312d5d7aad2ec77"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#aa6bceb45b13566b4a312d5d7aad2ec77">Y</a> () const </td></tr>
+<tr class="memdesc:aa6bceb45b13566b4a312d5d7aad2ec77"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the y-axis value.  <a href="#aa6bceb45b13566b4a312d5d7aad2ec77">More...</a><br /></td></tr>
 <tr class="separator:aa6bceb45b13566b4a312d5d7aad2ec77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bb12f86083750580799fcf0535518e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y.html">PositionXY</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a7bb12f86083750580799fcf0535518e9">Y</a> (float py)</td></tr>
+<tr class="memdesc:a7bb12f86083750580799fcf0535518e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">It configures the y-axis value.  <a href="#a7bb12f86083750580799fcf0535518e9">More...</a><br /></td></tr>
 <tr class="separator:a7bb12f86083750580799fcf0535518e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e68cceafbc6d1a9d2956e64efbca1bf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a2e68cceafbc6d1a9d2956e64efbca1bf">dist</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;p)</td></tr>
+<tr class="memdesc:a2e68cceafbc6d1a9d2956e64efbca1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the distance between two positions.  <a href="#a2e68cceafbc6d1a9d2956e64efbca1bf">More...</a><br /></td></tr>
 <tr class="separator:a2e68cceafbc6d1a9d2956e64efbca1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a781dce14528b62570fc4eed6318bab52"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a781dce14528b62570fc4eed6318bab52">distX</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;p)</td></tr>
+<tr class="memdesc:a781dce14528b62570fc4eed6318bab52"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the x-axis distance between two positions.  <a href="#a781dce14528b62570fc4eed6318bab52">More...</a><br /></td></tr>
 <tr class="separator:a781dce14528b62570fc4eed6318bab52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a099d374de2c2547108cbeba0cd6f89e2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a099d374de2c2547108cbeba0cd6f89e2">distY</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;p)</td></tr>
+<tr class="memdesc:a099d374de2c2547108cbeba0cd6f89e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the y-axis distance between two positions.  <a href="#a099d374de2c2547108cbeba0cd6f89e2">More...</a><br /></td></tr>
 <tr class="separator:a099d374de2c2547108cbeba0cd6f89e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3a2559edfce2a9c6eb4ddc6ce456776"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#ab3a2559edfce2a9c6eb4ddc6ce456776">angle</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;p)</td></tr>
+<tr class="memdesc:ab3a2559edfce2a9c6eb4ddc6ce456776"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the angle between the line crossing the two point end the x-axis.  <a href="#ab3a2559edfce2a9c6eb4ddc6ce456776">More...</a><br /></td></tr>
 <tr class="separator:ab3a2559edfce2a9c6eb4ddc6ce456776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8488dcd6f61a8019e6f3c6d147cf35c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y.html">PositionXY</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a8488dcd6f61a8019e6f3c6d147cf35c5">operator+</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;p) const </td></tr>
+<tr class="memdesc:a8488dcd6f61a8019e6f3c6d147cf35c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns a position where each axis value is the sum of the values of the two positions.  <a href="#a8488dcd6f61a8019e6f3c6d147cf35c5">More...</a><br /></td></tr>
 <tr class="separator:a8488dcd6f61a8019e6f3c6d147cf35c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c55c597bad99a80965b24781509e3fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y.html">PositionXY</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a3c55c597bad99a80965b24781509e3fd">operator+=</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;p)</td></tr>
+<tr class="memdesc:a3c55c597bad99a80965b24781509e3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">It adds to the current position the specified position.  <a href="#a3c55c597bad99a80965b24781509e3fd">More...</a><br /></td></tr>
 <tr class="separator:a3c55c597bad99a80965b24781509e3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a99d0a24e481bb0615157a08c1360dcec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a99d0a24e481bb0615157a08c1360dcec">x</a></td></tr>
+<tr class="separator:a99d0a24e481bb0615157a08c1360dcec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16068e19060b1b47cee29398f2b26249"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_position_x_y.html#a16068e19060b1b47cee29398f2b26249">y</a></td></tr>
+<tr class="separator:a16068e19060b1b47cee29398f2b26249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class to manage cartesian position. </p>
+<div class="textblock"><p>Class to manage Cartesian positions. </p>
+<p>The class provides the basic operations between points of two coordinates. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a72c2bce8c3524d13a446e5f7bd00176b"></a>
 <div class="memitem">
@@ -138,6 +161,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor. </p>
 
 </div>
 </div>
@@ -165,6 +190,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor. </p>
+
 </div>
 </div>
 <a class="anchor" id="a3f71105e1c27ad675a24062942866fd4"></a>
@@ -180,6 +207,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Copy constructor. </p>
 
 </div>
 </div>
@@ -206,6 +235,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>It returns the angle between the line crossing the two point end the x-axis. </p>
+<p>The angle is computed with the formula <img class="formulaInl" alt="$atan2(y_2 - y_1,x_2 - x_1)$" src="form_5.png"/>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The reference to the next position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle between the line crossing the two point end the x-axis. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a2e68cceafbc6d1a9d2956e64efbca1bf"></a>
@@ -230,6 +268,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>It returns the distance between two positions. </p>
+<p>The distance between <img class="formulaInl" alt="$(x_1,y_1)$" src="form_0.png"/> and <img class="formulaInl" alt="$(x_2,y_2)$" src="form_1.png"/> is computed according the formula <img class="formulaInl" alt="$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$" src="form_2.png"/>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The reference to the next position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance value. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a781dce14528b62570fc4eed6318bab52"></a>
@@ -245,6 +292,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It returns the x-axis distance between two positions. </p>
+<p>The x-axis distance between <img class="formulaInl" alt="$(x_1,y_1)$" src="form_0.png"/> and <img class="formulaInl" alt="$(x_2,y_2)$" src="form_1.png"/> is computed according the formula <img class="formulaInl" alt="$(x_2-x_1)$" src="form_3.png"/>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The reference to the next position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The x-axis distance value. </dd></dl>
 
 </div>
 </div>
@@ -262,6 +318,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It returns the y-axis distance between two positions. </p>
+<p>The y-axis distance between <img class="formulaInl" alt="$(x_1,y_1)$" src="form_0.png"/> and <img class="formulaInl" alt="$(x_2,y_2)$" src="form_1.png"/> is computed according the formula <img class="formulaInl" alt="$(y_2-y_1)$" src="form_4.png"/>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The reference to the next position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The y-axis distance value. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a8488dcd6f61a8019e6f3c6d147cf35c5"></a>
@@ -278,6 +343,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It returns a position where each axis value is the sum of the values of the two positions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The reference to the added position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The position which is the sum of two positions </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a3c55c597bad99a80965b24781509e3fd"></a>
@@ -293,6 +367,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It adds to the current position the specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The position to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the reference to this object. </dd></dl>
 
 </div>
 </div>
@@ -317,6 +400,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>It returns the x-axis value. </p>
+<dl class="section return"><dt>Returns</dt><dd>X-axis value. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="aecca3ffac58837cd223add02a6145496"></a>
@@ -332,6 +418,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It configures the x-axis value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">px</td><td>The x-axis value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference to this object. </dd></dl>
 
 </div>
 </div>
@@ -356,6 +451,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>It returns the y-axis value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Y-axis value. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a7bb12f86083750580799fcf0535518e9"></a>
@@ -372,6 +470,56 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It configures the y-axis value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">py</td><td>The y-axis value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reference to this object. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a99d0a24e481bb0615157a08c1360dcec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PositionXY::x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a16068e19060b1b47cee29398f2b26249"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PositionXY::y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -381,7 +529,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 16 2014 01:51:09 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
