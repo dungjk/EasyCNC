@@ -9,13 +9,19 @@ void setup() {
 	mycnc.resetPos();
 	mycnc.highPrecision();
 	mycnc.setAbsolPos();
-	mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
-	mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
+	mycnc.setLimitSwitchX(ROUTER_DOWN_LIMIT_SWITCH_X);
+	mycnc.setLimitSwitchY(ROUTER_DOWN_LIMIT_SWITCH_Y);
+
+	mill.init();
+	mill.resetPos();
+	mill.highPrecision();
+	mill.setAbsolPos();
+	mill.setLimitSwitch(_MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z);
 
 	attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
-	digitalWrite(2, HIGH);
+	digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
 
-	mypen.init();
+	//mypen.init();
 
 	Serial.begin(9600);
 }
@@ -23,7 +29,9 @@ void setup() {
 // The loop function is called in an endless loop
 void loop() {
 //Add your repeated code here
-	if( mycnc.update()){
+	a = mycnc.update();
+	b = mill.update();
+	if( a && b){
 
 	    if(end_task){
 	      Serial.print('a');
@@ -33,18 +41,20 @@ void loop() {
 	    if(Serial.available() > 0){
 	      switch( Serial.parseInt() ) {
 	        case 0:
-	           mypen.up();
+	           //mypen.up();
 	           processPos();
 	           break;
 	        case 1:
-	           mypen.down();
+	           //mypen.down();
 	           processPos();
 	           break;
 	        case 2:
 	           mycnc.resetPos();
+	           mill.resetPos();
 	           break;
 	        case 3:
 	           mycnc.searchHomePos();
+	           mill.searchZeroPos();
 	      }
 
 	      end_task = true;

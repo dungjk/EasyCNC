@@ -89,7 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>The configuration file.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &quot;pins_arduino.h&quot;</code><br />
+</div>
 <p><a href="config_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -97,67 +98,73 @@ Macros</h2></td></tr>
 <tr class="memitem:a58562c1eea53acf4d89ae2e8ed79e7ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a58562c1eea53acf4d89ae2e8ed79e7ac">SERIAL_BOUND</a>&#160;&#160;&#160;9600</td></tr>
 <tr class="memdesc:a58562c1eea53acf4d89ae2e8ed79e7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the speed of the serial comunication.  <a href="#a58562c1eea53acf4d89ae2e8ed79e7ac">More...</a><br /></td></tr>
 <tr class="separator:a58562c1eea53acf4d89ae2e8ed79e7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11cc693021583511d43ba72c445120ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a11cc693021583511d43ba72c445120ea">INTERRUPT_STOP_MOTION</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a11cc693021583511d43ba72c445120ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a11cc693021583511d43ba72c445120ea">INTERRUPT_STOP_MOTION</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memdesc:a11cc693021583511d43ba72c445120ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the number of the interrupt which is attached the stop button.  <a href="#a11cc693021583511d43ba72c445120ea">More...</a><br /></td></tr>
 <tr class="separator:a11cc693021583511d43ba72c445120ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af30c7b107d77d612fa88c573d252c2c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#af30c7b107d77d612fa88c573d252c2c2">ROUTER_MX_STEPS_PER_ROUND</a>&#160;&#160;&#160;48*2</td></tr>
+<tr class="memitem:af30c7b107d77d612fa88c573d252c2c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#af30c7b107d77d612fa88c573d252c2c2">ROUTER_MX_STEPS_PER_ROUND</a>&#160;&#160;&#160;200.0</td></tr>
 <tr class="memdesc:af30c7b107d77d612fa88c573d252c2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nunber of steps to make a round for the motor of the X-axis.  <a href="#af30c7b107d77d612fa88c573d252c2c2">More...</a><br /></td></tr>
 <tr class="separator:af30c7b107d77d612fa88c573d252c2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acea4b1619e299b0aff23f42c8ee5d84f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f">ROUTER_MY_STEPS_PER_ROUND</a>&#160;&#160;&#160;96*2</td></tr>
+<tr class="memitem:acea4b1619e299b0aff23f42c8ee5d84f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f">ROUTER_MY_STEPS_PER_ROUND</a>&#160;&#160;&#160;200.0</td></tr>
 <tr class="memdesc:acea4b1619e299b0aff23f42c8ee5d84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nunber of steps to make a round for the motor of the Y-axis.  <a href="#acea4b1619e299b0aff23f42c8ee5d84f">More...</a><br /></td></tr>
 <tr class="separator:acea4b1619e299b0aff23f42c8ee5d84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>&#160;&#160;&#160;300.0</td></tr>
-<tr class="memdesc:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speet used to control the motor of X-axis. The unit is steps/s.  <a href="#aeb39dfe1cecb49617c2de68f2b7863ad">More...</a><br /></td></tr>
+<tr class="memitem:ad18fe160593d7a9ca8064b3f911c38cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#af30c7b107d77d612fa88c573d252c2c2">ROUTER_MX_STEPS_PER_ROUND</a>/1.25</td></tr>
+<tr class="memdesc:ad18fe160593d7a9ca8064b3f911c38cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#ad18fe160593d7a9ca8064b3f911c38cc">More...</a><br /></td></tr>
+<tr class="separator:ad18fe160593d7a9ca8064b3f911c38cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb07c4644cc35352a450b5b531fc7fa1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">ROUTER_MY_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f">ROUTER_MY_STEPS_PER_ROUND</a>/1.25</td></tr>
+<tr class="memdesc:afb07c4644cc35352a450b5b531fc7fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#afb07c4644cc35352a450b5b531fc7fa1">More...</a><br /></td></tr>
+<tr class="separator:afb07c4644cc35352a450b5b531fc7fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>&#160;&#160;&#160;600.0</td></tr>
+<tr class="memdesc:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of X-axis. The unit is steps/s.  <a href="#aeb39dfe1cecb49617c2de68f2b7863ad">More...</a><br /></td></tr>
 <tr class="separator:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>&#160;&#160;&#160;300.0</td></tr>
-<tr class="memdesc:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speet used to control the motor of Y-axis. The unit is steps/s.  <a href="#a561a2d9e0685a3f1ef859e8fe82c44ee">More...</a><br /></td></tr>
+<tr class="memitem:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>&#160;&#160;&#160;600.0</td></tr>
+<tr class="memdesc:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Y-axis. The unit is steps/s.  <a href="#a561a2d9e0685a3f1ef859e8fe82c44ee">More...</a><br /></td></tr>
 <tr class="separator:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4da93b1d161a9d99520010bf7b951315"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a4da93b1d161a9d99520010bf7b951315">ROUTER_MX_CONTROLLER_ULN2003A</a></td></tr>
-<tr class="separator:a4da93b1d161a9d99520010bf7b951315"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e84564c9d567d528b0a94f10e4bfa88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a3e84564c9d567d528b0a94f10e4bfa88">ROUTER_MX_COIL1_PIN</a>&#160;&#160;&#160;4</td></tr>
-<tr class="memdesc:a3e84564c9d567d528b0a94f10e4bfa88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 1 of the unipolar motor of X-axis through the ULN2003A controller.  <a href="#a3e84564c9d567d528b0a94f10e4bfa88">More...</a><br /></td></tr>
-<tr class="separator:a3e84564c9d567d528b0a94f10e4bfa88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a677e73bb26960e54a94e24b13434805b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a677e73bb26960e54a94e24b13434805b">ROUTER_MX_COIL2_PIN</a>&#160;&#160;&#160;5</td></tr>
-<tr class="memdesc:a677e73bb26960e54a94e24b13434805b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 2 of the unipolar motor of X-axis through the ULN2003A controller.  <a href="#a677e73bb26960e54a94e24b13434805b">More...</a><br /></td></tr>
-<tr class="separator:a677e73bb26960e54a94e24b13434805b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e5ca863f6c653c283df7f1c9b948a1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a3e5ca863f6c653c283df7f1c9b948a1e">ROUTER_MX_COIL3_PIN</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:a3e5ca863f6c653c283df7f1c9b948a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 3 of the unipolar motor of X-axis through the ULN2003A controller.  <a href="#a3e5ca863f6c653c283df7f1c9b948a1e">More...</a><br /></td></tr>
-<tr class="separator:a3e5ca863f6c653c283df7f1c9b948a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34b54395d5587bfd1a363fad8236b327"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a34b54395d5587bfd1a363fad8236b327">ROUTER_MX_COIL4_PIN</a>&#160;&#160;&#160;7</td></tr>
-<tr class="memdesc:a34b54395d5587bfd1a363fad8236b327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 4 of the unipolar motor of X-axis through the ULN2003A controller.  <a href="#a34b54395d5587bfd1a363fad8236b327">More...</a><br /></td></tr>
-<tr class="separator:a34b54395d5587bfd1a363fad8236b327"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac76bb852543867b5e53e6735bde92c71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ac76bb852543867b5e53e6735bde92c71">ROUTER_MY_CONTROLLER_ULN2003A</a></td></tr>
-<tr class="separator:ac76bb852543867b5e53e6735bde92c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a069e95df94bc428b5d6855cfe2b246ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a069e95df94bc428b5d6855cfe2b246ea">ROUTER_MY_COIL1_PIN</a>&#160;&#160;&#160;8</td></tr>
-<tr class="memdesc:a069e95df94bc428b5d6855cfe2b246ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 1 of the unipolar motor of Y-axis through the ULN2003A controller.  <a href="#a069e95df94bc428b5d6855cfe2b246ea">More...</a><br /></td></tr>
-<tr class="separator:a069e95df94bc428b5d6855cfe2b246ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe054be9d67aa1c532ed141390c13c2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#afe054be9d67aa1c532ed141390c13c2e">ROUTER_MY_COIL2_PIN</a>&#160;&#160;&#160;9</td></tr>
-<tr class="memdesc:afe054be9d67aa1c532ed141390c13c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 2 of the unipolar motor of Y-axis through the ULN2003A controller.  <a href="#afe054be9d67aa1c532ed141390c13c2e">More...</a><br /></td></tr>
-<tr class="separator:afe054be9d67aa1c532ed141390c13c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdd117db6652e66cebd82b6b797056c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#abdd117db6652e66cebd82b6b797056c5">ROUTER_MY_COIL3_PIN</a>&#160;&#160;&#160;10</td></tr>
-<tr class="memdesc:abdd117db6652e66cebd82b6b797056c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 3 of the unipolar motor of Y-axis through the ULN2003A controller.  <a href="#abdd117db6652e66cebd82b6b797056c5">More...</a><br /></td></tr>
-<tr class="separator:abdd117db6652e66cebd82b6b797056c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad43a37ee05d01f824b40b8d6f64d1f0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ad43a37ee05d01f824b40b8d6f64d1f0b">ROUTER_MY_COIL4_PIN</a>&#160;&#160;&#160;11</td></tr>
-<tr class="memdesc:ad43a37ee05d01f824b40b8d6f64d1f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the coil 4 of the unipolar motor of Y-axis through the ULN2003A controller.  <a href="#ad43a37ee05d01f824b40b8d6f64d1f0b">More...</a><br /></td></tr>
-<tr class="separator:ad43a37ee05d01f824b40b8d6f64d1f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59986bb7656ebf4e9f2865d0f41a3a61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a59986bb7656ebf4e9f2865d0f41a3a61">ROUTER_LIMIT_X</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memitem:ad1fd89c1662777a74f4291c29436e2f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ad1fd89c1662777a74f4291c29436e2f3">ROUTER_MX_DIR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ad1fd89c1662777a74f4291c29436e2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is used to invert the direction of the <a class="el" href="class_m_s_m_c___a4988.html#a9acdbabf546656a6436e89579e8fcfca" title="Configure the motor to move forward. ">MSMC_A4988::forward</a> and <a class="el" href="class_m_s_m_c___a4988.html#a836bed9e28e723ead2a94446bb704869" title="Configure the motor to move backward. ">MSMC_A4988::backward</a> functions for the motor of the X-axis: 1 direct and 0 inverse.  <a href="#ad1fd89c1662777a74f4291c29436e2f3">More...</a><br /></td></tr>
+<tr class="separator:ad1fd89c1662777a74f4291c29436e2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bf49868750d86c2e41d888087d0e93b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a5bf49868750d86c2e41d888087d0e93b">ROUTER_MY_DIR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a5bf49868750d86c2e41d888087d0e93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is used to invert the direction of the <a class="el" href="class_m_s_m_c___a4988.html#a9acdbabf546656a6436e89579e8fcfca" title="Configure the motor to move forward. ">MSMC_A4988::forward</a> and <a class="el" href="class_m_s_m_c___a4988.html#a836bed9e28e723ead2a94446bb704869" title="Configure the motor to move backward. ">MSMC_A4988::backward</a> functions for the motor of the Y-axis: 1 direct and 0 inverse.  <a href="#a5bf49868750d86c2e41d888087d0e93b">More...</a><br /></td></tr>
+<tr class="separator:a5bf49868750d86c2e41d888087d0e93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ba8973ad8e317ff2808a08cd03109d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d">ROUTER_MX_CONTROLLER_A4988</a></td></tr>
+<tr class="separator:aa2ba8973ad8e317ff2808a08cd03109d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2772e27b33c24fca3e756e98e4da0528"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a2772e27b33c24fca3e756e98e4da0528">ROUTE_MX_STEP_CONTROL_PIN</a>&#160;&#160;&#160;46</td></tr>
+<tr class="memdesc:a2772e27b33c24fca3e756e98e4da0528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the step control pin of the A4988.  <a href="#a2772e27b33c24fca3e756e98e4da0528">More...</a><br /></td></tr>
+<tr class="separator:a2772e27b33c24fca3e756e98e4da0528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a458d8330a8ea0e864a5f14641beaff3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a458d8330a8ea0e864a5f14641beaff3b">ROUTE_MX_DIRECTION_CONTROL_PIN</a>&#160;&#160;&#160;48</td></tr>
+<tr class="memdesc:a458d8330a8ea0e864a5f14641beaff3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the direction control pin of the A4988.  <a href="#a458d8330a8ea0e864a5f14641beaff3b">More...</a><br /></td></tr>
+<tr class="separator:a458d8330a8ea0e864a5f14641beaff3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa440cb6779843ab1068ff26919b75db4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa440cb6779843ab1068ff26919b75db4">ROUTE_MX_ENABLE_CONTROL_PIN</a>&#160;&#160;&#160;A8</td></tr>
+<tr class="memdesc:aa440cb6779843ab1068ff26919b75db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the enable pin of the A4988.  <a href="#aa440cb6779843ab1068ff26919b75db4">More...</a><br /></td></tr>
+<tr class="separator:aa440cb6779843ab1068ff26919b75db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab43f3d9753eb04addb3ecf892d43e9b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ab43f3d9753eb04addb3ecf892d43e9b3">ROUTER_MY_CONTROLLER_A4988</a></td></tr>
+<tr class="separator:ab43f3d9753eb04addb3ecf892d43e9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab22bf58b0951dd8f3ae5d94bda82d87e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ab22bf58b0951dd8f3ae5d94bda82d87e">ROUTE_MY_STEP_CONTROL_PIN</a>&#160;&#160;&#160;A0</td></tr>
+<tr class="memdesc:ab22bf58b0951dd8f3ae5d94bda82d87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the step control pin of the A4988.  <a href="#ab22bf58b0951dd8f3ae5d94bda82d87e">More...</a><br /></td></tr>
+<tr class="separator:ab22bf58b0951dd8f3ae5d94bda82d87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a865681c0605dcc31e4c0262995aaef20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a865681c0605dcc31e4c0262995aaef20">ROUTE_MY_DIRECTION_CONTROL_PIN</a>&#160;&#160;&#160;A1</td></tr>
+<tr class="memdesc:a865681c0605dcc31e4c0262995aaef20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the direction control pin of the A4988.  <a href="#a865681c0605dcc31e4c0262995aaef20">More...</a><br /></td></tr>
+<tr class="separator:a865681c0605dcc31e4c0262995aaef20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e30826a0cbcd6ac91bae8b83651bc78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a3e30826a0cbcd6ac91bae8b83651bc78">ROUTE_MY_ENABLE_CONTROL_PIN</a>&#160;&#160;&#160;38</td></tr>
+<tr class="memdesc:a3e30826a0cbcd6ac91bae8b83651bc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the enable pin of the A4988.  <a href="#a3e30826a0cbcd6ac91bae8b83651bc78">More...</a><br /></td></tr>
+<tr class="separator:a3e30826a0cbcd6ac91bae8b83651bc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59986bb7656ebf4e9f2865d0f41a3a61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a59986bb7656ebf4e9f2865d0f41a3a61">ROUTER_LIMIT_X</a>&#160;&#160;&#160;2</td></tr>
 <tr class="memdesc:a59986bb7656ebf4e9f2865d0f41a3a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the X-axis.  <a href="#a59986bb7656ebf4e9f2865d0f41a3a61">More...</a><br /></td></tr>
 <tr class="separator:a59986bb7656ebf4e9f2865d0f41a3a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaa12423c2b641abd816339a240ab836"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#abaa12423c2b641abd816339a240ab836">ROUTER_LIMIT_Y</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memitem:abaa12423c2b641abd816339a240ab836"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#abaa12423c2b641abd816339a240ab836">ROUTER_LIMIT_Y</a>&#160;&#160;&#160;2</td></tr>
 <tr class="memdesc:abaa12423c2b641abd816339a240ab836"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the Y-axis.  <a href="#abaa12423c2b641abd816339a240ab836">More...</a><br /></td></tr>
 <tr class="separator:abaa12423c2b641abd816339a240ab836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a800acae95a5088dd22283bce5beaa81d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a800acae95a5088dd22283bce5beaa81d">_PLOTTER_SERVO</a></td></tr>
-<tr class="memdesc:a800acae95a5088dd22283bce5beaa81d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uncomment to active the servo plotter support.  <a href="#a800acae95a5088dd22283bce5beaa81d">More...</a><br /></td></tr>
-<tr class="separator:a800acae95a5088dd22283bce5beaa81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeffd35de0e4acced102d7532a0085eef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aeffd35de0e4acced102d7532a0085eef">_PLOTTER_SERVO_PIN</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:aeffd35de0e4acced102d7532a0085eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The PWN pin where is attached the serco motor.  <a href="#aeffd35de0e4acced102d7532a0085eef">More...</a><br /></td></tr>
-<tr class="separator:aeffd35de0e4acced102d7532a0085eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a354bf9fc8f5bbfcd5ce30045caf32c9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a354bf9fc8f5bbfcd5ce30045caf32c9e">_PLOTTER_SERVO_UP_POS</a>&#160;&#160;&#160;80</td></tr>
-<tr class="memdesc:a354bf9fc8f5bbfcd5ce30045caf32c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value on the range [0, 180] that moves up the pen of the plotter.  <a href="#a354bf9fc8f5bbfcd5ce30045caf32c9e">More...</a><br /></td></tr>
-<tr class="separator:a354bf9fc8f5bbfcd5ce30045caf32c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a861ce4360b76dbafad773e3d185ae490"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a861ce4360b76dbafad773e3d185ae490">_PLOTTER_SERVO_DOWN_POS</a>&#160;&#160;&#160;136</td></tr>
-<tr class="memdesc:a861ce4360b76dbafad773e3d185ae490"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value on the range [0, 180] that moves down the pen of the plotter.  <a href="#a861ce4360b76dbafad773e3d185ae490">More...</a><br /></td></tr>
-<tr class="separator:a861ce4360b76dbafad773e3d185ae490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed2a15e6b761d36ac89dfc727d4ae82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a1ed2a15e6b761d36ac89dfc727d4ae82">_MILLING_MACHINE</a></td></tr>
+<tr class="memdesc:a1ed2a15e6b761d36ac89dfc727d4ae82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uncomment to active the milling machine support.  <a href="#a1ed2a15e6b761d36ac89dfc727d4ae82">More...</a><br /></td></tr>
+<tr class="separator:a1ed2a15e6b761d36ac89dfc727d4ae82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b167a37b9554ca6d02f5b96ab4a646"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">_MILLING_MACHINE_MZ_STEPS_PER_ROUND</a>&#160;&#160;&#160;200.0</td></tr>
+<tr class="memdesc:a39b167a37b9554ca6d02f5b96ab4a646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nunber of steps to make a round for the motor of the Z-axis.  <a href="#a39b167a37b9554ca6d02f5b96ab4a646">More...</a><br /></td></tr>
+<tr class="separator:a39b167a37b9554ca6d02f5b96ab4a646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94aabd4cf54e1c9cb34fb3860a4af575"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a94aabd4cf54e1c9cb34fb3860a4af575">_MILLING_MACHINE_MZ_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">_MILLING_MACHINE_MZ_STEPS_PER_ROUND</a>/1.25</td></tr>
+<tr class="memdesc:a94aabd4cf54e1c9cb34fb3860a4af575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#a94aabd4cf54e1c9cb34fb3860a4af575">More...</a><br /></td></tr>
+<tr class="separator:a94aabd4cf54e1c9cb34fb3860a4af575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510d27f34c0bcdb9f434c0afc434f7ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a510d27f34c0bcdb9f434c0afc434f7ed">_MILLING_MACHINE_MZ_SPEED</a>&#160;&#160;&#160;600.0</td></tr>
+<tr class="memdesc:a510d27f34c0bcdb9f434c0afc434f7ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Z-axis. The unit is steps/s.  <a href="#a510d27f34c0bcdb9f434c0afc434f7ed">More...</a><br /></td></tr>
+<tr class="separator:a510d27f34c0bcdb9f434c0afc434f7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The configuration file. </p>
@@ -170,59 +177,59 @@ Macros</h2></td></tr>
 </ul>
 </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a800acae95a5088dd22283bce5beaa81d"></a>
+<a class="anchor" id="a1ed2a15e6b761d36ac89dfc727d4ae82"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _PLOTTER_SERVO</td>
+          <td class="memname">#define _MILLING_MACHINE</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Uncomment to active the servo plotter support. </p>
+<p>Uncomment to active the milling machine support. </p>
 
 </div>
 </div>
-<a class="anchor" id="a861ce4360b76dbafad773e3d185ae490"></a>
+<a class="anchor" id="a510d27f34c0bcdb9f434c0afc434f7ed"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _PLOTTER_SERVO_DOWN_POS&#160;&#160;&#160;136</td>
+          <td class="memname">#define _MILLING_MACHINE_MZ_SPEED&#160;&#160;&#160;600.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The value on the range [0, 180] that moves down the pen of the plotter. </p>
+<p>The maximum speed used to control the motor of Z-axis. The unit is steps/s. </p>
 
 </div>
 </div>
-<a class="anchor" id="aeffd35de0e4acced102d7532a0085eef"></a>
+<a class="anchor" id="a94aabd4cf54e1c9cb34fb3860a4af575"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _PLOTTER_SERVO_PIN&#160;&#160;&#160;3</td>
+          <td class="memname">#define _MILLING_MACHINE_MZ_STEPS_PER_MM&#160;&#160;&#160;<a class="el" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">_MILLING_MACHINE_MZ_STEPS_PER_ROUND</a>/1.25</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The PWN pin where is attached the serco motor. </p>
+<p>Number of steps to forward of a mm. </p>
 
 </div>
 </div>
-<a class="anchor" id="a354bf9fc8f5bbfcd5ce30045caf32c9e"></a>
+<a class="anchor" id="a39b167a37b9554ca6d02f5b96ab4a646"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _PLOTTER_SERVO_UP_POS&#160;&#160;&#160;80</td>
+          <td class="memname">#define _MILLING_MACHINE_MZ_STEPS_PER_ROUND&#160;&#160;&#160;200.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The value on the range [0, 180] that moves up the pen of the plotter. </p>
+<p>Nunber of steps to make a round for the motor of the Z-axis. </p>
 
 </div>
 </div>
@@ -231,7 +238,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INTERRUPT_STOP_MOTION&#160;&#160;&#160;0</td>
+          <td class="memname">#define INTERRUPT_STOP_MOTION&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -241,12 +248,96 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a458d8330a8ea0e864a5f14641beaff3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MX_DIRECTION_CONTROL_PIN&#160;&#160;&#160;48</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the direction control pin of the A4988. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa440cb6779843ab1068ff26919b75db4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MX_ENABLE_CONTROL_PIN&#160;&#160;&#160;A8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the enable pin of the A4988. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2772e27b33c24fca3e756e98e4da0528"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MX_STEP_CONTROL_PIN&#160;&#160;&#160;46</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the step control pin of the A4988. </p>
+
+</div>
+</div>
+<a class="anchor" id="a865681c0605dcc31e4c0262995aaef20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MY_DIRECTION_CONTROL_PIN&#160;&#160;&#160;A1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the direction control pin of the A4988. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e30826a0cbcd6ac91bae8b83651bc78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MY_ENABLE_CONTROL_PIN&#160;&#160;&#160;38</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the enable pin of the A4988. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab22bf58b0951dd8f3ae5d94bda82d87e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MY_STEP_CONTROL_PIN&#160;&#160;&#160;A0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the step control pin of the A4988. </p>
+
+</div>
+</div>
 <a class="anchor" id="a59986bb7656ebf4e9f2865d0f41a3a61"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_LIMIT_X&#160;&#160;&#160;12</td>
+          <td class="memname">#define ROUTER_LIMIT_X&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -260,7 +351,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_LIMIT_Y&#160;&#160;&#160;12</td>
+          <td class="memname">#define ROUTER_LIMIT_Y&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -269,71 +360,29 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3e84564c9d567d528b0a94f10e4bfa88"></a>
+<a class="anchor" id="aa2ba8973ad8e317ff2808a08cd03109d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MX_COIL1_PIN&#160;&#160;&#160;4</td>
+          <td class="memname">#define ROUTER_MX_CONTROLLER_A4988</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pin connected to the coil 1 of the unipolar motor of X-axis through the ULN2003A controller. </p>
-
 </div>
 </div>
-<a class="anchor" id="a677e73bb26960e54a94e24b13434805b"></a>
+<a class="anchor" id="ad1fd89c1662777a74f4291c29436e2f3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MX_COIL2_PIN&#160;&#160;&#160;5</td>
+          <td class="memname">#define ROUTER_MX_DIR&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pin connected to the coil 2 of the unipolar motor of X-axis through the ULN2003A controller. </p>
-
-</div>
-</div>
-<a class="anchor" id="a3e5ca863f6c653c283df7f1c9b948a1e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ROUTER_MX_COIL3_PIN&#160;&#160;&#160;6</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pin connected to the coil 3 of the unipolar motor of X-axis through the ULN2003A controller. </p>
-
-</div>
-</div>
-<a class="anchor" id="a34b54395d5587bfd1a363fad8236b327"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ROUTER_MX_COIL4_PIN&#160;&#160;&#160;7</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pin connected to the coil 4 of the unipolar motor of X-axis through the ULN2003A controller. </p>
-
-</div>
-</div>
-<a class="anchor" id="a4da93b1d161a9d99520010bf7b951315"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ROUTER_MX_CONTROLLER_ULN2003A</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>This field is used to invert the direction of the <a class="el" href="class_m_s_m_c___a4988.html#a9acdbabf546656a6436e89579e8fcfca" title="Configure the motor to move forward. ">MSMC_A4988::forward</a> and <a class="el" href="class_m_s_m_c___a4988.html#a836bed9e28e723ead2a94446bb704869" title="Configure the motor to move backward. ">MSMC_A4988::backward</a> functions for the motor of the X-axis: 1 direct and 0 inverse. </p>
 
 </div>
 </div>
@@ -342,12 +391,26 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MX_SPEED&#160;&#160;&#160;300.0</td>
+          <td class="memname">#define ROUTER_MX_SPEED&#160;&#160;&#160;600.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The maximum speet used to control the motor of X-axis. The unit is steps/s. </p>
+<p>The maximum speed used to control the motor of X-axis. The unit is steps/s. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad18fe160593d7a9ca8064b3f911c38cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_MX_STEPS_PER_MM&#160;&#160;&#160;<a class="el" href="config_8h.html#af30c7b107d77d612fa88c573d252c2c2">ROUTER_MX_STEPS_PER_ROUND</a>/1.25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of steps to forward of a mm. </p>
 
 </div>
 </div>
@@ -356,7 +419,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MX_STEPS_PER_ROUND&#160;&#160;&#160;48*2</td>
+          <td class="memname">#define ROUTER_MX_STEPS_PER_ROUND&#160;&#160;&#160;200.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -365,71 +428,29 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a069e95df94bc428b5d6855cfe2b246ea"></a>
+<a class="anchor" id="ab43f3d9753eb04addb3ecf892d43e9b3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MY_COIL1_PIN&#160;&#160;&#160;8</td>
+          <td class="memname">#define ROUTER_MY_CONTROLLER_A4988</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pin connected to the coil 1 of the unipolar motor of Y-axis through the ULN2003A controller. </p>
-
 </div>
 </div>
-<a class="anchor" id="afe054be9d67aa1c532ed141390c13c2e"></a>
+<a class="anchor" id="a5bf49868750d86c2e41d888087d0e93b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MY_COIL2_PIN&#160;&#160;&#160;9</td>
+          <td class="memname">#define ROUTER_MY_DIR&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pin connected to the coil 2 of the unipolar motor of Y-axis through the ULN2003A controller. </p>
-
-</div>
-</div>
-<a class="anchor" id="abdd117db6652e66cebd82b6b797056c5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ROUTER_MY_COIL3_PIN&#160;&#160;&#160;10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pin connected to the coil 3 of the unipolar motor of Y-axis through the ULN2003A controller. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad43a37ee05d01f824b40b8d6f64d1f0b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ROUTER_MY_COIL4_PIN&#160;&#160;&#160;11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pin connected to the coil 4 of the unipolar motor of Y-axis through the ULN2003A controller. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac76bb852543867b5e53e6735bde92c71"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ROUTER_MY_CONTROLLER_ULN2003A</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>This field is used to invert the direction of the <a class="el" href="class_m_s_m_c___a4988.html#a9acdbabf546656a6436e89579e8fcfca" title="Configure the motor to move forward. ">MSMC_A4988::forward</a> and <a class="el" href="class_m_s_m_c___a4988.html#a836bed9e28e723ead2a94446bb704869" title="Configure the motor to move backward. ">MSMC_A4988::backward</a> functions for the motor of the Y-axis: 1 direct and 0 inverse. </p>
 
 </div>
 </div>
@@ -438,12 +459,26 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MY_SPEED&#160;&#160;&#160;300.0</td>
+          <td class="memname">#define ROUTER_MY_SPEED&#160;&#160;&#160;600.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The maximum speet used to control the motor of Y-axis. The unit is steps/s. </p>
+<p>The maximum speed used to control the motor of Y-axis. The unit is steps/s. </p>
+
+</div>
+</div>
+<a class="anchor" id="afb07c4644cc35352a450b5b531fc7fa1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_MY_STEPS_PER_MM&#160;&#160;&#160;<a class="el" href="config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f">ROUTER_MY_STEPS_PER_ROUND</a>/1.25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of steps to forward of a mm. </p>
 
 </div>
 </div>
@@ -452,7 +487,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MY_STEPS_PER_ROUND&#160;&#160;&#160;96*2</td>
+          <td class="memname">#define ROUTER_MY_STEPS_PER_ROUND&#160;&#160;&#160;200.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -478,7 +513,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

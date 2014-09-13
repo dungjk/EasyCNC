@@ -14,7 +14,7 @@
 
 PlotterServo mypen(_PLOTTER_SERVO_PIN,_PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS);
 
-CNCxy mycnc(ROUTER_MX_STEPS_PER_ROUND, ROUTER_MY_STEPS_PER_ROUND, ROUTER_MX_SPEED, ROUTER_MY_SPEED);  //200.0 at lowPrecision
+CNC_Router mycnc(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MX_SPEED, ROUTER_MY_SPEED);  //200.0 at lowPrecision
 
 boolean end_task = false;
 
@@ -32,19 +32,19 @@ void processPos(){
 }
 
 void setup(){
-  mycnc.setMotorX(ROUTER_MX_COIL1, ROUTER_MX_COIL2, ROUTER_MX_COIL3, ROUTER_MX_COIL4);
-  mycnc.setMotorY(ROUTER_MY_COIL1, ROUTER_MY_COIL2, ROUTER_MY_COIL3, ROUTER_MY_COIL4);
+  mycnc.initMotorX();
+  mycnc.initMotorY();
   mycnc.resetPos();
-  mycnc.highPrecision();
+  mycnc.lowPrecision();
   mycnc.setAbsolPos();
   mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
   mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
-  
+
   attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
-  digitalWrite(2, HIGH);
-  
+  digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
+
   mypen.init();
-  
+
   Serial.begin(9600);
 
 }

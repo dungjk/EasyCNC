@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['control_5fmode',['control_mode',['../class_m_s_m_c___a4988.html#a819ff8eed30ef364c710a1fb1371d18e',1,'MSMC_A4988']]]
+  ['distanse_5fmode',['distanse_mode',['../class_g_code.html#a77dad1d8057ecc38242757923a2bb87f',1,'GCode']]]
 ];

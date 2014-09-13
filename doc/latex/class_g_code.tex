@@ -1,0 +1,138 @@
+\hypertarget{class_g_code}{\section{G\+Code Class Reference}
+\label{class_g_code}\index{G\+Code@{G\+Code}}
+}
+
+
+{\ttfamily \#include $<$G\+Code.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_g_code_afb47ef5c3500e0534e54607abfd73d47}{G\+Code} (\hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} $\ast$)
+\item 
+int \hyperlink{class_g_code_a1785db665332977787a38b6b2563b395}{parse\+Line} ()
+\item 
+void \hyperlink{class_g_code_a3912e1dad7257e2336ab09c55ff17235}{remove\+Spaces} ()
+\item 
+int \hyperlink{class_g_code_a609aaf5606ffd2013a957e97641b1530}{get\+Int} (int \&)
+\item 
+float \hyperlink{class_g_code_a34f2977443578a7ba002efa2aa88dde0}{get\+Float} (int \&)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{line}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_ae84ec0e15b18d91420c39627d1bdf78a}{moving}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a0f278ed4c1265656f062365ca345d353}{plane\+\_\+select}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a77dad1d8057ecc38242757923a2bb87f}{distanse\+\_\+mode}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_acbf5f3b9aeffe27d3f87e9d57b487146}{forward\+\_\+mode}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a76a406426d6a80e3c08b0ecd09db3ffd}{unit}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a300348c946bb94260576136ffb7e0fa0}{raius\+\_\+compensation}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a33ac8c517b978b71a6af37c362dc3edb}{utensil\+\_\+offset}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a600deaa28b54bd8fca4d8eb51fb09b55}{loop\+\_\+return}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a4311a77cb2efcc0bce0c582ae80755e1}{coordinate}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}{path\+\_\+control}
+\item 
+\hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} $\ast$ \hyperlink{class_g_code_ab060bb5bd169ae7640eb781bef6b78fe}{router}
+\item 
+\hyperlink{class_milling_machine}{Milling\+Machine} $\ast$ \hyperlink{class_g_code_a9a737c33f133cf515926d0f2b612bd22}{utensil}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_g_code_afb47ef5c3500e0534e54607abfd73d47}{\index{G\+Code@{G\+Code}!G\+Code@{G\+Code}}
+\index{G\+Code@{G\+Code}!G\+Code@{G\+Code}}
+\subsubsection[{G\+Code}]{\setlength{\rightskip}{0pt plus 5cm}G\+Code\+::\+G\+Code (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+N\+C\+\_\+\+Router} $\ast$}]{rt}
+\end{DoxyParamCaption}
+)}}\label{class_g_code_afb47ef5c3500e0534e54607abfd73d47}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_g_code_a34f2977443578a7ba002efa2aa88dde0}{\index{G\+Code@{G\+Code}!get\+Float@{get\+Float}}
+\index{get\+Float@{get\+Float}!G\+Code@{G\+Code}}
+\subsubsection[{get\+Float}]{\setlength{\rightskip}{0pt plus 5cm}float G\+Code\+::get\+Float (
+\begin{DoxyParamCaption}
+\item[{int \&}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_g_code_a34f2977443578a7ba002efa2aa88dde0}
+\hypertarget{class_g_code_a609aaf5606ffd2013a957e97641b1530}{\index{G\+Code@{G\+Code}!get\+Int@{get\+Int}}
+\index{get\+Int@{get\+Int}!G\+Code@{G\+Code}}
+\subsubsection[{get\+Int}]{\setlength{\rightskip}{0pt plus 5cm}int G\+Code\+::get\+Int (
+\begin{DoxyParamCaption}
+\item[{int \&}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_g_code_a609aaf5606ffd2013a957e97641b1530}
+\hypertarget{class_g_code_a1785db665332977787a38b6b2563b395}{\index{G\+Code@{G\+Code}!parse\+Line@{parse\+Line}}
+\index{parse\+Line@{parse\+Line}!G\+Code@{G\+Code}}
+\subsubsection[{parse\+Line}]{\setlength{\rightskip}{0pt plus 5cm}int G\+Code\+::parse\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_g_code_a1785db665332977787a38b6b2563b395}
+\hypertarget{class_g_code_a3912e1dad7257e2336ab09c55ff17235}{\index{G\+Code@{G\+Code}!remove\+Spaces@{remove\+Spaces}}
+\index{remove\+Spaces@{remove\+Spaces}!G\+Code@{G\+Code}}
+\subsubsection[{remove\+Spaces}]{\setlength{\rightskip}{0pt plus 5cm}void G\+Code\+::remove\+Spaces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_g_code_a3912e1dad7257e2336ab09c55ff17235}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_g_code_a4311a77cb2efcc0bce0c582ae80755e1}{\index{G\+Code@{G\+Code}!coordinate@{coordinate}}
+\index{coordinate@{coordinate}!G\+Code@{G\+Code}}
+\subsubsection[{coordinate}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::coordinate}}\label{class_g_code_a4311a77cb2efcc0bce0c582ae80755e1}
+\hypertarget{class_g_code_a77dad1d8057ecc38242757923a2bb87f}{\index{G\+Code@{G\+Code}!distanse\+\_\+mode@{distanse\+\_\+mode}}
+\index{distanse\+\_\+mode@{distanse\+\_\+mode}!G\+Code@{G\+Code}}
+\subsubsection[{distanse\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::distanse\+\_\+mode}}\label{class_g_code_a77dad1d8057ecc38242757923a2bb87f}
+\hypertarget{class_g_code_acbf5f3b9aeffe27d3f87e9d57b487146}{\index{G\+Code@{G\+Code}!forward\+\_\+mode@{forward\+\_\+mode}}
+\index{forward\+\_\+mode@{forward\+\_\+mode}!G\+Code@{G\+Code}}
+\subsubsection[{forward\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::forward\+\_\+mode}}\label{class_g_code_acbf5f3b9aeffe27d3f87e9d57b487146}
+\hypertarget{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{\index{G\+Code@{G\+Code}!line@{line}}
+\index{line@{line}!G\+Code@{G\+Code}}
+\subsubsection[{line}]{\setlength{\rightskip}{0pt plus 5cm}String G\+Code\+::line}}\label{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}
+\hypertarget{class_g_code_a600deaa28b54bd8fca4d8eb51fb09b55}{\index{G\+Code@{G\+Code}!loop\+\_\+return@{loop\+\_\+return}}
+\index{loop\+\_\+return@{loop\+\_\+return}!G\+Code@{G\+Code}}
+\subsubsection[{loop\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::loop\+\_\+return}}\label{class_g_code_a600deaa28b54bd8fca4d8eb51fb09b55}
+\hypertarget{class_g_code_ae84ec0e15b18d91420c39627d1bdf78a}{\index{G\+Code@{G\+Code}!moving@{moving}}
+\index{moving@{moving}!G\+Code@{G\+Code}}
+\subsubsection[{moving}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::moving}}\label{class_g_code_ae84ec0e15b18d91420c39627d1bdf78a}
+\hypertarget{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}{\index{G\+Code@{G\+Code}!path\+\_\+control@{path\+\_\+control}}
+\index{path\+\_\+control@{path\+\_\+control}!G\+Code@{G\+Code}}
+\subsubsection[{path\+\_\+control}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::path\+\_\+control}}\label{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}
+\hypertarget{class_g_code_a0f278ed4c1265656f062365ca345d353}{\index{G\+Code@{G\+Code}!plane\+\_\+select@{plane\+\_\+select}}
+\index{plane\+\_\+select@{plane\+\_\+select}!G\+Code@{G\+Code}}
+\subsubsection[{plane\+\_\+select}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::plane\+\_\+select}}\label{class_g_code_a0f278ed4c1265656f062365ca345d353}
+\hypertarget{class_g_code_a300348c946bb94260576136ffb7e0fa0}{\index{G\+Code@{G\+Code}!raius\+\_\+compensation@{raius\+\_\+compensation}}
+\index{raius\+\_\+compensation@{raius\+\_\+compensation}!G\+Code@{G\+Code}}
+\subsubsection[{raius\+\_\+compensation}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::raius\+\_\+compensation}}\label{class_g_code_a300348c946bb94260576136ffb7e0fa0}
+\hypertarget{class_g_code_ab060bb5bd169ae7640eb781bef6b78fe}{\index{G\+Code@{G\+Code}!router@{router}}
+\index{router@{router}!G\+Code@{G\+Code}}
+\subsubsection[{router}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router}$\ast$ G\+Code\+::router}}\label{class_g_code_ab060bb5bd169ae7640eb781bef6b78fe}
+\hypertarget{class_g_code_a76a406426d6a80e3c08b0ecd09db3ffd}{\index{G\+Code@{G\+Code}!unit@{unit}}
+\index{unit@{unit}!G\+Code@{G\+Code}}
+\subsubsection[{unit}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::unit}}\label{class_g_code_a76a406426d6a80e3c08b0ecd09db3ffd}
+\hypertarget{class_g_code_a9a737c33f133cf515926d0f2b612bd22}{\index{G\+Code@{G\+Code}!utensil@{utensil}}
+\index{utensil@{utensil}!G\+Code@{G\+Code}}
+\subsubsection[{utensil}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Milling\+Machine}$\ast$ G\+Code\+::utensil}}\label{class_g_code_a9a737c33f133cf515926d0f2b612bd22}
+\hypertarget{class_g_code_a33ac8c517b978b71a6af37c362dc3edb}{\index{G\+Code@{G\+Code}!utensil\+\_\+offset@{utensil\+\_\+offset}}
+\index{utensil\+\_\+offset@{utensil\+\_\+offset}!G\+Code@{G\+Code}}
+\subsubsection[{utensil\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::utensil\+\_\+offset}}\label{class_g_code_a33ac8c517b978b71a6af37c362dc3edb}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_g_code_8h}{G\+Code.\+h}\item 
+\hyperlink{_g_code_8cpp}{G\+Code.\+cpp}\end{DoxyCompactItemize}

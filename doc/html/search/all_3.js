@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['cncxy',['CNCxy',['../class_c_n_cxy.html',1,'CNCxy'],['../class_c_n_cxy.html#a00b982f5e1cdf7d14e2b812fe634381a',1,'CNCxy::CNCxy()'],['../class_c_n_cxy.html#adf2aa57e924162dcd02728eca3ce6ad4',1,'CNCxy::CNCxy(float spx, float spy, float vmx, float vmy)']]],
-  ['cncxy_2ecpp',['CNCxy.cpp',['../_c_n_cxy_8cpp.html',1,'']]],
-  ['cncxy_2eh',['CNCxy.h',['../_c_n_cxy_8h.html',1,'']]],
-  ['coilsoff',['coilsOff',['../class_m_s_m_c___u_l_n2003_a.html#af351ae2229c5cd9f12d633a44394d2e5',1,'MSMC_ULN2003A']]],
+  ['cnc_5frouter',['CNC_Router',['../class_c_n_c___router.html',1,'CNC_Router'],['../class_c_n_c___router.html#a2286f545f42ff5febfdb8d52782cd0da',1,'CNC_Router::CNC_Router()'],['../class_c_n_c___router.html#a928dbfed47e8514928b92559372378f0',1,'CNC_Router::CNC_Router(float spx, float spy, float vmx, float vmy)']]],
+  ['cnc_5frouter_2ecpp',['CNC_Router.cpp',['../_c_n_c___router_8cpp.html',1,'']]],
+  ['cnc_5frouter_2eh',['CNC_Router.h',['../_c_n_c___router_8h.html',1,'']]],
   ['config_2eh',['config.h',['../config_8h.html',1,'']]],
-  ['control_5fmode',['control_mode',['../class_m_s_m_c___a4988.html#a819ff8eed30ef364c710a1fb1371d18e',1,'MSMC_A4988']]]
+  ['coordinate',['coordinate',['../class_g_code.html#a4311a77cb2efcc0bce0c582ae80755e1',1,'GCode']]]
 ];

@@ -2,12 +2,30 @@
 \label{easy___c_n_c_8h}\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 }
 {\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utensils.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$Servo.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Position.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}C\+N\+C\+\_\+\+Router.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{easy___c_n_c_8h_afe461d27b9c48d5921c00d521181f12f}{loop} ()
 \item 
 void \hyperlink{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\item 
+Plotter\+Servo \hyperlink{easy___c_n_c_8h_aeee74d506e08f08c2e3e2f68837d6de0}{mypen} (\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N, \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S, \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S)
+\item 
+\hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} \hyperlink{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}{mycnc} (\hyperlink{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_afb07c4644cc35352a450b5b531fc7fa1}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D})
+\item 
+void \hyperlink{easy___c_n_c_8h_a602fb203183e59e6886cf242effd2c47}{stop\+Button} ()
+\item 
+void \hyperlink{easy___c_n_c_8h_a602deeb5004b37f160b63a7785faa7a1}{process\+Pos} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{end\+\_\+task} = false
 \end{DoxyCompactItemize}
 
 
@@ -19,6 +37,32 @@ void \hyperlink{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 {}
 \end{DoxyParamCaption}
 )}}\label{easy___c_n_c_8h_afe461d27b9c48d5921c00d521181f12f}
+\hypertarget{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mycnc@{mycnc}}
+\index{mycnc@{mycnc}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{mycnc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router} mycnc (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}]{, }
+\item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}]{, }
+\item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}}]{, }
+\item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}}]{}
+\end{DoxyParamCaption}
+)}}\label{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}
+\hypertarget{easy___c_n_c_8h_aeee74d506e08f08c2e3e2f68837d6de0}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mypen@{mypen}}
+\index{mypen@{mypen}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{mypen}]{\setlength{\rightskip}{0pt plus 5cm}Plotter\+Servo mypen (
+\begin{DoxyParamCaption}
+\item[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N}]{, }
+\item[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S}]{, }
+\item[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S}]{}
+\end{DoxyParamCaption}
+)}}\label{easy___c_n_c_8h_aeee74d506e08f08c2e3e2f68837d6de0}
+\hypertarget{easy___c_n_c_8h_a602deeb5004b37f160b63a7785faa7a1}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!process\+Pos@{process\+Pos}}
+\index{process\+Pos@{process\+Pos}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{process\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{easy___c_n_c_8h_a602deeb5004b37f160b63a7785faa7a1}
 \hypertarget{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!setup@{setup}}
 \index{setup@{setup}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void setup (
@@ -26,3 +70,16 @@ void \hyperlink{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 {}
 \end{DoxyParamCaption}
 )}}\label{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}
+\hypertarget{easy___c_n_c_8h_a602fb203183e59e6886cf242effd2c47}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!stop\+Button@{stop\+Button}}
+\index{stop\+Button@{stop\+Button}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{stop\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void stop\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{easy___c_n_c_8h_a602fb203183e59e6886cf242effd2c47}
+
+
+\subsection{Variable Documentation}
+\hypertarget{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!end\+\_\+task@{end\+\_\+task}}
+\index{end\+\_\+task@{end\+\_\+task}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{end\+\_\+task}]{\setlength{\rightskip}{0pt plus 5cm}boolean end\+\_\+task = false}}\label{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}

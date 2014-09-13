@@ -91,28 +91,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The file contains the classes which implement the control of different utensils.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
-<code>#include &lt;Servo.h&gt;</code><br />
-<code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
 </div>
 <p><a href="_utensils_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plotter_servo.html">PlotterServo</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to control a plotter head.  <a href="class_plotter_servo.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html">MillingMachine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to control a the milling machine and its position on the z-axis.  <a href="class_milling_machine.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ab408b3651d52ec56131c460e1e19a2b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utensils_8h.html#ab408b3651d52ec56131c460e1e19a2b6">Utensilsl_h</a></td></tr>
 <tr class="separator:ab408b3651d52ec56131c460e1e19a2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4193cd1c8c2e6ebd0e056fa2364a663f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utensils_8h.html#a4193cd1c8c2e6ebd0e056fa2364a663f">DOWN</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:a4193cd1c8c2e6ebd0e056fa2364a663f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state for the plotter head down.  <a href="#a4193cd1c8c2e6ebd0e056fa2364a663f">More...</a><br /></td></tr>
-<tr class="separator:a4193cd1c8c2e6ebd0e056fa2364a663f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1965eaca47dbf3f87acdafc2208f04eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utensils_8h.html#a1965eaca47dbf3f87acdafc2208f04eb">UP</a>&#160;&#160;&#160;false</td></tr>
-<tr class="memdesc:a1965eaca47dbf3f87acdafc2208f04eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state for the plotter head up.  <a href="#a1965eaca47dbf3f87acdafc2208f04eb">More...</a><br /></td></tr>
-<tr class="separator:a1965eaca47dbf3f87acdafc2208f04eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file contains the classes which implement the control of different utensils. </p>
@@ -124,34 +115,6 @@ Macros</h2></td></tr>
 </ul>
 </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a4193cd1c8c2e6ebd0e056fa2364a663f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DOWN&#160;&#160;&#160;true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The state for the plotter head down. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1965eaca47dbf3f87acdafc2208f04eb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UP&#160;&#160;&#160;false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The state for the plotter head up. </p>
-
-</div>
-</div>
 <a class="anchor" id="ab408b3651d52ec56131c460e1e19a2b6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -167,7 +130,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

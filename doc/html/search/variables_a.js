@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['up_5fval',['up_val',['../class_plotter_servo.html#ac5a8cf60736715222a53a774c4e077f7',1,'PlotterServo']]]
+  ['v_5fmax_5fx',['v_max_x',['../class_c_n_c___router.html#afa08612e63f2cc3d3283fa06679b5d7a',1,'CNC_Router']]],
+  ['v_5fmax_5fy',['v_max_y',['../class_c_n_c___router.html#a5e3fe2fd85292f3f5d9d2e13078b6a42',1,'CNC_Router']]]
 ];

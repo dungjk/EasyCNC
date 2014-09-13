@@ -25,18 +25,21 @@
  *           in the main loop and, if the delay is expired, the function moves the motor of one step.
  *  \author Francesco Giurlanda
  */
-class MSMC_A4988 : public MSMC {
-	uint8_t pin_step,                       /*!< \brief The pin controls the step. */
-	        pin_dir,						/*!< \brief The pin controls the direction. */
-	        pin_enable;						/*!< \brief The pin controls the enable pin of the A4988. */
-	uint32_t spd;							/*!< \brief The delay between two steps in microseconds. */
-	uint32_t steps,                         /*!< \brief The number of steps until the motion ends. */
-	         tot_steps,                     /*!< \brief The total steps set by forward() and backward(). */
-	         old_time;                      /*!< \brief The time value in microseconds set during the last step. */
-	int8_t dir;                             /*!< \brief Specify the direction of the motor: -1 backward, 1 forward, 0 all pin out LOW */
-	boolean m_ready;                        /*!< \brief True if the motor is ready to take a new command: forward(uint32_t, uint32_t) or backward(uint32_t, uint32_t). */
-	boolean step_pin_val;					/*!< \brief The value of the pin that drives the step advance */
-	uint8_t control_mode;                   /*!< \brief Specify the control mode of the motor: 0 full step, 1 half step, 2 quarter step, 3 eighth step and 4 sixteenth step
+class MSMC_A4988: public MSMC {
+	uint8_t pin_step, /*!< \brief The pin controls the step. */
+	pin_dir, /*!< \brief The pin controls the direction. */
+	pin_enable; /*!< \brief The pin controls the enable pin of the A4988. */
+	uint32_t spd; /*!< \brief The delay between two steps in microseconds. */
+	uint32_t steps, /*!< \brief The number of steps until the motion ends. */
+	tot_steps, /*!< \brief The total steps set by forward() and backward(). */
+	old_time, /*!< \brief The time value in microseconds set during the last step. */
+	pause_time; /*!< \brief The time value in microseconds set by the function MSMC_ULN2003A::pause(). */
+	int8_t dir; /*!< \brief Specify the direction of the motor: -1 backward, 1 forward, 0 all pin out LOW */
+	boolean m_ready; /*!< \brief True if the motor is ready to take a new command: forward(uint32_t, uint32_t) or backward(uint32_t, uint32_t). */
+	boolean step_pin_val; /*!< \brief The value of the pin that drives the step advance */
+	uint8_t control_mode; /*!< \brief Specify the control mode of the motor: 0 full step, 1 half step, 2 quarter step, 3 eighth step and 4 sixteenth step. */
+	boolean m_pause; /*!< \brief It is True if the motion is paused. */
+	int8_t dir_mode; /*!< Specifies if the motion is direct or inverted: 1 direct and -1 inverted*/
 
 	/*! \brief It advances the motor of one step.
 	 *  \param v The value of the pin.
@@ -64,19 +67,19 @@ public:
 	MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen);
 
 	/*! \brief Configure the motor to move forward
-	    \details The function moves forward the motor of a number of steps with a specified delay between each step
-	    \param st The number of steps
-	    \param sp The delay between the steps in microseconds
-	    \sa backward(uint32_t, uint32_t)
-	*/
+	 \details The function moves forward the motor of a number of steps with a specified delay between each step
+	 \param st The number of steps
+	 \param sp The delay between the steps in microseconds
+	 \sa backward(uint32_t, uint32_t)
+	 */
 	void forward(uint32_t st, uint32_t sp);
 
 	/*! \brief Configure the motor to move backward
-	    \details The function moves backward the motor of a number of steps with a specified delay between each step
-	    \param st The number of steps
-	    \param sp The delay between the steps in microseconds
-	    \sa forward(uint32_t, uint32_t)
-	*/
+	 \details The function moves backward the motor of a number of steps with a specified delay between each step
+	 \param st The number of steps
+	 \param sp The delay between the steps in microseconds
+	 \sa forward(uint32_t, uint32_t)
+	 */
 	void backward(uint32_t st, uint32_t sp);
 
 	/*! \brief Set up the pins attached to the A4988.
@@ -98,31 +101,45 @@ public:
 
 	/*! \brief Return the operative mode of the controller
 	 *  \return An int that identifies the operative mode: #FULL_STEP, #HALF_STEP, #QUARTER_STEP, #EIGHTH_STEP and #SIXTEENTH_STEP
-     */
+	 */
 	uint8_t getMode();
 
+	/*! \brief Return the direction
+	 *  \return 1 = forward, -1 = backward, 0 = none
+	 */
+	int8_t getDir();
+
 	/*! \brief Change the delay between each step
-	    \details This function can be used to change the speed during an operation of forward or backward.
-	    \param sp the delay in microseconds.
-	    \sa forward(uint32_t, uint32_t), backward(uint32_t, uint32_t)
-	*/
+	 \details This function can be used to change the speed during an operation of forward or backward.
+	 \param sp the delay in microseconds.
+	 \sa forward(uint32_t, uint32_t), backward(uint32_t, uint32_t)
+	 */
 	void speed(uint32_t sp);
 
 	//! Stop any motion.
 	void stop();
 
-	  /*! \brief Perform the motion of the motor
-	      \details The function performs effectively the motor motion.
-	               It verifies that the specified delay from the last step is expired and than moves the motor of one step.
-	               The function must be call in the main loop with a frequency greater than 1/(delay*1000000).
-	               Greater is the frequency to call the function and higher is the precision of the the motion.
-	      \return the function returns the number of steps made, up to the end of the motion.
-	              If the motion end the motor is idle and it can perform a new command.
-	              When the motor is idle the function returns -1.
-	  */
-	  int32_t update();
+	//! Pause the motion. \sa MSMC_ULN2003A::start()
+	void pause();
 
+	//! Restart the motion after the call of the function MSMC_ULN2003A::pause()
+	void restart();
 
+	/*! \brief Perform the motion of the motor
+	 \details The function performs effectively the motor motion.
+	 It verifies that the specified delay from the last step is expired and than moves the motor of one step.
+	 The function must be call in the main loop with a frequency greater than 1/(spd/1000000).
+	 Greater is the frequency to call the function and higher is the precision of the the motion.
+	 \return the function returns the number of steps made, up to the end of the motion.
+	 If the motion end the motor is idle and it can perform a new command.
+	 When the motor is idle the function returns -1.
+	 */
+	int32_t update();
+
+	/*! \brief It sets the direction mode.
+	 *  \param m The direction mode: 1 direct, -1 inverted.
+	 */
+	void dirMode(int8_t m);
 
 };
 

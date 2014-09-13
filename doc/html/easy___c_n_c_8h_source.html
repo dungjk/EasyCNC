@@ -95,30 +95,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//add your includes for the project easy_CNC here</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//end of add your includes here</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="easy___c_n_c_8h.html#afe461d27b9c48d5921c00d521181f12f">loop</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> <a class="code" href="easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utensils_8h.html">Utensils.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;Servo.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_position_8h.html">Position.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_n_c___router_8h.html">CNC_Router.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//end of add your includes here</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//add your function definitions for the project easy_CNC here</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="easy___c_n_c_8h.html#afe461d27b9c48d5921c00d521181f12f">loop</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//Do not add code below this line</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _easy_CNC_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="easy___c_n_c_8h_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> easy_CNC.cpp:6</div></div>
-<div class="ttc" id="easy___c_n_c_8h_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="easy___c_n_c_8h.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdef"><b>Definition:</b> easy_CNC.cpp:12</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//add your function definitions for the project easy_CNC here</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;PlotterServo <a class="code" href="easy___c_n_c_8h.html#aeee74d506e08f08c2e3e2f68837d6de0">mypen</a>(_PLOTTER_SERVO_PIN,_PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="class_c_n_c___router.html">CNC_Router</a> <a class="code" href="easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67">mycnc</a>(<a class="code" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a>, <a class="code" href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">ROUTER_MY_STEPS_PER_MM</a>, <a class="code" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>, <a class="code" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>);  <span class="comment">//200.0 at lowPrecision</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="easy___c_n_c_8h.html#aab391321b465e009e9d1ad4839cdc135">   34</a></span>&#160;<span class="keywordtype">boolean</span> <a class="code" href="easy___c_n_c_8h.html#aab391321b465e009e9d1ad4839cdc135">end_task</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="easy___c_n_c_8h.html#a602fb203183e59e6886cf242effd2c47">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="easy___c_n_c_8h.html#a602fb203183e59e6886cf242effd2c47">stopButton</a>(){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67">mycnc</a>.<a class="code" href="class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac">stopMotion</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="easy___c_n_c_8h.html#a602deeb5004b37f160b63a7785faa7a1">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="easy___c_n_c_8h.html#a602deeb5004b37f160b63a7785faa7a1">processPos</a>(){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">float</span> new_x, new_y;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  new_x = Serial.parseFloat();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  new_y = Serial.parseFloat();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  Serial.read();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67">mycnc</a>.<a class="code" href="class_c_n_c___router.html#aa8f1afb0edd66b1597bb8fd3a0689ed9">moveTo</a>(new_x, new_y);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//Do not add code below this line</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _easy_CNC_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="easy___c_n_c_8h_html_acb5b2abc27c60baec6f0d4e3fb913a67"><div class="ttname"><a href="easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67">mycnc</a></div><div class="ttdeci">CNC_Router mycnc(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MX_SPEED, ROUTER_MY_SPEED)</div></div>
+<div class="ttc" id="class_c_n_c___router_html_aa8f1afb0edd66b1597bb8fd3a0689ed9"><div class="ttname"><a href="class_c_n_c___router.html#aa8f1afb0edd66b1597bb8fd3a0689ed9">CNC_Router::moveTo</a></div><div class="ttdeci">void moveTo(float px, float py)</div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:34</div></div>
+<div class="ttc" id="easy___c_n_c_8h_html_a602fb203183e59e6886cf242effd2c47"><div class="ttname"><a href="easy___c_n_c_8h.html#a602fb203183e59e6886cf242effd2c47">stopButton</a></div><div class="ttdeci">void stopButton()</div><div class="ttdef"><b>Definition:</b> easy_CNC.h:37</div></div>
+<div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div><div class="ttdoc">The configuration file. </div></div>
+<div class="ttc" id="easy___c_n_c_8h_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> easy_CNC.cpp:5</div></div>
+<div class="ttc" id="config_8h_html_a561a2d9e0685a3f1ef859e8fe82c44ee"><div class="ttname"><a href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a></div><div class="ttdeci">#define ROUTER_MY_SPEED</div><div class="ttdoc">The maximum speed used to control the motor of Y-axis. The unit is steps/s. </div><div class="ttdef"><b>Definition:</b> config.h:46</div></div>
+<div class="ttc" id="class_c_n_c___router_html_aebacab02935c41a4c11b926c0770bcac"><div class="ttname"><a href="class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac">CNC_Router::stopMotion</a></div><div class="ttdeci">void stopMotion()</div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:81</div></div>
+<div class="ttc" id="_c_n_c___router_8h_html"><div class="ttname"><a href="_c_n_c___router_8h.html">CNC_Router.h</a></div><div class="ttdoc">The file contains the class which controls the x y router. </div></div>
+<div class="ttc" id="easy___c_n_c_8h_html_a602deeb5004b37f160b63a7785faa7a1"><div class="ttname"><a href="easy___c_n_c_8h.html#a602deeb5004b37f160b63a7785faa7a1">processPos</a></div><div class="ttdeci">void processPos()</div><div class="ttdef"><b>Definition:</b> easy_CNC.h:41</div></div>
+<div class="ttc" id="config_8h_html_afb07c4644cc35352a450b5b531fc7fa1"><div class="ttname"><a href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">ROUTER_MY_STEPS_PER_MM</a></div><div class="ttdeci">#define ROUTER_MY_STEPS_PER_MM</div><div class="ttdoc">Number of steps to forward of a mm. </div><div class="ttdef"><b>Definition:</b> config.h:44</div></div>
+<div class="ttc" id="easy___c_n_c_8h_html_aab391321b465e009e9d1ad4839cdc135"><div class="ttname"><a href="easy___c_n_c_8h.html#aab391321b465e009e9d1ad4839cdc135">end_task</a></div><div class="ttdeci">boolean end_task</div><div class="ttdef"><b>Definition:</b> easy_CNC.h:34</div></div>
+<div class="ttc" id="class_c_n_c___router_html"><div class="ttname"><a href="class_c_n_c___router.html">CNC_Router</a></div><div class="ttdoc">The class controls the motors of the xy router of the CNC. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:33</div></div>
+<div class="ttc" id="easy___c_n_c_8h_html_aeee74d506e08f08c2e3e2f68837d6de0"><div class="ttname"><a href="easy___c_n_c_8h.html#aeee74d506e08f08c2e3e2f68837d6de0">mypen</a></div><div class="ttdeci">PlotterServo mypen(_PLOTTER_SERVO_PIN, _PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS)</div></div>
+<div class="ttc" id="_position_8h_html"><div class="ttname"><a href="_position_8h.html">Position.h</a></div><div class="ttdoc">Class to manage Cartesian position. </div></div>
+<div class="ttc" id="easy___c_n_c_8h_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="easy___c_n_c_8h.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdef"><b>Definition:</b> easy_CNC.cpp:24</div></div>
+<div class="ttc" id="config_8h_html_aeb39dfe1cecb49617c2de68f2b7863ad"><div class="ttname"><a href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a></div><div class="ttdeci">#define ROUTER_MX_SPEED</div><div class="ttdoc">The maximum speed used to control the motor of X-axis. The unit is steps/s. </div><div class="ttdef"><b>Definition:</b> config.h:45</div></div>
+<div class="ttc" id="_utensils_8h_html"><div class="ttname"><a href="_utensils_8h.html">Utensils.h</a></div><div class="ttdoc">The file contains the classes which implement the control of different utensils. </div></div>
+<div class="ttc" id="config_8h_html_ad18fe160593d7a9ca8064b3f911c38cc"><div class="ttname"><a href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a></div><div class="ttdeci">#define ROUTER_MX_STEPS_PER_MM</div><div class="ttdoc">Number of steps to forward of a mm. </div><div class="ttdef"><b>Definition:</b> config.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

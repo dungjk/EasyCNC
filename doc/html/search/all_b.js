@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['m_5fready',['m_ready',['../class_m_s_m_c___a4988.html#a86ef4c886ee6c7ed6fa87e27c0a7a9ea',1,'MSMC_A4988::m_ready()'],['../class_m_s_m_c___u_l_n2003_a.html#a4f2ee51f769815847a2a0062ff03bd6e',1,'MSMC_ULN2003A::m_ready()']]],
-  ['moveto',['moveTo',['../class_c_n_cxy.html#aeb30f9045a768b51b12521d032410631',1,'CNCxy::moveTo(float px, float py)'],['../class_c_n_cxy.html#a50739c5a639e2df4490725cb4893fe0d',1,'CNCxy::moveTo(const PositionXY &amp;np)']]],
+  ['m0',['M0',['../_g_code__def_8h.html#aa1bdbfb602e7609a6a6e7a3c3e5644f3',1,'GCode_def.h']]],
+  ['m1',['M1',['../_g_code__def_8h.html#ac597abe7cf610f262f7aaec53ed1d413',1,'GCode_def.h']]],
+  ['m2',['M2',['../_g_code__def_8h.html#a2a187ef3afced0eb4c4cb99515e5429c',1,'GCode_def.h']]],
+  ['m3',['M3',['../_g_code__def_8h.html#ad801d72bd01ef1ac9b86dbf4de0d355d',1,'GCode_def.h']]],
+  ['m30',['M30',['../_g_code__def_8h.html#ae5a5c8c471386d7e7f10bd9bc483e767',1,'GCode_def.h']]],
+  ['m4',['M4',['../_g_code__def_8h.html#a9a3433d6613a64df14bf05957ba30837',1,'GCode_def.h']]],
+  ['m48',['M48',['../_g_code__def_8h.html#a0087fe0bb3afdd0f4a02f195078a1630',1,'GCode_def.h']]],
+  ['m49',['M49',['../_g_code__def_8h.html#ab4d6d223ce6ea0681a6fe9490059de5a',1,'GCode_def.h']]],
+  ['m5',['M5',['../_g_code__def_8h.html#aaae035dfc29e91b0d2b941a446546631',1,'GCode_def.h']]],
+  ['m6',['M6',['../_g_code__def_8h.html#a3a58ea008b2446f96146735635b03373',1,'GCode_def.h']]],
+  ['m60',['M60',['../_g_code__def_8h.html#ab6ad3780dc7382645908c331ab2dc374',1,'GCode_def.h']]],
+  ['m7',['M7',['../_g_code__def_8h.html#acaff0b380565437a498a06d7e6b57c3a',1,'GCode_def.h']]],
+  ['m8',['M8',['../_g_code__def_8h.html#aabb8feb3270ae3ba252befaeecd95283',1,'GCode_def.h']]],
+  ['m9',['M9',['../_g_code__def_8h.html#a55be408e63eeea7ed9d808d7e8385e3d',1,'GCode_def.h']]],
+  ['milingmachine',['MilingMachine',['../class_milling_machine.html#a90d69a3f8ba1aa9d03dc2bb87d72db51',1,'MillingMachine']]],
+  ['millingmachine',['MillingMachine',['../class_milling_machine.html',1,'MillingMachine'],['../class_milling_machine.html#adaa67d0774d9fa0ed9d51d7b5cd12a2a',1,'MillingMachine::MillingMachine()']]],
+  ['moveto',['moveTo',['../class_c_n_c___router.html#aa8f1afb0edd66b1597bb8fd3a0689ed9',1,'CNC_Router::moveTo(float px, float py)'],['../class_c_n_c___router.html#a22accd2ec43457dfb0d990cc6eec45d3',1,'CNC_Router::moveTo(const PositionXY &amp;np)'],['../class_milling_machine.html#ac4f32a740547428b61db6e44bd600002',1,'MillingMachine::moveTo()']]],
+  ['moving',['moving',['../class_g_code.html#ae84ec0e15b18d91420c39627d1bdf78a',1,'GCode']]],
   ['msmc',['MSMC',['../class_m_s_m_c.html',1,'']]],
   ['msmc_2eh',['MSMC.h',['../_m_s_m_c_8h.html',1,'']]],
   ['msmc_5fa4988',['MSMC_A4988',['../class_m_s_m_c___a4988.html',1,'MSMC_A4988'],['../class_m_s_m_c___a4988.html#a3ea9fb71304c6a21695947fde680ee48',1,'MSMC_A4988::MSMC_A4988()'],['../class_m_s_m_c___a4988.html#af2633e82e29d622a4fb5b5f8f6b77446',1,'MSMC_A4988::MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen)']]],
@@ -10,6 +26,6 @@ var searchData=
   ['msmc_5fuln2003a',['MSMC_ULN2003A',['../class_m_s_m_c___u_l_n2003_a.html',1,'MSMC_ULN2003A'],['../class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a',1,'MSMC_ULN2003A::MSMC_ULN2003A()'],['../class_m_s_m_c___u_l_n2003_a.html#ae653d15c96f4e8ddfb4476cc77495ad1',1,'MSMC_ULN2003A::MSMC_ULN2003A(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)']]],
   ['msmc_5fuln2003a_2ecpp',['MSMC_ULN2003A.cpp',['../_m_s_m_c___u_l_n2003_a_8cpp.html',1,'']]],
   ['msmc_5fuln2003a_2eh',['MSMC_ULN2003A.h',['../_m_s_m_c___u_l_n2003_a_8h.html',1,'']]],
-  ['mx',['mx',['../class_c_n_cxy.html#a82c1a00846aa58fd6418f5b2ee0461bf',1,'CNCxy']]],
-  ['my',['my',['../class_c_n_cxy.html#ab8a50121a78a388da72fb7afa7976ab6',1,'CNCxy']]]
+  ['mycnc',['mycnc',['../easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67',1,'easy_CNC.h']]],
+  ['mypen',['mypen',['../easy___c_n_c_8h.html#aeee74d506e08f08c2e3e2f68837d6de0',1,'easy_CNC.h']]]
 ];

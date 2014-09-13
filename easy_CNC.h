@@ -13,7 +13,7 @@
 #include "Utensils.h"
 #include <Servo.h>
 #include "Position.h"
-#include "CNCxy.h"
+#include "CNC_Router.h"
 
 //end of add your includes here
 #ifdef __cplusplus
@@ -27,11 +27,13 @@ void setup();
 
 //add your function definitions for the project easy_CNC here
 
-PlotterServo mypen(_PLOTTER_SERVO_PIN,_PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS);
+//PlotterServo mypen(_PLOTTER_SERVO_PIN,_PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS);
+MillingMachine mill(_MILLING_MACHINE_MZ_STEPS_PER_MM, _MILLING_MACHINE_MZ_FAST_SPEED, _MILLING_MACHINE_MZ_SLOW_SPEED);
 
-CNCxy mycnc(ROUTER_MX_STEPS_PER_ROUND, ROUTER_MY_STEPS_PER_ROUND, ROUTER_MX_SPEED, ROUTER_MY_SPEED);  //200.0 at lowPrecision
+CNC_Router mycnc(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MX_SPEED, ROUTER_MY_SPEED);  //200.0 at lowPrecision
 
 boolean end_task = false;
+boolean a, b;
 
 
 void stopButton(){
@@ -39,10 +41,12 @@ void stopButton(){
 }
 
 void processPos(){
-  float new_x, new_y;
+  float new_x, new_y, new_z;
   new_x = Serial.parseFloat();
   new_y = Serial.parseFloat();
+  new_z = Serial.parseFloat();
   Serial.read();
+  mill.fastMoveTo(new_z);
   mycnc.moveTo(new_x, new_y);
 }
 

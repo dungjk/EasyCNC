@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['X',['../class_position_x_y.html#a02c862d5e5a643a6d774b1876a30cc5e',1,'PositionXY::X() const '],['../class_position_x_y.html#aecca3ffac58837cd223add02a6145496',1,'PositionXY::X(float px)']]]
+  ['y',['Y',['../class_position_x_y.html#aa6bceb45b13566b4a312d5d7aad2ec77',1,'PositionXY::Y() const '],['../class_position_x_y.html#a7bb12f86083750580799fcf0535518e9',1,'PositionXY::Y(float py)']]]
 ];

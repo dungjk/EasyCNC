@@ -8,9 +8,10 @@
 #include "MSMC_A4988.h"
 
 MSMC_A4988::MSMC_A4988() {
-	pin_step = pin_dir = pin_enable = spd = steps = tot_steps = old_time = dir =
-			control_mode = 0;
+	pin_step = pin_dir = pin_enable = spd = steps = tot_steps = old_time =
+			pause_time = dir = dir_mode = control_mode = 0;
 	m_ready = false;
+	m_pause = false;
 	step_pin_val = LOW;
 }
 
@@ -18,12 +19,13 @@ MSMC_A4988::MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen) {
 	pin_dir = pdr;
 	pin_enable = pen;
 	pin_step = pst;
-	spd = steps = tot_steps = old_time = dir = control_mode = 0;
+	spd = steps = tot_steps = old_time = pause_time = dir = dir_mode = control_mode = 0;
 	pinMode(pin_dir, OUTPUT);
 	pinMode(pin_enable, OUTPUT);
 	pinMode(pin_step, OUTPUT);
 	step_pin_val = LOW;
 	m_ready = true;
+	m_pause = false;
 }
 
 void MSMC_A4988::one_step_drive(boolean v) {
@@ -31,11 +33,19 @@ void MSMC_A4988::one_step_drive(boolean v) {
 }
 
 void MSMC_A4988::setDirection() {
-	if (dir == 1) {
+	if (dir*dir_mode == 1) {
 		digitalWrite(pin_dir, HIGH);
-	} else if (dir == -1) {
+	} else if (dir*dir_mode == -1) {
 		digitalWrite(pin_dir, LOW);
 	}
+}
+
+int8_t MSMC_A4988::getDir(){
+	return dir;
+}
+
+void MSMC_A4988::dirMode(int8_t m){
+	dir_mode = m;
 }
 
 void MSMC_A4988::enable() {
@@ -73,14 +83,15 @@ void MSMC_A4988::setPins(uint8_t pst, uint8_t pdr, uint8_t pen) {
 	pinMode(pin_dir, OUTPUT);
 	pinMode(pin_enable, OUTPUT);
 	pinMode(pin_step, OUTPUT);
+	disable();
 	m_ready = true;
 }
 
-void MSMC_A4988::setMode(uint8_t mod){
+void MSMC_A4988::setMode(uint8_t mod) {
 	control_mode = mod;
 }
 
-uint8_t MSMC_A4988::getMode(){
+uint8_t MSMC_A4988::getMode() {
 	return control_mode;
 }
 
@@ -95,10 +106,26 @@ void MSMC_A4988::stop() {
 	steps = 0;
 }
 
+void MSMC_A4988::pause() {
+	if (!m_pause) {
+		pause_time = micros();
+		m_pause = true;
+		disable();
+	}
+}
+
+void MSMC_A4988::restart() {
+	if (m_pause) {
+		m_pause = false;
+		old_time = micros() - (pause_time - old_time);
+		enable();
+	}
+}
+
 int32_t MSMC_A4988::update() {
 	uint32_t us = micros();
 
-	if (dir != 0 && (us - old_time) > spd) {
+	if (dir != 0 && (us - old_time) > spd && !m_pause) {
 		if (steps == 0) {
 			disable();
 			dir = 0;
@@ -119,5 +146,5 @@ int32_t MSMC_A4988::update() {
 		step_pin_val = false;
 	}
 
-	return (m_ready)? -1: tot_steps - steps;
+	return (m_ready) ? -1 : tot_steps - steps;
 }

@@ -115,12 +115,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a065e48c8e8f3b513bf6694e8eb1b28d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b44d0a659550ba754bf9212294ba6d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c.html#a0b44d0a659550ba754bf9212294ba6d5">stop</a> ()</td></tr>
 <tr class="separator:a0b44d0a659550ba754bf9212294ba6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c45f1547467b43209c7a271604e7c85"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c.html#a9c45f1547467b43209c7a271604e7c85">pause</a> ()</td></tr>
+<tr class="separator:a9c45f1547467b43209c7a271604e7c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89abc0ac07d7010ba32d68840da1f822"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c.html#a89abc0ac07d7010ba32d68840da1f822">start</a> ()</td></tr>
+<tr class="separator:a89abc0ac07d7010ba32d68840da1f822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85bd4abf542aecdf24bb90b9ea2a47e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c.html#a85bd4abf542aecdf24bb90b9ea2a47e9">setMode</a> (uint8_t)</td></tr>
 <tr class="separator:a85bd4abf542aecdf24bb90b9ea2a47e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a1c4ee3498360946cc8e8d39436d0e3"><td class="memItemLeft" align="right" valign="top">virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c.html#a5a1c4ee3498360946cc8e8d39436d0e3">getMode</a> ()</td></tr>
 <tr class="separator:a5a1c4ee3498360946cc8e8d39436d0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986baf46421830593e68d220d0453419"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c.html#a986baf46421830593e68d220d0453419">setPins</a> (uint8_t,...)</td></tr>
-<tr class="separator:a986baf46421830593e68d220d0453419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44ca6bc355a269543606dd4eeb7ed06e"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c.html#a44ca6bc355a269543606dd4eeb7ed06e">update</a> ()</td></tr>
 <tr class="separator:a44ca6bc355a269543606dd4eeb7ed06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -224,6 +226,31 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9c45f1547467b43209c7a271604e7c85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void MSMC::pause </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2">MSMC_ULN2003A</a>, and <a class="el" href="class_m_s_m_c___a4988.html#a321bc53bae537a0318910819a6a1a7d5">MSMC_A4988</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a85bd4abf542aecdf24bb90b9ea2a47e9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -250,40 +277,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a986baf46421830593e68d220d0453419"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void MSMC::setPins </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a065e48c8e8f3b513bf6694e8eb1b28d5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -307,6 +300,31 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="class_m_s_m_c___u_l_n2003_a.html#ad8df164c90b2205fb65c796632889f82">MSMC_ULN2003A</a>, and <a class="el" href="class_m_s_m_c___a4988.html#a6f9d236dc619342d16457aa029faeed9">MSMC_A4988</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89abc0ac07d7010ba32d68840da1f822"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void MSMC::start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_m_s_m_c___u_l_n2003_a.html#a2af925737ce57e4b363b5cebb96e700b">MSMC_ULN2003A</a>, and <a class="el" href="class_m_s_m_c___a4988.html#ab8a43792f4da2a22d25a8cd36ebbea01">MSMC_A4988</a>.</p>
 
 </div>
 </div>
@@ -366,7 +384,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 25 2014 13:34:26 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -23,8 +23,12 @@ public:
 	virtual void backward(uint32_t, uint32_t);
 	virtual void speed(uint32_t);
 	virtual void stop();
+	virtual void pause();
+	virtual void restart();
 	virtual void setMode(uint8_t);
+	virtual void dirMode(int8_t);
 	virtual uint8_t getMode();
+	virtual int8_t getDir();
 	//virtual void setPins(uint8_t, ...);
 	virtual int32_t update();
 };

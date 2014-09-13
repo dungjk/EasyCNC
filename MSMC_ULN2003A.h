@@ -54,11 +54,15 @@ class MSMC_ULN2003A : public MSMC {
   uint32_t spd;                            /*!< \brief The delay between two steps in microseconds. */
   uint32_t steps,                          /*!< \brief The number of steps until the motion ends. */
            tot_steps,                      /*!< \brief The total steps set by forward() and backward(). */
-           old_time;                       /*!< \brief The time value in microseconds set during the last step. */
+           old_time,                       /*!< \brief The time value in microseconds set during the last step. */
+           pause_time;					   /*!< \brief The time value in microseconds set by the function MSMC_ULN2003A::pause()*/
   int8_t pos;                              /*!< \brief A value among 0, 1, 2, 3 if the full step control is active, otherwise the value is one among 0, 1, 2, 3, ,4 ,5 ,6 7 */ 
-  int8_t dir;                              /*!< \brief Specify the direction of the motor: -1 backward, 1 forward, 0 all pins out LOW */
+  int8_t dir,                              /*!< \brief Specify the direction of the motor: -1 backward, 1 forward, 0 all pins out LOW */
+         dir_mode;						   /*!< Specifies if the motion is direct or inverted: 1 direct and -1 inverted*/
   uint8_t control_mode;                    /*!< \brief Specify the control mode of the controller. */
   boolean m_ready;                         /*!< \brief True if the motor is ready to take a new command: forward(uint32_t, uint32_t) or backward(uint32_t, uint32_t). */
+  boolean m_pause;                           /*!< \brief It is True if the motion is paused. */
+
  
   //! Move the motor forward of one step.
   /*! \sa backward_one()
@@ -107,6 +111,11 @@ class MSMC_ULN2003A : public MSMC {
    */
   void setMode(uint8_t mod);
 
+  /*! \brief It sets the direction mode.
+  	 *  \param m The direction mode: 1 direct, -1 inverted.
+  	 */
+  void dirMode(int8_t m);
+
   /*! \brief Return the operative mode of the controller
    *  \return An int that identifies the operative mode: #FULL_STEP and #HALF_STEP
    */
@@ -129,6 +138,12 @@ class MSMC_ULN2003A : public MSMC {
   //! Stop any motion.
   void stop();
   
+  //! Pause the motion. \sa MSMC_ULN2003A::start()
+  void pause();
+
+  //! Restart the motion after the call of the function MSMC_ULN2003A::pause()
+  void restart();
+
   //! Perform the motion of the motor
   /*! The function performs effectively the motor motion. 
       It verifies that the specified delay from the last step is expired and than moves the motor of one step.

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['init',['init',['../class_plotter_servo.html#ad35c8f57eaeeffa768340a777c105aeb',1,'PlotterServo']]],
-  ['initmotorx',['initMotorX',['../class_c_n_cxy.html#a385a87e56ea216c855b4d2df37da987b',1,'CNCxy']]],
-  ['initmotory',['initMotorY',['../class_c_n_cxy.html#ab580bbe83bb4af2e9cfceb7409804a5f',1,'CNCxy']]],
+  ['initmotor',['initMotor',['../class_milling_machine.html#a3e6b1ab0c082b41f188151a1029b0bbf',1,'MillingMachine']]],
+  ['initmotorx',['initMotorX',['../class_c_n_c___router.html#a89f4cbde58844154f247d2bf02a167fb',1,'CNC_Router']]],
+  ['initmotory',['initMotorY',['../class_c_n_c___router.html#a7f13e636e4b92c5547995b653cea317e',1,'CNC_Router']]],
   ['interrupt_5fstop_5fmotion',['INTERRUPT_STOP_MOTION',['../config_8h.html#a11cc693021583511d43ba72c445120ea',1,'config.h']]]
 ];

@@ -1,0 +1,194 @@
+\hypertarget{class_c_n_c___router}{\section{C\+N\+C\+\_\+\+Router Class Reference}
+\label{class_c_n_c___router}\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+}
+
+
+The class controls the motors of the xy router of the C\+N\+C.  
+
+
+
+
+{\ttfamily \#include $<$C\+N\+C\+\_\+\+Router.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_n_c___router_a2286f545f42ff5febfdb8d52782cd0da}{C\+N\+C\+\_\+\+Router} ()
+\item 
+\hyperlink{class_c_n_c___router_a928dbfed47e8514928b92559372378f0}{C\+N\+C\+\_\+\+Router} (float spx, float spy, float vmx, float vmy)
+\item 
+void \hyperlink{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}{init\+Motor\+X} ()
+\item 
+void \hyperlink{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}{init\+Motor\+Y} ()
+\item 
+void \hyperlink{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}{set\+Limit\+Switch\+X} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
+\item 
+void \hyperlink{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}{set\+Limit\+Switch\+Y} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
+\item 
+void \hyperlink{class_c_n_c___router_a30d838430b7452a8f47071d2f6b8845e}{reset\+Pos} ()
+\item 
+void \hyperlink{class_c_n_c___router_aa8f1afb0edd66b1597bb8fd3a0689ed9}{move\+To} (float px, float py)
+\item 
+void \hyperlink{class_c_n_c___router_a22accd2ec43457dfb0d990cc6eec45d3}{move\+To} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&np)
+\item 
+void \hyperlink{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{stop\+Motion} ()
+\item 
+void \hyperlink{class_c_n_c___router_a6b5ad1a227e63d3f374e0e53f3cf047c}{pause} ()
+\item 
+void \hyperlink{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}{high\+Precision} ()
+\item 
+void \hyperlink{class_c_n_c___router_a15e3fab9eefaa7a61403c0054e643901}{low\+Precision} ()
+\item 
+void \hyperlink{class_c_n_c___router_abbda24db494dd328382639412570978e}{set\+Incr\+Pos} ()
+\item 
+void \hyperlink{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}{set\+Absol\+Pos} ()
+\item 
+void \hyperlink{class_c_n_c___router_a4e9504d77eee555ddb35af073b67d3f1}{search\+Home\+Pos} ()
+\item 
+boolean \hyperlink{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{update} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class controls the motors of the xy router of the C\+N\+C. 
+
+T\+O\+D\+O \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_n_c___router_a2286f545f42ff5febfdb8d52782cd0da}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{C\+N\+C\+\_\+\+Router}]{\setlength{\rightskip}{0pt plus 5cm}C\+N\+C\+\_\+\+Router\+::\+C\+N\+C\+\_\+\+Router (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a2286f545f42ff5febfdb8d52782cd0da}
+\hypertarget{class_c_n_c___router_a928dbfed47e8514928b92559372378f0}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{C\+N\+C\+\_\+\+Router}]{\setlength{\rightskip}{0pt plus 5cm}C\+N\+C\+\_\+\+Router\+::\+C\+N\+C\+\_\+\+Router (
+\begin{DoxyParamCaption}
+\item[{float}]{spx, }
+\item[{float}]{spy, }
+\item[{float}]{vmx, }
+\item[{float}]{vmy}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a928dbfed47e8514928b92559372378f0}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!high\+Precision@{high\+Precision}}
+\index{high\+Precision@{high\+Precision}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{high\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::high\+Precision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}
+\hypertarget{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!init\+Motor\+X@{init\+Motor\+X}}
+\index{init\+Motor\+X@{init\+Motor\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{init\+Motor\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::init\+Motor\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}
+\hypertarget{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!init\+Motor\+Y@{init\+Motor\+Y}}
+\index{init\+Motor\+Y@{init\+Motor\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{init\+Motor\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::init\+Motor\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}
+\hypertarget{class_c_n_c___router_a15e3fab9eefaa7a61403c0054e643901}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!low\+Precision@{low\+Precision}}
+\index{low\+Precision@{low\+Precision}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{low\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::low\+Precision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a15e3fab9eefaa7a61403c0054e643901}
+\hypertarget{class_c_n_c___router_aa8f1afb0edd66b1597bb8fd3a0689ed9}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
+\index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
+\begin{DoxyParamCaption}
+\item[{float}]{px, }
+\item[{float}]{py}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_aa8f1afb0edd66b1597bb8fd3a0689ed9}
+\hypertarget{class_c_n_c___router_a22accd2ec43457dfb0d990cc6eec45d3}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
+\index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf Position\+X\+Y} \&}]{np}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a22accd2ec43457dfb0d990cc6eec45d3}
+\hypertarget{class_c_n_c___router_a6b5ad1a227e63d3f374e0e53f3cf047c}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pause@{pause}}
+\index{pause@{pause}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a6b5ad1a227e63d3f374e0e53f3cf047c}
+\hypertarget{class_c_n_c___router_a30d838430b7452a8f47071d2f6b8845e}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!reset\+Pos@{reset\+Pos}}
+\index{reset\+Pos@{reset\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{reset\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::reset\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a30d838430b7452a8f47071d2f6b8845e}
+\hypertarget{class_c_n_c___router_a4e9504d77eee555ddb35af073b67d3f1}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!search\+Home\+Pos@{search\+Home\+Pos}}
+\index{search\+Home\+Pos@{search\+Home\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{search\+Home\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::search\+Home\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a4e9504d77eee555ddb35af073b67d3f1}
+\hypertarget{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Absol\+Pos@{set\+Absol\+Pos}}
+\index{set\+Absol\+Pos@{set\+Absol\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Absol\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Absol\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}
+\hypertarget{class_c_n_c___router_abbda24db494dd328382639412570978e}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Incr\+Pos@{set\+Incr\+Pos}}
+\index{set\+Incr\+Pos@{set\+Incr\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Incr\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Incr\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_abbda24db494dd328382639412570978e}
+\hypertarget{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Limit\+Switch\+X@{set\+Limit\+Switch\+X}}
+\index{set\+Limit\+Switch\+X@{set\+Limit\+Switch\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Limit\+Switch\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Limit\+Switch\+X (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{dw, }
+\item[{int8\+\_\+t}]{up = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}
+\hypertarget{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Limit\+Switch\+Y@{set\+Limit\+Switch\+Y}}
+\index{set\+Limit\+Switch\+Y@{set\+Limit\+Switch\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Limit\+Switch\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Limit\+Switch\+Y (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{dw, }
+\item[{int8\+\_\+t}]{up = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}
+\hypertarget{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!stop\+Motion@{stop\+Motion}}
+\index{stop\+Motion@{stop\+Motion}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{stop\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::stop\+Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}
+\hypertarget{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!update@{update}}
+\index{update@{update}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}boolean C\+N\+C\+\_\+\+Router\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_c_n_c___router_8h}{C\+N\+C\+\_\+\+Router.\+h}\item 
+\hyperlink{_c_n_c___router_8cpp}{C\+N\+C\+\_\+\+Router.\+cpp}\end{DoxyCompactItemize}

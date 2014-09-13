@@ -59,8 +59,17 @@ class CNC_Router {
   
   void initMotorX();
   void initMotorY();
-  
+  /*! \brief Sets the pins where are attached the down/up limit switches
+  	 *  \details The system needs at least the down limit switch
+  	 *  \param dw The pin number where is attached the down limit switch.
+  	 *  \param up The pin number where is attached the up limit switch
+  	 */
   void setLimitSwitchX(int8_t dw, int8_t up = -1);
+  /*! \brief Sets the pins where are attached the down/up limit switches
+  	 *  \details The system needs at least the down limit switch
+  	 *  \param dw The pin number where is attached the down limit switch.
+  	 *  \param up The pin number where is attached the up limit switch
+  	 */
   void setLimitSwitchY(int8_t dw, int8_t up = -1);
   
   void resetPos();
@@ -69,8 +78,8 @@ class CNC_Router {
   void moveTo(const PositionXY &np);
   
   void stopMotion();
-  //TODO pause()
   void pause();
+  void restat();
   
   void highPrecision();
   void lowPrecision();

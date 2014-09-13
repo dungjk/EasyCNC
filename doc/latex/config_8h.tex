@@ -6,53 +6,58 @@
 The configuration file.  
 
 
+{\ttfamily \#include \char`\"{}pins\+\_\+arduino.\+h\char`\"{}}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{config_8h_a58562c1eea53acf4d89ae2e8ed79e7ac}{S\+E\+R\+I\+A\+L\+\_\+\+B\+O\+U\+N\+D}~9600
 \begin{DoxyCompactList}\small\item\em Define the speed of the serial comunication. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a11cc693021583511d43ba72c445120ea}{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N}~0
+\#define \hyperlink{config_8h_a11cc693021583511d43ba72c445120ea}{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N}~1
 \begin{DoxyCompactList}\small\item\em Define the number of the interrupt which is attached the stop button. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_af30c7b107d77d612fa88c573d252c2c2}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}~48$\ast$2
+\#define \hyperlink{config_8h_af30c7b107d77d612fa88c573d252c2c2}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}~200.\+0
 \begin{DoxyCompactList}\small\item\em Nunber of steps to make a round for the motor of the X-\/axis. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_acea4b1619e299b0aff23f42c8ee5d84f}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}~96$\ast$2
+\#define \hyperlink{config_8h_acea4b1619e299b0aff23f42c8ee5d84f}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}~200.\+0
 \begin{DoxyCompactList}\small\item\em Nunber of steps to make a round for the motor of the Y-\/axis. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}~300.\+0
-\begin{DoxyCompactList}\small\item\em The maximum speet used to control the motor of X-\/axis. The unit is steps/s. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}~300.\+0
-\begin{DoxyCompactList}\small\item\em The maximum speet used to control the motor of Y-\/axis. The unit is steps/s. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a4da93b1d161a9d99520010bf7b951315}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}
+\#define \hyperlink{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}~\hyperlink{config_8h_af30c7b107d77d612fa88c573d252c2c2}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}/1.\+25
+\begin{DoxyCompactList}\small\item\em Number of steps to forward of a mm. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_afb07c4644cc35352a450b5b531fc7fa1}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}~\hyperlink{config_8h_acea4b1619e299b0aff23f42c8ee5d84f}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}/1.\+25
+\begin{DoxyCompactList}\small\item\em Number of steps to forward of a mm. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}~600.\+0
+\begin{DoxyCompactList}\small\item\em The maximum speed used to control the motor of X-\/axis. The unit is steps/s. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}~600.\+0
+\begin{DoxyCompactList}\small\item\em The maximum speed used to control the motor of Y-\/axis. The unit is steps/s. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_ad1fd89c1662777a74f4291c29436e2f3}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+D\+I\+R}~1
+\begin{DoxyCompactList}\small\item\em This field is used to invert the direction of the \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{M\+S\+M\+C\+\_\+\+A4988\+::forward} and \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{M\+S\+M\+C\+\_\+\+A4988\+::backward} functions for the motor of the X-\/axis\+: 1 direct and 0 inverse. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a5bf49868750d86c2e41d888087d0e93b}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+D\+I\+R}~1
+\begin{DoxyCompactList}\small\item\em This field is used to invert the direction of the \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{M\+S\+M\+C\+\_\+\+A4988\+::forward} and \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{M\+S\+M\+C\+\_\+\+A4988\+::backward} functions for the motor of the Y-\/axis\+: 1 direct and 0 inverse. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_aa2ba8973ad8e317ff2808a08cd03109d}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}
 \item 
-\#define \hyperlink{config_8h_a3e84564c9d567d528b0a94f10e4bfa88}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}~4
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 1 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a677e73bb26960e54a94e24b13434805b}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}~5
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 2 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a3e5ca863f6c653c283df7f1c9b948a1e}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}~6
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 3 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a34b54395d5587bfd1a363fad8236b327}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}~7
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 4 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_ac76bb852543867b5e53e6735bde92c71}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}
+\#define \hyperlink{config_8h_a2772e27b33c24fca3e756e98e4da0528}{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}~46
+\begin{DoxyCompactList}\small\item\em Pin connected to the step control pin of the A4988. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a458d8330a8ea0e864a5f14641beaff3b}{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}~48
+\begin{DoxyCompactList}\small\item\em Pin connected to the direction control pin of the A4988. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_aa440cb6779843ab1068ff26919b75db4}{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}~A8
+\begin{DoxyCompactList}\small\item\em Pin connected to the enable pin of the A4988. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_ab43f3d9753eb04addb3ecf892d43e9b3}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}
 \item 
-\#define \hyperlink{config_8h_a069e95df94bc428b5d6855cfe2b246ea}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}~8
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 1 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_afe054be9d67aa1c532ed141390c13c2e}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}~9
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 2 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_abdd117db6652e66cebd82b6b797056c5}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}~10
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 3 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_ad43a37ee05d01f824b40b8d6f64d1f0b}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}~11
-\begin{DoxyCompactList}\small\item\em Pin connected to the coil 4 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a59986bb7656ebf4e9f2865d0f41a3a61}{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X}~12
+\#define \hyperlink{config_8h_ab22bf58b0951dd8f3ae5d94bda82d87e}{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}~A0
+\begin{DoxyCompactList}\small\item\em Pin connected to the step control pin of the A4988. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a865681c0605dcc31e4c0262995aaef20}{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}~A1
+\begin{DoxyCompactList}\small\item\em Pin connected to the direction control pin of the A4988. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a3e30826a0cbcd6ac91bae8b83651bc78}{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}~38
+\begin{DoxyCompactList}\small\item\em Pin connected to the enable pin of the A4988. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a59986bb7656ebf4e9f2865d0f41a3a61}{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X}~2
 \begin{DoxyCompactList}\small\item\em The number of the pin which is connected to the limit switch of the X-\/axis. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_abaa12423c2b641abd816339a240ab836}{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y}~12
+\#define \hyperlink{config_8h_abaa12423c2b641abd816339a240ab836}{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y}~2
 \begin{DoxyCompactList}\small\item\em The number of the pin which is connected to the limit switch of the Y-\/axis. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a800acae95a5088dd22283bce5beaa81d}{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O}
-\begin{DoxyCompactList}\small\item\em Uncomment to active the servo plotter support. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_aeffd35de0e4acced102d7532a0085eef}{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N}~3
-\begin{DoxyCompactList}\small\item\em The P\+W\+N pin where is attached the serco motor. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a354bf9fc8f5bbfcd5ce30045caf32c9e}{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S}~80
-\begin{DoxyCompactList}\small\item\em The value on the range \mbox{[}0, 180\mbox{]} that moves up the pen of the plotter. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a861ce4360b76dbafad773e3d185ae490}{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S}~136
-\begin{DoxyCompactList}\small\item\em The value on the range \mbox{[}0, 180\mbox{]} that moves down the pen of the plotter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\#define \hyperlink{config_8h_a1ed2a15e6b761d36ac89dfc727d4ae82}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E}
+\begin{DoxyCompactList}\small\item\em Uncomment to active the milling machine support. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a39b167a37b9554ca6d02f5b96ab4a646}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}~200.\+0
+\begin{DoxyCompactList}\small\item\em Nunber of steps to make a round for the motor of the Z-\/axis. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a94aabd4cf54e1c9cb34fb3860a4af575}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}~\hyperlink{config_8h_a39b167a37b9554ca6d02f5b96ab4a646}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}/1.\+25
+\begin{DoxyCompactList}\small\item\em Number of steps to forward of a mm. \end{DoxyCompactList}\item 
+\#define \hyperlink{config_8h_a510d27f34c0bcdb9f434c0afc434f7ed}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}~600.\+0
+\begin{DoxyCompactList}\small\item\em The maximum speed used to control the motor of Z-\/axis. The unit is steps/s. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -79,141 +84,155 @@ Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{config_8h_a800acae95a5088dd22283bce5beaa81d}{\index{config.\+h@{config.\+h}!\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O}}
-\index{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O}!config.\+h@{config.\+h}}
-\subsubsection[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O}}\label{config_8h_a800acae95a5088dd22283bce5beaa81d}
+\hypertarget{config_8h_a1ed2a15e6b761d36ac89dfc727d4ae82}{\index{config.\+h@{config.\+h}!\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E}}
+\index{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E}!config.\+h@{config.\+h}}
+\subsubsection[{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E}}\label{config_8h_a1ed2a15e6b761d36ac89dfc727d4ae82}
 
 
-Uncomment to active the servo plotter support. 
+Uncomment to active the milling machine support. 
 
-\hypertarget{config_8h_a861ce4360b76dbafad773e3d185ae490}{\index{config.\+h@{config.\+h}!\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S}}
-\index{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S}!config.\+h@{config.\+h}}
-\subsubsection[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S~136}}\label{config_8h_a861ce4360b76dbafad773e3d185ae490}
-
-
-The value on the range \mbox{[}0, 180\mbox{]} that moves down the pen of the plotter. 
-
-\hypertarget{config_8h_aeffd35de0e4acced102d7532a0085eef}{\index{config.\+h@{config.\+h}!\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N}}
-\index{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N~3}}\label{config_8h_aeffd35de0e4acced102d7532a0085eef}
+\hypertarget{config_8h_a510d27f34c0bcdb9f434c0afc434f7ed}{\index{config.\+h@{config.\+h}!\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}}
+\index{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}!config.\+h@{config.\+h}}
+\subsubsection[{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D~600.\+0}}\label{config_8h_a510d27f34c0bcdb9f434c0afc434f7ed}
 
 
-The P\+W\+N pin where is attached the serco motor. 
+The maximum speed used to control the motor of Z-\/axis. The unit is steps/s. 
 
-\hypertarget{config_8h_a354bf9fc8f5bbfcd5ce30045caf32c9e}{\index{config.\+h@{config.\+h}!\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S}}
-\index{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S@{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S}!config.\+h@{config.\+h}}
-\subsubsection[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S~80}}\label{config_8h_a354bf9fc8f5bbfcd5ce30045caf32c9e}
+\hypertarget{config_8h_a94aabd4cf54e1c9cb34fb3860a4af575}{\index{config.\+h@{config.\+h}!\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}
+\index{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}!config.\+h@{config.\+h}}
+\subsubsection[{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M~{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}/1.\+25}}\label{config_8h_a94aabd4cf54e1c9cb34fb3860a4af575}
 
 
-The value on the range \mbox{[}0, 180\mbox{]} that moves up the pen of the plotter. 
+Number of steps to forward of a mm. 
+
+\hypertarget{config_8h_a39b167a37b9554ca6d02f5b96ab4a646}{\index{config.\+h@{config.\+h}!\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}}
+\index{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D@{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}!config.\+h@{config.\+h}}
+\subsubsection[{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D~200.\+0}}\label{config_8h_a39b167a37b9554ca6d02f5b96ab4a646}
+
+
+Nunber of steps to make a round for the motor of the Z-\/axis. 
 
 \hypertarget{config_8h_a11cc693021583511d43ba72c445120ea}{\index{config.\+h@{config.\+h}!I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N@{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N}}
 \index{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N@{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N}!config.\+h@{config.\+h}}
-\subsubsection[{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N~0}}\label{config_8h_a11cc693021583511d43ba72c445120ea}
+\subsubsection[{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+T\+O\+P\+\_\+\+M\+O\+T\+I\+O\+N~1}}\label{config_8h_a11cc693021583511d43ba72c445120ea}
 
 
 Define the number of the interrupt which is attached the stop button. 
 
-This value is different from the pin number at which the interrupt refers. The pin depends on the arduino board version. See \href{http://arduino.cc/en/Main/Products}{\tt http\+://arduino.\+cc/en/\+Main/\+Products} \hypertarget{config_8h_a59986bb7656ebf4e9f2865d0f41a3a61}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X@{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X}}
+This value is different from the pin number at which the interrupt refers. The pin depends on the arduino board version. See \href{http://arduino.cc/en/Main/Products}{\tt http\+://arduino.\+cc/en/\+Main/\+Products} \hypertarget{config_8h_a458d8330a8ea0e864a5f14641beaff3b}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}}
+\index{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N~48}}\label{config_8h_a458d8330a8ea0e864a5f14641beaff3b}
+
+
+Pin connected to the direction control pin of the A4988. 
+
+\hypertarget{config_8h_aa440cb6779843ab1068ff26919b75db4}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}}
+\index{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N~A8}}\label{config_8h_aa440cb6779843ab1068ff26919b75db4}
+
+
+Pin connected to the enable pin of the A4988. 
+
+\hypertarget{config_8h_a2772e27b33c24fca3e756e98e4da0528}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}}
+\index{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N~46}}\label{config_8h_a2772e27b33c24fca3e756e98e4da0528}
+
+
+Pin connected to the step control pin of the A4988. 
+
+\hypertarget{config_8h_a865681c0605dcc31e4c0262995aaef20}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}}
+\index{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N~A1}}\label{config_8h_a865681c0605dcc31e4c0262995aaef20}
+
+
+Pin connected to the direction control pin of the A4988. 
+
+\hypertarget{config_8h_a3e30826a0cbcd6ac91bae8b83651bc78}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}}
+\index{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N~38}}\label{config_8h_a3e30826a0cbcd6ac91bae8b83651bc78}
+
+
+Pin connected to the enable pin of the A4988. 
+
+\hypertarget{config_8h_ab22bf58b0951dd8f3ae5d94bda82d87e}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}}
+\index{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+I\+N~A0}}\label{config_8h_ab22bf58b0951dd8f3ae5d94bda82d87e}
+
+
+Pin connected to the step control pin of the A4988. 
+
+\hypertarget{config_8h_a59986bb7656ebf4e9f2865d0f41a3a61}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X@{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X@{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X~12}}\label{config_8h_a59986bb7656ebf4e9f2865d0f41a3a61}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+X~2}}\label{config_8h_a59986bb7656ebf4e9f2865d0f41a3a61}
 
 
 The number of the pin which is connected to the limit switch of the X-\/axis. 
 
 \hypertarget{config_8h_abaa12423c2b641abd816339a240ab836}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y@{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y@{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y~12}}\label{config_8h_abaa12423c2b641abd816339a240ab836}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+L\+I\+M\+I\+T\+\_\+\+Y~2}}\label{config_8h_abaa12423c2b641abd816339a240ab836}
 
 
 The number of the pin which is connected to the limit switch of the Y-\/axis. 
 
-\hypertarget{config_8h_a3e84564c9d567d528b0a94f10e4bfa88}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N~4}}\label{config_8h_a3e84564c9d567d528b0a94f10e4bfa88}
+\hypertarget{config_8h_aa2ba8973ad8e317ff2808a08cd03109d}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}}
+\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}}\label{config_8h_aa2ba8973ad8e317ff2808a08cd03109d}
+\hypertarget{config_8h_ad1fd89c1662777a74f4291c29436e2f3}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+D\+I\+R@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+D\+I\+R}}
+\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+D\+I\+R@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+D\+I\+R}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+D\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+D\+I\+R~1}}\label{config_8h_ad1fd89c1662777a74f4291c29436e2f3}
 
 
-Pin connected to the coil 1 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. 
+This field is used to invert the direction of the \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{M\+S\+M\+C\+\_\+\+A4988\+::forward} and \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{M\+S\+M\+C\+\_\+\+A4988\+::backward} functions for the motor of the X-\/axis\+: 1 direct and 0 inverse. 
 
-\hypertarget{config_8h_a677e73bb26960e54a94e24b13434805b}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N~5}}\label{config_8h_a677e73bb26960e54a94e24b13434805b}
-
-
-Pin connected to the coil 2 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. 
-
-\hypertarget{config_8h_a3e5ca863f6c653c283df7f1c9b948a1e}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N~6}}\label{config_8h_a3e5ca863f6c653c283df7f1c9b948a1e}
-
-
-Pin connected to the coil 3 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. 
-
-\hypertarget{config_8h_a34b54395d5587bfd1a363fad8236b327}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N~7}}\label{config_8h_a34b54395d5587bfd1a363fad8236b327}
-
-
-Pin connected to the coil 4 of the unipolar motor of X-\/axis through the U\+L\+N2003\+A controller. 
-
-\hypertarget{config_8h_a4da93b1d161a9d99520010bf7b951315}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}}\label{config_8h_a4da93b1d161a9d99520010bf7b951315}
 \hypertarget{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D~300.\+0}}\label{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D~600.\+0}}\label{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}
 
 
-The maximum speet used to control the motor of X-\/axis. The unit is steps/s. 
+The maximum speed used to control the motor of X-\/axis. The unit is steps/s. 
+
+\hypertarget{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}
+\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M~{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}/1.\+25}}\label{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}
+
+
+Number of steps to forward of a mm. 
 
 \hypertarget{config_8h_af30c7b107d77d612fa88c573d252c2c2}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D~48$\ast$2}}\label{config_8h_af30c7b107d77d612fa88c573d252c2c2}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D~200.\+0}}\label{config_8h_af30c7b107d77d612fa88c573d252c2c2}
 
 
 Nunber of steps to make a round for the motor of the X-\/axis. 
 
-\hypertarget{config_8h_a069e95df94bc428b5d6855cfe2b246ea}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L1\+\_\+\+P\+I\+N~8}}\label{config_8h_a069e95df94bc428b5d6855cfe2b246ea}
+\hypertarget{config_8h_ab43f3d9753eb04addb3ecf892d43e9b3}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}}
+\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}}\label{config_8h_ab43f3d9753eb04addb3ecf892d43e9b3}
+\hypertarget{config_8h_a5bf49868750d86c2e41d888087d0e93b}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+D\+I\+R@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+D\+I\+R}}
+\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+D\+I\+R@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+D\+I\+R}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+D\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+D\+I\+R~1}}\label{config_8h_a5bf49868750d86c2e41d888087d0e93b}
 
 
-Pin connected to the coil 1 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. 
+This field is used to invert the direction of the \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{M\+S\+M\+C\+\_\+\+A4988\+::forward} and \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{M\+S\+M\+C\+\_\+\+A4988\+::backward} functions for the motor of the Y-\/axis\+: 1 direct and 0 inverse. 
 
-\hypertarget{config_8h_afe054be9d67aa1c532ed141390c13c2e}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L2\+\_\+\+P\+I\+N~9}}\label{config_8h_afe054be9d67aa1c532ed141390c13c2e}
-
-
-Pin connected to the coil 2 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. 
-
-\hypertarget{config_8h_abdd117db6652e66cebd82b6b797056c5}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L3\+\_\+\+P\+I\+N~10}}\label{config_8h_abdd117db6652e66cebd82b6b797056c5}
-
-
-Pin connected to the coil 3 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. 
-
-\hypertarget{config_8h_ad43a37ee05d01f824b40b8d6f64d1f0b}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+I\+L4\+\_\+\+P\+I\+N~11}}\label{config_8h_ad43a37ee05d01f824b40b8d6f64d1f0b}
-
-
-Pin connected to the coil 4 of the unipolar motor of Y-\/axis through the U\+L\+N2003\+A controller. 
-
-\hypertarget{config_8h_ac76bb852543867b5e53e6735bde92c71}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}}
-\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+U\+L\+N2003\+A}}\label{config_8h_ac76bb852543867b5e53e6735bde92c71}
 \hypertarget{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D~300.\+0}}\label{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D~600.\+0}}\label{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}
 
 
-The maximum speet used to control the motor of Y-\/axis. The unit is steps/s. 
+The maximum speed used to control the motor of Y-\/axis. The unit is steps/s. 
+
+\hypertarget{config_8h_afb07c4644cc35352a450b5b531fc7fa1}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}
+\index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}!config.\+h@{config.\+h}}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M~{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}/1.\+25}}\label{config_8h_afb07c4644cc35352a450b5b531fc7fa1}
+
+
+Number of steps to forward of a mm. 
 
 \hypertarget{config_8h_acea4b1619e299b0aff23f42c8ee5d84f}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D~96$\ast$2}}\label{config_8h_acea4b1619e299b0aff23f42c8ee5d84f}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D~200.\+0}}\label{config_8h_acea4b1619e299b0aff23f42c8ee5d84f}
 
 
 Nunber of steps to make a round for the motor of the Y-\/axis. 
