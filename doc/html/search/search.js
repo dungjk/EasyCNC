@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   1: "cgmp",
   2: "cegmpsu",
   3: "abcdfghilmoprsuxy",
-  4: "cdeflmpru",
+  4: "abcdeflmpru",
   5: "_efghimqrsu"
 };
 

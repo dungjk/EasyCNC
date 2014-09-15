@@ -28,10 +28,6 @@ MSMC_A4988::MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen) {
 	m_pause = false;
 }
 
-void MSMC_A4988::one_step_drive(boolean v) {
-	digitalWrite(pin_step, v);
-}
-
 void MSMC_A4988::setDirection() {
 	if (dir*dir_mode == 1) {
 		digitalWrite(pin_dir, HIGH);
@@ -124,8 +120,9 @@ void MSMC_A4988::restart() {
 
 int32_t MSMC_A4988::update() {
 	uint32_t us = micros();
+	uint32_t delta = us - old_time;
 
-	if (dir != 0 && (us - old_time) > spd && !m_pause) {
+	if (dir != 0 && delta > spd && !m_pause) {
 		if (steps == 0) {
 			disable();
 			dir = 0;
@@ -135,14 +132,14 @@ int32_t MSMC_A4988::update() {
 
 		steps--;
 		old_time = us;
-		one_step_drive(HIGH);
+		digitalWrite(pin_step, HIGH);
 		step_pin_val = true;
 
 		return tot_steps - steps;
 	}
 
-	if (step_pin_val && (us - old_time) > spd / 2) {
-		one_step_drive(LOW);
+	if (step_pin_val) {
+		digitalWrite(pin_step, LOW);
 		step_pin_val = false;
 	}
 

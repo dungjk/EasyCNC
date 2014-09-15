@@ -138,7 +138,7 @@ class MSMC_ULN2003A : public MSMC {
   //! Stop any motion.
   void stop();
   
-  //! Pause the motion. \sa MSMC_ULN2003A::start()
+  //! Pause the motion. \sa MSMC_ULN2003A::restart()
   void pause();
 
   //! Restart the motion after the call of the function MSMC_ULN2003A::pause()

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['forward_5fmode',['forward_mode',['../class_g_code.html#acbf5f3b9aeffe27d3f87e9d57b487146',1,'GCode']]]
+  ['distanse_5fmode',['distanse_mode',['../class_g_code.html#a77dad1d8057ecc38242757923a2bb87f',1,'GCode']]]
 ];

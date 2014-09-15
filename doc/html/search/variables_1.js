@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['distanse_5fmode',['distanse_mode',['../class_g_code.html#a77dad1d8057ecc38242757923a2bb87f',1,'GCode']]]
+  ['b',['b',['../easy___c_n_c_8h.html#aeafba611be45e8b3ce9ab9e0af347b59',1,'easy_CNC.h']]]
 ];

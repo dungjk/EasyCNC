@@ -14,41 +14,47 @@ Class to control a the milling machine and its position on the z-\/axis.
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_milling_machine_adaa67d0774d9fa0ed9d51d7b5cd12a2a}{Milling\+Machine} ()
-\item 
-\hyperlink{class_milling_machine_a90d69a3f8ba1aa9d03dc2bb87d72db51}{Miling\+Machine} (float s, float v)
-\item 
-void \hyperlink{class_milling_machine_a3e6b1ab0c082b41f188151a1029b0bbf}{init\+Motor} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_milling_machine_a62e822e8a874059734ab483871a11489}{Milling\+Machine} (float s, float vmax, float vmin)
+\begin{DoxyCompactList}\small\item\em The constructor with arguments. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_ad8b30fc42959606e9773e5ae7e31bac7}{init} ()
+\begin{DoxyCompactList}\small\item\em It initializes the motor. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a965590d4d159254dbc9a372ea35c2d63}{reset\+Pos} ()
-\item 
-void \hyperlink{class_milling_machine_ac4f32a740547428b61db6e44bd600002}{move\+To} (float p)
-\item 
+\begin{DoxyCompactList}\small\item\em It sets the current position with the value zero. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_a3a9922b9041c75db25da0f63ba7830c6}{slow\+Move\+To} (float p)
+\begin{DoxyCompactList}\small\item\em The function moves the utensil in a specified position with fast speed. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_a9b2022ac64164727f57ff0cbf50e60ed}{fast\+Move\+To} (float p)
+\begin{DoxyCompactList}\small\item\em The function moves the utensil in a specified position. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a3b530b356897ef7b7d25f55ce8965775}{stop\+Motion} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The function stops the motion of the utensil. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a8600c252d19b2b1318400c3e8567591b}{pause} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The function pauses the current operation. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_a9bd0cff7083490bf93c1c04d728e7050}{restart} ()
+\begin{DoxyCompactList}\small\item\em The function restarts an operation that was stopped. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a3236520b26c7ab2ebad6a89edfc67d8c}{high\+Precision} ()
-\item 
+\begin{DoxyCompactList}\small\item\em It sets the motion to be more precise. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a1596fbec50d30b119393c9dec4afb164}{low\+Precision} ()
-\item 
+\begin{DoxyCompactList}\small\item\em It sets the motion to be less precise. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a07f35ca38be74aa50663a22caeb6cd3e}{set\+Incr\+Pos} ()
-\item 
+\begin{DoxyCompactList}\small\item\em It sets the mode to specify the position\+: incremental position. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a0e370f1cd0f4a3fba8dce457d8c539f0}{set\+Absol\+Pos} ()
-\item 
-void \hyperlink{class_milling_machine_acd02e836001192b1065fbcee5e9771cf}{search\+Home\+Pos} ()
-\item 
-void \hyperlink{class_milling_machine_ab49bc1d4ac057adc3381533f16bef4d4}{set\+Bit\+Speed} (int)
-\item 
-void \hyperlink{class_milling_machine_acdec58c95647317729dd111972a16e89}{set\+Bit\+Dir} (boolean)
-\item 
+\begin{DoxyCompactList}\small\item\em It sets the mode to specify the position\+: absolute position. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_a4c8204cae4818204035e210080a2705d}{search\+Zero\+Pos} ()
+\begin{DoxyCompactList}\small\item\em The procedure search the zero position. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_abea98221e7a7fe1a9366e5f8d200f268}{set\+Limit\+Switch} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
+\begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_a9d059e6adb7edd4ee42a0d6fce0338c3}{set\+Bit\+Speed} (int s)
+\begin{DoxyCompactList}\small\item\em It sets the bit speed. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_aa9e80231444db8c4bfaef2829a12230f}{set\+Bit\+Dir} (boolean d)
+\begin{DoxyCompactList}\small\item\em It sets the bit direction. \end{DoxyCompactList}\item 
 boolean \hyperlink{class_milling_machine_ac74c527eb504eb6f13d80fb64487c874}{update} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The function performs the motor motion. It must be called with a frequency greater than 1/(v/1000000) where v is the maximum speed of the motor specified as the minimum delay in microseconds between two consecutive steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Class to control a the milling machine and its position on the z-\/axis. 
 
-The class allows to control a milling machine. It is possible change the position on the z-\/axis and the speed of the dril bit. \begin{DoxyAuthor}{Author}
+The class allows to control a milling machine. It is possible change the position on the z-\/axis and the speed of the drill bit. \begin{DoxyAuthor}{Author}
 Francesco Giurlanda 
 \end{DoxyAuthor}
 
@@ -63,7 +69,49 @@ Francesco Giurlanda
 )}}\label{class_milling_machine_adaa67d0774d9fa0ed9d51d7b5cd12a2a}
 
 
+The constructor. 
+
+\hypertarget{class_milling_machine_a62e822e8a874059734ab483871a11489}{\index{Milling\+Machine@{Milling\+Machine}!Milling\+Machine@{Milling\+Machine}}
+\index{Milling\+Machine@{Milling\+Machine}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{Milling\+Machine}]{\setlength{\rightskip}{0pt plus 5cm}Milling\+Machine\+::\+Milling\+Machine (
+\begin{DoxyParamCaption}
+\item[{float}]{s, }
+\item[{float}]{vmax, }
+\item[{float}]{vmin}
+\end{DoxyParamCaption}
+)}}\label{class_milling_machine_a62e822e8a874059734ab483871a11489}
+
+
+The constructor with arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The number of steps to move forward/backward of one mm. \\
+\hline
+{\em vmax} & The max speed of the motor, specified as delay between to steps (us). \\
+\hline
+{\em vmin} & The min speed of the motor, specified as delay between to steps (us). \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
+\hypertarget{class_milling_machine_a9b2022ac64164727f57ff0cbf50e60ed}{\index{Milling\+Machine@{Milling\+Machine}!fast\+Move\+To@{fast\+Move\+To}}
+\index{fast\+Move\+To@{fast\+Move\+To}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{fast\+Move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::fast\+Move\+To (
+\begin{DoxyParamCaption}
+\item[{float}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_milling_machine_a9b2022ac64164727f57ff0cbf50e60ed}
+
+
+The function moves the utensil in a specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in mm, it can be positive or negative. \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_milling_machine_a3236520b26c7ab2ebad6a89edfc67d8c}{\index{Milling\+Machine@{Milling\+Machine}!high\+Precision@{high\+Precision}}
 \index{high\+Precision@{high\+Precision}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{high\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::high\+Precision (
@@ -71,13 +119,21 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_milling_machine_a3236520b26c7ab2ebad6a89edfc67d8c}
-\hypertarget{class_milling_machine_a3e6b1ab0c082b41f188151a1029b0bbf}{\index{Milling\+Machine@{Milling\+Machine}!init\+Motor@{init\+Motor}}
-\index{init\+Motor@{init\+Motor}!Milling\+Machine@{Milling\+Machine}}
-\subsubsection[{init\+Motor}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::init\+Motor (
+
+
+It sets the motion to be more precise. 
+
+\hypertarget{class_milling_machine_ad8b30fc42959606e9773e5ae7e31bac7}{\index{Milling\+Machine@{Milling\+Machine}!init@{init}}
+\index{init@{init}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::init (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_milling_machine_a3e6b1ab0c082b41f188151a1029b0bbf}
+)}}\label{class_milling_machine_ad8b30fc42959606e9773e5ae7e31bac7}
+
+
+It initializes the motor. 
+
 \hypertarget{class_milling_machine_a1596fbec50d30b119393c9dec4afb164}{\index{Milling\+Machine@{Milling\+Machine}!low\+Precision@{low\+Precision}}
 \index{low\+Precision@{low\+Precision}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{low\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::low\+Precision (
@@ -85,21 +141,10 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_milling_machine_a1596fbec50d30b119393c9dec4afb164}
-\hypertarget{class_milling_machine_a90d69a3f8ba1aa9d03dc2bb87d72db51}{\index{Milling\+Machine@{Milling\+Machine}!Miling\+Machine@{Miling\+Machine}}
-\index{Miling\+Machine@{Miling\+Machine}!Milling\+Machine@{Milling\+Machine}}
-\subsubsection[{Miling\+Machine}]{\setlength{\rightskip}{0pt plus 5cm}Milling\+Machine\+::\+Miling\+Machine (
-\begin{DoxyParamCaption}
-\item[{float}]{s, }
-\item[{float}]{v}
-\end{DoxyParamCaption}
-)}}\label{class_milling_machine_a90d69a3f8ba1aa9d03dc2bb87d72db51}
-\hypertarget{class_milling_machine_ac4f32a740547428b61db6e44bd600002}{\index{Milling\+Machine@{Milling\+Machine}!move\+To@{move\+To}}
-\index{move\+To@{move\+To}!Milling\+Machine@{Milling\+Machine}}
-\subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::move\+To (
-\begin{DoxyParamCaption}
-\item[{float}]{p}
-\end{DoxyParamCaption}
-)}}\label{class_milling_machine_ac4f32a740547428b61db6e44bd600002}
+
+
+It sets the motion to be less precise. 
+
 \hypertarget{class_milling_machine_a8600c252d19b2b1318400c3e8567591b}{\index{Milling\+Machine@{Milling\+Machine}!pause@{pause}}
 \index{pause@{pause}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::pause (
@@ -107,6 +152,10 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_milling_machine_a8600c252d19b2b1318400c3e8567591b}
+
+
+The function pauses the current operation. 
+
 \hypertarget{class_milling_machine_a965590d4d159254dbc9a372ea35c2d63}{\index{Milling\+Machine@{Milling\+Machine}!reset\+Pos@{reset\+Pos}}
 \index{reset\+Pos@{reset\+Pos}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{reset\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::reset\+Pos (
@@ -114,34 +163,75 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_milling_machine_a965590d4d159254dbc9a372ea35c2d63}
-\hypertarget{class_milling_machine_acd02e836001192b1065fbcee5e9771cf}{\index{Milling\+Machine@{Milling\+Machine}!search\+Home\+Pos@{search\+Home\+Pos}}
-\index{search\+Home\+Pos@{search\+Home\+Pos}!Milling\+Machine@{Milling\+Machine}}
-\subsubsection[{search\+Home\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::search\+Home\+Pos (
+
+
+It sets the current position with the value zero. 
+
+\hypertarget{class_milling_machine_a9bd0cff7083490bf93c1c04d728e7050}{\index{Milling\+Machine@{Milling\+Machine}!restart@{restart}}
+\index{restart@{restart}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::restart (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_milling_machine_acd02e836001192b1065fbcee5e9771cf}
-\hypertarget{class_milling_machine_a0e370f1cd0f4a3fba8dce457d8c539f0}{\index{Milling\+Machine@{Milling\+Machine}!set\+Absol\+Pos@{set\+Absol\+Pos}}
+)}}\label{class_milling_machine_a9bd0cff7083490bf93c1c04d728e7050}
+
+
+The function restarts an operation that was stopped. 
+
+\hypertarget{class_milling_machine_a4c8204cae4818204035e210080a2705d}{\index{Milling\+Machine@{Milling\+Machine}!search\+Zero\+Pos@{search\+Zero\+Pos}}
+\index{search\+Zero\+Pos@{search\+Zero\+Pos}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{search\+Zero\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::search\+Zero\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_milling_machine_a4c8204cae4818204035e210080a2705d}
+
+
+The procedure search the zero position. 
+
+It is a procedure that require an aluminum foil (you can find it in any market) and a alligator clip. The two component are connected to two copper wire that are connected respectively to G\+N\+D and the pin specified for the down limit switch. Before to call the function, you place the foil on the working table under the drilling bit and attach the alligator clip to the drill bit. The function moves down the utensil until the drill bit touches the aluminum foil. It stops the operation. \hypertarget{class_milling_machine_a0e370f1cd0f4a3fba8dce457d8c539f0}{\index{Milling\+Machine@{Milling\+Machine}!set\+Absol\+Pos@{set\+Absol\+Pos}}
 \index{set\+Absol\+Pos@{set\+Absol\+Pos}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{set\+Absol\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::set\+Absol\+Pos (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{class_milling_machine_a0e370f1cd0f4a3fba8dce457d8c539f0}
-\hypertarget{class_milling_machine_acdec58c95647317729dd111972a16e89}{\index{Milling\+Machine@{Milling\+Machine}!set\+Bit\+Dir@{set\+Bit\+Dir}}
+
+
+It sets the mode to specify the position\+: absolute position. 
+
+\hypertarget{class_milling_machine_aa9e80231444db8c4bfaef2829a12230f}{\index{Milling\+Machine@{Milling\+Machine}!set\+Bit\+Dir@{set\+Bit\+Dir}}
 \index{set\+Bit\+Dir@{set\+Bit\+Dir}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{set\+Bit\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::set\+Bit\+Dir (
 \begin{DoxyParamCaption}
-\item[{boolean}]{}
+\item[{boolean}]{d}
 \end{DoxyParamCaption}
-)}}\label{class_milling_machine_acdec58c95647317729dd111972a16e89}
-\hypertarget{class_milling_machine_ab49bc1d4ac057adc3381533f16bef4d4}{\index{Milling\+Machine@{Milling\+Machine}!set\+Bit\+Speed@{set\+Bit\+Speed}}
+)}}\label{class_milling_machine_aa9e80231444db8c4bfaef2829a12230f}
+
+
+It sets the bit direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & C\+W = true or C\+C\+W = false. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_milling_machine_a9d059e6adb7edd4ee42a0d6fce0338c3}{\index{Milling\+Machine@{Milling\+Machine}!set\+Bit\+Speed@{set\+Bit\+Speed}}
 \index{set\+Bit\+Speed@{set\+Bit\+Speed}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{set\+Bit\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::set\+Bit\+Speed (
 \begin{DoxyParamCaption}
-\item[{int}]{}
+\item[{int}]{s}
 \end{DoxyParamCaption}
-)}}\label{class_milling_machine_ab49bc1d4ac057adc3381533f16bef4d4}
+)}}\label{class_milling_machine_a9d059e6adb7edd4ee42a0d6fce0338c3}
+
+
+It sets the bit speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The value of the speed. \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_milling_machine_a07f35ca38be74aa50663a22caeb6cd3e}{\index{Milling\+Machine@{Milling\+Machine}!set\+Incr\+Pos@{set\+Incr\+Pos}}
 \index{set\+Incr\+Pos@{set\+Incr\+Pos}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{set\+Incr\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::set\+Incr\+Pos (
@@ -149,6 +239,45 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_milling_machine_a07f35ca38be74aa50663a22caeb6cd3e}
+
+
+It sets the mode to specify the position\+: incremental position. 
+
+\hypertarget{class_milling_machine_abea98221e7a7fe1a9366e5f8d200f268}{\index{Milling\+Machine@{Milling\+Machine}!set\+Limit\+Switch@{set\+Limit\+Switch}}
+\index{set\+Limit\+Switch@{set\+Limit\+Switch}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{set\+Limit\+Switch}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::set\+Limit\+Switch (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{dw, }
+\item[{int8\+\_\+t}]{up = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{class_milling_machine_abea98221e7a7fe1a9366e5f8d200f268}
+
+
+Sets the pins where are attached the down/up limit switches. 
+
+The system needs at least the down limit switch 
+\begin{DoxyParams}{Parameters}
+{\em dw} & The pin number where is attached the down limit switch. \\
+\hline
+{\em up} & The pin number where is attached the up limit switch \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_milling_machine_a3a9922b9041c75db25da0f63ba7830c6}{\index{Milling\+Machine@{Milling\+Machine}!slow\+Move\+To@{slow\+Move\+To}}
+\index{slow\+Move\+To@{slow\+Move\+To}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{slow\+Move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::slow\+Move\+To (
+\begin{DoxyParamCaption}
+\item[{float}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_milling_machine_a3a9922b9041c75db25da0f63ba7830c6}
+
+
+The function moves the utensil in a specified position with fast speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in mm, it can be positive or negative. \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_milling_machine_a3b530b356897ef7b7d25f55ce8965775}{\index{Milling\+Machine@{Milling\+Machine}!stop\+Motion@{stop\+Motion}}
 \index{stop\+Motion@{stop\+Motion}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{stop\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::stop\+Motion (
@@ -156,6 +285,10 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_milling_machine_a3b530b356897ef7b7d25f55ce8965775}
+
+
+The function stops the motion of the utensil. 
+
 \hypertarget{class_milling_machine_ac74c527eb504eb6f13d80fb64487c874}{\index{Milling\+Machine@{Milling\+Machine}!update@{update}}
 \index{update@{update}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}boolean Milling\+Machine\+::update (
@@ -165,6 +298,11 @@ Francesco Giurlanda
 )}}\label{class_milling_machine_ac74c527eb504eb6f13d80fb64487c874}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The function performs the motor motion. It must be called with a frequency greater than 1/(v/1000000) where v is the maximum speed of the motor specified as the minimum delay in microseconds between two consecutive steps. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_utensils_8h}{Utensils.\+h}\end{DoxyCompactItemize}
+\hyperlink{_utensils_8h}{Utensils.\+h}\item 
+\hyperlink{_utensils_8cpp}{Utensils.\+cpp}\end{DoxyCompactItemize}

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['line',['line',['../class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1',1,'GCode']]],
-  ['loop_5freturn',['loop_return',['../class_g_code.html#a600deaa28b54bd8fca4d8eb51fb09b55',1,'GCode']]]
+  ['end_5ftask',['end_task',['../easy___c_n_c_8h.html#aab391321b465e009e9d1ad4839cdc135',1,'easy_CNC.h']]]
 ];

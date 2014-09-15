@@ -29,11 +29,15 @@ virtual void \hyperlink{class_m_s_m_c_a0b44d0a659550ba754bf9212294ba6d5}{stop} (
 \item 
 virtual void \hyperlink{class_m_s_m_c_a9c45f1547467b43209c7a271604e7c85}{pause} ()
 \item 
-virtual void \hyperlink{class_m_s_m_c_a89abc0ac07d7010ba32d68840da1f822}{start} ()
+virtual void \hyperlink{class_m_s_m_c_ae09c870a71121c7cc9f060b6299a425b}{restart} ()
 \item 
 virtual void \hyperlink{class_m_s_m_c_a85bd4abf542aecdf24bb90b9ea2a47e9}{set\+Mode} (uint8\+\_\+t)
 \item 
+virtual void \hyperlink{class_m_s_m_c_a8ee0ef4f051cf30a09ef3f2fddc3af30}{dir\+Mode} (int8\+\_\+t)
+\item 
 virtual uint8\+\_\+t \hyperlink{class_m_s_m_c_a5a1c4ee3498360946cc8e8d39436d0e3}{get\+Mode} ()
+\item 
+virtual int8\+\_\+t \hyperlink{class_m_s_m_c_a97ba8d296c68e2bb2a3b3eebe047dca8}{get\+Dir} ()
 \item 
 virtual int32\+\_\+t \hyperlink{class_m_s_m_c_a44ca6bc355a269543606dd4eeb7ed06e}{update} ()
 \end{DoxyCompactItemize}
@@ -55,6 +59,17 @@ The multi stepper motor control interface.
 
 Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_ac46e6ec6345f95b534079bcf2920885e}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}, and \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{M\+S\+M\+C\+\_\+\+A4988}.
 
+\hypertarget{class_m_s_m_c_a8ee0ef4f051cf30a09ef3f2fddc3af30}{\index{M\+S\+M\+C@{M\+S\+M\+C}!dir\+Mode@{dir\+Mode}}
+\index{dir\+Mode@{dir\+Mode}!M\+S\+M\+C@{M\+S\+M\+C}}
+\subsubsection[{dir\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+S\+M\+C\+::dir\+Mode (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c_a8ee0ef4f051cf30a09ef3f2fddc3af30}
+
+
+Reimplemented in \hyperlink{class_m_s_m_c___a4988_a749934bbacfca44dd0f0b5c6210bd7b5}{M\+S\+M\+C\+\_\+\+A4988}, and \hyperlink{class_m_s_m_c___u_l_n2003_a_aa6fa72db041edb1c9859d4620a07f52c}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}.
+
 \hypertarget{class_m_s_m_c_a62615946a227d18ea3fc2f1329688d1f}{\index{M\+S\+M\+C@{M\+S\+M\+C}!forward@{forward}}
 \index{forward@{forward}!M\+S\+M\+C@{M\+S\+M\+C}}
 \subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+S\+M\+C\+::forward (
@@ -66,6 +81,17 @@ Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_ac46e6ec6345f95b534079bc
 
 
 Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_a9657492f948a75472b311bc0b823899f}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}, and \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{M\+S\+M\+C\+\_\+\+A4988}.
+
+\hypertarget{class_m_s_m_c_a97ba8d296c68e2bb2a3b3eebe047dca8}{\index{M\+S\+M\+C@{M\+S\+M\+C}!get\+Dir@{get\+Dir}}
+\index{get\+Dir@{get\+Dir}!M\+S\+M\+C@{M\+S\+M\+C}}
+\subsubsection[{get\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}virtual int8\+\_\+t M\+S\+M\+C\+::get\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c_a97ba8d296c68e2bb2a3b3eebe047dca8}
+
+
+Reimplemented in \hyperlink{class_m_s_m_c___a4988_acf7598266c1ced18507d43f811c98db9}{M\+S\+M\+C\+\_\+\+A4988}.
 
 \hypertarget{class_m_s_m_c_a5a1c4ee3498360946cc8e8d39436d0e3}{\index{M\+S\+M\+C@{M\+S\+M\+C}!get\+Mode@{get\+Mode}}
 \index{get\+Mode@{get\+Mode}!M\+S\+M\+C@{M\+S\+M\+C}}
@@ -89,6 +115,17 @@ Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_a84cbd656e77e789af5cb34d
 
 Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_aa1d3444465d59ca6c87f05f565dde4a2}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}, and \hyperlink{class_m_s_m_c___a4988_a321bc53bae537a0318910819a6a1a7d5}{M\+S\+M\+C\+\_\+\+A4988}.
 
+\hypertarget{class_m_s_m_c_ae09c870a71121c7cc9f060b6299a425b}{\index{M\+S\+M\+C@{M\+S\+M\+C}!restart@{restart}}
+\index{restart@{restart}!M\+S\+M\+C@{M\+S\+M\+C}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+S\+M\+C\+::restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c_ae09c870a71121c7cc9f060b6299a425b}
+
+
+Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_a19853d77f81c521091a55996899c1784}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}, and \hyperlink{class_m_s_m_c___a4988_add93aa459190c6edb3551495e75aaded}{M\+S\+M\+C\+\_\+\+A4988}.
+
 \hypertarget{class_m_s_m_c_a85bd4abf542aecdf24bb90b9ea2a47e9}{\index{M\+S\+M\+C@{M\+S\+M\+C}!set\+Mode@{set\+Mode}}
 \index{set\+Mode@{set\+Mode}!M\+S\+M\+C@{M\+S\+M\+C}}
 \subsubsection[{set\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+S\+M\+C\+::set\+Mode (
@@ -110,17 +147,6 @@ Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_a8a7f8b7e0048b3a03c87bd8
 
 
 Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_ad8df164c90b2205fb65c796632889f82}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}, and \hyperlink{class_m_s_m_c___a4988_a6f9d236dc619342d16457aa029faeed9}{M\+S\+M\+C\+\_\+\+A4988}.
-
-\hypertarget{class_m_s_m_c_a89abc0ac07d7010ba32d68840da1f822}{\index{M\+S\+M\+C@{M\+S\+M\+C}!start@{start}}
-\index{start@{start}!M\+S\+M\+C@{M\+S\+M\+C}}
-\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+S\+M\+C\+::start (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c_a89abc0ac07d7010ba32d68840da1f822}
-
-
-Reimplemented in \hyperlink{class_m_s_m_c___u_l_n2003_a_a2af925737ce57e4b363b5cebb96e700b}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}, and \hyperlink{class_m_s_m_c___a4988_ab8a43792f4da2a22d25a8cd36ebbea01}{M\+S\+M\+C\+\_\+\+A4988}.
 
 \hypertarget{class_m_s_m_c_a0b44d0a659550ba754bf9212294ba6d5}{\index{M\+S\+M\+C@{M\+S\+M\+C}!stop@{stop}}
 \index{stop@{stop}!M\+S\+M\+C@{M\+S\+M\+C}}

@@ -106,8 +106,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f13e636e4b92c5547995b653cea317e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a7f13e636e4b92c5547995b653cea317e">initMotorY</a> ()</td></tr>
 <tr class="separator:a7f13e636e4b92c5547995b653cea317e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d1313b481b864a85758aaeab61e6595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a0d1313b481b864a85758aaeab61e6595">setLimitSwitchX</a> (int8_t dw, int8_t up=-1)</td></tr>
+<tr class="memdesc:a0d1313b481b864a85758aaeab61e6595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pins where are attached the down/up limit switches.  <a href="#a0d1313b481b864a85758aaeab61e6595">More...</a><br /></td></tr>
 <tr class="separator:a0d1313b481b864a85758aaeab61e6595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9308de7c3273a4f7dc18bc3cfe617d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#af9308de7c3273a4f7dc18bc3cfe617d4">setLimitSwitchY</a> (int8_t dw, int8_t up=-1)</td></tr>
+<tr class="memdesc:af9308de7c3273a4f7dc18bc3cfe617d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pins where are attached the down/up limit switches.  <a href="#af9308de7c3273a4f7dc18bc3cfe617d4">More...</a><br /></td></tr>
 <tr class="separator:af9308de7c3273a4f7dc18bc3cfe617d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30d838430b7452a8f47071d2f6b8845e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a30d838430b7452a8f47071d2f6b8845e">resetPos</a> ()</td></tr>
 <tr class="separator:a30d838430b7452a8f47071d2f6b8845e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +121,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aebacab02935c41a4c11b926c0770bcac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b5ad1a227e63d3f374e0e53f3cf047c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a6b5ad1a227e63d3f374e0e53f3cf047c">pause</a> ()</td></tr>
 <tr class="separator:a6b5ad1a227e63d3f374e0e53f3cf047c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a32575c71fe10d3a693e1ad68eedc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a08a32575c71fe10d3a693e1ad68eedc1">restat</a> ()</td></tr>
+<tr class="separator:a08a32575c71fe10d3a693e1ad68eedc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad82ea519e54f4ec488c10c150df26984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#ad82ea519e54f4ec488c10c150df26984">highPrecision</a> ()</td></tr>
 <tr class="separator:ad82ea519e54f4ec488c10c150df26984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15e3fab9eefaa7a61403c0054e643901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a15e3fab9eefaa7a61403c0054e643901">lowPrecision</a> ()</td></tr>
@@ -322,6 +326,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a08a32575c71fe10d3a693e1ad68eedc1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CNC_Router::restat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4e9504d77eee555ddb35af073b67d3f1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -391,6 +410,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the pins where are attached the down/up limit switches. </p>
+<p>The system needs at least the down limit switch </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dw</td><td>The pin number where is attached the down limit switch. </td></tr>
+    <tr><td class="paramname">up</td><td>The pin number where is attached the up limit switch </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="af9308de7c3273a4f7dc18bc3cfe617d4"></a>
@@ -416,6 +444,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the pins where are attached the down/up limit switches. </p>
+<p>The system needs at least the down limit switch </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dw</td><td>The pin number where is attached the down limit switch. </td></tr>
+    <tr><td class="paramname">up</td><td>The pin number where is attached the up limit switch </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -456,7 +493,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

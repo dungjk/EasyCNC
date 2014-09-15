@@ -29,35 +29,42 @@ void setup() {
 // The loop function is called in an endless loop
 void loop() {
 //Add your repeated code here
+	tloop.start();
 	a = mycnc.update();
 	b = mill.update();
-	if( a && b){
+	if (a && b) {
 
-	    if(end_task){
-	      Serial.print('a');
-	      end_task = false;
-	    }
+		if (end_task) {
+			//Serial.println('a');
+			Serial.print("Min: ");
+			Serial.println(tloop.getMin());
+			Serial.print("Max: ");
+			Serial.println(tloop.getMax());
 
-	    if(Serial.available() > 0){
-	      switch( Serial.parseInt() ) {
-	        case 0:
-	           //mypen.up();
-	           processPos();
-	           break;
-	        case 1:
-	           //mypen.down();
-	           processPos();
-	           break;
-	        case 2:
-	           mycnc.resetPos();
-	           mill.resetPos();
-	           break;
-	        case 3:
-	           mycnc.searchHomePos();
-	           mill.searchZeroPos();
-	      }
+			end_task = false;
+		}
 
-	      end_task = true;
-	    }
-	  }
+		if (Serial.available() > 0) {
+			switch (Serial.parseInt()) {
+			case 0:
+				//mypen.up();
+				processPos();
+				break;
+			case 1:
+				//mypen.down();
+				processPos();
+				break;
+			case 2:
+				mycnc.resetPos();
+				mill.resetPos();
+				break;
+			case 3:
+				mycnc.searchHomePos();
+				mill.searchZeroPos();
+			}
+
+			end_task = true;
+		}
+	}
+	tloop.stop();
 }

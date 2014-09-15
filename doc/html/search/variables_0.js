@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coordinate',['coordinate',['../class_g_code.html#a4311a77cb2efcc0bce0c582ae80755e1',1,'GCode']]]
+  ['a',['a',['../easy___c_n_c_8h.html#a92d883ae17a48a9acf64f53bb918adcc',1,'easy_CNC.h']]]
 ];

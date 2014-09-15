@@ -119,69 +119,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;           old_time,                       </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;           pause_time;                     </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  int8_t pos;                              </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  int8_t dir;                              </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  uint8_t control_mode;                    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">boolean</span> m_ready;                         </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">boolean</span> m_pause;                           </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> forward_one();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> backward_one();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> coilsOff();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a">MSMC_ULN2003A</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a">MSMC_ULN2003A</a>(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a9657492f948a75472b311bc0b823899f">forward</a>(uint32_t st, uint32_t sp);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#ac46e6ec6345f95b534079bcf2920885e">backward</a>(uint32_t, uint32_t);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a8a7f8b7e0048b3a03c87bd830d4a455f">setMode</a>(uint8_t mod);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  uint8_t <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a84cbd656e77e789af5cb34df147589a3">getMode</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  int8_t dir,                              </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;         dir_mode;                         </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  uint8_t control_mode;                    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">boolean</span> m_ready;                         </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">boolean</span> m_pause;                           </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> forward_one();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> backward_one();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> coilsOff();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a">MSMC_ULN2003A</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a">MSMC_ULN2003A</a>(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a9657492f948a75472b311bc0b823899f">forward</a>(uint32_t st, uint32_t sp);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#ac46e6ec6345f95b534079bcf2920885e">backward</a>(uint32_t, uint32_t);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a8a7f8b7e0048b3a03c87bd830d4a455f">setMode</a>(uint8_t mod);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#aa6fa72db041edb1c9859d4620a07f52c">dirMode</a>(int8_t m);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a19320fa4543dd8e76e338737690df235">setPins</a>(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#ad8df164c90b2205fb65c796632889f82">speed</a>(uint32_t sp);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5">stop</a>();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2">pause</a>();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a2af925737ce57e4b363b5cebb96e700b">start</a>();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  int32_t <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a88c46f414c19fc81662abed58ce3fd92">update</a>();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#aa6743162bdaba01ef1fc8a79f2519897">print</a>();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a88c46f414c19fc81662abed58ce3fd92"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a88c46f414c19fc81662abed58ce3fd92">MSMC_ULN2003A::update</a></div><div class="ttdeci">int32_t update()</div><div class="ttdoc">Perform the motion of the motor. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:155</div></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  uint8_t <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a84cbd656e77e789af5cb34df147589a3">getMode</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a19320fa4543dd8e76e338737690df235">setPins</a>(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#ad8df164c90b2205fb65c796632889f82">speed</a>(uint32_t sp);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5">stop</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2">pause</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a19853d77f81c521091a55996899c1784">restart</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  int32_t <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#a88c46f414c19fc81662abed58ce3fd92">update</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c___u_l_n2003_a.html#aa6743162bdaba01ef1fc8a79f2519897">print</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;};</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a88c46f414c19fc81662abed58ce3fd92"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a88c46f414c19fc81662abed58ce3fd92">MSMC_ULN2003A::update</a></div><div class="ttdeci">int32_t update()</div><div class="ttdoc">Perform the motion of the motor. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:158</div></div>
 <div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a19320fa4543dd8e76e338737690df235"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a19320fa4543dd8e76e338737690df235">MSMC_ULN2003A::setPins</a></div><div class="ttdeci">void setPins(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)</div><div class="ttdoc">Change the pin mapping. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:50</div></div>
-<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_aa1d3444465d59ca6c87f05f565dde4a2"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2">MSMC_ULN2003A::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pause the motion. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:139</div></div>
-<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a2af925737ce57e4b363b5cebb96e700b"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a2af925737ce57e4b363b5cebb96e700b">MSMC_ULN2003A::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Restart the motion after the call of the function MSMC_ULN2003A::pause() </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:147</div></div>
-<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_ac46e6ec6345f95b534079bcf2920885e"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#ac46e6ec6345f95b534079bcf2920885e">MSMC_ULN2003A::backward</a></div><div class="ttdeci">void backward(uint32_t, uint32_t)</div><div class="ttdoc">Configure the motor to move backward. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:75</div></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_aa6fa72db041edb1c9859d4620a07f52c"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#aa6fa72db041edb1c9859d4620a07f52c">MSMC_ULN2003A::dirMode</a></div><div class="ttdeci">void dirMode(int8_t m)</div><div class="ttdoc">It sets the direction mode. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:65</div></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_aa1d3444465d59ca6c87f05f565dde4a2"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2">MSMC_ULN2003A::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pause the motion. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:142</div></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_ac46e6ec6345f95b534079bcf2920885e"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#ac46e6ec6345f95b534079bcf2920885e">MSMC_ULN2003A::backward</a></div><div class="ttdeci">void backward(uint32_t, uint32_t)</div><div class="ttdoc">Configure the motor to move backward. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:78</div></div>
 <div class="ttc" id="class_m_s_m_c_html"><div class="ttname"><a href="class_m_s_m_c.html">MSMC</a></div><div class="ttdoc">The multi stepper motor control interface. </div><div class="ttdef"><b>Definition:</b> MSMC.h:20</div></div>
 <div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a8a7f8b7e0048b3a03c87bd830d4a455f"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a8a7f8b7e0048b3a03c87bd830d4a455f">MSMC_ULN2003A::setMode</a></div><div class="ttdeci">void setMode(uint8_t mod)</div><div class="ttdoc">Configure the operative mode of the controller. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:42</div></div>
 <div class="ttc" id="_m_s_m_c_8h_html"><div class="ttname"><a href="_m_s_m_c_8h.html">MSMC.h</a></div><div class="ttdoc">Multi Stepper Motor Control Interface. </div></div>
-<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_aba5e18f20f31fd4d6e71f50821dfeee5"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5">MSMC_ULN2003A::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop any motion. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:132</div></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a19853d77f81c521091a55996899c1784"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a19853d77f81c521091a55996899c1784">MSMC_ULN2003A::restart</a></div><div class="ttdeci">void restart()</div><div class="ttdoc">Restart the motion after the call of the function MSMC_ULN2003A::pause() </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:150</div></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_aba5e18f20f31fd4d6e71f50821dfeee5"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5">MSMC_ULN2003A::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop any motion. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:135</div></div>
 <div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a7b3b007290d0913572c5d42f23f6ed9a"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a">MSMC_ULN2003A::MSMC_ULN2003A</a></div><div class="ttdeci">MSMC_ULN2003A()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:12</div></div>
-<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_aa6743162bdaba01ef1fc8a79f2519897"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#aa6743162bdaba01ef1fc8a79f2519897">MSMC_ULN2003A::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print in the serial channel the state of all inner variables. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:180</div></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_aa6743162bdaba01ef1fc8a79f2519897"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#aa6743162bdaba01ef1fc8a79f2519897">MSMC_ULN2003A::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print in the serial channel the state of all inner variables. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:183</div></div>
 <div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a84cbd656e77e789af5cb34df147589a3"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a84cbd656e77e789af5cb34df147589a3">MSMC_ULN2003A::getMode</a></div><div class="ttdeci">uint8_t getMode()</div><div class="ttdoc">Return the operative mode of the controller. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:46</div></div>
-<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a9657492f948a75472b311bc0b823899f"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a9657492f948a75472b311bc0b823899f">MSMC_ULN2003A::forward</a></div><div class="ttdeci">void forward(uint32_t st, uint32_t sp)</div><div class="ttdoc">Configure the motor to move forward. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:66</div></div>
+<div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_a9657492f948a75472b311bc0b823899f"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#a9657492f948a75472b311bc0b823899f">MSMC_ULN2003A::forward</a></div><div class="ttdeci">void forward(uint32_t st, uint32_t sp)</div><div class="ttdoc">Configure the motor to move forward. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:69</div></div>
 <div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html">MSMC_ULN2003A</a></div><div class="ttdoc">Multi Stepper Motor Control with ULN2003A. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.h:51</div></div>
 <div class="ttc" id="class_m_s_m_c___u_l_n2003_a_html_ad8df164c90b2205fb65c796632889f82"><div class="ttname"><a href="class_m_s_m_c___u_l_n2003_a.html#ad8df164c90b2205fb65c796632889f82">MSMC_ULN2003A::speed</a></div><div class="ttdeci">void speed(uint32_t sp)</div><div class="ttdoc">Change the delay between each step. </div><div class="ttdef"><b>Definition:</b> MSMC_ULN2003A.cpp:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

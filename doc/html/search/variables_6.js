@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['path_5fcontrol',['path_control',['../class_g_code.html#a05307dd7b9ff2f74bfd81aed40104fa8',1,'GCode']]],
-  ['plane_5fselect',['plane_select',['../class_g_code.html#a0f278ed4c1265656f062365ca345d353',1,'GCode']]]
+  ['line',['line',['../class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1',1,'GCode']]],
+  ['loop_5freturn',['loop_return',['../class_g_code.html#a600deaa28b54bd8fca4d8eb51fb09b55',1,'GCode']]]
 ];

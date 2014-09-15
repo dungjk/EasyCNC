@@ -14,9 +14,9 @@ var searchData=
   ['m7',['M7',['../_g_code__def_8h.html#acaff0b380565437a498a06d7e6b57c3a',1,'GCode_def.h']]],
   ['m8',['M8',['../_g_code__def_8h.html#aabb8feb3270ae3ba252befaeecd95283',1,'GCode_def.h']]],
   ['m9',['M9',['../_g_code__def_8h.html#a55be408e63eeea7ed9d808d7e8385e3d',1,'GCode_def.h']]],
-  ['milingmachine',['MilingMachine',['../class_milling_machine.html#a90d69a3f8ba1aa9d03dc2bb87d72db51',1,'MillingMachine']]],
-  ['millingmachine',['MillingMachine',['../class_milling_machine.html',1,'MillingMachine'],['../class_milling_machine.html#adaa67d0774d9fa0ed9d51d7b5cd12a2a',1,'MillingMachine::MillingMachine()']]],
-  ['moveto',['moveTo',['../class_c_n_c___router.html#aa8f1afb0edd66b1597bb8fd3a0689ed9',1,'CNC_Router::moveTo(float px, float py)'],['../class_c_n_c___router.html#a22accd2ec43457dfb0d990cc6eec45d3',1,'CNC_Router::moveTo(const PositionXY &amp;np)'],['../class_milling_machine.html#ac4f32a740547428b61db6e44bd600002',1,'MillingMachine::moveTo()']]],
+  ['mill',['mill',['../easy___c_n_c_8h.html#a2067868875eab5b584bd53739f29f636',1,'easy_CNC.h']]],
+  ['millingmachine',['MillingMachine',['../class_milling_machine.html',1,'MillingMachine'],['../class_milling_machine.html#adaa67d0774d9fa0ed9d51d7b5cd12a2a',1,'MillingMachine::MillingMachine()'],['../class_milling_machine.html#a62e822e8a874059734ab483871a11489',1,'MillingMachine::MillingMachine(float s, float vmax, float vmin)']]],
+  ['moveto',['moveTo',['../class_c_n_c___router.html#aa8f1afb0edd66b1597bb8fd3a0689ed9',1,'CNC_Router::moveTo(float px, float py)'],['../class_c_n_c___router.html#a22accd2ec43457dfb0d990cc6eec45d3',1,'CNC_Router::moveTo(const PositionXY &amp;np)']]],
   ['moving',['moving',['../class_g_code.html#ae84ec0e15b18d91420c39627d1bdf78a',1,'GCode']]],
   ['msmc',['MSMC',['../class_m_s_m_c.html',1,'']]],
   ['msmc_2eh',['MSMC.h',['../_m_s_m_c_8h.html',1,'']]],
@@ -26,6 +26,5 @@ var searchData=
   ['msmc_5fuln2003a',['MSMC_ULN2003A',['../class_m_s_m_c___u_l_n2003_a.html',1,'MSMC_ULN2003A'],['../class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a',1,'MSMC_ULN2003A::MSMC_ULN2003A()'],['../class_m_s_m_c___u_l_n2003_a.html#ae653d15c96f4e8ddfb4476cc77495ad1',1,'MSMC_ULN2003A::MSMC_ULN2003A(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)']]],
   ['msmc_5fuln2003a_2ecpp',['MSMC_ULN2003A.cpp',['../_m_s_m_c___u_l_n2003_a_8cpp.html',1,'']]],
   ['msmc_5fuln2003a_2eh',['MSMC_ULN2003A.h',['../_m_s_m_c___u_l_n2003_a_8h.html',1,'']]],
-  ['mycnc',['mycnc',['../easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67',1,'easy_CNC.h']]],
-  ['mypen',['mypen',['../easy___c_n_c_8h.html#aeee74d506e08f08c2e3e2f68837d6de0',1,'easy_CNC.h']]]
+  ['mycnc',['mycnc',['../easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67',1,'easy_CNC.h']]]
 ];

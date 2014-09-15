@@ -22,9 +22,9 @@ void \hyperlink{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}{init\+Mo
 void \hyperlink{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}{init\+Motor\+Y} ()
 \item 
 void \hyperlink{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}{set\+Limit\+Switch\+X} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}{set\+Limit\+Switch\+Y} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a30d838430b7452a8f47071d2f6b8845e}{reset\+Pos} ()
 \item 
 void \hyperlink{class_c_n_c___router_aa8f1afb0edd66b1597bb8fd3a0689ed9}{move\+To} (float px, float py)
@@ -34,6 +34,8 @@ void \hyperlink{class_c_n_c___router_a22accd2ec43457dfb0d990cc6eec45d3}{move\+To
 void \hyperlink{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{stop\+Motion} ()
 \item 
 void \hyperlink{class_c_n_c___router_a6b5ad1a227e63d3f374e0e53f3cf047c}{pause} ()
+\item 
+void \hyperlink{class_c_n_c___router_a08a32575c71fe10d3a693e1ad68eedc1}{restat} ()
 \item 
 void \hyperlink{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}{high\+Precision} ()
 \item 
@@ -135,6 +137,13 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_c___router_a30d838430b7452a8f47071d2f6b8845e}
+\hypertarget{class_c_n_c___router_a08a32575c71fe10d3a693e1ad68eedc1}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!restat@{restat}}
+\index{restat@{restat}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{restat}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::restat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a08a32575c71fe10d3a693e1ad68eedc1}
 \hypertarget{class_c_n_c___router_a4e9504d77eee555ddb35af073b67d3f1}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!search\+Home\+Pos@{search\+Home\+Pos}}
 \index{search\+Home\+Pos@{search\+Home\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{search\+Home\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::search\+Home\+Pos (
@@ -164,6 +173,17 @@ Francesco Giurlanda
 \item[{int8\+\_\+t}]{up = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}
+
+
+Sets the pins where are attached the down/up limit switches. 
+
+The system needs at least the down limit switch 
+\begin{DoxyParams}{Parameters}
+{\em dw} & The pin number where is attached the down limit switch. \\
+\hline
+{\em up} & The pin number where is attached the up limit switch \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Limit\+Switch\+Y@{set\+Limit\+Switch\+Y}}
 \index{set\+Limit\+Switch\+Y@{set\+Limit\+Switch\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{set\+Limit\+Switch\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Limit\+Switch\+Y (
@@ -172,6 +192,17 @@ Francesco Giurlanda
 \item[{int8\+\_\+t}]{up = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}
+
+
+Sets the pins where are attached the down/up limit switches. 
+
+The system needs at least the down limit switch 
+\begin{DoxyParams}{Parameters}
+{\em dw} & The pin number where is attached the down limit switch. \\
+\hline
+{\em up} & The pin number where is attached the up limit switch \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!stop\+Motion@{stop\+Motion}}
 \index{stop\+Motion@{stop\+Motion}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{stop\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::stop\+Motion (

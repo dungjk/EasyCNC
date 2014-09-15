@@ -102,8 +102,8 @@ Functions</h2></td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeee74d506e08f08c2e3e2f68837d6de0"><td class="memItemLeft" align="right" valign="top">PlotterServo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#aeee74d506e08f08c2e3e2f68837d6de0">mypen</a> (_PLOTTER_SERVO_PIN, _PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS)</td></tr>
-<tr class="separator:aeee74d506e08f08c2e3e2f68837d6de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2067868875eab5b584bd53739f29f636"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_milling_machine.html">MillingMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a2067868875eab5b584bd53739f29f636">mill</a> (<a class="el" href="config_8h.html#a94aabd4cf54e1c9cb34fb3860a4af575">_MILLING_MACHINE_MZ_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#abc457a8fa59dac77a75746512bf048d4">_MILLING_MACHINE_MZ_FAST_SPEED</a>, <a class="el" href="config_8h.html#ad1094f79bb65dcfc7c1ddab56f57624a">_MILLING_MACHINE_MZ_SLOW_SPEED</a>)</td></tr>
+<tr class="separator:a2067868875eab5b584bd53739f29f636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5b2abc27c60baec6f0d4e3fb913a67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_n_c___router.html">CNC_Router</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#acb5b2abc27c60baec6f0d4e3fb913a67">mycnc</a> (<a class="el" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">ROUTER_MY_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>, <a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>)</td></tr>
 <tr class="separator:acb5b2abc27c60baec6f0d4e3fb913a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a602fb203183e59e6886cf242effd2c47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a602fb203183e59e6886cf242effd2c47">stopButton</a> ()</td></tr>
@@ -115,6 +115,10 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:aab391321b465e009e9d1ad4839cdc135"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#aab391321b465e009e9d1ad4839cdc135">end_task</a> = false</td></tr>
 <tr class="separator:aab391321b465e009e9d1ad4839cdc135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d883ae17a48a9acf64f53bb918adcc"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a92d883ae17a48a9acf64f53bb918adcc">a</a></td></tr>
+<tr class="separator:a92d883ae17a48a9acf64f53bb918adcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeafba611be45e8b3ce9ab9e0af347b59"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#aeafba611be45e8b3ce9ab9e0af347b59">b</a></td></tr>
+<tr class="separator:aeafba611be45e8b3ce9ab9e0af347b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afe461d27b9c48d5921c00d521181f12f"></a>
@@ -126,6 +130,38 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2067868875eab5b584bd53739f29f636"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_milling_machine.html">MillingMachine</a> mill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="config_8h.html#a94aabd4cf54e1c9cb34fb3860a4af575">_MILLING_MACHINE_MZ_STEPS_PER_MM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="config_8h.html#abc457a8fa59dac77a75746512bf048d4">_MILLING_MACHINE_MZ_FAST_SPEED</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="config_8h.html#ad1094f79bb65dcfc7c1ddab56f57624a">_MILLING_MACHINE_MZ_SLOW_SPEED</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -158,38 +194,6 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aeee74d506e08f08c2e3e2f68837d6de0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">PlotterServo mypen </td>
-          <td>(</td>
-          <td class="paramtype">_PLOTTER_SERVO_PIN&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">_PLOTTER_SERVO_DOWN_POS&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">_PLOTTER_SERVO_UP_POS&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -248,6 +252,30 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a92d883ae17a48a9acf64f53bb918adcc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean a</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeafba611be45e8b3ce9ab9e0af347b59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean b</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aab391321b465e009e9d1ad4839cdc135"></a>
 <div class="memitem">
 <div class="memproto">
@@ -263,7 +291,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

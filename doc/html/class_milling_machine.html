@@ -98,39 +98,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adaa67d0774d9fa0ed9d51d7b5cd12a2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#adaa67d0774d9fa0ed9d51d7b5cd12a2a">MillingMachine</a> ()</td></tr>
+<tr class="memdesc:adaa67d0774d9fa0ed9d51d7b5cd12a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#adaa67d0774d9fa0ed9d51d7b5cd12a2a">More...</a><br /></td></tr>
 <tr class="separator:adaa67d0774d9fa0ed9d51d7b5cd12a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90d69a3f8ba1aa9d03dc2bb87d72db51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a90d69a3f8ba1aa9d03dc2bb87d72db51">MilingMachine</a> (float s, float v)</td></tr>
-<tr class="separator:a90d69a3f8ba1aa9d03dc2bb87d72db51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e6b1ab0c082b41f188151a1029b0bbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a3e6b1ab0c082b41f188151a1029b0bbf">initMotor</a> ()</td></tr>
-<tr class="separator:a3e6b1ab0c082b41f188151a1029b0bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e822e8a874059734ab483871a11489"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a62e822e8a874059734ab483871a11489">MillingMachine</a> (float s, float vmax, float vmin)</td></tr>
+<tr class="memdesc:a62e822e8a874059734ab483871a11489"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor with arguments.  <a href="#a62e822e8a874059734ab483871a11489">More...</a><br /></td></tr>
+<tr class="separator:a62e822e8a874059734ab483871a11489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b30fc42959606e9773e5ae7e31bac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#ad8b30fc42959606e9773e5ae7e31bac7">init</a> ()</td></tr>
+<tr class="memdesc:ad8b30fc42959606e9773e5ae7e31bac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">It initializes the motor.  <a href="#ad8b30fc42959606e9773e5ae7e31bac7">More...</a><br /></td></tr>
+<tr class="separator:ad8b30fc42959606e9773e5ae7e31bac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a965590d4d159254dbc9a372ea35c2d63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a965590d4d159254dbc9a372ea35c2d63">resetPos</a> ()</td></tr>
+<tr class="memdesc:a965590d4d159254dbc9a372ea35c2d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the current position with the value zero.  <a href="#a965590d4d159254dbc9a372ea35c2d63">More...</a><br /></td></tr>
 <tr class="separator:a965590d4d159254dbc9a372ea35c2d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f32a740547428b61db6e44bd600002"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#ac4f32a740547428b61db6e44bd600002">moveTo</a> (float p)</td></tr>
-<tr class="separator:ac4f32a740547428b61db6e44bd600002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9922b9041c75db25da0f63ba7830c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a3a9922b9041c75db25da0f63ba7830c6">slowMoveTo</a> (float p)</td></tr>
+<tr class="memdesc:a3a9922b9041c75db25da0f63ba7830c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function moves the utensil in a specified position with fast speed.  <a href="#a3a9922b9041c75db25da0f63ba7830c6">More...</a><br /></td></tr>
+<tr class="separator:a3a9922b9041c75db25da0f63ba7830c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2022ac64164727f57ff0cbf50e60ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a9b2022ac64164727f57ff0cbf50e60ed">fastMoveTo</a> (float p)</td></tr>
+<tr class="memdesc:a9b2022ac64164727f57ff0cbf50e60ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function moves the utensil in a specified position.  <a href="#a9b2022ac64164727f57ff0cbf50e60ed">More...</a><br /></td></tr>
+<tr class="separator:a9b2022ac64164727f57ff0cbf50e60ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b530b356897ef7b7d25f55ce8965775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a3b530b356897ef7b7d25f55ce8965775">stopMotion</a> ()</td></tr>
+<tr class="memdesc:a3b530b356897ef7b7d25f55ce8965775"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function stops the motion of the utensil.  <a href="#a3b530b356897ef7b7d25f55ce8965775">More...</a><br /></td></tr>
 <tr class="separator:a3b530b356897ef7b7d25f55ce8965775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8600c252d19b2b1318400c3e8567591b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a8600c252d19b2b1318400c3e8567591b">pause</a> ()</td></tr>
+<tr class="memdesc:a8600c252d19b2b1318400c3e8567591b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function pauses the current operation.  <a href="#a8600c252d19b2b1318400c3e8567591b">More...</a><br /></td></tr>
 <tr class="separator:a8600c252d19b2b1318400c3e8567591b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd0cff7083490bf93c1c04d728e7050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a9bd0cff7083490bf93c1c04d728e7050">restart</a> ()</td></tr>
+<tr class="memdesc:a9bd0cff7083490bf93c1c04d728e7050"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function restarts an operation that was stopped.  <a href="#a9bd0cff7083490bf93c1c04d728e7050">More...</a><br /></td></tr>
+<tr class="separator:a9bd0cff7083490bf93c1c04d728e7050"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3236520b26c7ab2ebad6a89edfc67d8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a3236520b26c7ab2ebad6a89edfc67d8c">highPrecision</a> ()</td></tr>
+<tr class="memdesc:a3236520b26c7ab2ebad6a89edfc67d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the motion to be more precise.  <a href="#a3236520b26c7ab2ebad6a89edfc67d8c">More...</a><br /></td></tr>
 <tr class="separator:a3236520b26c7ab2ebad6a89edfc67d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1596fbec50d30b119393c9dec4afb164"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a1596fbec50d30b119393c9dec4afb164">lowPrecision</a> ()</td></tr>
+<tr class="memdesc:a1596fbec50d30b119393c9dec4afb164"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the motion to be less precise.  <a href="#a1596fbec50d30b119393c9dec4afb164">More...</a><br /></td></tr>
 <tr class="separator:a1596fbec50d30b119393c9dec4afb164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07f35ca38be74aa50663a22caeb6cd3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a07f35ca38be74aa50663a22caeb6cd3e">setIncrPos</a> ()</td></tr>
+<tr class="memdesc:a07f35ca38be74aa50663a22caeb6cd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the mode to specify the position: incremental position.  <a href="#a07f35ca38be74aa50663a22caeb6cd3e">More...</a><br /></td></tr>
 <tr class="separator:a07f35ca38be74aa50663a22caeb6cd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e370f1cd0f4a3fba8dce457d8c539f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a0e370f1cd0f4a3fba8dce457d8c539f0">setAbsolPos</a> ()</td></tr>
+<tr class="memdesc:a0e370f1cd0f4a3fba8dce457d8c539f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the mode to specify the position: absolute position.  <a href="#a0e370f1cd0f4a3fba8dce457d8c539f0">More...</a><br /></td></tr>
 <tr class="separator:a0e370f1cd0f4a3fba8dce457d8c539f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd02e836001192b1065fbcee5e9771cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#acd02e836001192b1065fbcee5e9771cf">searchHomePos</a> ()</td></tr>
-<tr class="separator:acd02e836001192b1065fbcee5e9771cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab49bc1d4ac057adc3381533f16bef4d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#ab49bc1d4ac057adc3381533f16bef4d4">setBitSpeed</a> (int)</td></tr>
-<tr class="separator:ab49bc1d4ac057adc3381533f16bef4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdec58c95647317729dd111972a16e89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#acdec58c95647317729dd111972a16e89">setBitDir</a> (boolean)</td></tr>
-<tr class="separator:acdec58c95647317729dd111972a16e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8204cae4818204035e210080a2705d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a4c8204cae4818204035e210080a2705d">searchZeroPos</a> ()</td></tr>
+<tr class="memdesc:a4c8204cae4818204035e210080a2705d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The procedure search the zero position.  <a href="#a4c8204cae4818204035e210080a2705d">More...</a><br /></td></tr>
+<tr class="separator:a4c8204cae4818204035e210080a2705d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea98221e7a7fe1a9366e5f8d200f268"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#abea98221e7a7fe1a9366e5f8d200f268">setLimitSwitch</a> (int8_t dw, int8_t up=-1)</td></tr>
+<tr class="memdesc:abea98221e7a7fe1a9366e5f8d200f268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pins where are attached the down/up limit switches.  <a href="#abea98221e7a7fe1a9366e5f8d200f268">More...</a><br /></td></tr>
+<tr class="separator:abea98221e7a7fe1a9366e5f8d200f268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d059e6adb7edd4ee42a0d6fce0338c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a9d059e6adb7edd4ee42a0d6fce0338c3">setBitSpeed</a> (int s)</td></tr>
+<tr class="memdesc:a9d059e6adb7edd4ee42a0d6fce0338c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the bit speed.  <a href="#a9d059e6adb7edd4ee42a0d6fce0338c3">More...</a><br /></td></tr>
+<tr class="separator:a9d059e6adb7edd4ee42a0d6fce0338c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e80231444db8c4bfaef2829a12230f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#aa9e80231444db8c4bfaef2829a12230f">setBitDir</a> (boolean d)</td></tr>
+<tr class="memdesc:aa9e80231444db8c4bfaef2829a12230f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the bit direction.  <a href="#aa9e80231444db8c4bfaef2829a12230f">More...</a><br /></td></tr>
+<tr class="separator:aa9e80231444db8c4bfaef2829a12230f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac74c527eb504eb6f13d80fb64487c874"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#ac74c527eb504eb6f13d80fb64487c874">update</a> ()</td></tr>
+<tr class="memdesc:ac74c527eb504eb6f13d80fb64487c874"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function performs the motor motion. It must be called with a frequency greater than 1/(v/1000000) where v is the maximum speed of the motor specified as the minimum delay in microseconds between two consecutive steps.  <a href="#ac74c527eb504eb6f13d80fb64487c874">More...</a><br /></td></tr>
 <tr class="separator:ac74c527eb504eb6f13d80fb64487c874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to control a the milling machine and its position on the z-axis. </p>
-<p>The class allows to control a milling machine. It is possible change the position on the z-axis and the speed of the dril bit. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
+<p>The class allows to control a milling machine. It is possible change the position on the z-axis and the speed of the drill bit. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adaa67d0774d9fa0ed9d51d7b5cd12a2a"></a>
 <div class="memitem">
@@ -145,9 +169,77 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a62e822e8a874059734ab483871a11489"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MillingMachine::MillingMachine </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vmin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The constructor with arguments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The number of steps to move forward/backward of one mm. </td></tr>
+    <tr><td class="paramname">vmax</td><td>The max speed of the motor, specified as delay between to steps (us). </td></tr>
+    <tr><td class="paramname">vmin</td><td>The min speed of the motor, specified as delay between to steps (us). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9b2022ac64164727f57ff0cbf50e60ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MillingMachine::fastMoveTo </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function moves the utensil in a specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The position in mm, it can be positive or negative. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a3236520b26c7ab2ebad6a89edfc67d8c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -161,20 +253,24 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It sets the motion to be more precise. </p>
+
 </div>
 </div>
-<a class="anchor" id="a3e6b1ab0c082b41f188151a1029b0bbf"></a>
+<a class="anchor" id="ad8b30fc42959606e9773e5ae7e31bac7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MillingMachine::initMotor </td>
+          <td class="memname">void MillingMachine::init </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It initializes the motor. </p>
 
 </div>
 </div>
@@ -191,47 +287,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a90d69a3f8ba1aa9d03dc2bb87d72db51"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MillingMachine::MilingMachine </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>s</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac4f32a740547428b61db6e44bd600002"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MillingMachine::moveTo </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>It sets the motion to be less precise. </p>
 
 </div>
 </div>
@@ -248,6 +304,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The function pauses the current operation. </p>
+
 </div>
 </div>
 <a class="anchor" id="a965590d4d159254dbc9a372ea35c2d63"></a>
@@ -263,20 +321,42 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It sets the current position with the value zero. </p>
+
 </div>
 </div>
-<a class="anchor" id="acd02e836001192b1065fbcee5e9771cf"></a>
+<a class="anchor" id="a9bd0cff7083490bf93c1c04d728e7050"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MillingMachine::searchHomePos </td>
+          <td class="memname">void MillingMachine::restart </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The function restarts an operation that was stopped. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4c8204cae4818204035e210080a2705d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MillingMachine::searchZeroPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The procedure search the zero position. </p>
+<p>It is a procedure that require an aluminum foil (you can find it in any market) and a alligator clip. The two component are connected to two copper wire that are connected respectively to GND and the pin specified for the down limit switch. Before to call the function, you place the foil on the working table under the drilling bit and attach the alligator clip to the drill bit. The function moves down the utensil until the drill bit touches the aluminum foil. It stops the operation. </p>
 
 </div>
 </div>
@@ -293,9 +373,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It sets the mode to specify the position: absolute position. </p>
+
 </div>
 </div>
-<a class="anchor" id="acdec58c95647317729dd111972a16e89"></a>
+<a class="anchor" id="aa9e80231444db8c4bfaef2829a12230f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -303,15 +385,23 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void MillingMachine::setBitDir </td>
           <td>(</td>
           <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>It sets the bit direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>CW = true or CCW = false. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="ab49bc1d4ac057adc3381533f16bef4d4"></a>
+<a class="anchor" id="a9d059e6adb7edd4ee42a0d6fce0338c3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -319,11 +409,19 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void MillingMachine::setBitSpeed </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It sets the bit speed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The value of the speed. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -340,6 +438,67 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It sets the mode to specify the position: incremental position. </p>
+
+</div>
+</div>
+<a class="anchor" id="abea98221e7a7fe1a9366e5f8d200f268"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MillingMachine::setLimitSwitch </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>dw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>up</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the pins where are attached the down/up limit switches. </p>
+<p>The system needs at least the down limit switch </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dw</td><td>The pin number where is attached the down limit switch. </td></tr>
+    <tr><td class="paramname">up</td><td>The pin number where is attached the up limit switch </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a9922b9041c75db25da0f63ba7830c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MillingMachine::slowMoveTo </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function moves the utensil in a specified position with fast speed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The position in mm, it can be positive or negative. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a3b530b356897ef7b7d25f55ce8965775"></a>
@@ -354,6 +513,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The function stops the motion of the utensil. </p>
 
 </div>
 </div>
@@ -370,15 +531,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The function performs the motor motion. It must be called with a frequency greater than 1/(v/1000000) where v is the maximum speed of the motor specified as the minimum delay in microseconds between two consecutive steps. </p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_utensils_8h_source.html">Utensils.h</a></li>
+<li><a class="el" href="_utensils_8cpp.html">Utensils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 10 2014 19:28:05 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

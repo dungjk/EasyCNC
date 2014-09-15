@@ -14,7 +14,7 @@ void \hyperlink{easy___c_n_c_8h_afe461d27b9c48d5921c00d521181f12f}{loop} ()
 \item 
 void \hyperlink{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 \item 
-Plotter\+Servo \hyperlink{easy___c_n_c_8h_aeee74d506e08f08c2e3e2f68837d6de0}{mypen} (\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N, \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S, \+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S)
+\hyperlink{class_milling_machine}{Milling\+Machine} \hyperlink{easy___c_n_c_8h_a2067868875eab5b584bd53739f29f636}{mill} (\hyperlink{config_8h_a94aabd4cf54e1c9cb34fb3860a4af575}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_abc457a8fa59dac77a75746512bf048d4}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+F\+A\+S\+T\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_ad1094f79bb65dcfc7c1ddab56f57624a}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+L\+O\+W\+\_\+\+S\+P\+E\+E\+D})
 \item 
 \hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} \hyperlink{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}{mycnc} (\hyperlink{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_afb07c4644cc35352a450b5b531fc7fa1}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D})
 \item 
@@ -26,6 +26,10 @@ void \hyperlink{easy___c_n_c_8h_a602deeb5004b37f160b63a7785faa7a1}{process\+Pos}
 \begin{DoxyCompactItemize}
 \item 
 boolean \hyperlink{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{end\+\_\+task} = false
+\item 
+boolean \hyperlink{easy___c_n_c_8h_a92d883ae17a48a9acf64f53bb918adcc}{a}
+\item 
+boolean \hyperlink{easy___c_n_c_8h_aeafba611be45e8b3ce9ab9e0af347b59}{b}
 \end{DoxyCompactItemize}
 
 
@@ -37,6 +41,15 @@ boolean \hyperlink{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{end\+\_\+t
 {}
 \end{DoxyParamCaption}
 )}}\label{easy___c_n_c_8h_afe461d27b9c48d5921c00d521181f12f}
+\hypertarget{easy___c_n_c_8h_a2067868875eab5b584bd53739f29f636}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mill@{mill}}
+\index{mill@{mill}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{mill}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Milling\+Machine} mill (
+\begin{DoxyParamCaption}
+\item[{{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}]{, }
+\item[{{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+F\+A\+S\+T\+\_\+\+S\+P\+E\+E\+D}}]{, }
+\item[{{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+L\+O\+W\+\_\+\+S\+P\+E\+E\+D}}]{}
+\end{DoxyParamCaption}
+)}}\label{easy___c_n_c_8h_a2067868875eab5b584bd53739f29f636}
 \hypertarget{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mycnc@{mycnc}}
 \index{mycnc@{mycnc}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{mycnc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router} mycnc (
@@ -47,15 +60,6 @@ boolean \hyperlink{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{end\+\_\+t
 \item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}}]{}
 \end{DoxyParamCaption}
 )}}\label{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}
-\hypertarget{easy___c_n_c_8h_aeee74d506e08f08c2e3e2f68837d6de0}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mypen@{mypen}}
-\index{mypen@{mypen}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
-\subsubsection[{mypen}]{\setlength{\rightskip}{0pt plus 5cm}Plotter\+Servo mypen (
-\begin{DoxyParamCaption}
-\item[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+P\+I\+N}]{, }
-\item[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+D\+O\+W\+N\+\_\+\+P\+O\+S}]{, }
-\item[{\+\_\+\+P\+L\+O\+T\+T\+E\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+U\+P\+\_\+\+P\+O\+S}]{}
-\end{DoxyParamCaption}
-)}}\label{easy___c_n_c_8h_aeee74d506e08f08c2e3e2f68837d6de0}
 \hypertarget{easy___c_n_c_8h_a602deeb5004b37f160b63a7785faa7a1}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!process\+Pos@{process\+Pos}}
 \index{process\+Pos@{process\+Pos}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{process\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Pos (
@@ -80,6 +84,12 @@ boolean \hyperlink{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{end\+\_\+t
 
 
 \subsection{Variable Documentation}
+\hypertarget{easy___c_n_c_8h_a92d883ae17a48a9acf64f53bb918adcc}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!a@{a}}
+\index{a@{a}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}boolean a}}\label{easy___c_n_c_8h_a92d883ae17a48a9acf64f53bb918adcc}
+\hypertarget{easy___c_n_c_8h_aeafba611be45e8b3ce9ab9e0af347b59}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!b@{b}}
+\index{b@{b}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}boolean b}}\label{easy___c_n_c_8h_aeafba611be45e8b3ce9ab9e0af347b59}
 \hypertarget{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!end\+\_\+task@{end\+\_\+task}}
 \index{end\+\_\+task@{end\+\_\+task}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{end\+\_\+task}]{\setlength{\rightskip}{0pt plus 5cm}boolean end\+\_\+task = false}}\label{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}

@@ -14,6 +14,7 @@
 #include <Servo.h>
 #include "Position.h"
 #include "CNC_Router.h"
+#include "tools/Timer.h"
 
 //end of add your includes here
 #ifdef __cplusplus
@@ -34,7 +35,7 @@ CNC_Router mycnc(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MX_SPEED
 
 boolean end_task = false;
 boolean a, b;
-
+Timer tloop;
 
 void stopButton(){
   mycnc.stopMotion();

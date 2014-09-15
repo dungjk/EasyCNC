@@ -37,14 +37,10 @@ class MSMC_A4988: public MSMC {
 	int8_t dir; /*!< \brief Specify the direction of the motor: -1 backward, 1 forward, 0 all pin out LOW */
 	boolean m_ready; /*!< \brief True if the motor is ready to take a new command: forward(uint32_t, uint32_t) or backward(uint32_t, uint32_t). */
 	boolean step_pin_val; /*!< \brief The value of the pin that drives the step advance */
-	uint8_t control_mode; /*!< \brief Specify the control mode of the motor: 0 full step, 1 half step, 2 quarter step, 3 eighth step and 4 sixteenth step. */
+	uint8_t control_mode; /*!< \brief Specify the control mode of the motor: 1 full step, 2 half step, 4 quarter step, 8 eighth step and 16 sixteenth step. */
 	boolean m_pause; /*!< \brief It is True if the motion is paused. */
 	int8_t dir_mode; /*!< Specifies if the motion is direct or inverted: 1 direct and -1 inverted*/
 
-	/*! \brief It advances the motor of one step.
-	 *  \param v The value of the pin.
-	 */
-	void one_step_drive(boolean v);
 
 	//! \brief It drives the direction pin
 	void setDirection();
@@ -119,10 +115,10 @@ public:
 	//! Stop any motion.
 	void stop();
 
-	//! Pause the motion. \sa MSMC_ULN2003A::start()
+	//! Pause the motion. \sa MSMC_A4988::restart()
 	void pause();
 
-	//! Restart the motion after the call of the function MSMC_ULN2003A::pause()
+	//! Restart the motion after the call of the function MSMC_A4988::pause()
 	void restart();
 
 	/*! \brief Perform the motion of the motor

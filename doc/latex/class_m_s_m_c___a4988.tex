@@ -33,16 +33,20 @@ void \hyperlink{class_m_s_m_c___a4988_aa4b96442c0e7d68715c2322f5bdce782}{set\+Mo
 \begin{DoxyCompactList}\small\item\em Set up the control mode. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{class_m_s_m_c___a4988_ab0004d7e88ada9fc74b21fd5886bdb54}{get\+Mode} ()
 \begin{DoxyCompactList}\small\item\em Return the operative mode of the controller. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_m_s_m_c___a4988_acf7598266c1ced18507d43f811c98db9}{get\+Dir} ()
+\begin{DoxyCompactList}\small\item\em Return the direction. \end{DoxyCompactList}\item 
 void \hyperlink{class_m_s_m_c___a4988_a6f9d236dc619342d16457aa029faeed9}{speed} (uint32\+\_\+t sp)
 \begin{DoxyCompactList}\small\item\em Change the delay between each step. \end{DoxyCompactList}\item 
 void \hyperlink{class_m_s_m_c___a4988_a4038481ce6b8131ea22d5e0d331ca6c7}{stop} ()
 \begin{DoxyCompactList}\small\item\em Stop any motion. \end{DoxyCompactList}\item 
 void \hyperlink{class_m_s_m_c___a4988_a321bc53bae537a0318910819a6a1a7d5}{pause} ()
 \begin{DoxyCompactList}\small\item\em Pause the motion. \end{DoxyCompactList}\item 
-void \hyperlink{class_m_s_m_c___a4988_ab8a43792f4da2a22d25a8cd36ebbea01}{start} ()
+void \hyperlink{class_m_s_m_c___a4988_add93aa459190c6edb3551495e75aaded}{restart} ()
 \begin{DoxyCompactList}\small\item\em Restart the motion after the call of the function \hyperlink{class_m_s_m_c___u_l_n2003_a_aa1d3444465d59ca6c87f05f565dde4a2}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pause()} \end{DoxyCompactList}\item 
 int32\+\_\+t \hyperlink{class_m_s_m_c___a4988_a1f408597bc1daf8bb5e563d54bf32cdd}{update} ()
-\begin{DoxyCompactList}\small\item\em Perform the motion of the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Perform the motion of the motor. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a749934bbacfca44dd0f0b5c6210bd7b5}{dir\+Mode} (int8\+\_\+t m)
+\begin{DoxyCompactList}\small\item\em It sets the direction mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -116,6 +120,26 @@ The function moves backward the motor of a number of steps with a specified dela
 
 Reimplemented from \hyperlink{class_m_s_m_c_a389bfe7f7d05083cb4e95d73128c1c87}{M\+S\+M\+C}.
 
+\hypertarget{class_m_s_m_c___a4988_a749934bbacfca44dd0f0b5c6210bd7b5}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!dir\+Mode@{dir\+Mode}}
+\index{dir\+Mode@{dir\+Mode}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{dir\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::dir\+Mode (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_a749934bbacfca44dd0f0b5c6210bd7b5}
+
+
+It sets the direction mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The direction mode\+: 1 direct, -\/1 inverted. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a8ee0ef4f051cf30a09ef3f2fddc3af30}{M\+S\+M\+C}.
+
 \hypertarget{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!forward@{forward}}
 \index{forward@{forward}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
 \subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::forward (
@@ -141,6 +165,24 @@ The function moves forward the motor of a number of steps with a specified delay
 
 
 Reimplemented from \hyperlink{class_m_s_m_c_a62615946a227d18ea3fc2f1329688d1f}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_acf7598266c1ced18507d43f811c98db9}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!get\+Dir@{get\+Dir}}
+\index{get\+Dir@{get\+Dir}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{get\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::get\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_acf7598266c1ced18507d43f811c98db9}
+
+
+Return the direction. 
+
+\begin{DoxyReturn}{Returns}
+1 = forward, -\/1 = backward, 0 = none 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_a97ba8d296c68e2bb2a3b3eebe047dca8}{M\+S\+M\+C}.
 
 \hypertarget{class_m_s_m_c___a4988_ab0004d7e88ada9fc74b21fd5886bdb54}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!get\+Mode@{get\+Mode}}
 \index{get\+Mode@{get\+Mode}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
@@ -172,11 +214,26 @@ Reimplemented from \hyperlink{class_m_s_m_c_a5a1c4ee3498360946cc8e8d39436d0e3}{M
 Pause the motion. 
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{class_m_s_m_c___u_l_n2003_a_a2af925737ce57e4b363b5cebb96e700b}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::start()} 
+M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::start() 
 \end{DoxySeeAlso}
 
 
 Reimplemented from \hyperlink{class_m_s_m_c_a9c45f1547467b43209c7a271604e7c85}{M\+S\+M\+C}.
+
+\hypertarget{class_m_s_m_c___a4988_add93aa459190c6edb3551495e75aaded}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!restart@{restart}}
+\index{restart@{restart}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_add93aa459190c6edb3551495e75aaded}
+
+
+Restart the motion after the call of the function \hyperlink{class_m_s_m_c___u_l_n2003_a_aa1d3444465d59ca6c87f05f565dde4a2}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pause()} 
+
+
+
+Reimplemented from \hyperlink{class_m_s_m_c_ae09c870a71121c7cc9f060b6299a425b}{M\+S\+M\+C}.
 
 \hypertarget{class_m_s_m_c___a4988_aa4b96442c0e7d68715c2322f5bdce782}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!set\+Mode@{set\+Mode}}
 \index{set\+Mode@{set\+Mode}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
@@ -250,21 +307,6 @@ This function can be used to change the speed during an operation of forward or 
 
 Reimplemented from \hyperlink{class_m_s_m_c_a065e48c8e8f3b513bf6694e8eb1b28d5}{M\+S\+M\+C}.
 
-\hypertarget{class_m_s_m_c___a4988_ab8a43792f4da2a22d25a8cd36ebbea01}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!start@{start}}
-\index{start@{start}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
-\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::start (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_m_s_m_c___a4988_ab8a43792f4da2a22d25a8cd36ebbea01}
-
-
-Restart the motion after the call of the function \hyperlink{class_m_s_m_c___u_l_n2003_a_aa1d3444465d59ca6c87f05f565dde4a2}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pause()} 
-
-
-
-Reimplemented from \hyperlink{class_m_s_m_c_a89abc0ac07d7010ba32d68840da1f822}{M\+S\+M\+C}.
-
 \hypertarget{class_m_s_m_c___a4988_a4038481ce6b8131ea22d5e0d331ca6c7}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!stop@{stop}}
 \index{stop@{stop}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
 \subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::stop (
@@ -291,7 +333,7 @@ Reimplemented from \hyperlink{class_m_s_m_c_a0b44d0a659550ba754bf9212294ba6d5}{M
 
 Perform the motion of the motor. 
 
-The function performs effectively the motor motion. It verifies that the specified delay from the last step is expired and than moves the motor of one step. The function must be call in the main loop with a frequency greater than 1/(delay$\ast$1000000). Greater is the frequency to call the function and higher is the precision of the the motion. \begin{DoxyReturn}{Returns}
+The function performs effectively the motor motion. It verifies that the specified delay from the last step is expired and than moves the motor of one step. The function must be call in the main loop with a frequency greater than 1/(spd/1000000). Greater is the frequency to call the function and higher is the precision of the the motion. \begin{DoxyReturn}{Returns}
 the function returns the number of steps made, up to the end of the motion. If the motion end the motor is idle and it can perform a new command. When the motor is idle the function returns -\/1. 
 \end{DoxyReturn}
 
