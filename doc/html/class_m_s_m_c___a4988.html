@@ -140,14 +140,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a321bc53bae537a0318910819a6a1a7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause the motion.  <a href="#a321bc53bae537a0318910819a6a1a7d5">More...</a><br /></td></tr>
 <tr class="separator:a321bc53bae537a0318910819a6a1a7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add93aa459190c6edb3551495e75aaded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#add93aa459190c6edb3551495e75aaded">restart</a> ()</td></tr>
-<tr class="memdesc:add93aa459190c6edb3551495e75aaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart the motion after the call of the function <a class="el" href="class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2" title="Pause the motion. ">MSMC_ULN2003A::pause()</a>  <a href="#add93aa459190c6edb3551495e75aaded">More...</a><br /></td></tr>
+<tr class="memdesc:add93aa459190c6edb3551495e75aaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart the motion after the call of the function <a class="el" href="class_m_s_m_c___a4988.html#a321bc53bae537a0318910819a6a1a7d5" title="Pause the motion. ">MSMC_A4988::pause()</a>  <a href="#add93aa459190c6edb3551495e75aaded">More...</a><br /></td></tr>
 <tr class="separator:add93aa459190c6edb3551495e75aaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f408597bc1daf8bb5e563d54bf32cdd"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#a1f408597bc1daf8bb5e563d54bf32cdd">update</a> ()</td></tr>
-<tr class="memdesc:a1f408597bc1daf8bb5e563d54bf32cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the motion of the motor.  <a href="#a1f408597bc1daf8bb5e563d54bf32cdd">More...</a><br /></td></tr>
-<tr class="separator:a1f408597bc1daf8bb5e563d54bf32cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a749934bbacfca44dd0f0b5c6210bd7b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#a749934bbacfca44dd0f0b5c6210bd7b5">dirMode</a> (int8_t m)</td></tr>
-<tr class="memdesc:a749934bbacfca44dd0f0b5c6210bd7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets the direction mode.  <a href="#a749934bbacfca44dd0f0b5c6210bd7b5">More...</a><br /></td></tr>
-<tr class="separator:a749934bbacfca44dd0f0b5c6210bd7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409bea28b42827c8bd7d5e5e318af21d"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#a409bea28b42827c8bd7d5e5e318af21d">update</a> ()</td></tr>
+<tr class="memdesc:a409bea28b42827c8bd7d5e5e318af21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the motion of the motor.  <a href="#a409bea28b42827c8bd7d5e5e318af21d">More...</a><br /></td></tr>
+<tr class="separator:a409bea28b42827c8bd7d5e5e318af21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab097e238a4a8c905e478ecff23907059"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#ab097e238a4a8c905e478ecff23907059">getSteps</a> ()</td></tr>
+<tr class="memdesc:ab097e238a4a8c905e478ecff23907059"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function returns the number of steps performed from a forward or backward command.  <a href="#ab097e238a4a8c905e478ecff23907059">More...</a><br /></td></tr>
+<tr class="separator:ab097e238a4a8c905e478ecff23907059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Multi Stepper Motor Control with A4988. </p>
@@ -259,40 +259,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a749934bbacfca44dd0f0b5c6210bd7b5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MSMC_A4988::dirMode </td>
-          <td>(</td>
-          <td class="paramtype">int8_t&#160;</td>
-          <td class="paramname"><em>m</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>It sets the direction mode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>The direction mode: 1 direct, -1 inverted. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="class_m_s_m_c.html#a8ee0ef4f051cf30a09ef3f2fddc3af30">MSMC</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a9acdbabf546656a6436e89579e8fcfca"></a>
 <div class="memitem">
 <div class="memproto">
@@ -395,6 +361,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab097e238a4a8c905e478ecff23907059"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t MSMC_A4988::getSteps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The function returns the number of steps performed from a forward or backward command. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of steps. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_m_s_m_c.html#a365b393eba0c9d7d42e37d32db6c00b7">MSMC</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a321bc53bae537a0318910819a6a1a7d5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -417,7 +411,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pause the motion. </p>
-<dl class="section see"><dt>See also</dt><dd>MSMC_ULN2003A::start() </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_m_s_m_c___a4988.html#add93aa459190c6edb3551495e75aaded" title="Restart the motion after the call of the function MSMC_A4988::pause() ">MSMC_A4988::restart()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_m_s_m_c.html#a9c45f1547467b43209c7a271604e7c85">MSMC</a>.</p>
 
@@ -444,7 +438,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Restart the motion after the call of the function <a class="el" href="class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2" title="Pause the motion. ">MSMC_ULN2003A::pause()</a> </p>
+<p>Restart the motion after the call of the function <a class="el" href="class_m_s_m_c___a4988.html#a321bc53bae537a0318910819a6a1a7d5" title="Pause the motion. ">MSMC_A4988::pause()</a> </p>
 
 <p>Reimplemented from <a class="el" href="class_m_s_m_c.html#ae09c870a71121c7cc9f060b6299a425b">MSMC</a>.</p>
 
@@ -595,7 +589,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1f408597bc1daf8bb5e563d54bf32cdd"></a>
+<a class="anchor" id="a409bea28b42827c8bd7d5e5e318af21d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -603,7 +597,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t MSMC_A4988::update </td>
+          <td class="memname">boolean MSMC_A4988::update </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -617,9 +611,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Perform the motion of the motor. </p>
-<p>The function performs effectively the motor motion. It verifies that the specified delay from the last step is expired and than moves the motor of one step. The function must be call in the main loop with a frequency greater than 1/(spd/1000000). Greater is the frequency to call the function and higher is the precision of the the motion. </p><dl class="section return"><dt>Returns</dt><dd>the function returns the number of steps made, up to the end of the motion. If the motion end the motor is idle and it can perform a new command. When the motor is idle the function returns -1. </dd></dl>
+<p>The function performs effectively the motor motion. It verifies that the specified delay from the last step is expired and than moves the motor of one step. The function must be call in the main loop with a frequency greater than 1/(spd/1000000). Greater is the frequency to call the function and higher is the precision of the the motion. </p><dl class="section return"><dt>Returns</dt><dd>The function returns false if the motor is busy and it has not ended the operation, otherwise true if the motor is idle. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_m_s_m_c.html#a44ca6bc355a269543606dd4eeb7ed06e">MSMC</a>.</p>
+<p>Reimplemented from <a class="el" href="class_m_s_m_c.html#a2c379d628edbca2d36e3588b39bf6b98">MSMC</a>.</p>
 
 </div>
 </div>
@@ -630,7 +624,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

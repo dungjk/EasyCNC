@@ -27,9 +27,9 @@ void \hyperlink{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}{set\+Lim
 \begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a30d838430b7452a8f47071d2f6b8845e}{reset\+Pos} ()
 \item 
-void \hyperlink{class_c_n_c___router_aa8f1afb0edd66b1597bb8fd3a0689ed9}{move\+To} (float px, float py)
+void \hyperlink{class_c_n_c___router_a9630faad381924b8f3252e100345274e}{move\+To} (float px, float py, float spd=0.\+0)
 \item 
-void \hyperlink{class_c_n_c___router_a22accd2ec43457dfb0d990cc6eec45d3}{move\+To} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&np)
+void \hyperlink{class_c_n_c___router_a7eb9a8553f02ba626abbc32f98663759}{move\+To} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&np, float spd=0.\+0)
 \item 
 void \hyperlink{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{stop\+Motion} ()
 \item 
@@ -46,6 +46,8 @@ void \hyperlink{class_c_n_c___router_abbda24db494dd328382639412570978e}{set\+Inc
 void \hyperlink{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}{set\+Absol\+Pos} ()
 \item 
 void \hyperlink{class_c_n_c___router_a4e9504d77eee555ddb35af073b67d3f1}{search\+Home\+Pos} ()
+\item 
+\hyperlink{class_position_x_y}{Position\+X\+Y} \hyperlink{class_c_n_c___router_a177a7cc248cace9b84ae2b53d461cb6d}{get\+Pos} ()
 \item 
 boolean \hyperlink{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{update} ()
 \end{DoxyCompactItemize}
@@ -80,6 +82,13 @@ Francesco Giurlanda
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_c_n_c___router_a177a7cc248cace9b84ae2b53d461cb6d}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!get\+Pos@{get\+Pos}}
+\index{get\+Pos@{get\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{get\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y} C\+N\+C\+\_\+\+Router\+::get\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a177a7cc248cace9b84ae2b53d461cb6d}
 \hypertarget{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!high\+Precision@{high\+Precision}}
 \index{high\+Precision@{high\+Precision}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{high\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::high\+Precision (
@@ -108,21 +117,23 @@ Francesco Giurlanda
 {}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_c___router_a15e3fab9eefaa7a61403c0054e643901}
-\hypertarget{class_c_n_c___router_aa8f1afb0edd66b1597bb8fd3a0689ed9}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
+\hypertarget{class_c_n_c___router_a9630faad381924b8f3252e100345274e}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
 \index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
 \begin{DoxyParamCaption}
 \item[{float}]{px, }
-\item[{float}]{py}
+\item[{float}]{py, }
+\item[{float}]{spd = {\ttfamily 0.0}}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_aa8f1afb0edd66b1597bb8fd3a0689ed9}
-\hypertarget{class_c_n_c___router_a22accd2ec43457dfb0d990cc6eec45d3}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
+)}}\label{class_c_n_c___router_a9630faad381924b8f3252e100345274e}
+\hypertarget{class_c_n_c___router_a7eb9a8553f02ba626abbc32f98663759}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
 \index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
 \begin{DoxyParamCaption}
-\item[{const {\bf Position\+X\+Y} \&}]{np}
+\item[{const {\bf Position\+X\+Y} \&}]{np, }
+\item[{float}]{spd = {\ttfamily 0.0}}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_a22accd2ec43457dfb0d990cc6eec45d3}
+)}}\label{class_c_n_c___router_a7eb9a8553f02ba626abbc32f98663759}
 \hypertarget{class_c_n_c___router_a6b5ad1a227e63d3f374e0e53f3cf047c}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pause@{pause}}
 \index{pause@{pause}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::pause (

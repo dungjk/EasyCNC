@@ -15,7 +15,7 @@
 
 #include "config.h"
 #include "Arduino.h"
-#include "Position.h"
+#include "tools/Position.h"
 #include <stdint.h>
 
 #if defined(ROUTER_MX_CONTROLLER_ULN2003A) || defined(ROUTER_MY_CONTROLLER_ULN2003A)
@@ -74,12 +74,12 @@ class CNC_Router {
   
   void resetPos();
   
-  void moveTo(float px, float py);
-  void moveTo(const PositionXY &np);
+  void moveTo(float px, float py, float spd = 0.0);
+  void moveTo(const PositionXY &np, float spd = 0.0);
   
   void stopMotion();
   void pause();
-  void restat();
+  void restart();
   
   void highPrecision();
   void lowPrecision();
@@ -88,6 +88,8 @@ class CNC_Router {
  
   
   void searchHomePos();
+  //TODO: implement getPos()
+  PositionXY getPos();
   
   boolean update();
   

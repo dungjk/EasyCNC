@@ -11,7 +11,7 @@
 //********** COSTRUCTOR **********
 MSMC_ULN2003A::MSMC_ULN2003A() {
 	p1 = p2 = p3 = p4 = old_time = pause_time = steps = tot_steps = spd = pos =
-			dir = dir_mode = 0;
+			dir = 0;
 	control_mode = 0;
 	m_ready = false; //the motor is not ready because the pins are not specified yet.
 	m_pause = false;
@@ -28,7 +28,7 @@ MSMC_ULN2003A::MSMC_ULN2003A(uint8_t pin1, uint8_t pin2, uint8_t pin3,
 	pinMode(p3, OUTPUT);
 	pinMode(p4, OUTPUT);
 	control_mode = 0;
-	pause_time = old_time = steps = tot_steps = spd = pos = dir = dir_mode = 0;
+	pause_time = old_time = steps = tot_steps = spd = pos = dir = 0;
 	m_ready = true;
 	m_pause = false;
 }
@@ -62,15 +62,12 @@ void MSMC_ULN2003A::setPins(uint8_t pin1, uint8_t pin2, uint8_t pin3,
 	}
 }
 
-void MSMC_ULN2003A::dirMode(int8_t m){
-	dir_mode = m;
-}
 //********** MOVING ************
 void MSMC_ULN2003A::forward(uint32_t st, uint32_t sp) {
 	steps = tot_steps = st;
 
 	spd = sp;
-	dir = 1*dir_mode;
+	dir = 1;
 	old_time = micros();
 	m_ready = false;
 }
@@ -78,7 +75,7 @@ void MSMC_ULN2003A::forward(uint32_t st, uint32_t sp) {
 void MSMC_ULN2003A::backward(uint32_t st, uint32_t sp) {
 	steps = tot_steps = st;
 	spd = sp;
-	dir = -1*dir_mode;
+	dir = -1;
 	old_time = micros();
 	m_ready = false;
 }
@@ -155,8 +152,9 @@ void MSMC_ULN2003A::restart() {
 }
 
 //********* STEP UPDATE **************  
-int32_t MSMC_ULN2003A::update() {
+boolean MSMC_ULN2003A::update() {
 	uint32_t us = micros();
+	uint32_t delta = us - old_time;
 
 	if (dir != 0 && (us - old_time) > spd && !m_pause) {
 
@@ -164,19 +162,22 @@ int32_t MSMC_ULN2003A::update() {
 			coilsOff();
 			dir = 0;
 			m_ready = true;
-			return -1;
+			return m_ready;
 		}
 
-		steps--;
+		steps++;
 		old_time = us;
 		if (dir == 1) {
 			forward_one();
 		} else {
 			backward_one();
 		}
-		return tot_steps - steps;
 	}
-	return (m_ready) ? -1 : tot_steps - steps;
+	return m_ready;
+}
+
+uint32_t MSMC_ULN2003A::getSteps(){
+	return steps;
 }
 
 //********* DEBUGGING ***************

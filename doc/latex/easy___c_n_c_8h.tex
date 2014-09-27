@@ -4,9 +4,11 @@
 {\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Utensils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G\+Code.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$Servo.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}Position.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}C\+N\+C\+\_\+\+Router.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tools/\+Timer.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,7 +16,7 @@ void \hyperlink{easy___c_n_c_8h_afe461d27b9c48d5921c00d521181f12f}{loop} ()
 \item 
 void \hyperlink{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 \item 
-\hyperlink{class_milling_machine}{Milling\+Machine} \hyperlink{easy___c_n_c_8h_a2067868875eab5b584bd53739f29f636}{mill} (\hyperlink{config_8h_a94aabd4cf54e1c9cb34fb3860a4af575}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_abc457a8fa59dac77a75746512bf048d4}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+F\+A\+S\+T\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_ad1094f79bb65dcfc7c1ddab56f57624a}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+L\+O\+W\+\_\+\+S\+P\+E\+E\+D})
+\hyperlink{class_milling_machine}{Milling\+Machine} \hyperlink{easy___c_n_c_8h_aec35fa3b799e0250873ea2d82c60ef2e}{mill} (\hyperlink{config_8h_a94aabd4cf54e1c9cb34fb3860a4af575}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_abc457a8fa59dac77a75746512bf048d4}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+F\+A\+S\+T\+\_\+\+S\+P\+E\+E\+D})
 \item 
 \hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} \hyperlink{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}{mycnc} (\hyperlink{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_afb07c4644cc35352a450b5b531fc7fa1}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D})
 \item 
@@ -25,11 +27,17 @@ void \hyperlink{easy___c_n_c_8h_a602deeb5004b37f160b63a7785faa7a1}{process\+Pos}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_g_code}{G\+Code} gc \& \hyperlink{easy___c_n_c_8h_abad5f3bc2d00970910ce204a3648ef01}{mycnc}
+\item 
+char \hyperlink{easy___c_n_c_8h_a7e3dcbb769896d01163997dafe024ea9}{new\+\_\+line} \mbox{[}256\mbox{]}
+\item 
 boolean \hyperlink{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{end\+\_\+task} = false
 \item 
 boolean \hyperlink{easy___c_n_c_8h_a92d883ae17a48a9acf64f53bb918adcc}{a}
 \item 
 boolean \hyperlink{easy___c_n_c_8h_aeafba611be45e8b3ce9ab9e0af347b59}{b}
+\item 
+\hyperlink{class_timer}{Timer} \hyperlink{easy___c_n_c_8h_aa3919b139dabef7679f7340f20eff876}{tloop}
 \end{DoxyCompactItemize}
 
 
@@ -41,15 +49,14 @@ boolean \hyperlink{easy___c_n_c_8h_aeafba611be45e8b3ce9ab9e0af347b59}{b}
 {}
 \end{DoxyParamCaption}
 )}}\label{easy___c_n_c_8h_afe461d27b9c48d5921c00d521181f12f}
-\hypertarget{easy___c_n_c_8h_a2067868875eab5b584bd53739f29f636}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mill@{mill}}
+\hypertarget{easy___c_n_c_8h_aec35fa3b799e0250873ea2d82c60ef2e}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mill@{mill}}
 \index{mill@{mill}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{mill}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Milling\+Machine} mill (
 \begin{DoxyParamCaption}
 \item[{{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}]{, }
-\item[{{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+F\+A\+S\+T\+\_\+\+S\+P\+E\+E\+D}}]{, }
-\item[{{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+S\+L\+O\+W\+\_\+\+S\+P\+E\+E\+D}}]{}
+\item[{{\bf \+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+M\+Z\+\_\+\+F\+A\+S\+T\+\_\+\+S\+P\+E\+E\+D}}]{}
 \end{DoxyParamCaption}
-)}}\label{easy___c_n_c_8h_a2067868875eab5b584bd53739f29f636}
+)}}\label{easy___c_n_c_8h_aec35fa3b799e0250873ea2d82c60ef2e}
 \hypertarget{easy___c_n_c_8h_acb5b2abc27c60baec6f0d4e3fb913a67}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mycnc@{mycnc}}
 \index{mycnc@{mycnc}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{mycnc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router} mycnc (
@@ -93,3 +100,12 @@ boolean \hyperlink{easy___c_n_c_8h_aeafba611be45e8b3ce9ab9e0af347b59}{b}
 \hypertarget{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!end\+\_\+task@{end\+\_\+task}}
 \index{end\+\_\+task@{end\+\_\+task}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{end\+\_\+task}]{\setlength{\rightskip}{0pt plus 5cm}boolean end\+\_\+task = false}}\label{easy___c_n_c_8h_aab391321b465e009e9d1ad4839cdc135}
+\hypertarget{easy___c_n_c_8h_abad5f3bc2d00970910ce204a3648ef01}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!mycnc@{mycnc}}
+\index{mycnc@{mycnc}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{mycnc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+Code} gc\& mycnc}}\label{easy___c_n_c_8h_abad5f3bc2d00970910ce204a3648ef01}
+\hypertarget{easy___c_n_c_8h_a7e3dcbb769896d01163997dafe024ea9}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!new\+\_\+line@{new\+\_\+line}}
+\index{new\+\_\+line@{new\+\_\+line}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{new\+\_\+line}]{\setlength{\rightskip}{0pt plus 5cm}char new\+\_\+line\mbox{[}256\mbox{]}}}\label{easy___c_n_c_8h_a7e3dcbb769896d01163997dafe024ea9}
+\hypertarget{easy___c_n_c_8h_aa3919b139dabef7679f7340f20eff876}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!tloop@{tloop}}
+\index{tloop@{tloop}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{tloop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Timer} tloop}}\label{easy___c_n_c_8h_aa3919b139dabef7679f7340f20eff876}

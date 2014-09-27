@@ -113,10 +113,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af9308de7c3273a4f7dc18bc3cfe617d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30d838430b7452a8f47071d2f6b8845e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a30d838430b7452a8f47071d2f6b8845e">resetPos</a> ()</td></tr>
 <tr class="separator:a30d838430b7452a8f47071d2f6b8845e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8f1afb0edd66b1597bb8fd3a0689ed9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#aa8f1afb0edd66b1597bb8fd3a0689ed9">moveTo</a> (float px, float py)</td></tr>
-<tr class="separator:aa8f1afb0edd66b1597bb8fd3a0689ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22accd2ec43457dfb0d990cc6eec45d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a22accd2ec43457dfb0d990cc6eec45d3">moveTo</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;np)</td></tr>
-<tr class="separator:a22accd2ec43457dfb0d990cc6eec45d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9630faad381924b8f3252e100345274e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a9630faad381924b8f3252e100345274e">moveTo</a> (float px, float py, float spd=0.0)</td></tr>
+<tr class="separator:a9630faad381924b8f3252e100345274e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb9a8553f02ba626abbc32f98663759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a7eb9a8553f02ba626abbc32f98663759">moveTo</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;np, float spd=0.0)</td></tr>
+<tr class="separator:a7eb9a8553f02ba626abbc32f98663759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebacab02935c41a4c11b926c0770bcac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac">stopMotion</a> ()</td></tr>
 <tr class="separator:aebacab02935c41a4c11b926c0770bcac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b5ad1a227e63d3f374e0e53f3cf047c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a6b5ad1a227e63d3f374e0e53f3cf047c">pause</a> ()</td></tr>
@@ -133,6 +133,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8629d6232f16d039ff386b0f02d45895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e9504d77eee555ddb35af073b67d3f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a4e9504d77eee555ddb35af073b67d3f1">searchHomePos</a> ()</td></tr>
 <tr class="separator:a4e9504d77eee555ddb35af073b67d3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177a7cc248cace9b84ae2b53d461cb6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y.html">PositionXY</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a177a7cc248cace9b84ae2b53d461cb6d">getPos</a> ()</td></tr>
+<tr class="separator:a177a7cc248cace9b84ae2b53d461cb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a8982d9582e2144d38791626b3060e6"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a3a8982d9582e2144d38791626b3060e6">update</a> ()</td></tr>
 <tr class="separator:a3a8982d9582e2144d38791626b3060e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -194,6 +196,21 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a177a7cc248cace9b84ae2b53d461cb6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_position_x_y.html">PositionXY</a> CNC_Router::getPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ad82ea519e54f4ec488c10c150df26984"></a>
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +271,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa8f1afb0edd66b1597bb8fd3a0689ed9"></a>
+<a class="anchor" id="a9630faad381924b8f3252e100345274e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -268,7 +285,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>py</em>&#160;</td>
+          <td class="paramname"><em>py</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>spd</em> = <code>0.0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -280,7 +303,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a22accd2ec43457dfb0d990cc6eec45d3"></a>
+<a class="anchor" id="a7eb9a8553f02ba626abbc32f98663759"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -288,8 +311,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void CNC_Router::moveTo </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;&#160;</td>
-          <td class="paramname"><em>np</em></td><td>)</td>
+          <td class="paramname"><em>np</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>spd</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -493,7 +526,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

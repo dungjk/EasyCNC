@@ -104,93 +104,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="config_8h.html#af30c7b107d77d612fa88c573d252c2c2">   41</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_STEPS_PER_ROUND 200.0  </span></div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f">   42</a></span>&#160;<span class="preprocessor">#define ROUTER_MY_STEPS_PER_ROUND 200.0  </span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">   43</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.25  </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">   43</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.256  </span></div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">   44</a></span>&#160;<span class="preprocessor">#define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25  </span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">   45</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_SPEED 4000.0           </span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">   46</a></span>&#160;<span class="preprocessor">#define ROUTER_MY_SPEED 4000.0           </span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="config_8h.html#ad1fd89c1662777a74f4291c29436e2f3">   47</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_DIR 1                 </span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="config_8h.html#a5bf49868750d86c2e41d888087d0e93b">   48</a></span>&#160;<span class="preprocessor">#define ROUTER_MY_DIR 1                 </span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="config_8h.html#ad29cc419438e7c8f8cddd1838716cee5">   49</a></span>&#160;<span class="preprocessor">#define ROUTER_DOWN_LIMIT_SWITCH_X 3                  </span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="config_8h.html#a2dcf7520229827b9c6e8b714f002981a">   50</a></span>&#160;<span class="preprocessor">#define ROUTER_DOWN_LIMIT_SWITCH_Y 14                  </span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">//#define ROUTER_MX_CONTROLLER_ULN2003A</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d">   53</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_CONTROLLER_A4988</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_ULN2003A)</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL1_PIN 4                  </span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL2_PIN 5                  </span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL3_PIN 6                  </span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL4_PIN 7                  </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_A4988)</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="config_8h.html#a2772e27b33c24fca3e756e98e4da0528">   63</a></span>&#160;<span class="preprocessor">#define ROUTE_MX_STEP_CONTROL_PIN   A0           </span></div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="config_8h.html#a458d8330a8ea0e864a5f14641beaff3b">   64</a></span>&#160;<span class="preprocessor">#define ROUTE_MX_DIRECTION_CONTROL_PIN A1    </span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="config_8h.html#aa440cb6779843ab1068ff26919b75db4">   65</a></span>&#160;<span class="preprocessor">#define ROUTE_MX_ENABLE_CONTROL_PIN 38       </span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//#define ROUTER_MY_CONTROLLER_ULN2003A</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="config_8h.html#ab43f3d9753eb04addb3ecf892d43e9b3">   69</a></span>&#160;<span class="preprocessor">#define ROUTER_MY_CONTROLLER_A4988</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_ULN2003A)</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL1_PIN 8                  </span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL2_PIN 9                  </span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL3_PIN 10                 </span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL4_PIN 11                 </span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#if defined(ROUTER_MY_CONTROLLER_A4988)</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="config_8h.html#ab22bf58b0951dd8f3ae5d94bda82d87e">   79</a></span>&#160;<span class="preprocessor">#define ROUTE_MY_STEP_CONTROL_PIN 46             </span></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="config_8h.html#a865681c0605dcc31e4c0262995aaef20">   80</a></span>&#160;<span class="preprocessor">#define ROUTE_MY_DIRECTION_CONTROL_PIN 48    </span></div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="config_8h.html#a3e30826a0cbcd6ac91bae8b83651bc78">   81</a></span>&#160;<span class="preprocessor">#define ROUTE_MY_ENABLE_CONTROL_PIN A8       </span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">   45</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_SPEED 5000.0           </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">   46</a></span>&#160;<span class="preprocessor">#define ROUTER_MY_SPEED 5000.0           </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="config_8h.html#ad29cc419438e7c8f8cddd1838716cee5">   47</a></span>&#160;<span class="preprocessor">#define ROUTER_DOWN_LIMIT_SWITCH_X 3                  </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="config_8h.html#a2dcf7520229827b9c6e8b714f002981a">   48</a></span>&#160;<span class="preprocessor">#define ROUTER_DOWN_LIMIT_SWITCH_Y 14                  </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">//#define ROUTER_MX_CONTROLLER_ULN2003A</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d">   51</a></span>&#160;<span class="preprocessor">#define ROUTER_MX_CONTROLLER_A4988</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_ULN2003A)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL1_PIN 4                  </span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL2_PIN 5                  </span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL3_PIN 6                  </span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define ROUTER_MX_COIL4_PIN 7                  </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_A4988)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="config_8h.html#a2772e27b33c24fca3e756e98e4da0528">   61</a></span>&#160;<span class="preprocessor">#define ROUTE_MX_STEP_CONTROL_PIN   A0           </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="config_8h.html#a458d8330a8ea0e864a5f14641beaff3b">   62</a></span>&#160;<span class="preprocessor">#define ROUTE_MX_DIRECTION_CONTROL_PIN A1    </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="config_8h.html#aa440cb6779843ab1068ff26919b75db4">   63</a></span>&#160;<span class="preprocessor">#define ROUTE_MX_ENABLE_CONTROL_PIN 38       </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//#define ROUTER_MY_CONTROLLER_ULN2003A</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="config_8h.html#ab43f3d9753eb04addb3ecf892d43e9b3">   67</a></span>&#160;<span class="preprocessor">#define ROUTER_MY_CONTROLLER_A4988</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_ULN2003A)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL1_PIN 8                  </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL2_PIN 9                  </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL3_PIN 10                 </span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define ROUTER_MY_COIL4_PIN 11                 </span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#if defined(ROUTER_MY_CONTROLLER_A4988)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="config_8h.html#ab22bf58b0951dd8f3ae5d94bda82d87e">   77</a></span>&#160;<span class="preprocessor">#define ROUTE_MY_STEP_CONTROL_PIN 46             </span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="config_8h.html#a865681c0605dcc31e4c0262995aaef20">   78</a></span>&#160;<span class="preprocessor">#define ROUTE_MY_DIRECTION_CONTROL_PIN 48    </span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="config_8h.html#a3e30826a0cbcd6ac91bae8b83651bc78">   79</a></span>&#160;<span class="preprocessor">#define ROUTE_MY_ENABLE_CONTROL_PIN A8       </span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// *****************************</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// *          UTENSILS         *</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// *****************************</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// *          UTENSILS         *</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// *****************************</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">//#define _PLOTTER_SERVO                    /*!&lt; \brief Uncomment to active the servo plotter support. */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="config_8h.html#a1ed2a15e6b761d36ac89dfc727d4ae82">   89</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE                 </span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">// *****************************</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// *       UTENSIL SETUP       *</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// *****************************</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">//#define _PLOTTER_SERVO                    /*!&lt; \brief Uncomment to active the servo plotter support. */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="config_8h.html#a1ed2a15e6b761d36ac89dfc727d4ae82">   87</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE                 </span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">// *****************************</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// *       UTENSIL SETUP       *</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// *****************************</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef _PLOTTER_SERVO</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#ifdef _PLOTTER_SERVO</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#define _PLOTTER_SERVO_PIN       5        </span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define _PLOTTER_SERVO_UP_POS    80       </span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#define _PLOTTER_SERVO_DOWN_POS  136      </span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#ifdef _MILLING_MACHINE</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">  105</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_STEPS_PER_ROUND 200.0  </span></div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="config_8h.html#a94aabd4cf54e1c9cb34fb3860a4af575">  106</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_STEPS_PER_MM _MILLING_MACHINE_MZ_STEPS_PER_ROUND/1.25  </span></div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="config_8h.html#abc457a8fa59dac77a75746512bf048d4">  107</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_FAST_SPEED 3000.0           </span></div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="config_8h.html#ad1094f79bb65dcfc7c1ddab56f57624a">  108</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_SLOW_SPEED 200.0           </span></div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="config_8h.html#ad7ebb641278dea482ed939522434337f">  109</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_DIR 1                </span></div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="config_8h.html#acc62b81ffbea73516601be8924b51ed7">  110</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z 18  </span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">//#define _MILLING_MACHINE_MZ_CONTROLLER_ULN2003A</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="config_8h.html#a9dbc121e74ed55e99c68bc8da2b83d06">  113</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_CONTROLLER_A4988</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#if defined(_MILLING_MACHINE_MZ_CONTROLLER_ULN2003A)</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL1_PIN 8                  </span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL2_PIN 9                  </span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL3_PIN 10                 </span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL4_PIN 11                 </span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#if defined(_MILLING_MACHINE_MZ_CONTROLLER_A4988)</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="config_8h.html#a7ea3febb8ee01210e2a37b95abec13bb">  123</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_STEP_CONTROL_PIN   A6        </span></div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="config_8h.html#a9130d37fc0cc549ce9e77f582001428d">  124</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_DIRECTION_CONTROL_PIN A7     </span></div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="config_8h.html#a70536ae2955df7c72a7b061fb887e404">  125</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_ENABLE_CONTROL_PIN A2        </span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#define _PLOTTER_SERVO_PIN       5        </span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#define _PLOTTER_SERVO_UP_POS    80       </span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#define _PLOTTER_SERVO_DOWN_POS  136      </span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#ifdef _MILLING_MACHINE</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">  103</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_STEPS_PER_ROUND 200.0  </span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="config_8h.html#a94aabd4cf54e1c9cb34fb3860a4af575">  104</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_STEPS_PER_MM _MILLING_MACHINE_MZ_STEPS_PER_ROUND/1.256  </span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="config_8h.html#abc457a8fa59dac77a75746512bf048d4">  105</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_FAST_SPEED 4000.0           </span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="config_8h.html#acc62b81ffbea73516601be8924b51ed7">  106</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z 18  </span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">//#define _MILLING_MACHINE_MZ_CONTROLLER_ULN2003A</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="config_8h.html#a9dbc121e74ed55e99c68bc8da2b83d06">  109</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_CONTROLLER_A4988</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#if defined(_MILLING_MACHINE_MZ_CONTROLLER_ULN2003A)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL1_PIN 8                  </span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL2_PIN 9                  </span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL3_PIN 10                 </span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_COIL4_PIN 11                 </span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#if defined(_MILLING_MACHINE_MZ_CONTROLLER_A4988)</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="config_8h.html#a7ea3febb8ee01210e2a37b95abec13bb">  119</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_STEP_CONTROL_PIN   A6        </span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="config_8h.html#a9130d37fc0cc549ce9e77f582001428d">  120</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_DIRECTION_CONTROL_PIN A7     </span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="config_8h.html#a70536ae2955df7c72a7b061fb887e404">  121</a></span>&#160;<span class="preprocessor">#define _MILLING_MACHINE_MZ_ENABLE_CONTROL_PIN A2        </span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// ******************</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">//     TESTING</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">// ******************</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">//#define _TEST</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="config_8h.html#addddb0dfccfd51ce843677863805df11">  129</a></span>&#160;<span class="preprocessor">#define DBGLN(x) Serial.println(x)</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="config_8h.html#a32adf79142f0a426b5e782fb7cd4cad3">  130</a></span>&#160;<span class="preprocessor">#define DBG(x) Serial.print(x)</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

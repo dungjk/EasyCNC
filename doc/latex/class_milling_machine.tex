@@ -15,16 +15,16 @@ Class to control a the milling machine and its position on the z-\/axis.
 \item 
 \hyperlink{class_milling_machine_adaa67d0774d9fa0ed9d51d7b5cd12a2a}{Milling\+Machine} ()
 \begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_milling_machine_a62e822e8a874059734ab483871a11489}{Milling\+Machine} (float s, float vmax, float vmin)
+\hyperlink{class_milling_machine_ad99b3592af8b895e97e5deb112487fd5}{Milling\+Machine} (float s, float vmax)
 \begin{DoxyCompactList}\small\item\em The constructor with arguments. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_ad8b30fc42959606e9773e5ae7e31bac7}{init} ()
 \begin{DoxyCompactList}\small\item\em It initializes the motor. \end{DoxyCompactList}\item 
+float \hyperlink{class_milling_machine_a5ef6a6c373681cec0b7128d50e9321c3}{get\+Pos} ()
+\begin{DoxyCompactList}\small\item\em The function returns the position of the utensil in the Z-\/axis. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a965590d4d159254dbc9a372ea35c2d63}{reset\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It sets the current position with the value zero. \end{DoxyCompactList}\item 
-void \hyperlink{class_milling_machine_a3a9922b9041c75db25da0f63ba7830c6}{slow\+Move\+To} (float p)
+void \hyperlink{class_milling_machine_aafe8cc6c2658daa7b801f1f1c2c37098}{move\+To} (float p, float s=0.\+0)
 \begin{DoxyCompactList}\small\item\em The function moves the utensil in a specified position with fast speed. \end{DoxyCompactList}\item 
-void \hyperlink{class_milling_machine_a9b2022ac64164727f57ff0cbf50e60ed}{fast\+Move\+To} (float p)
-\begin{DoxyCompactList}\small\item\em The function moves the utensil in a specified position. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a3b530b356897ef7b7d25f55ce8965775}{stop\+Motion} ()
 \begin{DoxyCompactList}\small\item\em The function stops the motion of the utensil. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a8600c252d19b2b1318400c3e8567591b}{pause} ()
@@ -71,15 +71,14 @@ Francesco Giurlanda
 
 The constructor. 
 
-\hypertarget{class_milling_machine_a62e822e8a874059734ab483871a11489}{\index{Milling\+Machine@{Milling\+Machine}!Milling\+Machine@{Milling\+Machine}}
+\hypertarget{class_milling_machine_ad99b3592af8b895e97e5deb112487fd5}{\index{Milling\+Machine@{Milling\+Machine}!Milling\+Machine@{Milling\+Machine}}
 \index{Milling\+Machine@{Milling\+Machine}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{Milling\+Machine}]{\setlength{\rightskip}{0pt plus 5cm}Milling\+Machine\+::\+Milling\+Machine (
 \begin{DoxyParamCaption}
 \item[{float}]{s, }
-\item[{float}]{vmax, }
-\item[{float}]{vmin}
+\item[{float}]{vmax}
 \end{DoxyParamCaption}
-)}}\label{class_milling_machine_a62e822e8a874059734ab483871a11489}
+)}}\label{class_milling_machine_ad99b3592af8b895e97e5deb112487fd5}
 
 
 The constructor with arguments. 
@@ -96,22 +95,17 @@ The constructor with arguments.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_milling_machine_a9b2022ac64164727f57ff0cbf50e60ed}{\index{Milling\+Machine@{Milling\+Machine}!fast\+Move\+To@{fast\+Move\+To}}
-\index{fast\+Move\+To@{fast\+Move\+To}!Milling\+Machine@{Milling\+Machine}}
-\subsubsection[{fast\+Move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::fast\+Move\+To (
+\hypertarget{class_milling_machine_a5ef6a6c373681cec0b7128d50e9321c3}{\index{Milling\+Machine@{Milling\+Machine}!get\+Pos@{get\+Pos}}
+\index{get\+Pos@{get\+Pos}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{get\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}float Milling\+Machine\+::get\+Pos (
 \begin{DoxyParamCaption}
-\item[{float}]{p}
+{}
 \end{DoxyParamCaption}
-)}}\label{class_milling_machine_a9b2022ac64164727f57ff0cbf50e60ed}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_milling_machine_a5ef6a6c373681cec0b7128d50e9321c3}
 
 
-The function moves the utensil in a specified position. 
+The function returns the position of the utensil in the Z-\/axis. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em p} & The position in mm, it can be positive or negative. \\
-\hline
-\end{DoxyParams}
 \hypertarget{class_milling_machine_a3236520b26c7ab2ebad6a89edfc67d8c}{\index{Milling\+Machine@{Milling\+Machine}!high\+Precision@{high\+Precision}}
 \index{high\+Precision@{high\+Precision}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{high\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::high\+Precision (
@@ -145,6 +139,25 @@ It initializes the motor.
 
 It sets the motion to be less precise. 
 
+\hypertarget{class_milling_machine_aafe8cc6c2658daa7b801f1f1c2c37098}{\index{Milling\+Machine@{Milling\+Machine}!move\+To@{move\+To}}
+\index{move\+To@{move\+To}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::move\+To (
+\begin{DoxyParamCaption}
+\item[{float}]{p, }
+\item[{float}]{s = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}}\label{class_milling_machine_aafe8cc6c2658daa7b801f1f1c2c37098}
+
+
+The function moves the utensil in a specified position with fast speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in mm, it can be positive or negative. \\
+\hline
+{\em s} & The speed of motion of the Z-\/axis (mm/s) \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_milling_machine_a8600c252d19b2b1318400c3e8567591b}{\index{Milling\+Machine@{Milling\+Machine}!pause@{pause}}
 \index{pause@{pause}!Milling\+Machine@{Milling\+Machine}}
 \subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::pause (
@@ -260,22 +273,6 @@ The system needs at least the down limit switch
 {\em dw} & The pin number where is attached the down limit switch. \\
 \hline
 {\em up} & The pin number where is attached the up limit switch \\
-\hline
-\end{DoxyParams}
-\hypertarget{class_milling_machine_a3a9922b9041c75db25da0f63ba7830c6}{\index{Milling\+Machine@{Milling\+Machine}!slow\+Move\+To@{slow\+Move\+To}}
-\index{slow\+Move\+To@{slow\+Move\+To}!Milling\+Machine@{Milling\+Machine}}
-\subsubsection[{slow\+Move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::slow\+Move\+To (
-\begin{DoxyParamCaption}
-\item[{float}]{p}
-\end{DoxyParamCaption}
-)}}\label{class_milling_machine_a3a9922b9041c75db25da0f63ba7830c6}
-
-
-The function moves the utensil in a specified position with fast speed. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em p} & The position in mm, it can be positive or negative. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_milling_machine_a3b530b356897ef7b7d25f55ce8965775}{\index{Milling\+Machine@{Milling\+Machine}!stop\+Motion@{stop\+Motion}}

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['y',['y',['../class_position_x_y.html#a16068e19060b1b47cee29398f2b26249',1,'PositionXY::y()'],['../class_position_x_y.html#aa6bceb45b13566b4a312d5d7aad2ec77',1,'PositionXY::Y() const '],['../class_position_x_y.html#a7bb12f86083750580799fcf0535518e9',1,'PositionXY::Y(float py)']]]
+  ['vect',['Vect',['../class_vect.html',1,'Vect'],['../class_vect.html#a1c153510458899146850b79a7277630b',1,'Vect::Vect()'],['../class_vect.html#a88c0f13f24991f01e9977f12dabb1cbe',1,'Vect::Vect(float d, float a)']]],
+  ['vect_2ecpp',['Vect.cpp',['../_vect_8cpp.html',1,'']]],
+  ['vect_2eh',['Vect.h',['../_vect_8h.html',1,'']]]
 ];

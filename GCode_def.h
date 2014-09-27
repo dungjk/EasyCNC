@@ -54,7 +54,7 @@
 #define M60 68
 
 //MODAL GROUP 5: FORWARDING MODE
-#define GROUP5
+#define GROUP5 5
 #define G93 80		//!< Forwarding mode in time inverse
 #define G94 81		//!< Forwarding mode in units per minute
 
@@ -120,5 +120,27 @@
 
 //PARAMETER UNSPECIFIED
 #define UNSPECIFIED 0
+
+//other parameters
+#define PARAMS	11
+#define PARAM_X 0
+#define PARAM_Y 1
+#define PARAM_Z 2
+#define PARAM_A 3
+#define PARAM_B 4
+#define PARAM_C 5
+#define PARAM_P 6
+#define PARAM_I 7
+#define PARAM_J 8
+#define PARAM_K 9
+#define PARAM_R 10
+
+//PARSER STATUS
+#define STATUS_OK 0
+#define STATUS_BAD_WORD 1
+#define STATUS_SYNTAX_ERROR 2
+
+//THE LENGHT OF THE SEGMENTS THAT FORM AN ARCH
+#define ARCH_DEFINITION 1
 
 #endif

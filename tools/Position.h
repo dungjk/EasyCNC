@@ -22,7 +22,7 @@
 
 /*! \class PositionXY
     \brief Class to manage Cartesian positions.
-    \details The class provides the basic operations between points of two coordinates.
+    \details The class provides the basic operations to operate with points of two X/Y coordinates.
     \author    Francesco Giurlanda
 */
 class PositionXY{
@@ -31,9 +31,16 @@ class PositionXY{
   
   //! \brief Default constructor.
   PositionXY();
-  //! \brief Constructor.
+
+  /*! \brief Constructor.
+   *  \param px The X-axis coordinate
+   *  \param py The Y-axis coordinate
+   */
   PositionXY(float px, float py);
-  //! \brief Copy constructor.
+
+  /*! \brief Copy constructor.
+   *  \param p The object that we want copy.
+   */
   PositionXY(const PositionXY &p);
   
   /*! \brief It returns the x-axis value.
@@ -57,28 +64,38 @@ class PositionXY{
    *  \return The reference to this object.
    */
   PositionXY& Y(float py);
+
+  /*! \brief It return the module of the equivalent vector
+   * 	\return The module.
+   */
+  float module();
   
   /*! \brief It returns the distance between two positions.
    *  \details The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is computed according the formula \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
    *  \param p The reference to the next position.
    *  \return The distance value.
    */
-  float dist(const PositionXY &p);
+  float module(const PositionXY &p);
 
   /*! \brief It returns the x-axis distance between two positions.
    *  \details The x-axis distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is computed according the formula \f$(x_2-x_1)\f$.
    *  \param p The reference to the next position.
    *  \return The x-axis distance value.
    */
-  float distX(const PositionXY &p);
+  float offsetX(const PositionXY &p);
 
   /*! \brief It returns the y-axis distance between two positions.
    *  \details The y-axis distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is computed according the formula \f$(y_2-y_1)\f$.
    *  \param p The reference to the next position.
    *  \return The y-axis distance value.
    */
-  float distY(const PositionXY &p);
+  float offsetY(const PositionXY &p);
   
+  /*! \brief It returns the angle of the equivalent vector.
+     *  \return The angle.
+     */
+  float angle();
+
   /*! \brief It returns the angle between the line crossing the two point end the x-axis.
    *  \details The angle is computed with the formula \f$atan2(y_2 - y_1,x_2 - x_1)\f$.
    *  \param p The reference to the next position.
@@ -86,6 +103,12 @@ class PositionXY{
    */
   float angle(const PositionXY &p);
   
+  /*! \brief Initializes the equivalent vector with the polar coordinate
+   *  	\param m Module
+   *  	\param a Angle
+   */
+  PositionXY& polar(float m, float a);
+
   /*! \brief It returns a position where each axis value is the sum of the values of the two positions.
    *  \param p The reference to the added position.
    *  \return The position which is the sum of two positions
@@ -98,6 +121,8 @@ class PositionXY{
    */
   PositionXY& operator +=(const PositionXY &p);
 };
+
+
 
 #endif
 

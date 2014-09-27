@@ -40,12 +40,10 @@
 
 #define ROUTER_MX_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the X-axis. */
 #define ROUTER_MY_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis. */
-#define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.25  /*!< \brief Number of steps to forward of a mm. */
+#define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
 #define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25  /*!< \brief Number of steps to forward of a mm. */
-#define ROUTER_MX_SPEED 4000.0           /*!< \brief The maximum speed used to control the motor of X-axis. The unit is steps/s. */
-#define ROUTER_MY_SPEED 4000.0           /*!< \brief The maximum speed used to control the motor of Y-axis. The unit is steps/s. */
-#define ROUTER_MX_DIR 1					/*!< \brief This field is used to invert the direction of the MSMC_A4988::forward and MSMC_A4988::backward functions for the motor of the X-axis: 1 direct and -1 inverse*/
-#define ROUTER_MY_DIR 1					/*!< \brief This field is used to invert the direction of the MSMC_A4988::forward and MSMC_A4988::backward functions for the motor of the Y-axis: 1 direct and -1 inverse*/
+#define ROUTER_MX_SPEED 5000.0           /*!< \brief The maximum speed used to control the motor of X-axis. The unit is steps/s. */
+#define ROUTER_MY_SPEED 5000.0           /*!< \brief The maximum speed used to control the motor of Y-axis. The unit is steps/s. */
 #define ROUTER_DOWN_LIMIT_SWITCH_X 3                  /*!< \brief The number of the pin which is connected to the limit switch of the X-axis. */
 #define ROUTER_DOWN_LIMIT_SWITCH_Y 14                  /*!< \brief The number of the pin which is connected to the limit switch of the Y-axis. */
 
@@ -103,10 +101,8 @@
 
 #ifdef _MILLING_MACHINE
 #define _MILLING_MACHINE_MZ_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Z-axis. */
-#define _MILLING_MACHINE_MZ_STEPS_PER_MM _MILLING_MACHINE_MZ_STEPS_PER_ROUND/1.25  /*!< \brief Number of steps to forward of a mm. */
-#define _MILLING_MACHINE_MZ_FAST_SPEED 3000.0           /*!< \brief The maximum speed used to control the motor of Z-axis. The unit is steps/s. */
-#define _MILLING_MACHINE_MZ_SLOW_SPEED 200.0           /*!< \brief The working speed used to control the motor of Z-axis. The unit is steps/s. */
-#define _MILLING_MACHINE_MZ_DIR 1				 /*!< \brief This field is used to invert the direction of the MSMC_A4988::forward and MSMC_A4988::backward functions for the motor of the Z-axis: 1 direct and 0 inverse*/
+#define _MILLING_MACHINE_MZ_STEPS_PER_MM _MILLING_MACHINE_MZ_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
+#define _MILLING_MACHINE_MZ_FAST_SPEED 5000.0           /*!< \brief The maximum speed used to control the motor of Z-axis. The unit is steps/s. */
 #define _MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z 18  /*!< \brief The number of the pin which is connected to the limit switch of the Z-axis. */
 
 //#define _MILLING_MACHINE_MZ_CONTROLLER_ULN2003A
@@ -125,5 +121,12 @@
 #define _MILLING_MACHINE_MZ_ENABLE_CONTROL_PIN A2		 //!< \brief Pin connected to the enable pin of the A4988
 #endif
 
+// ******************
+//     TESTING
+// ******************
+
+#define _TEST
+#define DBGLN(x) Serial.println(x)
+#define DBG(x) Serial.print(x)
 
 #endif

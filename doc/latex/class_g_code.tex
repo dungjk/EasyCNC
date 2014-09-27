@@ -3,6 +3,11 @@
 }
 
 
+The class interprets lines of R\+S274/\+N\+G\+C language.  
+
+
+
+
 {\ttfamily \#include $<$G\+Code.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -16,12 +21,16 @@ void \hyperlink{class_g_code_a3912e1dad7257e2336ab09c55ff17235}{remove\+Spaces} 
 \item 
 int \hyperlink{class_g_code_a609aaf5606ffd2013a957e97641b1530}{get\+Int} (int \&)
 \item 
-float \hyperlink{class_g_code_a34f2977443578a7ba002efa2aa88dde0}{get\+Float} (int \&)
+boolean \hyperlink{class_g_code_a8fa0eb551f6186b9d083c86188dabb56}{get\+Float} (uint8\+\_\+t \&, float \&)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 String \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{line}
+\item 
+float \hyperlink{class_g_code_a0115efce11fdffa2c59304706ecacede}{feed\+\_\+rate}
+\item 
+float \hyperlink{class_g_code_a2fc16db9dc5dbe95abc8b9b2a5ab6f5c}{drill\+\_\+speed}
 \item 
 uint8\+\_\+t \hyperlink{class_g_code_ae84ec0e15b18d91420c39627d1bdf78a}{moving}
 \item 
@@ -43,11 +52,24 @@ uint8\+\_\+t \hyperlink{class_g_code_a4311a77cb2efcc0bce0c582ae80755e1}{coordina
 \item 
 uint8\+\_\+t \hyperlink{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}{path\+\_\+control}
 \item 
+uint8\+\_\+t \hyperlink{class_g_code_a56d0e5e56115cd8e7b3f161cc8c0528e}{parser\+\_\+status}
+\item 
+uint8\+\_\+t \hyperlink{class_g_code_a3674417ee3c5141c6655c05f6ffa0799}{last\+\_\+word} \mbox{[}16\mbox{]}
+\item 
+\hyperlink{class_position_x_y}{Position\+X\+Y} \hyperlink{class_g_code_a996f87623f8a0263c3a7761060330de0}{new\+\_\+pos\+\_\+xy}
+\item 
+float \hyperlink{class_g_code_acd3b6b2ecfc46bff229fbfd7ba72930f}{new\+\_\+pos\+\_\+z}
+\item 
 \hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} $\ast$ \hyperlink{class_g_code_ab060bb5bd169ae7640eb781bef6b78fe}{router}
 \item 
 \hyperlink{class_milling_machine}{Milling\+Machine} $\ast$ \hyperlink{class_g_code_a9a737c33f133cf515926d0f2b612bd22}{utensil}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The class interprets lines of R\+S274/\+N\+G\+C language. 
+
+The class interprets lines of R\+S274/\+N\+G\+C language that is a language to control C\+N\+C 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_g_code_afb47ef5c3500e0534e54607abfd73d47}{\index{G\+Code@{G\+Code}!G\+Code@{G\+Code}}
@@ -60,13 +82,14 @@ uint8\+\_\+t \hyperlink{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}{path\+\_
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_g_code_a34f2977443578a7ba002efa2aa88dde0}{\index{G\+Code@{G\+Code}!get\+Float@{get\+Float}}
+\hypertarget{class_g_code_a8fa0eb551f6186b9d083c86188dabb56}{\index{G\+Code@{G\+Code}!get\+Float@{get\+Float}}
 \index{get\+Float@{get\+Float}!G\+Code@{G\+Code}}
-\subsubsection[{get\+Float}]{\setlength{\rightskip}{0pt plus 5cm}float G\+Code\+::get\+Float (
+\subsubsection[{get\+Float}]{\setlength{\rightskip}{0pt plus 5cm}boolean G\+Code\+::get\+Float (
 \begin{DoxyParamCaption}
-\item[{int \&}]{i}
+\item[{uint8\+\_\+t \&}]{pos, }
+\item[{float \&}]{val}
 \end{DoxyParamCaption}
-)}}\label{class_g_code_a34f2977443578a7ba002efa2aa88dde0}
+)}}\label{class_g_code_a8fa0eb551f6186b9d083c86188dabb56}
 \hypertarget{class_g_code_a609aaf5606ffd2013a957e97641b1530}{\index{G\+Code@{G\+Code}!get\+Int@{get\+Int}}
 \index{get\+Int@{get\+Int}!G\+Code@{G\+Code}}
 \subsubsection[{get\+Int}]{\setlength{\rightskip}{0pt plus 5cm}int G\+Code\+::get\+Int (
@@ -97,9 +120,18 @@ uint8\+\_\+t \hyperlink{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}{path\+\_
 \hypertarget{class_g_code_a77dad1d8057ecc38242757923a2bb87f}{\index{G\+Code@{G\+Code}!distanse\+\_\+mode@{distanse\+\_\+mode}}
 \index{distanse\+\_\+mode@{distanse\+\_\+mode}!G\+Code@{G\+Code}}
 \subsubsection[{distanse\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::distanse\+\_\+mode}}\label{class_g_code_a77dad1d8057ecc38242757923a2bb87f}
+\hypertarget{class_g_code_a2fc16db9dc5dbe95abc8b9b2a5ab6f5c}{\index{G\+Code@{G\+Code}!drill\+\_\+speed@{drill\+\_\+speed}}
+\index{drill\+\_\+speed@{drill\+\_\+speed}!G\+Code@{G\+Code}}
+\subsubsection[{drill\+\_\+speed}]{\setlength{\rightskip}{0pt plus 5cm}float G\+Code\+::drill\+\_\+speed}}\label{class_g_code_a2fc16db9dc5dbe95abc8b9b2a5ab6f5c}
+\hypertarget{class_g_code_a0115efce11fdffa2c59304706ecacede}{\index{G\+Code@{G\+Code}!feed\+\_\+rate@{feed\+\_\+rate}}
+\index{feed\+\_\+rate@{feed\+\_\+rate}!G\+Code@{G\+Code}}
+\subsubsection[{feed\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}float G\+Code\+::feed\+\_\+rate}}\label{class_g_code_a0115efce11fdffa2c59304706ecacede}
 \hypertarget{class_g_code_acbf5f3b9aeffe27d3f87e9d57b487146}{\index{G\+Code@{G\+Code}!forward\+\_\+mode@{forward\+\_\+mode}}
 \index{forward\+\_\+mode@{forward\+\_\+mode}!G\+Code@{G\+Code}}
 \subsubsection[{forward\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::forward\+\_\+mode}}\label{class_g_code_acbf5f3b9aeffe27d3f87e9d57b487146}
+\hypertarget{class_g_code_a3674417ee3c5141c6655c05f6ffa0799}{\index{G\+Code@{G\+Code}!last\+\_\+word@{last\+\_\+word}}
+\index{last\+\_\+word@{last\+\_\+word}!G\+Code@{G\+Code}}
+\subsubsection[{last\+\_\+word}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::last\+\_\+word\mbox{[}16\mbox{]}}}\label{class_g_code_a3674417ee3c5141c6655c05f6ffa0799}
 \hypertarget{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{\index{G\+Code@{G\+Code}!line@{line}}
 \index{line@{line}!G\+Code@{G\+Code}}
 \subsubsection[{line}]{\setlength{\rightskip}{0pt plus 5cm}String G\+Code\+::line}}\label{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}
@@ -109,6 +141,15 @@ uint8\+\_\+t \hyperlink{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}{path\+\_
 \hypertarget{class_g_code_ae84ec0e15b18d91420c39627d1bdf78a}{\index{G\+Code@{G\+Code}!moving@{moving}}
 \index{moving@{moving}!G\+Code@{G\+Code}}
 \subsubsection[{moving}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::moving}}\label{class_g_code_ae84ec0e15b18d91420c39627d1bdf78a}
+\hypertarget{class_g_code_a996f87623f8a0263c3a7761060330de0}{\index{G\+Code@{G\+Code}!new\+\_\+pos\+\_\+xy@{new\+\_\+pos\+\_\+xy}}
+\index{new\+\_\+pos\+\_\+xy@{new\+\_\+pos\+\_\+xy}!G\+Code@{G\+Code}}
+\subsubsection[{new\+\_\+pos\+\_\+xy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y} G\+Code\+::new\+\_\+pos\+\_\+xy}}\label{class_g_code_a996f87623f8a0263c3a7761060330de0}
+\hypertarget{class_g_code_acd3b6b2ecfc46bff229fbfd7ba72930f}{\index{G\+Code@{G\+Code}!new\+\_\+pos\+\_\+z@{new\+\_\+pos\+\_\+z}}
+\index{new\+\_\+pos\+\_\+z@{new\+\_\+pos\+\_\+z}!G\+Code@{G\+Code}}
+\subsubsection[{new\+\_\+pos\+\_\+z}]{\setlength{\rightskip}{0pt plus 5cm}float G\+Code\+::new\+\_\+pos\+\_\+z}}\label{class_g_code_acd3b6b2ecfc46bff229fbfd7ba72930f}
+\hypertarget{class_g_code_a56d0e5e56115cd8e7b3f161cc8c0528e}{\index{G\+Code@{G\+Code}!parser\+\_\+status@{parser\+\_\+status}}
+\index{parser\+\_\+status@{parser\+\_\+status}!G\+Code@{G\+Code}}
+\subsubsection[{parser\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::parser\+\_\+status}}\label{class_g_code_a56d0e5e56115cd8e7b3f161cc8c0528e}
 \hypertarget{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}{\index{G\+Code@{G\+Code}!path\+\_\+control@{path\+\_\+control}}
 \index{path\+\_\+control@{path\+\_\+control}!G\+Code@{G\+Code}}
 \subsubsection[{path\+\_\+control}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+Code\+::path\+\_\+control}}\label{class_g_code_a05307dd7b9ff2f74bfd81aed40104fa8}

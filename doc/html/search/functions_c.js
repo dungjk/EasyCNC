@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['removespaces',['removeSpaces',['../class_g_code.html#a3912e1dad7257e2336ab09c55ff17235',1,'GCode']]],
-  ['resetpos',['resetPos',['../class_c_n_c___router.html#a30d838430b7452a8f47071d2f6b8845e',1,'CNC_Router::resetPos()'],['../class_milling_machine.html#a965590d4d159254dbc9a372ea35c2d63',1,'MillingMachine::resetPos()']]],
-  ['restart',['restart',['../class_m_s_m_c.html#ae09c870a71121c7cc9f060b6299a425b',1,'MSMC::restart()'],['../class_m_s_m_c___a4988.html#add93aa459190c6edb3551495e75aaded',1,'MSMC_A4988::restart()'],['../class_m_s_m_c___u_l_n2003_a.html#a19853d77f81c521091a55996899c1784',1,'MSMC_ULN2003A::restart()'],['../class_milling_machine.html#a9bd0cff7083490bf93c1c04d728e7050',1,'MillingMachine::restart()']]],
-  ['restat',['restat',['../class_c_n_c___router.html#a08a32575c71fe10d3a693e1ad68eedc1',1,'CNC_Router']]]
+  ['off',['off',['../class_liquid_crystal___i2_c.html#a2823eb0ebd97f9710868d51b470a7310',1,'LiquidCrystal_I2C']]],
+  ['on',['on',['../class_liquid_crystal___i2_c.html#ade8df694db7a45392d81a630221aec35',1,'LiquidCrystal_I2C']]],
+  ['operator_2b',['operator+',['../class_position_x_y.html#a8488dcd6f61a8019e6f3c6d147cf35c5',1,'PositionXY']]],
+  ['operator_2b_3d',['operator+=',['../class_position_x_y.html#a3c55c597bad99a80965b24781509e3fd',1,'PositionXY']]]
 ];

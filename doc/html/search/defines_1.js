@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['eighth_5fstep',['EIGHTH_STEP',['../_m_s_m_c___a4988_8h.html#ac3f074c3e3b349fc9f6487a9d9a77399',1,'MSMC_A4988.h']]]
+  ['dbg',['DBG',['../config_8h.html#a32adf79142f0a426b5e782fb7cd4cad3',1,'config.h']]],
+  ['dbgln',['DBGLN',['../config_8h.html#addddb0dfccfd51ce843677863805df11',1,'config.h']]]
 ];

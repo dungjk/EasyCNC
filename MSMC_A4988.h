@@ -39,7 +39,6 @@ class MSMC_A4988: public MSMC {
 	boolean step_pin_val; /*!< \brief The value of the pin that drives the step advance */
 	uint8_t control_mode; /*!< \brief Specify the control mode of the motor: 1 full step, 2 half step, 4 quarter step, 8 eighth step and 16 sixteenth step. */
 	boolean m_pause; /*!< \brief It is True if the motion is paused. */
-	int8_t dir_mode; /*!< Specifies if the motion is direct or inverted: 1 direct and -1 inverted*/
 
 
 	//! \brief It drives the direction pin
@@ -126,16 +125,15 @@ public:
 	 It verifies that the specified delay from the last step is expired and than moves the motor of one step.
 	 The function must be call in the main loop with a frequency greater than 1/(spd/1000000).
 	 Greater is the frequency to call the function and higher is the precision of the the motion.
-	 \return the function returns the number of steps made, up to the end of the motion.
-	 If the motion end the motor is idle and it can perform a new command.
-	 When the motor is idle the function returns -1.
+	 \return The function returns false if the motor is busy and it has not ended the operation, otherwise true if the motor is idle.
 	 */
-	int32_t update();
+	boolean update();
 
-	/*! \brief It sets the direction mode.
-	 *  \param m The direction mode: 1 direct, -1 inverted.
+
+	/*! \brief The function returns the number of steps performed from a forward or backward command.
+	 *  \return The number of steps.
 	 */
-	void dirMode(int8_t m);
+	uint32_t getSteps();
 
 };
 

@@ -13,7 +13,7 @@
  */
 
 #ifndef Utensils_h
-#define Utensilsl_h
+#define Utensils_h
 
 #include "config.h"
 
@@ -39,10 +39,10 @@
  */
 class PlotterServo {
 	boolean state;              //!< The state of the plotter head \sa DOWN, UP
-	uint8_t pin;				  //!< The pin where is attached the servo motor
-	Servo servo_pen;			  //!< The object which control the servo motor
-	uint8_t down_val, //!< The position of the servo for the plotter head down (deg)
-			up_val; //!< The position of the servo for the plotter head up (deg)
+	uint8_t pin;//!< The pin where is attached the servo motor
+	Servo servo_pen;//!< The object which control the servo motor
+	uint8_t down_val,//!< The position of the servo for the plotter head down (deg)
+	up_val;//!< The position of the servo for the plotter head up (deg)
 
 public:
 
@@ -95,16 +95,15 @@ class MillingMachine {
 #endif
 
 	float old_p, //!< The old position in mm
-	end_p,//!< The end position in mm
-	actual_p;//!< The actual position in mm
-	float bit_speed;//!< The speed of the drill bit
+			end_p, //!< The end position in mm
+			actual_p; //!< The actual position in mm
+	float bit_speed; //!< The speed of the drill bit
 	boolean bit_dir; //!< The direction of the drill bit: CW = true  or CCW = false
-	float spmm;//!< Number of steps to move of a mm the milling machine on the z-axis (steps/mm)
-	float v_max_z, //!< The max speed of the milling machine on the z-axis (steps/s)
-	v_min_z; //!< The min speed of the milling machine on the z-axis (steps/s)
-	boolean pos_type;//!< The type of the position info: true = incremental; false = absolute.
+	float spmm; //!< Number of steps to move of a mm the milling machine on the z-axis (steps/mm)
+	float v_max_z; //!< The max speed of the milling machine on the z-axis (steps/s)
+	boolean pos_type; //!< The type of the position info: true = incremental; false = absolute.
 	int8_t pin_ls_z_down, //!< The pin number connected to the down limit swtch
-	pin_ls_z_up; //!< The pin number connected to the up limit swtch
+			pin_ls_z_up; //!< The pin number connected to the up limit swtch
 
 public:
 	//! \brief The constructor.
@@ -114,19 +113,18 @@ public:
 	 *  \param vmax The max speed of the motor, specified as delay between to steps (us).
 	 *  \param vmin The min speed of the motor, specified as delay between to steps (us).
 	 */
-	MillingMachine(float s, float vmax, float vmin);
+	MillingMachine(float s, float vmax);
 	//! \brief It initializes the motor.
 	void init();
+	//! \brief The function returns the position of the utensil in the Z-axis
+	float getPos();
 	//! \brief It sets the current position with the value zero.
 	void resetPos();
 	/*! \brief The function moves the utensil in a specified position with fast speed.
 	 *  \param p The position in mm, it can be positive or negative.
+	 *  \param s The speed of motion of the Z-axis (mm/s)
 	 */
-	void slowMoveTo(float p);
-	/*! \brief The function moves the utensil in a specified position.
-		 *  \param p The position in mm, it can be positive or negative.
-		 */
-    void fastMoveTo(float p);
+	void moveTo(float p, float s = 0.0);
 	//! \brief The function stops the motion of the utensil.
 	void stopMotion();
 	//! \brief The function pauses the current operation.

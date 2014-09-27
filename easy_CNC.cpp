@@ -4,13 +4,13 @@
 //The setup function is called once at startup of the sketch
 void setup() {
 // Add your initialization code here
-	mycnc.initMotorX();
-	mycnc.initMotorY();
-	mycnc.resetPos();
-	mycnc.highPrecision();
-	mycnc.setAbsolPos();
-	mycnc.setLimitSwitchX(ROUTER_DOWN_LIMIT_SWITCH_X);
-	mycnc.setLimitSwitchY(ROUTER_DOWN_LIMIT_SWITCH_Y);
+	cncrt.initMotorX();
+	cncrt.initMotorY();
+	cncrt.resetPos();
+	cncrt.highPrecision();
+	cncrt.setAbsolPos();
+	cncrt.setLimitSwitchX(ROUTER_DOWN_LIMIT_SWITCH_X);
+	cncrt.setLimitSwitchY(ROUTER_DOWN_LIMIT_SWITCH_Y);
 
 	mill.init();
 	mill.resetPos();
@@ -28,10 +28,11 @@ void setup() {
 
 // The loop function is called in an endless loop
 void loop() {
-//Add your repeated code here
+#ifndef _TEST
 	tloop.start();
 	a = mycnc.update();
 	b = mill.update();
+	tloop.stop();
 	if (a && b) {
 
 		if (end_task) {
@@ -66,5 +67,16 @@ void loop() {
 			end_task = true;
 		}
 	}
-	tloop.stop();
+#endif
+#ifdef _TEST
+	if (Serial.available() > 0) {
+		memset(new_line, '\0', 256);
+		Serial.readBytesUntil('\n', new_line, 256);
+		gc.line = new_line;
+		gc.parseLine();
+
+	}
+
+#endif
+
 }

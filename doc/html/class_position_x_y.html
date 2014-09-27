@@ -139,7 +139,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to manage Cartesian positions. </p>
-<p>The class provides the basic operations between points of two coordinates. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
+<p>The class provides the basic operations to operate with points of two X/Y coordinates. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a72c2bce8c3524d13a446e5f7bd00176b"></a>
 <div class="memitem">
@@ -183,6 +183,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">px</td><td>The X-axis coordinate </td></tr>
+    <tr><td class="paramname">py</td><td>The Y-axis coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -201,6 +208,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The object that we want copy. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -241,9 +254,6 @@ Public Member Functions</h2></td></tr>
 <a class="anchor" id="a2e68cceafbc6d1a9d2956e64efbca1bf"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float PositionXY::dist </td>
@@ -253,11 +263,6 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>It returns the distance between two positions. </p>
@@ -474,13 +479,13 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_position_8h_source.html">Position.h</a></li>
-<li><a class="el" href="_position_8cpp.html">Position.cpp</a></li>
+<li>tools/<a class="el" href="_position_8h_source.html">Position.h</a></li>
+<li>tools/<a class="el" href="_position_8cpp.html">Position.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -97,11 +97,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c.html#a9c45f1547467b43209c7a271604e7c85">pause</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c.html#ae09c870a71121c7cc9f060b6299a425b">restart</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c.html#a85bd4abf542aecdf24bb90b9ea2a47e9">setMode</a>(uint8_t);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_m_s_m_c.html#a8ee0ef4f051cf30a09ef3f2fddc3af30">dirMode</a>(int8_t);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> uint8_t <a class="code" href="class_m_s_m_c.html#a5a1c4ee3498360946cc8e8d39436d0e3">getMode</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> int8_t <a class="code" href="class_m_s_m_c.html#a97ba8d296c68e2bb2a3b3eebe047dca8">getDir</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> uint8_t <a class="code" href="class_m_s_m_c.html#a5a1c4ee3498360946cc8e8d39436d0e3">getMode</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> int8_t <a class="code" href="class_m_s_m_c.html#a97ba8d296c68e2bb2a3b3eebe047dca8">getDir</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> uint32_t <a class="code" href="class_m_s_m_c.html#a365b393eba0c9d7d42e37d32db6c00b7">getSteps</a>();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//virtual void setPins(uint8_t, ...);</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> int32_t <a class="code" href="class_m_s_m_c.html#a44ca6bc355a269543606dd4eeb7ed06e">update</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">boolean</span> <a class="code" href="class_m_s_m_c.html#a2c379d628edbca2d36e3588b39bf6b98">update</a>();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MSMC_H_ */</span><span class="preprocessor"></span></div>
@@ -109,18 +109,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_m_s_m_c_html_a97ba8d296c68e2bb2a3b3eebe047dca8"><div class="ttname"><a href="class_m_s_m_c.html#a97ba8d296c68e2bb2a3b3eebe047dca8">MSMC::getDir</a></div><div class="ttdeci">virtual int8_t getDir()</div></div>
 <div class="ttc" id="class_m_s_m_c_html_a389bfe7f7d05083cb4e95d73128c1c87"><div class="ttname"><a href="class_m_s_m_c.html#a389bfe7f7d05083cb4e95d73128c1c87">MSMC::backward</a></div><div class="ttdeci">virtual void backward(uint32_t, uint32_t)</div></div>
 <div class="ttc" id="class_m_s_m_c_html"><div class="ttname"><a href="class_m_s_m_c.html">MSMC</a></div><div class="ttdoc">The multi stepper motor control interface. </div><div class="ttdef"><b>Definition:</b> MSMC.h:20</div></div>
-<div class="ttc" id="class_m_s_m_c_html_a44ca6bc355a269543606dd4eeb7ed06e"><div class="ttname"><a href="class_m_s_m_c.html#a44ca6bc355a269543606dd4eeb7ed06e">MSMC::update</a></div><div class="ttdeci">virtual int32_t update()</div></div>
 <div class="ttc" id="class_m_s_m_c_html_a065e48c8e8f3b513bf6694e8eb1b28d5"><div class="ttname"><a href="class_m_s_m_c.html#a065e48c8e8f3b513bf6694e8eb1b28d5">MSMC::speed</a></div><div class="ttdeci">virtual void speed(uint32_t)</div></div>
+<div class="ttc" id="class_m_s_m_c_html_a2c379d628edbca2d36e3588b39bf6b98"><div class="ttname"><a href="class_m_s_m_c.html#a2c379d628edbca2d36e3588b39bf6b98">MSMC::update</a></div><div class="ttdeci">virtual boolean update()</div></div>
 <div class="ttc" id="class_m_s_m_c_html_a62615946a227d18ea3fc2f1329688d1f"><div class="ttname"><a href="class_m_s_m_c.html#a62615946a227d18ea3fc2f1329688d1f">MSMC::forward</a></div><div class="ttdeci">virtual void forward(uint32_t, uint32_t)</div></div>
 <div class="ttc" id="class_m_s_m_c_html_a0b44d0a659550ba754bf9212294ba6d5"><div class="ttname"><a href="class_m_s_m_c.html#a0b44d0a659550ba754bf9212294ba6d5">MSMC::stop</a></div><div class="ttdeci">virtual void stop()</div></div>
 <div class="ttc" id="class_m_s_m_c_html_a5a1c4ee3498360946cc8e8d39436d0e3"><div class="ttname"><a href="class_m_s_m_c.html#a5a1c4ee3498360946cc8e8d39436d0e3">MSMC::getMode</a></div><div class="ttdeci">virtual uint8_t getMode()</div></div>
 <div class="ttc" id="class_m_s_m_c_html_ae09c870a71121c7cc9f060b6299a425b"><div class="ttname"><a href="class_m_s_m_c.html#ae09c870a71121c7cc9f060b6299a425b">MSMC::restart</a></div><div class="ttdeci">virtual void restart()</div></div>
-<div class="ttc" id="class_m_s_m_c_html_a8ee0ef4f051cf30a09ef3f2fddc3af30"><div class="ttname"><a href="class_m_s_m_c.html#a8ee0ef4f051cf30a09ef3f2fddc3af30">MSMC::dirMode</a></div><div class="ttdeci">virtual void dirMode(int8_t)</div></div>
+<div class="ttc" id="class_m_s_m_c_html_a365b393eba0c9d7d42e37d32db6c00b7"><div class="ttname"><a href="class_m_s_m_c.html#a365b393eba0c9d7d42e37d32db6c00b7">MSMC::getSteps</a></div><div class="ttdeci">virtual uint32_t getSteps()</div></div>
 <div class="ttc" id="class_m_s_m_c_html_a85bd4abf542aecdf24bb90b9ea2a47e9"><div class="ttname"><a href="class_m_s_m_c.html#a85bd4abf542aecdf24bb90b9ea2a47e9">MSMC::setMode</a></div><div class="ttdeci">virtual void setMode(uint8_t)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 13 2014 17:17:52 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
