@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dbg',['DBG',['../config_8h.html#a32adf79142f0a426b5e782fb7cd4cad3',1,'config.h']]],
-  ['dbgln',['DBGLN',['../config_8h.html#addddb0dfccfd51ce843677863805df11',1,'config.h']]]
+  ['arch_5fdefinition',['ARCH_DEFINITION',['../_g_code__def_8h.html#ab24933eecd1ce5a12bac1ac9e1ec8938',1,'GCode_def.h']]]
 ];

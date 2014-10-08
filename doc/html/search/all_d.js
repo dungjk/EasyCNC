@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['new_2ecpp_2ed',['new.cpp.d',['../new_8cpp_8d.html',1,'']]],
-  ['new_5fline',['new_line',['../easy___c_n_c_8h.html#a7e3dcbb769896d01163997dafe024ea9',1,'easy_CNC.h']]],
-  ['new_5fpos_5fxy',['new_pos_xy',['../class_g_code.html#a996f87623f8a0263c3a7761060330de0',1,'GCode']]],
-  ['new_5fpos_5fz',['new_pos_z',['../class_g_code.html#acd3b6b2ecfc46bff229fbfd7ba72930f',1,'GCode']]],
-  ['noautoscroll',['noAutoscroll',['../class_liquid_crystal___i2_c.html#a10fd17e8377c240527a7668606c9de72',1,'LiquidCrystal_I2C']]],
-  ['nobacklight',['noBacklight',['../class_liquid_crystal___i2_c.html#a576f1f5813f55f34333d6d7e9fe53ad3',1,'LiquidCrystal_I2C']]],
-  ['noblink',['noBlink',['../class_liquid_crystal___i2_c.html#a89ba791c60f6100eb565bc6099e56bb1',1,'LiquidCrystal_I2C']]],
-  ['nocursor',['noCursor',['../class_liquid_crystal___i2_c.html#a35a18278aa45bd91f2772924a50b7120',1,'LiquidCrystal_I2C']]],
-  ['nodisplay',['noDisplay',['../class_liquid_crystal___i2_c.html#af89d6facccc156d7f151da71ecdd3b70',1,'LiquidCrystal_I2C']]]
+  ['old_5fp',['old_p',['../class_c_n_c___router.html#adbaa016d11134c9dcef28fc38ff391e1',1,'CNC_Router::old_p()'],['../class_milling_machine.html#a0224577fdd0206396817cdd62334f3b6',1,'MillingMachine::old_p()']]],
+  ['old_5ftime',['old_time',['../class_m_s_m_c___a4988.html#a60ff02342382a71526d14fb9e51ddc2a',1,'MSMC_A4988::old_time()'],['../class_m_s_m_c___u_l_n2003_a.html#adfe160b513e9a51d9fd39bb2424b711b',1,'MSMC_ULN2003A::old_time()']]]
 ];

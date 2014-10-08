@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a',['A',['../class_vect.html#a889bd28e6c1e5c7935b0a086b0de49c2',1,'Vect::A()'],['../class_vect.html#a1d01e47a2671554e0c558cd0b7c7a7ed',1,'Vect::A(float)'],['../easy___c_n_c_8h.html#a92d883ae17a48a9acf64f53bb918adcc',1,'a():&#160;easy_CNC.h']]],
-  ['angle',['angle',['../class_position_x_y.html#ab3a2559edfce2a9c6eb4ddc6ce456776',1,'PositionXY']]],
-  ['autoscroll',['autoscroll',['../class_liquid_crystal___i2_c.html#a36f1b8e433762262d2238463b7a92f74',1,'LiquidCrystal_I2C']]]
+  ['a',['a',['../easy___c_n_c_8h.html#a92d883ae17a48a9acf64f53bb918adcc',1,'easy_CNC.h']]],
+  ['actual_5fp',['actual_p',['../class_c_n_c___router.html#a9e42e9ae1b2d5de3237706c2a8cf9440',1,'CNC_Router::actual_p()'],['../class_milling_machine.html#a45a16666c6cf4a33f3279e459d5de089',1,'MillingMachine::actual_p()']]],
+  ['arch_5fdefinition',['ARCH_DEFINITION',['../_g_code__def_8h.html#ab24933eecd1ce5a12bac1ac9e1ec8938',1,'GCode_def.h']]]
 ];

@@ -15,7 +15,5 @@ var searchData=
   ['router_5fmy_5fcontroller_5fa4988',['ROUTER_MY_CONTROLLER_A4988',['../config_8h.html#ab43f3d9753eb04addb3ecf892d43e9b3',1,'config.h']]],
   ['router_5fmy_5fspeed',['ROUTER_MY_SPEED',['../config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee',1,'config.h']]],
   ['router_5fmy_5fsteps_5fper_5fmm',['ROUTER_MY_STEPS_PER_MM',['../config_8h.html#afb07c4644cc35352a450b5b531fc7fa1',1,'config.h']]],
-  ['router_5fmy_5fsteps_5fper_5fround',['ROUTER_MY_STEPS_PER_ROUND',['../config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f',1,'config.h']]],
-  ['rs',['Rs',['../_liquid_crystal___i2_c_8h.html#a345d1a871beb9e772c3bf9ef75412bb5',1,'LiquidCrystal_I2C.h']]],
-  ['rw',['Rw',['../_liquid_crystal___i2_c_8h.html#a98b6a2661a04ebbc1b3f38da70306814',1,'LiquidCrystal_I2C.h']]]
+  ['router_5fmy_5fsteps_5fper_5fround',['ROUTER_MY_STEPS_PER_ROUND',['../config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f',1,'config.h']]]
 ];

@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_g_code-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GCode Class Reference</div>  </div>
@@ -98,24 +99,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afb47ef5c3500e0534e54607abfd73d47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#afb47ef5c3500e0534e54607abfd73d47">GCode</a> (<a class="el" href="class_c_n_c___router.html">CNC_Router</a> *)</td></tr>
-<tr class="separator:afb47ef5c3500e0534e54607abfd73d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf3133ce2c42e9844be2ac10516846a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#aacf3133ce2c42e9844be2ac10516846a">GCode</a> (<a class="el" href="class_c_n_c___router.html">CNC_Router</a> *r, <a class="el" href="class_milling_machine.html">MillingMachine</a> *m)</td></tr>
+<tr class="memdesc:aacf3133ce2c42e9844be2ac10516846a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aacf3133ce2c42e9844be2ac10516846a">More...</a><br /></td></tr>
+<tr class="separator:aacf3133ce2c42e9844be2ac10516846a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1785db665332977787a38b6b2563b395"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a1785db665332977787a38b6b2563b395">parseLine</a> ()</td></tr>
+<tr class="memdesc:a1785db665332977787a38b6b2563b395"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function parses a line of G-Code.  <a href="#a1785db665332977787a38b6b2563b395">More...</a><br /></td></tr>
 <tr class="separator:a1785db665332977787a38b6b2563b395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3912e1dad7257e2336ab09c55ff17235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a3912e1dad7257e2336ab09c55ff17235">removeSpaces</a> ()</td></tr>
+<tr class="memdesc:a3912e1dad7257e2336ab09c55ff17235"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function removes all spaces and  <br />
+ char from the variable <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a>.  <a href="#a3912e1dad7257e2336ab09c55ff17235">More...</a><br /></td></tr>
 <tr class="separator:a3912e1dad7257e2336ab09c55ff17235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a609aaf5606ffd2013a957e97641b1530"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a609aaf5606ffd2013a957e97641b1530">getInt</a> (int &amp;)</td></tr>
-<tr class="separator:a609aaf5606ffd2013a957e97641b1530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fa0eb551f6186b9d083c86188dabb56"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a8fa0eb551f6186b9d083c86188dabb56">getFloat</a> (uint8_t &amp;, float &amp;)</td></tr>
-<tr class="separator:a8fa0eb551f6186b9d083c86188dabb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e259cc07dc7c1473d58cb70faa3630"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a71e259cc07dc7c1473d58cb70faa3630">getInt</a> (int &amp;p)</td></tr>
+<tr class="memdesc:a71e259cc07dc7c1473d58cb70faa3630"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function reads a integer value from the variable <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> at the specified position.  <a href="#a71e259cc07dc7c1473d58cb70faa3630">More...</a><br /></td></tr>
+<tr class="separator:a71e259cc07dc7c1473d58cb70faa3630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30dc86177f9e5749daa91d8727f364e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#ad30dc86177f9e5749daa91d8727f364e">runMotion</a> ()</td></tr>
+<tr class="memdesc:ad30dc86177f9e5749daa91d8727f364e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function call the update functions to perform the motors motion. See <a class="el" href="class_c_n_c___router.html#a3a8982d9582e2144d38791626b3060e6" title="It performs the movement configured with the CNC_Route::moveTo(). ">CNC_Router::update</a> and <a class="el" href="class_milling_machine.html#ac74c527eb504eb6f13d80fb64487c874" title="The function performs the motor motion. It must be called with a frequency greater than 1/(v/1000000)...">MillingMachine::update</a>.  <a href="#ad30dc86177f9e5749daa91d8727f364e">More...</a><br /></td></tr>
+<tr class="separator:ad30dc86177f9e5749daa91d8727f364e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd9c3a13cf8f2958d8d9f0a563855e7b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#abd9c3a13cf8f2958d8d9f0a563855e7b">getFloat</a> (uint8_t &amp;pos, float &amp;val)</td></tr>
+<tr class="memdesc:abd9c3a13cf8f2958d8d9f0a563855e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function reads a float value in the <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line.  <a href="#abd9c3a13cf8f2958d8d9f0a563855e7b">More...</a><br /></td></tr>
+<tr class="separator:abd9c3a13cf8f2958d8d9f0a563855e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a20d7c90740e9e139b24f68336ad8c8f1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1">line</a></td></tr>
+<tr class="memdesc:a20d7c90740e9e139b24f68336ad8c8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here is stored the G-Code line that will be parsed.  <a href="#a20d7c90740e9e139b24f68336ad8c8f1">More...</a><br /></td></tr>
 <tr class="separator:a20d7c90740e9e139b24f68336ad8c8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0115efce11fdffa2c59304706ecacede"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a0115efce11fdffa2c59304706ecacede">feed_rate</a></td></tr>
+<tr class="memdesc:a0115efce11fdffa2c59304706ecacede"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch)  <a href="#a0115efce11fdffa2c59304706ecacede">More...</a><br /></td></tr>
 <tr class="separator:a0115efce11fdffa2c59304706ecacede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fc16db9dc5dbe95abc8b9b2a5ab6f5c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a2fc16db9dc5dbe95abc8b9b2a5ab6f5c">drill_speed</a></td></tr>
+<tr class="memdesc:a2fc16db9dc5dbe95abc8b9b2a5ab6f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The speed of the drill.  <a href="#a2fc16db9dc5dbe95abc8b9b2a5ab6f5c">More...</a><br /></td></tr>
 <tr class="separator:a2fc16db9dc5dbe95abc8b9b2a5ab6f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84ec0e15b18d91420c39627d1bdf78a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#ae84ec0e15b18d91420c39627d1bdf78a">moving</a></td></tr>
 <tr class="separator:ae84ec0e15b18d91420c39627d1bdf78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,9 +139,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:acbf5f3b9aeffe27d3f87e9d57b487146"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#acbf5f3b9aeffe27d3f87e9d57b487146">forward_mode</a></td></tr>
 <tr class="separator:acbf5f3b9aeffe27d3f87e9d57b487146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a406426d6a80e3c08b0ecd09db3ffd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a76a406426d6a80e3c08b0ecd09db3ffd">unit</a></td></tr>
+<tr class="memdesc:a76a406426d6a80e3c08b0ecd09db3ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The length unit: mm or inch.  <a href="#a76a406426d6a80e3c08b0ecd09db3ffd">More...</a><br /></td></tr>
 <tr class="separator:a76a406426d6a80e3c08b0ecd09db3ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a300348c946bb94260576136ffb7e0fa0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a300348c946bb94260576136ffb7e0fa0">raius_compensation</a></td></tr>
-<tr class="separator:a300348c946bb94260576136ffb7e0fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ac8c517b978b71a6af37c362dc3edb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a33ac8c517b978b71a6af37c362dc3edb">utensil_offset</a></td></tr>
 <tr class="separator:a33ac8c517b978b71a6af37c362dc3edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a600deaa28b54bd8fca4d8eb51fb09b55"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a600deaa28b54bd8fca4d8eb51fb09b55">loop_return</a></td></tr>
@@ -138,23 +150,41 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a05307dd7b9ff2f74bfd81aed40104fa8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a05307dd7b9ff2f74bfd81aed40104fa8">path_control</a></td></tr>
 <tr class="separator:a05307dd7b9ff2f74bfd81aed40104fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56d0e5e56115cd8e7b3f161cc8c0528e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a56d0e5e56115cd8e7b3f161cc8c0528e">parser_status</a></td></tr>
+<tr class="memdesc:a56d0e5e56115cd8e7b3f161cc8c0528e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status of the parser.  <a href="#a56d0e5e56115cd8e7b3f161cc8c0528e">More...</a><br /></td></tr>
 <tr class="separator:a56d0e5e56115cd8e7b3f161cc8c0528e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3674417ee3c5141c6655c05f6ffa0799"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a3674417ee3c5141c6655c05f6ffa0799">last_word</a> [16]</td></tr>
+<tr class="memdesc:a3674417ee3c5141c6655c05f6ffa0799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here the class stores the last word red for each group.  <a href="#a3674417ee3c5141c6655c05f6ffa0799">More...</a><br /></td></tr>
 <tr class="separator:a3674417ee3c5141c6655c05f6ffa0799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a996f87623f8a0263c3a7761060330de0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y.html">PositionXY</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a996f87623f8a0263c3a7761060330de0">new_pos_xy</a></td></tr>
+<tr class="memitem:a996f87623f8a0263c3a7761060330de0"><td class="memItemLeft" align="right" valign="top">PositionXY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a996f87623f8a0263c3a7761060330de0">new_pos_xy</a></td></tr>
+<tr class="memdesc:a996f87623f8a0263c3a7761060330de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class stores the new position red from the G-Code line.  <a href="#a996f87623f8a0263c3a7761060330de0">More...</a><br /></td></tr>
 <tr class="separator:a996f87623f8a0263c3a7761060330de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd3b6b2ecfc46bff229fbfd7ba72930f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#acd3b6b2ecfc46bff229fbfd7ba72930f">new_pos_z</a></td></tr>
+<tr class="memdesc:acd3b6b2ecfc46bff229fbfd7ba72930f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class stores here the new position red from the G-code line.  <a href="#acd3b6b2ecfc46bff229fbfd7ba72930f">More...</a><br /></td></tr>
 <tr class="separator:acd3b6b2ecfc46bff229fbfd7ba72930f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f38c9dddbd7c12c786c6363fd2a369c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a6f38c9dddbd7c12c786c6363fd2a369c">params</a> [<a class="el" href="_g_code__def_8h.html#ab0b1e59d96396ba9dca2147f9feb44eb">PARAMS</a>]</td></tr>
+<tr class="memdesc:a6f38c9dddbd7c12c786c6363fd2a369c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The array stores the values of the parameters red from the G-Code line.  <a href="#a6f38c9dddbd7c12c786c6363fd2a369c">More...</a><br /></td></tr>
+<tr class="separator:a6f38c9dddbd7c12c786c6363fd2a369c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d11b02685ef1b387a3c9da004547006"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a6d11b02685ef1b387a3c9da004547006">pars_spec</a> [<a class="el" href="_g_code__def_8h.html#ab0b1e59d96396ba9dca2147f9feb44eb">PARAMS</a>]</td></tr>
+<tr class="memdesc:a6d11b02685ef1b387a3c9da004547006"><td class="mdescLeft">&#160;</td><td class="mdescRight">The array says which parameters were found in parsed G-Code line.  <a href="#a6d11b02685ef1b387a3c9da004547006">More...</a><br /></td></tr>
+<tr class="separator:a6d11b02685ef1b387a3c9da004547006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab060bb5bd169ae7640eb781bef6b78fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_n_c___router.html">CNC_Router</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#ab060bb5bd169ae7640eb781bef6b78fe">router</a></td></tr>
+<tr class="memdesc:ab060bb5bd169ae7640eb781bef6b78fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the <a class="el" href="class_c_n_c___router.html" title="The class controls the motors of the xy router of the CNC. ">CNC_Router</a> object.  <a href="#ab060bb5bd169ae7640eb781bef6b78fe">More...</a><br /></td></tr>
 <tr class="separator:ab060bb5bd169ae7640eb781bef6b78fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a737c33f133cf515926d0f2b612bd22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_milling_machine.html">MillingMachine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a9a737c33f133cf515926d0f2b612bd22">utensil</a></td></tr>
+<tr class="memdesc:a9a737c33f133cf515926d0f2b612bd22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the <a class="el" href="class_milling_machine.html" title="Class to control a the milling machine and its position on the z-axis. ">MillingMachine</a> object.  <a href="#a9a737c33f133cf515926d0f2b612bd22">More...</a><br /></td></tr>
 <tr class="separator:a9a737c33f133cf515926d0f2b612bd22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3c842609b871f6d8f15f38d1f5dd813b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a3c842609b871f6d8f15f38d1f5dd813b">getWord</a> (char &amp;code, float &amp;val, uint8_t &amp;pos, uint8_t len)</td></tr>
+<tr class="memdesc:a3c842609b871f6d8f15f38d1f5dd813b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function gets a word of G-Code.  <a href="#a3c842609b871f6d8f15f38d1f5dd813b">More...</a><br /></td></tr>
+<tr class="separator:a3c842609b871f6d8f15f38d1f5dd813b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class interprets lines of RS274/NGC language. </p>
-<p>The class interprets lines of RS274/NGC language that is a language to control CNC </p>
+<p>The class implements an interpreter for lines of RS274/NGC language. It is a language to control CNC. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="afb47ef5c3500e0534e54607abfd73d47"></a>
+<a class="anchor" id="aacf3133ce2c42e9844be2ac10516846a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -162,16 +192,35 @@ Public Attributes</h2></td></tr>
           <td class="memname">GCode::GCode </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_c_n_c___router.html">CNC_Router</a> *&#160;</td>
-          <td class="paramname"><em>rt</em></td><td>)</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_milling_machine.html">MillingMachine</a> *&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>Address of the <a class="el" href="class_c_n_c___router.html" title="The class controls the motors of the xy router of the CNC. ">CNC_Router</a> object </td></tr>
+    <tr><td class="paramname">m</td><td>Address of the <a class="el" href="class_milling_machine.html" title="Class to control a the milling machine and its position on the z-axis. ">MillingMachine</a> object </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a8fa0eb551f6186b9d083c86188dabb56"></a>
+<a class="anchor" id="abd9c3a13cf8f2958d8d9f0a563855e7b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -195,9 +244,19 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The function reads a float value in the <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Is the position where it starts to read a float value. The function returns here the position of the next char after the float value. </td></tr>
+    <tr><td class="paramname">val</td><td>The function returns here the red value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The function returns false if it is ok, true if the line is end. </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a609aaf5606ffd2013a957e97641b1530"></a>
+<a class="anchor" id="a71e259cc07dc7c1473d58cb70faa3630"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -205,11 +264,78 @@ Public Attributes</h2></td></tr>
           <td class="memname">int GCode::getInt </td>
           <td>(</td>
           <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The function reads a integer value from the variable <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> at the specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>It mast contains the position in the <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> from where the function starts to read an integer. The variable return a value equal the the position of the next char after the integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The integer value that has been red from the <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3c842609b871f6d8f15f38d1f5dd813b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean GCode::getWord </td>
+          <td>(</td>
+          <td class="paramtype">char &amp;&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The function gets a word of G-Code. </p>
+<p>The function processes a line of G-Code. It is stored into the public variable line and the function returns the first occurrence of word of G-Code from the specified position. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>It is a return value and it is going to contain an upper case letter A-Z that identify the class of the command. </td></tr>
+    <tr><td class="paramname">val</td><td>It is a return value and it is going to contain a numeric value associated to the code. </td></tr>
+    <tr><td class="paramname">pos</td><td>Here we must specify the position in the line where the function starts to find the word. At the end, the function returns in it the position of the next letter after the found word. </td></tr>
+    <tr><td class="paramname">len</td><td>The max length of the line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>It returns a boolean value that is true if the operation ends correctly, false if is occurred an error. See <a class="el" href="class_g_code.html#a56d0e5e56115cd8e7b3f161cc8c0528e" title="The status of the parser. ">GCode::parser_status</a> to get more information about the error. </dd></dl>
 
 </div>
 </div>
@@ -226,6 +352,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The function parses a line of G-Code. </p>
+<p>In this function is implemented the action for the recognized words of <a class="el" href="class_g_code.html" title="The class interprets lines of RS274/NGC language. ">GCode</a>. </p><dl class="section return"><dt>Returns</dt><dd>TODO I have to see better what it has to return. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a3912e1dad7257e2336ab09c55ff17235"></a>
@@ -240,6 +369,26 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The function removes all spaces and  <br />
+ char from the variable <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad30dc86177f9e5749daa91d8727f364e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GCode::runMotion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function call the update functions to perform the motors motion. See <a class="el" href="class_c_n_c___router.html#a3a8982d9582e2144d38791626b3060e6" title="It performs the movement configured with the CNC_Route::moveTo(). ">CNC_Router::update</a> and <a class="el" href="class_milling_machine.html#ac74c527eb504eb6f13d80fb64487c874" title="The function performs the motor motion. It must be called with a frequency greater than 1/(v/1000000)...">MillingMachine::update</a>. </p>
 
 </div>
 </div>
@@ -278,6 +427,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The speed of the drill. </p>
+
 </div>
 </div>
 <a class="anchor" id="a0115efce11fdffa2c59304706ecacede"></a>
@@ -289,6 +440,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch) </p>
 
 </div>
 </div>
@@ -314,6 +467,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Here the class stores the last word red for each group. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a20d7c90740e9e139b24f68336ad8c8f1"></a>
@@ -325,6 +481,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Here is stored the G-Code line that will be parsed. </p>
 
 </div>
 </div>
@@ -357,10 +515,12 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_position_x_y.html">PositionXY</a> GCode::new_pos_xy</td>
+          <td class="memname">PositionXY GCode::new_pos_xy</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The class stores the new position red from the G-Code line. </p>
 
 </div>
 </div>
@@ -374,6 +534,38 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The class stores here the new position red from the G-code line. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6f38c9dddbd7c12c786c6363fd2a369c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GCode::params[<a class="el" href="_g_code__def_8h.html#ab0b1e59d96396ba9dca2147f9feb44eb">PARAMS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The array stores the values of the parameters red from the G-Code line. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6d11b02685ef1b387a3c9da004547006"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean GCode::pars_spec[<a class="el" href="_g_code__def_8h.html#ab0b1e59d96396ba9dca2147f9feb44eb">PARAMS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The array says which parameters were found in parsed G-Code line. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a56d0e5e56115cd8e7b3f161cc8c0528e"></a>
@@ -385,6 +577,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The status of the parser. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
 
 </div>
 </div>
@@ -412,18 +607,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a300348c946bb94260576136ffb7e0fa0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t GCode::raius_compensation</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ab060bb5bd169ae7640eb781bef6b78fe"></a>
 <div class="memitem">
 <div class="memproto">
@@ -433,6 +616,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pointer to the <a class="el" href="class_c_n_c___router.html" title="The class controls the motors of the xy router of the CNC. ">CNC_Router</a> object. </p>
 
 </div>
 </div>
@@ -446,6 +631,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The length unit: mm or inch. </p>
+
 </div>
 </div>
 <a class="anchor" id="a9a737c33f133cf515926d0f2b612bd22"></a>
@@ -457,6 +644,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pointer to the <a class="el" href="class_milling_machine.html" title="Class to control a the milling machine and its position on the z-axis. ">MillingMachine</a> object. </p>
 
 </div>
 </div>
@@ -479,7 +668,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 8 2014 17:13:49 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

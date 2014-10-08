@@ -47,6 +47,46 @@ void \hyperlink{class_m_s_m_c___u_l_n2003_a_aa6743162bdaba01ef1fc8a79f2519897}{p
 \begin{DoxyCompactList}\small\item\em Print in the serial channel the state of all inner variables. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_a06c602281da9eebbd38dc4151c137609}{get\+Steps} ()
 \begin{DoxyCompactList}\small\item\em The function returns the number of steps performed from a forward or backward command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_m_s_m_c___u_l_n2003_a_a76c32768742d1f13f91a498224be1688}{forward\+\_\+one} ()
+\begin{DoxyCompactList}\small\item\em Move the motor forward of one step. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___u_l_n2003_a_af77993ed4197f6cbcfda0b7127dccfcc}{backward\+\_\+one} ()
+\begin{DoxyCompactList}\small\item\em Move the motor backward of one step. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___u_l_n2003_a_af351ae2229c5cd9f12d633a44394d2e5}{coils\+Off} ()
+\begin{DoxyCompactList}\small\item\em Turn off all coils of the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_aec129acb0f90327fcca7a7dfa6f5d5a4}{p1}
+\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_aca959053d8d19900be146f8886199913}{p2}
+\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_a62da43b3b8600f87bc493f75e9187d65}{p3}
+\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_a15e2688884bcdf55d50fbdb2058ccf6e}{p4}
+\begin{DoxyCompactList}\small\item\em Pins where is mapped the coils of the unipolar motor. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_ab5cb8c78446fe371662f6ce6d2b289d5}{spd}
+\begin{DoxyCompactList}\small\item\em The delay between two steps in microseconds. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_afc5c41c229b3d634bd4aea51dcef7599}{steps}
+\begin{DoxyCompactList}\small\item\em The number of steps until the motion ends. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_a8e1a83575d5ad2d15a8a81eccf1bdba6}{tot\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em The total steps set by \hyperlink{class_m_s_m_c___u_l_n2003_a_a9657492f948a75472b311bc0b823899f}{forward()} and \hyperlink{class_m_s_m_c___u_l_n2003_a_ac46e6ec6345f95b534079bcf2920885e}{backward()}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_adfe160b513e9a51d9fd39bb2424b711b}{old\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The time value in microseconds set during the last step. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_a06987cfacad47f56ec9f3e54cc72ff08}{pause\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The time value in microseconds set by the function \hyperlink{class_m_s_m_c___u_l_n2003_a_aa1d3444465d59ca6c87f05f565dde4a2}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pause()} \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_a8318f5fbce84ff22c9d800e6b637bf52}{pos}
+\begin{DoxyCompactList}\small\item\em A value among 0, 1, 2, 3 if the full step control is active, otherwise the value is one among 0, 1, 2, 3, ,4 ,5 ,6 7. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_af8b9f054cc60da4bb45567f80c907b94}{dir}
+\begin{DoxyCompactList}\small\item\em Specify the direction of the motor\+: -\/1 backward, 1 forward, 0 all pins out L\+O\+W. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_m_s_m_c___u_l_n2003_a_a1da226d2eb7ce293c6378fbe8c80a2ea}{control\+\_\+mode}
+\begin{DoxyCompactList}\small\item\em Specify the control mode of the controller. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_m_s_m_c___u_l_n2003_a_a4f2ee51f769815847a2a0062ff03bd6e}{m\+\_\+ready}
+\begin{DoxyCompactList}\small\item\em True if the motor is ready to take a new command\+: \hyperlink{class_m_s_m_c___u_l_n2003_a_a9657492f948a75472b311bc0b823899f}{forward(uint32\+\_\+t, uint32\+\_\+t)} or \hyperlink{class_m_s_m_c___u_l_n2003_a_ac46e6ec6345f95b534079bcf2920885e}{backward(uint32\+\_\+t, uint32\+\_\+t)}. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_m_s_m_c___u_l_n2003_a_a6b0ddbdadf767fdc1d1c5f8a3ffd6f10}{m\+\_\+pause}
+\begin{DoxyCompactList}\small\item\em It is True if the motion is paused. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -123,6 +163,31 @@ The function moves backward the motor of a number of steps with a specified dela
 
 Reimplemented from \hyperlink{class_m_s_m_c_a389bfe7f7d05083cb4e95d73128c1c87}{M\+S\+M\+C}.
 
+\hypertarget{class_m_s_m_c___u_l_n2003_a_af77993ed4197f6cbcfda0b7127dccfcc}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!backward\+\_\+one@{backward\+\_\+one}}
+\index{backward\+\_\+one@{backward\+\_\+one}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{backward\+\_\+one}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::backward\+\_\+one (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_af77993ed4197f6cbcfda0b7127dccfcc}
+
+
+Move the motor backward of one step. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_s_m_c___u_l_n2003_a_a76c32768742d1f13f91a498224be1688}{forward\+\_\+one()} 
+\end{DoxySeeAlso}
+\hypertarget{class_m_s_m_c___u_l_n2003_a_af351ae2229c5cd9f12d633a44394d2e5}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!coils\+Off@{coils\+Off}}
+\index{coils\+Off@{coils\+Off}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{coils\+Off}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::coils\+Off (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_af351ae2229c5cd9f12d633a44394d2e5}
+
+
+Turn off all coils of the motor. 
+
 \hypertarget{class_m_s_m_c___u_l_n2003_a_a9657492f948a75472b311bc0b823899f}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!forward@{forward}}
 \index{forward@{forward}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
 \subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::forward (
@@ -149,6 +214,20 @@ The function moves forward the motor of a number of steps with a specified delay
 
 Reimplemented from \hyperlink{class_m_s_m_c_a62615946a227d18ea3fc2f1329688d1f}{M\+S\+M\+C}.
 
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a76c32768742d1f13f91a498224be1688}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!forward\+\_\+one@{forward\+\_\+one}}
+\index{forward\+\_\+one@{forward\+\_\+one}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{forward\+\_\+one}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::forward\+\_\+one (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a76c32768742d1f13f91a498224be1688}
+
+
+Move the motor forward of one step. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_s_m_c___u_l_n2003_a_af77993ed4197f6cbcfda0b7127dccfcc}{backward\+\_\+one()} 
+\end{DoxySeeAlso}
 \hypertarget{class_m_s_m_c___u_l_n2003_a_a84cbd656e77e789af5cb34df147589a3}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!get\+Mode@{get\+Mode}}
 \index{get\+Mode@{get\+Mode}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
 \subsubsection[{get\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::get\+Mode (
@@ -333,6 +412,95 @@ The function returns false if the motor is busy and it has not ended the operati
 
 
 Reimplemented from \hyperlink{class_m_s_m_c_a2c379d628edbca2d36e3588b39bf6b98}{M\+S\+M\+C}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a1da226d2eb7ce293c6378fbe8c80a2ea}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!control\+\_\+mode@{control\+\_\+mode}}
+\index{control\+\_\+mode@{control\+\_\+mode}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{control\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::control\+\_\+mode\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a1da226d2eb7ce293c6378fbe8c80a2ea}
+
+
+Specify the control mode of the controller. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_af8b9f054cc60da4bb45567f80c907b94}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!dir@{dir}}
+\index{dir@{dir}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::dir\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_af8b9f054cc60da4bb45567f80c907b94}
+
+
+Specify the direction of the motor\+: -\/1 backward, 1 forward, 0 all pins out L\+O\+W. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a6b0ddbdadf767fdc1d1c5f8a3ffd6f10}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!m\+\_\+pause@{m\+\_\+pause}}
+\index{m\+\_\+pause@{m\+\_\+pause}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{m\+\_\+pause}]{\setlength{\rightskip}{0pt plus 5cm}boolean M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::m\+\_\+pause\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a6b0ddbdadf767fdc1d1c5f8a3ffd6f10}
+
+
+It is True if the motion is paused. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a4f2ee51f769815847a2a0062ff03bd6e}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!m\+\_\+ready@{m\+\_\+ready}}
+\index{m\+\_\+ready@{m\+\_\+ready}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{m\+\_\+ready}]{\setlength{\rightskip}{0pt plus 5cm}boolean M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::m\+\_\+ready\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a4f2ee51f769815847a2a0062ff03bd6e}
+
+
+True if the motor is ready to take a new command\+: \hyperlink{class_m_s_m_c___u_l_n2003_a_a9657492f948a75472b311bc0b823899f}{forward(uint32\+\_\+t, uint32\+\_\+t)} or \hyperlink{class_m_s_m_c___u_l_n2003_a_ac46e6ec6345f95b534079bcf2920885e}{backward(uint32\+\_\+t, uint32\+\_\+t)}. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_adfe160b513e9a51d9fd39bb2424b711b}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!old\+\_\+time@{old\+\_\+time}}
+\index{old\+\_\+time@{old\+\_\+time}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{old\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::old\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_adfe160b513e9a51d9fd39bb2424b711b}
+
+
+The time value in microseconds set during the last step. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_aec129acb0f90327fcca7a7dfa6f5d5a4}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!p1@{p1}}
+\index{p1@{p1}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{p1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::p1\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_aec129acb0f90327fcca7a7dfa6f5d5a4}
+\hypertarget{class_m_s_m_c___u_l_n2003_a_aca959053d8d19900be146f8886199913}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!p2@{p2}}
+\index{p2@{p2}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{p2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::p2\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_aca959053d8d19900be146f8886199913}
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a62da43b3b8600f87bc493f75e9187d65}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!p3@{p3}}
+\index{p3@{p3}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{p3}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::p3\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a62da43b3b8600f87bc493f75e9187d65}
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a15e2688884bcdf55d50fbdb2058ccf6e}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!p4@{p4}}
+\index{p4@{p4}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{p4}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::p4\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a15e2688884bcdf55d50fbdb2058ccf6e}
+
+
+Pins where is mapped the coils of the unipolar motor. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a06987cfacad47f56ec9f3e54cc72ff08}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!pause\+\_\+time@{pause\+\_\+time}}
+\index{pause\+\_\+time@{pause\+\_\+time}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{pause\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pause\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a06987cfacad47f56ec9f3e54cc72ff08}
+
+
+The time value in microseconds set by the function \hyperlink{class_m_s_m_c___u_l_n2003_a_aa1d3444465d59ca6c87f05f565dde4a2}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pause()} 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a8318f5fbce84ff22c9d800e6b637bf52}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!pos@{pos}}
+\index{pos@{pos}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pos\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a8318f5fbce84ff22c9d800e6b637bf52}
+
+
+A value among 0, 1, 2, 3 if the full step control is active, otherwise the value is one among 0, 1, 2, 3, ,4 ,5 ,6 7. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_ab5cb8c78446fe371662f6ce6d2b289d5}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!spd@{spd}}
+\index{spd@{spd}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{spd}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::spd\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_ab5cb8c78446fe371662f6ce6d2b289d5}
+
+
+The delay between two steps in microseconds. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_afc5c41c229b3d634bd4aea51dcef7599}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!steps@{steps}}
+\index{steps@{steps}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{steps}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::steps\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_afc5c41c229b3d634bd4aea51dcef7599}
+
+
+The number of steps until the motion ends. 
+
+\hypertarget{class_m_s_m_c___u_l_n2003_a_a8e1a83575d5ad2d15a8a81eccf1bdba6}{\index{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}!tot\+\_\+steps@{tot\+\_\+steps}}
+\index{tot\+\_\+steps@{tot\+\_\+steps}!M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A@{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A}}
+\subsubsection[{tot\+\_\+steps}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::tot\+\_\+steps\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___u_l_n2003_a_a8e1a83575d5ad2d15a8a81eccf1bdba6}
+
+
+The total steps set by \hyperlink{class_m_s_m_c___u_l_n2003_a_a9657492f948a75472b311bc0b823899f}{forward()} and \hyperlink{class_m_s_m_c___u_l_n2003_a_ac46e6ec6345f95b534079bcf2920885e}{backward()}. 
 
 
 

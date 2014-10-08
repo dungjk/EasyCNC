@@ -8,5 +8,6 @@ var searchData=
   ['_5fmilling_5fmachine_5fmz_5ffast_5fspeed',['_MILLING_MACHINE_MZ_FAST_SPEED',['../config_8h.html#abc457a8fa59dac77a75746512bf048d4',1,'config.h']]],
   ['_5fmilling_5fmachine_5fmz_5fstep_5fcontrol_5fpin',['_MILLING_MACHINE_MZ_STEP_CONTROL_PIN',['../config_8h.html#a7ea3febb8ee01210e2a37b95abec13bb',1,'config.h']]],
   ['_5fmilling_5fmachine_5fmz_5fsteps_5fper_5fmm',['_MILLING_MACHINE_MZ_STEPS_PER_MM',['../config_8h.html#a94aabd4cf54e1c9cb34fb3860a4af575',1,'config.h']]],
-  ['_5fmilling_5fmachine_5fmz_5fsteps_5fper_5fround',['_MILLING_MACHINE_MZ_STEPS_PER_ROUND',['../config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646',1,'config.h']]]
+  ['_5fmilling_5fmachine_5fmz_5fsteps_5fper_5fround',['_MILLING_MACHINE_MZ_STEPS_PER_ROUND',['../config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646',1,'config.h']]],
+  ['_5ftest',['_TEST',['../config_8h.html#a0cfba2141cb01837f140f417e0efaf03',1,'config.h']]]
 ];

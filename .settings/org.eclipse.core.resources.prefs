@@ -3,6 +3,7 @@ encoding//tools/Position.cpp=UTF-8
 encoding//tools/Position.h=UTF-8
 encoding/CNC_Router.cpp=UTF-8
 encoding/CNC_Router.h=UTF-8
+encoding/GCode.h=UTF-8
 encoding/MSMC.h=UTF-8
 encoding/MSMC_ULN2003A.cpp=UTF-8
 encoding/MSMC_ULN2003A.h=UTF-8

@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['unit',['unit',['../class_g_code.html#a76a406426d6a80e3c08b0ecd09db3ffd',1,'GCode']]],
-  ['utensil',['utensil',['../class_g_code.html#a9a737c33f133cf515926d0f2b612bd22',1,'GCode']]],
-  ['utensil_5foffset',['utensil_offset',['../class_g_code.html#a33ac8c517b978b71a6af37c362dc3edb',1,'GCode']]]
+  ['spd',['spd',['../class_m_s_m_c___a4988.html#a6453efb52d22739962c05b0d03f65aa7',1,'MSMC_A4988::spd()'],['../class_m_s_m_c___u_l_n2003_a.html#ab5cb8c78446fe371662f6ce6d2b289d5',1,'MSMC_ULN2003A::spd()']]],
+  ['spmm',['spmm',['../class_milling_machine.html#a774f8f3491b4888cd9418c745e922199',1,'MillingMachine']]],
+  ['spmmx',['spmmx',['../class_c_n_c___router.html#ad8830a7b387905027b8a1a9e3b31e3c7',1,'CNC_Router']]],
+  ['spmmy',['spmmy',['../class_c_n_c___router.html#ab44dd3a48e5c03f3484cd223cb8f9444',1,'CNC_Router']]],
+  ['step_5fpin_5fval',['step_pin_val',['../class_m_s_m_c___a4988.html#a1ec86b6286b8827eca6d5703a02f65fd',1,'MSMC_A4988']]],
+  ['steps',['steps',['../class_m_s_m_c___a4988.html#aa85fc95facc940db652cd2f545f033cd',1,'MSMC_A4988::steps()'],['../class_m_s_m_c___u_l_n2003_a.html#afc5c41c229b3d634bd4aea51dcef7599',1,'MSMC_ULN2003A::steps()']]]
 ];

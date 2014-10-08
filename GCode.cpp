@@ -9,7 +9,7 @@
 
 GCode::GCode(CNC_Router *rt, MillingMachine *ml) {
 	moving = plane_select = distanse_mode = forward_mode = unit =
-			raius_compensation = utensil_offset = loop_return = coordinate =
+			utensil_offset = loop_return = coordinate =
 					path_control = parser_status;
 	drill_speed = feed_rate = 0.0;
 	new_pos_z = 0.0;
@@ -62,10 +62,21 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
 	return true;
 }
 
+int GCode::runMotion() {
+	//TODO add the support to limit switch
+	boolean a, b;
+	a = utensil->update();
+	b = router->update();
+	while (!a || !b) {
+		a = utensil->update();
+		b = router->update();
+	}
+}
+
 int GCode::parseLine() {
 	removeSpaces();
-	DBGLN(line);
-	DBGLN(line.length());
+	DBGNL(line);
+	DBGNL(line.length());
 
 	new_pos_xy = router->getPos();
 	new_pos_z = utensil->getPos();
@@ -96,6 +107,10 @@ int GCode::parseLine() {
 			case 2:
 				motion_command = true;
 				last_word[GROUP1] = G2;
+				break;
+			case 3:
+				motion_command = true;
+				last_word[GROUP1] = G3;
 				break;
 			case 4:
 				pause = true;
@@ -144,16 +159,23 @@ int GCode::parseLine() {
 				//Coordinate job 1
 				last_word[GROUP12] = G54;
 				break;
-
+			default:
+				DBG("Unsupported command ");
+				DBG(type);
+				DBGNL(val);
 			}
 			;
 			break;
 		case 'M':
 			DBG(type);
-			DBGLN((int )trunc(val));
+			DBGNL((int )trunc(val));
 			break;
 		case 'F':
 			feed_rate = val;
+			break;
+		case 'R':
+			motion_command = pars_spec[PARAM_R] = true;
+			params[PARAM_R] = val;
 			break;
 		case 'S':
 			drill_speed = val;
@@ -201,8 +223,15 @@ int GCode::parseLine() {
 		case G0:
 			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
 					|| pars_spec[PARAM_Z]) {
+				DBG("Rapid motion to X= ");
+				DBG(new_pos_xy.X());
+				DBG(", Y=");
+				DBG(new_pos_xy.Y());
+				DBG(", Z=");
+				DBGNL(new_pos_z);
 				utensil->moveTo(new_pos_z);
 				router->moveTo(new_pos_xy);
+				runMotion();
 			} else {
 				parser_status = STATUS_SYNTAX_ERROR;
 				return parser_status;
@@ -211,8 +240,17 @@ int GCode::parseLine() {
 		case G1:
 			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
 					|| pars_spec[PARAM_Z]) {
+				DBG("Working motion to X= ");
+				DBG(new_pos_xy.X());
+				DBG(", Y=");
+				DBG(new_pos_xy.Y());
+				DBG(", Z=");
+				DBG(new_pos_z);
+				DBG(", F=");
+				DBGNL(feed_rate);
 				utensil->moveTo(new_pos_z, feed_rate);
 				router->moveTo(new_pos_xy, feed_rate);
+				runMotion();
 			} else {
 				parser_status = STATUS_SYNTAX_ERROR;
 				return parser_status;
@@ -227,11 +265,21 @@ int GCode::parseLine() {
 
 			if ((pars_spec[PARAM_X] || pars_spec[PARAM_Y])
 					&& pars_spec[PARAM_R]) {
+
 				can_move = true;
 				float beta = start_p.angle(new_pos_xy);
 				float dist = start_p.module(new_pos_xy);
 				r = params[PARAM_R];
 				float gamma = acos(dist / (2 * r));
+
+				DBG("Arch with radius X=");
+				DBG(new_pos_xy.X());
+				DBG(", Y=");
+				DBG(new_pos_xy.Y());
+				DBG(", R=");
+				DBG(r);
+				DBG(", F=");
+				DBGNL(feed_rate);
 
 				//it depends on the sign of the radius value
 				if (last_word[GROUP1] == G2) {
@@ -249,6 +297,16 @@ int GCode::parseLine() {
 				center = start_p;
 				r = offset.module();
 				center += offset;  // the center of the cyrcle
+				DBG("Arch with center X=");
+				DBG(new_pos_xy.X());
+				DBG(", Y=");
+				DBG(new_pos_xy.Y());
+				DBG(", I=");
+				DBG(offset.X());
+				DBG(", J=");
+				DBG(offset.Y());
+				DBG(", F=");
+				DBGNL(feed_rate);
 			}
 
 			if (can_move) {
@@ -261,24 +319,22 @@ int GCode::parseLine() {
 
 				if (last_word[GROUP1] == G2) {
 					while (angle_next_p < angle_end) {
-						router->moveTo(center + tmp.polar(r, angle_next_p));
-						while (!router->update())
-							;
+						router->moveTo(center + tmp.polar(r, angle_next_p),
+								feed_rate);
+						runMotion();
 						angle_next_p += alpha;
 					}
-					router->moveTo(new_pos_xy);
-					while (!router->update())
-						;
+					router->moveTo(new_pos_xy, feed_rate);
+					runMotion();
 				} else {
 					while (angle_next_p > angle_end) {
-						router->moveTo(center + tmp.polar(r, angle_next_p));
-						while (!router->update())
-							;
+						router->moveTo(center + tmp.polar(r, angle_next_p),
+								feed_rate);
+						runMotion();
 						angle_next_p -= alpha;
 					}
-					router->moveTo(new_pos_xy);
-					while (!router->update())
-						;
+					router->moveTo(new_pos_xy, feed_rate);
+					runMotion();
 				}
 			}
 			break;
@@ -287,7 +343,7 @@ int GCode::parseLine() {
 	}
 
 	DBG("CG status: ");
-	DBGLN(parser_status);
+	DBGNL(parser_status);
 	parser_status = STATUS_OK;
 	return 0;
 }

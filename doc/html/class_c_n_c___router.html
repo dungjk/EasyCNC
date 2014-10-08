@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_c_n_c___router-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CNC_Router Class Reference</div>  </div>
@@ -98,12 +99,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2286f545f42ff5febfdb8d52782cd0da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a2286f545f42ff5febfdb8d52782cd0da">CNC_Router</a> ()</td></tr>
+<tr class="memdesc:a2286f545f42ff5febfdb8d52782cd0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a2286f545f42ff5febfdb8d52782cd0da">More...</a><br /></td></tr>
 <tr class="separator:a2286f545f42ff5febfdb8d52782cd0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a928dbfed47e8514928b92559372378f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a928dbfed47e8514928b92559372378f0">CNC_Router</a> (float spx, float spy, float vmx, float vmy)</td></tr>
+<tr class="memdesc:a928dbfed47e8514928b92559372378f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a928dbfed47e8514928b92559372378f0">More...</a><br /></td></tr>
 <tr class="separator:a928dbfed47e8514928b92559372378f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89f4cbde58844154f247d2bf02a167fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a89f4cbde58844154f247d2bf02a167fb">initMotorX</a> ()</td></tr>
+<tr class="memdesc:a89f4cbde58844154f247d2bf02a167fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">It initializes the controller for the motor on the X-axis. It must be called one time before starting the motion opetations.  <a href="#a89f4cbde58844154f247d2bf02a167fb">More...</a><br /></td></tr>
 <tr class="separator:a89f4cbde58844154f247d2bf02a167fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f13e636e4b92c5547995b653cea317e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a7f13e636e4b92c5547995b653cea317e">initMotorY</a> ()</td></tr>
+<tr class="memdesc:a7f13e636e4b92c5547995b653cea317e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It initializes the controller for the motor on the Y-axis. It must be called one time before starting the motion opetations.  <a href="#a7f13e636e4b92c5547995b653cea317e">More...</a><br /></td></tr>
 <tr class="separator:a7f13e636e4b92c5547995b653cea317e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d1313b481b864a85758aaeab61e6595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a0d1313b481b864a85758aaeab61e6595">setLimitSwitchX</a> (int8_t dw, int8_t up=-1)</td></tr>
 <tr class="memdesc:a0d1313b481b864a85758aaeab61e6595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pins where are attached the down/up limit switches.  <a href="#a0d1313b481b864a85758aaeab61e6595">More...</a><br /></td></tr>
@@ -112,35 +117,91 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af9308de7c3273a4f7dc18bc3cfe617d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pins where are attached the down/up limit switches.  <a href="#af9308de7c3273a4f7dc18bc3cfe617d4">More...</a><br /></td></tr>
 <tr class="separator:af9308de7c3273a4f7dc18bc3cfe617d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30d838430b7452a8f47071d2f6b8845e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a30d838430b7452a8f47071d2f6b8845e">resetPos</a> ()</td></tr>
+<tr class="memdesc:a30d838430b7452a8f47071d2f6b8845e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It resets the position and assigns the value (0; 0) in the actual position of the utensil.  <a href="#a30d838430b7452a8f47071d2f6b8845e">More...</a><br /></td></tr>
 <tr class="separator:a30d838430b7452a8f47071d2f6b8845e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9630faad381924b8f3252e100345274e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a9630faad381924b8f3252e100345274e">moveTo</a> (float px, float py, float spd=0.0)</td></tr>
+<tr class="memdesc:a9630faad381924b8f3252e100345274e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It initializes a motion operation.  <a href="#a9630faad381924b8f3252e100345274e">More...</a><br /></td></tr>
 <tr class="separator:a9630faad381924b8f3252e100345274e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eb9a8553f02ba626abbc32f98663759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a7eb9a8553f02ba626abbc32f98663759">moveTo</a> (const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;np, float spd=0.0)</td></tr>
+<tr class="memitem:a7eb9a8553f02ba626abbc32f98663759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a7eb9a8553f02ba626abbc32f98663759">moveTo</a> (const PositionXY &amp;np, float spd=0.0)</td></tr>
+<tr class="memdesc:a7eb9a8553f02ba626abbc32f98663759"><td class="mdescLeft">&#160;</td><td class="mdescRight">It initializes a motion operation.  <a href="#a7eb9a8553f02ba626abbc32f98663759">More...</a><br /></td></tr>
 <tr class="separator:a7eb9a8553f02ba626abbc32f98663759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebacab02935c41a4c11b926c0770bcac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac">stopMotion</a> ()</td></tr>
+<tr class="memdesc:aebacab02935c41a4c11b926c0770bcac"><td class="mdescLeft">&#160;</td><td class="mdescRight">It stops the current motion operation.  <a href="#aebacab02935c41a4c11b926c0770bcac">More...</a><br /></td></tr>
 <tr class="separator:aebacab02935c41a4c11b926c0770bcac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b5ad1a227e63d3f374e0e53f3cf047c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a6b5ad1a227e63d3f374e0e53f3cf047c">pause</a> ()</td></tr>
+<tr class="memdesc:a6b5ad1a227e63d3f374e0e53f3cf047c"><td class="mdescLeft">&#160;</td><td class="mdescRight">It pauses the current motion operation. The router waits for <a class="el" href="class_c_n_c___router.html#ab36f29523c76dd9f64c1ab5367c8f3d3" title="It restarts a paused motion. ">CNC_Router::restart()</a> to continue and end the paused motion.  <a href="#a6b5ad1a227e63d3f374e0e53f3cf047c">More...</a><br /></td></tr>
 <tr class="separator:a6b5ad1a227e63d3f374e0e53f3cf047c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08a32575c71fe10d3a693e1ad68eedc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a08a32575c71fe10d3a693e1ad68eedc1">restat</a> ()</td></tr>
-<tr class="separator:a08a32575c71fe10d3a693e1ad68eedc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36f29523c76dd9f64c1ab5367c8f3d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#ab36f29523c76dd9f64c1ab5367c8f3d3">restart</a> ()</td></tr>
+<tr class="memdesc:ab36f29523c76dd9f64c1ab5367c8f3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">It restarts a paused motion.  <a href="#ab36f29523c76dd9f64c1ab5367c8f3d3">More...</a><br /></td></tr>
+<tr class="separator:ab36f29523c76dd9f64c1ab5367c8f3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad82ea519e54f4ec488c10c150df26984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#ad82ea519e54f4ec488c10c150df26984">highPrecision</a> ()</td></tr>
+<tr class="memdesc:ad82ea519e54f4ec488c10c150df26984"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets up a high precision mode to control the XY-axii.  <a href="#ad82ea519e54f4ec488c10c150df26984">More...</a><br /></td></tr>
 <tr class="separator:ad82ea519e54f4ec488c10c150df26984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15e3fab9eefaa7a61403c0054e643901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a15e3fab9eefaa7a61403c0054e643901">lowPrecision</a> ()</td></tr>
+<tr class="memdesc:a15e3fab9eefaa7a61403c0054e643901"><td class="mdescLeft">&#160;</td><td class="mdescRight">It sets up a low precision mode to control the XY-axii. It is also the fastest control mode.  <a href="#a15e3fab9eefaa7a61403c0054e643901">More...</a><br /></td></tr>
 <tr class="separator:a15e3fab9eefaa7a61403c0054e643901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbda24db494dd328382639412570978e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#abbda24db494dd328382639412570978e">setIncrPos</a> ()</td></tr>
+<tr class="memdesc:abbda24db494dd328382639412570978e"><td class="mdescLeft">&#160;</td><td class="mdescRight">It selects the incremental positioning mode.  <a href="#abbda24db494dd328382639412570978e">More...</a><br /></td></tr>
 <tr class="separator:abbda24db494dd328382639412570978e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8629d6232f16d039ff386b0f02d45895"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a8629d6232f16d039ff386b0f02d45895">setAbsolPos</a> ()</td></tr>
+<tr class="memdesc:a8629d6232f16d039ff386b0f02d45895"><td class="mdescLeft">&#160;</td><td class="mdescRight">It selects the absolute positioning mode.  <a href="#a8629d6232f16d039ff386b0f02d45895">More...</a><br /></td></tr>
 <tr class="separator:a8629d6232f16d039ff386b0f02d45895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e9504d77eee555ddb35af073b67d3f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a4e9504d77eee555ddb35af073b67d3f1">searchHomePos</a> ()</td></tr>
+<tr class="memdesc:a4e9504d77eee555ddb35af073b67d3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">It moves the utensil up to the home position. It is identified by the down limit switches on the YX-axis.  <a href="#a4e9504d77eee555ddb35af073b67d3f1">More...</a><br /></td></tr>
 <tr class="separator:a4e9504d77eee555ddb35af073b67d3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a177a7cc248cace9b84ae2b53d461cb6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y.html">PositionXY</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a177a7cc248cace9b84ae2b53d461cb6d">getPos</a> ()</td></tr>
+<tr class="memitem:a177a7cc248cace9b84ae2b53d461cb6d"><td class="memItemLeft" align="right" valign="top">PositionXY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a177a7cc248cace9b84ae2b53d461cb6d">getPos</a> ()</td></tr>
+<tr class="memdesc:a177a7cc248cace9b84ae2b53d461cb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It get the actual position of the utensil.  <a href="#a177a7cc248cace9b84ae2b53d461cb6d">More...</a><br /></td></tr>
 <tr class="separator:a177a7cc248cace9b84ae2b53d461cb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a8982d9582e2144d38791626b3060e6"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a3a8982d9582e2144d38791626b3060e6">update</a> ()</td></tr>
+<tr class="memdesc:a3a8982d9582e2144d38791626b3060e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs the movement configured with the CNC_Route::moveTo().  <a href="#a3a8982d9582e2144d38791626b3060e6">More...</a><br /></td></tr>
 <tr class="separator:a3a8982d9582e2144d38791626b3060e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa6009653314607491aa277b1f3c9bf85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_s_m_c___a4988.html">MSMC_A4988</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#aa6009653314607491aa277b1f3c9bf85">mx</a></td></tr>
+<tr class="separator:aa6009653314607491aa277b1f3c9bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3fb4521615d90ff7baa6bdb287d97c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_s_m_c___a4988.html">MSMC_A4988</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#ac3fb4521615d90ff7baa6bdb287d97c9">my</a></td></tr>
+<tr class="separator:ac3fb4521615d90ff7baa6bdb287d97c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbaa016d11134c9dcef28fc38ff391e1"><td class="memItemLeft" align="right" valign="top">PositionXY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#adbaa016d11134c9dcef28fc38ff391e1">old_p</a></td></tr>
+<tr class="memdesc:adbaa016d11134c9dcef28fc38ff391e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">It keeps the position that the utensil has after starting the motion.  <a href="#adbaa016d11134c9dcef28fc38ff391e1">More...</a><br /></td></tr>
+<tr class="separator:adbaa016d11134c9dcef28fc38ff391e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc343929f49271f65f1eda7d28b8957"><td class="memItemLeft" align="right" valign="top">PositionXY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#afbc343929f49271f65f1eda7d28b8957">end_p</a></td></tr>
+<tr class="memdesc:afbc343929f49271f65f1eda7d28b8957"><td class="mdescLeft">&#160;</td><td class="mdescRight">The final position of a motion.  <a href="#afbc343929f49271f65f1eda7d28b8957">More...</a><br /></td></tr>
+<tr class="separator:afbc343929f49271f65f1eda7d28b8957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e42e9ae1b2d5de3237706c2a8cf9440"><td class="memItemLeft" align="right" valign="top">PositionXY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a9e42e9ae1b2d5de3237706c2a8cf9440">actual_p</a></td></tr>
+<tr class="memdesc:a9e42e9ae1b2d5de3237706c2a8cf9440"><td class="mdescLeft">&#160;</td><td class="mdescRight">It keeps the actual position of the utensil during an motion.  <a href="#a9e42e9ae1b2d5de3237706c2a8cf9440">More...</a><br /></td></tr>
+<tr class="separator:a9e42e9ae1b2d5de3237706c2a8cf9440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8830a7b387905027b8a1a9e3b31e3c7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#ad8830a7b387905027b8a1a9e3b31e3c7">spmmx</a></td></tr>
+<tr class="memdesc:ad8830a7b387905027b8a1a9e3b31e3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steps to move of a mm in the X-axis (steps/mm).  <a href="#ad8830a7b387905027b8a1a9e3b31e3c7">More...</a><br /></td></tr>
+<tr class="separator:ad8830a7b387905027b8a1a9e3b31e3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44dd3a48e5c03f3484cd223cb8f9444"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#ab44dd3a48e5c03f3484cd223cb8f9444">spmmy</a></td></tr>
+<tr class="memdesc:ab44dd3a48e5c03f3484cd223cb8f9444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steps to move of a mm in the Y-axis (steps/mm).  <a href="#ab44dd3a48e5c03f3484cd223cb8f9444">More...</a><br /></td></tr>
+<tr class="separator:ab44dd3a48e5c03f3484cd223cb8f9444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa08612e63f2cc3d3283fa06679b5d7a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#afa08612e63f2cc3d3283fa06679b5d7a">v_max_x</a></td></tr>
+<tr class="memdesc:afa08612e63f2cc3d3283fa06679b5d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max speed for the motor that controls the X-axis (steps/s).  <a href="#afa08612e63f2cc3d3283fa06679b5d7a">More...</a><br /></td></tr>
+<tr class="separator:afa08612e63f2cc3d3283fa06679b5d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3fe2fd85292f3f5d9d2e13078b6a42"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a5e3fe2fd85292f3f5d9d2e13078b6a42">v_max_y</a></td></tr>
+<tr class="memdesc:a5e3fe2fd85292f3f5d9d2e13078b6a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max speed for the motor that controls the Y-axis (steps/s).  <a href="#a5e3fe2fd85292f3f5d9d2e13078b6a42">More...</a><br /></td></tr>
+<tr class="separator:a5e3fe2fd85292f3f5d9d2e13078b6a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd35356064c7667cbdf21c44a7dd7cf5"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#afd35356064c7667cbdf21c44a7dd7cf5">pos_type</a></td></tr>
+<tr class="memdesc:afd35356064c7667cbdf21c44a7dd7cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It stores the information about the positioning type: true = incremental; false = absolute.  <a href="#afd35356064c7667cbdf21c44a7dd7cf5">More...</a><br /></td></tr>
+<tr class="separator:afd35356064c7667cbdf21c44a7dd7cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109a7c6e2a1e556e577f2ad09eefbef7"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a109a7c6e2a1e556e577f2ad09eefbef7">pin_ls_x_down</a></td></tr>
+<tr class="memdesc:a109a7c6e2a1e556e577f2ad09eefbef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin number where it is attached the down limit switch of the X-axis.  <a href="#a109a7c6e2a1e556e577f2ad09eefbef7">More...</a><br /></td></tr>
+<tr class="separator:a109a7c6e2a1e556e577f2ad09eefbef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19cd8e9840fbfab991f9cab1300abe04"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a19cd8e9840fbfab991f9cab1300abe04">pin_ls_y_down</a></td></tr>
+<tr class="memdesc:a19cd8e9840fbfab991f9cab1300abe04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin number where it is attached the down limit switch of the Y-axis.  <a href="#a19cd8e9840fbfab991f9cab1300abe04">More...</a><br /></td></tr>
+<tr class="separator:a19cd8e9840fbfab991f9cab1300abe04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af935b225740dd189dcdcdca7664eb850"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#af935b225740dd189dcdcdca7664eb850">pin_ls_x_up</a></td></tr>
+<tr class="memdesc:af935b225740dd189dcdcdca7664eb850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin number where it is attached the up limit switch of the X-axis.  <a href="#af935b225740dd189dcdcdca7664eb850">More...</a><br /></td></tr>
+<tr class="separator:af935b225740dd189dcdcdca7664eb850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056de16bac1a523455a7be2903e44f40"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a056de16bac1a523455a7be2903e44f40">pin_ls_y_up</a></td></tr>
+<tr class="memdesc:a056de16bac1a523455a7be2903e44f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin number where it is attached the up limit switch of the X-axis.  <a href="#a056de16bac1a523455a7be2903e44f40">More...</a><br /></td></tr>
+<tr class="separator:a056de16bac1a523455a7be2903e44f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class controls the motors of the xy router of the CNC. </p>
-<p>TODO </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
+<p>The class manages the motion control of the XY router. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2286f545f42ff5febfdb8d52782cd0da"></a>
 <div class="memitem">
@@ -154,6 +215,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor. </p>
 
 </div>
 </div>
@@ -193,6 +256,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spx</td><td>Step per one mm on the X-axis </td></tr>
+    <tr><td class="paramname">spy</td><td>Step per one mm on the Y-axis </td></tr>
+    <tr><td class="paramname">vmx</td><td>Max speed in steps per mm on the X-axis </td></tr>
+    <tr><td class="paramname">vmy</td><td>Max speed in steps per mm on the Y-axis </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -201,13 +275,15 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_position_x_y.html">PositionXY</a> CNC_Router::getPos </td>
+          <td class="memname">PositionXY CNC_Router::getPos </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It get the actual position of the utensil. </p>
 
 </div>
 </div>
@@ -224,6 +300,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It sets up a high precision mode to control the XY-axii. </p>
+<p>The function sets up the EIGHTH_STEP for A4988 and HALF_STEP for ULN2003A. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_m_s_m_c___a4988_8h.html">MSMC_A4988.h</a> <a class="el" href="class_m_s_m_c___u_l_n2003_a.html" title="Multi Stepper Motor Control with ULN2003A. ">MSMC_ULN2003A</a> </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a89f4cbde58844154f247d2bf02a167fb"></a>
@@ -238,6 +317,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It initializes the controller for the motor on the X-axis. It must be called one time before starting the motion opetations. </p>
 
 </div>
 </div>
@@ -254,6 +335,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It initializes the controller for the motor on the Y-axis. It must be called one time before starting the motion opetations. </p>
+
 </div>
 </div>
 <a class="anchor" id="a15e3fab9eefaa7a61403c0054e643901"></a>
@@ -268,6 +351,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It sets up a low precision mode to control the XY-axii. It is also the fastest control mode. </p>
+<p>The function sets up the FULL_STEP for A4988 and ULN2003A. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_m_s_m_c___a4988_8h.html">MSMC_A4988.h</a> <a class="el" href="class_m_s_m_c___u_l_n2003_a.html" title="Multi Stepper Motor Control with ULN2003A. ">MSMC_ULN2003A</a> </dd></dl>
 
 </div>
 </div>
@@ -301,6 +387,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It initializes a motion operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">px</td><td>The new position on the X-axis. </td></tr>
+    <tr><td class="paramname">py</td><td>The new position on the Y-axis </td></tr>
+    <tr><td class="paramname">spd</td><td>The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to <a class="el" href="class_c_n_c___router.html#afa08612e63f2cc3d3283fa06679b5d7a" title="The max speed for the motor that controls the X-axis (steps/s). ">CNC_Router::v_max_x</a> and <a class="el" href="class_c_n_c___router.html#a5e3fe2fd85292f3f5d9d2e13078b6a42" title="The max speed for the motor that controls the Y-axis (steps/s). ">CNC_Router::v_max_y</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a7eb9a8553f02ba626abbc32f98663759"></a>
@@ -310,7 +406,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void CNC_Router::moveTo </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_position_x_y.html">PositionXY</a> &amp;&#160;</td>
+          <td class="paramtype">const PositionXY &amp;&#160;</td>
           <td class="paramname"><em>np</em>, </td>
         </tr>
         <tr>
@@ -327,6 +423,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It initializes a motion operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">np</td><td>The new position on the XY-axii. </td></tr>
+    <tr><td class="paramname">spd</td><td>The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to <a class="el" href="class_c_n_c___router.html#afa08612e63f2cc3d3283fa06679b5d7a" title="The max speed for the motor that controls the X-axis (steps/s). ">CNC_Router::v_max_x</a> and <a class="el" href="class_c_n_c___router.html#a5e3fe2fd85292f3f5d9d2e13078b6a42" title="The max speed for the motor that controls the Y-axis (steps/s). ">CNC_Router::v_max_y</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a6b5ad1a227e63d3f374e0e53f3cf047c"></a>
@@ -341,6 +446,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It pauses the current motion operation. The router waits for <a class="el" href="class_c_n_c___router.html#ab36f29523c76dd9f64c1ab5367c8f3d3" title="It restarts a paused motion. ">CNC_Router::restart()</a> to continue and end the paused motion. </p>
 
 </div>
 </div>
@@ -357,20 +464,24 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It resets the position and assigns the value (0; 0) in the actual position of the utensil. </p>
+
 </div>
 </div>
-<a class="anchor" id="a08a32575c71fe10d3a693e1ad68eedc1"></a>
+<a class="anchor" id="ab36f29523c76dd9f64c1ab5367c8f3d3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CNC_Router::restat </td>
+          <td class="memname">void CNC_Router::restart </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It restarts a paused motion. </p>
 
 </div>
 </div>
@@ -387,6 +498,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It moves the utensil up to the home position. It is identified by the down limit switches on the YX-axis. </p>
+<p>Pay attention to check the correct installation of the down limit switches. If they do not work well, the function can damage your machine. </p>
+
 </div>
 </div>
 <a class="anchor" id="a8629d6232f16d039ff386b0f02d45895"></a>
@@ -402,6 +516,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It selects the absolute positioning mode. </p>
+
 </div>
 </div>
 <a class="anchor" id="abbda24db494dd328382639412570978e"></a>
@@ -416,6 +532,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It selects the incremental positioning mode. </p>
 
 </div>
 </div>
@@ -502,6 +620,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It stops the current motion operation. </p>
+
 </div>
 </div>
 <a class="anchor" id="a3a8982d9582e2144d38791626b3060e6"></a>
@@ -517,6 +637,319 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>It performs the movement configured with the CNC_Route::moveTo(). </p>
+<dl class="section return"><dt>Returns</dt><dd>It returns true if the motion id end, otherwise it returns false. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_m_s_m_c___a4988.html#a409bea28b42827c8bd7d5e5e318af21d" title="Perform the motion of the motor. ">MSMC_A4988::update()</a> and <a class="el" href="class_m_s_m_c___u_l_n2003_a.html#acdf6b6224352a90146e67ee9837d0a6f" title="Perform the motion of the motor. ">MSMC_ULN2003A::update()</a>. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9e42e9ae1b2d5de3237706c2a8cf9440"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PositionXY CNC_Router::actual_p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It keeps the actual position of the utensil during an motion. </p>
+
+</div>
+</div>
+<a class="anchor" id="afbc343929f49271f65f1eda7d28b8957"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PositionXY CNC_Router::end_p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The final position of a motion. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa6009653314607491aa277b1f3c9bf85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_m_s_m_c___a4988.html">MSMC_A4988</a> CNC_Router::mx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac3fb4521615d90ff7baa6bdb287d97c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_m_s_m_c___a4988.html">MSMC_A4988</a> CNC_Router::my</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adbaa016d11134c9dcef28fc38ff391e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PositionXY CNC_Router::old_p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It keeps the position that the utensil has after starting the motion. </p>
+
+</div>
+</div>
+<a class="anchor" id="a109a7c6e2a1e556e577f2ad09eefbef7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t CNC_Router::pin_ls_x_down</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pin number where it is attached the down limit switch of the X-axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="af935b225740dd189dcdcdca7664eb850"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t CNC_Router::pin_ls_x_up</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pin number where it is attached the up limit switch of the X-axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="a19cd8e9840fbfab991f9cab1300abe04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t CNC_Router::pin_ls_y_down</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pin number where it is attached the down limit switch of the Y-axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="a056de16bac1a523455a7be2903e44f40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t CNC_Router::pin_ls_y_up</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pin number where it is attached the up limit switch of the X-axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="afd35356064c7667cbdf21c44a7dd7cf5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean CNC_Router::pos_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It stores the information about the positioning type: true = incremental; false = absolute. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad8830a7b387905027b8a1a9e3b31e3c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CNC_Router::spmmx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Steps to move of a mm in the X-axis (steps/mm). </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="config_8h.html" title="The configuration file. ">config.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab44dd3a48e5c03f3484cd223cb8f9444"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CNC_Router::spmmy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Steps to move of a mm in the Y-axis (steps/mm). </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="config_8h.html" title="The configuration file. ">config.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afa08612e63f2cc3d3283fa06679b5d7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CNC_Router::v_max_x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The max speed for the motor that controls the X-axis (steps/s). </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="config_8h.html" title="The configuration file. ">config.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5e3fe2fd85292f3f5d9d2e13078b6a42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CNC_Router::v_max_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The max speed for the motor that controls the Y-axis (steps/s). </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="config_8h.html" title="The configuration file. ">config.h</a> </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -526,7 +959,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 8 2014 17:13:49 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

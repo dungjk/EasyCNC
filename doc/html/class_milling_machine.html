@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_milling_machine-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MillingMachine Class Reference</div>  </div>
@@ -151,6 +152,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac74c527eb504eb6f13d80fb64487c874"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#ac74c527eb504eb6f13d80fb64487c874">update</a> ()</td></tr>
 <tr class="memdesc:ac74c527eb504eb6f13d80fb64487c874"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function performs the motor motion. It must be called with a frequency greater than 1/(v/1000000) where v is the maximum speed of the motor specified as the minimum delay in microseconds between two consecutive steps.  <a href="#ac74c527eb504eb6f13d80fb64487c874">More...</a><br /></td></tr>
 <tr class="separator:ac74c527eb504eb6f13d80fb64487c874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a65ad29e41f924a1c2de233efdd21963c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_s_m_c___a4988.html">MSMC_A4988</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a65ad29e41f924a1c2de233efdd21963c">mz</a></td></tr>
+<tr class="separator:a65ad29e41f924a1c2de233efdd21963c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0224577fdd0206396817cdd62334f3b6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a0224577fdd0206396817cdd62334f3b6">old_p</a></td></tr>
+<tr class="memdesc:a0224577fdd0206396817cdd62334f3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The old position in mm.  <a href="#a0224577fdd0206396817cdd62334f3b6">More...</a><br /></td></tr>
+<tr class="separator:a0224577fdd0206396817cdd62334f3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20735dbad8367b9e46380de13d1c0ae3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a20735dbad8367b9e46380de13d1c0ae3">end_p</a></td></tr>
+<tr class="memdesc:a20735dbad8367b9e46380de13d1c0ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The end position in mm.  <a href="#a20735dbad8367b9e46380de13d1c0ae3">More...</a><br /></td></tr>
+<tr class="separator:a20735dbad8367b9e46380de13d1c0ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a16666c6cf4a33f3279e459d5de089"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a45a16666c6cf4a33f3279e459d5de089">actual_p</a></td></tr>
+<tr class="memdesc:a45a16666c6cf4a33f3279e459d5de089"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual position in mm.  <a href="#a45a16666c6cf4a33f3279e459d5de089">More...</a><br /></td></tr>
+<tr class="separator:a45a16666c6cf4a33f3279e459d5de089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab82a92b8eeab7eb5e820314a7ac01dd8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#ab82a92b8eeab7eb5e820314a7ac01dd8">bit_speed</a></td></tr>
+<tr class="memdesc:ab82a92b8eeab7eb5e820314a7ac01dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The speed of the drill bit.  <a href="#ab82a92b8eeab7eb5e820314a7ac01dd8">More...</a><br /></td></tr>
+<tr class="separator:ab82a92b8eeab7eb5e820314a7ac01dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce9e8b53197142881889d113424f3be"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a5ce9e8b53197142881889d113424f3be">bit_dir</a></td></tr>
+<tr class="memdesc:a5ce9e8b53197142881889d113424f3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The direction of the drill bit: CW = true or CCW = false.  <a href="#a5ce9e8b53197142881889d113424f3be">More...</a><br /></td></tr>
+<tr class="separator:a5ce9e8b53197142881889d113424f3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774f8f3491b4888cd9418c745e922199"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a774f8f3491b4888cd9418c745e922199">spmm</a></td></tr>
+<tr class="memdesc:a774f8f3491b4888cd9418c745e922199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to move of a mm the milling machine on the z-axis (steps/mm)  <a href="#a774f8f3491b4888cd9418c745e922199">More...</a><br /></td></tr>
+<tr class="separator:a774f8f3491b4888cd9418c745e922199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad412aad77721bcbc65de8072d7db7b3f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#ad412aad77721bcbc65de8072d7db7b3f">v_max_z</a></td></tr>
+<tr class="memdesc:ad412aad77721bcbc65de8072d7db7b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max speed of the milling machine on the z-axis (steps/s)  <a href="#ad412aad77721bcbc65de8072d7db7b3f">More...</a><br /></td></tr>
+<tr class="separator:ad412aad77721bcbc65de8072d7db7b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ae1c0f1d5c73fc3888c231a1a8b426"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a46ae1c0f1d5c73fc3888c231a1a8b426">pos_type</a></td></tr>
+<tr class="memdesc:a46ae1c0f1d5c73fc3888c231a1a8b426"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the position info: true = incremental; false = absolute.  <a href="#a46ae1c0f1d5c73fc3888c231a1a8b426">More...</a><br /></td></tr>
+<tr class="separator:a46ae1c0f1d5c73fc3888c231a1a8b426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af874e2e54a7780872311d2e827263aff"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#af874e2e54a7780872311d2e827263aff">pin_ls_z_down</a></td></tr>
+<tr class="memdesc:af874e2e54a7780872311d2e827263aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number connected to the down limit swtch.  <a href="#af874e2e54a7780872311d2e827263aff">More...</a><br /></td></tr>
+<tr class="separator:af874e2e54a7780872311d2e827263aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b61ede8613f69461d1b9c7d5a1ee3e"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a72b61ede8613f69461d1b9c7d5a1ee3e">pin_ls_z_up</a></td></tr>
+<tr class="memdesc:a72b61ede8613f69461d1b9c7d5a1ee3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number connected to the up limit swtch.  <a href="#a72b61ede8613f69461d1b9c7d5a1ee3e">More...</a><br /></td></tr>
+<tr class="separator:a72b61ede8613f69461d1b9c7d5a1ee3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to control a the milling machine and its position on the z-axis. </p>
@@ -213,9 +249,6 @@ Public Member Functions</h2></td></tr>
 <a class="anchor" id="a5ef6a6c373681cec0b7128d50e9321c3"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float MillingMachine::getPos </td>
@@ -224,11 +257,6 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>The function returns the position of the utensil in the Z-axis. </p>
@@ -541,6 +569,247 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a45a16666c6cf4a33f3279e459d5de089"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MillingMachine::actual_p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The actual position in mm. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5ce9e8b53197142881889d113424f3be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean MillingMachine::bit_dir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The direction of the drill bit: CW = true or CCW = false. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab82a92b8eeab7eb5e820314a7ac01dd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MillingMachine::bit_speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The speed of the drill bit. </p>
+
+</div>
+</div>
+<a class="anchor" id="a20735dbad8367b9e46380de13d1c0ae3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MillingMachine::end_p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The end position in mm. </p>
+
+</div>
+</div>
+<a class="anchor" id="a65ad29e41f924a1c2de233efdd21963c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_m_s_m_c___a4988.html">MSMC_A4988</a> MillingMachine::mz</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0224577fdd0206396817cdd62334f3b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MillingMachine::old_p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The old position in mm. </p>
+
+</div>
+</div>
+<a class="anchor" id="af874e2e54a7780872311d2e827263aff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t MillingMachine::pin_ls_z_down</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The pin number connected to the down limit swtch. </p>
+
+</div>
+</div>
+<a class="anchor" id="a72b61ede8613f69461d1b9c7d5a1ee3e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t MillingMachine::pin_ls_z_up</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The pin number connected to the up limit swtch. </p>
+
+</div>
+</div>
+<a class="anchor" id="a46ae1c0f1d5c73fc3888c231a1a8b426"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean MillingMachine::pos_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The type of the position info: true = incremental; false = absolute. </p>
+
+</div>
+</div>
+<a class="anchor" id="a774f8f3491b4888cd9418c745e922199"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MillingMachine::spmm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of steps to move of a mm the milling machine on the z-axis (steps/mm) </p>
+
+</div>
+</div>
+<a class="anchor" id="ad412aad77721bcbc65de8072d7db7b3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MillingMachine::v_max_z</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The max speed of the milling machine on the z-axis (steps/s) </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_utensils_8h_source.html">Utensils.h</a></li>
 <li><a class="el" href="_utensils_8cpp.html">Utensils.cpp</a></li>
@@ -548,7 +817,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 20 2014 13:48:18 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 8 2014 17:13:49 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

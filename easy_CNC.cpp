@@ -30,7 +30,7 @@ void setup() {
 void loop() {
 #ifndef _TEST
 	tloop.start();
-	a = mycnc.update();
+	a = cncrt.update();
 	b = mill.update();
 	tloop.stop();
 	if (a && b) {
@@ -47,20 +47,20 @@ void loop() {
 
 		if (Serial.available() > 0) {
 			switch (Serial.parseInt()) {
-			case 0:
+				case 0:
 				//mypen.up();
 				processPos();
 				break;
-			case 1:
+				case 1:
 				//mypen.down();
 				processPos();
 				break;
-			case 2:
-				mycnc.resetPos();
+				case 2:
+				cncrt.resetPos();
 				mill.resetPos();
 				break;
-			case 3:
-				mycnc.searchHomePos();
+				case 3:
+				cncrt.searchHomePos();
 				mill.searchZeroPos();
 			}
 

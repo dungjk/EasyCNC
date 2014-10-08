@@ -126,7 +126,7 @@
 // ******************
 
 #define _TEST
-#define DBGLN(x) Serial.println(x)
+#define DBGNL(x) Serial.println(x)
 #define DBG(x) Serial.print(x)
 
 #endif
