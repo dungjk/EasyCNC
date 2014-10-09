@@ -9,8 +9,8 @@
 
 GCode::GCode(CNC_Router *rt, MillingMachine *ml) {
 	moving = plane_select = distanse_mode = forward_mode = unit =
-			utensil_offset = loop_return = coordinate =
-					path_control = parser_status;
+			utensil_offset = loop_return = coordinate = path_control =
+					parser_status;
 	drill_speed = feed_rate = 0.0;
 	new_pos_z = 0.0;
 	memset(last_word, UNSPECIFIED, 16);
@@ -314,10 +314,15 @@ int GCode::parseLine() {
 				alpha = 2 * asin(ARCH_DEFINITION / (2 * r));
 				//Computation of the angle from start_p to new_pos_xy
 				angle_end = center.angle(new_pos_xy);
-				angle_next_p = center.angle(start_p) + alpha;
+				angle_next_p = center.angle(start_p);
+
 				PositionXY tmp;
 
 				if (last_word[GROUP1] == G2) {
+					if (angle_end < angle_next_p) // In the case of the atan2 function returns a angle_end value smaller then the start angle.
+						angle_end += 2 * PI;
+
+					angle_next_p += alpha;
 					while (angle_next_p < angle_end) {
 						router->moveTo(center + tmp.polar(r, angle_next_p),
 								feed_rate);
@@ -327,6 +332,10 @@ int GCode::parseLine() {
 					router->moveTo(new_pos_xy, feed_rate);
 					runMotion();
 				} else {
+					if (angle_end > angle_next_p) // In the case of the atan2 function returns a angle_end value greater then the start angle.
+						angle_end += 2 * PI;
+
+					angle_next_p -= alpha;
 					while (angle_next_p > angle_end) {
 						router->moveTo(center + tmp.polar(r, angle_next_p),
 								feed_rate);

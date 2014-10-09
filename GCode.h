@@ -85,7 +85,7 @@ public:
 	 */
 	int getInt(int &p);//TODO: make it similar to getFloat, mi sa che non è più stata usata questa funzione
 
-	//! \brief The function call the update functions to perform the motors motion. See CNC_Router::update and MillingMachine::update.
+	//! \brief The function calls the update functions to perform the motors motion. See CNC_Router::update and MillingMachine::update.
 	int runMotion();
 
 	/*! \brief The function reads a float value in the GCode::line variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line.
