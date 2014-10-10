@@ -29,43 +29,12 @@ void setup() {
 // The loop function is called in an endless loop
 void loop() {
 #ifndef _TEST
-	tloop.start();
-	a = cncrt.update();
-	b = mill.update();
-	tloop.stop();
-	if (a && b) {
+	if (Serial.available() > 0) {
+		memset(new_line, '\0', 256);
+		Serial.readBytesUntil('\n', new_line, 256);
+		gc.line = new_line;
+		gc.parseLine();
 
-		if (end_task) {
-			//Serial.println('a');
-			Serial.print("Min: ");
-			Serial.println(tloop.getMin());
-			Serial.print("Max: ");
-			Serial.println(tloop.getMax());
-
-			end_task = false;
-		}
-
-		if (Serial.available() > 0) {
-			switch (Serial.parseInt()) {
-				case 0:
-				//mypen.up();
-				processPos();
-				break;
-				case 1:
-				//mypen.down();
-				processPos();
-				break;
-				case 2:
-				cncrt.resetPos();
-				mill.resetPos();
-				break;
-				case 3:
-				cncrt.searchHomePos();
-				mill.searchZeroPos();
-			}
-
-			end_task = true;
-		}
 	}
 #endif
 #ifdef _TEST

@@ -171,7 +171,8 @@ int GCode::parseLine() {
 			DBGNL((int )trunc(val));
 			break;
 		case 'F':
-			feed_rate = val;
+			//the F's value is in units/minute, instead the motion control needs a feed rate in units/s
+			feed_rate = val/60.0;
 			break;
 		case 'R':
 			motion_command = pars_spec[PARAM_R] = true;
