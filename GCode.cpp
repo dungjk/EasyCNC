@@ -43,6 +43,22 @@ boolean GCode::getFloat(uint8_t &pos, float &val) {
 	return false;
 }
 
+void GCode::returnStatus() {
+	Serial.print(router->getPos().X());
+	Serial.print(":");
+	Serial.print(router->getPos().Y());
+	Serial.print(":");
+	Serial.print(utensil->getPos());
+	Serial.print(":");
+	Serial.print(feed_rate*60);
+	Serial.print(":");
+	Serial.println(parser_status);
+}
+
+void GCode::resetStatus(){
+	parser_status = STATUS_OK;
+}
+
 boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
 	if (pos == len) {
 		parser_status = STATUS_OK;
@@ -74,9 +90,34 @@ int GCode::runMotion() {
 }
 
 int GCode::parseLine() {
+	//Special commands that starts with "$"
+	if(line[0] == '$'){
+		switch(line.length()){
+		case 2:
+			switch(line[1]){
+			case 'r':
+				resetStatus();
+				break;
+			case 'p':
+				router->resetPos();
+				utensil->resetPos();
+				break;
+			}
+		}
+
+		returnStatus();
+		return parser_status;
+	}
+
+	if(parser_status != STATUS_OK){
+		returnStatus();
+		return parser_status;
+	}
+
+	//G-Code commands
 	removeSpaces();
-	DBGNL(line);
-	DBGNL(line.length());
+	/*DBGNL(line);
+	DBGNL(line.length());*/
 
 	new_pos_xy = router->getPos();
 	new_pos_z = utensil->getPos();
@@ -160,19 +201,20 @@ int GCode::parseLine() {
 				last_word[GROUP12] = G54;
 				break;
 			default:
-				DBG("Unsupported command ");
+				/*DBG("Unsupported command ");
 				DBG(type);
-				DBGNL(val);
+				DBGNL(val);*/
+				parser_status = STATUS_UNSUPPORTED;
 			}
 			;
 			break;
 		case 'M':
-			DBG(type);
-			DBGNL((int )trunc(val));
+			/*DBG(type);
+			DBGNL((int )trunc(val));*/
 			break;
 		case 'F':
 			//the F's value is in units/minute, instead the motion control needs a feed rate in units/s
-			feed_rate = val/60.0;
+			feed_rate = val / 60.0;
 			break;
 		case 'R':
 			motion_command = pars_spec[PARAM_R] = true;
@@ -224,37 +266,37 @@ int GCode::parseLine() {
 		case G0:
 			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
 					|| pars_spec[PARAM_Z]) {
-				DBG("Rapid motion to X= ");
+				/*DBG("Rapid motion to X= ");
 				DBG(new_pos_xy.X());
 				DBG(", Y=");
 				DBG(new_pos_xy.Y());
 				DBG(", Z=");
-				DBGNL(new_pos_z);
+				DBGNL(new_pos_z);*/
 				utensil->moveTo(new_pos_z);
 				router->moveTo(new_pos_xy);
 				runMotion();
 			} else {
 				parser_status = STATUS_SYNTAX_ERROR;
-				return parser_status;
+				//return parser_status;
 			}
 			break;
 		case G1:
 			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
 					|| pars_spec[PARAM_Z]) {
-				DBG("Working motion to X= ");
+				/*DBG("Working motion to X= ");
 				DBG(new_pos_xy.X());
 				DBG(", Y=");
 				DBG(new_pos_xy.Y());
 				DBG(", Z=");
 				DBG(new_pos_z);
 				DBG(", F=");
-				DBGNL(feed_rate);
+				DBGNL(feed_rate);*/
 				utensil->moveTo(new_pos_z, feed_rate);
 				router->moveTo(new_pos_xy, feed_rate);
 				runMotion();
 			} else {
 				parser_status = STATUS_SYNTAX_ERROR;
-				return parser_status;
+				//return parser_status;
 			}
 			break;
 		case G2:
@@ -273,17 +315,17 @@ int GCode::parseLine() {
 				r = params[PARAM_R];
 				float gamma = acos(dist / (2 * r));
 
-				DBG("Arch with radius X=");
+				/*DBG("Arch with radius X=");
 				DBG(new_pos_xy.X());
 				DBG(", Y=");
 				DBG(new_pos_xy.Y());
 				DBG(", R=");
 				DBG(r);
 				DBG(", F=");
-				DBGNL(feed_rate);
+				DBGNL(feed_rate);*/
 
 				//it depends on the sign of the radius value
-				if (last_word[GROUP1] == G2) {
+				if (last_word[GROUP1] == G3) {
 					center.polar(r, (r > 0) ? beta + gamma : beta - gamma);
 				} else {
 					center.polar(r, (r > 0) ? beta - gamma : beta + gamma);
@@ -298,7 +340,7 @@ int GCode::parseLine() {
 				center = start_p;
 				r = offset.module();
 				center += offset;  // the center of the cyrcle
-				DBG("Arch with center X=");
+				/*DBG("Arch with center X=");
 				DBG(new_pos_xy.X());
 				DBG(", Y=");
 				DBG(new_pos_xy.Y());
@@ -307,7 +349,9 @@ int GCode::parseLine() {
 				DBG(", J=");
 				DBG(offset.Y());
 				DBG(", F=");
-				DBGNL(feed_rate);
+				DBGNL(feed_rate);*/
+			}else{
+				parser_status = STATUS_SYNTAX_ERROR;
 			}
 
 			if (can_move) {
@@ -319,7 +363,7 @@ int GCode::parseLine() {
 
 				PositionXY tmp;
 
-				if (last_word[GROUP1] == G2) {
+				if (last_word[GROUP1] == G3) {
 					if (angle_end < angle_next_p) // In the case of the atan2 function returns a angle_end value smaller then the start angle.
 						angle_end += 2 * PI;
 
@@ -352,10 +396,8 @@ int GCode::parseLine() {
 
 	}
 
-	DBG("CG status: ");
-	DBGNL(parser_status);
-	parser_status = STATUS_OK;
-	return 0;
+	returnStatus();
+	return parser_status;
 }
 
 void GCode::removeSpaces() {

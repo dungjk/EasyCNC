@@ -72,7 +72,8 @@ public:
 
 	/*! \brief The function parses a line of G-Code.
 	 *  \details In this function is implemented the action for the recognized words of GCode.
-	 *  \return TODO I have to see better what it has to return.
+	 *           It also executes control commands that starts with the char "$".
+	 *  \return The function return the parser status.
 	 */
 	int parseLine();
 
@@ -94,6 +95,16 @@ public:
 	 *  \return The function returns false if it is ok, true if the line is end.
 	 */
 	boolean getFloat(uint8_t &pos, float &val);
+
+	/*! \brief It returns the status of the CNC machine.
+	 *  \details The function sends the status of the CNC machine on the serial link.
+	 *           It is a string of number separated by ":". The string is formatted as follow:
+	 *           "X:Y:Z:FEED_RATE:ERR_MSG".
+	 */
+	void returnStatus();
+
+	//! \brief In case of status of error, the function resets the parser at the STATUS_OK.
+	void resetStatus();
 };
 
 #endif /* GCODE_H_ */

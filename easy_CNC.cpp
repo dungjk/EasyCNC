@@ -34,7 +34,6 @@ void loop() {
 		Serial.readBytesUntil('\n', new_line, 256);
 		gc.line = new_line;
 		gc.parseLine();
-
 	}
 #endif
 #ifdef _TEST
