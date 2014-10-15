@@ -137,7 +137,6 @@ public:
 	 */
 	void searchHomePos();
 
-	//TODO: implement getPos()
 	//! \brief It get the actual position of the utensil.
 	PositionXY getPos();
 
@@ -146,6 +145,16 @@ public:
 	 *  \sa MSMC_A4988::update() and MSMC_ULN2003A::update().
 	 */
 	boolean update();
+
+	/*! \brief The function sets the orientation of X-axis.
+	 *  \param v 1 for direct orientation, -1 for invertedorientation
+	 */
+	void orientationX(int8_t v);
+
+	/*! \brief The function sets the orientation of X-axis.
+	 *  \param v 1 for direct orientation, -1 for invertedorientation
+	 */
+	void orientationY(int8_t v);
 
 };
 

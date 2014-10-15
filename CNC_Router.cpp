@@ -220,3 +220,11 @@ void CNC_Router::setLimitSwitchY(int8_t dw, int8_t up) {
 PositionXY CNC_Router::getPos() {
 	return actual_p;
 }
+
+void CNC_Router::orientationX(int8_t v){
+	mx.setOrientation(v);
+}
+
+void CNC_Router::orientationY(int8_t v){
+	my.setOrientation(v);
+}

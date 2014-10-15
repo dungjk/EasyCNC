@@ -27,7 +27,7 @@
 
 #include "pins_arduino.h"
 
-#define SERIAL_BOUND 9600
+#define SERIAL_BOUND 115200
 #define INTERRUPT_STOP_MOTION 1
 
 

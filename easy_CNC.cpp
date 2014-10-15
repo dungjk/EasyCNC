@@ -11,6 +11,7 @@ void setup() {
 	cncrt.setAbsolPos();
 	cncrt.setLimitSwitchX(ROUTER_DOWN_LIMIT_SWITCH_X);
 	cncrt.setLimitSwitchY(ROUTER_DOWN_LIMIT_SWITCH_Y);
+	cncrt.orientationX(-1);
 
 	mill.init();
 	mill.resetPos();
@@ -23,7 +24,7 @@ void setup() {
 
 	//mypen.init();
 
-	Serial.begin(9600);
+	Serial.begin(SERIAL_BOUND);
 }
 
 // The loop function is called in an endless loop

@@ -10,6 +10,7 @@
 MSMC_A4988::MSMC_A4988() {
 	pin_step = pin_dir = pin_enable = spd = steps = tot_steps = old_time =
 			pause_time = dir = control_mode = 0;
+	orientation = 1;
 	m_ready = false;
 	m_pause = false;
 	step_pin_val = LOW;
@@ -21,6 +22,7 @@ MSMC_A4988::MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen) {
 	pin_step = pst;
 	spd = steps = tot_steps = old_time = pause_time = dir =
 			control_mode = 0;
+	orientation = 1;
 	pinMode(pin_dir, OUTPUT);
 	pinMode(pin_enable, OUTPUT);
 	pinMode(pin_step, OUTPUT);
@@ -30,9 +32,9 @@ MSMC_A4988::MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen) {
 }
 
 void MSMC_A4988::setDirection() {
-	if (dir  == 1) {
+	if (dir  == (1*orientation)) {
 		digitalWrite(pin_dir, HIGH);
-	} else if (dir == -1) {
+	} else if (dir == (-1*orientation)) {
 		digitalWrite(pin_dir, LOW);
 	}
 }
@@ -151,5 +153,9 @@ boolean MSMC_A4988::update() {
 
 uint32_t MSMC_A4988::getSteps() {
 	return steps;
+}
+
+void MSMC_A4988::setOrientation(int8_t v){
+	orientation = v;
 }
 

@@ -45,17 +45,6 @@ void stopButton(){
   cncrt.stopMotion();
 }
 
-void processPos(){
-  float new_x, new_y, new_z, spd;
-  new_x = Serial.parseFloat();
-  new_y = Serial.parseFloat();
-  new_z = Serial.parseFloat();
-  spd = Serial.parseFloat();
-  Serial.read();
-  mill.moveTo(new_z, spd);
-  cncrt.moveTo(new_x, new_y, spd);
-}
-
 
 //Do not add code below this line
 #endif /* _easy_CNC_H_ */

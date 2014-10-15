@@ -34,7 +34,8 @@ class MSMC_A4988: public MSMC {
 	tot_steps, /*!< \brief The total steps set by forward() and backward(). */
 	old_time, /*!< \brief The time value in microseconds set during the last step. */
 	pause_time; /*!< \brief The time value in microseconds set by the function MSMC_ULN2003A::pause(). */
-	int8_t dir; /*!< \brief Specify the direction of the motor: -1 backward, 1 forward, 0 all pin out LOW */
+	int8_t dir, /*!< \brief Specify the direction of the motor: -1 backward, 1 forward, 0 all pin out LOW */
+	       orientation; /*!< \brief 1 to actual orientation, -1 to inverted orientation*/
 	boolean m_ready; /*!< \brief True if the motor is ready to take a new command: forward(uint32_t, uint32_t) or backward(uint32_t, uint32_t). */
 	boolean step_pin_val; /*!< \brief The value of the pin that drives the step advance */
 	uint8_t control_mode; /*!< \brief Specify the control mode of the motor: 1 full step, 2 half step, 4 quarter step, 8 eighth step and 16 sixteenth step. */
@@ -134,6 +135,11 @@ public:
 	 *  \return The number of steps.
 	 */
 	uint32_t getSteps();
+
+	/*! \brief The function sets the orientation of the associated axis.
+	 *  \param v 1 to set the current orientation, -1 to set an inverted orientation.
+	 */
+	void setOrientation(int8_t v);
 
 };
 

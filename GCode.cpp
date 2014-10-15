@@ -8,9 +8,7 @@
 #include "GCode.h"
 
 GCode::GCode(CNC_Router *rt, MillingMachine *ml) {
-	moving = plane_select = distanse_mode = forward_mode = unit =
-			utensil_offset = loop_return = coordinate = path_control =
-					parser_status;
+	parser_status = 0;
 	drill_speed = feed_rate = 0.0;
 	new_pos_z = 0.0;
 	memset(last_word, UNSPECIFIED, 16);
@@ -72,7 +70,7 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
 	pos++;
 
 	if (getFloat(pos, val)) {
-		parser_status = STATUS_BAD_WORD;
+		//Serial.println("getFloat");
 		return false;
 	}
 	return true;

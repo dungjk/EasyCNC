@@ -39,16 +39,6 @@ public:
 	float feed_rate;      //!< The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch)
 	float drill_speed;	  //!< The speed of the drill
 
-	uint8_t moving;
-	uint8_t plane_select;
-	uint8_t distanse_mode;
-	uint8_t forward_mode;
-	uint8_t unit;            //!< The length unit: mm or inch
-	uint8_t utensil_offset;
-	uint8_t loop_return;
-	uint8_t coordinate;
-	uint8_t path_control;
-
 	uint8_t parser_status;    //!< The status of the parser. \sa GCode_def.h
 	uint8_t last_word[16];    //!< Here the class stores the last word red for each group. \sa GCode_def.h
 	PositionXY new_pos_xy;    //!< The class stores the new position red from the G-Code line
