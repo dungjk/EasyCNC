@@ -71,10 +71,10 @@ public:
 	 */
 	CNC_Router(float spx, float spy, float vmx, float vmy);
 
-	//! \brief It initializes the controller for the motor on the X-axis. It must be called one time before starting the motion opetations
+	//! \brief It initializes the controller for the motor on the X-axis. It must be called one time before starting the motion operations
 	void initMotorX();
 
-	//! \brief It initializes the controller for the motor on the Y-axis. It must be called one time before starting the motion opetations
+	//! \brief It initializes the controller for the motor on the Y-axis. It must be called one time before starting the motion operations
 	void initMotorY();
 
 	/*! \brief Sets the pins where are attached the down/up limit switches
@@ -147,12 +147,12 @@ public:
 	boolean update();
 
 	/*! \brief The function sets the orientation of X-axis.
-	 *  \param v 1 for direct orientation, -1 for invertedorientation
+	 *  \param v 1 for direct orientation, -1 for inverted orientation
 	 */
 	void orientationX(int8_t v);
 
 	/*! \brief The function sets the orientation of X-axis.
-	 *  \param v 1 for direct orientation, -1 for invertedorientation
+	 *  \param v 1 for direct orientation, -1 for inverted orientation
 	 */
 	void orientationY(int8_t v);
 

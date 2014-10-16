@@ -25,14 +25,15 @@ void setup() {
 	//mypen.init();
 
 	Serial.begin(SERIAL_BOUND);
+
 }
 
 // The loop function is called in an endless loop
 void loop() {
 #ifndef _TEST
 	if (Serial.available() > 0) {
-		memset(new_line, '\0', 256);
-		Serial.readBytesUntil('\n', new_line, 256);
+		//memset(new_line, '\0', 256);
+		new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
 		gc.line = new_line;
 		gc.parseLine();
 	}

@@ -8,7 +8,7 @@
 #include "GCode.h"
 
 GCode::GCode(CNC_Router *rt, MillingMachine *ml) {
-	parser_status = 0;
+	parser_status = STATUS_OK;
 	drill_speed = feed_rate = 0.0;
 	new_pos_z = 0.0;
 	memset(last_word, UNSPECIFIED, 16);
@@ -48,18 +48,20 @@ void GCode::returnStatus() {
 	Serial.print(":");
 	Serial.print(utensil->getPos());
 	Serial.print(":");
-	Serial.print(feed_rate*60);
+	Serial.print(feed_rate * 60);
 	Serial.print(":");
 	Serial.println(parser_status);
+	/*Serial.print(":");
+	Serial.println(line);*/
 }
 
-void GCode::resetStatus(){
+void GCode::resetStatus() {
 	parser_status = STATUS_OK;
 }
 
 boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
 	if (pos == len) {
-		parser_status = STATUS_OK;
+		//parser_status = STATUS_OK;
 		return false;
 	}
 	if (line[pos] < 'A' || line[pos] > 'Z') {
@@ -70,7 +72,8 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
 	pos++;
 
 	if (getFloat(pos, val)) {
-		//Serial.println("getFloat");
+
+		parser_status = STATUS_BAD_WORD;
 		return false;
 	}
 	return true;
@@ -88,11 +91,12 @@ int GCode::runMotion() {
 }
 
 int GCode::parseLine() {
+	removeSpaces();
 	//Special commands that starts with "$"
-	if(line[0] == '$'){
-		switch(line.length()){
+	if (line[0] == '$') {
+		switch (line.length()) {
 		case 2:
-			switch(line[1]){
+			switch (line[1]) {
 			case 'r':
 				resetStatus();
 				break;
@@ -107,15 +111,15 @@ int GCode::parseLine() {
 		return parser_status;
 	}
 
-	if(parser_status != STATUS_OK){
+	if (parser_status != STATUS_OK) {
 		returnStatus();
 		return parser_status;
 	}
 
 	//G-Code commands
-	removeSpaces();
+
 	/*DBGNL(line);
-	DBGNL(line.length());*/
+	 DBGNL(line.length());*/
 
 	new_pos_xy = router->getPos();
 	new_pos_z = utensil->getPos();
@@ -174,6 +178,14 @@ int GCode::parseLine() {
 				// Millimeters
 				last_word[GROUP6] = G21;
 				break;
+			case 40:
+				// Disable radius compensation
+				last_word[GROUP7] = G40;
+				break;
+			case 64:
+				// Contunuous mode
+				last_word[GROUP13] = G64;
+				break;
 			case 90:
 				// Absolute distance mode
 				last_word[GROUP3] = G90;
@@ -200,15 +212,15 @@ int GCode::parseLine() {
 				break;
 			default:
 				/*DBG("Unsupported command ");
-				DBG(type);
-				DBGNL(val);*/
+				 DBG(type);
+				 DBGNL(val);*/
 				parser_status = STATUS_UNSUPPORTED;
 			}
 			;
 			break;
 		case 'M':
 			/*DBG(type);
-			DBGNL((int )trunc(val));*/
+			 DBGNL((int )trunc(val));*/
 			break;
 		case 'F':
 			//the F's value is in units/minute, instead the motion control needs a feed rate in units/s
@@ -245,7 +257,8 @@ int GCode::parseLine() {
 			params[PARAM_P] = val;
 			pars_spec[PARAM_P] = true;
 			break;
-
+		default:
+			parser_status = STATUS_UNSUPPORTED;
 		};
 
 	}
@@ -265,11 +278,11 @@ int GCode::parseLine() {
 			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
 					|| pars_spec[PARAM_Z]) {
 				/*DBG("Rapid motion to X= ");
-				DBG(new_pos_xy.X());
-				DBG(", Y=");
-				DBG(new_pos_xy.Y());
-				DBG(", Z=");
-				DBGNL(new_pos_z);*/
+				 DBG(new_pos_xy.X());
+				 DBG(", Y=");
+				 DBG(new_pos_xy.Y());
+				 DBG(", Z=");
+				 DBGNL(new_pos_z);*/
 				utensil->moveTo(new_pos_z);
 				router->moveTo(new_pos_xy);
 				runMotion();
@@ -282,13 +295,13 @@ int GCode::parseLine() {
 			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
 					|| pars_spec[PARAM_Z]) {
 				/*DBG("Working motion to X= ");
-				DBG(new_pos_xy.X());
-				DBG(", Y=");
-				DBG(new_pos_xy.Y());
-				DBG(", Z=");
-				DBG(new_pos_z);
-				DBG(", F=");
-				DBGNL(feed_rate);*/
+				 DBG(new_pos_xy.X());
+				 DBG(", Y=");
+				 DBG(new_pos_xy.Y());
+				 DBG(", Z=");
+				 DBG(new_pos_z);
+				 DBG(", F=");
+				 DBGNL(feed_rate);*/
 				utensil->moveTo(new_pos_z, feed_rate);
 				router->moveTo(new_pos_xy, feed_rate);
 				runMotion();
@@ -314,13 +327,13 @@ int GCode::parseLine() {
 				float gamma = acos(dist / (2 * r));
 
 				/*DBG("Arch with radius X=");
-				DBG(new_pos_xy.X());
-				DBG(", Y=");
-				DBG(new_pos_xy.Y());
-				DBG(", R=");
-				DBG(r);
-				DBG(", F=");
-				DBGNL(feed_rate);*/
+				 DBG(new_pos_xy.X());
+				 DBG(", Y=");
+				 DBG(new_pos_xy.Y());
+				 DBG(", R=");
+				 DBG(r);
+				 DBG(", F=");
+				 DBGNL(feed_rate);*/
 
 				//it depends on the sign of the radius value
 				if (last_word[GROUP1] == G3) {
@@ -339,16 +352,16 @@ int GCode::parseLine() {
 				r = offset.module();
 				center += offset;  // the center of the cyrcle
 				/*DBG("Arch with center X=");
-				DBG(new_pos_xy.X());
-				DBG(", Y=");
-				DBG(new_pos_xy.Y());
-				DBG(", I=");
-				DBG(offset.X());
-				DBG(", J=");
-				DBG(offset.Y());
-				DBG(", F=");
-				DBGNL(feed_rate);*/
-			}else{
+				 DBG(new_pos_xy.X());
+				 DBG(", Y=");
+				 DBG(new_pos_xy.Y());
+				 DBG(", I=");
+				 DBG(offset.X());
+				 DBG(", J=");
+				 DBG(offset.Y());
+				 DBG(", F=");
+				 DBGNL(feed_rate);*/
+			} else {
 				parser_status = STATUS_SYNTAX_ERROR;
 			}
 
