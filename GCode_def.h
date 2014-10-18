@@ -122,7 +122,7 @@
 #define UNSPECIFIED 0
 
 //other parameters
-#define PARAMS	11
+#define PARAMS	12
 #define PARAM_X 0
 #define PARAM_Y 1
 #define PARAM_Z 2
@@ -134,6 +134,7 @@
 #define PARAM_J 8
 #define PARAM_K 9
 #define PARAM_R 10
+#define PARAM_L 11
 
 //PARSER STATUS
 #define STATUS_OK 0
@@ -142,6 +143,6 @@
 #define STATUS_UNSUPPORTED 3
 
 //THE LENGHT OF THE SEGMENTS THAT FORM AN ARCH
-#define ARCH_DEFINITION 1
+#define ARCH_DEFINITION 0.3
 
 #endif

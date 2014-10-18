@@ -44,11 +44,18 @@ class CNC_Router {
 	MSMC_A4988 my;
 #endif
 
+#if defined(ROUTER_MZ_CONTROLLER_ULN2003A)
+	MSMC_ULN2003A mz;
+#elif defined(ROUTER_MZ_CONTROLLER_A4988)
+	MSMC_A4988 mz;
+#endif
+
 	PositionXY old_p, //!< It keeps the position that the utensil has after starting the motion
 			end_p, 					//!< The final position of a motion
 			actual_p; //!< It keeps the actual position of the utensil during an motion
 	float spmmx, //!< Steps to move of a mm in the X-axis (steps/mm). \sa config.h
-			spmmy; //!< Steps to move of a mm in the Y-axis (steps/mm). \sa config.h
+			spmmy, //!< Steps to move of a mm in the Y-axis (steps/mm). \sa config.h
+	spmmz; //!< Steps to move of a mm in the Z-axis (steps/mm). \sa config.h
 	float v_max_x, //!< The max speed for the motor that controls the X-axis (steps/s). \sa config.h
 			v_max_y; //!< The max speed for the motor that controls the Y-axis (steps/s). \sa config.h
 

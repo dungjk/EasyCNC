@@ -52,11 +52,139 @@ void GCode::returnStatus() {
 	Serial.print(":");
 	Serial.println(parser_status);
 	/*Serial.print(":");
-	Serial.println(line);*/
+	 Serial.println(line);*/
 }
 
 void GCode::resetStatus() {
 	parser_status = STATUS_OK;
+}
+
+void GCode::cycleG81() {
+
+	if (!(pars_spec[PARAM_Z] && pars_spec[PARAM_R])
+			|| ((pars_spec[PARAM_P]) && params[PARAM_P] < 0)
+			|| ((pars_spec[PARAM_L]) && params[PARAM_L] < 1
+					&& last_word[GROUP3] == G91)) {
+		parser_status = STATUS_SYNTAX_ERROR;
+		return;
+	}
+
+	int loops = (pars_spec[PARAM_L]) ? params[PARAM_L] : 1;
+
+	for (int l = 0; l < loops; l++) {
+		//Step 1: rapid motion to XY
+		router->moveTo(new_pos_xy);
+		runMotion();
+		returnStatus();
+		//Step 2: rapid motion to Z specified by R parameter (clear position)
+		if (l == 0) {
+			utensil->moveTo(params[PARAM_R]);
+			runMotion();
+			returnStatus();
+		}
+
+		//Step 3: motion on Z-axis to the value Z specified in the cycle command
+		utensil->moveTo(new_pos_z, feed_rate);
+		runMotion();
+		returnStatus();
+		//Step 4: return to the clear position specified by R with a rapid motion
+		if (last_word[GROUP3] == G91)
+			utensil->moveTo(-new_pos_z);
+		else
+			utensil->moveTo(params[PARAM_R]);
+		runMotion();
+		returnStatus();
+	}
+}
+
+void GCode::motionG2G3() {
+	PositionXY center;
+	PositionXY start_p = router->getPos();
+	float alpha, angle_next_p, angle_end, r;
+	boolean can_move = false;
+
+	if ((pars_spec[PARAM_X] || pars_spec[PARAM_Y]) && pars_spec[PARAM_R]) {
+
+		can_move = true;
+		float beta = start_p.angle(new_pos_xy);
+		float dist = start_p.module(new_pos_xy);
+		r = params[PARAM_R];
+		float gamma = acos(dist / (2 * r));
+
+		//it depends on the sign of the radius value
+		if (last_word[GROUP1] == G3) {
+			center.polar(r, (r > 0) ? beta + gamma : beta - gamma);
+		} else {
+			center.polar(r, (r > 0) ? beta - gamma : beta + gamma);
+		}
+
+		center += start_p;  // the center of the cyrcle
+
+	} else if ((pars_spec[PARAM_X] || pars_spec[PARAM_Y])
+			&& (pars_spec[PARAM_I] || pars_spec[PARAM_J])) {
+
+		can_move = true;
+		PositionXY offset(params[PARAM_I], params[PARAM_J]);
+		center = start_p;
+		r = offset.module();
+		center += offset;  // the center of the cyrcle
+
+	} else {
+		parser_status = STATUS_SYNTAX_ERROR;
+	}
+
+	if (can_move) {
+		//Computation of the angle for each step of the arch
+		alpha = 2 * asin(ARCH_DEFINITION / (2 * r));
+		//Computation of the angle from start_p to new_pos_xy
+		angle_end = center.angle(new_pos_xy);
+		angle_next_p = center.angle(start_p);
+
+		PositionXY tmp;
+
+		if (last_word[GROUP1] == G3) {
+			if (angle_end < angle_next_p) // In the case of the atan2 function returns a angle_end value smaller then the start angle.
+				angle_end += 2 * PI;
+
+			angle_next_p += alpha;
+			while (angle_next_p < angle_end) {
+				router->moveTo(center + tmp.polar(r, angle_next_p), feed_rate);
+				runMotion();
+				angle_next_p += alpha;
+			}
+			router->moveTo(new_pos_xy, feed_rate);
+			runMotion();
+		} else {
+			if (angle_end > angle_next_p) // In the case of the atan2 function returns a angle_end value greater then the start angle.
+				angle_end += 2 * PI;
+
+			angle_next_p -= alpha;
+			while (angle_next_p > angle_end) {
+				router->moveTo(center + tmp.polar(r, angle_next_p), feed_rate);
+				runMotion();
+				angle_next_p -= alpha;
+			}
+			router->moveTo(new_pos_xy, feed_rate);
+			runMotion();
+		}
+	}
+}
+
+void GCode::motionG0G1() {
+	if (pars_spec[PARAM_X] || pars_spec[PARAM_Y] || pars_spec[PARAM_Z]) {
+
+		if (last_word[GROUP1] == G0) {
+			utensil->moveTo(new_pos_z);
+			router->moveTo(new_pos_xy);
+		} else {
+			utensil->moveTo(new_pos_z, feed_rate);
+			router->moveTo(new_pos_xy, feed_rate);
+		}
+		runMotion();
+	} else {
+		parser_status = STATUS_SYNTAX_ERROR;
+	}
+
 }
 
 boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
@@ -117,17 +245,26 @@ int GCode::parseLine() {
 	}
 
 	//G-Code commands
-
-	/*DBGNL(line);
-	 DBGNL(line.length());*/
-
-	new_pos_xy = router->getPos();
-	new_pos_z = utensil->getPos();
+	if (last_word[GROUP3] == G91) {
+		new_pos_xy = PositionXY();
+		new_pos_z = 0.0;
+	} else {
+		new_pos_xy = router->getPos();
+		new_pos_z = utensil->getPos();
+	}
 	boolean motion_command = false;
 	boolean pause = false;
 	for (int i = 0; i < PARAMS; i++) {
-		params[i] = 0.0;
-		pars_spec[i] = false;
+		if (i == PARAM_R) {
+			//this condition depends on the behavior of the parameter R when a drilling cycle is active. It is a "sticky" number in this case.
+			if (last_word[GROUP1] < G81 || last_word[GROUP1] > G89) {
+				params[i] = 0.0;
+				pars_spec[i] = false;
+			}
+		} else {
+			params[i] = 0.0;
+			pars_spec[i] = false;
+		}
 	}
 
 	uint8_t len = line.length();
@@ -182,9 +319,17 @@ int GCode::parseLine() {
 				// Disable radius compensation
 				last_word[GROUP7] = G40;
 				break;
+			case 54:
+				//Coordinate job 1
+				last_word[GROUP12] = G54;
+				break;
 			case 64:
 				// Contunuous mode
 				last_word[GROUP13] = G64;
+				break;
+			case 81:
+				motion_command = true;
+				last_word[GROUP1] = G81;
 				break;
 			case 90:
 				// Absolute distance mode
@@ -206,10 +351,15 @@ int GCode::parseLine() {
 				// Forwarding mode in units per minute
 				last_word[GROUP5] = G94;
 				break;
-			case 54:
-				//Coordinate job 1
-				last_word[GROUP12] = G54;
+			case 98:
+				// Initial level of return from a loop
+				last_word[GROUP10] = G98;
 				break;
+			case 99:
+				// Point R of return from a loop
+				last_word[GROUP10] = G99;
+				break;
+
 			default:
 				/*DBG("Unsupported command ");
 				 DBG(type);
@@ -235,14 +385,17 @@ int GCode::parseLine() {
 			break;
 		case 'X':
 			new_pos_xy.X(val);
+			params[PARAM_X] = val;
 			motion_command = pars_spec[PARAM_X] = true;
 			break;
 		case 'Y':
 			new_pos_xy.Y(val);
+			params[PARAM_Y] = val;
 			motion_command = pars_spec[PARAM_Y] = true;
 			break;
 		case 'Z':
 			new_pos_z = val;
+			params[PARAM_Z] = val;
 			motion_command = pars_spec[PARAM_Z] = true;
 			break;
 		case 'I':
@@ -252,6 +405,10 @@ int GCode::parseLine() {
 		case 'J':
 			pars_spec[PARAM_J] = true;
 			params[PARAM_J] = val;
+			break;
+		case 'L':
+			pars_spec[PARAM_L] = true;
+			params[PARAM_L] = val;
 			break;
 		case 'P':
 			params[PARAM_P] = val;
@@ -275,133 +432,15 @@ int GCode::parseLine() {
 	} else if (motion_command) {
 		switch (last_word[GROUP1]) {
 		case G0:
-			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
-					|| pars_spec[PARAM_Z]) {
-				/*DBG("Rapid motion to X= ");
-				 DBG(new_pos_xy.X());
-				 DBG(", Y=");
-				 DBG(new_pos_xy.Y());
-				 DBG(", Z=");
-				 DBGNL(new_pos_z);*/
-				utensil->moveTo(new_pos_z);
-				router->moveTo(new_pos_xy);
-				runMotion();
-			} else {
-				parser_status = STATUS_SYNTAX_ERROR;
-				//return parser_status;
-			}
-			break;
 		case G1:
-			if (pars_spec[PARAM_X] || pars_spec[PARAM_Y]
-					|| pars_spec[PARAM_Z]) {
-				/*DBG("Working motion to X= ");
-				 DBG(new_pos_xy.X());
-				 DBG(", Y=");
-				 DBG(new_pos_xy.Y());
-				 DBG(", Z=");
-				 DBG(new_pos_z);
-				 DBG(", F=");
-				 DBGNL(feed_rate);*/
-				utensil->moveTo(new_pos_z, feed_rate);
-				router->moveTo(new_pos_xy, feed_rate);
-				runMotion();
-			} else {
-				parser_status = STATUS_SYNTAX_ERROR;
-				//return parser_status;
-			}
+			motionG0G1();
 			break;
 		case G2:
 		case G3:
-			PositionXY center;
-			PositionXY start_p = router->getPos();
-			float alpha, angle_next_p, angle_end, r;
-			boolean can_move = false;
-
-			if ((pars_spec[PARAM_X] || pars_spec[PARAM_Y])
-					&& pars_spec[PARAM_R]) {
-
-				can_move = true;
-				float beta = start_p.angle(new_pos_xy);
-				float dist = start_p.module(new_pos_xy);
-				r = params[PARAM_R];
-				float gamma = acos(dist / (2 * r));
-
-				/*DBG("Arch with radius X=");
-				 DBG(new_pos_xy.X());
-				 DBG(", Y=");
-				 DBG(new_pos_xy.Y());
-				 DBG(", R=");
-				 DBG(r);
-				 DBG(", F=");
-				 DBGNL(feed_rate);*/
-
-				//it depends on the sign of the radius value
-				if (last_word[GROUP1] == G3) {
-					center.polar(r, (r > 0) ? beta + gamma : beta - gamma);
-				} else {
-					center.polar(r, (r > 0) ? beta - gamma : beta + gamma);
-				}
-
-				center += start_p;  // the center of the cyrcle
-
-			} else if ((pars_spec[PARAM_X] || pars_spec[PARAM_Y])
-					&& (pars_spec[PARAM_I] || pars_spec[PARAM_J])) {
-				can_move = true;
-				PositionXY offset(params[PARAM_I], params[PARAM_J]);
-				center = start_p;
-				r = offset.module();
-				center += offset;  // the center of the cyrcle
-				/*DBG("Arch with center X=");
-				 DBG(new_pos_xy.X());
-				 DBG(", Y=");
-				 DBG(new_pos_xy.Y());
-				 DBG(", I=");
-				 DBG(offset.X());
-				 DBG(", J=");
-				 DBG(offset.Y());
-				 DBG(", F=");
-				 DBGNL(feed_rate);*/
-			} else {
-				parser_status = STATUS_SYNTAX_ERROR;
-			}
-
-			if (can_move) {
-				//Computation of the angle for each step of the arch
-				alpha = 2 * asin(ARCH_DEFINITION / (2 * r));
-				//Computation of the angle from start_p to new_pos_xy
-				angle_end = center.angle(new_pos_xy);
-				angle_next_p = center.angle(start_p);
-
-				PositionXY tmp;
-
-				if (last_word[GROUP1] == G3) {
-					if (angle_end < angle_next_p) // In the case of the atan2 function returns a angle_end value smaller then the start angle.
-						angle_end += 2 * PI;
-
-					angle_next_p += alpha;
-					while (angle_next_p < angle_end) {
-						router->moveTo(center + tmp.polar(r, angle_next_p),
-								feed_rate);
-						runMotion();
-						angle_next_p += alpha;
-					}
-					router->moveTo(new_pos_xy, feed_rate);
-					runMotion();
-				} else {
-					if (angle_end > angle_next_p) // In the case of the atan2 function returns a angle_end value greater then the start angle.
-						angle_end += 2 * PI;
-
-					angle_next_p -= alpha;
-					while (angle_next_p > angle_end) {
-						router->moveTo(center + tmp.polar(r, angle_next_p),
-								feed_rate);
-						runMotion();
-						angle_next_p -= alpha;
-					}
-					router->moveTo(new_pos_xy, feed_rate);
-					runMotion();
-				}
-			}
+			motionG2G3();
+			break;
+		case G81:
+			cycleG81();
 			break;
 		};
 

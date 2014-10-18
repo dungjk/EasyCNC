@@ -33,6 +33,9 @@ class GCode {
 	 *  \return It returns a boolean value that is true if the operation ends correctly, false if is occurred an error. See GCode::parser_status to get more information about the error.
 	 */
 	boolean getWord(char &code, float &val, uint8_t &pos, uint8_t len);
+	void cycleG81();
+	void motionG2G3();
+	void motionG0G1();
 
 public:
 	String line;          //!< Here is stored the G-Code line that will be parsed
