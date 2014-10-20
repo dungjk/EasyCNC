@@ -339,13 +339,11 @@ int GCode::parseLine() {
 				// Absolute distance mode
 				last_word[GROUP3] = G90;
 				router->setAbsolPos();
-				utensil->setAbsolPos();
 				break;
 			case 91:
 				// Incremental distance mode
 				last_word[GROUP3] = G91;
 				router->setIncrPos();
-				utensil->setIncrPos();
 				break;
 			case 93:
 				// Forwarding mode in time inverse

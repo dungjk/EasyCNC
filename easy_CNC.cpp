@@ -7,17 +7,16 @@ void setup() {
 	cncrt.initMotorX();
 	cncrt.initMotorY();
 	cncrt.resetPos();
-	cncrt.highPrecision();
+	cncrt.setMotionModeX(EIGHTH_STEP);
+	cncrt.setMotionModeY(EIGHTH_STEP);
+	cncrt.setMotionModeZ(EIGHTH_STEP);
 	cncrt.setAbsolPos();
 	cncrt.setLimitSwitchX(ROUTER_DOWN_LIMIT_SWITCH_X);
 	cncrt.setLimitSwitchY(ROUTER_DOWN_LIMIT_SWITCH_Y);
+	cncrt.setLimitSwitchZ(ROUTER_DOWN_LIMIT_SWITCH_Z);
 	cncrt.orientationX(-1);
 
 	mill.init();
-	mill.resetPos();
-	mill.highPrecision();
-	mill.setAbsolPos();
-	mill.setLimitSwitch(_MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z);
 
 	attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
 	digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
