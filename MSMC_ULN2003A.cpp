@@ -40,7 +40,10 @@ void MSMC_ULN2003A::speed(uint32_t s) {
 }
 
 void MSMC_ULN2003A::setMode(uint8_t mod) {
-	control_mode = mod;
+	if(mod != FULL_STEP || mod != HALF_STEP)
+		m_ready = false;   //mode not supported
+	else
+		control_mode = mod;
 }
 
 uint8_t MSMC_ULN2003A::getMode() {

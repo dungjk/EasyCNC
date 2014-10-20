@@ -95,9 +95,9 @@
 #endif
 
 #if defined(ROUTER_MZ_CONTROLLER_A4988)
-#define ROUTE_MZ_STEP_CONTROL_PIN 46    		 //!< \brief Pin connected to the step control pin of the A4988
-#define ROUTE_MZ_DIRECTION_CONTROL_PIN 48	 //!< \brief Pin connected to the direction control pin of the A4988
-#define ROUTE_MZ_ENABLE_CONTROL_PIN A8		 //!< \brief Pin connected to the enable pin of the A4988
+#define ROUTE_MZ_STEP_CONTROL_PIN A6    		 //!< \brief Pin connected to the step control pin of the A4988
+#define ROUTE_MZ_DIRECTION_CONTROL_PIN A7	 //!< \brief Pin connected to the direction control pin of the A4988
+#define ROUTE_MZ_ENABLE_CONTROL_PIN A2		 //!< \brief Pin connected to the enable pin of the A4988
 #endif
 
 // *****************************

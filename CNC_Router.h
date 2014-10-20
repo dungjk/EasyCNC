@@ -50,21 +50,24 @@ class CNC_Router {
 	MSMC_A4988 mz;
 #endif
 
-	PositionXY old_p, //!< It keeps the position that the utensil has after starting the motion
+	PositionXYZ old_p, //!< It keeps the position that the utensil has after starting the motion
 			end_p, 					//!< The final position of a motion
 			actual_p; //!< It keeps the actual position of the utensil during an motion
 	float spmmx, //!< Steps to move of a mm in the X-axis (steps/mm). \sa config.h
 			spmmy, //!< Steps to move of a mm in the Y-axis (steps/mm). \sa config.h
-	spmmz; //!< Steps to move of a mm in the Z-axis (steps/mm). \sa config.h
+			spmmz; //!< Steps to move of a mm in the Z-axis (steps/mm). \sa config.h
 	float v_max_x, //!< The max speed for the motor that controls the X-axis (steps/s). \sa config.h
-			v_max_y; //!< The max speed for the motor that controls the Y-axis (steps/s). \sa config.h
+			v_max_y, //!< The max speed for the motor that controls the Y-axis (steps/s). \sa config.h
+			v_max_z; //!< The max speed for the motor that controls the Y-axis (steps/s). \sa config.h
 
 	boolean pos_type; //!< It stores the information about the positioning type: true = incremental; false = absolute.
 
 	int8_t pin_ls_x_down, //!< Pin number where it is attached the down limit switch of the X-axis.
 			pin_ls_y_down, //!< Pin number where it is attached the down limit switch of the Y-axis.
+			pin_ls_z_down, //!< Pin number where it is attached the down limit switch of the Z-axis.
 			pin_ls_x_up, //!< Pin number where it is attached the up limit switch of the X-axis.
-			pin_ls_y_up; //!< Pin number where it is attached the up limit switch of the X-axis.
+			pin_ls_y_up, //!< Pin number where it is attached the up limit switch of the Y-axis.
+			pin_ls_z_up; //!< Pin number where it is attached the up limit switch of the Y-axis.
 
 public:
 	//! \brief Default constructor
@@ -73,16 +76,22 @@ public:
 	/*! \brief Constructor
 	 *  \param spx Step per one mm on the X-axis
 	 *  \param spy Step per one mm on the Y-axis
+	 *  \param spz Step per one mm on the Z-axis
 	 *  \param vmx Max speed in steps per mm on the X-axis
 	 *  \param vmy Max speed in steps per mm on the Y-axis
+	 *  \param vmz Max speed in steps per mm on the Z-axis
 	 */
-	CNC_Router(float spx, float spy, float vmx, float vmy);
+	CNC_Router(float spx, float spy, float spz, float vmx, float vmy,
+			float vmz);
 
 	//! \brief It initializes the controller for the motor on the X-axis. It must be called one time before starting the motion operations
 	void initMotorX();
 
 	//! \brief It initializes the controller for the motor on the Y-axis. It must be called one time before starting the motion operations
 	void initMotorY();
+
+	//! \brief It initializes the controller for the motor on the Z-axis. It must be called one time before starting the motion operations
+	void initMotorZ();
 
 	/*! \brief Sets the pins where are attached the down/up limit switches
 	 *  \details The system needs at least the down limit switch
@@ -98,6 +107,13 @@ public:
 	 */
 	void setLimitSwitchY(int8_t dw, int8_t up = -1);
 
+	/*! \brief Sets the pins where are attached the down/up limit switches
+	 *  \details The system needs at least the down limit switch
+	 *  \param dw The pin number where is attached the down limit switch.
+	 *  \param up The pin number where is attached the up limit switch
+	 */
+	void setLimitSwitchZ(int8_t dw, int8_t up = -1);
+
 	//! It resets the position and assigns the value (0; 0) in the actual position of the utensil.
 	void resetPos();
 
@@ -106,13 +122,27 @@ public:
 	 *  \param py The new position on the Y-axis
 	 *  \param spd The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to CNC_Router::v_max_x and CNC_Router::v_max_y.
 	 */
-	void moveTo(float px, float py, float spd = 0.0);
+	void moveToXY(float px, float py, float spd = 0.0);
+
+	/*! \brief It initializes a motion operation.
+	 *  \param px The new position on the X-axis.
+	 *  \param py The new position on the Y-axis
+	 *  \param pz The new position on the Z-axis
+	 *  \param spd The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to CNC_Router::v_max_x and CNC_Router::v_max_y.
+	 */
+	void moveTo(float px, float py, float pz, float spd = 0.0);
 
 	/*! \brief It initializes a motion operation.
 	 *  \param np The new position on the XY-axii.
 	 *  \param spd The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to CNC_Router::v_max_x and CNC_Router::v_max_y.
 	 */
-	void moveTo(const PositionXY &np, float spd = 0.0);
+	void moveToXY(const PositionXY &np, float spd = 0.0);
+
+	/*! \brief It initializes a motion operation.
+	 *  \param np The new position on the XY-axii.
+	 *  \param spd The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to CNC_Router::v_max_x and CNC_Router::v_max_y.
+	 */
+	void moveTo(const PositionXYZ &np, float spd = 0.0);
 
 	//! \brief It stops the current motion operation.
 	void stopMotion();
@@ -123,16 +153,56 @@ public:
 	//! \brief It restarts a paused motion.
 	void restart();
 
+	/*! \brief Specifies the motion control mode for the motor on X-axis
+	 *  \param m The motion mode can be:
+	 *           - with ULN2003A controller
+	 *             1. FULL_STEP
+	 *             2. HALF_STEP
+	 *           - with A4988 controller
+	 *             1. FULL_STEP
+	 *             2. HALF_STEP
+	 *             3. QUARTER_STEP
+	 *             4. EIGHTH_STEP
+	 *             5. SIXTEENTH_STEP
+	 */
+	void setMotionModeX(uint8_t m);
+
+	/*! \brief Specifies the motion control mode for the motor on Y-axis
+		 *  \param m The motion mode can be:
+		 *           - with ULN2003A controller
+		 *             1. FULL_STEP
+		 *             2. HALF_STEP
+		 *           - with A4988 controller
+		 *             1. FULL_STEP
+		 *             2. HALF_STEP
+		 *             3. QUARTER_STEP
+		 *             4. EIGHTH_STEP
+		 *             5. SIXTEENTH_STEP
+		 */
+	void setMotionModeY(uint8_t m);
+
+	/*! \brief Specifies the motion control mode for the motor on Z-axis
+		 *  \param m The motion mode can be:
+		 *           - with ULN2003A controller
+		 *             1. FULL_STEP
+		 *             2. HALF_STEP
+		 *           - with A4988 controller
+		 *             1. FULL_STEP
+		 *             2. HALF_STEP
+		 *             3. QUARTER_STEP
+		 *             4. EIGHTH_STEP
+		 *             5. SIXTEENTH_STEP
+		 */
+	void setMotionModeZ(uint8_t m);
+
 	/*! \brief It sets up a high precision mode to control the XY-axii.
 	 *  \details The function sets up the EIGHTH_STEP for A4988 and HALF_STEP for ULN2003A. \sa MSMC_A4988.h MSMC_ULN2003A.h
 	 */
-	void highPrecision();
-
+	//void highPrecision();
 	/*! \brief It sets up a low precision mode to control the XY-axii. It is also the fastest control mode.
 	 *  \details The function sets up the FULL_STEP for A4988 and ULN2003A. \sa MSMC_A4988.h MSMC_ULN2003A.h
 	 */
-	void lowPrecision();
-
+	//void lowPrecision();
 	//! \brief It selects the incremental positioning mode.
 	void setIncrPos();
 
@@ -145,7 +215,7 @@ public:
 	void searchHomePos();
 
 	//! \brief It get the actual position of the utensil.
-	PositionXY getPos();
+	PositionXYZ getPos();
 
 	/*! \brief It performs the movement configured with the CNC_Route::moveTo().
 	 *  \return  It returns true if the motion id end, otherwise it returns false.
@@ -158,10 +228,15 @@ public:
 	 */
 	void orientationX(int8_t v);
 
-	/*! \brief The function sets the orientation of X-axis.
+	/*! \brief The function sets the orientation of Y-axis.
 	 *  \param v 1 for direct orientation, -1 for inverted orientation
 	 */
 	void orientationY(int8_t v);
+
+	/*! \brief The function sets the orientation of Z-axis.
+	 *  \param v 1 for direct orientation, -1 for inverted orientation
+	 */
+	void orientationZ(int8_t v);
 
 };
 
