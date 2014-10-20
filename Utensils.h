@@ -103,15 +103,15 @@ public:
 	//! \brief It initializes the spindle.
 	void init();
 
-	/*! \brief It sets the bit speed.
+	/*! \brief It sets the spindle speed.
 	 *  \param s The value of the speed.
 	 */
-	void setBitSpeed(int s);
+	void setSpindleSpeed(int s);
 
-	/*! \brief It sets the bit direction
+	/*! \brief It sets the spindle direction
 	 *  \param d CW = true  or CCW = false.
 	 */
-	void setBitDir(boolean d);
+	void setSpindleDir(boolean d);
 
 	//! \brief It switches on the spindle.
 	void enable();

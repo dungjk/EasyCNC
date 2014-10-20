@@ -9,7 +9,7 @@
 
 GCode::GCode(CNC_Router *rt, MillingMachine *ml) {
 	parser_status = STATUS_OK;
-	drill_speed = feed_rate = 0.0;
+	spindle_speed = feed_rate = 0.0;
 	//new_pos_z = 0.0;
 	memset(last_word, UNSPECIFIED, 16);
 	router = rt;
@@ -159,7 +159,8 @@ void GCode::motionG2G3() {
 
 			angle_next_p += alpha;
 			while (angle_next_p < angle_end) {
-				router->moveTo(center + tmp.polarXY(r, angle_next_p), feed_rate);
+				router->moveTo(center + tmp.polarXY(r, angle_next_p),
+						feed_rate);
 				runMotion();
 				angle_next_p += alpha;
 			}
@@ -171,7 +172,8 @@ void GCode::motionG2G3() {
 
 			angle_next_p -= alpha;
 			while (angle_next_p > angle_end) {
-				router->moveTo(center + tmp.polarXY(r, angle_next_p), feed_rate);
+				router->moveTo(center + tmp.polarXY(r, angle_next_p),
+						feed_rate);
 				runMotion();
 				angle_next_p -= alpha;
 			}
@@ -363,16 +365,34 @@ int GCode::parseLine() {
 				break;
 
 			default:
-				/*DBG("Unsupported command ");
-				 DBG(type);
-				 DBGNL(val);*/
 				parser_status = STATUS_UNSUPPORTED;
 			}
 			;
 			break;
 		case 'M':
-			/*DBG(type);
-			 DBGNL((int )trunc(val));*/
+			switch ((int) val) {
+			case 3:
+				// to switch on the spindle in CW
+				utensil->setSpindleDir(true);
+				utensil->enable();
+				break;
+			case 4:
+				// to switch on the spindle in CCW
+				utensil->setSpindleDir(false);
+				utensil->enable();
+				break;
+			case 5:
+				// to switch off the spindle
+				utensil->disable();
+				break;
+			case 6:
+				// tool change (unsupported)
+				break;
+			case 30:
+				// end program
+				break;
+			}
+			;
 			break;
 		case 'F':
 			//the F's value is in units/minute, instead the motion control needs a feed rate in units/s
@@ -383,7 +403,8 @@ int GCode::parseLine() {
 			params[PARAM_R] = val;
 			break;
 		case 'S':
-			drill_speed = val;
+			spindle_speed = val;
+			utensil->setSpindleSpeed(spindle_speed);
 			break;
 		case 'X':
 			new_pos.X(val);
@@ -415,6 +436,10 @@ int GCode::parseLine() {
 		case 'P':
 			params[PARAM_P] = val;
 			pars_spec[PARAM_P] = true;
+			break;
+		case 'T':
+			//tool selection (unsupported)
+
 			break;
 		default:
 			parser_status = STATUS_UNSUPPORTED;

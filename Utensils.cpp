@@ -59,11 +59,11 @@ void MillingMachine::init() {
 }
 
 
-void MillingMachine::setBitSpeed(int s) {
+void MillingMachine::setSpindleSpeed(int s) {
 	//TODO Implementation of MillingMachine::setBitSpeed
 }
 
-void MillingMachine::setBitDir(boolean d) {
+void MillingMachine::setSpindleDir(boolean d) {
 	//TODO Implementation of MillingMachine::setBitDir
 }
 

@@ -40,7 +40,7 @@ class GCode {
 public:
 	String line;          //!< Here is stored the G-Code line that will be parsed
 	float feed_rate;      //!< The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch)
-	float drill_speed;	  //!< The speed of the drill
+	float spindle_speed;	  //!< The speed of the drill
 
 	uint8_t parser_status;    //!< The status of the parser. \sa GCode_def.h
 	uint8_t last_word[16];    //!< Here the class stores the last word red for each group. \sa GCode_def.h
