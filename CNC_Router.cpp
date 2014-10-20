@@ -120,7 +120,7 @@ void CNC_Router::moveToXY(float px, float py, float spd) {
 
 }
 
-void CNC_Router::moveTo(float px, float py, float pz, float spd = 0.0) {
+void CNC_Router::moveTo(float px, float py, float pz, float spd) {
 	float dx, dy, dz, dist, spd_x, spd_y, spd_z, actual_spmmx, actual_spmmy,
 			actual_spmmz;
 	actual_spmmx = spmmx * mx.getMode();
@@ -212,7 +212,7 @@ void CNC_Router::moveTo(float px, float py, float pz, float spd = 0.0) {
 	}
 }
 
-void CNC_Router::moveToXY(const PositionXY &np, float spd) {
+void CNC_Router::moveToXY(const PositionXYZ &np, float spd) {
 	moveToXY(np.X(), np.Y(), spd);
 }
 

@@ -75,7 +75,11 @@ PositionXY& PositionXY::operator +=(const PositionXY &p) {
 	return *this;
 }
 
+
+//**************************
 //-----PositionXYZ---------
+//**************************
+
 
 PositionXYZ::PositionXYZ() :
 		x(0.0), y(0.0), z(0.0) {
@@ -163,6 +167,7 @@ PositionXYZ PositionXYZ::operator +(const PositionXYZ &p) const { return Positio
 PositionXYZ& PositionXYZ::operator +=(const PositionXYZ &p) {
 	x += p.x;
 	y += p.y;
+	z += p.z;
 	return *this;
 }
 

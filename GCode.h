@@ -44,8 +44,8 @@ public:
 
 	uint8_t parser_status;    //!< The status of the parser. \sa GCode_def.h
 	uint8_t last_word[16];    //!< Here the class stores the last word red for each group. \sa GCode_def.h
-	PositionXY new_pos_xy;    //!< The class stores the new position red from the G-Code line
-	float new_pos_z;		  //!< The class stores here the new position red from the G-code line
+	PositionXYZ new_pos;    //!< The class stores the new position red from the G-Code line
+	//float new_pos_z;		  //!< The class stores here the new position red from the G-code line
 	float params[PARAMS];     //!< The array stores the values of the parameters red from the G-Code line. \sa GCode_def.h
 	boolean pars_spec[PARAMS];//!< The array says which parameters were found in parsed G-Code line. \sa GCode_def.h
 

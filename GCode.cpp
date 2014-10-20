@@ -10,7 +10,7 @@
 GCode::GCode(CNC_Router *rt, MillingMachine *ml) {
 	parser_status = STATUS_OK;
 	drill_speed = feed_rate = 0.0;
-	new_pos_z = 0.0;
+	//new_pos_z = 0.0;
 	memset(last_word, UNSPECIFIED, 16);
 	router = rt;
 	utensil = ml;
@@ -46,7 +46,7 @@ void GCode::returnStatus() {
 	Serial.print(":");
 	Serial.print(router->getPos().Y());
 	Serial.print(":");
-	Serial.print(utensil->getPos());
+	Serial.print(router->getPos().Z());
 	Serial.print(":");
 	Serial.print(feed_rate * 60);
 	Serial.print(":");
@@ -70,53 +70,64 @@ void GCode::cycleG81() {
 	}
 
 	int loops = (pars_spec[PARAM_L]) ? params[PARAM_L] : 1;
+	PositionXYZ old_p = router->getPos();
 
 	for (int l = 0; l < loops; l++) {
 		//Step 1: rapid motion to XY
-		router->moveTo(new_pos_xy);
+		router->moveToXY(new_pos);
 		runMotion();
 		returnStatus();
 		//Step 2: rapid motion to Z specified by R parameter (clear position)
 		if (l == 0) {
-			utensil->moveTo(params[PARAM_R]);
+			router->moveTo(
+					router->getPos() + PositionXYZ(0.0, 0.0, params[PARAM_R]));
 			runMotion();
 			returnStatus();
 		}
 
 		//Step 3: motion on Z-axis to the value Z specified in the cycle command
-		utensil->moveTo(new_pos_z, feed_rate);
+		router->moveTo(router->getPos() + PositionXYZ(0.0, 0.0, new_pos.Z()),
+				feed_rate);
 		runMotion();
 		returnStatus();
 		//Step 4: return to the clear position specified by R with a rapid motion
-		if (last_word[GROUP3] == G91)
-			utensil->moveTo(-new_pos_z);
-		else
-			utensil->moveTo(params[PARAM_R]);
+		if (last_word[GROUP10] == G98 && old_p.Z() > params[PARAM_R]) {
+
+			router->moveTo(
+					router->getPos()
+							+ PositionXYZ(0.0, 0.0,
+									old_p.Z() - params[PARAM_R] - new_pos.Z()));
+		} else {
+			router->moveTo(
+					router->getPos() + PositionXYZ(0.0, 0.0, params[PARAM_R]));
+		}
 		runMotion();
 		returnStatus();
 	}
 }
 
 void GCode::motionG2G3() {
-	PositionXY center;
-	PositionXY start_p = router->getPos();
+	PositionXYZ center;
+	PositionXYZ start_p = router->getPos();
 	float alpha, angle_next_p, angle_end, r;
 	boolean can_move = false;
 
 	if ((pars_spec[PARAM_X] || pars_spec[PARAM_Y]) && pars_spec[PARAM_R]) {
 
 		can_move = true;
-		float beta = start_p.angle(new_pos_xy);
-		float dist = start_p.module(new_pos_xy);
+		float beta = start_p.angleXY(new_pos);
+		float dist = start_p.moduleXY(new_pos);
 		r = params[PARAM_R];
 		float gamma = acos(dist / (2 * r));
 
 		//it depends on the sign of the radius value
 		if (last_word[GROUP1] == G3) {
-			center.polar(r, (r > 0) ? beta + gamma : beta - gamma);
+			center.polarXY(r, (r > 0) ? beta + gamma : beta - gamma);
 		} else {
-			center.polar(r, (r > 0) ? beta - gamma : beta + gamma);
+			center.polarXY(r, (r > 0) ? beta - gamma : beta + gamma);
 		}
+
+		//center.Z(start_p.Z());
 
 		center += start_p;  // the center of the cyrcle
 
@@ -124,7 +135,7 @@ void GCode::motionG2G3() {
 			&& (pars_spec[PARAM_I] || pars_spec[PARAM_J])) {
 
 		can_move = true;
-		PositionXY offset(params[PARAM_I], params[PARAM_J]);
+		PositionXYZ offset(params[PARAM_I], params[PARAM_J], 0.0);
 		center = start_p;
 		r = offset.module();
 		center += offset;  // the center of the cyrcle
@@ -137,10 +148,10 @@ void GCode::motionG2G3() {
 		//Computation of the angle for each step of the arch
 		alpha = 2 * asin(ARCH_DEFINITION / (2 * r));
 		//Computation of the angle from start_p to new_pos_xy
-		angle_end = center.angle(new_pos_xy);
-		angle_next_p = center.angle(start_p);
+		angle_end = center.angleXY(new_pos);
+		angle_next_p = center.angleXY(start_p);
 
-		PositionXY tmp;
+		PositionXYZ tmp;
 
 		if (last_word[GROUP1] == G3) {
 			if (angle_end < angle_next_p) // In the case of the atan2 function returns a angle_end value smaller then the start angle.
@@ -148,11 +159,11 @@ void GCode::motionG2G3() {
 
 			angle_next_p += alpha;
 			while (angle_next_p < angle_end) {
-				router->moveTo(center + tmp.polar(r, angle_next_p), feed_rate);
+				router->moveTo(center + tmp.polarXY(r, angle_next_p), feed_rate);
 				runMotion();
 				angle_next_p += alpha;
 			}
-			router->moveTo(new_pos_xy, feed_rate);
+			router->moveTo(new_pos, feed_rate);
 			runMotion();
 		} else {
 			if (angle_end > angle_next_p) // In the case of the atan2 function returns a angle_end value greater then the start angle.
@@ -160,11 +171,11 @@ void GCode::motionG2G3() {
 
 			angle_next_p -= alpha;
 			while (angle_next_p > angle_end) {
-				router->moveTo(center + tmp.polar(r, angle_next_p), feed_rate);
+				router->moveTo(center + tmp.polarXY(r, angle_next_p), feed_rate);
 				runMotion();
 				angle_next_p -= alpha;
 			}
-			router->moveTo(new_pos_xy, feed_rate);
+			router->moveTo(new_pos, feed_rate);
 			runMotion();
 		}
 	}
@@ -174,11 +185,11 @@ void GCode::motionG0G1() {
 	if (pars_spec[PARAM_X] || pars_spec[PARAM_Y] || pars_spec[PARAM_Z]) {
 
 		if (last_word[GROUP1] == G0) {
-			utensil->moveTo(new_pos_z);
-			router->moveTo(new_pos_xy);
+			//utensil->moveTo(new_pos_z);
+			router->moveTo(new_pos);
 		} else {
-			utensil->moveTo(new_pos_z, feed_rate);
-			router->moveTo(new_pos_xy, feed_rate);
+			//utensil->moveTo(new_pos_z, feed_rate);
+			router->moveTo(new_pos, feed_rate);
 		}
 		runMotion();
 	} else {
@@ -208,13 +219,8 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
 }
 
 int GCode::runMotion() {
-	//TODO add the support to limit switch
-	boolean a, b;
-	a = utensil->update();
-	b = router->update();
-	while (!a || !b) {
-		a = utensil->update();
-		b = router->update();
+	while (!router->update()) {
+		////TODO add the support to limit switch
 	}
 }
 
@@ -230,7 +236,7 @@ int GCode::parseLine() {
 				break;
 			case 'p':
 				router->resetPos();
-				utensil->resetPos();
+				//utensil->resetPos();
 				break;
 			}
 		}
@@ -246,11 +252,9 @@ int GCode::parseLine() {
 
 	//G-Code commands
 	if (last_word[GROUP3] == G91) {
-		new_pos_xy = PositionXY();
-		new_pos_z = 0.0;
+		new_pos = PositionXYZ();
 	} else {
-		new_pos_xy = router->getPos();
-		new_pos_z = utensil->getPos();
+		new_pos = router->getPos();
 	}
 	boolean motion_command = false;
 	boolean pause = false;
@@ -300,11 +304,11 @@ int GCode::parseLine() {
 				last_word[GROUP2] = G17;
 				break;
 			case 18:
-				// plane XZ unsupported
+				// plane XZ (unsupported)
 				last_word[GROUP2] = G18;
 				break;
 			case 19:
-				// plane YZ unsupported
+				// plane YZ (unsupported)
 				last_word[GROUP2] = G19;
 				break;
 			case 20:
@@ -324,7 +328,7 @@ int GCode::parseLine() {
 				last_word[GROUP12] = G54;
 				break;
 			case 64:
-				// Contunuous mode
+				// Continuous mode
 				last_word[GROUP13] = G64;
 				break;
 			case 81:
@@ -384,17 +388,17 @@ int GCode::parseLine() {
 			drill_speed = val;
 			break;
 		case 'X':
-			new_pos_xy.X(val);
+			new_pos.X(val);
 			params[PARAM_X] = val;
 			motion_command = pars_spec[PARAM_X] = true;
 			break;
 		case 'Y':
-			new_pos_xy.Y(val);
+			new_pos.Y(val);
 			params[PARAM_Y] = val;
 			motion_command = pars_spec[PARAM_Y] = true;
 			break;
 		case 'Z':
-			new_pos_z = val;
+			new_pos.Z(val);
 			params[PARAM_Z] = val;
 			motion_command = pars_spec[PARAM_Z] = true;
 			break;
@@ -424,10 +428,10 @@ int GCode::parseLine() {
 
 	// motion execution
 	if (pause && pars_spec[PARAM_P]) {
-		utensil->pause();
+		//utensil->pause();
 		router->pause();
 		delay(params[PARAM_P] * 1000);
-		utensil->restart();
+		//utensil->restart();
 		router->restart();
 	} else if (motion_command) {
 		switch (last_word[GROUP1]) {

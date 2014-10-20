@@ -136,7 +136,7 @@ public:
 	 *  \param np The new position on the XY-axii.
 	 *  \param spd The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to CNC_Router::v_max_x and CNC_Router::v_max_y.
 	 */
-	void moveToXY(const PositionXY &np, float spd = 0.0);
+	void moveToXY(const PositionXYZ &np, float spd = 0.0);
 
 	/*! \brief It initializes a motion operation.
 	 *  \param np The new position on the XY-axii.
