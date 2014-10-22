@@ -251,7 +251,10 @@ boolean CNC_Router::update() {
 	boolean b = my.update();
 	boolean c = mz.update();
 	if (a && b && c) {
-		actual_p = end_p;
+		if(pos_type)
+			actual_p += end_p;
+		else
+			actual_p = end_p;
 		return true;
 	}
 

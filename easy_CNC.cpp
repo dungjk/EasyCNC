@@ -6,11 +6,12 @@ void setup() {
 // Add your initialization code here
 	cncrt.initMotorX();
 	cncrt.initMotorY();
+	cncrt.initMotorZ();
 	cncrt.resetPos();
 	cncrt.setMotionModeX(EIGHTH_STEP);
 	cncrt.setMotionModeY(EIGHTH_STEP);
 	cncrt.setMotionModeZ(EIGHTH_STEP);
-	cncrt.setAbsolPos();
+	cncrt.setAbsolPos(); gc.params[GROUP3] = G90;
 	cncrt.setLimitSwitchX(ROUTER_DOWN_LIMIT_SWITCH_X);
 	cncrt.setLimitSwitchY(ROUTER_DOWN_LIMIT_SWITCH_Y);
 	cncrt.setLimitSwitchZ(ROUTER_DOWN_LIMIT_SWITCH_Z);

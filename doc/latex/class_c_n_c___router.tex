@@ -15,21 +15,29 @@ The class controls the motors of the xy router of the C\+N\+C.
 \item 
 \hyperlink{class_c_n_c___router_a2286f545f42ff5febfdb8d52782cd0da}{C\+N\+C\+\_\+\+Router} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_c_n_c___router_a928dbfed47e8514928b92559372378f0}{C\+N\+C\+\_\+\+Router} (float spx, float spy, float vmx, float vmy)
+\hyperlink{class_c_n_c___router_af7a84e8ac77176373ac24bb1aadc1b97}{C\+N\+C\+\_\+\+Router} (float spx, float spy, float spz, float vmx, float vmy, float vmz)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}{init\+Motor\+X} ()
-\begin{DoxyCompactList}\small\item\em It initializes the controller for the motor on the X-\/axis. It must be called one time before starting the motion opetations. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em It initializes the controller for the motor on the X-\/axis. It must be called one time before starting the motion operations. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}{init\+Motor\+Y} ()
-\begin{DoxyCompactList}\small\item\em It initializes the controller for the motor on the Y-\/axis. It must be called one time before starting the motion opetations. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em It initializes the controller for the motor on the Y-\/axis. It must be called one time before starting the motion operations. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a2ae50762cc38690090515f30bcd5033c}{init\+Motor\+Z} ()
+\begin{DoxyCompactList}\small\item\em It initializes the controller for the motor on the Z-\/axis. It must be called one time before starting the motion operations. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}{set\+Limit\+Switch\+X} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
 \begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}{set\+Limit\+Switch\+Y} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
 \begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_ac993b5ad9929da6f83bb8783fafafa1a}{set\+Limit\+Switch\+Z} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
+\begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a30d838430b7452a8f47071d2f6b8845e}{reset\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It resets the position and assigns the value (0; 0) in the actual position of the utensil. \end{DoxyCompactList}\item 
-void \hyperlink{class_c_n_c___router_a9630faad381924b8f3252e100345274e}{move\+To} (float px, float py, float spd=0.\+0)
+void \hyperlink{class_c_n_c___router_a3aedfc767d93e8cb59f10322067ffdae}{move\+To\+X\+Y} (float px, float py, float spd=0.\+0)
 \begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
-void \hyperlink{class_c_n_c___router_a7eb9a8553f02ba626abbc32f98663759}{move\+To} (const Position\+X\+Y \&np, float spd=0.\+0)
+void \hyperlink{class_c_n_c___router_a1b652407bb9e7bb170d55d1c96e6611c}{move\+To} (float px, float py, float pz, float spd=0.\+0)
+\begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a3f6bcafb0e7ce2751a7e4a424a99ec7e}{move\+To\+X\+Y} (const Position\+X\+Y\+Z \&np, float spd=0.\+0)
+\begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a7bb1accca615b13aadd050dfec1031e6}{move\+To} (const Position\+X\+Y\+Z \&np, float spd=0.\+0)
 \begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{stop\+Motion} ()
 \begin{DoxyCompactList}\small\item\em It stops the current motion operation. \end{DoxyCompactList}\item 
@@ -37,20 +45,28 @@ void \hyperlink{class_c_n_c___router_a6b5ad1a227e63d3f374e0e53f3cf047c}{pause} (
 \begin{DoxyCompactList}\small\item\em It pauses the current motion operation. The router waits for \hyperlink{class_c_n_c___router_ab36f29523c76dd9f64c1ab5367c8f3d3}{C\+N\+C\+\_\+\+Router\+::restart()} to continue and end the paused motion. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_ab36f29523c76dd9f64c1ab5367c8f3d3}{restart} ()
 \begin{DoxyCompactList}\small\item\em It restarts a paused motion. \end{DoxyCompactList}\item 
-void \hyperlink{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}{high\+Precision} ()
-\begin{DoxyCompactList}\small\item\em It sets up a high precision mode to control the X\+Y-\/axii. \end{DoxyCompactList}\item 
-void \hyperlink{class_c_n_c___router_a15e3fab9eefaa7a61403c0054e643901}{low\+Precision} ()
-\begin{DoxyCompactList}\small\item\em It sets up a low precision mode to control the X\+Y-\/axii. It is also the fastest control mode. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a6fd3b892aa1730dc2cb79bc91c0e90b6}{set\+Motion\+Mode\+X} (uint8\+\_\+t m)
+\begin{DoxyCompactList}\small\item\em Specifies the motion control mode for the motor on X-\/axis. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a42148bff778d0dbd45b37f7a09b61382}{set\+Motion\+Mode\+Y} (uint8\+\_\+t m)
+\begin{DoxyCompactList}\small\item\em Specifies the motion control mode for the motor on Y-\/axis. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a28ddb2544290798664f99ed506f7d44a}{set\+Motion\+Mode\+Z} (uint8\+\_\+t m)
+\begin{DoxyCompactList}\small\item\em Specifies the motion control mode for the motor on Z-\/axis. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_abbda24db494dd328382639412570978e}{set\+Incr\+Pos} ()
-\begin{DoxyCompactList}\small\item\em It selects the incremental positioning mode. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em It sets up a high precision mode to control the X\+Y-\/axii. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}{set\+Absol\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It selects the absolute positioning mode. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a4e9504d77eee555ddb35af073b67d3f1}{search\+Home\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It moves the utensil up to the home position. It is identified by the down limit switches on the Y\+X-\/axis. \end{DoxyCompactList}\item 
-Position\+X\+Y \hyperlink{class_c_n_c___router_a177a7cc248cace9b84ae2b53d461cb6d}{get\+Pos} ()
+Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_a0fce19a7adf29dc0fb2b1a29c813b953}{get\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It get the actual position of the utensil. \end{DoxyCompactList}\item 
 boolean \hyperlink{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{update} ()
-\begin{DoxyCompactList}\small\item\em It performs the movement configured with the C\+N\+C\+\_\+\+Route\+::move\+To(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em It performs the movement configured with the C\+N\+C\+\_\+\+Route\+::move\+To(). \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_adef23983c5aac16fa0431f861eb41fc2}{orientation\+X} (int8\+\_\+t v)
+\begin{DoxyCompactList}\small\item\em The function sets the orientation of X-\/axis. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_abced37562004a4b303291be79e49a23b}{orientation\+Y} (int8\+\_\+t v)
+\begin{DoxyCompactList}\small\item\em The function sets the orientation of Y-\/axis. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a7dc30b35ae89245b4b8f53a0777472a5}{orientation\+Z} (int8\+\_\+t v)
+\begin{DoxyCompactList}\small\item\em The function sets the orientation of Z-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,19 +74,25 @@ boolean \hyperlink{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{updat
 \item 
 \hyperlink{class_m_s_m_c___a4988}{M\+S\+M\+C\+\_\+\+A4988} \hyperlink{class_c_n_c___router_ac3fb4521615d90ff7baa6bdb287d97c9}{my}
 \item 
-Position\+X\+Y \hyperlink{class_c_n_c___router_adbaa016d11134c9dcef28fc38ff391e1}{old\+\_\+p}
+\hyperlink{class_m_s_m_c___a4988}{M\+S\+M\+C\+\_\+\+A4988} \hyperlink{class_c_n_c___router_add549ccc206f5feff41f9e818e370ef8}{mz}
+\item 
+Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}{old\+\_\+p}
 \begin{DoxyCompactList}\small\item\em It keeps the position that the utensil has after starting the motion. \end{DoxyCompactList}\item 
-Position\+X\+Y \hyperlink{class_c_n_c___router_afbc343929f49271f65f1eda7d28b8957}{end\+\_\+p}
+Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}{end\+\_\+p}
 \begin{DoxyCompactList}\small\item\em The final position of a motion. \end{DoxyCompactList}\item 
-Position\+X\+Y \hyperlink{class_c_n_c___router_a9e42e9ae1b2d5de3237706c2a8cf9440}{actual\+\_\+p}
+Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}{actual\+\_\+p}
 \begin{DoxyCompactList}\small\item\em It keeps the actual position of the utensil during an motion. \end{DoxyCompactList}\item 
 float \hyperlink{class_c_n_c___router_ad8830a7b387905027b8a1a9e3b31e3c7}{spmmx}
 \begin{DoxyCompactList}\small\item\em Steps to move of a mm in the X-\/axis (steps/mm). \end{DoxyCompactList}\item 
 float \hyperlink{class_c_n_c___router_ab44dd3a48e5c03f3484cd223cb8f9444}{spmmy}
 \begin{DoxyCompactList}\small\item\em Steps to move of a mm in the Y-\/axis (steps/mm). \end{DoxyCompactList}\item 
+float \hyperlink{class_c_n_c___router_a18bda26476d6fbe11fc6bb6ec69171ea}{spmmz}
+\begin{DoxyCompactList}\small\item\em Steps to move of a mm in the Z-\/axis (steps/mm). \end{DoxyCompactList}\item 
 float \hyperlink{class_c_n_c___router_afa08612e63f2cc3d3283fa06679b5d7a}{v\+\_\+max\+\_\+x}
 \begin{DoxyCompactList}\small\item\em The max speed for the motor that controls the X-\/axis (steps/s). \end{DoxyCompactList}\item 
 float \hyperlink{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{v\+\_\+max\+\_\+y}
+\begin{DoxyCompactList}\small\item\em The max speed for the motor that controls the Y-\/axis (steps/s). \end{DoxyCompactList}\item 
+float \hyperlink{class_c_n_c___router_a9e6e9d29184c011ec64e9648995af4cb}{v\+\_\+max\+\_\+z}
 \begin{DoxyCompactList}\small\item\em The max speed for the motor that controls the Y-\/axis (steps/s). \end{DoxyCompactList}\item 
 boolean \hyperlink{class_c_n_c___router_afd35356064c7667cbdf21c44a7dd7cf5}{pos\+\_\+type}
 \begin{DoxyCompactList}\small\item\em It stores the information about the positioning type\+: true = incremental; false = absolute. \end{DoxyCompactList}\item 
@@ -78,10 +100,14 @@ int8\+\_\+t \hyperlink{class_c_n_c___router_a109a7c6e2a1e556e577f2ad09eefbef7}{p
 \begin{DoxyCompactList}\small\item\em Pin number where it is attached the down limit switch of the X-\/axis. \end{DoxyCompactList}\item 
 int8\+\_\+t \hyperlink{class_c_n_c___router_a19cd8e9840fbfab991f9cab1300abe04}{pin\+\_\+ls\+\_\+y\+\_\+down}
 \begin{DoxyCompactList}\small\item\em Pin number where it is attached the down limit switch of the Y-\/axis. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_c_n_c___router_aa24cd537b5d08782fa01b055cea96c7d}{pin\+\_\+ls\+\_\+z\+\_\+down}
+\begin{DoxyCompactList}\small\item\em Pin number where it is attached the down limit switch of the Z-\/axis. \end{DoxyCompactList}\item 
 int8\+\_\+t \hyperlink{class_c_n_c___router_af935b225740dd189dcdcdca7664eb850}{pin\+\_\+ls\+\_\+x\+\_\+up}
 \begin{DoxyCompactList}\small\item\em Pin number where it is attached the up limit switch of the X-\/axis. \end{DoxyCompactList}\item 
 int8\+\_\+t \hyperlink{class_c_n_c___router_a056de16bac1a523455a7be2903e44f40}{pin\+\_\+ls\+\_\+y\+\_\+up}
-\begin{DoxyCompactList}\small\item\em Pin number where it is attached the up limit switch of the X-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pin number where it is attached the up limit switch of the Y-\/axis. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_c_n_c___router_ae178883b237176e39f62336b70769ace}{pin\+\_\+ls\+\_\+z\+\_\+up}
+\begin{DoxyCompactList}\small\item\em Pin number where it is attached the up limit switch of the Y-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -104,16 +130,18 @@ Francesco Giurlanda
 
 Default constructor. 
 
-\hypertarget{class_c_n_c___router_a928dbfed47e8514928b92559372378f0}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\hypertarget{class_c_n_c___router_af7a84e8ac77176373ac24bb1aadc1b97}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{C\+N\+C\+\_\+\+Router}]{\setlength{\rightskip}{0pt plus 5cm}C\+N\+C\+\_\+\+Router\+::\+C\+N\+C\+\_\+\+Router (
 \begin{DoxyParamCaption}
 \item[{float}]{spx, }
 \item[{float}]{spy, }
+\item[{float}]{spz, }
 \item[{float}]{vmx, }
-\item[{float}]{vmy}
+\item[{float}]{vmy, }
+\item[{float}]{vmz}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_a928dbfed47e8514928b92559372378f0}
+)}}\label{class_c_n_c___router_af7a84e8ac77176373ac24bb1aadc1b97}
 
 
 Constructor. 
@@ -124,39 +152,29 @@ Constructor.
 \hline
 {\em spy} & Step per one mm on the Y-\/axis \\
 \hline
+{\em spz} & Step per one mm on the Z-\/axis \\
+\hline
 {\em vmx} & Max speed in steps per mm on the X-\/axis \\
 \hline
 {\em vmy} & Max speed in steps per mm on the Y-\/axis \\
+\hline
+{\em vmz} & Max speed in steps per mm on the Z-\/axis \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_c_n_c___router_a177a7cc248cace9b84ae2b53d461cb6d}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!get\+Pos@{get\+Pos}}
+\hypertarget{class_c_n_c___router_a0fce19a7adf29dc0fb2b1a29c813b953}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!get\+Pos@{get\+Pos}}
 \index{get\+Pos@{get\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{get\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y C\+N\+C\+\_\+\+Router\+::get\+Pos (
+\subsubsection[{get\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::get\+Pos (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_a177a7cc248cace9b84ae2b53d461cb6d}
+)}}\label{class_c_n_c___router_a0fce19a7adf29dc0fb2b1a29c813b953}
 
 
 It get the actual position of the utensil. 
 
-\hypertarget{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!high\+Precision@{high\+Precision}}
-\index{high\+Precision@{high\+Precision}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{high\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::high\+Precision (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_ad82ea519e54f4ec488c10c150df26984}
-
-
-It sets up a high precision mode to control the X\+Y-\/axii. 
-
-The function sets up the E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P for A4988 and H\+A\+L\+F\+\_\+\+S\+T\+E\+P for U\+L\+N2003\+A. \begin{DoxySeeAlso}{See also}
-\hyperlink{_m_s_m_c___a4988_8h}{M\+S\+M\+C\+\_\+\+A4988.\+h} \hyperlink{class_m_s_m_c___u_l_n2003_a}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A} 
-\end{DoxySeeAlso}
 \hypertarget{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!init\+Motor\+X@{init\+Motor\+X}}
 \index{init\+Motor\+X@{init\+Motor\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{init\+Motor\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::init\+Motor\+X (
@@ -166,7 +184,7 @@ The function sets up the E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P for A4988 and H\+A\+
 )}}\label{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}
 
 
-It initializes the controller for the motor on the X-\/axis. It must be called one time before starting the motion opetations. 
+It initializes the controller for the motor on the X-\/axis. It must be called one time before starting the motion operations. 
 
 \hypertarget{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!init\+Motor\+Y@{init\+Motor\+Y}}
 \index{init\+Motor\+Y@{init\+Motor\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
@@ -177,31 +195,72 @@ It initializes the controller for the motor on the X-\/axis. It must be called o
 )}}\label{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}
 
 
-It initializes the controller for the motor on the Y-\/axis. It must be called one time before starting the motion opetations. 
+It initializes the controller for the motor on the Y-\/axis. It must be called one time before starting the motion operations. 
 
-\hypertarget{class_c_n_c___router_a15e3fab9eefaa7a61403c0054e643901}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!low\+Precision@{low\+Precision}}
-\index{low\+Precision@{low\+Precision}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{low\+Precision}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::low\+Precision (
+\hypertarget{class_c_n_c___router_a2ae50762cc38690090515f30bcd5033c}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!init\+Motor\+Z@{init\+Motor\+Z}}
+\index{init\+Motor\+Z@{init\+Motor\+Z}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{init\+Motor\+Z}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::init\+Motor\+Z (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_a15e3fab9eefaa7a61403c0054e643901}
+)}}\label{class_c_n_c___router_a2ae50762cc38690090515f30bcd5033c}
 
 
-It sets up a low precision mode to control the X\+Y-\/axii. It is also the fastest control mode. 
+It initializes the controller for the motor on the Z-\/axis. It must be called one time before starting the motion operations. 
 
-The function sets up the F\+U\+L\+L\+\_\+\+S\+T\+E\+P for A4988 and U\+L\+N2003\+A. \begin{DoxySeeAlso}{See also}
-\hyperlink{_m_s_m_c___a4988_8h}{M\+S\+M\+C\+\_\+\+A4988.\+h} \hyperlink{class_m_s_m_c___u_l_n2003_a}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A} 
-\end{DoxySeeAlso}
-\hypertarget{class_c_n_c___router_a9630faad381924b8f3252e100345274e}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
+\hypertarget{class_c_n_c___router_a1b652407bb9e7bb170d55d1c96e6611c}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
 \index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
 \begin{DoxyParamCaption}
 \item[{float}]{px, }
 \item[{float}]{py, }
+\item[{float}]{pz, }
 \item[{float}]{spd = {\ttfamily 0.0}}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_a9630faad381924b8f3252e100345274e}
+)}}\label{class_c_n_c___router_a1b652407bb9e7bb170d55d1c96e6611c}
+
+
+It initializes a motion operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em px} & The new position on the X-\/axis. \\
+\hline
+{\em py} & The new position on the Y-\/axis \\
+\hline
+{\em pz} & The new position on the Z-\/axis \\
+\hline
+{\em spd} & The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to \hyperlink{class_c_n_c___router_afa08612e63f2cc3d3283fa06679b5d7a}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+x} and \hyperlink{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+y}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_a7bb1accca615b13aadd050dfec1031e6}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
+\index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
+\begin{DoxyParamCaption}
+\item[{const Position\+X\+Y\+Z \&}]{np, }
+\item[{float}]{spd = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a7bb1accca615b13aadd050dfec1031e6}
+
+
+It initializes a motion operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em np} & The new position on the X\+Y-\/axii. \\
+\hline
+{\em spd} & The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to \hyperlink{class_c_n_c___router_afa08612e63f2cc3d3283fa06679b5d7a}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+x} and \hyperlink{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+y}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_a3aedfc767d93e8cb59f10322067ffdae}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To\+X\+Y@{move\+To\+X\+Y}}
+\index{move\+To\+X\+Y@{move\+To\+X\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{move\+To\+X\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To\+X\+Y (
+\begin{DoxyParamCaption}
+\item[{float}]{px, }
+\item[{float}]{py, }
+\item[{float}]{spd = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a3aedfc767d93e8cb59f10322067ffdae}
 
 
 It initializes a motion operation. 
@@ -215,14 +274,14 @@ It initializes a motion operation.
 {\em spd} & The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to \hyperlink{class_c_n_c___router_afa08612e63f2cc3d3283fa06679b5d7a}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+x} and \hyperlink{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+y}. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_c_n_c___router_a7eb9a8553f02ba626abbc32f98663759}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
-\index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
+\hypertarget{class_c_n_c___router_a3f6bcafb0e7ce2751a7e4a424a99ec7e}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To\+X\+Y@{move\+To\+X\+Y}}
+\index{move\+To\+X\+Y@{move\+To\+X\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{move\+To\+X\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To\+X\+Y (
 \begin{DoxyParamCaption}
-\item[{const Position\+X\+Y \&}]{np, }
+\item[{const Position\+X\+Y\+Z \&}]{np, }
 \item[{float}]{spd = {\ttfamily 0.0}}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_a7eb9a8553f02ba626abbc32f98663759}
+)}}\label{class_c_n_c___router_a3f6bcafb0e7ce2751a7e4a424a99ec7e}
 
 
 It initializes a motion operation. 
@@ -232,6 +291,54 @@ It initializes a motion operation.
 {\em np} & The new position on the X\+Y-\/axii. \\
 \hline
 {\em spd} & The feed rate of the motion, (mm/s). If it is 0, the feed rate will be the maximum speed possible according to \hyperlink{class_c_n_c___router_afa08612e63f2cc3d3283fa06679b5d7a}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+x} and \hyperlink{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+y}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_adef23983c5aac16fa0431f861eb41fc2}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!orientation\+X@{orientation\+X}}
+\index{orientation\+X@{orientation\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{orientation\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::orientation\+X (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_adef23983c5aac16fa0431f861eb41fc2}
+
+
+The function sets the orientation of X-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & 1 for direct orientation, -\/1 for inverted orientation \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_abced37562004a4b303291be79e49a23b}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!orientation\+Y@{orientation\+Y}}
+\index{orientation\+Y@{orientation\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{orientation\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::orientation\+Y (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_abced37562004a4b303291be79e49a23b}
+
+
+The function sets the orientation of Y-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & 1 for direct orientation, -\/1 for inverted orientation \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_a7dc30b35ae89245b4b8f53a0777472a5}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!orientation\+Z@{orientation\+Z}}
+\index{orientation\+Z@{orientation\+Z}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{orientation\+Z}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::orientation\+Z (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a7dc30b35ae89245b4b8f53a0777472a5}
+
+
+The function sets the orientation of Z-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & 1 for direct orientation, -\/1 for inverted orientation \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_c_n_c___router_a6b5ad1a227e63d3f374e0e53f3cf047c}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pause@{pause}}
@@ -298,8 +405,16 @@ It selects the absolute positioning mode.
 )}}\label{class_c_n_c___router_abbda24db494dd328382639412570978e}
 
 
-It selects the incremental positioning mode. 
+It sets up a high precision mode to control the X\+Y-\/axii. 
 
+The function sets up the E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P for A4988 and H\+A\+L\+F\+\_\+\+S\+T\+E\+P for U\+L\+N2003\+A. \begin{DoxySeeAlso}{See also}
+\hyperlink{_m_s_m_c___a4988_8h}{M\+S\+M\+C\+\_\+\+A4988.\+h} \hyperlink{_m_s_m_c___u_l_n2003_a_8h}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h}
+\end{DoxySeeAlso}
+It sets up a low precision mode to control the X\+Y-\/axii. It is also the fastest control mode.
+
+The function sets up the F\+U\+L\+L\+\_\+\+S\+T\+E\+P for A4988 and U\+L\+N2003\+A. \begin{DoxySeeAlso}{See also}
+\hyperlink{_m_s_m_c___a4988_8h}{M\+S\+M\+C\+\_\+\+A4988.\+h} M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h\+It selects the incremental positioning mode. 
+\end{DoxySeeAlso}
 \hypertarget{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Limit\+Switch\+X@{set\+Limit\+Switch\+X}}
 \index{set\+Limit\+Switch\+X@{set\+Limit\+Switch\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{set\+Limit\+Switch\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Limit\+Switch\+X (
@@ -338,6 +453,118 @@ The system needs at least the down limit switch
 {\em up} & The pin number where is attached the up limit switch \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_c_n_c___router_ac993b5ad9929da6f83bb8783fafafa1a}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Limit\+Switch\+Z@{set\+Limit\+Switch\+Z}}
+\index{set\+Limit\+Switch\+Z@{set\+Limit\+Switch\+Z}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Limit\+Switch\+Z}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Limit\+Switch\+Z (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{dw, }
+\item[{int8\+\_\+t}]{up = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_ac993b5ad9929da6f83bb8783fafafa1a}
+
+
+Sets the pins where are attached the down/up limit switches. 
+
+The system needs at least the down limit switch 
+\begin{DoxyParams}{Parameters}
+{\em dw} & The pin number where is attached the down limit switch. \\
+\hline
+{\em up} & The pin number where is attached the up limit switch \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_a6fd3b892aa1730dc2cb79bc91c0e90b6}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Motion\+Mode\+X@{set\+Motion\+Mode\+X}}
+\index{set\+Motion\+Mode\+X@{set\+Motion\+Mode\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Motion\+Mode\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Motion\+Mode\+X (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{m}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a6fd3b892aa1730dc2cb79bc91c0e90b6}
+
+
+Specifies the motion control mode for the motor on X-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The motion mode can be\+:
+\begin{DoxyItemize}
+\item with U\+L\+N2003\+A controller
+\begin{DoxyEnumerate}
+\item F\+U\+L\+L\+\_\+\+S\+T\+E\+P
+\item H\+A\+L\+F\+\_\+\+S\+T\+E\+P
+\end{DoxyEnumerate}
+\item with A4988 controller
+\begin{DoxyEnumerate}
+\item F\+U\+L\+L\+\_\+\+S\+T\+E\+P
+\item H\+A\+L\+F\+\_\+\+S\+T\+E\+P
+\item Q\+U\+A\+R\+T\+E\+R\+\_\+\+S\+T\+E\+P
+\item E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P
+\item S\+I\+X\+T\+E\+E\+N\+T\+H\+\_\+\+S\+T\+E\+P 
+\end{DoxyEnumerate}
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_a42148bff778d0dbd45b37f7a09b61382}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Motion\+Mode\+Y@{set\+Motion\+Mode\+Y}}
+\index{set\+Motion\+Mode\+Y@{set\+Motion\+Mode\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Motion\+Mode\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Motion\+Mode\+Y (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{m}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a42148bff778d0dbd45b37f7a09b61382}
+
+
+Specifies the motion control mode for the motor on Y-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The motion mode can be\+:
+\begin{DoxyItemize}
+\item with U\+L\+N2003\+A controller
+\begin{DoxyEnumerate}
+\item F\+U\+L\+L\+\_\+\+S\+T\+E\+P
+\item H\+A\+L\+F\+\_\+\+S\+T\+E\+P
+\end{DoxyEnumerate}
+\item with A4988 controller
+\begin{DoxyEnumerate}
+\item F\+U\+L\+L\+\_\+\+S\+T\+E\+P
+\item H\+A\+L\+F\+\_\+\+S\+T\+E\+P
+\item Q\+U\+A\+R\+T\+E\+R\+\_\+\+S\+T\+E\+P
+\item E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P
+\item S\+I\+X\+T\+E\+E\+N\+T\+H\+\_\+\+S\+T\+E\+P 
+\end{DoxyEnumerate}
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_n_c___router_a28ddb2544290798664f99ed506f7d44a}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Motion\+Mode\+Z@{set\+Motion\+Mode\+Z}}
+\index{set\+Motion\+Mode\+Z@{set\+Motion\+Mode\+Z}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Motion\+Mode\+Z}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Motion\+Mode\+Z (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{m}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a28ddb2544290798664f99ed506f7d44a}
+
+
+Specifies the motion control mode for the motor on Z-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The motion mode can be\+:
+\begin{DoxyItemize}
+\item with U\+L\+N2003\+A controller
+\begin{DoxyEnumerate}
+\item F\+U\+L\+L\+\_\+\+S\+T\+E\+P
+\item H\+A\+L\+F\+\_\+\+S\+T\+E\+P
+\end{DoxyEnumerate}
+\item with A4988 controller
+\begin{DoxyEnumerate}
+\item F\+U\+L\+L\+\_\+\+S\+T\+E\+P
+\item H\+A\+L\+F\+\_\+\+S\+T\+E\+P
+\item Q\+U\+A\+R\+T\+E\+R\+\_\+\+S\+T\+E\+P
+\item E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P
+\item S\+I\+X\+T\+E\+E\+N\+T\+H\+\_\+\+S\+T\+E\+P 
+\end{DoxyEnumerate}
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
 \hypertarget{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!stop\+Motion@{stop\+Motion}}
 \index{stop\+Motion@{stop\+Motion}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{stop\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::stop\+Motion (
@@ -369,16 +596,16 @@ It returns true if the motion id end, otherwise it returns false.
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_c_n_c___router_a9e42e9ae1b2d5de3237706c2a8cf9440}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!actual\+\_\+p@{actual\+\_\+p}}
+\hypertarget{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!actual\+\_\+p@{actual\+\_\+p}}
 \index{actual\+\_\+p@{actual\+\_\+p}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{actual\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y C\+N\+C\+\_\+\+Router\+::actual\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a9e42e9ae1b2d5de3237706c2a8cf9440}
+\subsubsection[{actual\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::actual\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}
 
 
 It keeps the actual position of the utensil during an motion. 
 
-\hypertarget{class_c_n_c___router_afbc343929f49271f65f1eda7d28b8957}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!end\+\_\+p@{end\+\_\+p}}
+\hypertarget{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!end\+\_\+p@{end\+\_\+p}}
 \index{end\+\_\+p@{end\+\_\+p}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{end\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y C\+N\+C\+\_\+\+Router\+::end\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_afbc343929f49271f65f1eda7d28b8957}
+\subsubsection[{end\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::end\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}
 
 
 The final position of a motion. 
@@ -389,9 +616,12 @@ The final position of a motion.
 \hypertarget{class_c_n_c___router_ac3fb4521615d90ff7baa6bdb287d97c9}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!my@{my}}
 \index{my@{my}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{my}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+M\+C\+\_\+\+A4988} C\+N\+C\+\_\+\+Router\+::my\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_ac3fb4521615d90ff7baa6bdb287d97c9}
-\hypertarget{class_c_n_c___router_adbaa016d11134c9dcef28fc38ff391e1}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!old\+\_\+p@{old\+\_\+p}}
+\hypertarget{class_c_n_c___router_add549ccc206f5feff41f9e818e370ef8}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!mz@{mz}}
+\index{mz@{mz}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{mz}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+M\+C\+\_\+\+A4988} C\+N\+C\+\_\+\+Router\+::mz\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_add549ccc206f5feff41f9e818e370ef8}
+\hypertarget{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!old\+\_\+p@{old\+\_\+p}}
 \index{old\+\_\+p@{old\+\_\+p}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{old\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y C\+N\+C\+\_\+\+Router\+::old\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_adbaa016d11134c9dcef28fc38ff391e1}
+\subsubsection[{old\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::old\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}
 
 
 It keeps the position that the utensil has after starting the motion. 
@@ -422,7 +652,21 @@ Pin number where it is attached the down limit switch of the Y-\/axis.
 \subsubsection[{pin\+\_\+ls\+\_\+y\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+y\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a056de16bac1a523455a7be2903e44f40}
 
 
-Pin number where it is attached the up limit switch of the X-\/axis. 
+Pin number where it is attached the up limit switch of the Y-\/axis. 
+
+\hypertarget{class_c_n_c___router_aa24cd537b5d08782fa01b055cea96c7d}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+z\+\_\+down@{pin\+\_\+ls\+\_\+z\+\_\+down}}
+\index{pin\+\_\+ls\+\_\+z\+\_\+down@{pin\+\_\+ls\+\_\+z\+\_\+down}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{pin\+\_\+ls\+\_\+z\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+z\+\_\+down\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_aa24cd537b5d08782fa01b055cea96c7d}
+
+
+Pin number where it is attached the down limit switch of the Z-\/axis. 
+
+\hypertarget{class_c_n_c___router_ae178883b237176e39f62336b70769ace}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+z\+\_\+up@{pin\+\_\+ls\+\_\+z\+\_\+up}}
+\index{pin\+\_\+ls\+\_\+z\+\_\+up@{pin\+\_\+ls\+\_\+z\+\_\+up}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{pin\+\_\+ls\+\_\+z\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+z\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_ae178883b237176e39f62336b70769ace}
+
+
+Pin number where it is attached the up limit switch of the Y-\/axis. 
 
 \hypertarget{class_c_n_c___router_afd35356064c7667cbdf21c44a7dd7cf5}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pos\+\_\+type@{pos\+\_\+type}}
 \index{pos\+\_\+type@{pos\+\_\+type}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
@@ -451,6 +695,16 @@ Steps to move of a mm in the Y-\/axis (steps/mm).
 \begin{DoxySeeAlso}{See also}
 \hyperlink{config_8h}{config.\+h} 
 \end{DoxySeeAlso}
+\hypertarget{class_c_n_c___router_a18bda26476d6fbe11fc6bb6ec69171ea}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!spmmz@{spmmz}}
+\index{spmmz@{spmmz}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{spmmz}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+C\+\_\+\+Router\+::spmmz\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a18bda26476d6fbe11fc6bb6ec69171ea}
+
+
+Steps to move of a mm in the Z-\/axis (steps/mm). 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{config_8h}{config.\+h} 
+\end{DoxySeeAlso}
 \hypertarget{class_c_n_c___router_afa08612e63f2cc3d3283fa06679b5d7a}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!v\+\_\+max\+\_\+x@{v\+\_\+max\+\_\+x}}
 \index{v\+\_\+max\+\_\+x@{v\+\_\+max\+\_\+x}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{v\+\_\+max\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_afa08612e63f2cc3d3283fa06679b5d7a}
@@ -464,6 +718,16 @@ The max speed for the motor that controls the X-\/axis (steps/s).
 \hypertarget{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!v\+\_\+max\+\_\+y@{v\+\_\+max\+\_\+y}}
 \index{v\+\_\+max\+\_\+y@{v\+\_\+max\+\_\+y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{v\+\_\+max\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}
+
+
+The max speed for the motor that controls the Y-\/axis (steps/s). 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{config_8h}{config.\+h} 
+\end{DoxySeeAlso}
+\hypertarget{class_c_n_c___router_a9e6e9d29184c011ec64e9648995af4cb}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!v\+\_\+max\+\_\+z@{v\+\_\+max\+\_\+z}}
+\index{v\+\_\+max\+\_\+z@{v\+\_\+max\+\_\+z}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{v\+\_\+max\+\_\+z}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+C\+\_\+\+Router\+::v\+\_\+max\+\_\+z\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a9e6e9d29184c011ec64e9648995af4cb}
 
 
 The max speed for the motor that controls the Y-\/axis (steps/s). 

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['highprecision',['highPrecision',['../class_c_n_c___router.html#ad82ea519e54f4ec488c10c150df26984',1,'CNC_Router::highPrecision()'],['../class_milling_machine.html#a3236520b26c7ab2ebad6a89edfc67d8c',1,'MillingMachine::highPrecision()']]]
+  ['init',['init',['../class_milling_machine.html#ad8b30fc42959606e9773e5ae7e31bac7',1,'MillingMachine']]],
+  ['initmotorx',['initMotorX',['../class_c_n_c___router.html#a89f4cbde58844154f247d2bf02a167fb',1,'CNC_Router']]],
+  ['initmotory',['initMotorY',['../class_c_n_c___router.html#a7f13e636e4b92c5547995b653cea317e',1,'CNC_Router']]],
+  ['initmotorz',['initMotorZ',['../class_c_n_c___router.html#a2ae50762cc38690090515f30bcd5033c',1,'CNC_Router']]]
 ];

@@ -150,6 +150,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab097e238a4a8c905e478ecff23907059"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#ab097e238a4a8c905e478ecff23907059">getSteps</a> ()</td></tr>
 <tr class="memdesc:ab097e238a4a8c905e478ecff23907059"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function returns the number of steps performed from a forward or backward command.  <a href="#ab097e238a4a8c905e478ecff23907059">More...</a><br /></td></tr>
 <tr class="separator:ab097e238a4a8c905e478ecff23907059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620616f8e3cad131c8a57b48c3c8551f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#a620616f8e3cad131c8a57b48c3c8551f">setOrientation</a> (int8_t v)</td></tr>
+<tr class="memdesc:a620616f8e3cad131c8a57b48c3c8551f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function sets the orientation of the associated axis.  <a href="#a620616f8e3cad131c8a57b48c3c8551f">More...</a><br /></td></tr>
+<tr class="separator:a620616f8e3cad131c8a57b48c3c8551f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -192,6 +195,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a887a3d29966bdfc0d920d339b83e5346"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#a887a3d29966bdfc0d920d339b83e5346">dir</a></td></tr>
 <tr class="memdesc:a887a3d29966bdfc0d920d339b83e5346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the direction of the motor: -1 backward, 1 forward, 0 all pin out LOW.  <a href="#a887a3d29966bdfc0d920d339b83e5346">More...</a><br /></td></tr>
 <tr class="separator:a887a3d29966bdfc0d920d339b83e5346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81bb2d2035011573f68c7a2c66bc5bc2"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#a81bb2d2035011573f68c7a2c66bc5bc2">orientation</a></td></tr>
+<tr class="memdesc:a81bb2d2035011573f68c7a2c66bc5bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 to actual orientation, -1 to inverted orientation  <a href="#a81bb2d2035011573f68c7a2c66bc5bc2">More...</a><br /></td></tr>
+<tr class="separator:a81bb2d2035011573f68c7a2c66bc5bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ef4c886ee6c7ed6fa87e27c0a7a9ea"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_s_m_c___a4988.html#a86ef4c886ee6c7ed6fa87e27c0a7a9ea">m_ready</a></td></tr>
 <tr class="memdesc:a86ef4c886ee6c7ed6fa87e27c0a7a9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the motor is ready to take a new command: <a class="el" href="class_m_s_m_c___a4988.html#a9acdbabf546656a6436e89579e8fcfca" title="Configure the motor to move forward. ">forward(uint32_t, uint32_t)</a> or <a class="el" href="class_m_s_m_c___a4988.html#a836bed9e28e723ead2a94446bb704869" title="Configure the motor to move backward. ">backward(uint32_t, uint32_t)</a>.  <a href="#a86ef4c886ee6c7ed6fa87e27c0a7a9ea">More...</a><br /></td></tr>
 <tr class="separator:a86ef4c886ee6c7ed6fa87e27c0a7a9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -616,6 +622,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a620616f8e3cad131c8a57b48c3c8551f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MSMC_A4988::setOrientation </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function sets the orientation of the associated axis. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>1 to set the current orientation, -1 to set an inverted orientation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a7aa6ddff4b561e47f09e4726b160294b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -859,6 +889,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a81bb2d2035011573f68c7a2c66bc5bc2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t MSMC_A4988::orientation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>1 to actual orientation, -1 to inverted orientation </p>
+
+</div>
+</div>
 <a class="anchor" id="a3c4854c40c6d9db5e37698eea2debd70"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1042,7 +1094,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 8 2014 17:13:49 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 22 2014 21:32:25 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -7,7 +7,6 @@ var searchData=
   ['params',['params',['../class_g_code.html#a6f38c9dddbd7c12c786c6363fd2a369c',1,'GCode']]],
   ['pars_5fspec',['pars_spec',['../class_g_code.html#a6d11b02685ef1b387a3c9da004547006',1,'GCode']]],
   ['parser_5fstatus',['parser_status',['../class_g_code.html#a56d0e5e56115cd8e7b3f161cc8c0528e',1,'GCode']]],
-  ['path_5fcontrol',['path_control',['../class_g_code.html#a05307dd7b9ff2f74bfd81aed40104fa8',1,'GCode']]],
   ['pause_5ftime',['pause_time',['../class_m_s_m_c___a4988.html#a3c4854c40c6d9db5e37698eea2debd70',1,'MSMC_A4988::pause_time()'],['../class_m_s_m_c___u_l_n2003_a.html#a06987cfacad47f56ec9f3e54cc72ff08',1,'MSMC_ULN2003A::pause_time()']]],
   ['pin_5fdir',['pin_dir',['../class_m_s_m_c___a4988.html#a2bc9676a272bcd6604aaf8b08ac07109',1,'MSMC_A4988']]],
   ['pin_5fenable',['pin_enable',['../class_m_s_m_c___a4988.html#a822c3db98367f3e60347a13d1d16170b',1,'MSMC_A4988']]],
@@ -15,10 +14,9 @@ var searchData=
   ['pin_5fls_5fx_5fup',['pin_ls_x_up',['../class_c_n_c___router.html#af935b225740dd189dcdcdca7664eb850',1,'CNC_Router']]],
   ['pin_5fls_5fy_5fdown',['pin_ls_y_down',['../class_c_n_c___router.html#a19cd8e9840fbfab991f9cab1300abe04',1,'CNC_Router']]],
   ['pin_5fls_5fy_5fup',['pin_ls_y_up',['../class_c_n_c___router.html#a056de16bac1a523455a7be2903e44f40',1,'CNC_Router']]],
-  ['pin_5fls_5fz_5fdown',['pin_ls_z_down',['../class_milling_machine.html#af874e2e54a7780872311d2e827263aff',1,'MillingMachine']]],
-  ['pin_5fls_5fz_5fup',['pin_ls_z_up',['../class_milling_machine.html#a72b61ede8613f69461d1b9c7d5a1ee3e',1,'MillingMachine']]],
+  ['pin_5fls_5fz_5fdown',['pin_ls_z_down',['../class_c_n_c___router.html#aa24cd537b5d08782fa01b055cea96c7d',1,'CNC_Router']]],
+  ['pin_5fls_5fz_5fup',['pin_ls_z_up',['../class_c_n_c___router.html#ae178883b237176e39f62336b70769ace',1,'CNC_Router']]],
   ['pin_5fstep',['pin_step',['../class_m_s_m_c___a4988.html#a2ea61398ce88d1ee627b409a5965b478',1,'MSMC_A4988']]],
-  ['plane_5fselect',['plane_select',['../class_g_code.html#a0f278ed4c1265656f062365ca345d353',1,'GCode']]],
   ['pos',['pos',['../class_m_s_m_c___u_l_n2003_a.html#a8318f5fbce84ff22c9d800e6b637bf52',1,'MSMC_ULN2003A']]],
-  ['pos_5ftype',['pos_type',['../class_c_n_c___router.html#afd35356064c7667cbdf21c44a7dd7cf5',1,'CNC_Router::pos_type()'],['../class_milling_machine.html#a46ae1c0f1d5c73fc3888c231a1a8b426',1,'MillingMachine::pos_type()']]]
+  ['pos_5ftype',['pos_type',['../class_c_n_c___router.html#afd35356064c7667cbdf21c44a7dd7cf5',1,'CNC_Router']]]
 ];

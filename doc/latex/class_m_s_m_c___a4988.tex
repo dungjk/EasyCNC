@@ -46,7 +46,9 @@ void \hyperlink{class_m_s_m_c___a4988_add93aa459190c6edb3551495e75aaded}{restart
 boolean \hyperlink{class_m_s_m_c___a4988_a409bea28b42827c8bd7d5e5e318af21d}{update} ()
 \begin{DoxyCompactList}\small\item\em Perform the motion of the motor. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{class_m_s_m_c___a4988_ab097e238a4a8c905e478ecff23907059}{get\+Steps} ()
-\begin{DoxyCompactList}\small\item\em The function returns the number of steps performed from a forward or backward command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The function returns the number of steps performed from a forward or backward command. \end{DoxyCompactList}\item 
+void \hyperlink{class_m_s_m_c___a4988_a620616f8e3cad131c8a57b48c3c8551f}{set\+Orientation} (int8\+\_\+t v)
+\begin{DoxyCompactList}\small\item\em The function sets the orientation of the associated axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,6 +79,8 @@ uint32\+\_\+t \hyperlink{class_m_s_m_c___a4988_a3c4854c40c6d9db5e37698eea2debd70
 \begin{DoxyCompactList}\small\item\em The time value in microseconds set by the function \hyperlink{class_m_s_m_c___u_l_n2003_a_aa1d3444465d59ca6c87f05f565dde4a2}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::pause()}. \end{DoxyCompactList}\item 
 int8\+\_\+t \hyperlink{class_m_s_m_c___a4988_a887a3d29966bdfc0d920d339b83e5346}{dir}
 \begin{DoxyCompactList}\small\item\em Specify the direction of the motor\+: -\/1 backward, 1 forward, 0 all pin out L\+O\+W. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_m_s_m_c___a4988_a81bb2d2035011573f68c7a2c66bc5bc2}{orientation}
+\begin{DoxyCompactList}\small\item\em 1 to actual orientation, -\/1 to inverted orientation \end{DoxyCompactList}\item 
 boolean \hyperlink{class_m_s_m_c___a4988_a86ef4c886ee6c7ed6fa87e27c0a7a9ea}{m\+\_\+ready}
 \begin{DoxyCompactList}\small\item\em True if the motor is ready to take a new command\+: \hyperlink{class_m_s_m_c___a4988_a9acdbabf546656a6436e89579e8fcfca}{forward(uint32\+\_\+t, uint32\+\_\+t)} or \hyperlink{class_m_s_m_c___a4988_a836bed9e28e723ead2a94446bb704869}{backward(uint32\+\_\+t, uint32\+\_\+t)}. \end{DoxyCompactList}\item 
 boolean \hyperlink{class_m_s_m_c___a4988_a1ec86b6286b8827eca6d5703a02f65fd}{step\+\_\+pin\+\_\+val}
@@ -331,6 +335,22 @@ Set up the control mode.
 
 Reimplemented from \hyperlink{class_m_s_m_c_a85bd4abf542aecdf24bb90b9ea2a47e9}{M\+S\+M\+C}.
 
+\hypertarget{class_m_s_m_c___a4988_a620616f8e3cad131c8a57b48c3c8551f}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!set\+Orientation@{set\+Orientation}}
+\index{set\+Orientation@{set\+Orientation}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{set\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::set\+Orientation (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_m_s_m_c___a4988_a620616f8e3cad131c8a57b48c3c8551f}
+
+
+The function sets the orientation of the associated axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & 1 to set the current orientation, -\/1 to set an inverted orientation. \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_m_s_m_c___a4988_a7aa6ddff4b561e47f09e4726b160294b}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!set\+Pins@{set\+Pins}}
 \index{set\+Pins@{set\+Pins}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
 \subsubsection[{set\+Pins}]{\setlength{\rightskip}{0pt plus 5cm}void M\+S\+M\+C\+\_\+\+A4988\+::set\+Pins (
@@ -446,6 +466,13 @@ True if the motor is ready to take a new command\+: \hyperlink{class_m_s_m_c___a
 
 
 The time value in microseconds set during the last step. 
+
+\hypertarget{class_m_s_m_c___a4988_a81bb2d2035011573f68c7a2c66bc5bc2}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!orientation@{orientation}}
+\index{orientation@{orientation}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}
+\subsubsection[{orientation}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t M\+S\+M\+C\+\_\+\+A4988\+::orientation\hspace{0.3cm}{\ttfamily [private]}}}\label{class_m_s_m_c___a4988_a81bb2d2035011573f68c7a2c66bc5bc2}
+
+
+1 to actual orientation, -\/1 to inverted orientation 
 
 \hypertarget{class_m_s_m_c___a4988_a3c4854c40c6d9db5e37698eea2debd70}{\index{M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}!pause\+\_\+time@{pause\+\_\+time}}
 \index{pause\+\_\+time@{pause\+\_\+time}!M\+S\+M\+C\+\_\+\+A4988@{M\+S\+M\+C\+\_\+\+A4988}}

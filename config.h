@@ -27,7 +27,7 @@
 
 #include "pins_arduino.h"
 
-#define SERIAL_BOUND 38400
+#define SERIAL_BOUND 57600
 #define INTERRUPT_STOP_MOTION 1
 
 
@@ -121,25 +121,8 @@
 #endif
 
 #ifdef _MILLING_MACHINE
-#define _MILLING_MACHINE_MZ_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Z-axis. */
-#define _MILLING_MACHINE_MZ_STEPS_PER_MM _MILLING_MACHINE_MZ_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
-#define _MILLING_MACHINE_MZ_FAST_SPEED 5000.0           /*!< \brief The maximum speed used to control the motor of Z-axis. The unit is steps/s. */
-#define _MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z 18  /*!< \brief The number of the pin which is connected to the limit switch of the Z-axis. */
-
-//#define _MILLING_MACHINE_MZ_CONTROLLER_ULN2003A
-#define _MILLING_MACHINE_MZ_CONTROLLER_A4988
-
-#if defined(_MILLING_MACHINE_MZ_CONTROLLER_ULN2003A)
-#define _MILLING_MACHINE_MZ_COIL1_PIN 8                  /*!< \brief Pin connected to the coil 1 of the unipolar motor of Z-axis through the ULN2003A controller. */
-#define _MILLING_MACHINE_MZ_COIL2_PIN 9                  /*!< \brief Pin connected to the coil 2 of the unipolar motor of Z-axis through the ULN2003A controller. */
-#define _MILLING_MACHINE_MZ_COIL3_PIN 10                 /*!< \brief Pin connected to the coil 3 of the unipolar motor of Z-axis through the ULN2003A controller. */
-#define _MILLING_MACHINE_MZ_COIL4_PIN 11                 /*!< \brief Pin connected to the coil 4 of the unipolar motor of Z-axis through the ULN2003A controller. */
-#endif
-
-#if defined(_MILLING_MACHINE_MZ_CONTROLLER_A4988)
-#define _MILLING_MACHINE_MZ_STEP_CONTROL_PIN   A6  		 //!< \brief Pin connected to the step control pin of the A4988
-#define _MILLING_MACHINE_MZ_DIRECTION_CONTROL_PIN A7	 //!< \brief Pin connected to the direction control pin of the A4988
-#define _MILLING_MACHINE_MZ_ENABLE_CONTROL_PIN A2		 //!< \brief Pin connected to the enable pin of the A4988
+#define _MILLING_MACHINE_ENABLE_PIN 10    /*!< \brief The pin number connected to the enable circuit of the milling machine*/
+#define _MILLING_MACHINE_SPEED_PIN   11    /*!< \brief The pin number connected to the speed control circuit of the milling machine.*/
 #endif
 
 // ******************
@@ -150,4 +133,3 @@
 #define DBGNL(x) Serial.println(x)
 #define DBG(x) Serial.print(x)
 
-#endif

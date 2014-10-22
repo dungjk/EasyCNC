@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a58562c1eea53acf4d89ae2e8ed79e7ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a58562c1eea53acf4d89ae2e8ed79e7ac">SERIAL_BOUND</a>&#160;&#160;&#160;9600</td></tr>
+<tr class="memitem:a58562c1eea53acf4d89ae2e8ed79e7ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a58562c1eea53acf4d89ae2e8ed79e7ac">SERIAL_BOUND</a>&#160;&#160;&#160;57600</td></tr>
 <tr class="memdesc:a58562c1eea53acf4d89ae2e8ed79e7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the speed of the serial comunication.  <a href="#a58562c1eea53acf4d89ae2e8ed79e7ac">More...</a><br /></td></tr>
 <tr class="separator:a58562c1eea53acf4d89ae2e8ed79e7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11cc693021583511d43ba72c445120ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a11cc693021583511d43ba72c445120ea">INTERRUPT_STOP_MOTION</a>&#160;&#160;&#160;1</td></tr>
@@ -107,24 +107,36 @@ Macros</h2></td></tr>
 <tr class="memitem:acea4b1619e299b0aff23f42c8ee5d84f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f">ROUTER_MY_STEPS_PER_ROUND</a>&#160;&#160;&#160;200.0</td></tr>
 <tr class="memdesc:acea4b1619e299b0aff23f42c8ee5d84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nunber of steps to make a round for the motor of the Y-axis.  <a href="#acea4b1619e299b0aff23f42c8ee5d84f">More...</a><br /></td></tr>
 <tr class="separator:acea4b1619e299b0aff23f42c8ee5d84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8d3a71b09ab28f1b65ee4b276355df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#acc8d3a71b09ab28f1b65ee4b276355df">ROUTER_MZ_STEPS_PER_ROUND</a>&#160;&#160;&#160;200.0</td></tr>
+<tr class="memdesc:acc8d3a71b09ab28f1b65ee4b276355df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nunber of steps to make a round for the motor of the Z-axis.  <a href="#acc8d3a71b09ab28f1b65ee4b276355df">More...</a><br /></td></tr>
+<tr class="separator:acc8d3a71b09ab28f1b65ee4b276355df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18fe160593d7a9ca8064b3f911c38cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#af30c7b107d77d612fa88c573d252c2c2">ROUTER_MX_STEPS_PER_ROUND</a>/1.256</td></tr>
 <tr class="memdesc:ad18fe160593d7a9ca8064b3f911c38cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#ad18fe160593d7a9ca8064b3f911c38cc">More...</a><br /></td></tr>
 <tr class="separator:ad18fe160593d7a9ca8064b3f911c38cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb07c4644cc35352a450b5b531fc7fa1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">ROUTER_MY_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f">ROUTER_MY_STEPS_PER_ROUND</a>/1.25</td></tr>
 <tr class="memdesc:afb07c4644cc35352a450b5b531fc7fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#afb07c4644cc35352a450b5b531fc7fa1">More...</a><br /></td></tr>
 <tr class="separator:afb07c4644cc35352a450b5b531fc7fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca3e0725b339b7fcb62e0cd353e1603"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a5ca3e0725b339b7fcb62e0cd353e1603">ROUTER_MZ_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#acc8d3a71b09ab28f1b65ee4b276355df">ROUTER_MZ_STEPS_PER_ROUND</a>/1.256</td></tr>
+<tr class="memdesc:a5ca3e0725b339b7fcb62e0cd353e1603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#a5ca3e0725b339b7fcb62e0cd353e1603">More...</a><br /></td></tr>
+<tr class="separator:a5ca3e0725b339b7fcb62e0cd353e1603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>&#160;&#160;&#160;5000.0</td></tr>
 <tr class="memdesc:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of X-axis. The unit is steps/s.  <a href="#aeb39dfe1cecb49617c2de68f2b7863ad">More...</a><br /></td></tr>
 <tr class="separator:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>&#160;&#160;&#160;5000.0</td></tr>
 <tr class="memdesc:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Y-axis. The unit is steps/s.  <a href="#a561a2d9e0685a3f1ef859e8fe82c44ee">More...</a><br /></td></tr>
 <tr class="separator:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8437dbcba761d0ae49161e7e16dbe94d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d">ROUTER_MZ_SPEED</a>&#160;&#160;&#160;5000.0</td></tr>
+<tr class="memdesc:a8437dbcba761d0ae49161e7e16dbe94d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Z-axis. The unit is steps/s.  <a href="#a8437dbcba761d0ae49161e7e16dbe94d">More...</a><br /></td></tr>
+<tr class="separator:a8437dbcba761d0ae49161e7e16dbe94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad29cc419438e7c8f8cddd1838716cee5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ad29cc419438e7c8f8cddd1838716cee5">ROUTER_DOWN_LIMIT_SWITCH_X</a>&#160;&#160;&#160;3</td></tr>
 <tr class="memdesc:ad29cc419438e7c8f8cddd1838716cee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the X-axis.  <a href="#ad29cc419438e7c8f8cddd1838716cee5">More...</a><br /></td></tr>
 <tr class="separator:ad29cc419438e7c8f8cddd1838716cee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcf7520229827b9c6e8b714f002981a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a2dcf7520229827b9c6e8b714f002981a">ROUTER_DOWN_LIMIT_SWITCH_Y</a>&#160;&#160;&#160;14</td></tr>
 <tr class="memdesc:a2dcf7520229827b9c6e8b714f002981a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the Y-axis.  <a href="#a2dcf7520229827b9c6e8b714f002981a">More...</a><br /></td></tr>
 <tr class="separator:a2dcf7520229827b9c6e8b714f002981a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e8c89b2567abdb8ccb75934963ba21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa6e8c89b2567abdb8ccb75934963ba21">ROUTER_DOWN_LIMIT_SWITCH_Z</a>&#160;&#160;&#160;14</td></tr>
+<tr class="memdesc:aa6e8c89b2567abdb8ccb75934963ba21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the Z-axis.  <a href="#aa6e8c89b2567abdb8ccb75934963ba21">More...</a><br /></td></tr>
+<tr class="separator:aa6e8c89b2567abdb8ccb75934963ba21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2ba8973ad8e317ff2808a08cd03109d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d">ROUTER_MX_CONTROLLER_A4988</a></td></tr>
 <tr class="separator:aa2ba8973ad8e317ff2808a08cd03109d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2772e27b33c24fca3e756e98e4da0528"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a2772e27b33c24fca3e756e98e4da0528">ROUTE_MX_STEP_CONTROL_PIN</a>&#160;&#160;&#160;A0</td></tr>
@@ -147,34 +159,26 @@ Macros</h2></td></tr>
 <tr class="memitem:a3e30826a0cbcd6ac91bae8b83651bc78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a3e30826a0cbcd6ac91bae8b83651bc78">ROUTE_MY_ENABLE_CONTROL_PIN</a>&#160;&#160;&#160;A8</td></tr>
 <tr class="memdesc:a3e30826a0cbcd6ac91bae8b83651bc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the enable pin of the A4988.  <a href="#a3e30826a0cbcd6ac91bae8b83651bc78">More...</a><br /></td></tr>
 <tr class="separator:a3e30826a0cbcd6ac91bae8b83651bc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09fa750e355606467364b15acc58a814"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a09fa750e355606467364b15acc58a814">ROUTER_MZ_CONTROLLER_A4988</a></td></tr>
+<tr class="separator:a09fa750e355606467364b15acc58a814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19711e5668de2b87dad0e16a5e863743"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a19711e5668de2b87dad0e16a5e863743">ROUTE_MZ_STEP_CONTROL_PIN</a>&#160;&#160;&#160;A6</td></tr>
+<tr class="memdesc:a19711e5668de2b87dad0e16a5e863743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the step control pin of the A4988.  <a href="#a19711e5668de2b87dad0e16a5e863743">More...</a><br /></td></tr>
+<tr class="separator:a19711e5668de2b87dad0e16a5e863743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6402fd081aead9dc14384deb017036"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a5b6402fd081aead9dc14384deb017036">ROUTE_MZ_DIRECTION_CONTROL_PIN</a>&#160;&#160;&#160;A7</td></tr>
+<tr class="memdesc:a5b6402fd081aead9dc14384deb017036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the direction control pin of the A4988.  <a href="#a5b6402fd081aead9dc14384deb017036">More...</a><br /></td></tr>
+<tr class="separator:a5b6402fd081aead9dc14384deb017036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbe1ee81d34630a1e50fa9c42436082"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a5cbe1ee81d34630a1e50fa9c42436082">ROUTE_MZ_ENABLE_CONTROL_PIN</a>&#160;&#160;&#160;A2</td></tr>
+<tr class="memdesc:a5cbe1ee81d34630a1e50fa9c42436082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the enable pin of the A4988.  <a href="#a5cbe1ee81d34630a1e50fa9c42436082">More...</a><br /></td></tr>
+<tr class="separator:a5cbe1ee81d34630a1e50fa9c42436082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ed2a15e6b761d36ac89dfc727d4ae82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a1ed2a15e6b761d36ac89dfc727d4ae82">_MILLING_MACHINE</a></td></tr>
 <tr class="memdesc:a1ed2a15e6b761d36ac89dfc727d4ae82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uncomment to active the milling machine support.  <a href="#a1ed2a15e6b761d36ac89dfc727d4ae82">More...</a><br /></td></tr>
 <tr class="separator:a1ed2a15e6b761d36ac89dfc727d4ae82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39b167a37b9554ca6d02f5b96ab4a646"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">_MILLING_MACHINE_MZ_STEPS_PER_ROUND</a>&#160;&#160;&#160;200.0</td></tr>
-<tr class="memdesc:a39b167a37b9554ca6d02f5b96ab4a646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nunber of steps to make a round for the motor of the Z-axis.  <a href="#a39b167a37b9554ca6d02f5b96ab4a646">More...</a><br /></td></tr>
-<tr class="separator:a39b167a37b9554ca6d02f5b96ab4a646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94aabd4cf54e1c9cb34fb3860a4af575"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a94aabd4cf54e1c9cb34fb3860a4af575">_MILLING_MACHINE_MZ_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">_MILLING_MACHINE_MZ_STEPS_PER_ROUND</a>/1.256</td></tr>
-<tr class="memdesc:a94aabd4cf54e1c9cb34fb3860a4af575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#a94aabd4cf54e1c9cb34fb3860a4af575">More...</a><br /></td></tr>
-<tr class="separator:a94aabd4cf54e1c9cb34fb3860a4af575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc457a8fa59dac77a75746512bf048d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#abc457a8fa59dac77a75746512bf048d4">_MILLING_MACHINE_MZ_FAST_SPEED</a>&#160;&#160;&#160;5000.0</td></tr>
-<tr class="memdesc:abc457a8fa59dac77a75746512bf048d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Z-axis. The unit is steps/s.  <a href="#abc457a8fa59dac77a75746512bf048d4">More...</a><br /></td></tr>
-<tr class="separator:abc457a8fa59dac77a75746512bf048d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc62b81ffbea73516601be8924b51ed7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#acc62b81ffbea73516601be8924b51ed7">_MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z</a>&#160;&#160;&#160;18</td></tr>
-<tr class="memdesc:acc62b81ffbea73516601be8924b51ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the Z-axis.  <a href="#acc62b81ffbea73516601be8924b51ed7">More...</a><br /></td></tr>
-<tr class="separator:acc62b81ffbea73516601be8924b51ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dbc121e74ed55e99c68bc8da2b83d06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a9dbc121e74ed55e99c68bc8da2b83d06">_MILLING_MACHINE_MZ_CONTROLLER_A4988</a></td></tr>
-<tr class="separator:a9dbc121e74ed55e99c68bc8da2b83d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ea3febb8ee01210e2a37b95abec13bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a7ea3febb8ee01210e2a37b95abec13bb">_MILLING_MACHINE_MZ_STEP_CONTROL_PIN</a>&#160;&#160;&#160;A6</td></tr>
-<tr class="memdesc:a7ea3febb8ee01210e2a37b95abec13bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the step control pin of the A4988.  <a href="#a7ea3febb8ee01210e2a37b95abec13bb">More...</a><br /></td></tr>
-<tr class="separator:a7ea3febb8ee01210e2a37b95abec13bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9130d37fc0cc549ce9e77f582001428d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a9130d37fc0cc549ce9e77f582001428d">_MILLING_MACHINE_MZ_DIRECTION_CONTROL_PIN</a>&#160;&#160;&#160;A7</td></tr>
-<tr class="memdesc:a9130d37fc0cc549ce9e77f582001428d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the direction control pin of the A4988.  <a href="#a9130d37fc0cc549ce9e77f582001428d">More...</a><br /></td></tr>
-<tr class="separator:a9130d37fc0cc549ce9e77f582001428d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70536ae2955df7c72a7b061fb887e404"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a70536ae2955df7c72a7b061fb887e404">_MILLING_MACHINE_MZ_ENABLE_CONTROL_PIN</a>&#160;&#160;&#160;A2</td></tr>
-<tr class="memdesc:a70536ae2955df7c72a7b061fb887e404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin connected to the enable pin of the A4988.  <a href="#a70536ae2955df7c72a7b061fb887e404">More...</a><br /></td></tr>
-<tr class="separator:a70536ae2955df7c72a7b061fb887e404"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cfba2141cb01837f140f417e0efaf03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a0cfba2141cb01837f140f417e0efaf03">_TEST</a></td></tr>
-<tr class="separator:a0cfba2141cb01837f140f417e0efaf03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32622311332cb8ba6ba14a69ce19f70e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a32622311332cb8ba6ba14a69ce19f70e">_MILLING_MACHINE_ENABLE_PIN</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a32622311332cb8ba6ba14a69ce19f70e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number connected to the enable circuit of the milling machine.  <a href="#a32622311332cb8ba6ba14a69ce19f70e">More...</a><br /></td></tr>
+<tr class="separator:a32622311332cb8ba6ba14a69ce19f70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11bacbdfb698dadd088b8d0ba265ace4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a11bacbdfb698dadd088b8d0ba265ace4">_MILLING_MACHINE_SPEED_PIN</a>&#160;&#160;&#160;11</td></tr>
+<tr class="memdesc:a11bacbdfb698dadd088b8d0ba265ace4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number connected to the speed control circuit of the milling machine.  <a href="#a11bacbdfb698dadd088b8d0ba265ace4">More...</a><br /></td></tr>
+<tr class="separator:a11bacbdfb698dadd088b8d0ba265ace4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a18da9418565cdc86408e517521dfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a34a18da9418565cdc86408e517521dfb">DBGNL</a>(x)&#160;&#160;&#160;Serial.println(x)</td></tr>
 <tr class="separator:a34a18da9418565cdc86408e517521dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32adf79142f0a426b5e782fb7cd4cad3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a32adf79142f0a426b5e782fb7cd4cad3">DBG</a>(x)&#160;&#160;&#160;Serial.print(x)</td></tr>
@@ -205,125 +209,31 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="acc62b81ffbea73516601be8924b51ed7"></a>
+<a class="anchor" id="a32622311332cb8ba6ba14a69ce19f70e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _MILLING_MACHINE_DOWN_LIMIT_SWITCH_Z&#160;&#160;&#160;18</td>
+          <td class="memname">#define _MILLING_MACHINE_ENABLE_PIN&#160;&#160;&#160;10</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The number of the pin which is connected to the limit switch of the Z-axis. </p>
+<p>The pin number connected to the enable circuit of the milling machine. </p>
 
 </div>
 </div>
-<a class="anchor" id="a9dbc121e74ed55e99c68bc8da2b83d06"></a>
+<a class="anchor" id="a11bacbdfb698dadd088b8d0ba265ace4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _MILLING_MACHINE_MZ_CONTROLLER_A4988</td>
+          <td class="memname">#define _MILLING_MACHINE_SPEED_PIN&#160;&#160;&#160;11</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a9130d37fc0cc549ce9e77f582001428d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _MILLING_MACHINE_MZ_DIRECTION_CONTROL_PIN&#160;&#160;&#160;A7</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pin connected to the direction control pin of the A4988. </p>
-
-</div>
-</div>
-<a class="anchor" id="a70536ae2955df7c72a7b061fb887e404"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _MILLING_MACHINE_MZ_ENABLE_CONTROL_PIN&#160;&#160;&#160;A2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pin connected to the enable pin of the A4988. </p>
-
-</div>
-</div>
-<a class="anchor" id="abc457a8fa59dac77a75746512bf048d4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _MILLING_MACHINE_MZ_FAST_SPEED&#160;&#160;&#160;5000.0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The maximum speed used to control the motor of Z-axis. The unit is steps/s. </p>
-
-</div>
-</div>
-<a class="anchor" id="a7ea3febb8ee01210e2a37b95abec13bb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _MILLING_MACHINE_MZ_STEP_CONTROL_PIN&#160;&#160;&#160;A6</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pin connected to the step control pin of the A4988. </p>
-
-</div>
-</div>
-<a class="anchor" id="a94aabd4cf54e1c9cb34fb3860a4af575"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _MILLING_MACHINE_MZ_STEPS_PER_MM&#160;&#160;&#160;<a class="el" href="config_8h.html#a39b167a37b9554ca6d02f5b96ab4a646">_MILLING_MACHINE_MZ_STEPS_PER_ROUND</a>/1.256</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of steps to forward of a mm. </p>
-
-</div>
-</div>
-<a class="anchor" id="a39b167a37b9554ca6d02f5b96ab4a646"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _MILLING_MACHINE_MZ_STEPS_PER_ROUND&#160;&#160;&#160;200.0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Nunber of steps to make a round for the motor of the Z-axis. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0cfba2141cb01837f140f417e0efaf03"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _TEST</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>The pin number connected to the speed control circuit of the milling machine. </p>
 
 </div>
 </div>
@@ -458,6 +368,48 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5b6402fd081aead9dc14384deb017036"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MZ_DIRECTION_CONTROL_PIN&#160;&#160;&#160;A7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the direction control pin of the A4988. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5cbe1ee81d34630a1e50fa9c42436082"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MZ_ENABLE_CONTROL_PIN&#160;&#160;&#160;A2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the enable pin of the A4988. </p>
+
+</div>
+</div>
+<a class="anchor" id="a19711e5668de2b87dad0e16a5e863743"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTE_MZ_STEP_CONTROL_PIN&#160;&#160;&#160;A6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin connected to the step control pin of the A4988. </p>
+
+</div>
+</div>
 <a class="anchor" id="ad29cc419438e7c8f8cddd1838716cee5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -483,6 +435,20 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The number of the pin which is connected to the limit switch of the Y-axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa6e8c89b2567abdb8ccb75934963ba21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_DOWN_LIMIT_SWITCH_Z&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of the pin which is connected to the limit switch of the Z-axis. </p>
 
 </div>
 </div>
@@ -594,12 +560,66 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a09fa750e355606467364b15acc58a814"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_MZ_CONTROLLER_A4988</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8437dbcba761d0ae49161e7e16dbe94d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_MZ_SPEED&#160;&#160;&#160;5000.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum speed used to control the motor of Z-axis. The unit is steps/s. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5ca3e0725b339b7fcb62e0cd353e1603"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_MZ_STEPS_PER_MM&#160;&#160;&#160;<a class="el" href="config_8h.html#acc8d3a71b09ab28f1b65ee4b276355df">ROUTER_MZ_STEPS_PER_ROUND</a>/1.256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of steps to forward of a mm. </p>
+
+</div>
+</div>
+<a class="anchor" id="acc8d3a71b09ab28f1b65ee4b276355df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_MZ_STEPS_PER_ROUND&#160;&#160;&#160;200.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nunber of steps to make a round for the motor of the Z-axis. </p>
+
+</div>
+</div>
 <a class="anchor" id="a58562c1eea53acf4d89ae2e8ed79e7ac"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SERIAL_BOUND&#160;&#160;&#160;9600</td>
+          <td class="memname">#define SERIAL_BOUND&#160;&#160;&#160;57600</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -611,7 +631,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 8 2014 17:13:49 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 22 2014 21:32:25 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

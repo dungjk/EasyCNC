@@ -72,13 +72,6 @@ public:
 #include <Arduino.h>
 #include <stdint.h>
 
-#if defined(_MILLING_MACHINE_MZ_CONTROLLER_ULN2003A)
-#include "MSMC_ULN2003A.h"
-#endif
-#if defined(_MILLING_MACHINE_MZ_CONTROLLER_A4988)
-#include "MSMC_A4988.h"
-#endif
-
 /*! \class MillingMachine
  *  \brief Class to control a the milling machine and its position on the z-axis.
  *  \details The class allows to control a milling machine. It is possible change the position on the z-axis and the

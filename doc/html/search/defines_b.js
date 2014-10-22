@@ -6,8 +6,12 @@ var searchData=
   ['route_5fmy_5fdirection_5fcontrol_5fpin',['ROUTE_MY_DIRECTION_CONTROL_PIN',['../config_8h.html#a865681c0605dcc31e4c0262995aaef20',1,'config.h']]],
   ['route_5fmy_5fenable_5fcontrol_5fpin',['ROUTE_MY_ENABLE_CONTROL_PIN',['../config_8h.html#a3e30826a0cbcd6ac91bae8b83651bc78',1,'config.h']]],
   ['route_5fmy_5fstep_5fcontrol_5fpin',['ROUTE_MY_STEP_CONTROL_PIN',['../config_8h.html#ab22bf58b0951dd8f3ae5d94bda82d87e',1,'config.h']]],
+  ['route_5fmz_5fdirection_5fcontrol_5fpin',['ROUTE_MZ_DIRECTION_CONTROL_PIN',['../config_8h.html#a5b6402fd081aead9dc14384deb017036',1,'config.h']]],
+  ['route_5fmz_5fenable_5fcontrol_5fpin',['ROUTE_MZ_ENABLE_CONTROL_PIN',['../config_8h.html#a5cbe1ee81d34630a1e50fa9c42436082',1,'config.h']]],
+  ['route_5fmz_5fstep_5fcontrol_5fpin',['ROUTE_MZ_STEP_CONTROL_PIN',['../config_8h.html#a19711e5668de2b87dad0e16a5e863743',1,'config.h']]],
   ['router_5fdown_5flimit_5fswitch_5fx',['ROUTER_DOWN_LIMIT_SWITCH_X',['../config_8h.html#ad29cc419438e7c8f8cddd1838716cee5',1,'config.h']]],
   ['router_5fdown_5flimit_5fswitch_5fy',['ROUTER_DOWN_LIMIT_SWITCH_Y',['../config_8h.html#a2dcf7520229827b9c6e8b714f002981a',1,'config.h']]],
+  ['router_5fdown_5flimit_5fswitch_5fz',['ROUTER_DOWN_LIMIT_SWITCH_Z',['../config_8h.html#aa6e8c89b2567abdb8ccb75934963ba21',1,'config.h']]],
   ['router_5fmx_5fcontroller_5fa4988',['ROUTER_MX_CONTROLLER_A4988',['../config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d',1,'config.h']]],
   ['router_5fmx_5fspeed',['ROUTER_MX_SPEED',['../config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad',1,'config.h']]],
   ['router_5fmx_5fsteps_5fper_5fmm',['ROUTER_MX_STEPS_PER_MM',['../config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc',1,'config.h']]],
@@ -15,5 +19,9 @@ var searchData=
   ['router_5fmy_5fcontroller_5fa4988',['ROUTER_MY_CONTROLLER_A4988',['../config_8h.html#ab43f3d9753eb04addb3ecf892d43e9b3',1,'config.h']]],
   ['router_5fmy_5fspeed',['ROUTER_MY_SPEED',['../config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee',1,'config.h']]],
   ['router_5fmy_5fsteps_5fper_5fmm',['ROUTER_MY_STEPS_PER_MM',['../config_8h.html#afb07c4644cc35352a450b5b531fc7fa1',1,'config.h']]],
-  ['router_5fmy_5fsteps_5fper_5fround',['ROUTER_MY_STEPS_PER_ROUND',['../config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f',1,'config.h']]]
+  ['router_5fmy_5fsteps_5fper_5fround',['ROUTER_MY_STEPS_PER_ROUND',['../config_8h.html#acea4b1619e299b0aff23f42c8ee5d84f',1,'config.h']]],
+  ['router_5fmz_5fcontroller_5fa4988',['ROUTER_MZ_CONTROLLER_A4988',['../config_8h.html#a09fa750e355606467364b15acc58a814',1,'config.h']]],
+  ['router_5fmz_5fspeed',['ROUTER_MZ_SPEED',['../config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d',1,'config.h']]],
+  ['router_5fmz_5fsteps_5fper_5fmm',['ROUTER_MZ_STEPS_PER_MM',['../config_8h.html#a5ca3e0725b339b7fcb62e0cd353e1603',1,'config.h']]],
+  ['router_5fmz_5fsteps_5fper_5fround',['ROUTER_MZ_STEPS_PER_ROUND',['../config_8h.html#acc8d3a71b09ab28f1b65ee4b276355df',1,'config.h']]]
 ];

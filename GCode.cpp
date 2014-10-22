@@ -69,6 +69,8 @@ void GCode::cycleG81() {
 		return;
 	}
 
+	parser_status = STATUS_WORKING;
+
 	int loops = (pars_spec[PARAM_L]) ? params[PARAM_L] : 1;
 	PositionXYZ old_p = router->getPos();
 
@@ -79,30 +81,46 @@ void GCode::cycleG81() {
 		returnStatus();
 		//Step 2: rapid motion to Z specified by R parameter (clear position)
 		if (l == 0) {
-			router->moveTo(
-					router->getPos() + PositionXYZ(0.0, 0.0, params[PARAM_R]));
-			runMotion();
-			returnStatus();
+			if (last_word[GROUP3] == G90) {
+				router->moveTo(router->getPos().Z(params[PARAM_R]));
+			} else {
+				router->moveTo(PositionXYZ(0.0, 0.0, params[PARAM_R]));
+			}
+		} else {
+			if (last_word[GROUP10] == G98 && old_p.Z() > params[PARAM_R]) {
+				router->moveTo(PositionXYZ(0.0, 0.0, params[PARAM_R]));
+			}
 		}
+		runMotion();
+		returnStatus();
 
 		//Step 3: motion on Z-axis to the value Z specified in the cycle command
-		router->moveTo(router->getPos() + PositionXYZ(0.0, 0.0, new_pos.Z()),
-				feed_rate);
+		if (last_word[GROUP3] == G90) {
+			router->moveTo(new_pos, feed_rate);
+		} else {
+			router->moveTo(PositionXYZ(0.0, 0.0, new_pos.Z()), feed_rate);
+		}
+
 		runMotion();
 		returnStatus();
 		//Step 4: return to the clear position specified by R with a rapid motion
 		if (last_word[GROUP10] == G98 && old_p.Z() > params[PARAM_R]) {
-
-			router->moveTo(
-					router->getPos()
-							+ PositionXYZ(0.0, 0.0,
-									old_p.Z() - params[PARAM_R] - new_pos.Z()));
+			if (last_word[GROUP3] == G90) {
+				router->moveTo(router->getPos().Z(old_p.Z()));
+			} else {
+				router->moveTo(
+						PositionXYZ(0.0, 0.0, -new_pos.Z() - params[PARAM_R]));
+			}
 		} else {
-			router->moveTo(
-					router->getPos() + PositionXYZ(0.0, 0.0, params[PARAM_R]));
+			if (last_word[GROUP3] == G90) {
+				router->moveTo(router->getPos().Z(params[PARAM_R]));
+			} else {
+				router->moveTo(PositionXYZ(0.0, 0.0, -new_pos.Z()));
+			}
 		}
 		runMotion();
-		returnStatus();
+		//returnStatus();
+		parser_status = STATUS_OK;
 	}
 }
 
@@ -129,7 +147,7 @@ void GCode::motionG2G3() {
 
 		//center.Z(start_p.Z());
 
-		center += start_p;  // the center of the cyrcle
+		center += start_p; // the center of the cyrcle
 
 	} else if ((pars_spec[PARAM_X] || pars_spec[PARAM_Y])
 			&& (pars_spec[PARAM_I] || pars_spec[PARAM_J])) {
@@ -142,6 +160,7 @@ void GCode::motionG2G3() {
 
 	} else {
 		parser_status = STATUS_SYNTAX_ERROR;
+		return;
 	}
 
 	if (can_move) {
@@ -228,7 +247,7 @@ int GCode::runMotion() {
 
 int GCode::parseLine() {
 	removeSpaces();
-	//Special commands that starts with "$"
+//Special commands that starts with "$"
 	if (line[0] == '$') {
 		switch (line.length()) {
 		case 2:
@@ -252,7 +271,7 @@ int GCode::parseLine() {
 		return parser_status;
 	}
 
-	//G-Code commands
+//G-Code commands
 	if (last_word[GROUP3] == G91) {
 		new_pos = PositionXYZ();
 	} else {
@@ -277,7 +296,7 @@ int GCode::parseLine() {
 	uint8_t ptr = 0;
 	char type;
 	float val;
-	// Line parsing
+// Line parsing
 	while (getWord(type, val, ptr, len)) {
 		switch (type) {
 		case 'G':
@@ -332,6 +351,10 @@ int GCode::parseLine() {
 			case 64:
 				// Continuous mode
 				last_word[GROUP13] = G64;
+				break;
+			case 80:
+				motion_command = false;
+				last_word[GROUP1] = G80;
 				break;
 			case 81:
 				motion_command = true;
@@ -443,18 +466,23 @@ int GCode::parseLine() {
 			break;
 		default:
 			parser_status = STATUS_UNSUPPORTED;
+			returnStatus();
+			return parser_status;
 		};
 
 	}
 
-	// check status
+	if (parser_status != STATUS_OK) {
+		returnStatus();
+		return parser_status;
+	}
 
-	// motion execution
+// check status
+
+// motion execution
 	if (pause && pars_spec[PARAM_P]) {
-		//utensil->pause();
 		router->pause();
 		delay(params[PARAM_P] * 1000);
-		//utensil->restart();
 		router->restart();
 	} else if (motion_command) {
 		switch (last_word[GROUP1]) {
