@@ -27,18 +27,31 @@ float \hyperlink{class_position_x_y_aa6bceb45b13566b4a312d5d7aad2ec77}{Y} () con
 \begin{DoxyCompactList}\small\item\em It returns the y-\/axis value. \end{DoxyCompactList}\item 
 \hyperlink{class_position_x_y}{Position\+X\+Y} \& \hyperlink{class_position_x_y_a7bb12f86083750580799fcf0535518e9}{Y} (float py)
 \begin{DoxyCompactList}\small\item\em It configures the y-\/axis value. \end{DoxyCompactList}\item 
-float \hyperlink{class_position_x_y_a2e68cceafbc6d1a9d2956e64efbca1bf}{dist} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
+float \hyperlink{class_position_x_y_a2cb93c8c3b4632d7a2dd15b533c622b2}{module} ()
+\begin{DoxyCompactList}\small\item\em It return the module of the equivalent vector. \end{DoxyCompactList}\item 
+float \hyperlink{class_position_x_y_aef36d35ba710af6426600a6debc22e05}{module} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
 \begin{DoxyCompactList}\small\item\em It returns the distance between two positions. \end{DoxyCompactList}\item 
-float \hyperlink{class_position_x_y_a781dce14528b62570fc4eed6318bab52}{dist\+X} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
+float \hyperlink{class_position_x_y_a4fdeadbb0bd6e3c62e1d1f0aea15f60e}{offset\+X} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
 \begin{DoxyCompactList}\small\item\em It returns the x-\/axis distance between two positions. \end{DoxyCompactList}\item 
-float \hyperlink{class_position_x_y_a099d374de2c2547108cbeba0cd6f89e2}{dist\+Y} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
+float \hyperlink{class_position_x_y_aa67b14df525c7407063fa1a7fe631a26}{offset\+Y} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
 \begin{DoxyCompactList}\small\item\em It returns the y-\/axis distance between two positions. \end{DoxyCompactList}\item 
+float \hyperlink{class_position_x_y_a116b177cc6d5f39d05ed72bfcbc5a235}{angle} ()
+\begin{DoxyCompactList}\small\item\em It returns the angle of the equivalent vector. \end{DoxyCompactList}\item 
 float \hyperlink{class_position_x_y_ab3a2559edfce2a9c6eb4ddc6ce456776}{angle} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
 \begin{DoxyCompactList}\small\item\em It returns the angle between the line crossing the two point end the x-\/axis. \end{DoxyCompactList}\item 
+\hyperlink{class_position_x_y}{Position\+X\+Y} \& \hyperlink{class_position_x_y_a34f0fb72f96c1307431c317eaba03ce5}{polar} (float m, float a)
+\begin{DoxyCompactList}\small\item\em Initializes the equivalent vector with the polar coordinate. \end{DoxyCompactList}\item 
 \hyperlink{class_position_x_y}{Position\+X\+Y} \hyperlink{class_position_x_y_a8488dcd6f61a8019e6f3c6d147cf35c5}{operator+} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p) const 
 \begin{DoxyCompactList}\small\item\em It returns a position where each axis value is the sum of the values of the two positions. \end{DoxyCompactList}\item 
 \hyperlink{class_position_x_y}{Position\+X\+Y} \& \hyperlink{class_position_x_y_a3c55c597bad99a80965b24781509e3fd}{operator+=} (const \hyperlink{class_position_x_y}{Position\+X\+Y} \&p)
 \begin{DoxyCompactList}\small\item\em It adds to the current position the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_position_x_y_a99d0a24e481bb0615157a08c1360dcec}{x}
+\item 
+float \hyperlink{class_position_x_y_a16068e19060b1b47cee29398f2b26249}{y}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -99,13 +112,27 @@ Copy constructor.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_position_x_y_a116b177cc6d5f39d05ed72bfcbc5a235}{\index{Position\+X\+Y@{Position\+X\+Y}!angle@{angle}}
+\index{angle@{angle}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_position_x_y_a116b177cc6d5f39d05ed72bfcbc5a235}
+
+
+It returns the angle of the equivalent vector. 
+
+\begin{DoxyReturn}{Returns}
+The angle. 
+\end{DoxyReturn}
 \hypertarget{class_position_x_y_ab3a2559edfce2a9c6eb4ddc6ce456776}{\index{Position\+X\+Y@{Position\+X\+Y}!angle@{angle}}
 \index{angle@{angle}!Position\+X\+Y@{Position\+X\+Y}}
 \subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::angle (
 \begin{DoxyParamCaption}
 \item[{const {\bf Position\+X\+Y} \&}]{p}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_position_x_y_ab3a2559edfce2a9c6eb4ddc6ce456776}
+)}}\label{class_position_x_y_ab3a2559edfce2a9c6eb4ddc6ce456776}
 
 
 It returns the angle between the line crossing the two point end the x-\/axis. 
@@ -118,13 +145,27 @@ The angle is computed with the formula $atan2(y_2 - y_1,x_2 - x_1)$.
 \begin{DoxyReturn}{Returns}
 The angle between the line crossing the two point end the x-\/axis. 
 \end{DoxyReturn}
-\hypertarget{class_position_x_y_a2e68cceafbc6d1a9d2956e64efbca1bf}{\index{Position\+X\+Y@{Position\+X\+Y}!dist@{dist}}
-\index{dist@{dist}!Position\+X\+Y@{Position\+X\+Y}}
-\subsubsection[{dist}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::dist (
+\hypertarget{class_position_x_y_a2cb93c8c3b4632d7a2dd15b533c622b2}{\index{Position\+X\+Y@{Position\+X\+Y}!module@{module}}
+\index{module@{module}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{module}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_position_x_y_a2cb93c8c3b4632d7a2dd15b533c622b2}
+
+
+It return the module of the equivalent vector. 
+
+\begin{DoxyReturn}{Returns}
+The module. 
+\end{DoxyReturn}
+\hypertarget{class_position_x_y_aef36d35ba710af6426600a6debc22e05}{\index{Position\+X\+Y@{Position\+X\+Y}!module@{module}}
+\index{module@{module}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{module}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::module (
 \begin{DoxyParamCaption}
 \item[{const {\bf Position\+X\+Y} \&}]{p}
 \end{DoxyParamCaption}
-)}}\label{class_position_x_y_a2e68cceafbc6d1a9d2956e64efbca1bf}
+)}}\label{class_position_x_y_aef36d35ba710af6426600a6debc22e05}
 
 
 It returns the distance between two positions. 
@@ -137,13 +178,13 @@ The distance between $(x_1,y_1)$ and $(x_2,y_2)$ is computed according the formu
 \begin{DoxyReturn}{Returns}
 The distance value. 
 \end{DoxyReturn}
-\hypertarget{class_position_x_y_a781dce14528b62570fc4eed6318bab52}{\index{Position\+X\+Y@{Position\+X\+Y}!dist\+X@{dist\+X}}
-\index{dist\+X@{dist\+X}!Position\+X\+Y@{Position\+X\+Y}}
-\subsubsection[{dist\+X}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::dist\+X (
+\hypertarget{class_position_x_y_a4fdeadbb0bd6e3c62e1d1f0aea15f60e}{\index{Position\+X\+Y@{Position\+X\+Y}!offset\+X@{offset\+X}}
+\index{offset\+X@{offset\+X}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{offset\+X}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::offset\+X (
 \begin{DoxyParamCaption}
 \item[{const {\bf Position\+X\+Y} \&}]{p}
 \end{DoxyParamCaption}
-)}}\label{class_position_x_y_a781dce14528b62570fc4eed6318bab52}
+)}}\label{class_position_x_y_a4fdeadbb0bd6e3c62e1d1f0aea15f60e}
 
 
 It returns the x-\/axis distance between two positions. 
@@ -156,13 +197,13 @@ The x-\/axis distance between $(x_1,y_1)$ and $(x_2,y_2)$ is computed according 
 \begin{DoxyReturn}{Returns}
 The x-\/axis distance value. 
 \end{DoxyReturn}
-\hypertarget{class_position_x_y_a099d374de2c2547108cbeba0cd6f89e2}{\index{Position\+X\+Y@{Position\+X\+Y}!dist\+Y@{dist\+Y}}
-\index{dist\+Y@{dist\+Y}!Position\+X\+Y@{Position\+X\+Y}}
-\subsubsection[{dist\+Y}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::dist\+Y (
+\hypertarget{class_position_x_y_aa67b14df525c7407063fa1a7fe631a26}{\index{Position\+X\+Y@{Position\+X\+Y}!offset\+Y@{offset\+Y}}
+\index{offset\+Y@{offset\+Y}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{offset\+Y}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::offset\+Y (
 \begin{DoxyParamCaption}
 \item[{const {\bf Position\+X\+Y} \&}]{p}
 \end{DoxyParamCaption}
-)}}\label{class_position_x_y_a099d374de2c2547108cbeba0cd6f89e2}
+)}}\label{class_position_x_y_aa67b14df525c7407063fa1a7fe631a26}
 
 
 It returns the y-\/axis distance between two positions. 
@@ -213,13 +254,32 @@ It adds to the current position the specified position.
 \begin{DoxyReturn}{Returns}
 the reference to this object. 
 \end{DoxyReturn}
+\hypertarget{class_position_x_y_a34f0fb72f96c1307431c317eaba03ce5}{\index{Position\+X\+Y@{Position\+X\+Y}!polar@{polar}}
+\index{polar@{polar}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{polar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y} \& Position\+X\+Y\+::polar (
+\begin{DoxyParamCaption}
+\item[{float}]{m, }
+\item[{float}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_position_x_y_a34f0fb72f96c1307431c317eaba03ce5}
+
+
+Initializes the equivalent vector with the polar coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Module \\
+\hline
+{\em a} & Angle \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_position_x_y_a02c862d5e5a643a6d774b1876a30cc5e}{\index{Position\+X\+Y@{Position\+X\+Y}!X@{X}}
 \index{X@{X}!Position\+X\+Y@{Position\+X\+Y}}
 \subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::\+X (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_position_x_y_a02c862d5e5a643a6d774b1876a30cc5e}
+) const}}\label{class_position_x_y_a02c862d5e5a643a6d774b1876a30cc5e}
 
 
 It returns the x-\/axis value. 
@@ -252,7 +312,7 @@ The reference to this object.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_position_x_y_aa6bceb45b13566b4a312d5d7aad2ec77}
+) const}}\label{class_position_x_y_aa6bceb45b13566b4a312d5d7aad2ec77}
 
 
 It returns the y-\/axis value. 
@@ -279,6 +339,15 @@ It configures the y-\/axis value.
 \begin{DoxyReturn}{Returns}
 The reference to this object. 
 \end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_position_x_y_a99d0a24e481bb0615157a08c1360dcec}{\index{Position\+X\+Y@{Position\+X\+Y}!x@{x}}
+\index{x@{x}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::x\hspace{0.3cm}{\ttfamily [private]}}}\label{class_position_x_y_a99d0a24e481bb0615157a08c1360dcec}
+\hypertarget{class_position_x_y_a16068e19060b1b47cee29398f2b26249}{\index{Position\+X\+Y@{Position\+X\+Y}!y@{y}}
+\index{y@{y}!Position\+X\+Y@{Position\+X\+Y}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}float Position\+X\+Y\+::y\hspace{0.3cm}{\ttfamily [private]}}}\label{class_position_x_y_a16068e19060b1b47cee29398f2b26249}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

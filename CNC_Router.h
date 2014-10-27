@@ -16,6 +16,7 @@
 #include "config.h"
 #include "Arduino.h"
 #include "tools/Position.h"
+#include "tools/utility.h"
 #include <stdint.h>
 
 #if defined(ROUTER_MX_CONTROLLER_ULN2003A) || defined(ROUTER_MY_CONTROLLER_ULN2003A)
@@ -62,14 +63,27 @@ class CNC_Router {
 
 	boolean pos_type; //!< It stores the information about the positioning type: true = incremental; false = absolute.
 
-	int8_t pin_ls_x_down, //!< Pin number where it is attached the down limit switch of the X-axis.
-			pin_ls_y_down, //!< Pin number where it is attached the down limit switch of the Y-axis.
-			pin_ls_z_down, //!< Pin number where it is attached the down limit switch of the Z-axis.
-			pin_ls_x_up, //!< Pin number where it is attached the up limit switch of the X-axis.
-			pin_ls_y_up, //!< Pin number where it is attached the up limit switch of the Y-axis.
-			pin_ls_z_up; //!< Pin number where it is attached the up limit switch of the Y-axis.
-
 public:
+	volatile static boolean ls_x_down, //!< State of the down limit switch of X-axis: true = not triggered, false = triggered
+			ls_x_up, //!< State of the up limit switch of X-axis: true = not triggered, false = triggered
+			ls_y_down, //!< State of the down limit switch of Y-axis: true = not triggered, false = triggered
+			ls_y_up, //!< State of the up limit switch of Y-axis: true = not triggered, false = triggered
+			ls_z_down, //!< State of the down limit switch of Z-axis: true = not triggered, false = triggered
+			ls_z_up; //!< State of the up limit switch of Z-axis: true = not triggered, false = triggered
+
+	//! \brief Routine for the interrupt attached to the down limit switch of the X-axis.
+	static void ls_x_down_routine();
+	//! \brief Routine for the interrupt attached to the up limit switch of the X-axis.
+	static void ls_x_up_routine();
+	//! \brief Routine for the interrupt attached to the down limit switch of the Y-axis.
+	static void ls_y_down_routine();
+	//! \brief Routine for the interrupt attached to the up limit switch of the Y-axis.
+	static void ls_y_up_routine();
+	//! \brief Routine for the interrupt attached to the down limit switch of the Z-axis.
+	static void ls_z_down_routine();
+	//! \brief Routine for the interrupt attached to the up limit switch of the Z-axis.
+	static void ls_z_up_routine();
+
 	//! \brief Default constructor
 	CNC_Router();
 
@@ -92,6 +106,9 @@ public:
 
 	//! \brief It initializes the controller for the motor on the Z-axis. It must be called one time before starting the motion operations
 	void initMotorZ();
+
+	//! \brief It initializes the interrupts attached to the limit switches.
+	void initInterrupts();
 
 	/*! \brief Sets the pins where are attached the down/up limit switches
 	 *  \details The system needs at least the down limit switch
@@ -168,41 +185,33 @@ public:
 	void setMotionModeX(uint8_t m);
 
 	/*! \brief Specifies the motion control mode for the motor on Y-axis
-		 *  \param m The motion mode can be:
-		 *           - with ULN2003A controller
-		 *             1. FULL_STEP
-		 *             2. HALF_STEP
-		 *           - with A4988 controller
-		 *             1. FULL_STEP
-		 *             2. HALF_STEP
-		 *             3. QUARTER_STEP
-		 *             4. EIGHTH_STEP
-		 *             5. SIXTEENTH_STEP
-		 */
+	 *  \param m The motion mode can be:
+	 *           - with ULN2003A controller
+	 *             1. FULL_STEP
+	 *             2. HALF_STEP
+	 *           - with A4988 controller
+	 *             1. FULL_STEP
+	 *             2. HALF_STEP
+	 *             3. QUARTER_STEP
+	 *             4. EIGHTH_STEP
+	 *             5. SIXTEENTH_STEP
+	 */
 	void setMotionModeY(uint8_t m);
 
 	/*! \brief Specifies the motion control mode for the motor on Z-axis
-		 *  \param m The motion mode can be:
-		 *           - with ULN2003A controller
-		 *             1. FULL_STEP
-		 *             2. HALF_STEP
-		 *           - with A4988 controller
-		 *             1. FULL_STEP
-		 *             2. HALF_STEP
-		 *             3. QUARTER_STEP
-		 *             4. EIGHTH_STEP
-		 *             5. SIXTEENTH_STEP
-		 */
+	 *  \param m The motion mode can be:
+	 *           - with ULN2003A controller
+	 *             1. FULL_STEP
+	 *             2. HALF_STEP
+	 *           - with A4988 controller
+	 *             1. FULL_STEP
+	 *             2. HALF_STEP
+	 *             3. QUARTER_STEP
+	 *             4. EIGHTH_STEP
+	 *             5. SIXTEENTH_STEP
+	 */
 	void setMotionModeZ(uint8_t m);
 
-	/*! \brief It sets up a high precision mode to control the XY-axii.
-	 *  \details The function sets up the EIGHTH_STEP for A4988 and HALF_STEP for ULN2003A. \sa MSMC_A4988.h MSMC_ULN2003A.h
-	 */
-	//void highPrecision();
-	/*! \brief It sets up a low precision mode to control the XY-axii. It is also the fastest control mode.
-	 *  \details The function sets up the FULL_STEP for A4988 and ULN2003A. \sa MSMC_A4988.h MSMC_ULN2003A.h
-	 */
-	//void lowPrecision();
 	//! \brief It selects the incremental positioning mode.
 	void setIncrPos();
 
@@ -214,14 +223,26 @@ public:
 	 */
 	void searchHomePos();
 
+	/*! \brief It moves the utensil up to the 0 position of the Z-axis.
+	 *  \details The function searches the 0 position of the Z-axis. Before running, the function needs that you connect the two ends of
+	 *           the wires of the down limit switch of the Z-axis to the utensil tip and to a metal foil that will be placed on the working
+	 *           surface (Z=0) under the utensil tip. After done it, you can run the function. The utensil will star to move down. The touch
+	 *           of the metal foil by the tip will close the circuit that triggers the limit switch. It will stop the motion.
+	 *           Be careful that a wrong setup could damage the machine.
+	 */
+	void searchZ0Pos();
+
 	//! \brief It get the actual position of the utensil.
 	PositionXYZ getPos();
 
 	/*! \brief It performs the movement configured with the CNC_Route::moveTo().
-	 *  \return  It returns true if the motion id end, otherwise it returns false.
+	 *  \return  It returns an integer that is
+	 *           - 1 = the motion is end,
+	 *           - 0 =  it is still working,
+	 *           - -1 = the motion ended because a limit switch was triggered.
 	 *  \sa MSMC_A4988::update() and MSMC_ULN2003A::update().
 	 */
-	boolean update();
+	int update();
 
 	/*! \brief The function sets the orientation of X-axis.
 	 *  \param v 1 for direct orientation, -1 for inverted orientation

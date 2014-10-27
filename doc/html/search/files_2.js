@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gcode_2ecpp',['GCode.cpp',['../_g_code_8cpp.html',1,'']]],
-  ['gcode_2eh',['GCode.h',['../_g_code_8h.html',1,'']]],
-  ['gcode_5fdef_2eh',['GCode_def.h',['../_g_code__def_8h.html',1,'']]]
+  ['easy_5fcnc_2ecpp',['easy_CNC.cpp',['../easy___c_n_c_8cpp.html',1,'']]],
+  ['easy_5fcnc_2eh',['easy_CNC.h',['../easy___c_n_c_8h.html',1,'']]],
+  ['easy_5fcnc_2eino',['easy_CNC.ino',['../easy___c_n_c_8ino.html',1,'']]]
 ];

@@ -15,9 +15,9 @@ var searchData=
   ['route_5fmz_5fenable_5fcontrol_5fpin',['ROUTE_MZ_ENABLE_CONTROL_PIN',['../config_8h.html#a5cbe1ee81d34630a1e50fa9c42436082',1,'config.h']]],
   ['route_5fmz_5fstep_5fcontrol_5fpin',['ROUTE_MZ_STEP_CONTROL_PIN',['../config_8h.html#a19711e5668de2b87dad0e16a5e863743',1,'config.h']]],
   ['router',['router',['../class_g_code.html#ab060bb5bd169ae7640eb781bef6b78fe',1,'GCode']]],
-  ['router_5fdown_5flimit_5fswitch_5fx',['ROUTER_DOWN_LIMIT_SWITCH_X',['../config_8h.html#ad29cc419438e7c8f8cddd1838716cee5',1,'config.h']]],
-  ['router_5fdown_5flimit_5fswitch_5fy',['ROUTER_DOWN_LIMIT_SWITCH_Y',['../config_8h.html#a2dcf7520229827b9c6e8b714f002981a',1,'config.h']]],
-  ['router_5fdown_5flimit_5fswitch_5fz',['ROUTER_DOWN_LIMIT_SWITCH_Z',['../config_8h.html#aa6e8c89b2567abdb8ccb75934963ba21',1,'config.h']]],
+  ['router_5fdown_5flimit_5fswitch_5fx_5finterrupt',['ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT',['../config_8h.html#a569578859eb9df4de5175738b3a1ade1',1,'config.h']]],
+  ['router_5fdown_5flimit_5fswitch_5fy_5finterrupt',['ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT',['../config_8h.html#aa8a396530fa7d038d900e79c9906f1f3',1,'config.h']]],
+  ['router_5fdown_5flimit_5fswitch_5fz_5finterrupt',['ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT',['../config_8h.html#a8f25718b319cc5f5ae8c2cd6a0bd47b1',1,'config.h']]],
   ['router_5fmx_5fcontroller_5fa4988',['ROUTER_MX_CONTROLLER_A4988',['../config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d',1,'config.h']]],
   ['router_5fmx_5fspeed',['ROUTER_MX_SPEED',['../config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad',1,'config.h']]],
   ['router_5fmx_5fsteps_5fper_5fmm',['ROUTER_MX_STEPS_PER_MM',['../config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc',1,'config.h']]],
@@ -30,5 +30,8 @@ var searchData=
   ['router_5fmz_5fspeed',['ROUTER_MZ_SPEED',['../config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d',1,'config.h']]],
   ['router_5fmz_5fsteps_5fper_5fmm',['ROUTER_MZ_STEPS_PER_MM',['../config_8h.html#a5ca3e0725b339b7fcb62e0cd353e1603',1,'config.h']]],
   ['router_5fmz_5fsteps_5fper_5fround',['ROUTER_MZ_STEPS_PER_ROUND',['../config_8h.html#acc8d3a71b09ab28f1b65ee4b276355df',1,'config.h']]],
+  ['router_5fup_5flimit_5fswitch_5fx_5finterrupt',['ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT',['../config_8h.html#a6837a9e9e13c670013e9d9be10ce8534',1,'config.h']]],
+  ['router_5fup_5flimit_5fswitch_5fy_5finterrupt',['ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT',['../config_8h.html#a361d56e382a8888abf494198209f4ceb',1,'config.h']]],
+  ['router_5fup_5flimit_5fswitch_5fz_5finterrupt',['ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT',['../config_8h.html#a3f2c7573e3dc8e95df6b528e98a81626',1,'config.h']]],
   ['runmotion',['runMotion',['../class_g_code.html#ad30dc86177f9e5749daa91d8727f364e',1,'GCode']]]
 ];

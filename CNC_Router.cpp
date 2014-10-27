@@ -8,18 +8,51 @@
 
 #include "CNC_Router.h"
 
+volatile boolean CNC_Router::ls_x_down = true;
+volatile boolean CNC_Router::ls_y_down = true;
+volatile boolean CNC_Router::ls_z_down = true;
+volatile boolean CNC_Router::ls_x_up = true;
+volatile boolean CNC_Router::ls_y_up = true;
+volatile boolean CNC_Router::ls_z_up = true;
+
+void CNC_Router::ls_x_down_routine() {
+	CNC_Router::ls_x_down = digitalRead(
+			getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT));
+}
+
+void CNC_Router::ls_x_up_routine() {
+	CNC_Router::ls_x_up = digitalRead(
+			getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT));
+}
+
+void CNC_Router::ls_y_down_routine() {
+	CNC_Router::ls_y_down = digitalRead(
+			getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT));
+}
+
+void CNC_Router::ls_y_up_routine() {
+	CNC_Router::ls_y_up = digitalRead(
+			getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT));
+}
+
+void CNC_Router::ls_z_down_routine() {
+	CNC_Router::ls_z_down = digitalRead(
+			getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT));
+}
+
+void CNC_Router::ls_z_up_routine() {
+	CNC_Router::ls_z_up = digitalRead(
+			getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT));
+}
+
 CNC_Router::CNC_Router() :
 		mx(), my(), old_p(), end_p(), actual_p(), spmmx(0.0), spmmy(0.0), spmmz(
-				0.0), v_max_x(0.0), v_max_y(0.0), v_max_z(0.0), pos_type(false), pin_ls_x_down(
-				-1), pin_ls_y_down(-1), pin_ls_z_down(-1), pin_ls_x_up(-1), pin_ls_y_up(
-				-1), pin_ls_z_up(-1) {
+				0.0), v_max_x(0.0), v_max_y(0.0), v_max_z(0.0), pos_type(false) {
 }
 CNC_Router::CNC_Router(float spx, float spy, float spz, float vmx, float vmy,
 		float vmz) :
 		mx(), my(), old_p(), end_p(), actual_p(), spmmx(spx), spmmy(spy), spmmz(
-				spz), v_max_x(vmx), v_max_y(vmy), v_max_z(vmz), pos_type(false), pin_ls_x_down(
-				-1), pin_ls_y_down(-1), pin_ls_z_down(-1), pin_ls_x_up(-1), pin_ls_y_up(
-				-1), pin_ls_z_up(-1) {
+				spz), v_max_x(vmx), v_max_y(vmy), v_max_z(vmz), pos_type(false) {
 }
 
 void CNC_Router::initMotorX() {
@@ -47,6 +80,44 @@ void CNC_Router::initMotorZ() {
 	mz.setPins(ROUTE_MZ_STEP_CONTROL_PIN, ROUTE_MZ_DIRECTION_CONTROL_PIN,
 	ROUTE_MZ_ENABLE_CONTROL_PIN);
 #endif
+}
+
+void CNC_Router::initInterrupts() {
+	if (ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT > -1) {
+		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT), INPUT_PULLUP);
+		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT,
+				CNC_Router::ls_x_down_routine, CHANGE);
+	}
+
+	if (ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT > -1) {
+		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT), INPUT_PULLUP);
+		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT,
+				CNC_Router::ls_y_down_routine, CHANGE);
+	}
+
+	if (ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT > -1) {
+		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT), INPUT_PULLUP);
+		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT,
+				CNC_Router::ls_z_down_routine, CHANGE);
+	}
+
+	if (ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT > -1) {
+		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT), INPUT_PULLUP);
+		attachInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT,
+				CNC_Router::ls_x_up_routine, CHANGE);
+	}
+
+	if (ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT > -1) {
+		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT), INPUT_PULLUP);
+		attachInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT,
+				CNC_Router::ls_y_up_routine, CHANGE);
+	}
+
+	if (ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT > -1) {
+		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT), INPUT_PULLUP);
+		attachInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT,
+				CNC_Router::ls_z_up_routine, CHANGE);
+	}
 }
 
 void CNC_Router::resetPos() {
@@ -121,6 +192,7 @@ void CNC_Router::moveToXY(float px, float py, float spd) {
 }
 
 void CNC_Router::moveTo(float px, float py, float pz, float spd) {
+
 	float dx, dy, dz, dist, spd_x, spd_y, spd_z, actual_spmmx, actual_spmmy,
 			actual_spmmz;
 	actual_spmmx = spmmx * mx.getMode();
@@ -217,14 +289,15 @@ void CNC_Router::moveToXY(const PositionXYZ &np, float spd) {
 }
 
 void CNC_Router::moveTo(const PositionXYZ &np, float spd) {
+
 	moveTo(np.X(), np.Y(), np.Z(), spd);
 }
 
 void CNC_Router::stopMotion() {
 	actual_p = old_p
-			+ PositionXYZ(mx.getDir() * mx.getSteps() / (spmmx * mx.getMode()),
-					my.getDir() * my.getSteps() / (spmmy * my.getMode()),
-					mz.getDir() * mz.getSteps() / (spmmz * mz.getMode()));
+			+ PositionXYZ(mx.getDir() * float(mx.getSteps()) / float(spmmx * mx.getMode()),
+					my.getDir() * float(my.getSteps()) / float(spmmy * my.getMode()),
+					mz.getDir() * float(mz.getSteps()) / float(spmmz * mz.getMode()));
 	mx.stop();
 	my.stop();
 	mz.stop();
@@ -235,9 +308,9 @@ void CNC_Router::pause() {
 	my.pause();
 	mz.pause();
 	actual_p = old_p
-			+ PositionXYZ(mx.getDir() * mx.getSteps() / (spmmx * mx.getMode()),
-					my.getDir() * my.getSteps() / (spmmy * my.getMode()),
-					mz.getDir() * mz.getSteps() / (spmmz * mz.getMode()));
+			+ PositionXYZ(mx.getDir() * float(mx.getSteps()) / float(spmmx * mx.getMode()),
+					my.getDir() * float(my.getSteps()) / float(spmmy * my.getMode()),
+					mz.getDir() * float(mz.getSteps()) / float(spmmz * mz.getMode()));
 }
 
 void CNC_Router::restart() {
@@ -246,54 +319,39 @@ void CNC_Router::restart() {
 	mz.restart();
 }
 
-boolean CNC_Router::update() {
+int CNC_Router::update() {
 	boolean a = mx.update();
 	boolean b = my.update();
 	boolean c = mz.update();
+#ifdef _TEST_2
+	if (!(ls_x_down && ls_y_down && ls_z_down)) {
+		stopMotion();
+		return -1;
+	}
+#endif
+
 	if (a && b && c) {
-		if(pos_type)
+		if (pos_type)
 			actual_p += end_p;
 		else
 			actual_p = end_p;
-		return true;
+		return 1;
 	}
 
-	return false;
+	return 0;
 }
 
-void CNC_Router::setMotionModeX(uint8_t m){
+void CNC_Router::setMotionModeX(uint8_t m) {
 	mx.setMode(m);
 }
 
-void CNC_Router::setMotionModeY(uint8_t m){
+void CNC_Router::setMotionModeY(uint8_t m) {
 	my.setMode(m);
 }
 
-void CNC_Router::setMotionModeZ(uint8_t m){
+void CNC_Router::setMotionModeZ(uint8_t m) {
 	mz.setMode(m);
 }
-/*
-void CNC_Router::highPrecision() {
-#if defined(ROUTER_MX_CONTROLLER_ULN2003A)
-	mx.setMode(HALF_STEP);
-#elif defined(ROUTER_MX_CONTROLLER_A4988)
-	mx.setMode(EIGHTH_STEP);
-#endif
-
-#if defined(ROUTER_MY_CONTROLLER_ULN2003A)
-	my.setMode(HALF_STEP);
-#elif defined(ROUTER_MY_CONTROLLER_A4988)
-	my.setMode(EIGHTH_STEP);
-#endif
-
-}
-
-void CNC_Router::lowPrecision() {
-	mx.setMode(FULL_STEP);
-	my.setMode(FULL_STEP);
-}
-
-*/
 
 void CNC_Router::setIncrPos() {
 	pos_type = true;
@@ -304,60 +362,50 @@ void CNC_Router::setAbsolPos() {
 }
 
 void CNC_Router::searchHomePos() {
-	if (pin_ls_x_down != -1 && pin_ls_y_down != -1) {
+	if (ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT > -1
+			&& ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT > -1) {
 		mx.backward(100000, 1000000 / v_max_x);
-		while (digitalRead(pin_ls_x_down) != LOW) {
+		while (CNC_Router::ls_x_down) {
+			mx.update();
+		}
+		mx.stop();
+		delay(500);
+
+		mx.forward(100000, 1000000 / v_max_x);
+		while (!CNC_Router::ls_x_down) {
 			mx.update();
 		}
 		mx.stop();
 		delay(500);
 
 		my.backward(100000, 1000000 / v_max_y);
-		while (digitalRead(pin_ls_y_down) != LOW) {
+		while (CNC_Router::ls_y_down) {
 			my.update();
 		}
 		my.stop();
+		delay(500);
 
-		resetPos();
+		my.forward(100000, 1000000 / v_max_y);
+		while (!CNC_Router::ls_y_down) {
+			my.update();
+		}
+		my.stop();
+		delay(500);
+
+		old_p = end_p = actual_p.X(0.0).Y(0.0);
 	}
 }
 
-void CNC_Router::setLimitSwitchX(int8_t dw, int8_t up) {
+void CNC_Router::searchZ0Pos() {
+	if (ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT > -1) {
+		mz.backward(100000, 1000000 / v_max_z);
+		while (CNC_Router::ls_z_down) {
+			mz.update();
+		}
+		mz.stop();
 
-	if (dw >= 0) {
-		pin_ls_x_down = dw;
-		pinMode(pin_ls_x_down, INPUT_PULLUP);
-	}
+		old_p = end_p = actual_p.Z(0.0);
 
-	if (up >= 0) {
-		pin_ls_x_up = up;
-		pinMode(pin_ls_x_up, INPUT_PULLUP);
-	}
-}
-
-void CNC_Router::setLimitSwitchY(int8_t dw, int8_t up) {
-
-	if (dw >= 0) {
-		pin_ls_y_down = dw;
-		pinMode(pin_ls_y_down, INPUT_PULLUP);
-	}
-
-	if (up >= 0) {
-		pin_ls_y_up = up;
-		pinMode(pin_ls_y_up, INPUT_PULLUP);
-	}
-}
-
-void CNC_Router::setLimitSwitchZ(int8_t dw, int8_t up) {
-
-	if (dw >= 0) {
-		pin_ls_z_down = dw;
-		pinMode(pin_ls_z_down, INPUT_PULLUP);
-	}
-
-	if (up >= 0) {
-		pin_ls_z_up = up;
-		pinMode(pin_ls_z_up, INPUT_PULLUP);
 	}
 }
 

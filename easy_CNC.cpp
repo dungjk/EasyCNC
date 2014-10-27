@@ -8,21 +8,17 @@ void setup() {
 	cncrt.initMotorY();
 	cncrt.initMotorZ();
 	cncrt.resetPos();
-	cncrt.setMotionModeX(EIGHTH_STEP);
-	cncrt.setMotionModeY(EIGHTH_STEP);
-	cncrt.setMotionModeZ(EIGHTH_STEP);
-	cncrt.setAbsolPos(); gc.params[GROUP3] = G90;
-	cncrt.setLimitSwitchX(ROUTER_DOWN_LIMIT_SWITCH_X);
-	cncrt.setLimitSwitchY(ROUTER_DOWN_LIMIT_SWITCH_Y);
-	cncrt.setLimitSwitchZ(ROUTER_DOWN_LIMIT_SWITCH_Z);
+	cncrt.setMotionModeX(QUARTER_STEP);
+	cncrt.setMotionModeY(QUARTER_STEP);
+	cncrt.setMotionModeZ(QUARTER_STEP);
+	cncrt.setAbsolPos(); gc.last_word[GROUP3] = G90;
+	cncrt.initInterrupts();
 	cncrt.orientationX(-1);
 
 	mill.init();
 
-	attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
-	digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
-
-	//mypen.init();
+	//attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
+	//digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
 
 	Serial.begin(SERIAL_BOUND);
 
@@ -30,23 +26,9 @@ void setup() {
 
 // The loop function is called in an endless loop
 void loop() {
-#ifndef _TEST
 	if (Serial.available() > 0) {
-		//memset(new_line, '\0', 256);
 		new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
 		gc.line = new_line;
 		gc.parseLine();
 	}
-#endif
-#ifdef _TEST
-	if (Serial.available() > 0) {
-		memset(new_line, '\0', 256);
-		Serial.readBytesUntil('\n', new_line, 256);
-		gc.line = new_line;
-		gc.parseLine();
-
-	}
-
-#endif
-
 }

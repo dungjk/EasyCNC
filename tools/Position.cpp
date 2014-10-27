@@ -171,3 +171,34 @@ PositionXYZ& PositionXYZ::operator +=(const PositionXYZ &p) {
 	return *this;
 }
 
+PositionXYZ PositionXYZ::operator -(const PositionXYZ &p) const { return PositionXYZ(x - p.x, y - p.y, z - p.z); }
+
+PositionXYZ& PositionXYZ::operator -=(const PositionXYZ &p) {
+	x -= p.x;
+	y -= p.y;
+	z -= p.z;
+	return *this;
+}
+
+PositionXYZ PositionXYZ::operator *(float p){
+
+	return PositionXYZ(x * p, y * p, z * p);
+}
+
+PositionXYZ& PositionXYZ::operator *=(float p){
+	x *= p;
+	y *= p;
+	z *= p;
+	return *this;
+}
+
+PositionXYZ PositionXYZ::operator /(float p){
+	return PositionXYZ(x / p, y / p, z / p);
+}
+
+PositionXYZ& PositionXYZ::operator /=(float p){
+	x /= p;
+	y /= p;
+	z /= p;
+	return *this;
+}

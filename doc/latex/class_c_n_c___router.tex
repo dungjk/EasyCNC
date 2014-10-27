@@ -23,6 +23,8 @@ void \hyperlink{class_c_n_c___router_a7f13e636e4b92c5547995b653cea317e}{init\+Mo
 \begin{DoxyCompactList}\small\item\em It initializes the controller for the motor on the Y-\/axis. It must be called one time before starting the motion operations. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a2ae50762cc38690090515f30bcd5033c}{init\+Motor\+Z} ()
 \begin{DoxyCompactList}\small\item\em It initializes the controller for the motor on the Z-\/axis. It must be called one time before starting the motion operations. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_accb65341d2a2c3c18615922cf7288997}{init\+Interrupts} ()
+\begin{DoxyCompactList}\small\item\em It initializes the interrupts attached to the limit switches. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}{set\+Limit\+Switch\+X} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
 \begin{DoxyCompactList}\small\item\em Sets the pins where are attached the down/up limit switches. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_af9308de7c3273a4f7dc18bc3cfe617d4}{set\+Limit\+Switch\+Y} (int8\+\_\+t dw, int8\+\_\+t up=-\/1)
@@ -35,9 +37,9 @@ void \hyperlink{class_c_n_c___router_a3aedfc767d93e8cb59f10322067ffdae}{move\+To
 \begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a1b652407bb9e7bb170d55d1c96e6611c}{move\+To} (float px, float py, float pz, float spd=0.\+0)
 \begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
-void \hyperlink{class_c_n_c___router_a3f6bcafb0e7ce2751a7e4a424a99ec7e}{move\+To\+X\+Y} (const Position\+X\+Y\+Z \&np, float spd=0.\+0)
+void \hyperlink{class_c_n_c___router_a3f6bcafb0e7ce2751a7e4a424a99ec7e}{move\+To\+X\+Y} (const \hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \&np, float spd=0.\+0)
 \begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
-void \hyperlink{class_c_n_c___router_a7bb1accca615b13aadd050dfec1031e6}{move\+To} (const Position\+X\+Y\+Z \&np, float spd=0.\+0)
+void \hyperlink{class_c_n_c___router_a7bb1accca615b13aadd050dfec1031e6}{move\+To} (const \hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \&np, float spd=0.\+0)
 \begin{DoxyCompactList}\small\item\em It initializes a motion operation. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{stop\+Motion} ()
 \begin{DoxyCompactList}\small\item\em It stops the current motion operation. \end{DoxyCompactList}\item 
@@ -52,14 +54,16 @@ void \hyperlink{class_c_n_c___router_a42148bff778d0dbd45b37f7a09b61382}{set\+Mot
 void \hyperlink{class_c_n_c___router_a28ddb2544290798664f99ed506f7d44a}{set\+Motion\+Mode\+Z} (uint8\+\_\+t m)
 \begin{DoxyCompactList}\small\item\em Specifies the motion control mode for the motor on Z-\/axis. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_abbda24db494dd328382639412570978e}{set\+Incr\+Pos} ()
-\begin{DoxyCompactList}\small\item\em It sets up a high precision mode to control the X\+Y-\/axii. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em It selects the incremental positioning mode. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}{set\+Absol\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It selects the absolute positioning mode. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a4e9504d77eee555ddb35af073b67d3f1}{search\+Home\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It moves the utensil up to the home position. It is identified by the down limit switches on the Y\+X-\/axis. \end{DoxyCompactList}\item 
-Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_a0fce19a7adf29dc0fb2b1a29c813b953}{get\+Pos} ()
+void \hyperlink{class_c_n_c___router_add6b83463be9d4288266fec09e1424f3}{search\+Z0\+Pos} ()
+\begin{DoxyCompactList}\small\item\em It moves the utensil up to the 0 position of the Z-\/axis. \end{DoxyCompactList}\item 
+\hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \hyperlink{class_c_n_c___router_a0fce19a7adf29dc0fb2b1a29c813b953}{get\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It get the actual position of the utensil. \end{DoxyCompactList}\item 
-boolean \hyperlink{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{update} ()
+int \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{update} ()
 \begin{DoxyCompactList}\small\item\em It performs the movement configured with the C\+N\+C\+\_\+\+Route\+::move\+To(). \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_adef23983c5aac16fa0431f861eb41fc2}{orientation\+X} (int8\+\_\+t v)
 \begin{DoxyCompactList}\small\item\em The function sets the orientation of X-\/axis. \end{DoxyCompactList}\item 
@@ -67,6 +71,36 @@ void \hyperlink{class_c_n_c___router_abced37562004a4b303291be79e49a23b}{orientat
 \begin{DoxyCompactList}\small\item\em The function sets the orientation of Y-\/axis. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_a7dc30b35ae89245b4b8f53a0777472a5}{orientation\+Z} (int8\+\_\+t v)
 \begin{DoxyCompactList}\small\item\em The function sets the orientation of Z-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_c_n_c___router_a76627728e4ee416ad2ee42dcd7e5ad39}{ls\+\_\+x\+\_\+down\+\_\+routine} ()
+\begin{DoxyCompactList}\small\item\em Routine for the interrupt attached to the down limit switch of the X-\/axis. \end{DoxyCompactList}\item 
+static void \hyperlink{class_c_n_c___router_aefdb4b267eaab43574728c4027b28c30}{ls\+\_\+x\+\_\+up\+\_\+routine} ()
+\begin{DoxyCompactList}\small\item\em Routine for the interrupt attached to the up limit switch of the X-\/axis. \end{DoxyCompactList}\item 
+static void \hyperlink{class_c_n_c___router_a86d9329960e7fd3befcf7198f4479eb6}{ls\+\_\+y\+\_\+down\+\_\+routine} ()
+\begin{DoxyCompactList}\small\item\em Routine for the interrupt attached to the down limit switch of the Y-\/axis. \end{DoxyCompactList}\item 
+static void \hyperlink{class_c_n_c___router_a3db0c4ccb3afee8fbd5de9feecae50b8}{ls\+\_\+y\+\_\+up\+\_\+routine} ()
+\begin{DoxyCompactList}\small\item\em Routine for the interrupt attached to the up limit switch of the Y-\/axis. \end{DoxyCompactList}\item 
+static void \hyperlink{class_c_n_c___router_aadcf75c5b14d0d52136335e3cdf5b84a}{ls\+\_\+z\+\_\+down\+\_\+routine} ()
+\begin{DoxyCompactList}\small\item\em Routine for the interrupt attached to the down limit switch of the Z-\/axis. \end{DoxyCompactList}\item 
+static void \hyperlink{class_c_n_c___router_af730eb61762ec9e173e87d73b7e6ef23}{ls\+\_\+z\+\_\+up\+\_\+routine} ()
+\begin{DoxyCompactList}\small\item\em Routine for the interrupt attached to the up limit switch of the Z-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static volatile boolean \hyperlink{class_c_n_c___router_ac4dbdb689d5b4bb2ed39af36ec07d394}{ls\+\_\+x\+\_\+down} = true
+\begin{DoxyCompactList}\small\item\em State of the down limit switch of X-\/axis\+: true = not triggered, false = triggered. \end{DoxyCompactList}\item 
+static volatile boolean \hyperlink{class_c_n_c___router_a63dab669f0dd34b0306c16b61816e751}{ls\+\_\+x\+\_\+up} = true
+\begin{DoxyCompactList}\small\item\em State of the up limit switch of X-\/axis\+: true = not triggered, false = triggered. \end{DoxyCompactList}\item 
+static volatile boolean \hyperlink{class_c_n_c___router_a1932890e5458f9113355f1bdb854e1ce}{ls\+\_\+y\+\_\+down} = true
+\begin{DoxyCompactList}\small\item\em State of the down limit switch of Y-\/axis\+: true = not triggered, false = triggered. \end{DoxyCompactList}\item 
+static volatile boolean \hyperlink{class_c_n_c___router_a74a44cdb470bb6256551bffc3538b938}{ls\+\_\+y\+\_\+up} = true
+\begin{DoxyCompactList}\small\item\em State of the up limit switch of Y-\/axis\+: true = not triggered, false = triggered. \end{DoxyCompactList}\item 
+static volatile boolean \hyperlink{class_c_n_c___router_a30b5c6e169b20b9d8b11be6d638b2958}{ls\+\_\+z\+\_\+down} = true
+\begin{DoxyCompactList}\small\item\em State of the down limit switch of Z-\/axis\+: true = not triggered, false = triggered. \end{DoxyCompactList}\item 
+static volatile boolean \hyperlink{class_c_n_c___router_a1f573ec5b6c857e5aee5cebb7ad9c158}{ls\+\_\+z\+\_\+up} = true
+\begin{DoxyCompactList}\small\item\em State of the up limit switch of Z-\/axis\+: true = not triggered, false = triggered. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,11 +110,11 @@ void \hyperlink{class_c_n_c___router_a7dc30b35ae89245b4b8f53a0777472a5}{orientat
 \item 
 \hyperlink{class_m_s_m_c___a4988}{M\+S\+M\+C\+\_\+\+A4988} \hyperlink{class_c_n_c___router_add549ccc206f5feff41f9e818e370ef8}{mz}
 \item 
-Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}{old\+\_\+p}
+\hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \hyperlink{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}{old\+\_\+p}
 \begin{DoxyCompactList}\small\item\em It keeps the position that the utensil has after starting the motion. \end{DoxyCompactList}\item 
-Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}{end\+\_\+p}
+\hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \hyperlink{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}{end\+\_\+p}
 \begin{DoxyCompactList}\small\item\em The final position of a motion. \end{DoxyCompactList}\item 
-Position\+X\+Y\+Z \hyperlink{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}{actual\+\_\+p}
+\hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \hyperlink{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}{actual\+\_\+p}
 \begin{DoxyCompactList}\small\item\em It keeps the actual position of the utensil during an motion. \end{DoxyCompactList}\item 
 float \hyperlink{class_c_n_c___router_ad8830a7b387905027b8a1a9e3b31e3c7}{spmmx}
 \begin{DoxyCompactList}\small\item\em Steps to move of a mm in the X-\/axis (steps/mm). \end{DoxyCompactList}\item 
@@ -95,19 +129,7 @@ float \hyperlink{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{v\+\_\+
 float \hyperlink{class_c_n_c___router_a9e6e9d29184c011ec64e9648995af4cb}{v\+\_\+max\+\_\+z}
 \begin{DoxyCompactList}\small\item\em The max speed for the motor that controls the Y-\/axis (steps/s). \end{DoxyCompactList}\item 
 boolean \hyperlink{class_c_n_c___router_afd35356064c7667cbdf21c44a7dd7cf5}{pos\+\_\+type}
-\begin{DoxyCompactList}\small\item\em It stores the information about the positioning type\+: true = incremental; false = absolute. \end{DoxyCompactList}\item 
-int8\+\_\+t \hyperlink{class_c_n_c___router_a109a7c6e2a1e556e577f2ad09eefbef7}{pin\+\_\+ls\+\_\+x\+\_\+down}
-\begin{DoxyCompactList}\small\item\em Pin number where it is attached the down limit switch of the X-\/axis. \end{DoxyCompactList}\item 
-int8\+\_\+t \hyperlink{class_c_n_c___router_a19cd8e9840fbfab991f9cab1300abe04}{pin\+\_\+ls\+\_\+y\+\_\+down}
-\begin{DoxyCompactList}\small\item\em Pin number where it is attached the down limit switch of the Y-\/axis. \end{DoxyCompactList}\item 
-int8\+\_\+t \hyperlink{class_c_n_c___router_aa24cd537b5d08782fa01b055cea96c7d}{pin\+\_\+ls\+\_\+z\+\_\+down}
-\begin{DoxyCompactList}\small\item\em Pin number where it is attached the down limit switch of the Z-\/axis. \end{DoxyCompactList}\item 
-int8\+\_\+t \hyperlink{class_c_n_c___router_af935b225740dd189dcdcdca7664eb850}{pin\+\_\+ls\+\_\+x\+\_\+up}
-\begin{DoxyCompactList}\small\item\em Pin number where it is attached the up limit switch of the X-\/axis. \end{DoxyCompactList}\item 
-int8\+\_\+t \hyperlink{class_c_n_c___router_a056de16bac1a523455a7be2903e44f40}{pin\+\_\+ls\+\_\+y\+\_\+up}
-\begin{DoxyCompactList}\small\item\em Pin number where it is attached the up limit switch of the Y-\/axis. \end{DoxyCompactList}\item 
-int8\+\_\+t \hyperlink{class_c_n_c___router_ae178883b237176e39f62336b70769ace}{pin\+\_\+ls\+\_\+z\+\_\+up}
-\begin{DoxyCompactList}\small\item\em Pin number where it is attached the up limit switch of the Y-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em It stores the information about the positioning type\+: true = incremental; false = absolute. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -166,7 +188,7 @@ Constructor.
 \subsection{Member Function Documentation}
 \hypertarget{class_c_n_c___router_a0fce19a7adf29dc0fb2b1a29c813b953}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!get\+Pos@{get\+Pos}}
 \index{get\+Pos@{get\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{get\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::get\+Pos (
+\subsubsection[{get\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y\+Z} C\+N\+C\+\_\+\+Router\+::get\+Pos (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -174,6 +196,17 @@ Constructor.
 
 
 It get the actual position of the utensil. 
+
+\hypertarget{class_c_n_c___router_accb65341d2a2c3c18615922cf7288997}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!init\+Interrupts@{init\+Interrupts}}
+\index{init\+Interrupts@{init\+Interrupts}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{init\+Interrupts}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::init\+Interrupts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_accb65341d2a2c3c18615922cf7288997}
+
+
+It initializes the interrupts attached to the limit switches. 
 
 \hypertarget{class_c_n_c___router_a89f4cbde58844154f247d2bf02a167fb}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!init\+Motor\+X@{init\+Motor\+X}}
 \index{init\+Motor\+X@{init\+Motor\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
@@ -208,6 +241,72 @@ It initializes the controller for the motor on the Y-\/axis. It must be called o
 
 It initializes the controller for the motor on the Z-\/axis. It must be called one time before starting the motion operations. 
 
+\hypertarget{class_c_n_c___router_a76627728e4ee416ad2ee42dcd7e5ad39}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+x\+\_\+down\+\_\+routine@{ls\+\_\+x\+\_\+down\+\_\+routine}}
+\index{ls\+\_\+x\+\_\+down\+\_\+routine@{ls\+\_\+x\+\_\+down\+\_\+routine}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+x\+\_\+down\+\_\+routine}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::ls\+\_\+x\+\_\+down\+\_\+routine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a76627728e4ee416ad2ee42dcd7e5ad39}
+
+
+Routine for the interrupt attached to the down limit switch of the X-\/axis. 
+
+\hypertarget{class_c_n_c___router_aefdb4b267eaab43574728c4027b28c30}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+x\+\_\+up\+\_\+routine@{ls\+\_\+x\+\_\+up\+\_\+routine}}
+\index{ls\+\_\+x\+\_\+up\+\_\+routine@{ls\+\_\+x\+\_\+up\+\_\+routine}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+x\+\_\+up\+\_\+routine}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::ls\+\_\+x\+\_\+up\+\_\+routine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_aefdb4b267eaab43574728c4027b28c30}
+
+
+Routine for the interrupt attached to the up limit switch of the X-\/axis. 
+
+\hypertarget{class_c_n_c___router_a86d9329960e7fd3befcf7198f4479eb6}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+y\+\_\+down\+\_\+routine@{ls\+\_\+y\+\_\+down\+\_\+routine}}
+\index{ls\+\_\+y\+\_\+down\+\_\+routine@{ls\+\_\+y\+\_\+down\+\_\+routine}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+y\+\_\+down\+\_\+routine}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::ls\+\_\+y\+\_\+down\+\_\+routine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a86d9329960e7fd3befcf7198f4479eb6}
+
+
+Routine for the interrupt attached to the down limit switch of the Y-\/axis. 
+
+\hypertarget{class_c_n_c___router_a3db0c4ccb3afee8fbd5de9feecae50b8}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+y\+\_\+up\+\_\+routine@{ls\+\_\+y\+\_\+up\+\_\+routine}}
+\index{ls\+\_\+y\+\_\+up\+\_\+routine@{ls\+\_\+y\+\_\+up\+\_\+routine}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+y\+\_\+up\+\_\+routine}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::ls\+\_\+y\+\_\+up\+\_\+routine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a3db0c4ccb3afee8fbd5de9feecae50b8}
+
+
+Routine for the interrupt attached to the up limit switch of the Y-\/axis. 
+
+\hypertarget{class_c_n_c___router_aadcf75c5b14d0d52136335e3cdf5b84a}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+z\+\_\+down\+\_\+routine@{ls\+\_\+z\+\_\+down\+\_\+routine}}
+\index{ls\+\_\+z\+\_\+down\+\_\+routine@{ls\+\_\+z\+\_\+down\+\_\+routine}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+z\+\_\+down\+\_\+routine}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::ls\+\_\+z\+\_\+down\+\_\+routine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_aadcf75c5b14d0d52136335e3cdf5b84a}
+
+
+Routine for the interrupt attached to the down limit switch of the Z-\/axis. 
+
+\hypertarget{class_c_n_c___router_af730eb61762ec9e173e87d73b7e6ef23}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+z\+\_\+up\+\_\+routine@{ls\+\_\+z\+\_\+up\+\_\+routine}}
+\index{ls\+\_\+z\+\_\+up\+\_\+routine@{ls\+\_\+z\+\_\+up\+\_\+routine}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+z\+\_\+up\+\_\+routine}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::ls\+\_\+z\+\_\+up\+\_\+routine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_af730eb61762ec9e173e87d73b7e6ef23}
+
+
+Routine for the interrupt attached to the up limit switch of the Z-\/axis. 
+
 \hypertarget{class_c_n_c___router_a1b652407bb9e7bb170d55d1c96e6611c}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!move\+To@{move\+To}}
 \index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
@@ -237,7 +336,7 @@ It initializes a motion operation.
 \index{move\+To@{move\+To}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{move\+To}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To (
 \begin{DoxyParamCaption}
-\item[{const Position\+X\+Y\+Z \&}]{np, }
+\item[{const {\bf Position\+X\+Y\+Z} \&}]{np, }
 \item[{float}]{spd = {\ttfamily 0.0}}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_c___router_a7bb1accca615b13aadd050dfec1031e6}
@@ -278,7 +377,7 @@ It initializes a motion operation.
 \index{move\+To\+X\+Y@{move\+To\+X\+Y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{move\+To\+X\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::move\+To\+X\+Y (
 \begin{DoxyParamCaption}
-\item[{const Position\+X\+Y\+Z \&}]{np, }
+\item[{const {\bf Position\+X\+Y\+Z} \&}]{np, }
 \item[{float}]{spd = {\ttfamily 0.0}}
 \end{DoxyParamCaption}
 )}}\label{class_c_n_c___router_a3f6bcafb0e7ce2751a7e4a424a99ec7e}
@@ -385,7 +484,18 @@ It restarts a paused motion.
 
 It moves the utensil up to the home position. It is identified by the down limit switches on the Y\+X-\/axis. 
 
-Pay attention to check the correct installation of the down limit switches. If they do not work well, the function can damage your machine. \hypertarget{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Absol\+Pos@{set\+Absol\+Pos}}
+Pay attention to check the correct installation of the down limit switches. If they do not work well, the function can damage your machine. \hypertarget{class_c_n_c___router_add6b83463be9d4288266fec09e1424f3}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!search\+Z0\+Pos@{search\+Z0\+Pos}}
+\index{search\+Z0\+Pos@{search\+Z0\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{search\+Z0\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::search\+Z0\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_add6b83463be9d4288266fec09e1424f3}
+
+
+It moves the utensil up to the 0 position of the Z-\/axis. 
+
+The function searches the 0 position of the Z-\/axis. Before running, the function needs that you connect the two ends of the wires of the down limit switch of the Z-\/axis to the utensil tip and to a metal foil that will be placed on the working surface (Z=0) under the utensil tip. After done it, you can run the function. The utensil will star to move down. The touch of the metal foil by the tip will close the circuit that triggers the limit switch. It will stop the motion. Be careful that a wrong setup could damage the machine. \hypertarget{class_c_n_c___router_a8629d6232f16d039ff386b0f02d45895}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Absol\+Pos@{set\+Absol\+Pos}}
 \index{set\+Absol\+Pos@{set\+Absol\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{set\+Absol\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Absol\+Pos (
 \begin{DoxyParamCaption}
@@ -405,16 +515,8 @@ It selects the absolute positioning mode.
 )}}\label{class_c_n_c___router_abbda24db494dd328382639412570978e}
 
 
-It sets up a high precision mode to control the X\+Y-\/axii. 
+It selects the incremental positioning mode. 
 
-The function sets up the E\+I\+G\+H\+T\+H\+\_\+\+S\+T\+E\+P for A4988 and H\+A\+L\+F\+\_\+\+S\+T\+E\+P for U\+L\+N2003\+A. \begin{DoxySeeAlso}{See also}
-\hyperlink{_m_s_m_c___a4988_8h}{M\+S\+M\+C\+\_\+\+A4988.\+h} \hyperlink{_m_s_m_c___u_l_n2003_a_8h}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h}
-\end{DoxySeeAlso}
-It sets up a low precision mode to control the X\+Y-\/axii. It is also the fastest control mode.
-
-The function sets up the F\+U\+L\+L\+\_\+\+S\+T\+E\+P for A4988 and U\+L\+N2003\+A. \begin{DoxySeeAlso}{See also}
-\hyperlink{_m_s_m_c___a4988_8h}{M\+S\+M\+C\+\_\+\+A4988.\+h} M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A.\+h\+It selects the incremental positioning mode. 
-\end{DoxySeeAlso}
 \hypertarget{class_c_n_c___router_a0d1313b481b864a85758aaeab61e6595}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Limit\+Switch\+X@{set\+Limit\+Switch\+X}}
 \index{set\+Limit\+Switch\+X@{set\+Limit\+Switch\+X}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{set\+Limit\+Switch\+X}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Limit\+Switch\+X (
@@ -576,19 +678,24 @@ Specifies the motion control mode for the motor on Z-\/axis.
 
 It stops the current motion operation. 
 
-\hypertarget{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!update@{update}}
+\hypertarget{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!update@{update}}
 \index{update@{update}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}boolean C\+N\+C\+\_\+\+Router\+::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}int C\+N\+C\+\_\+\+Router\+::update (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}
+)}}\label{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}
 
 
 It performs the movement configured with the C\+N\+C\+\_\+\+Route\+::move\+To(). 
 
 \begin{DoxyReturn}{Returns}
-It returns true if the motion id end, otherwise it returns false. 
+It returns an integer that is
+\begin{DoxyItemize}
+\item 1 = the motion is end,
+\item 0 = it is still working,
+\item -\/1 = the motion ended because a limit switch was triggered. 
+\end{DoxyItemize}
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_m_s_m_c___a4988_a409bea28b42827c8bd7d5e5e318af21d}{M\+S\+M\+C\+\_\+\+A4988\+::update()} and \hyperlink{class_m_s_m_c___u_l_n2003_a_acdf6b6224352a90146e67ee9837d0a6f}{M\+S\+M\+C\+\_\+\+U\+L\+N2003\+A\+::update()}. 
@@ -598,17 +705,59 @@ It returns true if the motion id end, otherwise it returns false.
 \subsection{Member Data Documentation}
 \hypertarget{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!actual\+\_\+p@{actual\+\_\+p}}
 \index{actual\+\_\+p@{actual\+\_\+p}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{actual\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::actual\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}
+\subsubsection[{actual\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y\+Z} C\+N\+C\+\_\+\+Router\+::actual\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a5e1d4c6b520762621889824c192e13fb}
 
 
 It keeps the actual position of the utensil during an motion. 
 
 \hypertarget{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!end\+\_\+p@{end\+\_\+p}}
 \index{end\+\_\+p@{end\+\_\+p}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{end\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::end\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}
+\subsubsection[{end\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y\+Z} C\+N\+C\+\_\+\+Router\+::end\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a025944e9009cd9b63b6105c41f4665c3}
 
 
 The final position of a motion. 
+
+\hypertarget{class_c_n_c___router_ac4dbdb689d5b4bb2ed39af36ec07d394}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+x\+\_\+down@{ls\+\_\+x\+\_\+down}}
+\index{ls\+\_\+x\+\_\+down@{ls\+\_\+x\+\_\+down}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+x\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}volatile boolean C\+N\+C\+\_\+\+Router\+::ls\+\_\+x\+\_\+down = true\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_ac4dbdb689d5b4bb2ed39af36ec07d394}
+
+
+State of the down limit switch of X-\/axis\+: true = not triggered, false = triggered. 
+
+\hypertarget{class_c_n_c___router_a63dab669f0dd34b0306c16b61816e751}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+x\+\_\+up@{ls\+\_\+x\+\_\+up}}
+\index{ls\+\_\+x\+\_\+up@{ls\+\_\+x\+\_\+up}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+x\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}volatile boolean C\+N\+C\+\_\+\+Router\+::ls\+\_\+x\+\_\+up = true\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a63dab669f0dd34b0306c16b61816e751}
+
+
+State of the up limit switch of X-\/axis\+: true = not triggered, false = triggered. 
+
+\hypertarget{class_c_n_c___router_a1932890e5458f9113355f1bdb854e1ce}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+y\+\_\+down@{ls\+\_\+y\+\_\+down}}
+\index{ls\+\_\+y\+\_\+down@{ls\+\_\+y\+\_\+down}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+y\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}volatile boolean C\+N\+C\+\_\+\+Router\+::ls\+\_\+y\+\_\+down = true\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a1932890e5458f9113355f1bdb854e1ce}
+
+
+State of the down limit switch of Y-\/axis\+: true = not triggered, false = triggered. 
+
+\hypertarget{class_c_n_c___router_a74a44cdb470bb6256551bffc3538b938}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+y\+\_\+up@{ls\+\_\+y\+\_\+up}}
+\index{ls\+\_\+y\+\_\+up@{ls\+\_\+y\+\_\+up}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+y\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}volatile boolean C\+N\+C\+\_\+\+Router\+::ls\+\_\+y\+\_\+up = true\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a74a44cdb470bb6256551bffc3538b938}
+
+
+State of the up limit switch of Y-\/axis\+: true = not triggered, false = triggered. 
+
+\hypertarget{class_c_n_c___router_a30b5c6e169b20b9d8b11be6d638b2958}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+z\+\_\+down@{ls\+\_\+z\+\_\+down}}
+\index{ls\+\_\+z\+\_\+down@{ls\+\_\+z\+\_\+down}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+z\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}volatile boolean C\+N\+C\+\_\+\+Router\+::ls\+\_\+z\+\_\+down = true\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a30b5c6e169b20b9d8b11be6d638b2958}
+
+
+State of the down limit switch of Z-\/axis\+: true = not triggered, false = triggered. 
+
+\hypertarget{class_c_n_c___router_a1f573ec5b6c857e5aee5cebb7ad9c158}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!ls\+\_\+z\+\_\+up@{ls\+\_\+z\+\_\+up}}
+\index{ls\+\_\+z\+\_\+up@{ls\+\_\+z\+\_\+up}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{ls\+\_\+z\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}volatile boolean C\+N\+C\+\_\+\+Router\+::ls\+\_\+z\+\_\+up = true\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_n_c___router_a1f573ec5b6c857e5aee5cebb7ad9c158}
+
+
+State of the up limit switch of Z-\/axis\+: true = not triggered, false = triggered. 
 
 \hypertarget{class_c_n_c___router_aa6009653314607491aa277b1f3c9bf85}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!mx@{mx}}
 \index{mx@{mx}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
@@ -621,52 +770,10 @@ The final position of a motion.
 \subsubsection[{mz}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+S\+M\+C\+\_\+\+A4988} C\+N\+C\+\_\+\+Router\+::mz\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_add549ccc206f5feff41f9e818e370ef8}
 \hypertarget{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!old\+\_\+p@{old\+\_\+p}}
 \index{old\+\_\+p@{old\+\_\+p}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{old\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z C\+N\+C\+\_\+\+Router\+::old\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}
+\subsubsection[{old\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y\+Z} C\+N\+C\+\_\+\+Router\+::old\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_afd338336ec37545574369a5f71ff310b}
 
 
 It keeps the position that the utensil has after starting the motion. 
-
-\hypertarget{class_c_n_c___router_a109a7c6e2a1e556e577f2ad09eefbef7}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+x\+\_\+down@{pin\+\_\+ls\+\_\+x\+\_\+down}}
-\index{pin\+\_\+ls\+\_\+x\+\_\+down@{pin\+\_\+ls\+\_\+x\+\_\+down}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{pin\+\_\+ls\+\_\+x\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+x\+\_\+down\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a109a7c6e2a1e556e577f2ad09eefbef7}
-
-
-Pin number where it is attached the down limit switch of the X-\/axis. 
-
-\hypertarget{class_c_n_c___router_af935b225740dd189dcdcdca7664eb850}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+x\+\_\+up@{pin\+\_\+ls\+\_\+x\+\_\+up}}
-\index{pin\+\_\+ls\+\_\+x\+\_\+up@{pin\+\_\+ls\+\_\+x\+\_\+up}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{pin\+\_\+ls\+\_\+x\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+x\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_af935b225740dd189dcdcdca7664eb850}
-
-
-Pin number where it is attached the up limit switch of the X-\/axis. 
-
-\hypertarget{class_c_n_c___router_a19cd8e9840fbfab991f9cab1300abe04}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+y\+\_\+down@{pin\+\_\+ls\+\_\+y\+\_\+down}}
-\index{pin\+\_\+ls\+\_\+y\+\_\+down@{pin\+\_\+ls\+\_\+y\+\_\+down}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{pin\+\_\+ls\+\_\+y\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+y\+\_\+down\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a19cd8e9840fbfab991f9cab1300abe04}
-
-
-Pin number where it is attached the down limit switch of the Y-\/axis. 
-
-\hypertarget{class_c_n_c___router_a056de16bac1a523455a7be2903e44f40}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+y\+\_\+up@{pin\+\_\+ls\+\_\+y\+\_\+up}}
-\index{pin\+\_\+ls\+\_\+y\+\_\+up@{pin\+\_\+ls\+\_\+y\+\_\+up}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{pin\+\_\+ls\+\_\+y\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+y\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a056de16bac1a523455a7be2903e44f40}
-
-
-Pin number where it is attached the up limit switch of the Y-\/axis. 
-
-\hypertarget{class_c_n_c___router_aa24cd537b5d08782fa01b055cea96c7d}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+z\+\_\+down@{pin\+\_\+ls\+\_\+z\+\_\+down}}
-\index{pin\+\_\+ls\+\_\+z\+\_\+down@{pin\+\_\+ls\+\_\+z\+\_\+down}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{pin\+\_\+ls\+\_\+z\+\_\+down}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+z\+\_\+down\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_aa24cd537b5d08782fa01b055cea96c7d}
-
-
-Pin number where it is attached the down limit switch of the Z-\/axis. 
-
-\hypertarget{class_c_n_c___router_ae178883b237176e39f62336b70769ace}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pin\+\_\+ls\+\_\+z\+\_\+up@{pin\+\_\+ls\+\_\+z\+\_\+up}}
-\index{pin\+\_\+ls\+\_\+z\+\_\+up@{pin\+\_\+ls\+\_\+z\+\_\+up}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
-\subsubsection[{pin\+\_\+ls\+\_\+z\+\_\+up}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t C\+N\+C\+\_\+\+Router\+::pin\+\_\+ls\+\_\+z\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_ae178883b237176e39f62336b70769ace}
-
-
-Pin number where it is attached the up limit switch of the Y-\/axis. 
 
 \hypertarget{class_c_n_c___router_afd35356064c7667cbdf21c44a7dd7cf5}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!pos\+\_\+type@{pos\+\_\+type}}
 \index{pos\+\_\+type@{pos\+\_\+type}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}

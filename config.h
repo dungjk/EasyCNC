@@ -26,6 +26,7 @@
 */
 
 #include "pins_arduino.h"
+#include "tools/debugger.h"
 
 #define SERIAL_BOUND 57600
 #define INTERRUPT_STOP_MOTION 1
@@ -42,14 +43,18 @@
 #define ROUTER_MY_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis. */
 #define ROUTER_MZ_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Z-axis. */
 #define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
-#define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25  /*!< \brief Number of steps to forward of a mm. */
+#define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25 /*!< \brief Number of steps to forward of a mm. */
 #define ROUTER_MZ_STEPS_PER_MM ROUTER_MZ_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
-#define ROUTER_MX_SPEED 5000.0           /*!< \brief The maximum speed used to control the motor of X-axis. The unit is steps/s. */
-#define ROUTER_MY_SPEED 5000.0           /*!< \brief The maximum speed used to control the motor of Y-axis. The unit is steps/s. */
-#define ROUTER_MZ_SPEED 5000.0           /*!< \brief The maximum speed used to control the motor of Z-axis. The unit is steps/s. */
-#define ROUTER_DOWN_LIMIT_SWITCH_X 3                  /*!< \brief The number of the pin which is connected to the limit switch of the X-axis. */
-#define ROUTER_DOWN_LIMIT_SWITCH_Y 14                  /*!< \brief The number of the pin which is connected to the limit switch of the Y-axis. */
-#define ROUTER_DOWN_LIMIT_SWITCH_Z 14                  /*!< \brief The number of the pin which is connected to the limit switch of the Z-axis. */
+#define ROUTER_MX_SPEED 2800.0           /*!< \brief The maximum speed used to control the motor of X-axis (steps/s). */
+#define ROUTER_MY_SPEED 2800.0           /*!< \brief The maximum speed used to control the motor of Y-axis (steps/s). */
+#define ROUTER_MZ_SPEED 2800.0           /*!< \brief The maximum speed used to control the motor of Z-axis (steps/s). */
+#define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT -1 // 0                /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT -1 // 4                /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT  -1                  /*!< \brief TThe number of the interrupt which is connected to the up limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT  -1                  /*!< \brief TThe number of the interrupt which is connected to the up limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT  -1                  /*!< \brief TThe number of the interrupt which is connected to the up limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+
 
 
 //#define ROUTER_MX_CONTROLLER_ULN2003A
@@ -125,11 +130,5 @@
 #define _MILLING_MACHINE_SPEED_PIN   11    /*!< \brief The pin number connected to the speed control circuit of the milling machine.*/
 #endif
 
-// ******************
-//     TESTING
-// ******************
 
-//#define _TEST
-#define DBGNL(x) Serial.println(x)
-#define DBG(x) Serial.print(x)
 

@@ -23,7 +23,7 @@ void \hyperlink{class_g_code_a3912e1dad7257e2336ab09c55ff17235}{remove\+Spaces} 
 int \hyperlink{class_g_code_a71e259cc07dc7c1473d58cb70faa3630}{get\+Int} (int \&p)
 \begin{DoxyCompactList}\small\item\em The function reads a integer value from the variable \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{G\+Code\+::line} at the specified position. \end{DoxyCompactList}\item 
 int \hyperlink{class_g_code_ad30dc86177f9e5749daa91d8727f364e}{run\+Motion} ()
-\begin{DoxyCompactList}\small\item\em The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. \end{DoxyCompactList}\item 
 boolean \hyperlink{class_g_code_abd9c3a13cf8f2958d8d9f0a563855e7b}{get\+Float} (uint8\+\_\+t \&pos, float \&val)
 \begin{DoxyCompactList}\small\item\em The function reads a float value in the \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{G\+Code\+::line} variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line. \end{DoxyCompactList}\item 
 void \hyperlink{class_g_code_a9f7a4d057f394dcc4163f00a2dc6770e}{return\+Status} ()
@@ -36,14 +36,14 @@ void \hyperlink{class_g_code_ab8dbd55ab693f488c083d4fc97a00044}{reset\+Status} (
 String \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{line}
 \begin{DoxyCompactList}\small\item\em Here is stored the G-\/\+Code line that will be parsed. \end{DoxyCompactList}\item 
 float \hyperlink{class_g_code_a0115efce11fdffa2c59304706ecacede}{feed\+\_\+rate}
-\begin{DoxyCompactList}\small\item\em The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The variable stores the feed rate during the working process in unit/s (unit can be mm or inch) \end{DoxyCompactList}\item 
 float \hyperlink{class_g_code_a03613c115ef107290355c78384ebee27}{spindle\+\_\+speed}
 \begin{DoxyCompactList}\small\item\em The speed of the drill. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{class_g_code_a56d0e5e56115cd8e7b3f161cc8c0528e}{parser\+\_\+status}
 \begin{DoxyCompactList}\small\item\em The status of the parser. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{class_g_code_a3674417ee3c5141c6655c05f6ffa0799}{last\+\_\+word} \mbox{[}16\mbox{]}
 \begin{DoxyCompactList}\small\item\em Here the class stores the last word red for each group. \end{DoxyCompactList}\item 
-Position\+X\+Y\+Z \hyperlink{class_g_code_aadec9af8923a5dc95f9f7da8bccfc109}{new\+\_\+pos}
+\hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \hyperlink{class_g_code_aadec9af8923a5dc95f9f7da8bccfc109}{new\+\_\+pos}
 \begin{DoxyCompactList}\small\item\em The class stores the new position red from the G-\/\+Code line. \end{DoxyCompactList}\item 
 float \hyperlink{class_g_code_a6f38c9dddbd7c12c786c6363fd2a369c}{params} \mbox{[}\hyperlink{_g_code__def_8h_ab0b1e59d96396ba9dca2147f9feb44eb}{P\+A\+R\+A\+M\+S}\mbox{]}
 \begin{DoxyCompactList}\small\item\em The array stores the values of the parameters red from the G-\/\+Code line. \end{DoxyCompactList}\item 
@@ -244,7 +244,7 @@ The function sends the status of the C\+N\+C machine on the serial link. It is a
 )}}\label{class_g_code_ad30dc86177f9e5749daa91d8727f364e}
 
 
-The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_a3a8982d9582e2144d38791626b3060e6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. 
+The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. 
 
 
 
@@ -254,7 +254,7 @@ The function calls the update functions to perform the motors motion. See \hyper
 \subsubsection[{feed\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}float G\+Code\+::feed\+\_\+rate}}\label{class_g_code_a0115efce11fdffa2c59304706ecacede}
 
 
-The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch) 
+The variable stores the feed rate during the working process in unit/s (unit can be mm or inch) 
 
 \hypertarget{class_g_code_a3674417ee3c5141c6655c05f6ffa0799}{\index{G\+Code@{G\+Code}!last\+\_\+word@{last\+\_\+word}}
 \index{last\+\_\+word@{last\+\_\+word}!G\+Code@{G\+Code}}
@@ -275,7 +275,7 @@ Here is stored the G-\/\+Code line that will be parsed.
 
 \hypertarget{class_g_code_aadec9af8923a5dc95f9f7da8bccfc109}{\index{G\+Code@{G\+Code}!new\+\_\+pos@{new\+\_\+pos}}
 \index{new\+\_\+pos@{new\+\_\+pos}!G\+Code@{G\+Code}}
-\subsubsection[{new\+\_\+pos}]{\setlength{\rightskip}{0pt plus 5cm}Position\+X\+Y\+Z G\+Code\+::new\+\_\+pos}}\label{class_g_code_aadec9af8923a5dc95f9f7da8bccfc109}
+\subsubsection[{new\+\_\+pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position\+X\+Y\+Z} G\+Code\+::new\+\_\+pos}}\label{class_g_code_aadec9af8923a5dc95f9f7da8bccfc109}
 
 
 The class stores the new position red from the G-\/\+Code line. 

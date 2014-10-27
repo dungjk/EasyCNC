@@ -17,6 +17,7 @@
 #include "CNC_Router.h"
 #include "tools/Timer.h"
 
+
 //end of add your includes here
 #ifdef __cplusplus
 extern "C" {
@@ -35,13 +36,10 @@ CNC_Router cncrt(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MZ_STEPS
 GCode gc(&cncrt, &mill);
 char new_line[256];
 
-boolean end_task = false;
-boolean a, b;
-Timer tloop;
-
+/*
 void stopButton(){
   cncrt.stopMotion();
-}
+}*/
 
 
 //Do not add code below this line

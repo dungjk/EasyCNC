@@ -8,75 +8,44 @@
 
 #include "config.h"
 #include "Utensils.h"
+#include "GCode.h"
 #include <Servo.h>
-#include "Position.h"
-#include "CNCxy.h" 
+#include "tools/Position.h"
+#include "CNC_Router.h"
+#include "tools/Timer.h"
 
-PlotterServo mypen(_PLOTTER_SERVO_PIN,_PLOTTER_SERVO_DOWN_POS, _PLOTTER_SERVO_UP_POS);
+MillingMachine mill(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
 
-CNC_Router mycnc(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MX_SPEED, ROUTER_MY_SPEED);  //200.0 at lowPrecision
+CNC_Router cncrt(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MZ_STEPS_PER_MM, ROUTER_MX_SPEED, ROUTER_MY_SPEED, ROUTER_MZ_SPEED);  //200.0 at lowPrecision
 
-boolean end_task = false;
+GCode gc(&cncrt, &mill);
+char new_line[256];
 
-
-void stopButton(){
-  mycnc.stopMotion();
-}
-
-void processPos(){
-  float new_x, new_y;
-  new_x = Serial.parseFloat();
-  new_y = Serial.parseFloat();
-  Serial.read();
-  mycnc.moveTo(new_x, new_y);
-}
+Timer tloop;
 
 void setup(){
-  mycnc.initMotorX();
-  mycnc.initMotorY();
-  mycnc.resetPos();
-  mycnc.lowPrecision();
-  mycnc.setAbsolPos();
-  mycnc.setLimitSwitchX(ROUTER_LIMIT_X);
-  mycnc.setLimitSwitchY(ROUTER_LIMIT_Y);
+        cncrt.initMotorX();
+	cncrt.initMotorY();
+	cncrt.initMotorZ();
+	cncrt.resetPos();
+	cncrt.setMotionModeX(EIGHTH_STEP);
+	cncrt.setMotionModeY(EIGHTH_STEP);
+	cncrt.setMotionModeZ(EIGHTH_STEP);
+	cncrt.setAbsolPos(); gc.last_word[GROUP3] = G90;
+	//cncrt.initInterrupts();
+	cncrt.orientationX(-1);
 
-  attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
-  digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
-
-  mypen.init();
-
-  Serial.begin(9600);
+	mill.init();
+        Serial.begin(SERIAL_BOUND);
 
 }
 
 void loop(){
-  if( mycnc.update()){
-    
-    if(end_task){
-      Serial.print('a');
-      end_task = false;
-    }
-    
-    if(Serial.available() > 0){
-      switch( Serial.parseInt() ) {
-        case 0:
-           mypen.up();
-           processPos();
-           break;
-        case 1:
-           mypen.down();
-           processPos();
-           break;
-        case 2:
-           mycnc.resetPos();
-           break;
-        case 3: 
-           mycnc.searchHomePos();
-      }
-
-      end_task = true;
-    }
-  }
-
+  if (Serial.available() > 0) {
+		//memset(new_line, '\0', 256);
+		new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
+		gc.line = new_line;
+		gc.parseLine();
+	}
 }
 

@@ -240,15 +240,51 @@ public:
 
 	/*! \brief It returns a position where each axis value is the sum of the values of the two positions.
 	 *  \param p The reference to the added position.
-	 *  \return The position which is the sum of two positions
+	 *  \return The vector which is the sum of two vectors
 	 */
 	PositionXYZ operator +(const PositionXYZ &p) const;
 
 	/*! \brief It adds to the current position the specified position.
 	 *  \param p The position to add.
-	 *  \return the reference to this object.
+	 *  \return The reference to the object.
 	 */
 	PositionXYZ& operator +=(const PositionXYZ &p);
+
+	/*! \brief It returns a vector that is the difference between two vectors.
+	 *  \param p The reference to a vector that will be subtracted.
+	 *  \return The vector which is the difference of the two vectors
+	 */
+	PositionXYZ operator -(const PositionXYZ &p) const;
+
+	/*! \brief It returns the reference to a vector that is the difference between two vectors.
+	 *  \param p The reference to a vector that will be subtracted.
+	 *  \return The reference to the object.
+	 */
+	PositionXYZ& operator -=(const PositionXYZ &p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module multiplied by the scalar value p.
+	 *  \param p Scala value
+	 *  \return The vector
+	 */
+	PositionXYZ operator *(float p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module multiplied by the scalar value p.
+	 *  \param p Scala value
+	 *  \return The reference to the object
+	 */
+	PositionXYZ& operator *=(float p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module divided by the scalar value p.
+	 *  \param p Scala value
+	 *  \return The vector
+	 */
+	PositionXYZ operator /(float p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module divided by the scalar value p.
+	 *  \param p Scala value
+	 *  \return The reference to the object
+	 */
+	PositionXYZ& operator /=(float p);
 
 };
 

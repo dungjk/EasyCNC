@@ -113,7 +113,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a71e259cc07dc7c1473d58cb70faa3630"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function reads a integer value from the variable <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> at the specified position.  <a href="#a71e259cc07dc7c1473d58cb70faa3630">More...</a><br /></td></tr>
 <tr class="separator:a71e259cc07dc7c1473d58cb70faa3630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad30dc86177f9e5749daa91d8727f364e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#ad30dc86177f9e5749daa91d8727f364e">runMotion</a> ()</td></tr>
-<tr class="memdesc:ad30dc86177f9e5749daa91d8727f364e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function calls the update functions to perform the motors motion. See <a class="el" href="class_c_n_c___router.html#a3a8982d9582e2144d38791626b3060e6" title="It performs the movement configured with the CNC_Route::moveTo(). ">CNC_Router::update</a> and MillingMachine::update.  <a href="#ad30dc86177f9e5749daa91d8727f364e">More...</a><br /></td></tr>
+<tr class="memdesc:ad30dc86177f9e5749daa91d8727f364e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function calls the update functions to perform the motors motion. See <a class="el" href="class_c_n_c___router.html#ad67d003f8bb12c60f9752126d47408f6" title="It performs the movement configured with the CNC_Route::moveTo(). ">CNC_Router::update</a> and MillingMachine::update.  <a href="#ad30dc86177f9e5749daa91d8727f364e">More...</a><br /></td></tr>
 <tr class="separator:ad30dc86177f9e5749daa91d8727f364e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd9c3a13cf8f2958d8d9f0a563855e7b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#abd9c3a13cf8f2958d8d9f0a563855e7b">getFloat</a> (uint8_t &amp;pos, float &amp;val)</td></tr>
 <tr class="memdesc:abd9c3a13cf8f2958d8d9f0a563855e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function reads a float value in the <a class="el" href="class_g_code.html#a20d7c90740e9e139b24f68336ad8c8f1" title="Here is stored the G-Code line that will be parsed. ">GCode::line</a> variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line.  <a href="#abd9c3a13cf8f2958d8d9f0a563855e7b">More...</a><br /></td></tr>
@@ -131,7 +131,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a20d7c90740e9e139b24f68336ad8c8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here is stored the G-Code line that will be parsed.  <a href="#a20d7c90740e9e139b24f68336ad8c8f1">More...</a><br /></td></tr>
 <tr class="separator:a20d7c90740e9e139b24f68336ad8c8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0115efce11fdffa2c59304706ecacede"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a0115efce11fdffa2c59304706ecacede">feed_rate</a></td></tr>
-<tr class="memdesc:a0115efce11fdffa2c59304706ecacede"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch)  <a href="#a0115efce11fdffa2c59304706ecacede">More...</a><br /></td></tr>
+<tr class="memdesc:a0115efce11fdffa2c59304706ecacede"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variable stores the feed rate during the working process in unit/s (unit can be mm or inch)  <a href="#a0115efce11fdffa2c59304706ecacede">More...</a><br /></td></tr>
 <tr class="separator:a0115efce11fdffa2c59304706ecacede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03613c115ef107290355c78384ebee27"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a03613c115ef107290355c78384ebee27">spindle_speed</a></td></tr>
 <tr class="memdesc:a03613c115ef107290355c78384ebee27"><td class="mdescLeft">&#160;</td><td class="mdescRight">The speed of the drill.  <a href="#a03613c115ef107290355c78384ebee27">More...</a><br /></td></tr>
@@ -142,7 +142,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a3674417ee3c5141c6655c05f6ffa0799"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a3674417ee3c5141c6655c05f6ffa0799">last_word</a> [16]</td></tr>
 <tr class="memdesc:a3674417ee3c5141c6655c05f6ffa0799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here the class stores the last word red for each group.  <a href="#a3674417ee3c5141c6655c05f6ffa0799">More...</a><br /></td></tr>
 <tr class="separator:a3674417ee3c5141c6655c05f6ffa0799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadec9af8923a5dc95f9f7da8bccfc109"><td class="memItemLeft" align="right" valign="top">PositionXYZ&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#aadec9af8923a5dc95f9f7da8bccfc109">new_pos</a></td></tr>
+<tr class="memitem:aadec9af8923a5dc95f9f7da8bccfc109"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y_z.html">PositionXYZ</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#aadec9af8923a5dc95f9f7da8bccfc109">new_pos</a></td></tr>
 <tr class="memdesc:aadec9af8923a5dc95f9f7da8bccfc109"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class stores the new position red from the G-Code line.  <a href="#aadec9af8923a5dc95f9f7da8bccfc109">More...</a><br /></td></tr>
 <tr class="separator:aadec9af8923a5dc95f9f7da8bccfc109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f38c9dddbd7c12c786c6363fd2a369c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a6f38c9dddbd7c12c786c6363fd2a369c">params</a> [<a class="el" href="_g_code__def_8h.html#ab0b1e59d96396ba9dca2147f9feb44eb">PARAMS</a>]</td></tr>
@@ -482,7 +482,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The function calls the update functions to perform the motors motion. See <a class="el" href="class_c_n_c___router.html#a3a8982d9582e2144d38791626b3060e6" title="It performs the movement configured with the CNC_Route::moveTo(). ">CNC_Router::update</a> and MillingMachine::update. </p>
+<p>The function calls the update functions to perform the motors motion. See <a class="el" href="class_c_n_c___router.html#ad67d003f8bb12c60f9752126d47408f6" title="It performs the movement configured with the CNC_Route::moveTo(). ">CNC_Router::update</a> and MillingMachine::update. </p>
 
 </div>
 </div>
@@ -497,7 +497,7 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch) </p>
+<p>The variable stores the feed rate during the working process in unit/s (unit can be mm or inch) </p>
 
 </div>
 </div>
@@ -535,7 +535,7 @@ Private Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PositionXYZ GCode::new_pos</td>
+          <td class="memname"><a class="el" href="class_position_x_y_z.html">PositionXYZ</a> GCode::new_pos</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -638,7 +638,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 22 2014 21:32:25 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 27 2014 19:42:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

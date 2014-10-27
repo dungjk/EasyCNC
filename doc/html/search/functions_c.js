@@ -1,23 +1,9 @@
 var searchData=
 [
-  ['searchhomepos',['searchHomePos',['../class_c_n_c___router.html#a4e9504d77eee555ddb35af073b67d3f1',1,'CNC_Router']]],
-  ['setabsolpos',['setAbsolPos',['../class_c_n_c___router.html#a8629d6232f16d039ff386b0f02d45895',1,'CNC_Router']]],
-  ['setdirection',['setDirection',['../class_m_s_m_c___a4988.html#ab9bd155f40ee777f17d1c4b1a702a60a',1,'MSMC_A4988']]],
-  ['setincrpos',['setIncrPos',['../class_c_n_c___router.html#abbda24db494dd328382639412570978e',1,'CNC_Router']]],
-  ['setlimitswitchx',['setLimitSwitchX',['../class_c_n_c___router.html#a0d1313b481b864a85758aaeab61e6595',1,'CNC_Router']]],
-  ['setlimitswitchy',['setLimitSwitchY',['../class_c_n_c___router.html#af9308de7c3273a4f7dc18bc3cfe617d4',1,'CNC_Router']]],
-  ['setlimitswitchz',['setLimitSwitchZ',['../class_c_n_c___router.html#ac993b5ad9929da6f83bb8783fafafa1a',1,'CNC_Router']]],
-  ['setmode',['setMode',['../class_m_s_m_c.html#a85bd4abf542aecdf24bb90b9ea2a47e9',1,'MSMC::setMode()'],['../class_m_s_m_c___a4988.html#aa4b96442c0e7d68715c2322f5bdce782',1,'MSMC_A4988::setMode()'],['../class_m_s_m_c___u_l_n2003_a.html#a8a7f8b7e0048b3a03c87bd830d4a455f',1,'MSMC_ULN2003A::setMode()']]],
-  ['setmotionmodex',['setMotionModeX',['../class_c_n_c___router.html#a6fd3b892aa1730dc2cb79bc91c0e90b6',1,'CNC_Router']]],
-  ['setmotionmodey',['setMotionModeY',['../class_c_n_c___router.html#a42148bff778d0dbd45b37f7a09b61382',1,'CNC_Router']]],
-  ['setmotionmodez',['setMotionModeZ',['../class_c_n_c___router.html#a28ddb2544290798664f99ed506f7d44a',1,'CNC_Router']]],
-  ['setorientation',['setOrientation',['../class_m_s_m_c___a4988.html#a620616f8e3cad131c8a57b48c3c8551f',1,'MSMC_A4988']]],
-  ['setpins',['setPins',['../class_m_s_m_c___a4988.html#a7aa6ddff4b561e47f09e4726b160294b',1,'MSMC_A4988::setPins()'],['../class_m_s_m_c___u_l_n2003_a.html#a19320fa4543dd8e76e338737690df235',1,'MSMC_ULN2003A::setPins()']]],
-  ['setspindledir',['setSpindleDir',['../class_milling_machine.html#a5c49cbbcd45406c9537ccac8f7c22c39',1,'MillingMachine']]],
-  ['setspindlespeed',['setSpindleSpeed',['../class_milling_machine.html#a4c41fa0e6f882281ffc3b67a1771da57',1,'MillingMachine']]],
-  ['setup',['setup',['../easy___c_n_c_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.cpp'],['../easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.cpp']]],
-  ['speed',['speed',['../class_m_s_m_c.html#a065e48c8e8f3b513bf6694e8eb1b28d5',1,'MSMC::speed()'],['../class_m_s_m_c___a4988.html#a6f9d236dc619342d16457aa029faeed9',1,'MSMC_A4988::speed()'],['../class_m_s_m_c___u_l_n2003_a.html#ad8df164c90b2205fb65c796632889f82',1,'MSMC_ULN2003A::speed()']]],
-  ['stop',['stop',['../class_m_s_m_c.html#a0b44d0a659550ba754bf9212294ba6d5',1,'MSMC::stop()'],['../class_m_s_m_c___a4988.html#a4038481ce6b8131ea22d5e0d331ca6c7',1,'MSMC_A4988::stop()'],['../class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5',1,'MSMC_ULN2003A::stop()']]],
-  ['stopbutton',['stopButton',['../easy___c_n_c_8h.html#a602fb203183e59e6886cf242effd2c47',1,'easy_CNC.h']]],
-  ['stopmotion',['stopMotion',['../class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac',1,'CNC_Router']]]
+  ['removespaces',['removeSpaces',['../class_g_code.html#a3912e1dad7257e2336ab09c55ff17235',1,'GCode']]],
+  ['resetpos',['resetPos',['../class_c_n_c___router.html#a30d838430b7452a8f47071d2f6b8845e',1,'CNC_Router']]],
+  ['resetstatus',['resetStatus',['../class_g_code.html#ab8dbd55ab693f488c083d4fc97a00044',1,'GCode']]],
+  ['restart',['restart',['../class_c_n_c___router.html#ab36f29523c76dd9f64c1ab5367c8f3d3',1,'CNC_Router::restart()'],['../class_m_s_m_c.html#ae09c870a71121c7cc9f060b6299a425b',1,'MSMC::restart()'],['../class_m_s_m_c___a4988.html#add93aa459190c6edb3551495e75aaded',1,'MSMC_A4988::restart()'],['../class_m_s_m_c___u_l_n2003_a.html#a19853d77f81c521091a55996899c1784',1,'MSMC_ULN2003A::restart()']]],
+  ['returnstatus',['returnStatus',['../class_g_code.html#a9f7a4d057f394dcc4163f00a2dc6770e',1,'GCode']]],
+  ['runmotion',['runMotion',['../class_g_code.html#ad30dc86177f9e5749daa91d8727f364e',1,'GCode']]]
 ];

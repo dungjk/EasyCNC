@@ -108,9 +108,9 @@
 
 //MODAL GROUP 14: SPINDLE ROTATION
 #define GROUP14 14
-#define M3 224
-#define M4 225
-#define M5 226
+#define M3 224      //!< Power on spindle (CW)
+#define M4 225		//!< Power on spindle (CCW)
+#define M5 226		//!< Power off spindle
 
 //MODAL GROUP 15: COOLING (M7 AND M8 CAN BE ACTIVE TOGETER IN THE SAME TIME)
 #define GROUP15 15
@@ -142,8 +142,9 @@
 #define STATUS_SYNTAX_ERROR 2
 #define STATUS_UNSUPPORTED 3
 #define STATUS_WORKING 4
+#define STATUS_LIMITI_SWITCH_TRG 5
 
 //THE LENGHT OF THE SEGMENTS THAT FORM AN ARCH
-#define ARCH_DEFINITION 0.3
+#define ARCH_DEFINITION 0.3     //!< The segments size that composes an arch (mm)
 
 #endif

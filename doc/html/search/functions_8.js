@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['mill',['mill',['../easy___c_n_c_8h.html#a936d8c3bd6dace2e6ac04da13a47dadf',1,'easy_CNC.h']]],
-  ['millingmachine',['MillingMachine',['../class_milling_machine.html#afdeaae37d959bd4c9de40195a2650aa4',1,'MillingMachine']]],
-  ['motiong0g1',['motionG0G1',['../class_g_code.html#a74e9e50305d574e214eb8b5a7c55a9f6',1,'GCode']]],
-  ['motiong2g3',['motionG2G3',['../class_g_code.html#a44eabd18f470e248fed7a53df495d05f',1,'GCode']]],
-  ['moveto',['moveTo',['../class_c_n_c___router.html#a1b652407bb9e7bb170d55d1c96e6611c',1,'CNC_Router::moveTo(float px, float py, float pz, float spd=0.0)'],['../class_c_n_c___router.html#a7bb1accca615b13aadd050dfec1031e6',1,'CNC_Router::moveTo(const PositionXYZ &amp;np, float spd=0.0)']]],
-  ['movetoxy',['moveToXY',['../class_c_n_c___router.html#a3aedfc767d93e8cb59f10322067ffdae',1,'CNC_Router::moveToXY(float px, float py, float spd=0.0)'],['../class_c_n_c___router.html#a3f6bcafb0e7ce2751a7e4a424a99ec7e',1,'CNC_Router::moveToXY(const PositionXYZ &amp;np, float spd=0.0)']]],
-  ['msmc_5fa4988',['MSMC_A4988',['../class_m_s_m_c___a4988.html#a3ea9fb71304c6a21695947fde680ee48',1,'MSMC_A4988::MSMC_A4988()'],['../class_m_s_m_c___a4988.html#af2633e82e29d622a4fb5b5f8f6b77446',1,'MSMC_A4988::MSMC_A4988(uint8_t pst, uint8_t pdr, uint8_t pen)']]],
-  ['msmc_5fuln2003a',['MSMC_ULN2003A',['../class_m_s_m_c___u_l_n2003_a.html#a7b3b007290d0913572c5d42f23f6ed9a',1,'MSMC_ULN2003A::MSMC_ULN2003A()'],['../class_m_s_m_c___u_l_n2003_a.html#ae653d15c96f4e8ddfb4476cc77495ad1',1,'MSMC_ULN2003A::MSMC_ULN2003A(uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4)']]]
+  ['loop',['loop',['../easy___c_n_c_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;easy_CNC.cpp'],['../easy___c_n_c_8h.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;easy_CNC.cpp'],['../easy___c_n_c_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;easy_CNC.ino']]],
+  ['ls_5fx_5fdown_5froutine',['ls_x_down_routine',['../class_c_n_c___router.html#a76627728e4ee416ad2ee42dcd7e5ad39',1,'CNC_Router']]],
+  ['ls_5fx_5fup_5froutine',['ls_x_up_routine',['../class_c_n_c___router.html#aefdb4b267eaab43574728c4027b28c30',1,'CNC_Router']]],
+  ['ls_5fy_5fdown_5froutine',['ls_y_down_routine',['../class_c_n_c___router.html#a86d9329960e7fd3befcf7198f4479eb6',1,'CNC_Router']]],
+  ['ls_5fy_5fup_5froutine',['ls_y_up_routine',['../class_c_n_c___router.html#a3db0c4ccb3afee8fbd5de9feecae50b8',1,'CNC_Router']]],
+  ['ls_5fz_5fdown_5froutine',['ls_z_down_routine',['../class_c_n_c___router.html#aadcf75c5b14d0d52136335e3cdf5b84a',1,'CNC_Router']]],
+  ['ls_5fz_5fup_5froutine',['ls_z_up_routine',['../class_c_n_c___router.html#af730eb61762ec9e173e87d73b7e6ef23',1,'CNC_Router']]]
 ];

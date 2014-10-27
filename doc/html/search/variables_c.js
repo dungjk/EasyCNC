@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sample',['sample',['../class_timer.html#a632ed333f8df70954d8dbd5379df3c34',1,'Timer']]],
   ['spd',['spd',['../class_m_s_m_c___a4988.html#a6453efb52d22739962c05b0d03f65aa7',1,'MSMC_A4988::spd()'],['../class_m_s_m_c___u_l_n2003_a.html#ab5cb8c78446fe371662f6ce6d2b289d5',1,'MSMC_ULN2003A::spd()']]],
   ['spindle_5fspeed',['spindle_speed',['../class_g_code.html#a03613c115ef107290355c78384ebee27',1,'GCode']]],
   ['spmmx',['spmmx',['../class_c_n_c___router.html#ad8830a7b387905027b8a1a9e3b31e3c7',1,'CNC_Router']]],

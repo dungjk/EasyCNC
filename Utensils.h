@@ -17,6 +17,14 @@
 
 #include "config.h"
 
+class Utensil {
+public:
+	virtual void preMotion();
+	virtual void postMotion();
+};
+
+
+
 // ******************************
 // ***** PLOTTER WHIT SERVO *****
 // ******************************

@@ -127,7 +127,12 @@ boolean MSMC_A4988::update() {
 	uint32_t us = micros();
 	uint32_t delta = us - old_time;
 
-	if (dir != 0 && delta > spd && !m_pause) {
+	if (step_pin_val) {
+			digitalWrite(pin_step, LOW);
+			step_pin_val = false;
+		}
+
+	if (dir != 0 && delta >= spd && !m_pause) {
 		if (steps == tot_steps) {
 			disable();
 			dir = 0;
@@ -136,16 +141,11 @@ boolean MSMC_A4988::update() {
 		}
 
 		steps++;
-		old_time = us;
+		old_time = us - (delta - spd );
 		digitalWrite(pin_step, HIGH);
 		step_pin_val = true;
 
 		return m_ready;
-	}
-
-	if (step_pin_val) {
-		digitalWrite(pin_step, LOW);
-		step_pin_val = false;
 	}
 
 	return m_ready;

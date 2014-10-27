@@ -39,7 +39,7 @@ class GCode {
 
 public:
 	String line;          //!< Here is stored the G-Code line that will be parsed
-	float feed_rate;      //!< The variable stores the feed rate during the working process in unit/minute (unit can be mm or inch)
+	float feed_rate;      //!< The variable stores the feed rate during the working process in unit/s (unit can be mm or inch)
 	float spindle_speed;	  //!< The speed of the drill
 
 	uint8_t parser_status;    //!< The status of the parser. \sa GCode_def.h
@@ -51,11 +51,8 @@ public:
 
 	CNC_Router *router;       //!< Pointer to the CNC_Router object
 
-	/*#if defined(_PLOTTER_SERVO)
-	 PlotterServo *utensil;
-	 #elif  defined(_MILLING_MACHINE)*/
 	MillingMachine *utensil;   //!< Pointer to the MillingMachine object
-//#endif
+
 
 	/*! \brief Constructor
 	 * 	\param r Address of the CNC_Router object

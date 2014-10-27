@@ -109,7 +109,7 @@
 \#define \hyperlink{_g_code__def_8h_a9af8d83a0f0b0d5d777a6fd4c45c3ce2}{G\+R\+O\+U\+P8}~8
 \item 
 \#define \hyperlink{_g_code__def_8h_a9efbbe6a12eddd541b120aaacc94866b}{G43}~128
-\begin{DoxyCompactList}\small\item\em Utensil length offset (positive value) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_utensil}{Utensil} length offset (positive value) \end{DoxyCompactList}\item 
 \#define \hyperlink{_g_code__def_8h_a4e232ebe798fb55e45a5d0ad673304f3}{G49}~129
 \begin{DoxyCompactList}\small\item\em Delete utensil length offset. \end{DoxyCompactList}\item 
 \#define \hyperlink{_g_code__def_8h_a3ac75ccd5490afae9633b7bf12c06573}{G\+R\+O\+U\+P9}~9
@@ -159,11 +159,11 @@
 \#define \hyperlink{_g_code__def_8h_a3ce03ab400409c56d57818c890fbfcf2}{G\+R\+O\+U\+P14}~14
 \item 
 \#define \hyperlink{_g_code__def_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}~224
-\item 
+\begin{DoxyCompactList}\small\item\em Power on spindle (C\+W) \end{DoxyCompactList}\item 
 \#define \hyperlink{_g_code__def_8h_a9a3433d6613a64df14bf05957ba30837}{M4}~225
-\item 
+\begin{DoxyCompactList}\small\item\em Power on spindle (C\+C\+W) \end{DoxyCompactList}\item 
 \#define \hyperlink{_g_code__def_8h_aaae035dfc29e91b0d2b941a446546631}{M5}~226
-\item 
+\begin{DoxyCompactList}\small\item\em Power off spindle. \end{DoxyCompactList}\item 
 \#define \hyperlink{_g_code__def_8h_a1cf662ca79c7014bd8c80eb3841c09b3}{G\+R\+O\+U\+P15}~15
 \item 
 \#define \hyperlink{_g_code__def_8h_acaff0b380565437a498a06d7e6b57c3a}{M7}~240
@@ -210,14 +210,20 @@
 \item 
 \#define \hyperlink{_g_code__def_8h_a3ea0e8bcc1b16bf4b8f6f830c92fbef4}{S\+T\+A\+T\+U\+S\+\_\+\+W\+O\+R\+K\+I\+N\+G}~4
 \item 
+\#define \hyperlink{_g_code__def_8h_a3344d16238760748b66b871c77d25457}{S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G}~5
+\item 
 \#define \hyperlink{_g_code__def_8h_ab24933eecd1ce5a12bac1ac9e1ec8938}{A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}~0.\+3
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The segments size that composes an arch (mm) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
 \hypertarget{_g_code__def_8h_ab24933eecd1ce5a12bac1ac9e1ec8938}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N@{A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}}
 \index{A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N@{A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N~0.\+3}}\label{_g_code__def_8h_ab24933eecd1ce5a12bac1ac9e1ec8938}
+
+
+The segments size that composes an arch (mm) 
+
 \hypertarget{_g_code__def_8h_a6440afc9207bc5eba00d9161ff744e16}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!G0@{G0}}
 \index{G0@{G0}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{G0}]{\setlength{\rightskip}{0pt plus 5cm}\#define G0~16}}\label{_g_code__def_8h_a6440afc9207bc5eba00d9161ff744e16}
@@ -322,7 +328,7 @@ Start the right utensil radius compensation.
 \subsubsection[{G43}]{\setlength{\rightskip}{0pt plus 5cm}\#define G43~128}}\label{_g_code__def_8h_a9efbbe6a12eddd541b120aaacc94866b}
 
 
-Utensil length offset (positive value) 
+\hyperlink{class_utensil}{Utensil} length offset (positive value) 
 
 \hypertarget{_g_code__def_8h_a4e232ebe798fb55e45a5d0ad673304f3}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!G49@{G49}}
 \index{G49@{G49}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
@@ -608,12 +614,20 @@ Point R of return from a loop.
 \hypertarget{_g_code__def_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!M3@{M3}}
 \index{M3@{M3}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{M3}]{\setlength{\rightskip}{0pt plus 5cm}\#define M3~224}}\label{_g_code__def_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}
+
+
+Power on spindle (C\+W) 
+
 \hypertarget{_g_code__def_8h_ae5a5c8c471386d7e7f10bd9bc483e767}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!M30@{M30}}
 \index{M30@{M30}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{M30}]{\setlength{\rightskip}{0pt plus 5cm}\#define M30~67}}\label{_g_code__def_8h_ae5a5c8c471386d7e7f10bd9bc483e767}
 \hypertarget{_g_code__def_8h_a9a3433d6613a64df14bf05957ba30837}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!M4@{M4}}
 \index{M4@{M4}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{M4}]{\setlength{\rightskip}{0pt plus 5cm}\#define M4~225}}\label{_g_code__def_8h_a9a3433d6613a64df14bf05957ba30837}
+
+
+Power on spindle (C\+C\+W) 
+
 \hypertarget{_g_code__def_8h_a0087fe0bb3afdd0f4a02f195078a1630}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!M48@{M48}}
 \index{M48@{M48}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{M48}]{\setlength{\rightskip}{0pt plus 5cm}\#define M48~144}}\label{_g_code__def_8h_a0087fe0bb3afdd0f4a02f195078a1630}
@@ -623,6 +637,10 @@ Point R of return from a loop.
 \hypertarget{_g_code__def_8h_aaae035dfc29e91b0d2b941a446546631}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!M5@{M5}}
 \index{M5@{M5}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{M5}]{\setlength{\rightskip}{0pt plus 5cm}\#define M5~226}}\label{_g_code__def_8h_aaae035dfc29e91b0d2b941a446546631}
+
+
+Power off spindle. 
+
 \hypertarget{_g_code__def_8h_a3a58ea008b2446f96146735635b03373}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!M6@{M6}}
 \index{M6@{M6}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{M6}]{\setlength{\rightskip}{0pt plus 5cm}\#define M6~176}}\label{_g_code__def_8h_a3a58ea008b2446f96146735635b03373}
@@ -680,6 +698,9 @@ Point R of return from a loop.
 \hypertarget{_g_code__def_8h_a0d5d3e84a2e7607a8fdd20931629c900}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+B\+A\+D\+\_\+\+W\+O\+R\+D@{S\+T\+A\+T\+U\+S\+\_\+\+B\+A\+D\+\_\+\+W\+O\+R\+D}}
 \index{S\+T\+A\+T\+U\+S\+\_\+\+B\+A\+D\+\_\+\+W\+O\+R\+D@{S\+T\+A\+T\+U\+S\+\_\+\+B\+A\+D\+\_\+\+W\+O\+R\+D}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+B\+A\+D\+\_\+\+W\+O\+R\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+B\+A\+D\+\_\+\+W\+O\+R\+D~1}}\label{_g_code__def_8h_a0d5d3e84a2e7607a8fdd20931629c900}
+\hypertarget{_g_code__def_8h_a3344d16238760748b66b871c77d25457}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G@{S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G@{S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
+\subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G~5}}\label{_g_code__def_8h_a3344d16238760748b66b871c77d25457}
 \hypertarget{_g_code__def_8h_a2403320c41f08e7567cb169de5db66b3}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+O\+K@{S\+T\+A\+T\+U\+S\+\_\+\+O\+K}}
 \index{S\+T\+A\+T\+U\+S\+\_\+\+O\+K@{S\+T\+A\+T\+U\+S\+\_\+\+O\+K}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+O\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+O\+K~0}}\label{_g_code__def_8h_a2403320c41f08e7567cb169de5db66b3}

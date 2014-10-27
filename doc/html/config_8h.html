@@ -90,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The configuration file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;pins_arduino.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="debugger_8h_source.html">tools/debugger.h</a>&quot;</code><br />
 </div>
 <p><a href="config_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -119,24 +120,31 @@ Macros</h2></td></tr>
 <tr class="memitem:a5ca3e0725b339b7fcb62e0cd353e1603"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a5ca3e0725b339b7fcb62e0cd353e1603">ROUTER_MZ_STEPS_PER_MM</a>&#160;&#160;&#160;<a class="el" href="config_8h.html#acc8d3a71b09ab28f1b65ee4b276355df">ROUTER_MZ_STEPS_PER_ROUND</a>/1.256</td></tr>
 <tr class="memdesc:a5ca3e0725b339b7fcb62e0cd353e1603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to forward of a mm.  <a href="#a5ca3e0725b339b7fcb62e0cd353e1603">More...</a><br /></td></tr>
 <tr class="separator:a5ca3e0725b339b7fcb62e0cd353e1603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>&#160;&#160;&#160;5000.0</td></tr>
-<tr class="memdesc:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of X-axis. The unit is steps/s.  <a href="#aeb39dfe1cecb49617c2de68f2b7863ad">More...</a><br /></td></tr>
+<tr class="memitem:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>&#160;&#160;&#160;2800.0</td></tr>
+<tr class="memdesc:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of X-axis (steps/s).  <a href="#aeb39dfe1cecb49617c2de68f2b7863ad">More...</a><br /></td></tr>
 <tr class="separator:aeb39dfe1cecb49617c2de68f2b7863ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>&#160;&#160;&#160;5000.0</td></tr>
-<tr class="memdesc:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Y-axis. The unit is steps/s.  <a href="#a561a2d9e0685a3f1ef859e8fe82c44ee">More...</a><br /></td></tr>
+<tr class="memitem:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>&#160;&#160;&#160;2800.0</td></tr>
+<tr class="memdesc:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Y-axis (steps/s).  <a href="#a561a2d9e0685a3f1ef859e8fe82c44ee">More...</a><br /></td></tr>
 <tr class="separator:a561a2d9e0685a3f1ef859e8fe82c44ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8437dbcba761d0ae49161e7e16dbe94d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d">ROUTER_MZ_SPEED</a>&#160;&#160;&#160;5000.0</td></tr>
-<tr class="memdesc:a8437dbcba761d0ae49161e7e16dbe94d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Z-axis. The unit is steps/s.  <a href="#a8437dbcba761d0ae49161e7e16dbe94d">More...</a><br /></td></tr>
+<tr class="memitem:a8437dbcba761d0ae49161e7e16dbe94d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d">ROUTER_MZ_SPEED</a>&#160;&#160;&#160;2800.0</td></tr>
+<tr class="memdesc:a8437dbcba761d0ae49161e7e16dbe94d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed used to control the motor of Z-axis (steps/s).  <a href="#a8437dbcba761d0ae49161e7e16dbe94d">More...</a><br /></td></tr>
 <tr class="separator:a8437dbcba761d0ae49161e7e16dbe94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad29cc419438e7c8f8cddd1838716cee5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ad29cc419438e7c8f8cddd1838716cee5">ROUTER_DOWN_LIMIT_SWITCH_X</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:ad29cc419438e7c8f8cddd1838716cee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the X-axis.  <a href="#ad29cc419438e7c8f8cddd1838716cee5">More...</a><br /></td></tr>
-<tr class="separator:ad29cc419438e7c8f8cddd1838716cee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dcf7520229827b9c6e8b714f002981a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a2dcf7520229827b9c6e8b714f002981a">ROUTER_DOWN_LIMIT_SWITCH_Y</a>&#160;&#160;&#160;14</td></tr>
-<tr class="memdesc:a2dcf7520229827b9c6e8b714f002981a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the Y-axis.  <a href="#a2dcf7520229827b9c6e8b714f002981a">More...</a><br /></td></tr>
-<tr class="separator:a2dcf7520229827b9c6e8b714f002981a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e8c89b2567abdb8ccb75934963ba21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa6e8c89b2567abdb8ccb75934963ba21">ROUTER_DOWN_LIMIT_SWITCH_Z</a>&#160;&#160;&#160;14</td></tr>
-<tr class="memdesc:aa6e8c89b2567abdb8ccb75934963ba21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the pin which is connected to the limit switch of the Z-axis.  <a href="#aa6e8c89b2567abdb8ccb75934963ba21">More...</a><br /></td></tr>
-<tr class="separator:aa6e8c89b2567abdb8ccb75934963ba21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a569578859eb9df4de5175738b3a1ade1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a569578859eb9df4de5175738b3a1ade1">ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a569578859eb9df4de5175738b3a1ade1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.  <a href="#a569578859eb9df4de5175738b3a1ade1">More...</a><br /></td></tr>
+<tr class="separator:a569578859eb9df4de5175738b3a1ade1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a396530fa7d038d900e79c9906f1f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa8a396530fa7d038d900e79c9906f1f3">ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="separator:aa8a396530fa7d038d900e79c9906f1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f25718b319cc5f5ae8c2cd6a0bd47b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a8f25718b319cc5f5ae8c2cd6a0bd47b1">ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="separator:a8f25718b319cc5f5ae8c2cd6a0bd47b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6837a9e9e13c670013e9d9be10ce8534"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a6837a9e9e13c670013e9d9be10ce8534">ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memdesc:a6837a9e9e13c670013e9d9be10ce8534"><td class="mdescLeft">&#160;</td><td class="mdescRight">TThe number of the interrupt which is connected to the up limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.  <a href="#a6837a9e9e13c670013e9d9be10ce8534">More...</a><br /></td></tr>
+<tr class="separator:a6837a9e9e13c670013e9d9be10ce8534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a361d56e382a8888abf494198209f4ceb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a361d56e382a8888abf494198209f4ceb">ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memdesc:a361d56e382a8888abf494198209f4ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">TThe number of the interrupt which is connected to the up limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.  <a href="#a361d56e382a8888abf494198209f4ceb">More...</a><br /></td></tr>
+<tr class="separator:a361d56e382a8888abf494198209f4ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2c7573e3dc8e95df6b528e98a81626"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a3f2c7573e3dc8e95df6b528e98a81626">ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memdesc:a3f2c7573e3dc8e95df6b528e98a81626"><td class="mdescLeft">&#160;</td><td class="mdescRight">TThe number of the interrupt which is connected to the up limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.  <a href="#a3f2c7573e3dc8e95df6b528e98a81626">More...</a><br /></td></tr>
+<tr class="separator:a3f2c7573e3dc8e95df6b528e98a81626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2ba8973ad8e317ff2808a08cd03109d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d">ROUTER_MX_CONTROLLER_A4988</a></td></tr>
 <tr class="separator:aa2ba8973ad8e317ff2808a08cd03109d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2772e27b33c24fca3e756e98e4da0528"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a2772e27b33c24fca3e756e98e4da0528">ROUTE_MX_STEP_CONTROL_PIN</a>&#160;&#160;&#160;A0</td></tr>
@@ -179,10 +187,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a11bacbdfb698dadd088b8d0ba265ace4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a11bacbdfb698dadd088b8d0ba265ace4">_MILLING_MACHINE_SPEED_PIN</a>&#160;&#160;&#160;11</td></tr>
 <tr class="memdesc:a11bacbdfb698dadd088b8d0ba265ace4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pin number connected to the speed control circuit of the milling machine.  <a href="#a11bacbdfb698dadd088b8d0ba265ace4">More...</a><br /></td></tr>
 <tr class="separator:a11bacbdfb698dadd088b8d0ba265ace4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34a18da9418565cdc86408e517521dfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a34a18da9418565cdc86408e517521dfb">DBGNL</a>(x)&#160;&#160;&#160;Serial.println(x)</td></tr>
-<tr class="separator:a34a18da9418565cdc86408e517521dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32adf79142f0a426b5e782fb7cd4cad3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a32adf79142f0a426b5e782fb7cd4cad3">DBG</a>(x)&#160;&#160;&#160;Serial.print(x)</td></tr>
-<tr class="separator:a32adf79142f0a426b5e782fb7cd4cad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The configuration file. </p>
@@ -234,38 +238,6 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The pin number connected to the speed control circuit of the milling machine. </p>
-
-</div>
-</div>
-<a class="anchor" id="a32adf79142f0a426b5e782fb7cd4cad3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBG</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;Serial.print(x)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a34a18da9418565cdc86408e517521dfb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DBGNL</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;Serial.println(x)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -410,45 +382,41 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad29cc419438e7c8f8cddd1838716cee5"></a>
+<a class="anchor" id="a569578859eb9df4de5175738b3a1ade1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_DOWN_LIMIT_SWITCH_X&#160;&#160;&#160;3</td>
+          <td class="memname">#define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The number of the pin which is connected to the limit switch of the X-axis. </p>
+<p>The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected. </p>
 
 </div>
 </div>
-<a class="anchor" id="a2dcf7520229827b9c6e8b714f002981a"></a>
+<a class="anchor" id="aa8a396530fa7d038d900e79c9906f1f3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_DOWN_LIMIT_SWITCH_Y&#160;&#160;&#160;14</td>
+          <td class="memname">#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT&#160;&#160;&#160;-1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The number of the pin which is connected to the limit switch of the Y-axis. </p>
-
 </div>
 </div>
-<a class="anchor" id="aa6e8c89b2567abdb8ccb75934963ba21"></a>
+<a class="anchor" id="a8f25718b319cc5f5ae8c2cd6a0bd47b1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_DOWN_LIMIT_SWITCH_Z&#160;&#160;&#160;14</td>
+          <td class="memname">#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT&#160;&#160;&#160;-1</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>The number of the pin which is connected to the limit switch of the Z-axis. </p>
 
 </div>
 </div>
@@ -469,12 +437,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MX_SPEED&#160;&#160;&#160;5000.0</td>
+          <td class="memname">#define ROUTER_MX_SPEED&#160;&#160;&#160;2800.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The maximum speed used to control the motor of X-axis. The unit is steps/s. </p>
+<p>The maximum speed used to control the motor of X-axis (steps/s). </p>
 
 </div>
 </div>
@@ -523,12 +491,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MY_SPEED&#160;&#160;&#160;5000.0</td>
+          <td class="memname">#define ROUTER_MY_SPEED&#160;&#160;&#160;2800.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The maximum speed used to control the motor of Y-axis. The unit is steps/s. </p>
+<p>The maximum speed used to control the motor of Y-axis (steps/s). </p>
 
 </div>
 </div>
@@ -577,12 +545,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ROUTER_MZ_SPEED&#160;&#160;&#160;5000.0</td>
+          <td class="memname">#define ROUTER_MZ_SPEED&#160;&#160;&#160;2800.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The maximum speed used to control the motor of Z-axis. The unit is steps/s. </p>
+<p>The maximum speed used to control the motor of Z-axis (steps/s). </p>
 
 </div>
 </div>
@@ -614,6 +582,48 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6837a9e9e13c670013e9d9be10ce8534"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TThe number of the interrupt which is connected to the up limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected. </p>
+
+</div>
+</div>
+<a class="anchor" id="a361d56e382a8888abf494198209f4ceb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TThe number of the interrupt which is connected to the up limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3f2c7573e3dc8e95df6b528e98a81626"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TThe number of the interrupt which is connected to the up limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected. </p>
+
+</div>
+</div>
 <a class="anchor" id="a58562c1eea53acf4d89ae2e8ed79e7ac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -631,7 +641,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 22 2014 21:32:25 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 27 2014 19:42:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

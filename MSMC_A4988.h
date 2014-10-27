@@ -11,6 +11,7 @@
 #include "Arduino.h"
 #include <stdint.h>
 #include "MSMC.h"
+#include "tools/debugger.h"
 
 #define FULL_STEP 1			//!< Identify the full step mode \sa MSMC_A4988::setMode(uint8_t)
 #define HALF_STEP 2         //!< Identify the half step mode \sa MSMC_A4988::setMode(uint8_t)
