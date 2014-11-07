@@ -134,9 +134,12 @@ void CNC_Router::moveToXY(float px, float py, float spd) {
 	end_p.X(px).Y(py).Z(actual_p.Z());
 
 	if (pos_type) {
-		dx = PositionXYZ().offsetX(end_p);
+		/*dx = PositionXYZ().offsetX(end_p);
 		dy = PositionXYZ().offsetY(end_p);
-		dist = PositionXYZ().moduleXY(end_p);
+		dist = PositionXYZ().moduleXY(end_p);*/
+		dx = end_p.X();
+		dy = end_p.Y();
+	    dist = end_p.module();
 	} else {
 		dx = actual_p.offsetX(end_p);
 		dy = actual_p.offsetY(end_p);
@@ -195,7 +198,7 @@ void CNC_Router::moveTo(float px, float py, float pz, float spd) {
 
 	float dx, dy, dz, dist, spd_x, spd_y, spd_z, actual_spmmx, actual_spmmy,
 			actual_spmmz;
-	actual_spmmx = spmmx * mx.getMode();
+	actual_spmmx = spmmx * mx.getMode();  //num * steps/mm
 	actual_spmmy = spmmy * my.getMode();
 	actual_spmmz = spmmz * mz.getMode();
 
@@ -203,10 +206,10 @@ void CNC_Router::moveTo(float px, float py, float pz, float spd) {
 	end_p.X(px).Y(py).Z(pz);
 
 	if (pos_type) {
-		dx = PositionXYZ().offsetX(end_p);
-		dy = PositionXYZ().offsetY(end_p);
-		dz = PositionXYZ().offsetZ(end_p);
-		dist = PositionXYZ().module(end_p);
+		dx = end_p.X();
+		dy = end_p.Y();
+		dz = end_p.Z();
+		dist = end_p.module();
 	} else {
 		dx = actual_p.offsetX(end_p);
 		dy = actual_p.offsetY(end_p);
@@ -323,12 +326,10 @@ int CNC_Router::update() {
 	boolean a = mx.update();
 	boolean b = my.update();
 	boolean c = mz.update();
-#ifdef _TEST_2
 	if (!(ls_x_down && ls_y_down && ls_z_down)) {
 		stopMotion();
 		return -1;
 	}
-#endif
 
 	if (a && b && c) {
 		if (pos_type)
@@ -411,6 +412,10 @@ void CNC_Router::searchZ0Pos() {
 
 PositionXYZ CNC_Router::getPos() {
 	return actual_p;
+}
+
+void CNC_Router::setPos(PositionXYZ p){
+	actual_p = p;
 }
 
 void CNC_Router::orientationX(int8_t v) {

@@ -235,6 +235,12 @@ public:
 	//! \brief It get the actual position of the utensil.
 	PositionXYZ getPos();
 
+	/*! \brief Configures the position of the utensil
+	 *  \param p The new position
+	 */
+
+	void setPos(PositionXYZ p);
+
 	/*! \brief It performs the movement configured with the CNC_Route::moveTo().
 	 *  \return  It returns an integer that is
 	 *           - 1 = the motion is end,

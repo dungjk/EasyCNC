@@ -178,6 +178,10 @@ void GCode::motionG2G3() {
 		angle_end = center.angleXY(new_pos);
 		angle_next_p = center.angleXY(start_p);
 
+#ifdef _TEST_1
+		float delta_z_offset = router->getPos().offsetZ(new_pos) * alpha / abs(angle_end - angle_next_p); // delta forward on Z-axis for each segment of the circle.
+		float i_seg = 1.0;
+#endif
 		PositionXYZ tmp;
 
 		if (last_word[GROUP1] == G3) {
@@ -185,14 +189,17 @@ void GCode::motionG2G3() {
 				angle_end += 2 * PI;
 
 			angle_next_p += alpha;
+
+
 			while (angle_next_p < angle_end) {
-				router->moveTo(center + tmp.polarXY(r, angle_next_p),
+				router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(delta_z_offset * i_seg),
 						feed_rate);
 				if (runMotion() == -1) {
 					parser_status = STATUS_LIMITI_SWITCH_TRG;
 					return;
 				}
 				angle_next_p += alpha;
+				i_seg += 1.0;
 			}
 			router->moveTo(new_pos, feed_rate);
 			if (runMotion() == -1) {
@@ -201,17 +208,18 @@ void GCode::motionG2G3() {
 			}
 		} else {
 			if (angle_end > angle_next_p) // In the case of the atan2 function returns a angle_end value greater then the start angle.
-				angle_end += 2 * PI;
+				angle_end -= 2 * PI;
 
 			angle_next_p -= alpha;
 			while (angle_next_p > angle_end) {
-				router->moveTo(center + tmp.polarXY(r, angle_next_p),
+				router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(delta_z_offset * i_seg),
 						feed_rate);
 				if (runMotion() == -1) {
 					parser_status = STATUS_LIMITI_SWITCH_TRG;
 					return;
 				}
 				angle_next_p -= alpha;
+				i_seg += 1.0;
 			}
 			router->moveTo(new_pos, feed_rate);
 			if (runMotion() == -1) {
@@ -240,7 +248,9 @@ void GCode::motionG0G1() {
 
 }
 
-boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
+boolean GCode::getWord(char &code, float &val, uint8_t &pos) {
+	uint8_t len = line.length();
+
 	if (pos == len) {
 		return false;
 	}
@@ -259,6 +269,30 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos, uint8_t len) {
 	return true;
 }
 
+boolean GCode::getControlComm(char &code, float &val) {
+	uint8_t len = line.length();
+	uint8_t pos = 1;
+
+	if (pos == len) {
+		return false;
+	}
+	if (line[pos] < 'a' || line[pos] > 'z') {
+		return false;
+	}
+	code = line[pos];
+	pos++;
+
+	if (pos == len) {
+		val = 0;
+		return true;
+	}
+
+	if (getFloat(pos, val)) {
+		return false;
+	}
+	return true;
+}
+
 int GCode::runMotion() {
 	int res = router->update();
 	while (res == 0) {
@@ -271,16 +305,33 @@ int GCode::parseLine() {
 	removeSpaces();
 //Special commands that starts with "$"
 	if (line[0] == '$') {
-		switch (line.length()) {
-		case 2:
-			switch (line[1]) {
-			case 'r':
+		char c;
+		float v;
+		if (getControlComm(c, v)) {
+			switch (c) {
+			case 'r':       // errors reset
 				resetStatus();
 				break;
-			case 'p':
+			case 'p':       // position reset
 				router->resetPos();
 				break;
-			}
+			case 'h':		// search the home position
+				router->searchHomePos();
+				break;
+			case 'z':		// search the z=0
+				router->searchZ0Pos();
+				break;
+			case 't':// tool change, it moves up the utensil to allow the tool change
+				router->moveTo(
+						router->getPos()
+								+ PositionXYZ(0, 0, TOOL_CHANGE_HEIGHT));
+				if (runMotion() == -1) {
+					parser_status = STATUS_LIMITI_SWITCH_TRG;
+				}
+
+				break;
+			};
+
 		}
 
 		returnStatus();
@@ -313,12 +364,11 @@ int GCode::parseLine() {
 		}
 	}
 
-	uint8_t len = line.length();
 	uint8_t ptr = 0;
 	char type;
 	float val;
 // Line parsing
-	while (getWord(type, val, ptr, len)) {
+	while (getWord(type, val, ptr)) {
 		switch (type) {
 		case 'G':
 			switch ((int) val) {
@@ -416,21 +466,22 @@ int GCode::parseLine() {
 		case 'M':
 			switch ((int) val) {
 			case 3:
-				// to switch on the spindle in CW
+				// switch on the spindle in CW
 				utensil->setSpindleDir(true);
 				utensil->enable();
 				break;
 			case 4:
-				// to switch on the spindle in CCW
+				// switch on the spindle in CCW
 				utensil->setSpindleDir(false);
 				utensil->enable();
 				break;
 			case 5:
-				// to switch off the spindle
+				// switch off the spindle
 				utensil->disable();
 				break;
 			case 6:
 				// tool change (unsupported)
+				parser_status = STATUS_TOOL_CHANGE;
 				break;
 			case 30:
 				// end program
@@ -493,13 +544,11 @@ int GCode::parseLine() {
 
 	}
 
-	// check status
+// check status
 	if (parser_status != STATUS_OK) {
 		returnStatus();
 		return parser_status;
 	}
-
-
 
 // motion execution
 	if (pause && pars_spec[PARAM_P]) {

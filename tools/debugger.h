@@ -10,6 +10,8 @@
 
 #include "Arduino.h"
 
+#define _TEST_1
+
 #define DEBUG 0
 
 #define DBG_BP(x) {if(DEBUG) { Serial.print("#<"); \
@@ -27,6 +29,7 @@
 	                 Serial.print(":");  \
 	                 Serial.print(y);  \
 	                 Serial.println("}");}};
+
 
 
 

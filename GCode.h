@@ -32,26 +32,25 @@ class GCode {
 	 *  \param len The max length of the line.
 	 *  \return It returns a boolean value that is true if the operation ends correctly, false if is occurred an error. See GCode::parser_status to get more information about the error.
 	 */
-	boolean getWord(char &code, float &val, uint8_t &pos, uint8_t len);
+	boolean getWord(char &code, float &val, uint8_t &pos);
+	boolean getControlComm(char &code, float &val);
 	void cycleG81();
 	void motionG2G3();
 	void motionG0G1();
 
 public:
-	String line;          //!< Here is stored the G-Code line that will be parsed
-	float feed_rate;      //!< The variable stores the feed rate during the working process in unit/s (unit can be mm or inch)
-	float spindle_speed;	  //!< The speed of the drill
+	String line;                //!< Here is stored the G-Code line that will be parsed
+	float feed_rate;            //!< The variable stores the feed rate during the working process in unit/s (unit can be mm or inch)
+	float spindle_speed;	    //!< The speed of the drill
 
-	uint8_t parser_status;    //!< The status of the parser. \sa GCode_def.h
-	uint8_t last_word[16];    //!< Here the class stores the last word red for each group. \sa GCode_def.h
-	PositionXYZ new_pos;    //!< The class stores the new position red from the G-Code line
-	//float new_pos_z;		  //!< The class stores here the new position red from the G-code line
-	float params[PARAMS];     //!< The array stores the values of the parameters red from the G-Code line. \sa GCode_def.h
-	boolean pars_spec[PARAMS];//!< The array says which parameters were found in parsed G-Code line. \sa GCode_def.h
+	uint8_t parser_status;      //!< The status of the parser. \sa GCode_def.h
+	uint8_t last_word[16];      //!< Here the class stores the last word red for each group. \sa GCode_def.h
+	PositionXYZ new_pos;        //!< The class stores the new position red from the G-Code line
+	float params[PARAMS];       //!< The array stores the values of the parameters red from the G-Code line. \sa GCode_def.h
+	boolean pars_spec[PARAMS];  //!< The array says which parameters were found in parsed G-Code line. \sa GCode_def.h
 
-	CNC_Router *router;       //!< Pointer to the CNC_Router object
-
-	MillingMachine *utensil;   //!< Pointer to the MillingMachine object
+	CNC_Router *router;         //!< Pointer to the CNC_Router object
+	MillingMachine *utensil;    //!< Pointer to the MillingMachine object
 
 
 	/*! \brief Constructor

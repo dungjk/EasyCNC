@@ -143,8 +143,10 @@
 #define STATUS_UNSUPPORTED 3
 #define STATUS_WORKING 4
 #define STATUS_LIMITI_SWITCH_TRG 5
+#define STATUS_TOOL_CHANGE 6
 
 //THE LENGHT OF THE SEGMENTS THAT FORM AN ARCH
 #define ARCH_DEFINITION 0.3     //!< The segments size that composes an arch (mm)
+#define TOOL_CHANGE_HEIGHT 30.0  //!< The Z offset to allow the tool change (mm)
 
 #endif
