@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Easy CNC
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
   </td>
  </tr>
@@ -160,9 +160,11 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a3c842609b871f6d8f15f38d1f5dd813b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a3c842609b871f6d8f15f38d1f5dd813b">getWord</a> (char &amp;code, float &amp;val, uint8_t &amp;pos, uint8_t len)</td></tr>
-<tr class="memdesc:a3c842609b871f6d8f15f38d1f5dd813b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function gets a word of G-Code.  <a href="#a3c842609b871f6d8f15f38d1f5dd813b">More...</a><br /></td></tr>
-<tr class="separator:a3c842609b871f6d8f15f38d1f5dd813b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3917539a094b14d9928bb00ed74eabfe"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a3917539a094b14d9928bb00ed74eabfe">getWord</a> (char &amp;code, float &amp;val, uint8_t &amp;pos)</td></tr>
+<tr class="memdesc:a3917539a094b14d9928bb00ed74eabfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function gets a word of G-Code.  <a href="#a3917539a094b14d9928bb00ed74eabfe">More...</a><br /></td></tr>
+<tr class="separator:a3917539a094b14d9928bb00ed74eabfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b19fe1d76f1c08139011399ca889c1e"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a7b19fe1d76f1c08139011399ca889c1e">getControlComm</a> (char &amp;code, float &amp;val)</td></tr>
+<tr class="separator:a7b19fe1d76f1c08139011399ca889c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad754ef6693a2b3422c6adaafbc8a2f79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#ad754ef6693a2b3422c6adaafbc8a2f79">cycleG81</a> ()</td></tr>
 <tr class="separator:ad754ef6693a2b3422c6adaafbc8a2f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44eabd18f470e248fed7a53df495d05f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_code.html#a44eabd18f470e248fed7a53df495d05f">motionG2G3</a> ()</td></tr>
@@ -222,6 +224,40 @@ Private Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b19fe1d76f1c08139011399ca889c1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean GCode::getControlComm </td>
+          <td>(</td>
+          <td class="paramtype">char &amp;&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -294,7 +330,7 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3c842609b871f6d8f15f38d1f5dd813b"></a>
+<a class="anchor" id="a3917539a094b14d9928bb00ed74eabfe"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -317,13 +353,7 @@ Private Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t &amp;&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -512,7 +542,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Here the class stores the last word red for each group. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html" title="Definition useful to GCode class. ">GCode_def.h</a> </dd></dl>
 
 </div>
 </div>
@@ -555,7 +585,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The array stores the values of the parameters red from the G-Code line. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html" title="Definition useful to GCode class. ">GCode_def.h</a> </dd></dl>
 
 </div>
 </div>
@@ -570,7 +600,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The array says which parameters were found in parsed G-Code line. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html" title="Definition useful to GCode class. ">GCode_def.h</a> </dd></dl>
 
 </div>
 </div>
@@ -585,7 +615,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The status of the parser. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html">GCode_def.h</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_g_code__def_8h.html" title="Definition useful to GCode class. ">GCode_def.h</a> </dd></dl>
 
 </div>
 </div>
@@ -638,7 +668,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2014 19:42:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 14 2014 00:12:30 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

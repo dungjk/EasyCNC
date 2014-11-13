@@ -1,8 +1,13 @@
-/*
- * GCode.cpp
- *
- *  Created on: 26/lug/2014
- *      Author: francescogiurlanda
+/*!
+ \file      GCode.cpp
+ \brief     G-Code parser.
+ \details   The class allows to parse the G-Code lines and runs the operation to actuate the command.
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #include "GCode.h"
@@ -178,10 +183,10 @@ void GCode::motionG2G3() {
 		angle_end = center.angleXY(new_pos);
 		angle_next_p = center.angleXY(start_p);
 
-#ifdef _TEST_1
+
 		float delta_z_offset = router->getPos().offsetZ(new_pos) * alpha / abs(angle_end - angle_next_p); // delta forward on Z-axis for each segment of the circle.
 		float i_seg = 1.0;
-#endif
+
 		PositionXYZ tmp;
 
 		if (last_word[GROUP1] == G3) {

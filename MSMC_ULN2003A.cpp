@@ -1,10 +1,16 @@
-//  Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
-//  - Condividi allo stesso modo 4.0 Internazionale. 
-//  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
-//
-//  Autor: Francesco Giurlanda
-//  Project: Easy CNC
-//  versione: 0.0.1
+/*!
+ \file      MSMC_ULN2003A.cpp
+ \brief     Multi Stepper Motor Control with ULN2003A.
+ \details   The class allows the contemporary control of multi stepper motors using the ICs ULN2003A. After the motor setup, you can drive the motor forward and backward,
+ specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call
+ in the main loop and, if the delay is expired, the function moves the motor of one step.
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ */
 
 #include "MSMC_ULN2003A.h"
 

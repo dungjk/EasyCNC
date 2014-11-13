@@ -1,8 +1,15 @@
-/*
- * MSMC_A4988.cpp
- *
- *  Created on: 17/lug/2014
- *      Author: francescogiurlanda
+/*!
+ \file      MSMC_A4988.cpp
+ \brief     Multi Stepper Motor Control with A4988.
+ \details   The class allows the contemporary control of multi stepper motors using the ICs A4988. After the motor setup, you can drive the motor forward and backward,
+            specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call
+            in the main loop and, if the delay is expired, the function moves the motor of one step.
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #include "MSMC_A4988.h"

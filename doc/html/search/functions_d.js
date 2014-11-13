@@ -14,6 +14,7 @@ var searchData=
   ['setmotionmodez',['setMotionModeZ',['../class_c_n_c___router.html#a28ddb2544290798664f99ed506f7d44a',1,'CNC_Router']]],
   ['setorientation',['setOrientation',['../class_m_s_m_c___a4988.html#a620616f8e3cad131c8a57b48c3c8551f',1,'MSMC_A4988']]],
   ['setpins',['setPins',['../class_m_s_m_c___a4988.html#a7aa6ddff4b561e47f09e4726b160294b',1,'MSMC_A4988::setPins()'],['../class_m_s_m_c___u_l_n2003_a.html#a19320fa4543dd8e76e338737690df235',1,'MSMC_ULN2003A::setPins()']]],
+  ['setpos',['setPos',['../class_c_n_c___router.html#a0297fd8151885d8cb29fb01e8c987a43',1,'CNC_Router']]],
   ['setspindledir',['setSpindleDir',['../class_milling_machine.html#a5c49cbbcd45406c9537ccac8f7c22c39',1,'MillingMachine']]],
   ['setspindlespeed',['setSpindleSpeed',['../class_milling_machine.html#a4c41fa0e6f882281ffc3b67a1771da57',1,'MillingMachine']]],
   ['setup',['setup',['../easy___c_n_c_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.cpp'],['../easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.cpp'],['../easy___c_n_c_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.ino']]],

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Easy CNC
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">GCode_def.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Definition useful to <a class="el" href="class_g_code.html" title="The class interprets lines of RS274/NGC language. ">GCode</a> class.  
+<a href="#details">More...</a></p>
 
 <p><a href="_g_code__def_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -343,11 +346,22 @@ Macros</h2></td></tr>
 <tr class="separator:a3ea0e8bcc1b16bf4b8f6f830c92fbef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3344d16238760748b66b871c77d25457"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code__def_8h.html#a3344d16238760748b66b871c77d25457">STATUS_LIMITI_SWITCH_TRG</a>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:a3344d16238760748b66b871c77d25457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69926806bf92ad8a8afe29d6721092e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code__def_8h.html#a69926806bf92ad8a8afe29d6721092e5">STATUS_TOOL_CHANGE</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a69926806bf92ad8a8afe29d6721092e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab24933eecd1ce5a12bac1ac9e1ec8938"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code__def_8h.html#ab24933eecd1ce5a12bac1ac9e1ec8938">ARCH_DEFINITION</a>&#160;&#160;&#160;0.3</td></tr>
 <tr class="memdesc:ab24933eecd1ce5a12bac1ac9e1ec8938"><td class="mdescLeft">&#160;</td><td class="mdescRight">The segments size that composes an arch (mm)  <a href="#ab24933eecd1ce5a12bac1ac9e1ec8938">More...</a><br /></td></tr>
 <tr class="separator:ab24933eecd1ce5a12bac1ac9e1ec8938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7ec3618bc796796becfb7cda31110f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code__def_8h.html#a0d7ec3618bc796796becfb7cda31110f">TOOL_CHANGE_HEIGHT</a>&#160;&#160;&#160;30.0</td></tr>
+<tr class="memdesc:a0d7ec3618bc796796becfb7cda31110f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Z offset to allow the tool change (mm)  <a href="#a0d7ec3618bc796796becfb7cda31110f">More...</a><br /></td></tr>
+<tr class="separator:a0d7ec3618bc796796becfb7cda31110f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definition useful to <a class="el" href="class_g_code.html" title="The class interprets lines of RS274/NGC language. ">GCode</a> class. </p>
+<p>The file contains all the defines useful to the <a class="el" href="class_g_code.html" title="The class interprets lines of RS274/NGC language. ">GCode</a> class. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2014</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a>. </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ab24933eecd1ce5a12bac1ac9e1ec8938"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1666,6 +1680,18 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a69926806bf92ad8a8afe29d6721092e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATUS_TOOL_CHANGE&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a24387763a877d10c5a6c968610c504ce"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1690,6 +1716,20 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0d7ec3618bc796796becfb7cda31110f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TOOL_CHANGE_HEIGHT&#160;&#160;&#160;30.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The Z offset to allow the tool change (mm) </p>
+
+</div>
+</div>
 <a class="anchor" id="a6e889fe84444fe8e3b224da21dd80a40"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1705,7 +1745,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2014 19:42:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 14 2014 00:12:30 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

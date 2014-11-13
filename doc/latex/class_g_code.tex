@@ -56,8 +56,10 @@ boolean \hyperlink{class_g_code_a6d11b02685ef1b387a3c9da004547006}{pars\+\_\+spe
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-boolean \hyperlink{class_g_code_a3c842609b871f6d8f15f38d1f5dd813b}{get\+Word} (char \&code, float \&val, uint8\+\_\+t \&pos, uint8\+\_\+t len)
+boolean \hyperlink{class_g_code_a3917539a094b14d9928bb00ed74eabfe}{get\+Word} (char \&code, float \&val, uint8\+\_\+t \&pos)
 \begin{DoxyCompactList}\small\item\em The function gets a word of G-\/\+Code. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_g_code_a7b19fe1d76f1c08139011399ca889c1e}{get\+Control\+Comm} (char \&code, float \&val)
+\item 
 void \hyperlink{class_g_code_ad754ef6693a2b3422c6adaafbc8a2f79}{cycle\+G81} ()
 \item 
 void \hyperlink{class_g_code_a44eabd18f470e248fed7a53df495d05f}{motion\+G2\+G3} ()
@@ -104,6 +106,14 @@ Constructor.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g_code_ad754ef6693a2b3422c6adaafbc8a2f79}
+\hypertarget{class_g_code_a7b19fe1d76f1c08139011399ca889c1e}{\index{G\+Code@{G\+Code}!get\+Control\+Comm@{get\+Control\+Comm}}
+\index{get\+Control\+Comm@{get\+Control\+Comm}!G\+Code@{G\+Code}}
+\subsubsection[{get\+Control\+Comm}]{\setlength{\rightskip}{0pt plus 5cm}boolean G\+Code\+::get\+Control\+Comm (
+\begin{DoxyParamCaption}
+\item[{char \&}]{code, }
+\item[{float \&}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g_code_a7b19fe1d76f1c08139011399ca889c1e}
 \hypertarget{class_g_code_abd9c3a13cf8f2958d8d9f0a563855e7b}{\index{G\+Code@{G\+Code}!get\+Float@{get\+Float}}
 \index{get\+Float@{get\+Float}!G\+Code@{G\+Code}}
 \subsubsection[{get\+Float}]{\setlength{\rightskip}{0pt plus 5cm}boolean G\+Code\+::get\+Float (
@@ -145,16 +155,15 @@ The function reads a integer value from the variable \hyperlink{class_g_code_a20
 \begin{DoxyReturn}{Returns}
 The integer value that has been red from the \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{G\+Code\+::line} 
 \end{DoxyReturn}
-\hypertarget{class_g_code_a3c842609b871f6d8f15f38d1f5dd813b}{\index{G\+Code@{G\+Code}!get\+Word@{get\+Word}}
+\hypertarget{class_g_code_a3917539a094b14d9928bb00ed74eabfe}{\index{G\+Code@{G\+Code}!get\+Word@{get\+Word}}
 \index{get\+Word@{get\+Word}!G\+Code@{G\+Code}}
 \subsubsection[{get\+Word}]{\setlength{\rightskip}{0pt plus 5cm}boolean G\+Code\+::get\+Word (
 \begin{DoxyParamCaption}
 \item[{char \&}]{code, }
 \item[{float \&}]{val, }
-\item[{uint8\+\_\+t \&}]{pos, }
-\item[{uint8\+\_\+t}]{len}
+\item[{uint8\+\_\+t \&}]{pos}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g_code_a3c842609b871f6d8f15f38d1f5dd813b}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g_code_a3917539a094b14d9928bb00ed74eabfe}
 
 
 The function gets a word of G-\/\+Code. 

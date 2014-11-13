@@ -1,11 +1,14 @@
-//  Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
-//  - Condividi allo stesso modo 4.0 Internazionale. 
-//  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
-//
-//  Autor: Francesco Giurlanda
-//  Project: Easy CNC
-//  versione: 0.0.1
+/*!
+ \file      Position.cpp
+ \brief     Class to manage Cartesian position
+ \details   The class manages the position on a Cartesian plane.
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
 
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ */
 #include "Position.h"
 
 PositionXY::PositionXY() :

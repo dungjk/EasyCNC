@@ -63,6 +63,8 @@ void \hyperlink{class_c_n_c___router_add6b83463be9d4288266fec09e1424f3}{search\+
 \begin{DoxyCompactList}\small\item\em It moves the utensil up to the 0 position of the Z-\/axis. \end{DoxyCompactList}\item 
 \hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} \hyperlink{class_c_n_c___router_a0fce19a7adf29dc0fb2b1a29c813b953}{get\+Pos} ()
 \begin{DoxyCompactList}\small\item\em It get the actual position of the utensil. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_n_c___router_a0297fd8151885d8cb29fb01e8c987a43}{set\+Pos} (\hyperlink{class_position_x_y_z}{Position\+X\+Y\+Z} p)
+\begin{DoxyCompactList}\small\item\em Configures the position of the utensil. \end{DoxyCompactList}\item 
 int \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{update} ()
 \begin{DoxyCompactList}\small\item\em It performs the movement configured with the C\+N\+C\+\_\+\+Route\+::move\+To(). \end{DoxyCompactList}\item 
 void \hyperlink{class_c_n_c___router_adef23983c5aac16fa0431f861eb41fc2}{orientation\+X} (int8\+\_\+t v)
@@ -129,7 +131,13 @@ float \hyperlink{class_c_n_c___router_a5e3fe2fd85292f3f5d9d2e13078b6a42}{v\+\_\+
 float \hyperlink{class_c_n_c___router_a9e6e9d29184c011ec64e9648995af4cb}{v\+\_\+max\+\_\+z}
 \begin{DoxyCompactList}\small\item\em The max speed for the motor that controls the Y-\/axis (steps/s). \end{DoxyCompactList}\item 
 boolean \hyperlink{class_c_n_c___router_afd35356064c7667cbdf21c44a7dd7cf5}{pos\+\_\+type}
-\begin{DoxyCompactList}\small\item\em It stores the information about the positioning type\+: true = incremental; false = absolute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em It stores the information about the positioning type\+: true = incremental; false = absolute. \end{DoxyCompactList}\item 
+float \hyperlink{class_c_n_c___router_a940f5722a449f52bc29e437dfd6a1909}{round\+\_\+off\+\_\+x}
+\begin{DoxyCompactList}\small\item\em It contains the difference of numerical rounding to compute the number of step in X-\/axis. \end{DoxyCompactList}\item 
+float \hyperlink{class_c_n_c___router_a2ac9fcca41eb0791859761fd9a3fd613}{round\+\_\+off\+\_\+y}
+\begin{DoxyCompactList}\small\item\em It contains the difference of numerical rounding to compute the number of step in Y-\/axis. \end{DoxyCompactList}\item 
+float \hyperlink{class_c_n_c___router_a777a55ac1be584ef2a827d412bf9ae40}{round\+\_\+off\+\_\+z}
+\begin{DoxyCompactList}\small\item\em It contains the difference of numerical rounding to compute the number of step in Z-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -667,6 +675,22 @@ Specifies the motion control mode for the motor on Z-\/axis.
 \end{DoxyItemize}\\
 \hline
 \end{DoxyParams}
+\hypertarget{class_c_n_c___router_a0297fd8151885d8cb29fb01e8c987a43}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!set\+Pos@{set\+Pos}}
+\index{set\+Pos@{set\+Pos}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{set\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::set\+Pos (
+\begin{DoxyParamCaption}
+\item[{{\bf Position\+X\+Y\+Z}}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_c_n_c___router_a0297fd8151885d8cb29fb01e8c987a43}
+
+
+Configures the position of the utensil. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The new position \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_c_n_c___router_aebacab02935c41a4c11b926c0770bcac}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!stop\+Motion@{stop\+Motion}}
 \index{stop\+Motion@{stop\+Motion}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
 \subsubsection[{stop\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void C\+N\+C\+\_\+\+Router\+::stop\+Motion (
@@ -781,6 +805,27 @@ It keeps the position that the utensil has after starting the motion.
 
 
 It stores the information about the positioning type\+: true = incremental; false = absolute. 
+
+\hypertarget{class_c_n_c___router_a940f5722a449f52bc29e437dfd6a1909}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!round\+\_\+off\+\_\+x@{round\+\_\+off\+\_\+x}}
+\index{round\+\_\+off\+\_\+x@{round\+\_\+off\+\_\+x}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{round\+\_\+off\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+C\+\_\+\+Router\+::round\+\_\+off\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a940f5722a449f52bc29e437dfd6a1909}
+
+
+It contains the difference of numerical rounding to compute the number of step in X-\/axis. 
+
+\hypertarget{class_c_n_c___router_a2ac9fcca41eb0791859761fd9a3fd613}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!round\+\_\+off\+\_\+y@{round\+\_\+off\+\_\+y}}
+\index{round\+\_\+off\+\_\+y@{round\+\_\+off\+\_\+y}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{round\+\_\+off\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+C\+\_\+\+Router\+::round\+\_\+off\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a2ac9fcca41eb0791859761fd9a3fd613}
+
+
+It contains the difference of numerical rounding to compute the number of step in Y-\/axis. 
+
+\hypertarget{class_c_n_c___router_a777a55ac1be584ef2a827d412bf9ae40}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!round\+\_\+off\+\_\+z@{round\+\_\+off\+\_\+z}}
+\index{round\+\_\+off\+\_\+z@{round\+\_\+off\+\_\+z}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}
+\subsubsection[{round\+\_\+off\+\_\+z}]{\setlength{\rightskip}{0pt plus 5cm}float C\+N\+C\+\_\+\+Router\+::round\+\_\+off\+\_\+z\hspace{0.3cm}{\ttfamily [private]}}}\label{class_c_n_c___router_a777a55ac1be584ef2a827d412bf9ae40}
+
+
+It contains the difference of numerical rounding to compute the number of step in Z-\/axis. 
 
 \hypertarget{class_c_n_c___router_ad8830a7b387905027b8a1a9e3b31e3c7}{\index{C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}!spmmx@{spmmx}}
 \index{spmmx@{spmmx}!C\+N\+C\+\_\+\+Router@{C\+N\+C\+\_\+\+Router}}

@@ -10,6 +10,12 @@ Class to control a the milling machine and its position on the z-\/axis.
 
 {\ttfamily \#include $<$Utensils.\+h$>$}
 
+Inheritance diagram for Milling\+Machine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_milling_machine}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,7 +30,11 @@ void \hyperlink{class_milling_machine_a5c49cbbcd45406c9537ccac8f7c22c39}{set\+Sp
 void \hyperlink{class_milling_machine_af965377184ed3bc3ed56763cd652d10f}{enable} ()
 \begin{DoxyCompactList}\small\item\em It switches on the spindle. \end{DoxyCompactList}\item 
 void \hyperlink{class_milling_machine_a6e1eb0b5f72e31ad0505b5f61613831d}{disable} ()
-\begin{DoxyCompactList}\small\item\em It switches off the spindle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em It switches off the spindle. \end{DoxyCompactList}\item 
+void \hyperlink{class_milling_machine_a3987303895b4d73ed7bc9346cbdf163f}{pre\+Motion} ()
+\begin{DoxyCompactList}\small\item\em It performs an action before the motion along the X, Y, Z axes. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_milling_machine_a1939dadb13a2552867eff5ed4ede94ac}{post\+Motion} ()
+\begin{DoxyCompactList}\small\item\em It performs an action after the motion along the X, Y, Z axes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,6 +113,36 @@ It switches on the spindle.
 
 
 It initializes the spindle. 
+
+\hypertarget{class_milling_machine_a1939dadb13a2552867eff5ed4ede94ac}{\index{Milling\+Machine@{Milling\+Machine}!post\+Motion@{post\+Motion}}
+\index{post\+Motion@{post\+Motion}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{post\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::post\+Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_milling_machine_a1939dadb13a2552867eff5ed4ede94ac}
+
+
+It performs an action after the motion along the X, Y, Z axes. 
+
+
+
+Reimplemented from \hyperlink{class_utensil_a01492abeb55abced69c3738b02a662ca}{Utensil}.
+
+\hypertarget{class_milling_machine_a3987303895b4d73ed7bc9346cbdf163f}{\index{Milling\+Machine@{Milling\+Machine}!pre\+Motion@{pre\+Motion}}
+\index{pre\+Motion@{pre\+Motion}!Milling\+Machine@{Milling\+Machine}}
+\subsubsection[{pre\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}void Milling\+Machine\+::pre\+Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_milling_machine_a3987303895b4d73ed7bc9346cbdf163f}
+
+
+It performs an action before the motion along the X, Y, Z axes. 
+
+
+
+Reimplemented from \hyperlink{class_utensil_acd8281043e14d227b49d4945b98b6f8c}{Utensil}.
 
 \hypertarget{class_milling_machine_a5c49cbbcd45406c9537ccac8f7c22c39}{\index{Milling\+Machine@{Milling\+Machine}!set\+Spindle\+Dir@{set\+Spindle\+Dir}}
 \index{set\+Spindle\+Dir@{set\+Spindle\+Dir}!Milling\+Machine@{Milling\+Machine}}

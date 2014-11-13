@@ -1,6 +1,11 @@
 \hypertarget{_g_code__def_8h}{\section{G\+Code\+\_\+def.\+h File Reference}
 \label{_g_code__def_8h}\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 }
+
+
+Definition useful to \hyperlink{class_g_code}{G\+Code} class.  
+
+
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -212,8 +217,29 @@
 \item 
 \#define \hyperlink{_g_code__def_8h_a3344d16238760748b66b871c77d25457}{S\+T\+A\+T\+U\+S\+\_\+\+L\+I\+M\+I\+T\+I\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+T\+R\+G}~5
 \item 
+\#define \hyperlink{_g_code__def_8h_a69926806bf92ad8a8afe29d6721092e5}{S\+T\+A\+T\+U\+S\+\_\+\+T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E}~6
+\item 
 \#define \hyperlink{_g_code__def_8h_ab24933eecd1ce5a12bac1ac9e1ec8938}{A\+R\+C\+H\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}~0.\+3
-\begin{DoxyCompactList}\small\item\em The segments size that composes an arch (mm) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The segments size that composes an arch (mm) \end{DoxyCompactList}\item 
+\#define \hyperlink{_g_code__def_8h_a0d7ec3618bc796796becfb7cda31110f}{T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+H\+E\+I\+G\+H\+T}~30.\+0
+\begin{DoxyCompactList}\small\item\em The Z offset to allow the tool change (mm) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition useful to \hyperlink{class_g_code}{G\+Code} class. 
+
+The file contains all the defines useful to the \hyperlink{class_g_code}{G\+Code} class. \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2014
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.\+0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
+\end{DoxyCopyright}
 
 
 \subsection{Macro Definition Documentation}
@@ -707,12 +733,22 @@ Power off spindle.
 \hypertarget{_g_code__def_8h_a6846d033157a9b0981603f8b09e29006}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+N\+T\+A\+X\+\_\+\+E\+R\+R\+O\+R@{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+N\+T\+A\+X\+\_\+\+E\+R\+R\+O\+R}}
 \index{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+N\+T\+A\+X\+\_\+\+E\+R\+R\+O\+R@{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+N\+T\+A\+X\+\_\+\+E\+R\+R\+O\+R}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+N\+T\+A\+X\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+N\+T\+A\+X\+\_\+\+E\+R\+R\+O\+R~2}}\label{_g_code__def_8h_a6846d033157a9b0981603f8b09e29006}
+\hypertarget{_g_code__def_8h_a69926806bf92ad8a8afe29d6721092e5}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E@{S\+T\+A\+T\+U\+S\+\_\+\+T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E@{S\+T\+A\+T\+U\+S\+\_\+\+T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
+\subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E~6}}\label{_g_code__def_8h_a69926806bf92ad8a8afe29d6721092e5}
 \hypertarget{_g_code__def_8h_a24387763a877d10c5a6c968610c504ce}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D@{S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D}}
 \index{S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D@{S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D~3}}\label{_g_code__def_8h_a24387763a877d10c5a6c968610c504ce}
 \hypertarget{_g_code__def_8h_a3ea0e8bcc1b16bf4b8f6f830c92fbef4}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+W\+O\+R\+K\+I\+N\+G@{S\+T\+A\+T\+U\+S\+\_\+\+W\+O\+R\+K\+I\+N\+G}}
 \index{S\+T\+A\+T\+U\+S\+\_\+\+W\+O\+R\+K\+I\+N\+G@{S\+T\+A\+T\+U\+S\+\_\+\+W\+O\+R\+K\+I\+N\+G}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+W\+O\+R\+K\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+W\+O\+R\+K\+I\+N\+G~4}}\label{_g_code__def_8h_a3ea0e8bcc1b16bf4b8f6f830c92fbef4}
+\hypertarget{_g_code__def_8h_a0d7ec3618bc796796becfb7cda31110f}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+H\+E\+I\+G\+H\+T@{T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+H\+E\+I\+G\+H\+T}}
+\index{T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+H\+E\+I\+G\+H\+T@{T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+H\+E\+I\+G\+H\+T}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
+\subsubsection[{T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+O\+L\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+H\+E\+I\+G\+H\+T~30.\+0}}\label{_g_code__def_8h_a0d7ec3618bc796796becfb7cda31110f}
+
+
+The Z offset to allow the tool change (mm) 
+
 \hypertarget{_g_code__def_8h_a6e889fe84444fe8e3b224da21dd80a40}{\index{G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}!U\+N\+S\+P\+E\+C\+I\+F\+I\+E\+D@{U\+N\+S\+P\+E\+C\+I\+F\+I\+E\+D}}
 \index{U\+N\+S\+P\+E\+C\+I\+F\+I\+E\+D@{U\+N\+S\+P\+E\+C\+I\+F\+I\+E\+D}!G\+Code\+\_\+def.\+h@{G\+Code\+\_\+def.\+h}}
 \subsubsection[{U\+N\+S\+P\+E\+C\+I\+F\+I\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+N\+S\+P\+E\+C\+I\+F\+I\+E\+D~0}}\label{_g_code__def_8h_a6e889fe84444fe8e3b224da21dd80a40}

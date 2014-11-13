@@ -1,4 +1,15 @@
-// Do not remove the include below
+/*!
+ \file      easy_CNC.cpp
+ \brief     Main file.
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ */
+
+
 #include "easy_CNC.h"
 
 //The setup function is called once at startup of the sketch

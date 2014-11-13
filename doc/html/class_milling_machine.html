@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Easy CNC
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
   </td>
  </tr>
@@ -95,6 +95,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="class_milling_machine.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_utensils_8h_source.html">Utensils.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for MillingMachine:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_milling_machine.png" usemap="#MillingMachine_map" alt=""/>
+  <map id="MillingMachine_map" name="MillingMachine_map">
+<area href="class_utensil.html" alt="Utensil" shape="rect" coords="0,0,98,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -116,6 +125,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e1eb0b5f72e31ad0505b5f61613831d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a6e1eb0b5f72e31ad0505b5f61613831d">disable</a> ()</td></tr>
 <tr class="memdesc:a6e1eb0b5f72e31ad0505b5f61613831d"><td class="mdescLeft">&#160;</td><td class="mdescRight">It switches off the spindle.  <a href="#a6e1eb0b5f72e31ad0505b5f61613831d">More...</a><br /></td></tr>
 <tr class="separator:a6e1eb0b5f72e31ad0505b5f61613831d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3987303895b4d73ed7bc9346cbdf163f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a3987303895b4d73ed7bc9346cbdf163f">preMotion</a> ()</td></tr>
+<tr class="memdesc:a3987303895b4d73ed7bc9346cbdf163f"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs an action before the motion along the X, Y, Z axes.  <a href="#a3987303895b4d73ed7bc9346cbdf163f">More...</a><br /></td></tr>
+<tr class="separator:a3987303895b4d73ed7bc9346cbdf163f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1939dadb13a2552867eff5ed4ede94ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_milling_machine.html#a1939dadb13a2552867eff5ed4ede94ac">postMotion</a> ()</td></tr>
+<tr class="memdesc:a1939dadb13a2552867eff5ed4ede94ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs an action after the motion along the X, Y, Z axes.  <a href="#a1939dadb13a2552867eff5ed4ede94ac">More...</a><br /></td></tr>
+<tr class="separator:a1939dadb13a2552867eff5ed4ede94ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -223,6 +238,60 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>It initializes the spindle. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1939dadb13a2552867eff5ed4ede94ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MillingMachine::postMotion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It performs an action after the motion along the X, Y, Z axes. </p>
+
+<p>Reimplemented from <a class="el" href="class_utensil.html#a01492abeb55abced69c3738b02a662ca">Utensil</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3987303895b4d73ed7bc9346cbdf163f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MillingMachine::preMotion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It performs an action before the motion along the X, Y, Z axes. </p>
+
+<p>Reimplemented from <a class="el" href="class_utensil.html#acd8281043e14d227b49d4945b98b6f8c">Utensil</a>.</p>
 
 </div>
 </div>
@@ -392,7 +461,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2014 19:42:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 14 2014 00:12:30 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

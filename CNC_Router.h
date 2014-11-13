@@ -1,13 +1,12 @@
 /*!
  \file CNC_Router.h
- \brief The file contains the class which controls the x y router.
+ \brief The file contains the class which controls the x y z router.
  \author    Francesco Giurlanda
- \version   0.0.1
+ \version   0.1
  \date      2014
  \warning   If you change Arduino board some parameters could change too.
- \copyright Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
- - Condividi allo stesso modo 4.0 Internazionale. Per leggere una copia della
- licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef CNC_Router_h
@@ -62,6 +61,10 @@ class CNC_Router {
 			v_max_z; //!< The max speed for the motor that controls the Y-axis (steps/s). \sa config.h
 
 	boolean pos_type; //!< It stores the information about the positioning type: true = incremental; false = absolute.
+
+	float round_off_x,  //!< It contains the difference of numerical rounding to compute the number of step in X-axis
+	      round_off_y,	//!< It contains the difference of numerical rounding to compute the number of step in Y-axis
+	      round_off_z;  //!< It contains the difference of numerical rounding to compute the number of step in Z-axis
 
 public:
 	volatile static boolean ls_x_down, //!< State of the down limit switch of X-axis: true = not triggered, false = triggered

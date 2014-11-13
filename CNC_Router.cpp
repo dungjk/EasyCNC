@@ -1,10 +1,13 @@
-//  Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
-//  - Condividi allo stesso modo 4.0 Internazionale. 
-//  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
-//
-//  Autor: Francesco Giurlanda
-//  Project: Easy CNC
-//  versione: 0.0.1
+/*!
+ \file CNC_Router.cpp
+ \brief The file contains the class which controls the x y z router.
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+ \warning   If you change Arduino board some parameters could change too.
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ */
 
 #include "CNC_Router.h"
 
@@ -47,12 +50,14 @@ void CNC_Router::ls_z_up_routine() {
 
 CNC_Router::CNC_Router() :
 		mx(), my(), old_p(), end_p(), actual_p(), spmmx(0.0), spmmy(0.0), spmmz(
-				0.0), v_max_x(0.0), v_max_y(0.0), v_max_z(0.0), pos_type(false) {
+				0.0), v_max_x(0.0), v_max_y(0.0), v_max_z(0.0), pos_type(false), round_off_x(
+				0.0), round_off_y(0.0), round_off_z(0.0) {
 }
 CNC_Router::CNC_Router(float spx, float spy, float spz, float vmx, float vmy,
 		float vmz) :
 		mx(), my(), old_p(), end_p(), actual_p(), spmmx(spx), spmmy(spy), spmmz(
-				spz), v_max_x(vmx), v_max_y(vmy), v_max_z(vmz), pos_type(false) {
+				spz), v_max_x(vmx), v_max_y(vmy), v_max_z(vmz), pos_type(false), round_off_x(
+				0.0), round_off_y(0.0), round_off_z(0.0) {
 }
 
 void CNC_Router::initMotorX() {
@@ -84,37 +89,43 @@ void CNC_Router::initMotorZ() {
 
 void CNC_Router::initInterrupts() {
 	if (ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT > -1) {
-		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT), INPUT_PULLUP);
+		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT),
+		INPUT_PULLUP);
 		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT,
 				CNC_Router::ls_x_down_routine, CHANGE);
 	}
 
 	if (ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT > -1) {
-		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT), INPUT_PULLUP);
+		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT),
+		INPUT_PULLUP);
 		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT,
 				CNC_Router::ls_y_down_routine, CHANGE);
 	}
 
 	if (ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT > -1) {
-		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT), INPUT_PULLUP);
+		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT),
+		INPUT_PULLUP);
 		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT,
 				CNC_Router::ls_z_down_routine, CHANGE);
 	}
 
 	if (ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT > -1) {
-		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT), INPUT_PULLUP);
+		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT),
+		INPUT_PULLUP);
 		attachInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT,
 				CNC_Router::ls_x_up_routine, CHANGE);
 	}
 
 	if (ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT > -1) {
-		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT), INPUT_PULLUP);
+		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT),
+		INPUT_PULLUP);
 		attachInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT,
 				CNC_Router::ls_y_up_routine, CHANGE);
 	}
 
 	if (ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT > -1) {
-		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT), INPUT_PULLUP);
+		pinMode(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT),
+		INPUT_PULLUP);
 		attachInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT,
 				CNC_Router::ls_z_up_routine, CHANGE);
 	}
@@ -134,20 +145,23 @@ void CNC_Router::moveToXY(float px, float py, float spd) {
 	end_p.X(px).Y(py).Z(actual_p.Z());
 
 	if (pos_type) {
-		/*dx = PositionXYZ().offsetX(end_p);
-		dy = PositionXYZ().offsetY(end_p);
-		dist = PositionXYZ().moduleXY(end_p);*/
 		dx = end_p.X();
 		dy = end_p.Y();
-	    dist = end_p.module();
+		dist = end_p.module();
 	} else {
 		dx = actual_p.offsetX(end_p);
 		dy = actual_p.offsetY(end_p);
 		dist = actual_p.moduleXY(end_p);
 	}
 
-	float steps_x = abs(dx * actual_spmmx); // (mm * steps/mm * num = steps)
-	float steps_y = abs(dy * actual_spmmy);
+	float steps_x = dx * actual_spmmx + round_off_x; // (mm * steps/mm * num = steps); pay attention that here the number of steps is a float value
+	float steps_y = dy * actual_spmmy + round_off_y;
+
+	round_off_x = steps_x - (int32_t) steps_x; // it is a signed value; here I take the decimal part of the number
+	round_off_y = steps_y - (int32_t) steps_y;
+
+	steps_x = abs(steps_x);
+	steps_y = abs(steps_y);
 
 	if (spd > 0.0) {
 		float ratio = spd / dist;          // (mm/s)/mm = 1/s
@@ -217,9 +231,17 @@ void CNC_Router::moveTo(float px, float py, float pz, float spd) {
 		dist = actual_p.module(end_p);
 	}
 
-	float steps_x = abs(dx * actual_spmmx); // (mm * steps/mm * num = steps)
-	float steps_y = abs(dy * actual_spmmy);
-	float steps_z = abs(dz * actual_spmmz);
+	float steps_x = dx * actual_spmmx + round_off_x; // (mm * steps/mm * num = steps); pay attention that here the number of steps is a float value
+	float steps_y = dy * actual_spmmy + round_off_y;
+	float steps_z = dz * actual_spmmz + round_off_z;
+
+	round_off_x = steps_x - (int32_t) steps_x; // it is a signed value; here I take the decimal part of the number
+	round_off_y = steps_y - (int32_t) steps_y;
+	round_off_z = steps_z - (int32_t) steps_z;
+
+	steps_x = abs(steps_x);
+	steps_y = abs(steps_y);
+	steps_z = abs(steps_z);
 
 	if (spd > 0.0) {
 		float ratio = spd / dist;          // (mm/s)/mm = 1/s
@@ -298,9 +320,13 @@ void CNC_Router::moveTo(const PositionXYZ &np, float spd) {
 
 void CNC_Router::stopMotion() {
 	actual_p = old_p
-			+ PositionXYZ(mx.getDir() * float(mx.getSteps()) / float(spmmx * mx.getMode()),
-					my.getDir() * float(my.getSteps()) / float(spmmy * my.getMode()),
-					mz.getDir() * float(mz.getSteps()) / float(spmmz * mz.getMode()));
+			+ PositionXYZ(
+					mx.getDir() * float(mx.getSteps())
+							/ float(spmmx * mx.getMode()),
+					my.getDir() * float(my.getSteps())
+							/ float(spmmy * my.getMode()),
+					mz.getDir() * float(mz.getSteps())
+							/ float(spmmz * mz.getMode()));
 	mx.stop();
 	my.stop();
 	mz.stop();
@@ -311,9 +337,13 @@ void CNC_Router::pause() {
 	my.pause();
 	mz.pause();
 	actual_p = old_p
-			+ PositionXYZ(mx.getDir() * float(mx.getSteps()) / float(spmmx * mx.getMode()),
-					my.getDir() * float(my.getSteps()) / float(spmmy * my.getMode()),
-					mz.getDir() * float(mz.getSteps()) / float(spmmz * mz.getMode()));
+			+ PositionXYZ(
+					mx.getDir() * float(mx.getSteps())
+							/ float(spmmx * mx.getMode()),
+					my.getDir() * float(my.getSteps())
+							/ float(spmmy * my.getMode()),
+					mz.getDir() * float(mz.getSteps())
+							/ float(spmmz * mz.getMode()));
 }
 
 void CNC_Router::restart() {
@@ -414,7 +444,7 @@ PositionXYZ CNC_Router::getPos() {
 	return actual_p;
 }
 
-void CNC_Router::setPos(PositionXYZ p){
+void CNC_Router::setPos(PositionXYZ p) {
 	actual_p = p;
 }
 

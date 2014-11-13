@@ -1,6 +1,11 @@
 \hypertarget{_m_s_m_c___a4988_8h}{\section{M\+S\+M\+C\+\_\+\+A4988.\+h File Reference}
 \label{_m_s_m_c___a4988_8h}\index{M\+S\+M\+C\+\_\+\+A4988.\+h@{M\+S\+M\+C\+\_\+\+A4988.\+h}}
 }
+
+
+Multi Stepper Motor Control with A4988.  
+
+
 {\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$stdint.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}M\+S\+M\+C.\+h\char`\"{}}\\*
@@ -23,6 +28,23 @@ class \hyperlink{class_m_s_m_c___a4988}{M\+S\+M\+C\+\_\+\+A4988}
 \begin{DoxyCompactList}\small\item\em Identify the eighth step mode. \end{DoxyCompactList}\item 
 \#define \hyperlink{_m_s_m_c___a4988_8h_a8493986c329fb4bfde621461028b3a31}{S\+I\+X\+T\+E\+E\+N\+T\+H\+\_\+\+S\+T\+E\+P}~16
 \begin{DoxyCompactList}\small\item\em Identify the sixteenth step mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Multi Stepper Motor Control with A4988. 
+
+The class allows the contemporary control of multi stepper motors using the I\+Cs A4988. After the motor setup, you can drive the motor forward and backward, specifying the number of steps and the delay in microseconds between two consecutive steps. The function update performs the effective motor motion, it must be call in the main loop and, if the delay is expired, the function moves the motor of one step. \begin{DoxyAuthor}{Author}
+Francesco Giurlanda 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2014
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.\+0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
+\end{DoxyCopyright}
 
 
 \subsection{Macro Definition Documentation}

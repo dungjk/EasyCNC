@@ -1,8 +1,13 @@
-/*
- * GCode.h
- *
- *  Created on: 26/lug/2014
- *      Author: francescogiurlanda
+/*!
+ \file      GCode.h
+ \brief     G-Code parser.
+ \details   The class allows to parse the G-Code lines and runs the operation to actuate the command.
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef GCODE_H_

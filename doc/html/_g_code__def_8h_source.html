@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Easy CNC
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
   </td>
  </tr>
@@ -84,160 +84,163 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">GCode_def.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_g_code__def_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GCODE_DEF_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GCODE_DEF_H_</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a28e5b5afeb95864e283fafeaeacfda65">    4</a></span>&#160;<span class="preprocessor">#define GROUP_MASK B11110000</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a53fdc1aea8896180444ac4977ea152ee">    5</a></span>&#160;<span class="preprocessor">#define GROUP(x) (x&gt;&gt;4)</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//NON MODAL GROUP</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1d7e7182661d23739c436857aa9aeef2">    8</a></span>&#160;<span class="preprocessor">#define GROUP0 0</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6f984a8b01aafc34122cc8bc0d9d5691">    9</a></span>&#160;<span class="preprocessor">#define G4 1</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a03a7195554881e736836ec26afe1003f">   10</a></span>&#160;<span class="preprocessor">#define G10 2</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad17839a025267c59a810865fb36a9c27">   11</a></span>&#160;<span class="preprocessor">#define G28 3</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a53c8908fe4e6c86aba06a5f2525cb585">   12</a></span>&#160;<span class="preprocessor">#define G30 4</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae4bb3928f38ea420b29f4ecab1896eed">   13</a></span>&#160;<span class="preprocessor">#define G53 5</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a80ba69de0e40f97654e1409fd9717664">   14</a></span>&#160;<span class="preprocessor">#define G92 6</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a526a0dc2920c605f11553cbf94f9c838">   15</a></span>&#160;<span class="preprocessor">#define G92_1 7</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad30cf7b8afd21ca3892583c47c769236">   16</a></span>&#160;<span class="preprocessor">#define G92_2 8</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab86802fb6e95b4376d17db79d9160824">   17</a></span>&#160;<span class="preprocessor">#define G92_3 9</span></div>
+<a href="_g_code__def_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef GCODE_DEF_H_</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define GCODE_DEF_H_</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a28e5b5afeb95864e283fafeaeacfda65">   16</a></span>&#160;<span class="preprocessor">#define GROUP_MASK B11110000</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a53fdc1aea8896180444ac4977ea152ee">   17</a></span>&#160;<span class="preprocessor">#define GROUP(x) (x&gt;&gt;4)</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//MODAL GROUP 1: MOVING</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#af7975d64e8106c80f116efbdb05d277c">   20</a></span>&#160;<span class="preprocessor">#define GROUP1 1</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6440afc9207bc5eba00d9161ff744e16">   21</a></span>&#160;<span class="preprocessor">#define G0 16       </span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa8fd4816db72561194059582cf0efb09">   22</a></span>&#160;<span class="preprocessor">#define G1 17       </span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae62138575e5117b9426bd8bb1830e036">   23</a></span>&#160;<span class="preprocessor">#define G2 18       </span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa18956b1e077aaf1b24bcb4b7eb841f5">   24</a></span>&#160;<span class="preprocessor">#define G3 19       </span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a66887bf6954f10b34adfe8c6f6db3ce1">   25</a></span>&#160;<span class="preprocessor">#define G38_2 20</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3001e3290de11ea206b99e93de441883">   26</a></span>&#160;<span class="preprocessor">#define G80 21      </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad4190c70ba02c787386161b72b733eb0">   27</a></span>&#160;<span class="preprocessor">#define G81 22      </span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0b2febf909e9004971b1ae15e678ce01">   28</a></span>&#160;<span class="preprocessor">#define G82 23      </span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1d727917516e637b492880cd534bf5f5">   29</a></span>&#160;<span class="preprocessor">#define G83 24      </span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aaf3826e9f16742e1f01c4c6f085d23cf">   30</a></span>&#160;<span class="preprocessor">#define G84 25      </span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3fd59fd32701c9ceb76340b0d3d5ab56">   31</a></span>&#160;<span class="preprocessor">#define G85 26      </span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a80513bde1a533c18dbe34caa72a92e98">   32</a></span>&#160;<span class="preprocessor">#define G86 27      </span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a33a9bc7f758c3bf465d8d935ea4a8ad2">   33</a></span>&#160;<span class="preprocessor">#define G87 28      </span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6adc654bdf4ba29c68ddf976a4b787a4">   34</a></span>&#160;<span class="preprocessor">#define G88 29      </span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab79f779000dfeda5b1ebe8ded66a032d">   35</a></span>&#160;<span class="preprocessor">#define G89 30      </span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//MODAL GROUP 2: PLANE SELECTION</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a07ec48fa8625dc3edbf7cb4e4a0ab982">   38</a></span>&#160;<span class="preprocessor">#define GROUP2 2</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a64039801a14afebea66237389c9c5b38">   39</a></span>&#160;<span class="preprocessor">#define G17 32      </span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1ee490f6fb7251d267d157e8135e5522">   40</a></span>&#160;<span class="preprocessor">#define G18 33      </span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aad82d6c48b2e468a072d51d81613e8ab">   41</a></span>&#160;<span class="preprocessor">#define G19 34      </span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//MODAL GROUP 3: DISTANSE MODE</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ac17637c900637d80b3b419dbf7f5758e">   44</a></span>&#160;<span class="preprocessor">#define GROUP3 3</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad9a5d62e9df6837132acfb38709f1411">   45</a></span>&#160;<span class="preprocessor">#define G90 48      //|&lt; Absolute distance mode</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a8c493355fa0acc3428d73e7ee6d138b2">   46</a></span>&#160;<span class="preprocessor">#define G91 49      </span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//MODAL GROUP 4: STOP</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0084eada0a58cd250b2cee0b207bbc22">   49</a></span>&#160;<span class="preprocessor">#define GROUP4 4</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa1bdbfb602e7609a6a6e7a3c3e5644f3">   50</a></span>&#160;<span class="preprocessor">#define M0 64</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ac597abe7cf610f262f7aaec53ed1d413">   51</a></span>&#160;<span class="preprocessor">#define M1 65</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a2a187ef3afced0eb4c4cb99515e5429c">   52</a></span>&#160;<span class="preprocessor">#define M2 66</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae5a5c8c471386d7e7f10bd9bc483e767">   53</a></span>&#160;<span class="preprocessor">#define M30 67</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab6ad3780dc7382645908c331ab2dc374">   54</a></span>&#160;<span class="preprocessor">#define M60 68</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//MODAL GROUP 5: FORWARDING MODE</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a94006d2750bb6070c379334bb79d44b5">   57</a></span>&#160;<span class="preprocessor">#define GROUP5 5</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa45882fe0f1e5bbb77ce3819e26a4b3a">   58</a></span>&#160;<span class="preprocessor">#define G93 80      </span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0f45dcd3010a3f048188a93e3d746e3c">   59</a></span>&#160;<span class="preprocessor">#define G94 81      </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//MODEL GROUP 6: UNIT</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a606aa78acc466bdecaa61f470d0ade3a">   62</a></span>&#160;<span class="preprocessor">#define GROUP6 6</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a4ac7ceb1af1a139211f5144bf9de34ef">   63</a></span>&#160;<span class="preprocessor">#define G20 96      </span></div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a29ce1a2023d6864128eb0a0409187fc2">   64</a></span>&#160;<span class="preprocessor">#define G21 97      </span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//MODAL GROUP 7: UTENSIL OFFSET COMPENSATION</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a26b97ada53213d892c170cab20e6db17">   67</a></span>&#160;<span class="preprocessor">#define GROUP7 7</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0b83dea9515f9413d7c8465b9be20b45">   68</a></span>&#160;<span class="preprocessor">#define G40 112     </span></div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a40af5e0f774f28174c1405f573c86586">   69</a></span>&#160;<span class="preprocessor">#define G41 113     </span></div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae78844efd5ac928262480da17fb5c5a1">   70</a></span>&#160;<span class="preprocessor">#define G42 114     </span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">//MODAL GROUP 8: UTENSIL LENGTH</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9af8d83a0f0b0d5d777a6fd4c45c3ce2">   73</a></span>&#160;<span class="preprocessor">#define GROUP8 8</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9efbbe6a12eddd541b120aaacc94866b">   74</a></span>&#160;<span class="preprocessor">#define G43 128     </span></div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a4e232ebe798fb55e45a5d0ad673304f3">   75</a></span>&#160;<span class="preprocessor">#define G49 129     </span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">//MODAL GROUP 9: SWITCH ON/OFF FEED OR SPINDLE OVERRIDE</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3ac75ccd5490afae9633b7bf12c06573">   78</a></span>&#160;<span class="preprocessor">#define GROUP9 9</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0087fe0bb3afdd0f4a02f195078a1630">   79</a></span>&#160;<span class="preprocessor">#define M48 144</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab4d6d223ce6ea0681a6fe9490059de5a">   80</a></span>&#160;<span class="preprocessor">#define M49 145</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//MODAL GROUP 10: MODE OF LOOP RETOURN</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#af63fd4fc91405f09775cba6be3f346c0">   83</a></span>&#160;<span class="preprocessor">#define GROUP10 10</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a929ca364de360ca8f387a26576c3d6d3">   84</a></span>&#160;<span class="preprocessor">#define G98 160     </span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a807a9f5b666a762f68c5e5cd5083f5fb">   85</a></span>&#160;<span class="preprocessor">#define G99 161     </span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">//MODAL GROUP 11: CHANGE UTENSIL</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#af87a04a1bbd7dade7fa359d0c2f752b7">   88</a></span>&#160;<span class="preprocessor">#define GROUP11 11</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3a58ea008b2446f96146735635b03373">   89</a></span>&#160;<span class="preprocessor">#define M6 176</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">//MODAL GROUP 12: COORDINATE SELECTION</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9a211096889856dd96920a6b183c150d">   92</a></span>&#160;<span class="preprocessor">#define GROUP12 12</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a745dd04ac9473a32db6ce70dd453cf91">   93</a></span>&#160;<span class="preprocessor">#define G54 192     </span></div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ace22b8776cd3fe208725a8fd350a7a2e">   94</a></span>&#160;<span class="preprocessor">#define G55 193     </span></div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a872632a9ff13be5237384fea078fc8d1">   95</a></span>&#160;<span class="preprocessor">#define G56 194     </span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0a172eab0107c449128434245c845f2b">   96</a></span>&#160;<span class="preprocessor">#define G57 195     </span></div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ac9ca08b1f20e8d5b174be54b2f1080ba">   97</a></span>&#160;<span class="preprocessor">#define G58 196     </span></div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a00d298ea1d4e9b8ee549f25c27cd16ec">   98</a></span>&#160;<span class="preprocessor">#define G59 197     </span></div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab266625fd6623454b794a0cba030dbca">   99</a></span>&#160;<span class="preprocessor">#define G59_1 198   </span></div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a758c06c9b191f29ec5464ddc97046b61">  100</a></span>&#160;<span class="preprocessor">#define G59_2 199   </span></div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab7ff8063846f6d7aad257114089cf409">  101</a></span>&#160;<span class="preprocessor">#define G59_3 200   </span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//MODAL GROUP 13: PATH CONTROL</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6ea522f95cadfcabec224645ffb53a58">  104</a></span>&#160;<span class="preprocessor">#define GROUP13 13</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aefdd8ca4685fe549d5c3d5acbb1bb47b">  105</a></span>&#160;<span class="preprocessor">#define G61 208     </span></div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a257243d85b7948ceaf042cfed30640c9">  106</a></span>&#160;<span class="preprocessor">#define G61_1 209   </span></div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a8c4c1e6771da29093e699c7be0468ce5">  107</a></span>&#160;<span class="preprocessor">#define G64 210     </span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">//MODAL GROUP 14: SPINDLE ROTATION</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3ce03ab400409c56d57818c890fbfcf2">  110</a></span>&#160;<span class="preprocessor">#define GROUP14 14</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad801d72bd01ef1ac9b86dbf4de0d355d">  111</a></span>&#160;<span class="preprocessor">#define M3 224      </span></div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9a3433d6613a64df14bf05957ba30837">  112</a></span>&#160;<span class="preprocessor">#define M4 225      </span></div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aaae035dfc29e91b0d2b941a446546631">  113</a></span>&#160;<span class="preprocessor">#define M5 226      </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//NON MODAL GROUP</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1d7e7182661d23739c436857aa9aeef2">   20</a></span>&#160;<span class="preprocessor">#define GROUP0 0</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6f984a8b01aafc34122cc8bc0d9d5691">   21</a></span>&#160;<span class="preprocessor">#define G4 1</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a03a7195554881e736836ec26afe1003f">   22</a></span>&#160;<span class="preprocessor">#define G10 2</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad17839a025267c59a810865fb36a9c27">   23</a></span>&#160;<span class="preprocessor">#define G28 3</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a53c8908fe4e6c86aba06a5f2525cb585">   24</a></span>&#160;<span class="preprocessor">#define G30 4</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae4bb3928f38ea420b29f4ecab1896eed">   25</a></span>&#160;<span class="preprocessor">#define G53 5</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a80ba69de0e40f97654e1409fd9717664">   26</a></span>&#160;<span class="preprocessor">#define G92 6</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a526a0dc2920c605f11553cbf94f9c838">   27</a></span>&#160;<span class="preprocessor">#define G92_1 7</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad30cf7b8afd21ca3892583c47c769236">   28</a></span>&#160;<span class="preprocessor">#define G92_2 8</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab86802fb6e95b4376d17db79d9160824">   29</a></span>&#160;<span class="preprocessor">#define G92_3 9</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//MODAL GROUP 1: MOVING</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#af7975d64e8106c80f116efbdb05d277c">   32</a></span>&#160;<span class="preprocessor">#define GROUP1 1</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6440afc9207bc5eba00d9161ff744e16">   33</a></span>&#160;<span class="preprocessor">#define G0 16       </span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa8fd4816db72561194059582cf0efb09">   34</a></span>&#160;<span class="preprocessor">#define G1 17       </span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae62138575e5117b9426bd8bb1830e036">   35</a></span>&#160;<span class="preprocessor">#define G2 18       </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa18956b1e077aaf1b24bcb4b7eb841f5">   36</a></span>&#160;<span class="preprocessor">#define G3 19       </span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a66887bf6954f10b34adfe8c6f6db3ce1">   37</a></span>&#160;<span class="preprocessor">#define G38_2 20</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3001e3290de11ea206b99e93de441883">   38</a></span>&#160;<span class="preprocessor">#define G80 21      </span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad4190c70ba02c787386161b72b733eb0">   39</a></span>&#160;<span class="preprocessor">#define G81 22      </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0b2febf909e9004971b1ae15e678ce01">   40</a></span>&#160;<span class="preprocessor">#define G82 23      </span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1d727917516e637b492880cd534bf5f5">   41</a></span>&#160;<span class="preprocessor">#define G83 24      </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aaf3826e9f16742e1f01c4c6f085d23cf">   42</a></span>&#160;<span class="preprocessor">#define G84 25      </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3fd59fd32701c9ceb76340b0d3d5ab56">   43</a></span>&#160;<span class="preprocessor">#define G85 26      </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a80513bde1a533c18dbe34caa72a92e98">   44</a></span>&#160;<span class="preprocessor">#define G86 27      </span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a33a9bc7f758c3bf465d8d935ea4a8ad2">   45</a></span>&#160;<span class="preprocessor">#define G87 28      </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6adc654bdf4ba29c68ddf976a4b787a4">   46</a></span>&#160;<span class="preprocessor">#define G88 29      </span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab79f779000dfeda5b1ebe8ded66a032d">   47</a></span>&#160;<span class="preprocessor">#define G89 30      </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//MODAL GROUP 2: PLANE SELECTION</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a07ec48fa8625dc3edbf7cb4e4a0ab982">   50</a></span>&#160;<span class="preprocessor">#define GROUP2 2</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a64039801a14afebea66237389c9c5b38">   51</a></span>&#160;<span class="preprocessor">#define G17 32      </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1ee490f6fb7251d267d157e8135e5522">   52</a></span>&#160;<span class="preprocessor">#define G18 33      </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aad82d6c48b2e468a072d51d81613e8ab">   53</a></span>&#160;<span class="preprocessor">#define G19 34      </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//MODAL GROUP 3: DISTANSE MODE</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ac17637c900637d80b3b419dbf7f5758e">   56</a></span>&#160;<span class="preprocessor">#define GROUP3 3</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad9a5d62e9df6837132acfb38709f1411">   57</a></span>&#160;<span class="preprocessor">#define G90 48      //|&lt; Absolute distance mode</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a8c493355fa0acc3428d73e7ee6d138b2">   58</a></span>&#160;<span class="preprocessor">#define G91 49      </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//MODAL GROUP 4: STOP</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0084eada0a58cd250b2cee0b207bbc22">   61</a></span>&#160;<span class="preprocessor">#define GROUP4 4</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa1bdbfb602e7609a6a6e7a3c3e5644f3">   62</a></span>&#160;<span class="preprocessor">#define M0 64</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ac597abe7cf610f262f7aaec53ed1d413">   63</a></span>&#160;<span class="preprocessor">#define M1 65</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a2a187ef3afced0eb4c4cb99515e5429c">   64</a></span>&#160;<span class="preprocessor">#define M2 66</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae5a5c8c471386d7e7f10bd9bc483e767">   65</a></span>&#160;<span class="preprocessor">#define M30 67</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab6ad3780dc7382645908c331ab2dc374">   66</a></span>&#160;<span class="preprocessor">#define M60 68</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//MODAL GROUP 5: FORWARDING MODE</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a94006d2750bb6070c379334bb79d44b5">   69</a></span>&#160;<span class="preprocessor">#define GROUP5 5</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aa45882fe0f1e5bbb77ce3819e26a4b3a">   70</a></span>&#160;<span class="preprocessor">#define G93 80      </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0f45dcd3010a3f048188a93e3d746e3c">   71</a></span>&#160;<span class="preprocessor">#define G94 81      </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//MODEL GROUP 6: UNIT</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a606aa78acc466bdecaa61f470d0ade3a">   74</a></span>&#160;<span class="preprocessor">#define GROUP6 6</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a4ac7ceb1af1a139211f5144bf9de34ef">   75</a></span>&#160;<span class="preprocessor">#define G20 96      </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a29ce1a2023d6864128eb0a0409187fc2">   76</a></span>&#160;<span class="preprocessor">#define G21 97      </span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">//MODAL GROUP 7: UTENSIL OFFSET COMPENSATION</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a26b97ada53213d892c170cab20e6db17">   79</a></span>&#160;<span class="preprocessor">#define GROUP7 7</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0b83dea9515f9413d7c8465b9be20b45">   80</a></span>&#160;<span class="preprocessor">#define G40 112     </span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a40af5e0f774f28174c1405f573c86586">   81</a></span>&#160;<span class="preprocessor">#define G41 113     </span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ae78844efd5ac928262480da17fb5c5a1">   82</a></span>&#160;<span class="preprocessor">#define G42 114     </span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//MODAL GROUP 8: UTENSIL LENGTH</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9af8d83a0f0b0d5d777a6fd4c45c3ce2">   85</a></span>&#160;<span class="preprocessor">#define GROUP8 8</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9efbbe6a12eddd541b120aaacc94866b">   86</a></span>&#160;<span class="preprocessor">#define G43 128     </span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a4e232ebe798fb55e45a5d0ad673304f3">   87</a></span>&#160;<span class="preprocessor">#define G49 129     </span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">//MODAL GROUP 9: SWITCH ON/OFF FEED OR SPINDLE OVERRIDE</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3ac75ccd5490afae9633b7bf12c06573">   90</a></span>&#160;<span class="preprocessor">#define GROUP9 9</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0087fe0bb3afdd0f4a02f195078a1630">   91</a></span>&#160;<span class="preprocessor">#define M48 144</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab4d6d223ce6ea0681a6fe9490059de5a">   92</a></span>&#160;<span class="preprocessor">#define M49 145</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//MODAL GROUP 10: MODE OF LOOP RETOURN</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#af63fd4fc91405f09775cba6be3f346c0">   95</a></span>&#160;<span class="preprocessor">#define GROUP10 10</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a929ca364de360ca8f387a26576c3d6d3">   96</a></span>&#160;<span class="preprocessor">#define G98 160     </span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a807a9f5b666a762f68c5e5cd5083f5fb">   97</a></span>&#160;<span class="preprocessor">#define G99 161     </span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">//MODAL GROUP 11: CHANGE UTENSIL</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#af87a04a1bbd7dade7fa359d0c2f752b7">  100</a></span>&#160;<span class="preprocessor">#define GROUP11 11</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3a58ea008b2446f96146735635b03373">  101</a></span>&#160;<span class="preprocessor">#define M6 176</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//MODAL GROUP 12: COORDINATE SELECTION</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9a211096889856dd96920a6b183c150d">  104</a></span>&#160;<span class="preprocessor">#define GROUP12 12</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a745dd04ac9473a32db6ce70dd453cf91">  105</a></span>&#160;<span class="preprocessor">#define G54 192     </span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ace22b8776cd3fe208725a8fd350a7a2e">  106</a></span>&#160;<span class="preprocessor">#define G55 193     </span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a872632a9ff13be5237384fea078fc8d1">  107</a></span>&#160;<span class="preprocessor">#define G56 194     </span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0a172eab0107c449128434245c845f2b">  108</a></span>&#160;<span class="preprocessor">#define G57 195     </span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ac9ca08b1f20e8d5b174be54b2f1080ba">  109</a></span>&#160;<span class="preprocessor">#define G58 196     </span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a00d298ea1d4e9b8ee549f25c27cd16ec">  110</a></span>&#160;<span class="preprocessor">#define G59 197     </span></div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab266625fd6623454b794a0cba030dbca">  111</a></span>&#160;<span class="preprocessor">#define G59_1 198   </span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a758c06c9b191f29ec5464ddc97046b61">  112</a></span>&#160;<span class="preprocessor">#define G59_2 199   </span></div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab7ff8063846f6d7aad257114089cf409">  113</a></span>&#160;<span class="preprocessor">#define G59_3 200   </span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">//MODAL GROUP 15: COOLING (M7 AND M8 CAN BE ACTIVE TOGETER IN THE SAME TIME)</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1cf662ca79c7014bd8c80eb3841c09b3">  116</a></span>&#160;<span class="preprocessor">#define GROUP15 15</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#acaff0b380565437a498a06d7e6b57c3a">  117</a></span>&#160;<span class="preprocessor">#define M7 240</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aabb8feb3270ae3ba252befaeecd95283">  118</a></span>&#160;<span class="preprocessor">#define M8 241</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a55be408e63eeea7ed9d808d7e8385e3d">  119</a></span>&#160;<span class="preprocessor">#define M9 242</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">//PARAMETER UNSPECIFIED</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6e889fe84444fe8e3b224da21dd80a40">  122</a></span>&#160;<span class="preprocessor">#define UNSPECIFIED 0</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">//other parameters</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab0b1e59d96396ba9dca2147f9feb44eb">  125</a></span>&#160;<span class="preprocessor">#define PARAMS  12</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a5adc94eddb7b51839bce186f964b0c63">  126</a></span>&#160;<span class="preprocessor">#define PARAM_X 0</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3f44f6dcd8c16ca50443993e2ed569b1">  127</a></span>&#160;<span class="preprocessor">#define PARAM_Y 1</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a8ee0d344693a9ce8663dcdff234ec0a6">  128</a></span>&#160;<span class="preprocessor">#define PARAM_Z 2</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#abe643239105044863157922867b70d56">  129</a></span>&#160;<span class="preprocessor">#define PARAM_A 3</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a7969c3c5225eb773b3d2926e018c19fc">  130</a></span>&#160;<span class="preprocessor">#define PARAM_B 4</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3950901c42a046b999aee00e3c86b031">  131</a></span>&#160;<span class="preprocessor">#define PARAM_C 5</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aea898f3f86c8f7e6aa937c04b1e7f093">  132</a></span>&#160;<span class="preprocessor">#define PARAM_P 6</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a5621752049752365956ee9ed2f883066">  133</a></span>&#160;<span class="preprocessor">#define PARAM_I 7</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a81a0f886d0bfb57574b0aecfcd4441a4">  134</a></span>&#160;<span class="preprocessor">#define PARAM_J 8</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#afc5da15c5abd45d4ff85bcbaf64a364d">  135</a></span>&#160;<span class="preprocessor">#define PARAM_K 9</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a14b86675272e29889cd276bc7dc3f864">  136</a></span>&#160;<span class="preprocessor">#define PARAM_R 10</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aebd011643a8bdec979b16953ba064401">  137</a></span>&#160;<span class="preprocessor">#define PARAM_L 11</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">//PARSER STATUS</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a2403320c41f08e7567cb169de5db66b3">  140</a></span>&#160;<span class="preprocessor">#define STATUS_OK 0</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0d5d3e84a2e7607a8fdd20931629c900">  141</a></span>&#160;<span class="preprocessor">#define STATUS_BAD_WORD 1</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6846d033157a9b0981603f8b09e29006">  142</a></span>&#160;<span class="preprocessor">#define STATUS_SYNTAX_ERROR 2</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a24387763a877d10c5a6c968610c504ce">  143</a></span>&#160;<span class="preprocessor">#define STATUS_UNSUPPORTED 3</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3ea0e8bcc1b16bf4b8f6f830c92fbef4">  144</a></span>&#160;<span class="preprocessor">#define STATUS_WORKING 4</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3344d16238760748b66b871c77d25457">  145</a></span>&#160;<span class="preprocessor">#define STATUS_LIMITI_SWITCH_TRG 5</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">//THE LENGHT OF THE SEGMENTS THAT FORM AN ARCH</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab24933eecd1ce5a12bac1ac9e1ec8938">  148</a></span>&#160;<span class="preprocessor">#define ARCH_DEFINITION 0.3     </span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">//MODAL GROUP 13: PATH CONTROL</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6ea522f95cadfcabec224645ffb53a58">  116</a></span>&#160;<span class="preprocessor">#define GROUP13 13</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aefdd8ca4685fe549d5c3d5acbb1bb47b">  117</a></span>&#160;<span class="preprocessor">#define G61 208     </span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a257243d85b7948ceaf042cfed30640c9">  118</a></span>&#160;<span class="preprocessor">#define G61_1 209   </span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a8c4c1e6771da29093e699c7be0468ce5">  119</a></span>&#160;<span class="preprocessor">#define G64 210     </span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">//MODAL GROUP 14: SPINDLE ROTATION</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3ce03ab400409c56d57818c890fbfcf2">  122</a></span>&#160;<span class="preprocessor">#define GROUP14 14</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ad801d72bd01ef1ac9b86dbf4de0d355d">  123</a></span>&#160;<span class="preprocessor">#define M3 224      </span></div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a9a3433d6613a64df14bf05957ba30837">  124</a></span>&#160;<span class="preprocessor">#define M4 225      </span></div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aaae035dfc29e91b0d2b941a446546631">  125</a></span>&#160;<span class="preprocessor">#define M5 226      </span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">//MODAL GROUP 15: COOLING (M7 AND M8 CAN BE ACTIVE TOGETER IN THE SAME TIME)</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a1cf662ca79c7014bd8c80eb3841c09b3">  128</a></span>&#160;<span class="preprocessor">#define GROUP15 15</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#acaff0b380565437a498a06d7e6b57c3a">  129</a></span>&#160;<span class="preprocessor">#define M7 240</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aabb8feb3270ae3ba252befaeecd95283">  130</a></span>&#160;<span class="preprocessor">#define M8 241</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a55be408e63eeea7ed9d808d7e8385e3d">  131</a></span>&#160;<span class="preprocessor">#define M9 242</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">//PARAMETER UNSPECIFIED</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6e889fe84444fe8e3b224da21dd80a40">  134</a></span>&#160;<span class="preprocessor">#define UNSPECIFIED 0</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">//other parameters</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab0b1e59d96396ba9dca2147f9feb44eb">  137</a></span>&#160;<span class="preprocessor">#define PARAMS  12</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a5adc94eddb7b51839bce186f964b0c63">  138</a></span>&#160;<span class="preprocessor">#define PARAM_X 0</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3f44f6dcd8c16ca50443993e2ed569b1">  139</a></span>&#160;<span class="preprocessor">#define PARAM_Y 1</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a8ee0d344693a9ce8663dcdff234ec0a6">  140</a></span>&#160;<span class="preprocessor">#define PARAM_Z 2</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#abe643239105044863157922867b70d56">  141</a></span>&#160;<span class="preprocessor">#define PARAM_A 3</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a7969c3c5225eb773b3d2926e018c19fc">  142</a></span>&#160;<span class="preprocessor">#define PARAM_B 4</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3950901c42a046b999aee00e3c86b031">  143</a></span>&#160;<span class="preprocessor">#define PARAM_C 5</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aea898f3f86c8f7e6aa937c04b1e7f093">  144</a></span>&#160;<span class="preprocessor">#define PARAM_P 6</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a5621752049752365956ee9ed2f883066">  145</a></span>&#160;<span class="preprocessor">#define PARAM_I 7</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a81a0f886d0bfb57574b0aecfcd4441a4">  146</a></span>&#160;<span class="preprocessor">#define PARAM_J 8</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#afc5da15c5abd45d4ff85bcbaf64a364d">  147</a></span>&#160;<span class="preprocessor">#define PARAM_K 9</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a14b86675272e29889cd276bc7dc3f864">  148</a></span>&#160;<span class="preprocessor">#define PARAM_R 10</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#aebd011643a8bdec979b16953ba064401">  149</a></span>&#160;<span class="preprocessor">#define PARAM_L 11</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//PARSER STATUS</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a2403320c41f08e7567cb169de5db66b3">  152</a></span>&#160;<span class="preprocessor">#define STATUS_OK 0</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0d5d3e84a2e7607a8fdd20931629c900">  153</a></span>&#160;<span class="preprocessor">#define STATUS_BAD_WORD 1</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a6846d033157a9b0981603f8b09e29006">  154</a></span>&#160;<span class="preprocessor">#define STATUS_SYNTAX_ERROR 2</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a24387763a877d10c5a6c968610c504ce">  155</a></span>&#160;<span class="preprocessor">#define STATUS_UNSUPPORTED 3</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3ea0e8bcc1b16bf4b8f6f830c92fbef4">  156</a></span>&#160;<span class="preprocessor">#define STATUS_WORKING 4</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a3344d16238760748b66b871c77d25457">  157</a></span>&#160;<span class="preprocessor">#define STATUS_LIMITI_SWITCH_TRG 5</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a69926806bf92ad8a8afe29d6721092e5">  158</a></span>&#160;<span class="preprocessor">#define STATUS_TOOL_CHANGE 6</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">//THE LENGHT OF THE SEGMENTS THAT FORM AN ARCH</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#ab24933eecd1ce5a12bac1ac9e1ec8938">  161</a></span>&#160;<span class="preprocessor">#define ARCH_DEFINITION 0.3     </span></div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="_g_code__def_8h.html#a0d7ec3618bc796796becfb7cda31110f">  162</a></span>&#160;<span class="preprocessor">#define TOOL_CHANGE_HEIGHT 30.0  </span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2014 19:42:14 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 14 2014 00:12:30 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -4,12 +4,11 @@
  \details   The classes in this file allow to control different utensils,
  such as the head of a plotter, a spindle with a cutter bit, a blade to cut a paper sheet and so on.
  \author    Francesco Giurlanda
- \version   0.0.1
+ \version   0.1
  \date      2014
 
- \copyright Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione
- - Condividi allo stesso modo 4.0 Internazionale. Per leggere una copia della
- licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef Utensils_h
@@ -22,8 +21,6 @@ public:
 	virtual void preMotion();
 	virtual void postMotion();
 };
-
-
 
 // ******************************
 // ***** PLOTTER WHIT SERVO *****
@@ -87,7 +84,7 @@ public:
  *  \author    Francesco Giurlanda
  */
 
-class MillingMachine {
+class MillingMachine: public Utensil {
 
 	uint8_t bit_speed; //!< The speed of the drill bit
 	boolean bit_dir; //!< The direction of the drill bit: CW = true  or CCW = false
@@ -119,6 +116,12 @@ public:
 
 	//! \brief It switches off the spindle.
 	void disable();
+
+	//! \brief It performs an action before the motion along the X, Y, Z axes.
+	void preMotion();
+
+	//! \brief It performs an action after the motion along the X, Y, Z axes.
+	virtual void postMotion();
 
 };
 

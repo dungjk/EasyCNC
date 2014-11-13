@@ -1,8 +1,18 @@
-// Only modify this file to include
-// - function definitions (prototypes)
-// - include files
-// - extern variable definitions
-// In the appropriate section
+/*!
+ \file      easy_CNC.h
+ \brief     Main file.
+ \details   Only modify this file to include
+			- function definitions (prototypes)
+			- include files
+			- extern variable definitions
+			In the appropriate section
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ */
 
 #ifndef _easy_CNC_H_
 #define _easy_CNC_H_

@@ -27,16 +27,16 @@ The configuration file.
 \begin{DoxyCompactList}\small\item\em Number of steps to forward of a mm. \end{DoxyCompactList}\item 
 \#define \hyperlink{config_8h_a5ca3e0725b339b7fcb62e0cd353e1603}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}~\hyperlink{config_8h_acc8d3a71b09ab28f1b65ee4b276355df}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+U\+N\+D}/1.\+256
 \begin{DoxyCompactList}\small\item\em Number of steps to forward of a mm. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}~2800.\+0
+\#define \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}~2400.\+0
 \begin{DoxyCompactList}\small\item\em The maximum speed used to control the motor of X-\/axis (steps/s). \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}~2800.\+0
+\#define \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}~2400.\+0
 \begin{DoxyCompactList}\small\item\em The maximum speed used to control the motor of Y-\/axis (steps/s). \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_a8437dbcba761d0ae49161e7e16dbe94d}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}~2800.\+0
+\#define \hyperlink{config_8h_a8437dbcba761d0ae49161e7e16dbe94d}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}~2400.\+0
 \begin{DoxyCompactList}\small\item\em The maximum speed used to control the motor of Z-\/axis (steps/s). \end{DoxyCompactList}\item 
 \#define \hyperlink{config_8h_a569578859eb9df4de5175738b3a1ade1}{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}~1
 \begin{DoxyCompactList}\small\item\em The number of the interrupt which is connected to the down limit switch of the X-\/axis. It is different by the pin number. More details \href{http://arduino.cc/en/Reference/AttachInterrupt}{\tt here}. The value -\/1 means that it is disconnected. \end{DoxyCompactList}\item 
-\#define \hyperlink{config_8h_aa8a396530fa7d038d900e79c9906f1f3}{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}~-\/1
-\item 
+\#define \hyperlink{config_8h_aa8a396530fa7d038d900e79c9906f1f3}{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}~0
+\begin{DoxyCompactList}\small\item\em The number of the interrupt which is connected to the down limit switch of the Y-\/axis. It is different by the pin number. More details \href{http://arduino.cc/en/Reference/AttachInterrupt}{\tt here}. The value -\/1 means that it is disconnected. \end{DoxyCompactList}\item 
 \#define \hyperlink{config_8h_a8f25718b319cc5f5ae8c2cd6a0bd47b1}{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Z\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}~-\/1
 \item 
 \#define \hyperlink{config_8h_a6837a9e9e13c670013e9d9be10ce8534}{R\+O\+U\+T\+E\+R\+\_\+\+U\+P\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+X\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}~-\/1
@@ -93,10 +93,7 @@ Francesco Giurlanda
 If you change Arduino board some parameters could change too. 
 \end{DoxyWarning}
 \begin{DoxyCopyright}{Copyright}
-Quest'opera �� stata rilasciata con licenza Creative Commons Attribuzione
-\begin{DoxyItemize}
-\item Condividi allo stesso modo 4.\+0 Internazionale. Per leggere una copia della licenza visita il sito web \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
-\end{DoxyItemize}
+This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.\+0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
 \end{DoxyCopyright}
 
 
@@ -201,7 +198,11 @@ The number of the interrupt which is connected to the down limit switch of the X
 
 \hypertarget{config_8h_aa8a396530fa7d038d900e79c9906f1f3}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T@{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T@{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T~-\/1}}\label{config_8h_aa8a396530fa7d038d900e79c9906f1f3}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Y\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T~0}}\label{config_8h_aa8a396530fa7d038d900e79c9906f1f3}
+
+
+The number of the interrupt which is connected to the down limit switch of the Y-\/axis. It is different by the pin number. More details \href{http://arduino.cc/en/Reference/AttachInterrupt}{\tt here}. The value -\/1 means that it is disconnected. 
+
 \hypertarget{config_8h_a8f25718b319cc5f5ae8c2cd6a0bd47b1}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Z\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T@{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Z\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Z\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T@{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Z\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}!config.\+h@{config.\+h}}
 \subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Z\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+D\+O\+W\+N\+\_\+\+L\+I\+M\+I\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+Z\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T~-\/1}}\label{config_8h_a8f25718b319cc5f5ae8c2cd6a0bd47b1}
@@ -210,7 +211,7 @@ The number of the interrupt which is connected to the down limit switch of the X
 \subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}}\label{config_8h_aa2ba8973ad8e317ff2808a08cd03109d}
 \hypertarget{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D~2800.\+0}}\label{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D~2400.\+0}}\label{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}
 
 
 The maximum speed used to control the motor of X-\/axis (steps/s). 
@@ -234,7 +235,7 @@ Nunber of steps to make a round for the motor of the X-\/axis.
 \subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}}\label{config_8h_ab43f3d9753eb04addb3ecf892d43e9b3}
 \hypertarget{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D~2800.\+0}}\label{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D~2400.\+0}}\label{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}
 
 
 The maximum speed used to control the motor of Y-\/axis (steps/s). 
@@ -258,7 +259,7 @@ Nunber of steps to make a round for the motor of the Y-\/axis.
 \subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+A4988}}\label{config_8h_a09fa750e355606467364b15acc58a814}
 \hypertarget{config_8h_a8437dbcba761d0ae49161e7e16dbe94d}{\index{config.\+h@{config.\+h}!R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}}
 \index{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D@{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}!config.\+h@{config.\+h}}
-\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D~2800.\+0}}\label{config_8h_a8437dbcba761d0ae49161e7e16dbe94d}
+\subsubsection[{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D~2400.\+0}}\label{config_8h_a8437dbcba761d0ae49161e7e16dbe94d}
 
 
 The maximum speed used to control the motor of Z-\/axis (steps/s). 

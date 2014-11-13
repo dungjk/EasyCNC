@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Easy CNC
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
   </td>
  </tr>
@@ -175,6 +175,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0fce19a7adf29dc0fb2b1a29c813b953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position_x_y_z.html">PositionXYZ</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a0fce19a7adf29dc0fb2b1a29c813b953">getPos</a> ()</td></tr>
 <tr class="memdesc:a0fce19a7adf29dc0fb2b1a29c813b953"><td class="mdescLeft">&#160;</td><td class="mdescRight">It get the actual position of the utensil.  <a href="#a0fce19a7adf29dc0fb2b1a29c813b953">More...</a><br /></td></tr>
 <tr class="separator:a0fce19a7adf29dc0fb2b1a29c813b953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0297fd8151885d8cb29fb01e8c987a43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a0297fd8151885d8cb29fb01e8c987a43">setPos</a> (<a class="el" href="class_position_x_y_z.html">PositionXYZ</a> p)</td></tr>
+<tr class="memdesc:a0297fd8151885d8cb29fb01e8c987a43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the position of the utensil.  <a href="#a0297fd8151885d8cb29fb01e8c987a43">More...</a><br /></td></tr>
+<tr class="separator:a0297fd8151885d8cb29fb01e8c987a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad67d003f8bb12c60f9752126d47408f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#ad67d003f8bb12c60f9752126d47408f6">update</a> ()</td></tr>
 <tr class="memdesc:ad67d003f8bb12c60f9752126d47408f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">It performs the movement configured with the CNC_Route::moveTo().  <a href="#ad67d003f8bb12c60f9752126d47408f6">More...</a><br /></td></tr>
 <tr class="separator:ad67d003f8bb12c60f9752126d47408f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -268,6 +271,15 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:afd35356064c7667cbdf21c44a7dd7cf5"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#afd35356064c7667cbdf21c44a7dd7cf5">pos_type</a></td></tr>
 <tr class="memdesc:afd35356064c7667cbdf21c44a7dd7cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">It stores the information about the positioning type: true = incremental; false = absolute.  <a href="#afd35356064c7667cbdf21c44a7dd7cf5">More...</a><br /></td></tr>
 <tr class="separator:afd35356064c7667cbdf21c44a7dd7cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940f5722a449f52bc29e437dfd6a1909"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a940f5722a449f52bc29e437dfd6a1909">round_off_x</a></td></tr>
+<tr class="memdesc:a940f5722a449f52bc29e437dfd6a1909"><td class="mdescLeft">&#160;</td><td class="mdescRight">It contains the difference of numerical rounding to compute the number of step in X-axis.  <a href="#a940f5722a449f52bc29e437dfd6a1909">More...</a><br /></td></tr>
+<tr class="separator:a940f5722a449f52bc29e437dfd6a1909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac9fcca41eb0791859761fd9a3fd613"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a2ac9fcca41eb0791859761fd9a3fd613">round_off_y</a></td></tr>
+<tr class="memdesc:a2ac9fcca41eb0791859761fd9a3fd613"><td class="mdescLeft">&#160;</td><td class="mdescRight">It contains the difference of numerical rounding to compute the number of step in Y-axis.  <a href="#a2ac9fcca41eb0791859761fd9a3fd613">More...</a><br /></td></tr>
+<tr class="separator:a2ac9fcca41eb0791859761fd9a3fd613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777a55ac1be584ef2a827d412bf9ae40"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_n_c___router.html#a777a55ac1be584ef2a827d412bf9ae40">round_off_z</a></td></tr>
+<tr class="memdesc:a777a55ac1be584ef2a827d412bf9ae40"><td class="mdescLeft">&#160;</td><td class="mdescRight">It contains the difference of numerical rounding to compute the number of step in Z-axis.  <a href="#a777a55ac1be584ef2a827d412bf9ae40">More...</a><br /></td></tr>
+<tr class="separator:a777a55ac1be584ef2a827d412bf9ae40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class controls the motors of the xy router of the CNC. </p>
@@ -1165,6 +1177,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0297fd8151885d8cb29fb01e8c987a43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CNC_Router::setPos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_position_x_y_z.html">PositionXYZ</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the position of the utensil. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The new position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="aebacab02935c41a4c11b926c0770bcac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1487,6 +1523,72 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a940f5722a449f52bc29e437dfd6a1909"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CNC_Router::round_off_x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It contains the difference of numerical rounding to compute the number of step in X-axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ac9fcca41eb0791859761fd9a3fd613"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CNC_Router::round_off_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It contains the difference of numerical rounding to compute the number of step in Y-axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="a777a55ac1be584ef2a827d412bf9ae40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CNC_Router::round_off_z</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It contains the difference of numerical rounding to compute the number of step in Z-axis. </p>
+
+</div>
+</div>
 <a class="anchor" id="ad8830a7b387905027b8a1a9e3b31e3c7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1632,7 +1734,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2014 19:42:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 14 2014 00:12:30 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

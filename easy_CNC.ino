@@ -21,28 +21,28 @@ CNC_Router cncrt(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MZ_STEPS
 GCode gc(&cncrt, &mill);
 char new_line[256];
 
-Timer tloop;
-
 void setup(){
         cncrt.initMotorX();
 	cncrt.initMotorY();
 	cncrt.initMotorZ();
 	cncrt.resetPos();
-	cncrt.setMotionModeX(EIGHTH_STEP);
-	cncrt.setMotionModeY(EIGHTH_STEP);
-	cncrt.setMotionModeZ(EIGHTH_STEP);
+	cncrt.setMotionModeX(QUARTER_STEP);
+	cncrt.setMotionModeY(QUARTER_STEP);
+	cncrt.setMotionModeZ(QUARTER_STEP);
 	cncrt.setAbsolPos(); gc.last_word[GROUP3] = G90;
-	//cncrt.initInterrupts();
+	cncrt.initInterrupts();
 	cncrt.orientationX(-1);
 
 	mill.init();
-        Serial.begin(SERIAL_BOUND);
 
+	//attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
+	//digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
+
+	Serial.begin(SERIAL_BOUND);
 }
 
 void loop(){
   if (Serial.available() > 0) {
-		//memset(new_line, '\0', 256);
 		new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
 		gc.line = new_line;
 		gc.parseLine();

@@ -1,8 +1,12 @@
-/*
- * debugger.h
- *
- *  Created on: 27/ott/2014
- *      Author: francescogiurlanda
+/*!
+ \file      debugger.h
+ \brief     Macros for debugging purpose
+ \author    Francesco Giurlanda
+ \version   0.1
+ \date      2014
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef DEBUGGER_H_
