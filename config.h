@@ -10,6 +10,9 @@
                To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
+#ifndef CONFIG_H
+#define CONFIG_H
+
 // ****************************
 // ***    GENERAL SETUP     ***
 // ****************************
@@ -24,6 +27,10 @@
     The pin depends on the arduino board version. See http://arduino.cc/en/Main/Products
 */
 
+
+#include "utensils/MillingMachine.h"
+#include "routers/CNC_Router.h"
+#include "tools/Position.h"
 #include "pins_arduino.h"
 #include "tools/debugger.h"
 
@@ -34,9 +41,6 @@
 // ****************************
 // *** ROUTER CONFIGURATION ***
 // ****************************
-
-//#define ULN2003A
-//#define A4988
 
 #define ROUTER_MX_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the X-axis. */
 #define ROUTER_MY_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis. */
@@ -129,5 +133,7 @@
 #define _MILLING_MACHINE_SPEED_PIN   11    /*!< \brief The pin number connected to the speed control circuit of the milling machine.*/
 #endif
 
+
+#endif //CONFIG_H
 
 

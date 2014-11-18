@@ -7,12 +7,8 @@
 //  versione: 0.0.1
 
 #include "config.h"
-#include "Utensils.h"
-#include "GCode.h"
-#include <Servo.h>
-#include "tools/Position.h"
-#include "CNC_Router.h"
-#include "tools/Timer.h"
+#include "GCode/GCode.h"
+
 
 MillingMachine mill(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
 

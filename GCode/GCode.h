@@ -13,11 +13,11 @@
 #ifndef GCODE_H_
 #define GCODE_H_
 
-#include "config.h"
+#include "../config.h"
 #include "GCode_def.h"
 #include "Arduino.h"
-#include "CNC_Router.h"
-#include "Utensils.h"
+#include "../routers/CNC_Router.h"
+#include "../utensils/MillingMachine.h"
 #include <stdint.h>
 
 /*! \class GCode

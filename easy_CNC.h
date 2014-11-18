@@ -20,13 +20,7 @@
 //add your includes for the project easy_CNC here
 
 #include "config.h"
-#include "Utensils.h"
-#include "GCode.h"
-#include <Servo.h>
-#include "tools/Position.h"
-#include "CNC_Router.h"
-#include "tools/Timer.h"
-
+#include "GCode/GCode.h"
 
 //end of add your includes here
 #ifdef __cplusplus
