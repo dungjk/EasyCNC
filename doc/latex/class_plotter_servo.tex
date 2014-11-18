@@ -8,8 +8,14 @@ Class to control a plotter head.
 
 
 
-{\ttfamily \#include $<$Utensils.\+h$>$}
+{\ttfamily \#include $<$Plotter\+Servo.\+h$>$}
 
+Inheritance diagram for Plotter\+Servo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_plotter_servo}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,6 +27,19 @@ boolean \hyperlink{class_plotter_servo_ab3d7dc74cd89c962a9cf27bdd210653f}{up} ()
 \begin{DoxyCompactList}\small\item\em It moves the head up. \end{DoxyCompactList}\item 
 boolean \hyperlink{class_plotter_servo_a06411670f5c5799ec84be0cffda3772b}{down} ()
 \begin{DoxyCompactList}\small\item\em It moves the head down. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{class_plotter_servo_a3309473d867ae37982f1ff0caba0c86b}{state}
+\begin{DoxyCompactList}\small\item\em The state of the plotter head. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_plotter_servo_a9c40d2afb9b5ae278deb8eab8b48a489}{pin}
+\begin{DoxyCompactList}\small\item\em The pin where is attached the servo motor. \end{DoxyCompactList}\item 
+Servo \hyperlink{class_plotter_servo_a9ecf1d8c79d1c73c3977198bb28b55a7}{servo\+\_\+pen}
+\begin{DoxyCompactList}\small\item\em The object which control the servo motor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_plotter_servo_ad1150ec2c679af23d0a57cef4df7ff0a}{down\+\_\+val}
+\begin{DoxyCompactList}\small\item\em The position of the servo for the plotter head down (deg) \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_plotter_servo_ac5a8cf60736715222a53a774c4e077f7}{up\+\_\+val}
+\begin{DoxyCompactList}\small\item\em The position of the servo for the plotter head up (deg) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -92,7 +111,48 @@ It moves the head up.
 
 
 
+\subsection{Member Data Documentation}
+\hypertarget{class_plotter_servo_ad1150ec2c679af23d0a57cef4df7ff0a}{\index{Plotter\+Servo@{Plotter\+Servo}!down\+\_\+val@{down\+\_\+val}}
+\index{down\+\_\+val@{down\+\_\+val}!Plotter\+Servo@{Plotter\+Servo}}
+\subsubsection[{down\+\_\+val}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Plotter\+Servo\+::down\+\_\+val\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plotter_servo_ad1150ec2c679af23d0a57cef4df7ff0a}
+
+
+The position of the servo for the plotter head down (deg) 
+
+\hypertarget{class_plotter_servo_a9c40d2afb9b5ae278deb8eab8b48a489}{\index{Plotter\+Servo@{Plotter\+Servo}!pin@{pin}}
+\index{pin@{pin}!Plotter\+Servo@{Plotter\+Servo}}
+\subsubsection[{pin}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Plotter\+Servo\+::pin\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plotter_servo_a9c40d2afb9b5ae278deb8eab8b48a489}
+
+
+The pin where is attached the servo motor. 
+
+\hypertarget{class_plotter_servo_a9ecf1d8c79d1c73c3977198bb28b55a7}{\index{Plotter\+Servo@{Plotter\+Servo}!servo\+\_\+pen@{servo\+\_\+pen}}
+\index{servo\+\_\+pen@{servo\+\_\+pen}!Plotter\+Servo@{Plotter\+Servo}}
+\subsubsection[{servo\+\_\+pen}]{\setlength{\rightskip}{0pt plus 5cm}Servo Plotter\+Servo\+::servo\+\_\+pen\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plotter_servo_a9ecf1d8c79d1c73c3977198bb28b55a7}
+
+
+The object which control the servo motor. 
+
+\hypertarget{class_plotter_servo_a3309473d867ae37982f1ff0caba0c86b}{\index{Plotter\+Servo@{Plotter\+Servo}!state@{state}}
+\index{state@{state}!Plotter\+Servo@{Plotter\+Servo}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}boolean Plotter\+Servo\+::state\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plotter_servo_a3309473d867ae37982f1ff0caba0c86b}
+
+
+The state of the plotter head. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_plotter_servo_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}{D\+O\+W\+N}, \hyperlink{_plotter_servo_8h_a1965eaca47dbf3f87acdafc2208f04eb}{U\+P} 
+\end{DoxySeeAlso}
+\hypertarget{class_plotter_servo_ac5a8cf60736715222a53a774c4e077f7}{\index{Plotter\+Servo@{Plotter\+Servo}!up\+\_\+val@{up\+\_\+val}}
+\index{up\+\_\+val@{up\+\_\+val}!Plotter\+Servo@{Plotter\+Servo}}
+\subsubsection[{up\+\_\+val}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Plotter\+Servo\+::up\+\_\+val\hspace{0.3cm}{\ttfamily [private]}}}\label{class_plotter_servo_ac5a8cf60736715222a53a774c4e077f7}
+
+
+The position of the servo for the plotter head up (deg) 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_utensils_8h}{Utensils.\+h}\item 
-\hyperlink{_utensils_8cpp}{Utensils.\+cpp}\end{DoxyCompactItemize}
+utensils/\hyperlink{_plotter_servo_8h}{Plotter\+Servo.\+h}\item 
+utensils/\hyperlink{_plotter_servo_8cpp}{Plotter\+Servo.\+cpp}\end{DoxyCompactItemize}

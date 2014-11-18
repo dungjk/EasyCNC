@@ -4,6 +4,7 @@ var searchData=
   ['searchhomepos',['searchHomePos',['../class_c_n_c___router.html#a4e9504d77eee555ddb35af073b67d3f1',1,'CNC_Router']]],
   ['searchz0pos',['searchZ0Pos',['../class_c_n_c___router.html#add6b83463be9d4288266fec09e1424f3',1,'CNC_Router']]],
   ['serial_5fbound',['SERIAL_BOUND',['../config_8h.html#a58562c1eea53acf4d89ae2e8ed79e7ac',1,'config.h']]],
+  ['servo_5fpen',['servo_pen',['../class_plotter_servo.html#a9ecf1d8c79d1c73c3977198bb28b55a7',1,'PlotterServo']]],
   ['setabsolpos',['setAbsolPos',['../class_c_n_c___router.html#a8629d6232f16d039ff386b0f02d45895',1,'CNC_Router']]],
   ['setdirection',['setDirection',['../class_m_s_m_c___a4988.html#ab9bd155f40ee777f17d1c4b1a702a60a',1,'MSMC_A4988']]],
   ['setincrpos',['setIncrPos',['../class_c_n_c___router.html#abbda24db494dd328382639412570978e',1,'CNC_Router']]],
@@ -28,7 +29,7 @@ var searchData=
   ['spmmy',['spmmy',['../class_c_n_c___router.html#ab44dd3a48e5c03f3484cd223cb8f9444',1,'CNC_Router']]],
   ['spmmz',['spmmz',['../class_c_n_c___router.html#a18bda26476d6fbe11fc6bb6ec69171ea',1,'CNC_Router']]],
   ['start',['start',['../class_timer.html#a3a8b5272198d029779dc9302a54305a8',1,'Timer']]],
-  ['state',['state',['../class_milling_machine.html#a8d46b3e3c141e9402a2729b61550babb',1,'MillingMachine']]],
+  ['state',['state',['../class_milling_machine.html#a8d46b3e3c141e9402a2729b61550babb',1,'MillingMachine::state()'],['../class_plotter_servo.html#a3309473d867ae37982f1ff0caba0c86b',1,'PlotterServo::state()']]],
   ['status_5fbad_5fword',['STATUS_BAD_WORD',['../_g_code__def_8h.html#a0d5d3e84a2e7607a8fdd20931629c900',1,'GCode_def.h']]],
   ['status_5flimiti_5fswitch_5ftrg',['STATUS_LIMITI_SWITCH_TRG',['../_g_code__def_8h.html#a3344d16238760748b66b871c77d25457',1,'GCode_def.h']]],
   ['status_5fok',['STATUS_OK',['../_g_code__def_8h.html#a2403320c41f08e7567cb169de5db66b3',1,'GCode_def.h']]],
@@ -38,6 +39,6 @@ var searchData=
   ['status_5fworking',['STATUS_WORKING',['../_g_code__def_8h.html#a3ea0e8bcc1b16bf4b8f6f830c92fbef4',1,'GCode_def.h']]],
   ['step_5fpin_5fval',['step_pin_val',['../class_m_s_m_c___a4988.html#a1ec86b6286b8827eca6d5703a02f65fd',1,'MSMC_A4988']]],
   ['steps',['steps',['../class_m_s_m_c___a4988.html#aa85fc95facc940db652cd2f545f033cd',1,'MSMC_A4988::steps()'],['../class_m_s_m_c___u_l_n2003_a.html#afc5c41c229b3d634bd4aea51dcef7599',1,'MSMC_ULN2003A::steps()']]],
-  ['stop',['stop',['../class_m_s_m_c.html#a0b44d0a659550ba754bf9212294ba6d5',1,'MSMC::stop()'],['../class_m_s_m_c___a4988.html#a4038481ce6b8131ea22d5e0d331ca6c7',1,'MSMC_A4988::stop()'],['../class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5',1,'MSMC_ULN2003A::stop()'],['../class_timer.html#a9a775fd00c4d0c8c8203c660496705e4',1,'Timer::stop()']]],
+  ['stop',['stop',['../class_timer.html#a9a775fd00c4d0c8c8203c660496705e4',1,'Timer::stop()'],['../class_m_s_m_c.html#a0b44d0a659550ba754bf9212294ba6d5',1,'MSMC::stop()'],['../class_m_s_m_c___a4988.html#a4038481ce6b8131ea22d5e0d331ca6c7',1,'MSMC_A4988::stop()'],['../class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5',1,'MSMC_ULN2003A::stop()']]],
   ['stopmotion',['stopMotion',['../class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac',1,'CNC_Router']]]
 ];

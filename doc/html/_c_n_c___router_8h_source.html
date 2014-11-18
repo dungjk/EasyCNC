@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>Easy CNC: CNC_Router.h Source File</title>
+<title>Easy CNC: routers/CNC_Router.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,6 +78,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b7648f6e52f088f9085b2bb78cc9e4bb.html">routers</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">CNC_Router.h</div>  </div>
@@ -88,17 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef CNC_Router_h</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define CNC_Router_h</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../config.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_position_8h.html">tools/Position.h</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">tools/utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../tools/Position.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../tools/utility.h&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_ULN2003A) || defined(ROUTER_MY_CONTROLLER_ULN2003A)</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_m_s_m_c___u_l_n2003_a_8h.html">MSMC_ULN2003A.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../motor_drivers/MSMC_ULN2003A.h&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#if defined(ROUTER_MX_CONTROLLER_A4988) || defined(ROUTER_MY_CONTROLLER_A4988)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_m_s_m_c___a4988_8h.html">MSMC_A4988.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../motor_drivers/MSMC_A4988.h&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_c_n_c___router.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_n_c___router.html">CNC_Router</a> {</div>
@@ -220,7 +224,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_c_n_c___router_html_a7dc30b35ae89245b4b8f53a0777472a5"><div class="ttname"><a href="class_c_n_c___router.html#a7dc30b35ae89245b4b8f53a0777472a5">CNC_Router::orientationZ</a></div><div class="ttdeci">void orientationZ(int8_t v)</div><div class="ttdoc">The function sets the orientation of Z-axis. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:459</div></div>
 <div class="ttc" id="class_c_n_c___router_html_ab44dd3a48e5c03f3484cd223cb8f9444"><div class="ttname"><a href="class_c_n_c___router.html#ab44dd3a48e5c03f3484cd223cb8f9444">CNC_Router::spmmy</a></div><div class="ttdeci">float spmmy</div><div class="ttdoc">Steps to move of a mm in the Y-axis (steps/mm). </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:56</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a2ac9fcca41eb0791859761fd9a3fd613"><div class="ttname"><a href="class_c_n_c___router.html#a2ac9fcca41eb0791859761fd9a3fd613">CNC_Router::round_off_y</a></div><div class="ttdeci">float round_off_y</div><div class="ttdoc">It contains the difference of numerical rounding to compute the number of step in Y-axis...</div><div class="ttdef"><b>Definition:</b> CNC_Router.h:65</div></div>
-<div class="ttc" id="_m_s_m_c___a4988_8h_html"><div class="ttname"><a href="_m_s_m_c___a4988_8h.html">MSMC_A4988.h</a></div><div class="ttdoc">Multi Stepper Motor Control with A4988. </div></div>
 <div class="ttc" id="class_c_n_c___router_html_ac4dbdb689d5b4bb2ed39af36ec07d394"><div class="ttname"><a href="class_c_n_c___router.html#ac4dbdb689d5b4bb2ed39af36ec07d394">CNC_Router::ls_x_down</a></div><div class="ttdeci">static volatile boolean ls_x_down</div><div class="ttdoc">State of the down limit switch of X-axis: true = not triggered, false = triggered. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:70</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a30b5c6e169b20b9d8b11be6d638b2958"><div class="ttname"><a href="class_c_n_c___router.html#a30b5c6e169b20b9d8b11be6d638b2958">CNC_Router::ls_z_down</a></div><div class="ttdeci">static volatile boolean ls_z_down</div><div class="ttdoc">State of the down limit switch of Z-axis: true = not triggered, false = triggered. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:70</div></div>
 <div class="ttc" id="class_c_n_c___router_html_abced37562004a4b303291be79e49a23b"><div class="ttname"><a href="class_c_n_c___router.html#abced37562004a4b303291be79e49a23b">CNC_Router::orientationY</a></div><div class="ttdeci">void orientationY(int8_t v)</div><div class="ttdoc">The function sets the orientation of Y-axis. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:455</div></div>
@@ -230,14 +233,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_c_n_c___router_html_a8629d6232f16d039ff386b0f02d45895"><div class="ttname"><a href="class_c_n_c___router.html#a8629d6232f16d039ff386b0f02d45895">CNC_Router::setAbsolPos</a></div><div class="ttdeci">void setAbsolPos()</div><div class="ttdoc">It selects the absolute positioning mode. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:391</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a28ddb2544290798664f99ed506f7d44a"><div class="ttname"><a href="class_c_n_c___router.html#a28ddb2544290798664f99ed506f7d44a">CNC_Router::setMotionModeZ</a></div><div class="ttdeci">void setMotionModeZ(uint8_t m)</div><div class="ttdoc">Specifies the motion control mode for the motor on Z-axis. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:383</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a7f13e636e4b92c5547995b653cea317e"><div class="ttname"><a href="class_c_n_c___router.html#a7f13e636e4b92c5547995b653cea317e">CNC_Router::initMotorY</a></div><div class="ttdeci">void initMotorY()</div><div class="ttdoc">It initializes the controller for the motor on the Y-axis. It must be called one time before starting...</div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:72</div></div>
-<div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div><div class="ttdoc">The configuration file. </div></div>
 <div class="ttc" id="class_c_n_c___router_html_adef23983c5aac16fa0431f861eb41fc2"><div class="ttname"><a href="class_c_n_c___router.html#adef23983c5aac16fa0431f861eb41fc2">CNC_Router::orientationX</a></div><div class="ttdeci">void orientationX(int8_t v)</div><div class="ttdoc">The function sets the orientation of X-axis. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:451</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a0fce19a7adf29dc0fb2b1a29c813b953"><div class="ttname"><a href="class_c_n_c___router.html#a0fce19a7adf29dc0fb2b1a29c813b953">CNC_Router::getPos</a></div><div class="ttdeci">PositionXYZ getPos()</div><div class="ttdoc">It get the actual position of the utensil. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:443</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a5e3fe2fd85292f3f5d9d2e13078b6a42"><div class="ttname"><a href="class_c_n_c___router.html#a5e3fe2fd85292f3f5d9d2e13078b6a42">CNC_Router::v_max_y</a></div><div class="ttdeci">float v_max_y</div><div class="ttdoc">The max speed for the motor that controls the Y-axis (steps/s). </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:59</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a63dab669f0dd34b0306c16b61816e751"><div class="ttname"><a href="class_c_n_c___router.html#a63dab669f0dd34b0306c16b61816e751">CNC_Router::ls_x_up</a></div><div class="ttdeci">static volatile boolean ls_x_up</div><div class="ttdoc">State of the up limit switch of X-axis: true = not triggered, false = triggered. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:70</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a0297fd8151885d8cb29fb01e8c987a43"><div class="ttname"><a href="class_c_n_c___router.html#a0297fd8151885d8cb29fb01e8c987a43">CNC_Router::setPos</a></div><div class="ttdeci">void setPos(PositionXYZ p)</div><div class="ttdoc">Configures the position of the utensil. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:447</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a2ae50762cc38690090515f30bcd5033c"><div class="ttname"><a href="class_c_n_c___router.html#a2ae50762cc38690090515f30bcd5033c">CNC_Router::initMotorZ</a></div><div class="ttdeci">void initMotorZ()</div><div class="ttdoc">It initializes the controller for the motor on the Z-axis. It must be called one time before starting...</div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:81</div></div>
-<div class="ttc" id="class_m_s_m_c___a4988_html"><div class="ttname"><a href="class_m_s_m_c___a4988.html">MSMC_A4988</a></div><div class="ttdoc">Multi Stepper Motor Control with A4988. </div><div class="ttdef"><b>Definition:</b> MSMC_A4988.h:36</div></div>
+<div class="ttc" id="class_m_s_m_c___a4988_html"><div class="ttname"><a href="class_m_s_m_c___a4988.html">MSMC_A4988</a></div><div class="ttdoc">Multi Stepper Motor Control with A4988. </div><div class="ttdef"><b>Definition:</b> MSMC_A4988.h:35</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a30d838430b7452a8f47071d2f6b8845e"><div class="ttname"><a href="class_c_n_c___router.html#a30d838430b7452a8f47071d2f6b8845e">CNC_Router::resetPos</a></div><div class="ttdeci">void resetPos()</div><div class="ttdoc">It resets the position and assigns the value (0; 0) in the actual position of the utensil...</div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:134</div></div>
 <div class="ttc" id="class_c_n_c___router_html_aa6009653314607491aa277b1f3c9bf85"><div class="ttname"><a href="class_c_n_c___router.html#aa6009653314607491aa277b1f3c9bf85">CNC_Router::mx</a></div><div class="ttdeci">MSMC_A4988 mx</div><div class="ttdef"><b>Definition:</b> CNC_Router.h:38</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a6b5ad1a227e63d3f374e0e53f3cf047c"><div class="ttname"><a href="class_c_n_c___router.html#a6b5ad1a227e63d3f374e0e53f3cf047c">CNC_Router::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">It pauses the current motion operation. The router waits for CNC_Router::restart() to continue and en...</div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:335</div></div>
@@ -245,7 +247,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_c_n_c___router_html_a74a44cdb470bb6256551bffc3538b938"><div class="ttname"><a href="class_c_n_c___router.html#a74a44cdb470bb6256551bffc3538b938">CNC_Router::ls_y_up</a></div><div class="ttdeci">static volatile boolean ls_y_up</div><div class="ttdoc">State of the up limit switch of Y-axis: true = not triggered, false = triggered. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:70</div></div>
 <div class="ttc" id="class_c_n_c___router_html_add549ccc206f5feff41f9e818e370ef8"><div class="ttname"><a href="class_c_n_c___router.html#add549ccc206f5feff41f9e818e370ef8">CNC_Router::mz</a></div><div class="ttdeci">MSMC_A4988 mz</div><div class="ttdef"><b>Definition:</b> CNC_Router.h:50</div></div>
 <div class="ttc" id="class_c_n_c___router_html_ad8830a7b387905027b8a1a9e3b31e3c7"><div class="ttname"><a href="class_c_n_c___router.html#ad8830a7b387905027b8a1a9e3b31e3c7">CNC_Router::spmmx</a></div><div class="ttdeci">float spmmx</div><div class="ttdoc">Steps to move of a mm in the X-axis (steps/mm). </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:56</div></div>
-<div class="ttc" id="_m_s_m_c___u_l_n2003_a_8h_html"><div class="ttname"><a href="_m_s_m_c___u_l_n2003_a_8h.html">MSMC_ULN2003A.h</a></div><div class="ttdoc">Multi Stepper Motor Control with ULN2003A. </div></div>
 <div class="ttc" id="class_c_n_c___router_html_a76627728e4ee416ad2ee42dcd7e5ad39"><div class="ttname"><a href="class_c_n_c___router.html#a76627728e4ee416ad2ee42dcd7e5ad39">CNC_Router::ls_x_down_routine</a></div><div class="ttdeci">static void ls_x_down_routine()</div><div class="ttdoc">Routine for the interrupt attached to the down limit switch of the X-axis. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:21</div></div>
 <div class="ttc" id="class_c_n_c___router_html_afd35356064c7667cbdf21c44a7dd7cf5"><div class="ttname"><a href="class_c_n_c___router.html#afd35356064c7667cbdf21c44a7dd7cf5">CNC_Router::pos_type</a></div><div class="ttdeci">boolean pos_type</div><div class="ttdoc">It stores the information about the positioning type: true = incremental; false = absolute...</div><div class="ttdef"><b>Definition:</b> CNC_Router.h:63</div></div>
 <div class="ttc" id="class_c_n_c___router_html_aebacab02935c41a4c11b926c0770bcac"><div class="ttname"><a href="class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac">CNC_Router::stopMotion</a></div><div class="ttdeci">void stopMotion()</div><div class="ttdoc">It stops the current motion operation. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:321</div></div>
@@ -262,11 +263,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_c_n_c___router_html"><div class="ttname"><a href="class_c_n_c___router.html">CNC_Router</a></div><div class="ttdoc">The class controls the motors of the xy router of the CNC. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:33</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a1f573ec5b6c857e5aee5cebb7ad9c158"><div class="ttname"><a href="class_c_n_c___router.html#a1f573ec5b6c857e5aee5cebb7ad9c158">CNC_Router::ls_z_up</a></div><div class="ttdeci">static volatile boolean ls_z_up</div><div class="ttdoc">State of the up limit switch of Z-axis: true = not triggered, false = triggered. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:70</div></div>
 <div class="ttc" id="class_c_n_c___router_html_afa08612e63f2cc3d3283fa06679b5d7a"><div class="ttname"><a href="class_c_n_c___router.html#afa08612e63f2cc3d3283fa06679b5d7a">CNC_Router::v_max_x</a></div><div class="ttdeci">float v_max_x</div><div class="ttdoc">The max speed for the motor that controls the X-axis (steps/s). </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:59</div></div>
-<div class="ttc" id="utility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div><div class="ttdoc">Set of utility functions. </div></div>
 <div class="ttc" id="class_c_n_c___router_html_afd338336ec37545574369a5f71ff310b"><div class="ttname"><a href="class_c_n_c___router.html#afd338336ec37545574369a5f71ff310b">CNC_Router::old_p</a></div><div class="ttdeci">PositionXYZ old_p</div><div class="ttdoc">It keeps the position that the utensil has after starting the motion. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:53</div></div>
 <div class="ttc" id="class_c_n_c___router_html_ac993b5ad9929da6f83bb8783fafafa1a"><div class="ttname"><a href="class_c_n_c___router.html#ac993b5ad9929da6f83bb8783fafafa1a">CNC_Router::setLimitSwitchZ</a></div><div class="ttdeci">void setLimitSwitchZ(int8_t dw, int8_t up=-1)</div><div class="ttdoc">Sets the pins where are attached the down/up limit switches. </div></div>
 <div class="ttc" id="class_c_n_c___router_html_aefdb4b267eaab43574728c4027b28c30"><div class="ttname"><a href="class_c_n_c___router.html#aefdb4b267eaab43574728c4027b28c30">CNC_Router::ls_x_up_routine</a></div><div class="ttdeci">static void ls_x_up_routine()</div><div class="ttdoc">Routine for the interrupt attached to the up limit switch of the X-axis. </div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:26</div></div>
-<div class="ttc" id="_position_8h_html"><div class="ttname"><a href="_position_8h.html">Position.h</a></div><div class="ttdoc">Class to manage Cartesian position. </div></div>
 <div class="ttc" id="class_c_n_c___router_html_a1932890e5458f9113355f1bdb854e1ce"><div class="ttname"><a href="class_c_n_c___router.html#a1932890e5458f9113355f1bdb854e1ce">CNC_Router::ls_y_down</a></div><div class="ttdeci">static volatile boolean ls_y_down</div><div class="ttdoc">State of the down limit switch of Y-axis: true = not triggered, false = triggered. </div><div class="ttdef"><b>Definition:</b> CNC_Router.h:70</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a940f5722a449f52bc29e437dfd6a1909"><div class="ttname"><a href="class_c_n_c___router.html#a940f5722a449f52bc29e437dfd6a1909">CNC_Router::round_off_x</a></div><div class="ttdeci">float round_off_x</div><div class="ttdoc">It contains the difference of numerical rounding to compute the number of step in X-axis...</div><div class="ttdef"><b>Definition:</b> CNC_Router.h:65</div></div>
 <div class="ttc" id="class_c_n_c___router_html_a89f4cbde58844154f247d2bf02a167fb"><div class="ttname"><a href="class_c_n_c___router.html#a89f4cbde58844154f247d2bf02a167fb">CNC_Router::initMotorX</a></div><div class="ttdeci">void initMotorX()</div><div class="ttdoc">It initializes the controller for the motor on the X-axis. It must be called one time before starting...</div><div class="ttdef"><b>Definition:</b> CNC_Router.cpp:63</div></div>
@@ -283,7 +282,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 14 2014 00:12:30 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 18 2014 19:40:45 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

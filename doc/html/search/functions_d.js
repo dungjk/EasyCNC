@@ -20,6 +20,6 @@ var searchData=
   ['setup',['setup',['../easy___c_n_c_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.cpp'],['../easy___c_n_c_8h.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.cpp'],['../easy___c_n_c_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;easy_CNC.ino']]],
   ['speed',['speed',['../class_m_s_m_c.html#a065e48c8e8f3b513bf6694e8eb1b28d5',1,'MSMC::speed()'],['../class_m_s_m_c___a4988.html#a6f9d236dc619342d16457aa029faeed9',1,'MSMC_A4988::speed()'],['../class_m_s_m_c___u_l_n2003_a.html#ad8df164c90b2205fb65c796632889f82',1,'MSMC_ULN2003A::speed()']]],
   ['start',['start',['../class_timer.html#a3a8b5272198d029779dc9302a54305a8',1,'Timer']]],
-  ['stop',['stop',['../class_m_s_m_c.html#a0b44d0a659550ba754bf9212294ba6d5',1,'MSMC::stop()'],['../class_m_s_m_c___a4988.html#a4038481ce6b8131ea22d5e0d331ca6c7',1,'MSMC_A4988::stop()'],['../class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5',1,'MSMC_ULN2003A::stop()'],['../class_timer.html#a9a775fd00c4d0c8c8203c660496705e4',1,'Timer::stop()']]],
+  ['stop',['stop',['../class_timer.html#a9a775fd00c4d0c8c8203c660496705e4',1,'Timer::stop()'],['../class_m_s_m_c.html#a0b44d0a659550ba754bf9212294ba6d5',1,'MSMC::stop()'],['../class_m_s_m_c___a4988.html#a4038481ce6b8131ea22d5e0d331ca6c7',1,'MSMC_A4988::stop()'],['../class_m_s_m_c___u_l_n2003_a.html#aba5e18f20f31fd4d6e71f50821dfeee5',1,'MSMC_ULN2003A::stop()']]],
   ['stopmotion',['stopMotion',['../class_c_n_c___router.html#aebacab02935c41a4c11b926c0770bcac',1,'CNC_Router']]]
 ];
