@@ -33,6 +33,8 @@
 #include "tools/Position.h"
 #include "pins_arduino.h"
 #include "tools/debugger.h"
+#include "motor_drivers/MSMC_A4988.h"
+#include "motor_drivers/MSMC_ULN2003A.h"
 
 #define SERIAL_BOUND 57600
 #define INTERRUPT_STOP_MOTION 1

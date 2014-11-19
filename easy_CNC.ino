@@ -4,7 +4,7 @@
 //
 //  Autor: Francesco Giurlanda
 //  Project: Easy CNC
-//  versione: 0.0.1
+//  versione: 0.1
 
 #include "config.h"
 #include "GCode/GCode.h"

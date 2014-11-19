@@ -55,6 +55,9 @@ public:
 
 	//! \brief It switches off the spindle.
 	void disable();
+
+	void preMotion();
+	void postMotion();
 };
 
 

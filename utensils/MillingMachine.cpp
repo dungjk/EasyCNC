@@ -35,3 +35,6 @@ void MillingMachine::disable(){
 	digitalWrite(enable_pin, LOW);
 }
 
+void MillingMachine::preMotion(){}
+
+void MillingMachine::postMotion(){}
