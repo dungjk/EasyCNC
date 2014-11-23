@@ -18,10 +18,10 @@
 #include "../tools/utility.h"
 #include <stdint.h>
 
-#if defined(ROUTER_MX_CONTROLLER_ULN2003A) || defined(ROUTER_MY_CONTROLLER_ULN2003A)
+#if defined(ROUTER_MX_CONTROLLER_ULN2003A) || defined(ROUTER_MY_CONTROLLER_ULN2003A) || defined(ROUTER_MZ_CONTROLLER_ULN2003A)
 #include "../motor_drivers/MSMC_ULN2003A.h"
 #endif
-#if defined(ROUTER_MX_CONTROLLER_A4988) || defined(ROUTER_MY_CONTROLLER_A4988)
+#if defined(ROUTER_MX_CONTROLLER_A4988) || defined(ROUTER_MY_CONTROLLER_A4988) || defined(ROUTER_MZ_CONTROLLER_A4988)
 #include "../motor_drivers/MSMC_A4988.h"
 #endif
 

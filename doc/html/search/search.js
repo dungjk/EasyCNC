@@ -12,7 +12,8 @@ var indexSectionsWithContent =
   2: "cdegmptu",
   3: "abcdefgilmoprstuxyz",
   4: "abcdeflmnoprstuvxyz",
-  5: "_adefghimpqrstu"
+  5: "_adefghimpqrstu",
+  6: "e"
 };
 
 var indexSectionNames =
@@ -22,7 +23,8 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "defines"
+  5: "defines",
+  6: "pages"
 };
 
 function convertToId(search)

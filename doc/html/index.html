@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>Easy CNC: Main Page</title>
+<title>Easy CNC: Easy CNC (eCNC)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Easy CNC
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.1.1</span>
    </div>
   </td>
  </tr>
@@ -64,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -75,13 +75,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Easy CNC Documentation</div>  </div>
+<div class="title">Easy CNC (eCNC) </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#how_get_it">How get it</a></li>
+<li class="level1"><a href="#installation">Installation</a></li>
+<li class="level1"><a href="#conf">Configuration</a></li>
+<li class="level1"><a href="#struct">Structure</a></li>
+</ul>
+</div>
+<div class="textblock"><p>Easy CNC (eCNC) is an open source software to control a CNC machine that can mount different utensils. The SW will run on <a href="http://arduino.cc/">Arduino</a> which receives command from a computer. The commands follow a standard programming language named G-code.</p>
+<h1><a class="anchor" id="how_get_it"></a>
+How get it</h1>
+<p>You can download the last release from <a href="https://sourceforge.net/projects/easycnc/files/">here</a>. The packet contains two directories: easy_CNC and easy_CNC_Controller. The first one contains the code of the firmware that must be loaded into the Arduino. The second one contains the code of the control GUI.</p>
+<h1><a class="anchor" id="installation"></a>
+Installation</h1>
+<p>The code into easy_CNC is an <a href="https://www.eclipse.org/">Eclipse</a> project. You can import the code with the Eclipse environment. Then, you need an Eclipse plugin named <a href="http://marketplace.eclipse.org/content/arduino-eclipse-ide">Arduino eclipse IDE</a> to compile and load the code into an Arduino board. The code was conceived for Arduino Mega 2560. However, with few changes, it can be adapted to Arduino Due or One.</p>
+<p>After the board connection, you setup the Arduino eclipse plugin with the board version and the USB port, thus you can compile the code and if it ends without errors, you can load the firmware with the interface provided by the plugin. You should see a blinking led on the board, it assures that the code is loading.</p>
+<p>To interact with Arduino and provide it the commands that will move your CNC machine, you can use the eCNC Control GUI that is located into easy_CNC_Control. You need the <a href="https://processing.org/">Processing</a> environment. After the download and the installation, you load the easy_CNC_Control.pde file and run it.</p>
+<h1><a class="anchor" id="conf"></a>
+Configuration</h1>
+<p>Before compiling the firmware, you must configure the code according your hardware. The <a class="el" href="config_8h.html" title="The configuration file. ">config.h</a> file gathers all the parameters to setup your hardware, such as max motors speed, Arduino pins setup.</p>
+<h1><a class="anchor" id="struct"></a>
+Structure</h1>
+<p>The code is written in C++, it is simple, intuitive and uses all the feature of object oriented (OO) paradigm. You can configure the main parameters of the machine in the <a class="el" href="config_8h.html" title="The configuration file. ">config.h</a> file. The cycle of life of the firmware follows six steps:</p><ul>
+<li><b>step 1</b> - waiting for G-code command;</li>
+<li><b>step 2</b> - receiving a new G-code command;</li>
+<li><b>step 3</b> - decoding G-code command;</li>
+<li><b>step 4</b> - executing the G-code command;</li>
+<li><b>step 5</b> - reporting the status;</li>
+<li><b>step 6</b> - return back to step 1.</li>
+</ul>
+<p>The code follows a hierarchical structure with three layers: first layer receives and decodes the G-code commands. It is implemented into the class <a class="el" href="class_g_code.html" title="The class interprets lines of RS274/NGC language. ">GCode</a>. Second layer coordinates the CNC router and the utensil. The control of the routing is implemented into <a class="el" href="class_c_n_c___router.html" title="The class controls the motors of the xy router of the CNC. ">CNC_Router</a>, instead the classes for the utensils is a derived class from the virtual class <a class="el" href="class_utensil.html">Utensil</a>. Until now, the only utensil class implemented is <a class="el" href="class_milling_machine.html" title="Class to control a the milling machine and its position on the z-axis. ">MillingMachine</a>, it manages the milling machine parameters and control the utensil. Third layer contains all the class that implements the motor driving. All the classes that are derived from the virtual class <a class="el" href="class_m_s_m_c.html" title="The multi stepper motor control interface. ">MSMC</a> (<a class="el" href="class_m_s_m_c___u_l_n2003_a.html" title="Multi Stepper Motor Control with ULN2003A. ">MSMC_ULN2003A</a>, <a class="el" href="class_m_s_m_c___a4988.html" title="Multi Stepper Motor Control with A4988. ">MSMC_A4988</a>) belong to the third layer.</p>
+<p>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a> </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 19:40:46 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 23 2014 12:14:36 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

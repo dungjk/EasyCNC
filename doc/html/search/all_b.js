@@ -16,6 +16,7 @@ var searchData=
   ['m9',['M9',['../_g_code__def_8h.html#a55be408e63eeea7ed9d808d7e8385e3d',1,'GCode_def.h']]],
   ['m_5fpause',['m_pause',['../class_m_s_m_c___a4988.html#a26b4b55d77fadf599d7208c0a1ce2383',1,'MSMC_A4988::m_pause()'],['../class_m_s_m_c___u_l_n2003_a.html#a6b0ddbdadf767fdc1d1c5f8a3ffd6f10',1,'MSMC_ULN2003A::m_pause()']]],
   ['m_5fready',['m_ready',['../class_m_s_m_c___a4988.html#a86ef4c886ee6c7ed6fa87e27c0a7a9ea',1,'MSMC_A4988::m_ready()'],['../class_m_s_m_c___u_l_n2003_a.html#a4f2ee51f769815847a2a0062ff03bd6e',1,'MSMC_ULN2003A::m_ready()']]],
+  ['mainpage_2edox',['mainpage.dox',['../mainpage_8dox.html',1,'']]],
   ['mill',['mill',['../easy___c_n_c_8ino.html#ac6376c0d1556039f8e736c516f83da4e',1,'mill():&#160;easy_CNC.ino'],['../easy___c_n_c_8h.html#a936d8c3bd6dace2e6ac04da13a47dadf',1,'mill(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN):&#160;easy_CNC.h']]],
   ['millingmachine',['MillingMachine',['../class_milling_machine.html',1,'MillingMachine'],['../class_milling_machine.html#afdeaae37d959bd4c9de40195a2650aa4',1,'MillingMachine::MillingMachine()']]],
   ['millingmachine_2ecpp',['MillingMachine.cpp',['../_milling_machine_8cpp.html',1,'']]],

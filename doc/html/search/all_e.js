@@ -37,7 +37,7 @@ var searchData=
   ['position_2eh',['Position.h',['../_position_8h.html',1,'']]],
   ['positionxy',['PositionXY',['../class_position_x_y.html',1,'PositionXY'],['../class_position_x_y.html#a72c2bce8c3524d13a446e5f7bd00176b',1,'PositionXY::PositionXY()'],['../class_position_x_y.html#aa45af7bc859ed16de19470c46e476456',1,'PositionXY::PositionXY(float px, float py)'],['../class_position_x_y.html#a3f71105e1c27ad675a24062942866fd4',1,'PositionXY::PositionXY(const PositionXY &amp;p)']]],
   ['positionxyz',['PositionXYZ',['../class_position_x_y_z.html',1,'PositionXYZ'],['../class_position_x_y_z.html#a65ea8947e1dcd52450946a1ba8f00159',1,'PositionXYZ::PositionXYZ()'],['../class_position_x_y_z.html#ad0abacbddc22b577d77cf5ed0d9d1329',1,'PositionXYZ::PositionXYZ(float px, float py, float pz)'],['../class_position_x_y_z.html#ab77a27a8e4235ec29bfddbaeec8581a8',1,'PositionXYZ::PositionXYZ(const PositionXYZ &amp;p)']]],
-  ['postmotion',['postMotion',['../class_utensil.html#a6757538f234a7ed041bfe49999e53f0f',1,'Utensil']]],
-  ['premotion',['preMotion',['../class_utensil.html#a1dbb340a2fa9edcebfe531c7c7c22ebf',1,'Utensil']]],
+  ['postmotion',['postMotion',['../class_milling_machine.html#a1939dadb13a2552867eff5ed4ede94ac',1,'MillingMachine::postMotion()'],['../class_utensil.html#a6757538f234a7ed041bfe49999e53f0f',1,'Utensil::postMotion()']]],
+  ['premotion',['preMotion',['../class_milling_machine.html#a3987303895b4d73ed7bc9346cbdf163f',1,'MillingMachine::preMotion()'],['../class_utensil.html#a1dbb340a2fa9edcebfe531c7c7c22ebf',1,'Utensil::preMotion()']]],
   ['print',['print',['../class_m_s_m_c___u_l_n2003_a.html#aa6743162bdaba01ef1fc8a79f2519897',1,'MSMC_ULN2003A']]]
 ];
