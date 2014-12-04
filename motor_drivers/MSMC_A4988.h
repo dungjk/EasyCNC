@@ -25,6 +25,8 @@
 #define EIGHTH_STEP 8		//!< Identify the eighth step mode \sa MSMC_A4988::setMode(uint8_t)
 #define SIXTEENTH_STEP 16	//!< Identify the sixteenth step mode \sa MSMC_A4988::setMode(uint8_t)
 
+
+
 /*! \class MSMC_A4988
  *  \brief Multi Stepper Motor Control with A4988
  *  \details The class allows the contemporary control of multi stepper motors using the ICs A4988. After the motor setup, you can drive the motor forward and backward,

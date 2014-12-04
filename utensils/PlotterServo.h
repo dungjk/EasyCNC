@@ -11,7 +11,7 @@
 
 #ifndef PLOTTERSERVO_H_
 #define PLOTTERSERVO_H_
-
+#ifndef _TEST_1
 #include <Servo.h>
 #include <Arduino.h>
 
@@ -50,4 +50,6 @@ class PlotterServo: public Utensil {
 		//! \brief It moves the head down.
 		boolean down();
 	};
+
+#endif
 #endif /* PLOTTERSERVO_H_ */

@@ -21,6 +21,9 @@
 
 #include "config.h"
 #include "GCode/GCode.h"
+#include "tools/debugger.h"
+#include <avr/io.h>
+#include <avr/interrupt.h>
 
 //end of add your includes here
 #ifdef __cplusplus

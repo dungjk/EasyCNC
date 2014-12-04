@@ -29,12 +29,11 @@
 
 
 #include "utensils/MillingMachine.h"
-#include "routers/CNC_Router.h"
+#include "routers/CNCRouterISR.h"
 #include "tools/Position.h"
 #include "pins_arduino.h"
 #include "tools/debugger.h"
-#include "motor_drivers/MSMC_A4988.h"
-#include "motor_drivers/MSMC_ULN2003A.h"
+#include "motor_drivers/MotorDriver.h"
 
 #define SERIAL_BOUND 57600
 #define INTERRUPT_STOP_MOTION 1
@@ -50,6 +49,9 @@
 #define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
 #define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25 /*!< \brief Number of steps to forward of a mm. */
 #define ROUTER_MZ_STEPS_PER_MM ROUTER_MZ_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
+#define ROUTER_MX_ORIENTATION -1
+#define ROUTER_MY_ORIENTATION 1
+#define ROUTER_MZ_ORIENTATION 1
 #define ROUTER_MX_SPEED 2400.0           /*!< \brief The maximum speed used to control the motor of X-axis (steps/s). */
 #define ROUTER_MY_SPEED 2400.0           /*!< \brief The maximum speed used to control the motor of Y-axis (steps/s). */
 #define ROUTER_MZ_SPEED 2400.0           /*!< \brief The maximum speed used to control the motor of Z-axis (steps/s). */
@@ -76,6 +78,7 @@
 #define ROUTE_MX_STEP_CONTROL_PIN   A0  		 //!< \brief Pin connected to the step control pin of the A4988
 #define ROUTE_MX_DIRECTION_CONTROL_PIN A1	 //!< \brief Pin connected to the direction control pin of the A4988
 #define ROUTE_MX_ENABLE_CONTROL_PIN 38		 //!< \brief Pin connected to the enable pin of the A4988
+#define ROUTE_MX_MODE QUARTER_STEP           //!< \brief The microstep mode of the driver of the motor X
 #endif
 
 //#define ROUTER_MY_CONTROLLER_ULN2003A
@@ -92,6 +95,7 @@
 #define ROUTE_MY_STEP_CONTROL_PIN 46    		 //!< \brief Pin connected to the step control pin of the A4988
 #define ROUTE_MY_DIRECTION_CONTROL_PIN 48	 //!< \brief Pin connected to the direction control pin of the A4988
 #define ROUTE_MY_ENABLE_CONTROL_PIN A8		 //!< \brief Pin connected to the enable pin of the A4988
+#define ROUTE_MY_MODE QUARTER_STEP           //!< \brief The microstep mode of the driver of the motor Y
 #endif
 
 //#define ROUTER_MZ_CONTROLLER_ULN2003A
@@ -108,6 +112,7 @@
 #define ROUTE_MZ_STEP_CONTROL_PIN A6    		 //!< \brief Pin connected to the step control pin of the A4988
 #define ROUTE_MZ_DIRECTION_CONTROL_PIN A7	 //!< \brief Pin connected to the direction control pin of the A4988
 #define ROUTE_MZ_ENABLE_CONTROL_PIN A2		 //!< \brief Pin connected to the enable pin of the A4988
+#define ROUTE_MZ_MODE QUARTER_STEP           //!< \brief The microstep mode of the driver of the motor Z
 #endif
 
 // *****************************
