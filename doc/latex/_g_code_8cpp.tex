@@ -7,6 +7,29 @@ G-\/\+Code parser.
 
 
 {\ttfamily \#include \char`\"{}G\+Code.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g_code_8cpp_a39b0c37c3c4f4966017cab218b055fad}{I\+N\+I\+T\+\_\+\+T\+I\+M\+E\+R5}
+\item 
+\#define \hyperlink{_g_code_8cpp_a86b0bfd51976379140d0e45e7d24a8bc}{S\+E\+T\+\_\+\+T\+I\+M\+E\+R5}(x)~\{ O\+C\+R5\+A = x;\}
+\item 
+\#define \hyperlink{_g_code_8cpp_a608c513899d871a5a8f71d3e74f4c1a4}{C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+T\+I\+M\+E\+R5}~\{ T\+C\+N\+T5 = 0; \}
+\item 
+\#define \hyperlink{_g_code_8cpp_a705ef9d9ee593818fb469476ddd3e356}{S\+T\+A\+R\+T\+\_\+\+T\+I\+M\+E\+R5}
+\item 
+\#define \hyperlink{_g_code_8cpp_a3fb09bba5efe566360228921b326be69}{S\+T\+O\+P\+\_\+\+T\+I\+M\+E\+R5}~\{   T\+C\+C\+R5\+B \&= $\sim$((1 $<$$<$ C\+S50) $\vert$ (1 $<$$<$ C\+S52));\}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_g_code_8cpp_a332352d7fb4b7b02401910478cec92fa}{I\+S\+R} (T\+I\+M\+E\+R5\+\_\+\+C\+O\+M\+P\+A\+\_\+vect)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_g_code}{G\+Code} $\ast$ \hyperlink{_g_code_8cpp_a81fadbfd2d764c2bb3122ec2e104ff02}{\+\_\+gc} = N\+U\+L\+L
+\begin{DoxyCompactList}\small\item\em It is used to bind the timer5 handler and the \hyperlink{class_g_code_a9f7a4d057f394dcc4163f00a2dc6770e}{G\+Code\+::return\+Status} of the last instanced \hyperlink{class_g_code}{G\+Code} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -24,3 +47,73 @@ Francesco Giurlanda
 \begin{DoxyCopyright}{Copyright}
 This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.\+0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
 \end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g_code_8cpp_a608c513899d871a5a8f71d3e74f4c1a4}{\index{G\+Code.\+cpp@{G\+Code.\+cpp}!C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+T\+I\+M\+E\+R5@{C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+T\+I\+M\+E\+R5}}
+\index{C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+T\+I\+M\+E\+R5@{C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+T\+I\+M\+E\+R5}!G\+Code.\+cpp@{G\+Code.\+cpp}}
+\subsubsection[{C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+T\+I\+M\+E\+R5}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+L\+E\+A\+R\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+T\+I\+M\+E\+R5~\{ T\+C\+N\+T5 = 0; \}}}\label{_g_code_8cpp_a608c513899d871a5a8f71d3e74f4c1a4}
+Set to 0 the T\+C\+N\+T5 register. \hypertarget{_g_code_8cpp_a39b0c37c3c4f4966017cab218b055fad}{\index{G\+Code.\+cpp@{G\+Code.\+cpp}!I\+N\+I\+T\+\_\+\+T\+I\+M\+E\+R5@{I\+N\+I\+T\+\_\+\+T\+I\+M\+E\+R5}}
+\index{I\+N\+I\+T\+\_\+\+T\+I\+M\+E\+R5@{I\+N\+I\+T\+\_\+\+T\+I\+M\+E\+R5}!G\+Code.\+cpp@{G\+Code.\+cpp}}
+\subsubsection[{I\+N\+I\+T\+\_\+\+T\+I\+M\+E\+R5}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+I\+T\+\_\+\+T\+I\+M\+E\+R5}}\label{_g_code_8cpp_a39b0c37c3c4f4966017cab218b055fad}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{   TCCR5A = 0;    \(\backslash\)
+                        TCCR5B = 0;    \(\backslash\)
+                        TCNT5 = 0;   \(\backslash\)
+                        TIMSK5 |= (1 << OCIE5A);    \(\backslash\)
+                        TCCR5B |= (1 << WGM52); \}
+\end{DoxyCode}
+Below the description of the operations performed by the macro\+:
+\begin{DoxyItemize}
+\item T\+C\+C\+R5\+A = 0; set entire T\+C\+C\+R5\+A register to 0
+\item T\+C\+C\+R5\+B = 0; set entire T\+C\+C\+R5\+B register to 0
+\item T\+C\+N\+T5 = 0; initialize counter value to B0
+\item T\+C\+C\+R5\+B $\vert$= (1 $<$$<$ W\+G\+M52); turn on C\+T\+C mode 
+\end{DoxyItemize}\hypertarget{_g_code_8cpp_a86b0bfd51976379140d0e45e7d24a8bc}{\index{G\+Code.\+cpp@{G\+Code.\+cpp}!S\+E\+T\+\_\+\+T\+I\+M\+E\+R5@{S\+E\+T\+\_\+\+T\+I\+M\+E\+R5}}
+\index{S\+E\+T\+\_\+\+T\+I\+M\+E\+R5@{S\+E\+T\+\_\+\+T\+I\+M\+E\+R5}!G\+Code.\+cpp@{G\+Code.\+cpp}}
+\subsubsection[{S\+E\+T\+\_\+\+T\+I\+M\+E\+R5}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+T\+I\+M\+E\+R5(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ O\+C\+R5\+A = x;\}}}\label{_g_code_8cpp_a86b0bfd51976379140d0e45e7d24a8bc}
+It sets the value od the Output Compare Register A of the timer 3. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The value of the register \\
+\hline
+\end{DoxyParams}
+\hypertarget{_g_code_8cpp_a705ef9d9ee593818fb469476ddd3e356}{\index{G\+Code.\+cpp@{G\+Code.\+cpp}!S\+T\+A\+R\+T\+\_\+\+T\+I\+M\+E\+R5@{S\+T\+A\+R\+T\+\_\+\+T\+I\+M\+E\+R5}}
+\index{S\+T\+A\+R\+T\+\_\+\+T\+I\+M\+E\+R5@{S\+T\+A\+R\+T\+\_\+\+T\+I\+M\+E\+R5}!G\+Code.\+cpp@{G\+Code.\+cpp}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+T\+I\+M\+E\+R5}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+R\+T\+\_\+\+T\+I\+M\+E\+R5}}\label{_g_code_8cpp_a705ef9d9ee593818fb469476ddd3e356}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{  TCNT5 = 0;  \(\backslash\)
+                        TCCR5B |= (1 << CS50) | (1 << CS52);\}
+\end{DoxyCode}
+The macro runs the timer 3 with a 1024 prescaler.
+\begin{DoxyItemize}
+\item T\+C\+N\+T5 = 0; clear the T\+C\+N\+T5 register
+\item T\+C\+C\+R5\+B $\vert$= (1 $<$$<$ C\+S50) $\vert$ (1 $<$$<$ C\+S52); set 1024 prescaler 
+\end{DoxyItemize}\hypertarget{_g_code_8cpp_a3fb09bba5efe566360228921b326be69}{\index{G\+Code.\+cpp@{G\+Code.\+cpp}!S\+T\+O\+P\+\_\+\+T\+I\+M\+E\+R5@{S\+T\+O\+P\+\_\+\+T\+I\+M\+E\+R5}}
+\index{S\+T\+O\+P\+\_\+\+T\+I\+M\+E\+R5@{S\+T\+O\+P\+\_\+\+T\+I\+M\+E\+R5}!G\+Code.\+cpp@{G\+Code.\+cpp}}
+\subsubsection[{S\+T\+O\+P\+\_\+\+T\+I\+M\+E\+R5}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+O\+P\+\_\+\+T\+I\+M\+E\+R5~\{   T\+C\+C\+R5\+B \&= $\sim$((1 $<$$<$ C\+S50) $\vert$ (1 $<$$<$ C\+S52));\}}}\label{_g_code_8cpp_a3fb09bba5efe566360228921b326be69}
+The macro stops the timer 3. 
+
+\subsection{Function Documentation}
+\hypertarget{_g_code_8cpp_a332352d7fb4b7b02401910478cec92fa}{\index{G\+Code.\+cpp@{G\+Code.\+cpp}!I\+S\+R@{I\+S\+R}}
+\index{I\+S\+R@{I\+S\+R}!G\+Code.\+cpp@{G\+Code.\+cpp}}
+\subsubsection[{I\+S\+R}]{\setlength{\rightskip}{0pt plus 5cm}I\+S\+R (
+\begin{DoxyParamCaption}
+\item[{T\+I\+M\+E\+R5\+\_\+\+C\+O\+M\+P\+A\+\_\+vect}]{}
+\end{DoxyParamCaption}
+)}}\label{_g_code_8cpp_a332352d7fb4b7b02401910478cec92fa}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_g_code_8cpp_a81fadbfd2d764c2bb3122ec2e104ff02}{\index{G\+Code.\+cpp@{G\+Code.\+cpp}!\+\_\+gc@{\+\_\+gc}}
+\index{\+\_\+gc@{\+\_\+gc}!G\+Code.\+cpp@{G\+Code.\+cpp}}
+\subsubsection[{\+\_\+gc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+Code}$\ast$ \+\_\+gc = N\+U\+L\+L}}\label{_g_code_8cpp_a81fadbfd2d764c2bb3122ec2e104ff02}
+
+
+It is used to bind the timer5 handler and the \hyperlink{class_g_code_a9f7a4d057f394dcc4163f00a2dc6770e}{G\+Code\+::return\+Status} of the last instanced \hyperlink{class_g_code}{G\+Code} object. 
+

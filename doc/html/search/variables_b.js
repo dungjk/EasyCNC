@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['round_5foff_5fx',['round_off_x',['../class_c_n_c___router.html#a940f5722a449f52bc29e437dfd6a1909',1,'CNC_Router']]],
-  ['round_5foff_5fy',['round_off_y',['../class_c_n_c___router.html#a2ac9fcca41eb0791859761fd9a3fd613',1,'CNC_Router']]],
-  ['round_5foff_5fz',['round_off_z',['../class_c_n_c___router.html#a777a55ac1be584ef2a827d412bf9ae40',1,'CNC_Router']]],
-  ['router',['router',['../class_g_code.html#ab060bb5bd169ae7640eb781bef6b78fe',1,'GCode']]]
+  ['n_5fstepdwn',['n_stepdwn',['../_motion_performer_8cpp.html#a801df831929fcf7e2dc89f597c90859f',1,'MotionPerformer.cpp']]],
+  ['n_5fupdate',['n_update',['../_motion_performer_8cpp.html#ab9ee5719149afabac23ca0abfb4d5682',1,'MotionPerformer.cpp']]],
+  ['new_5fline',['new_line',['../easy___c_n_c_8h.html#a7e3dcbb769896d01163997dafe024ea9',1,'new_line():&#160;easy_CNC.h'],['../easy___c_n_c_8ino.html#a7e3dcbb769896d01163997dafe024ea9',1,'new_line():&#160;easy_CNC.ino']]],
+  ['new_5fpos',['new_pos',['../class_g_code.html#aadec9af8923a5dc95f9f7da8bccfc109',1,'GCode']]]
 ];

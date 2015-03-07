@@ -8,5 +8,5 @@ var searchData=
   ['timer_2ecpp',['Timer.cpp',['../_timer_8cpp.html',1,'']]],
   ['timer_2eh',['Timer.h',['../_timer_8h.html',1,'']]],
   ['tool_5fchange_5fheight',['TOOL_CHANGE_HEIGHT',['../_g_code__def_8h.html#a0d7ec3618bc796796becfb7cda31110f',1,'GCode_def.h']]],
-  ['tot_5fsteps',['tot_steps',['../class_m_s_m_c___a4988.html#aa7de83eb15a9f82533b898146921939b',1,'MSMC_A4988::tot_steps()'],['../class_m_s_m_c___u_l_n2003_a.html#a8e1a83575d5ad2d15a8a81eccf1bdba6',1,'MSMC_ULN2003A::tot_steps()']]]
+  ['tot_5fsteps',['tot_steps',['../class_motor_driver.html#a194a9301bd4e12fe07409a7435af98ea',1,'MotorDriver::tot_steps()'],['../class_m_s_m_c___a4988.html#aa7de83eb15a9f82533b898146921939b',1,'MSMC_A4988::tot_steps()'],['../class_m_s_m_c___u_l_n2003_a.html#a8e1a83575d5ad2d15a8a81eccf1bdba6',1,'MSMC_ULN2003A::tot_steps()']]]
 ];

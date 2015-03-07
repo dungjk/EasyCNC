@@ -200,11 +200,5 @@ void MSMC_ULN2003A::print() {
 	Serial.println(spd);
 	Serial.println(steps);
 	Serial.println(old_time);
-#ifdef SM_DBG
-	ledOn();
-	delay(1000);
-	ledOff();
-	delay(1000);
-#endif
 }
 

@@ -13,8 +13,10 @@ The class interprets lines of R\+S274/\+N\+G\+C language.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_g_code_aacf3133ce2c42e9844be2ac10516846a}{G\+Code} (\hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} $\ast$r, \hyperlink{class_milling_machine}{Milling\+Machine} $\ast$m)
+\hyperlink{class_g_code_af858c34e69c72eff51299630c1a5fb05}{G\+Code} (\hyperlink{class_c_n_c___router___i_s_r}{C\+N\+C\+\_\+\+Router\+\_\+\+I\+S\+R} $\ast$r, \hyperlink{class_milling_machine}{Milling\+Machine} $\ast$m)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_g_code_abc56435b1563d3bb078ebae3d1844d9a}{init} ()
+\begin{DoxyCompactList}\small\item\em It initializes the timer that manage the status feedback to the G\+U\+I controller. It mast be call into the setup function. \end{DoxyCompactList}\item 
 int \hyperlink{class_g_code_a1785db665332977787a38b6b2563b395}{parse\+Line} ()
 \begin{DoxyCompactList}\small\item\em The function parses a line of G-\/\+Code. \end{DoxyCompactList}\item 
 void \hyperlink{class_g_code_a3912e1dad7257e2336ab09c55ff17235}{remove\+Spaces} ()
@@ -22,10 +24,8 @@ void \hyperlink{class_g_code_a3912e1dad7257e2336ab09c55ff17235}{remove\+Spaces} 
  char from the variable \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{G\+Code\+::line}. \end{DoxyCompactList}\item 
 int \hyperlink{class_g_code_a71e259cc07dc7c1473d58cb70faa3630}{get\+Int} (int \&p)
 \begin{DoxyCompactList}\small\item\em The function reads a integer value from the variable \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{G\+Code\+::line} at the specified position. \end{DoxyCompactList}\item 
-int \hyperlink{class_g_code_ad30dc86177f9e5749daa91d8727f364e}{run\+Motion} ()
-\begin{DoxyCompactList}\small\item\em The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. \end{DoxyCompactList}\item 
 boolean \hyperlink{class_g_code_abd9c3a13cf8f2958d8d9f0a563855e7b}{get\+Float} (uint8\+\_\+t \&pos, float \&val)
-\begin{DoxyCompactList}\small\item\em The function reads a float value in the \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{G\+Code\+::line} variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. \end{DoxyCompactList}\item 
 void \hyperlink{class_g_code_a9f7a4d057f394dcc4163f00a2dc6770e}{return\+Status} ()
 \begin{DoxyCompactList}\small\item\em It returns the status of the C\+N\+C machine. \end{DoxyCompactList}\item 
 void \hyperlink{class_g_code_ab8dbd55ab693f488c083d4fc97a00044}{reset\+Status} ()
@@ -49,7 +49,7 @@ float \hyperlink{class_g_code_a6f38c9dddbd7c12c786c6363fd2a369c}{params} \mbox{[
 \begin{DoxyCompactList}\small\item\em The array stores the values of the parameters red from the G-\/\+Code line. \end{DoxyCompactList}\item 
 boolean \hyperlink{class_g_code_a6d11b02685ef1b387a3c9da004547006}{pars\+\_\+spec} \mbox{[}\hyperlink{_g_code__def_8h_ab0b1e59d96396ba9dca2147f9feb44eb}{P\+A\+R\+A\+M\+S}\mbox{]}
 \begin{DoxyCompactList}\small\item\em The array says which parameters were found in parsed G-\/\+Code line. \end{DoxyCompactList}\item 
-\hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} $\ast$ \hyperlink{class_g_code_ab060bb5bd169ae7640eb781bef6b78fe}{router}
+\hyperlink{class_c_n_c___router___i_s_r}{C\+N\+C\+\_\+\+Router\+\_\+\+I\+S\+R} $\ast$ \hyperlink{class_g_code_a8edb8e20bfa27ed777bedf9287043407}{router}
 \begin{DoxyCompactList}\small\item\em Pointer to the \hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} object. \end{DoxyCompactList}\item 
 \hyperlink{class_milling_machine}{Milling\+Machine} $\ast$ \hyperlink{class_g_code_a9a737c33f133cf515926d0f2b612bd22}{utensil}
 \begin{DoxyCompactList}\small\item\em Pointer to the \hyperlink{class_milling_machine}{Milling\+Machine} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -77,14 +77,14 @@ Francesco Giurlanda
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_g_code_aacf3133ce2c42e9844be2ac10516846a}{\index{G\+Code@{G\+Code}!G\+Code@{G\+Code}}
+\hypertarget{class_g_code_af858c34e69c72eff51299630c1a5fb05}{\index{G\+Code@{G\+Code}!G\+Code@{G\+Code}}
 \index{G\+Code@{G\+Code}!G\+Code@{G\+Code}}
 \subsubsection[{G\+Code}]{\setlength{\rightskip}{0pt plus 5cm}G\+Code\+::\+G\+Code (
 \begin{DoxyParamCaption}
-\item[{{\bf C\+N\+C\+\_\+\+Router} $\ast$}]{r, }
+\item[{{\bf C\+N\+C\+\_\+\+Router\+\_\+\+I\+S\+R} $\ast$}]{r, }
 \item[{{\bf Milling\+Machine} $\ast$}]{m}
 \end{DoxyParamCaption}
-)}}\label{class_g_code_aacf3133ce2c42e9844be2ac10516846a}
+)}}\label{class_g_code_af858c34e69c72eff51299630c1a5fb05}
 
 
 Constructor. 
@@ -124,9 +124,9 @@ Constructor.
 )}}\label{class_g_code_abd9c3a13cf8f2958d8d9f0a563855e7b}
 
 
+The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. 
+
 The function reads a float value in the \hyperlink{class_g_code_a20d7c90740e9e139b24f68336ad8c8f1}{G\+Code\+::line} variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em pos} & Is the position where it starts to read a float value. The function returns here the position of the next char after the float value. \\
 \hline
@@ -182,6 +182,17 @@ The function processes a line of G-\/\+Code. It is stored into the public variab
 \begin{DoxyReturn}{Returns}
 It returns a boolean value that is true if the operation ends correctly, false if is occurred an error. See \hyperlink{class_g_code_a56d0e5e56115cd8e7b3f161cc8c0528e}{G\+Code\+::parser\+\_\+status} to get more information about the error. 
 \end{DoxyReturn}
+\hypertarget{class_g_code_abc56435b1563d3bb078ebae3d1844d9a}{\index{G\+Code@{G\+Code}!init@{init}}
+\index{init@{init}!G\+Code@{G\+Code}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void G\+Code\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_g_code_abc56435b1563d3bb078ebae3d1844d9a}
+
+
+It initializes the timer that manage the status feedback to the G\+U\+I controller. It mast be call into the setup function. 
+
 \hypertarget{class_g_code_a74e9e50305d574e214eb8b5a7c55a9f6}{\index{G\+Code@{G\+Code}!motion\+G0\+G1@{motion\+G0\+G1}}
 \index{motion\+G0\+G1@{motion\+G0\+G1}!G\+Code@{G\+Code}}
 \subsubsection[{motion\+G0\+G1}]{\setlength{\rightskip}{0pt plus 5cm}void G\+Code\+::motion\+G0\+G1 (
@@ -244,18 +255,7 @@ In case of status of error, the function resets the parser at the S\+T\+A\+T\+U\
 
 It returns the status of the C\+N\+C machine. 
 
-The function sends the status of the C\+N\+C machine on the serial link. It is a string of number separated by \char`\"{}\+:\char`\"{}. The string is formatted as follow\+: \char`\"{}\+X\+:\+Y\+:\+Z\+:\+F\+E\+E\+D\+\_\+\+R\+A\+T\+E\+:\+E\+R\+R\+\_\+\+M\+S\+G\char`\"{}. \hypertarget{class_g_code_ad30dc86177f9e5749daa91d8727f364e}{\index{G\+Code@{G\+Code}!run\+Motion@{run\+Motion}}
-\index{run\+Motion@{run\+Motion}!G\+Code@{G\+Code}}
-\subsubsection[{run\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}int G\+Code\+::run\+Motion (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_g_code_ad30dc86177f9e5749daa91d8727f364e}
-
-
-The function calls the update functions to perform the motors motion. See \hyperlink{class_c_n_c___router_ad67d003f8bb12c60f9752126d47408f6}{C\+N\+C\+\_\+\+Router\+::update} and Milling\+Machine\+::update. 
-
-
+The function sends the status of the C\+N\+C machine on the serial link. It is a string of number separated by \char`\"{}\+:\char`\"{}. The string is formatted as follow\+: \char`\"{}\+X\+:\+Y\+:\+Z\+:\+F\+E\+E\+D\+\_\+\+R\+A\+T\+E\+:\+E\+R\+R\+\_\+\+M\+S\+G\char`\"{}. 
 
 \subsection{Member Data Documentation}
 \hypertarget{class_g_code_a0115efce11fdffa2c59304706ecacede}{\index{G\+Code@{G\+Code}!feed\+\_\+rate@{feed\+\_\+rate}}
@@ -319,9 +319,9 @@ The status of the parser.
 \begin{DoxySeeAlso}{See also}
 \hyperlink{_g_code__def_8h}{G\+Code\+\_\+def.\+h} 
 \end{DoxySeeAlso}
-\hypertarget{class_g_code_ab060bb5bd169ae7640eb781bef6b78fe}{\index{G\+Code@{G\+Code}!router@{router}}
+\hypertarget{class_g_code_a8edb8e20bfa27ed777bedf9287043407}{\index{G\+Code@{G\+Code}!router@{router}}
 \index{router@{router}!G\+Code@{G\+Code}}
-\subsubsection[{router}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router}$\ast$ G\+Code\+::router}}\label{class_g_code_ab060bb5bd169ae7640eb781bef6b78fe}
+\subsubsection[{router}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router\+\_\+\+I\+S\+R}$\ast$ G\+Code\+::router}}\label{class_g_code_a8edb8e20bfa27ed777bedf9287043407}
 
 
 Pointer to the \hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} object. 

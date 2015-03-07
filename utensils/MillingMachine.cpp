@@ -14,6 +14,7 @@ MillingMachine::MillingMachine(uint8_t e, uint8_t c) :
 void MillingMachine::init() {
 	pinMode(enable_pin, OUTPUT);
 	analogWrite(control_pin, bit_speed);
+	disable();
 }
 
 
@@ -27,12 +28,12 @@ void MillingMachine::setSpindleDir(boolean d) {
 
 void MillingMachine::enable(){
 	state = true;
-	digitalWrite(enable_pin, HIGH);
+	digitalWrite(enable_pin, LOW);
 }
 
 void MillingMachine::disable(){
 	state = false;
-	digitalWrite(enable_pin, LOW);
+	digitalWrite(enable_pin, HIGH);
 }
 
 void MillingMachine::preMotion(){}

@@ -9,6 +9,12 @@ Main file.
 {\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}G\+Code/\+G\+Code.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G\+Code/\+G\+Code\+\_\+def.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utensils/\+Milling\+Machine.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}routers/\+C\+N\+C\+Router\+I\+S\+R.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tools/\+Position.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}motor\+\_\+drivers/\+Motor\+Driver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tools/debugger.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,7 +24,7 @@ void \hyperlink{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 \item 
 \hyperlink{class_milling_machine}{Milling\+Machine} \hyperlink{easy___c_n_c_8h_a936d8c3bd6dace2e6ac04da13a47dadf}{mill} (\hyperlink{config_8h_a32622311332cb8ba6ba14a69ce19f70e}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+P\+I\+N}, \hyperlink{config_8h_a11bacbdfb698dadd088b8d0ba265ace4}{\+\_\+\+M\+I\+L\+L\+I\+N\+G\+\_\+\+M\+A\+C\+H\+I\+N\+E\+\_\+\+S\+P\+E\+E\+D\+\_\+\+P\+I\+N})
 \item 
-\hyperlink{class_c_n_c___router}{C\+N\+C\+\_\+\+Router} \hyperlink{easy___c_n_c_8h_a987f70091af7ae7c2855db8248c7c832}{cncrt} (\hyperlink{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_afb07c4644cc35352a450b5b531fc7fa1}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_a5ca3e0725b339b7fcb62e0cd353e1603}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_a8437dbcba761d0ae49161e7e16dbe94d}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D})
+\hyperlink{class_c_n_c___router___i_s_r}{C\+N\+C\+\_\+\+Router\+\_\+\+I\+S\+R} \hyperlink{easy___c_n_c_8h_a1f54d56317a42bde3294af04713cca39}{cncrt} (\hyperlink{config_8h_ad18fe160593d7a9ca8064b3f911c38cc}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_afb07c4644cc35352a450b5b531fc7fa1}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_a5ca3e0725b339b7fcb62e0cd353e1603}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}, \hyperlink{config_8h_aeb39dfe1cecb49617c2de68f2b7863ad}{R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_a561a2d9e0685a3f1ef859e8fe82c44ee}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}, \hyperlink{config_8h_a8437dbcba761d0ae49161e7e16dbe94d}{R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D})
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -26,7 +32,9 @@ void \hyperlink{easy___c_n_c_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 \hyperlink{class_g_code}{G\+Code} gc \& \hyperlink{easy___c_n_c_8h_adbb2913a9947c687fbde24b27e61502d}{cncrt}
 \item 
 char \hyperlink{easy___c_n_c_8h_a7e3dcbb769896d01163997dafe024ea9}{new\+\_\+line} \mbox{[}256\mbox{]}
-\end{DoxyCompactItemize}
+\item 
+\hyperlink{class_motion_performer}{Motion\+Performer} $\ast$ \hyperlink{easy___c_n_c_8h_aeab5bad838bf27b9fd08477109ac7999}{\+\_\+mp}
+\begin{DoxyCompactList}\small\item\em It is used to bind the timer3 and timer4 handlers respectively to \hyperlink{class_motion_performer_aa7d1fed3884f64f0d6cfd382cc119f48}{Motion\+Performer\+::update} and \hyperlink{class_motion_performer_a2e8b000a1fbac1167229969d6c49a49e}{Motion\+Performer\+::step\+Pulse} functions of the last instanced \hyperlink{class_motion_performer}{Motion\+Performer} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,9 +60,9 @@ This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.
 \end{DoxyItemize}
 
 \subsection{Function Documentation}
-\hypertarget{easy___c_n_c_8h_a987f70091af7ae7c2855db8248c7c832}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!cncrt@{cncrt}}
+\hypertarget{easy___c_n_c_8h_a1f54d56317a42bde3294af04713cca39}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!cncrt@{cncrt}}
 \index{cncrt@{cncrt}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
-\subsubsection[{cncrt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router} cncrt (
+\subsubsection[{cncrt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+N\+C\+\_\+\+Router\+\_\+\+I\+S\+R} cncrt (
 \begin{DoxyParamCaption}
 \item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+X\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}]{, }
 \item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+T\+E\+P\+S\+\_\+\+P\+E\+R\+\_\+\+M\+M}}]{, }
@@ -63,7 +71,7 @@ This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.
 \item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+Y\+\_\+\+S\+P\+E\+E\+D}}]{, }
 \item[{{\bf R\+O\+U\+T\+E\+R\+\_\+\+M\+Z\+\_\+\+S\+P\+E\+E\+D}}]{}
 \end{DoxyParamCaption}
-)}}\label{easy___c_n_c_8h_a987f70091af7ae7c2855db8248c7c832}
+)}}\label{easy___c_n_c_8h_a1f54d56317a42bde3294af04713cca39}
 \hypertarget{easy___c_n_c_8h_afe461d27b9c48d5921c00d521181f12f}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!loop@{loop}}
 \index{loop@{loop}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{loop}]{\setlength{\rightskip}{0pt plus 5cm}void loop (
@@ -89,6 +97,13 @@ This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.
 
 
 \subsection{Variable Documentation}
+\hypertarget{easy___c_n_c_8h_aeab5bad838bf27b9fd08477109ac7999}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!\+\_\+mp@{\+\_\+mp}}
+\index{\+\_\+mp@{\+\_\+mp}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
+\subsubsection[{\+\_\+mp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motion\+Performer}$\ast$ \+\_\+mp}}\label{easy___c_n_c_8h_aeab5bad838bf27b9fd08477109ac7999}
+
+
+It is used to bind the timer3 and timer4 handlers respectively to \hyperlink{class_motion_performer_aa7d1fed3884f64f0d6cfd382cc119f48}{Motion\+Performer\+::update} and \hyperlink{class_motion_performer_a2e8b000a1fbac1167229969d6c49a49e}{Motion\+Performer\+::step\+Pulse} functions of the last instanced \hyperlink{class_motion_performer}{Motion\+Performer} object. 
+
 \hypertarget{easy___c_n_c_8h_adbb2913a9947c687fbde24b27e61502d}{\index{easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}!cncrt@{cncrt}}
 \index{cncrt@{cncrt}!easy\+\_\+\+C\+N\+C.\+h@{easy\+\_\+\+C\+N\+C.\+h}}
 \subsubsection[{cncrt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+Code} gc \& cncrt}}\label{easy___c_n_c_8h_adbb2913a9947c687fbde24b27e61502d}

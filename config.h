@@ -9,6 +9,8 @@
     \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
                To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
+//#include "dario_config.h"
+
 
 #ifndef CONFIG_H
 #define CONFIG_H
@@ -27,41 +29,40 @@
     The pin depends on the arduino board version. See http://arduino.cc/en/Main/Products
 */
 
-
-#include "utensils/MillingMachine.h"
-#include "routers/CNCRouterISR.h"
-#include "tools/Position.h"
 #include "pins_arduino.h"
-#include "tools/debugger.h"
-#include "motor_drivers/MotorDriver.h"
 
-#define SERIAL_BOUND 57600
-#define INTERRUPT_STOP_MOTION 1
+#define SERIAL_BOUND 115200
+//#define INTERRUPT_STOP_MOTION 1
 
 
 // ****************************
 // *** ROUTER CONFIGURATION ***
 // ****************************
 
-#define ROUTER_MX_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the X-axis. */
-#define ROUTER_MY_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis. */
-#define ROUTER_MZ_STEPS_PER_ROUND 200.0  /*!< \brief Nunber of steps to make a round for the motor of the Z-axis. */
+#define ROUTER_MX_STEPS_PER_ROUND 200  /*!< \brief Nunber of steps to make a round for the motor of the X-axis. */
+#define ROUTER_MY_STEPS_PER_ROUND 200  /*!< \brief Nunber of steps to make a round for the motor of the Y-axis. */
+#define ROUTER_MZ_STEPS_PER_ROUND 200  /*!< \brief Nunber of steps to make a round for the motor of the Z-axis. */
 #define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
-#define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25 /*!< \brief Number of steps to forward of a mm. */
+#define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25  /*!< \brief Number of steps to forward of a mm. */
 #define ROUTER_MZ_STEPS_PER_MM ROUTER_MZ_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
-#define ROUTER_MX_ORIENTATION -1
-#define ROUTER_MY_ORIENTATION 1
-#define ROUTER_MZ_ORIENTATION 1
-#define ROUTER_MX_SPEED 2400.0           /*!< \brief The maximum speed used to control the motor of X-axis (steps/s). */
-#define ROUTER_MY_SPEED 2400.0           /*!< \brief The maximum speed used to control the motor of Y-axis (steps/s). */
-#define ROUTER_MZ_SPEED 2400.0           /*!< \brief The maximum speed used to control the motor of Z-axis (steps/s). */
+#define ROUTER_MX_ORIENTATION 1
+#define ROUTER_MY_ORIENTATION -1
+#define ROUTER_MZ_ORIENTATION -1
+#define ROUTER_MX_SPEED 120.0           /*!< \brief The maximum speed used to control the motor of X-axis (mm/min). */
+#define ROUTER_MY_SPEED 120.0           /*!< \brief The maximum speed used to control the motor of Y-axis (mm/min). */
+#define ROUTER_MZ_SPEED 120.0           /*!< \brief The maximum speed used to control the motor of Z-axis (mm/min). */
 #define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT  0                /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT -1 // 4                /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT  -1                  /*!< \brief TThe number of the interrupt which is connected to the up limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT  -1                  /*!< \brief TThe number of the interrupt which is connected to the up limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT  -1                  /*!< \brief TThe number of the interrupt which is connected to the up limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-
+#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT -1// 0                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT -1 //5                  /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_X_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_DOWN_LIMIT_SWITCH_Y_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_DOWN_LIMIT_SWITCH_Z_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_UP_LIMIT_SWITCH_X_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_UP_LIMIT_SWITCH_Y_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_UP_LIMIT_SWITCH_Z_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
 
 
 //#define ROUTER_MX_CONTROLLER_ULN2003A
@@ -78,7 +79,7 @@
 #define ROUTE_MX_STEP_CONTROL_PIN   A0  		 //!< \brief Pin connected to the step control pin of the A4988
 #define ROUTE_MX_DIRECTION_CONTROL_PIN A1	 //!< \brief Pin connected to the direction control pin of the A4988
 #define ROUTE_MX_ENABLE_CONTROL_PIN 38		 //!< \brief Pin connected to the enable pin of the A4988
-#define ROUTE_MX_MODE QUARTER_STEP           //!< \brief The microstep mode of the driver of the motor X
+#define ROUTE_MX_MODE EIGHTH_STEP           //!< \brief The microstep mode of the driver of the motor X
 #endif
 
 //#define ROUTER_MY_CONTROLLER_ULN2003A
@@ -95,7 +96,7 @@
 #define ROUTE_MY_STEP_CONTROL_PIN 46    		 //!< \brief Pin connected to the step control pin of the A4988
 #define ROUTE_MY_DIRECTION_CONTROL_PIN 48	 //!< \brief Pin connected to the direction control pin of the A4988
 #define ROUTE_MY_ENABLE_CONTROL_PIN A8		 //!< \brief Pin connected to the enable pin of the A4988
-#define ROUTE_MY_MODE QUARTER_STEP           //!< \brief The microstep mode of the driver of the motor Y
+#define ROUTE_MY_MODE EIGHTH_STEP           //!< \brief The microstep mode of the driver of the motor Y
 #endif
 
 //#define ROUTER_MZ_CONTROLLER_ULN2003A
@@ -112,7 +113,7 @@
 #define ROUTE_MZ_STEP_CONTROL_PIN A6    		 //!< \brief Pin connected to the step control pin of the A4988
 #define ROUTE_MZ_DIRECTION_CONTROL_PIN A7	 //!< \brief Pin connected to the direction control pin of the A4988
 #define ROUTE_MZ_ENABLE_CONTROL_PIN A2		 //!< \brief Pin connected to the enable pin of the A4988
-#define ROUTE_MZ_MODE QUARTER_STEP           //!< \brief The microstep mode of the driver of the motor Z
+#define ROUTE_MZ_MODE EIGHTH_STEP           //!< \brief The microstep mode of the driver of the motor Z
 #endif
 
 // *****************************
@@ -136,7 +137,7 @@
 #endif
 
 #ifdef _MILLING_MACHINE
-#define _MILLING_MACHINE_ENABLE_PIN 10    /*!< \brief The pin number connected to the enable circuit of the milling machine*/
+#define _MILLING_MACHINE_ENABLE_PIN 32    /*!< \brief The pin number connected to the enable circuit of the milling machine*/
 #define _MILLING_MACHINE_SPEED_PIN   11    /*!< \brief The pin number connected to the speed control circuit of the milling machine.*/
 #endif
 

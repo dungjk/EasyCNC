@@ -12,11 +12,12 @@
 #ifndef CNC_Router_h
 #define CNC_Router_h
 
-#include "../config.h"
 #include "Arduino.h"
 #include "../tools/Position.h"
 #include "../tools/utility.h"
 #include <stdint.h>
+
+#include "../config.h"
 
 #if defined(ROUTER_MX_CONTROLLER_ULN2003A) || defined(ROUTER_MY_CONTROLLER_ULN2003A) || defined(ROUTER_MZ_CONTROLLER_ULN2003A)
 #include "../motor_drivers/MSMC_ULN2003A.h"

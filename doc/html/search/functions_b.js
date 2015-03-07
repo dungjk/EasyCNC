@@ -1,8 +1,8 @@
 var searchData=
 [
   ['parseline',['parseLine',['../class_g_code.html#a1785db665332977787a38b6b2563b395',1,'GCode']]],
-  ['pause',['pause',['../class_m_s_m_c.html#a9c45f1547467b43209c7a271604e7c85',1,'MSMC::pause()'],['../class_m_s_m_c___a4988.html#a321bc53bae537a0318910819a6a1a7d5',1,'MSMC_A4988::pause()'],['../class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2',1,'MSMC_ULN2003A::pause()'],['../class_c_n_c___router.html#a6b5ad1a227e63d3f374e0e53f3cf047c',1,'CNC_Router::pause()']]],
-  ['plotterservo',['PlotterServo',['../class_plotter_servo.html#a3e1bb246a0c6b6df9f78b1a5a9343ef0',1,'PlotterServo']]],
+  ['pause',['pause',['../class_m_s_m_c.html#a9c45f1547467b43209c7a271604e7c85',1,'MSMC::pause()'],['../class_m_s_m_c___a4988.html#a321bc53bae537a0318910819a6a1a7d5',1,'MSMC_A4988::pause()'],['../class_m_s_m_c___u_l_n2003_a.html#aa1d3444465d59ca6c87f05f565dde4a2',1,'MSMC_ULN2003A::pause()'],['../class_c_n_c___router.html#a6b5ad1a227e63d3f374e0e53f3cf047c',1,'CNC_Router::pause()'],['../class_c_n_c___router___i_s_r.html#a3c64c9b97bac819863a54215c7de5319',1,'CNC_Router_ISR::pause()']]],
+  ['pausemotion',['pauseMotion',['../class_motion_performer.html#a17d2f678b0cf2ce79fb4749b41095ab8',1,'MotionPerformer']]],
   ['polar',['polar',['../class_position_x_y.html#a34f0fb72f96c1307431c317eaba03ce5',1,'PositionXY']]],
   ['polarxy',['polarXY',['../class_position_x_y_z.html#a9198b9e19cdd2fc6eed2a9c4aed054ea',1,'PositionXYZ']]],
   ['positionxy',['PositionXY',['../class_position_x_y.html#a72c2bce8c3524d13a446e5f7bd00176b',1,'PositionXY::PositionXY()'],['../class_position_x_y.html#aa45af7bc859ed16de19470c46e476456',1,'PositionXY::PositionXY(float px, float py)'],['../class_position_x_y.html#a3f71105e1c27ad675a24062942866fd4',1,'PositionXY::PositionXY(const PositionXY &amp;p)']]],

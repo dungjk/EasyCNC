@@ -11,7 +11,7 @@
 
 #ifndef PLOTTERSERVO_H_
 #define PLOTTERSERVO_H_
-#ifndef _TEST_1
+#ifdef _SERVO
 #include <Servo.h>
 #include <Arduino.h>
 

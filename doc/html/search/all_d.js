@@ -13,8 +13,9 @@ var searchData=
   ['operator_2d_3d',['operator-=',['../class_position_x_y_z.html#abb29ac08418c5af29a6b4cc4bde1347a',1,'PositionXYZ']]],
   ['operator_2f',['operator/',['../class_position_x_y_z.html#a12e167c801632a6039166e644546d374',1,'PositionXYZ']]],
   ['operator_2f_3d',['operator/=',['../class_position_x_y_z.html#a2e2dca5e6f073ef5d37469aa92179d22',1,'PositionXYZ']]],
-  ['orientation',['orientation',['../class_m_s_m_c___a4988.html#a81bb2d2035011573f68c7a2c66bc5bc2',1,'MSMC_A4988']]],
-  ['orientationx',['orientationX',['../class_c_n_c___router.html#adef23983c5aac16fa0431f861eb41fc2',1,'CNC_Router']]],
-  ['orientationy',['orientationY',['../class_c_n_c___router.html#abced37562004a4b303291be79e49a23b',1,'CNC_Router']]],
-  ['orientationz',['orientationZ',['../class_c_n_c___router.html#a7dc30b35ae89245b4b8f53a0777472a5',1,'CNC_Router']]]
+  ['orientation',['orientation',['../class_motor_driver.html#a98d704e9bfec0bf9c76c388fe10fa459',1,'MotorDriver::orientation()'],['../class_m_s_m_c___a4988.html#a81bb2d2035011573f68c7a2c66bc5bc2',1,'MSMC_A4988::orientation()']]],
+  ['orientationx',['orientationX',['../class_c_n_c___router.html#adef23983c5aac16fa0431f861eb41fc2',1,'CNC_Router::orientationX()'],['../class_c_n_c___router___i_s_r.html#aa208e57d7f08a190a59005c75dbf2627',1,'CNC_Router_ISR::orientationX()']]],
+  ['orientationy',['orientationY',['../class_c_n_c___router.html#abced37562004a4b303291be79e49a23b',1,'CNC_Router::orientationY()'],['../class_c_n_c___router___i_s_r.html#a6a85332afd791b4c28808e76d9d78dca',1,'CNC_Router_ISR::orientationY()']]],
+  ['orientationz',['orientationZ',['../class_c_n_c___router.html#a7dc30b35ae89245b4b8f53a0777472a5',1,'CNC_Router::orientationZ()'],['../class_c_n_c___router___i_s_r.html#a13b9776bc115d78508f3420d9e8aff75',1,'CNC_Router_ISR::orientationZ()']]],
+  ['outreg',['outreg',['../struct_p___info.html#abbaf7e58076ab00f94bbae7d59eb43cf',1,'P_Info']]]
 ];

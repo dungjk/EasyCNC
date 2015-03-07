@@ -7,6 +7,7 @@
 
 #include "PlotterServo.h"
 
+#ifdef _SERVO
 PlotterServo::PlotterServo(uint8_t p, uint8_t dv, uint8_t uv) : pin(p), down_val(dv), up_val(uv), state(UP) {}
 
 void PlotterServo::init() {
@@ -34,3 +35,4 @@ boolean PlotterServo::down() {
 	}
 	return ret;
 }
+#endif

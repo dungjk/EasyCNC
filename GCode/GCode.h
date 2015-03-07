@@ -13,12 +13,14 @@
 #ifndef GCODE_H_
 #define GCODE_H_
 
-#include "../config.h"
 #include "GCode_def.h"
 #include "Arduino.h"
-#include "../routers/CNC_Router.h"
+#include "../routers/CNCRouterISR.h"
 #include "../utensils/MillingMachine.h"
 #include <stdint.h>
+#include "../config.h"
+
+#define STATUS_FEEDBACK 3000  //15650   //!< It allows about a feedback rate of once per second
 
 /*! \class GCode
  *  \brief The class interprets lines of RS274/NGC language.
@@ -43,6 +45,8 @@ class GCode {
 	void motionG2G3();
 	void motionG0G1();
 
+	volatile boolean sync;              //!< It synchronizes the Serial print of the functions sendAck() and the status send
+
 public:
 	String line;                //!< Here is stored the G-Code line that will be parsed
 	float feed_rate;            //!< The variable stores the feed rate during the working process in unit/s (unit can be mm or inch)
@@ -51,10 +55,11 @@ public:
 	uint8_t parser_status;      //!< The status of the parser. \sa GCode_def.h
 	uint8_t last_word[16];      //!< Here the class stores the last word red for each group. \sa GCode_def.h
 	PositionXYZ new_pos;        //!< The class stores the new position red from the G-Code line
+				//last_pos;		//!< The final position of the last processed G-Code line
 	float params[PARAMS];       //!< The array stores the values of the parameters red from the G-Code line. \sa GCode_def.h
 	boolean pars_spec[PARAMS];  //!< The array says which parameters were found in parsed G-Code line. \sa GCode_def.h
 
-	CNC_Router *router;         //!< Pointer to the CNC_Router object
+	CNC_Router_ISR *router;        //!< Pointer to the CNC_Router object
 	MillingMachine *utensil;    //!< Pointer to the MillingMachine object
 
 
@@ -62,7 +67,10 @@ public:
 	 * 	\param r Address of the CNC_Router object
 	 * 	\param m Address of the MillingMachine object
 	 */
-	GCode(CNC_Router *r, MillingMachine *m);
+	GCode(CNC_Router_ISR *r, MillingMachine *m);
+
+	//! \brief It initializes the timer that manage the status feedback to the GUI controller. It mast be call into the setup function.
+	void init();
 
 	/*! \brief The function parses a line of G-Code.
 	 *  \details In this function is implemented the action for the recognized words of GCode.
@@ -81,7 +89,7 @@ public:
 	int getInt(int &p);//TODO: make it similar to getFloat, mi sa che non è più stata usata questa funzione
 
 	//! \brief The function calls the update functions to perform the motors motion. See CNC_Router::update and MillingMachine::update.
-	int runMotion();
+	//int runMotion();
 
 	/*! \brief The function reads a float value in the GCode::line variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line.
 	 *  \param pos Is the position where it starts to read a float value. The function returns here the position of the next char after the float value.
@@ -89,6 +97,9 @@ public:
 	 *  \return The function returns false if it is ok, true if the line is end.
 	 */
 	boolean getFloat(uint8_t &pos, float &val);
+
+	//! \brief It sends a response after a reception of GCode line, with the state of the parser
+	void sendAck();
 
 	/*! \brief It returns the status of the CNC machine.
 	 *  \details The function sends the status of the CNC machine on the serial link.

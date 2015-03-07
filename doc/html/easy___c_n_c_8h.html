@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,6 +93,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;Arduino.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_g_code_8h_source.html">GCode/GCode.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_g_code__def_8h_source.html">GCode/GCode_def.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_milling_machine_8h_source.html">utensils/MillingMachine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_c_n_c_router_i_s_r_8h_source.html">routers/CNCRouterISR.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_position_8h_source.html">tools/Position.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_motor_driver_8h_source.html">motor_drivers/MotorDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="debugger_8h_source.html">tools/debugger.h</a>&quot;</code><br />
 </div>
 <p><a href="easy___c_n_c_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -104,8 +110,8 @@ Functions</h2></td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a936d8c3bd6dace2e6ac04da13a47dadf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_milling_machine.html">MillingMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a936d8c3bd6dace2e6ac04da13a47dadf">mill</a> (<a class="el" href="config_8h.html#a32622311332cb8ba6ba14a69ce19f70e">_MILLING_MACHINE_ENABLE_PIN</a>, <a class="el" href="config_8h.html#a11bacbdfb698dadd088b8d0ba265ace4">_MILLING_MACHINE_SPEED_PIN</a>)</td></tr>
 <tr class="separator:a936d8c3bd6dace2e6ac04da13a47dadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a987f70091af7ae7c2855db8248c7c832"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_n_c___router.html">CNC_Router</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a987f70091af7ae7c2855db8248c7c832">cncrt</a> (<a class="el" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">ROUTER_MY_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#a5ca3e0725b339b7fcb62e0cd353e1603">ROUTER_MZ_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>, <a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>, <a class="el" href="config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d">ROUTER_MZ_SPEED</a>)</td></tr>
-<tr class="separator:a987f70091af7ae7c2855db8248c7c832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f54d56317a42bde3294af04713cca39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_n_c___router___i_s_r.html">CNC_Router_ISR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a1f54d56317a42bde3294af04713cca39">cncrt</a> (<a class="el" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#afb07c4644cc35352a450b5b531fc7fa1">ROUTER_MY_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#a5ca3e0725b339b7fcb62e0cd353e1603">ROUTER_MZ_STEPS_PER_MM</a>, <a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">ROUTER_MX_SPEED</a>, <a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">ROUTER_MY_SPEED</a>, <a class="el" href="config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d">ROUTER_MZ_SPEED</a>)</td></tr>
+<tr class="separator:a1f54d56317a42bde3294af04713cca39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -113,6 +119,9 @@ Variables</h2></td></tr>
 <tr class="separator:adbb2913a9947c687fbde24b27e61502d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e3dcbb769896d01163997dafe024ea9"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#a7e3dcbb769896d01163997dafe024ea9">new_line</a> [256]</td></tr>
 <tr class="separator:a7e3dcbb769896d01163997dafe024ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab5bad838bf27b9fd08477109ac7999"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_motion_performer.html">MotionPerformer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="easy___c_n_c_8h.html#aeab5bad838bf27b9fd08477109ac7999">_mp</a></td></tr>
+<tr class="memdesc:aeab5bad838bf27b9fd08477109ac7999"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is used to bind the timer3 and timer4 handlers respectively to <a class="el" href="class_motion_performer.html#aa7d1fed3884f64f0d6cfd382cc119f48" title="It is the core function that performs the steps forward of the motors and checks the MotionPlanner fo...">MotionPerformer::update</a> and <a class="el" href="class_motion_performer.html#a2e8b000a1fbac1167229969d6c49a49e" title="The function performs the step pulse down. ">MotionPerformer::stepPulse</a> functions of the last instanced <a class="el" href="class_motion_performer.html">MotionPerformer</a> object.  <a href="#aeab5bad838bf27b9fd08477109ac7999">More...</a><br /></td></tr>
+<tr class="separator:aeab5bad838bf27b9fd08477109ac7999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main file. </p>
@@ -126,12 +135,12 @@ Variables</h2></td></tr>
 </li>
 </ul>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a987f70091af7ae7c2855db8248c7c832"></a>
+<a class="anchor" id="a1f54d56317a42bde3294af04713cca39"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_c_n_c___router.html">CNC_Router</a> cncrt </td>
+          <td class="memname"><a class="el" href="class_c_n_c___router___i_s_r.html">CNC_Router_ISR</a> cncrt </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="config_8h.html#ad18fe160593d7a9ca8064b3f911c38cc">ROUTER_MX_STEPS_PER_MM</a>&#160;</td>
           <td class="paramname">, </td>
@@ -233,6 +242,20 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="aeab5bad838bf27b9fd08477109ac7999"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_motion_performer.html">MotionPerformer</a>* _mp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It is used to bind the timer3 and timer4 handlers respectively to <a class="el" href="class_motion_performer.html#aa7d1fed3884f64f0d6cfd382cc119f48" title="It is the core function that performs the steps forward of the motors and checks the MotionPlanner fo...">MotionPerformer::update</a> and <a class="el" href="class_motion_performer.html#a2e8b000a1fbac1167229969d6c49a49e" title="The function performs the step pulse down. ">MotionPerformer::stepPulse</a> functions of the last instanced <a class="el" href="class_motion_performer.html">MotionPerformer</a> object. </p>
+
+</div>
+</div>
 <a class="anchor" id="adbb2913a9947c687fbde24b27e61502d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -260,7 +283,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 16:21:07 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 11 2015 11:39:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

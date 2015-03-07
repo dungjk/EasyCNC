@@ -7,8 +7,51 @@
 
 #include "MotionPlanner.h"
 
-MotionPlanner::MotionPlanner() {
-	// TODO Auto-generated constructor stub
+MotionPlanner::MotionPlanner() :
+		last(0), first(0), empty(true) {
 
 }
 
+boolean MotionPlanner::addMotion(const LM &mov) {
+	uint8_t old_sreg = SREG;
+	cli();
+	if (!empty && last == first) {
+		SREG = old_sreg;
+		//buffer full
+		return true;
+	}
+	//buffer not full
+	movs[first] = mov;
+	first = (++first) % BUFF_LEN;
+	empty = false;
+	SREG = old_sreg;
+	return false;
+}
+
+boolean MotionPlanner::getMotion(LM &mov) {
+	uint8_t old_sreg = SREG;
+	cli();
+	if (empty) {
+		SREG = old_sreg;
+		//buffer empty
+		return true;
+	}
+	//buffer not empty
+	mov = movs[last];
+	last = (++last) % BUFF_LEN;
+	empty = (last == first);
+	SREG = old_sreg;
+	return false;
+}
+
+void MotionPlanner::clear() {
+	uint8_t old_sreg = SREG;
+	cli();
+	last = first;
+	empty = true;
+	SREG = old_sreg;
+}
+
+boolean MotionPlanner::isEmpty() const {
+	return empty;
+}

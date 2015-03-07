@@ -11,97 +11,112 @@
 
 #include "easy_CNC.h"
 
-#define LEDPIN 13
-
-void (*fun)() = NULL;
-
-void myfun() {
-	digitalWrite(LEDPIN, HIGH);
-	cli();
-	OCR3A = (OCR3A > 400)? OCR3A * 0.6: 60000;
-	TCCR4B |= (1 << CS40) | (1 << CS42);
-	sei();
+#ifdef _TEST_1
+void unit_test_1() {
+	MotionPlanner p;
+	LM m;
+	m.delay = 2323;
+	m.steps_x = 1200;
+	m.steps_y = -890;
+	m.steps_z = 100;
+	DBG_TEST("Add 1", !p.addMotion(m));
+	m.delay = 1000;
+	m.steps_x = -10;
+	m.steps_y = -20;
+	m.steps_z = -30;
+	DBG_TEST("Add 2", !p.addMotion(m));
+	m.delay = 1500;
+	m.steps_x = 50;
+	m.steps_y = 90;
+	m.steps_z = 100;
+	DBG_TEST("Add 3", !p.addMotion(m));
+	DBG_TEST("Get 1", !p.getMotion(m));
+	DBG_TEST("Values get 1",
+			m.delay == 2323 && m.steps_x == 1200 && m.steps_y == -890
+					&& m.steps_z == 100);
+	DBG_TEST("Get 2", !p.getMotion(m));
+	DBG_TEST("Values get 2",
+			m.delay == 1000 && m.steps_x == -10 && m.steps_y == -20
+					&& m.steps_z == -30);
+	DBG_TEST("Get 3", !p.getMotion(m));
+	DBG_TEST("Values get 3",
+			m.delay == 1500 && m.steps_x == 50 && m.steps_y == 90
+					&& m.steps_z == 100);
+	DBG_TEST("Get empty queue", p.getMotion(m));
 }
 
-//The setup function is called once at startup of the sketch
-void setup() {
-#ifndef _TEST_1
+MotionPlanner p;
+MotionPerformer mp(&p);
 
-// Add your initialization code here
-	cncrt.initMotorX();
-	cncrt.initMotorY();
-	cncrt.initMotorZ();
-	cncrt.resetPos();
-	cncrt.setMotionModeX(QUARTER_STEP);
-	cncrt.setMotionModeY(QUARTER_STEP);
-	cncrt.setMotionModeZ(QUARTER_STEP);
-	cncrt.setAbsolPos(); gc.last_word[GROUP3] = G90;
-	cncrt.initInterrupts();
-	cncrt.orientationX(-1);
+void unit_test_2() {
 
-	mill.init();
-
-//attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
-//digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
-
+	DBG_TEST("It is not working", mp.isNotWorking());
+	LM m;
+	m.delay = 8000;
+	m.steps_x = 20;
+	m.steps_y = 0;
+	m.steps_z = 0;
+	DBG_TEST("LM added", !p.addMotion(m));
+	m.delay = 4000;
+	m.steps_x = 30;
+	m.steps_y = 0;
+	m.steps_z = 0;
+	DBG_TEST("LM added", !p.addMotion(m));
+	m.delay = 10000;
+	m.steps_x = 10;
+	m.steps_y = 0;
+	m.steps_z = 0;
+	DBG_TEST("LM added", !p.addMotion(m));
+}
+void unit_test_3() {
 	Serial.begin(SERIAL_BOUND);
-#else
-	pinMode(LEDPIN, OUTPUT);
-	uint8_t oldSREG = SREG;
-	cli();
-	TCCR3A = 0;     // set entire TCCR3A register to 0
-	TCCR3B = 0;     // same for TCCR3
-	TCNT3 = 0;     //initialize counter value to 0B
-	// set compare match register for 1hz increments
-	OCR3A = 60000;				// = (16*10^6) / (1*1024) - 1 (must be <65536)
+	delay(1000);
+	DBG_BP(1);
+	cncrt.initMotors();
 
-	TCCR3B |= (1 << WGM32); // turn on CTC mode
-	TCCR3B |= (1 << CS30);
-	TCCR3B |= (1 << CS32);
-	// enable timer compare interrupt:
-	TIMSK3 |= (1 << OCIE3A);
+	cncrt.moveTo(10, -10, 0);
+	delay(1000);
+	while (!cncrt.m_performer.isNotWorking())
+		delay(100);
 
-	// disable global interrupts
-	TCCR4A = 0;     // set entire TCCR1A register to 0
-	TCCR4B = 0;     // same for TCCR1B
+	DBG_TEST("Step performed", (n_update == 1600 && n_stepdwn == 1600));
+	DBG_VAR(n_update);
+	DBG_VAR(n_stepdwn);
+	/*
+	 cncrt.moveTo(0, 10, 0);
 
-	// set compare match register to desired timer count:
-	OCR4A = 224;
-	// turn on CTC mode:
-	TCCR4B |= (1 << WGM42);
-	// Set CS10 and CS12 bits for 1024 prescaler:
-	//TCCR4B |= (1 << CS40);
-	//TCCR4B |= (1 << CS42);
-	// enable timer compare interrupt:
-	TIMSK4 |= (1 << OCIE4A);
+	 cncrt.moveTo(-10, 0, 0);
 
-	sei();
+	 cncrt.moveTo(0, -10, 0);
+
+	 cncrt.moveTo(10, 0, 10);
+
+	 cncrt.moveTo(0,0,0);*/
+
+}
 #endif
 
+void setup() {
+	Serial.begin(SERIAL_BOUND);
+	//new_line.reserve(256);
+	cncrt.initMotors();
+	cncrt.resetPos();
+	cncrt.setAbsolPos();
+	cncrt.initInterrupts();
+	cncrt.initMotionPerformer();
+
+	gc.last_word[GROUP3] = G90;
+	gc.init();
+
+	mill.init();
 }
 
-ISR(TIMER3_COMPA_vect) {
-	if (fun != NULL)
-		fun();
-}
-
-ISR(TIMER4_COMPA_vect) {
-	digitalWrite(LEDPIN, LOW);
-		cli();
-		TCCR4B &= ~((1 << CS40) | (1 << CS42));
-		sei();
-}
-
-// The loop function is called in an endless loop
 void loop() {
-#ifndef _TEST_1
+
 	if (Serial.available() > 0) {
 		new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
 		gc.line = new_line;
 		gc.parseLine();
+		gc.sendAck();
 	}
-#else
-	delay(2000);
-	fun = myfun;
-#endif
 }

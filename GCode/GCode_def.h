@@ -156,6 +156,7 @@
 #define STATUS_WORKING 4
 #define STATUS_LIMITI_SWITCH_TRG 5
 #define STATUS_TOOL_CHANGE 6
+#define STATUS_OP_ERROR 7
 
 //THE LENGHT OF THE SEGMENTS THAT FORM AN ARCH
 #define ARCH_DEFINITION 0.3     //!< The segments size that composes an arch (mm)

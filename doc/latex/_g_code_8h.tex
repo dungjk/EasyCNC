@@ -9,7 +9,7 @@ G-\/\+Code parser.
 {\ttfamily \#include \char`\"{}../config.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}G\+Code\+\_\+def.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}../routers/\+C\+N\+C\+\_\+\+Router.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../routers/\+C\+N\+C\+Router\+I\+S\+R.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}../utensils/\+Milling\+Machine.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$stdint.\+h$>$}\\*
 \subsection*{Classes}
@@ -17,6 +17,11 @@ G-\/\+Code parser.
 \item 
 class \hyperlink{class_g_code}{G\+Code}
 \begin{DoxyCompactList}\small\item\em The class interprets lines of R\+S274/\+N\+G\+C language. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g_code_8h_a123967d38c572aa780cd5003ea4ad8f7}{S\+T\+A\+T\+U\+S\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K}~15650
+\begin{DoxyCompactList}\small\item\em It allows about a feedback rate of once per second. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -34,3 +39,13 @@ Francesco Giurlanda
 \begin{DoxyCopyright}{Copyright}
 This work is licensed under the Creative Commons Attribution-\/\+Share\+Alike 4.\+0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{\tt http\+://creativecommons.\+org/licenses/by-\/sa/4.\+0/}. 
 \end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g_code_8h_a123967d38c572aa780cd5003ea4ad8f7}{\index{G\+Code.\+h@{G\+Code.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K@{S\+T\+A\+T\+U\+S\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K@{S\+T\+A\+T\+U\+S\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K}!G\+Code.\+h@{G\+Code.\+h}}
+\subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K~15650}}\label{_g_code_8h_a123967d38c572aa780cd5003ea4ad8f7}
+
+
+It allows about a feedback rate of once per second. 
+

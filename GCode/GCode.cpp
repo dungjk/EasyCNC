@@ -7,17 +7,72 @@
  \date      2014
 
  \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #include "GCode.h"
 
-GCode::GCode(CNC_Router *rt, MillingMachine *ml) {
-	parser_status = STATUS_OK;
-	spindle_speed = feed_rate = 0.0;
+extern CNC_Router_ISR *_crt;
+
+GCode *_gc = NULL; //!< It is used to bind the timer5 handler and the GCode::returnStatus of the last instanced GCode object
+
+/*! \def INIT_TIMER5
+ *  \details Below the description of the operations performed by the macro:
+ *           - TCCR5A = 0;  set entire TCCR5A register to 0
+ *           - TCCR5B = 0;  set entire TCCR5B register to 0
+ *           - TCNT5 = 0;   initialize counter value to B0
+ *			 - TCCR5B |= (1 << WGM52); turn on CTC mode
+ */
+#define INIT_TIMER5 {	TCCR5A = 0;    \
+	             	 	TCCR5B = 0;    \
+	             	 	TCNT5 = 0;   \
+	             	 	TIMSK5 |= (1 << OCIE5A);    \
+	             	 	TCCR5B |= (1 << WGM52); }
+
+/*! \def SET_TIMER5
+ *  \details It sets the value od the Output Compare Register A of the timer 3.
+ *  \param x The value of the register
+ */
+#define SET_TIMER5(x) { OCR5A = x;}
+
+/*! \def CLEAR_COUNTER_TIMER5
+ *  \details Set to 0 the TCNT5 register.
+ */
+#define CLEAR_COUNTER_TIMER5 { TCNT5 = 0; }
+
+/*! \def START_TIMER5
+ *  \details The macro runs the timer 3 with a 1024 prescaler.
+ *           - TCNT5 = 0; clear the TCNT5 register
+ *           - TCCR5B |= (1 << CS50) | (1 << CS52); set 1024 prescaler
+ */
+#define START_TIMER5 {  TCNT5 = 0;  \
+						TCCR5B |= (1 << CS50) | (1 << CS52);}
+/*! \def STOP_TIMER5
+ *  \details The macro stops the timer 3.
+ */
+#define STOP_TIMER5 {   TCCR5B &= ~((1 << CS50) | (1 << CS52));}
+
+GCode::GCode(CNC_Router_ISR *rt, MillingMachine *ml) :
+		parser_status(STATUS_OK), spindle_speed(0.0), feed_rate(0.0), router(
+				rt), utensil(ml) {
+	line = "";
+	sync = true;
 	memset(last_word, UNSPECIFIED, 16);
-	router = rt;
-	utensil = ml;
+	_gc = this;
+}
+
+void GCode::init() {
+	line.reserve(256);   //It reserves 256 bytes
+	uint8_t oldSREG = SREG;
+	//disable global interrupt
+	cli();
+	//disable global interrupt
+	INIT_TIMER5
+	;
+	SET_TIMER5(STATUS_FEEDBACK);
+	START_TIMER5
+	;
+	SREG = oldSREG;
 }
 
 int GCode::getInt(int &i) {
@@ -45,16 +100,48 @@ boolean GCode::getFloat(uint8_t &pos, float &val) {
 	return false;
 }
 
+void GCode::sendAck() {
+	if (sync) {
+		cli();
+		sync = false;
+		sei();
+		Serial.print("#");
+		Serial.println(parser_status);
+		cli();
+		sync = true;
+		sei();
+	}
+}
+
 void GCode::returnStatus() {
-	Serial.print(router->getPos().X());
+	//Interrupts disabled
+	if(sync){
+		sync = false;
+	}else{
+		return;
+	}
+	PositionXYZ tmp = router->getPos();
+	float fr = router->getCurrFR();
+	if (!(_crt->ls_x_down && _crt->ls_x_up && _crt->ls_y_down && _crt->ls_y_up
+			&& _crt->ls_z_down && _crt->ls_z_up)) {
+		parser_status = STATUS_LIMITI_SWITCH_TRG;
+	}
+	sei();
+	//Imterrupt enabled
+	Serial.print("$");
+	Serial.print(tmp.X());
 	Serial.print(":");
-	Serial.print(router->getPos().Y());
+	Serial.print(tmp.Y());
 	Serial.print(":");
-	Serial.print(router->getPos().Z());
+	Serial.print(tmp.Z());
 	Serial.print(":");
-	Serial.print(feed_rate * 60);
+	Serial.print(fr * 60);
 	Serial.print(":");
 	Serial.println(parser_status);
+
+	cli();
+	sync = true;
+	sei();
 	/*Serial.print(":");
 	 Serial.println(line);*/
 }
@@ -76,20 +163,15 @@ void GCode::cycleG81() {
 	parser_status = STATUS_WORKING;
 
 	int loops = (pars_spec[PARAM_L]) ? params[PARAM_L] : 1;
-	PositionXYZ old_p = router->getPos();
+	PositionXYZ old_p = router->getProcessed();
 
 	for (int l = 0; l < loops; l++) {
 		//Step 1: rapid motion to XY
 		router->moveToXY(new_pos);
-		if (runMotion() == -1) {
-			parser_status = STATUS_LIMITI_SWITCH_TRG;
-			return;
-		}
-		returnStatus();
 		//Step 2: rapid motion to Z specified by R parameter (clear position)
 		if (l == 0) {
 			if (last_word[GROUP3] == G90) {
-				router->moveTo(router->getPos().Z(params[PARAM_R]));
+				router->moveTo(router->getProcessed().Z(params[PARAM_R]));
 			} else {
 				router->moveTo(PositionXYZ(0.0, 0.0, params[PARAM_R]));
 			}
@@ -98,11 +180,6 @@ void GCode::cycleG81() {
 				router->moveTo(PositionXYZ(0.0, 0.0, params[PARAM_R]));
 			}
 		}
-		if (runMotion() == -1) {
-			parser_status = STATUS_LIMITI_SWITCH_TRG;
-			return;
-		}
-		returnStatus();
 
 		//Step 3: motion on Z-axis to the value Z specified in the cycle command
 		if (last_word[GROUP3] == G90) {
@@ -111,29 +188,20 @@ void GCode::cycleG81() {
 			router->moveTo(PositionXYZ(0.0, 0.0, new_pos.Z()), feed_rate);
 		}
 
-		if (runMotion() == -1) {
-			parser_status = STATUS_LIMITI_SWITCH_TRG;
-			return;
-		}
-		returnStatus();
 		//Step 4: return to the clear position specified by R with a rapid motion
 		if (last_word[GROUP10] == G98 && old_p.Z() > params[PARAM_R]) {
 			if (last_word[GROUP3] == G90) {
-				router->moveTo(router->getPos().Z(old_p.Z()));
+				router->moveTo(router->getProcessed().Z(old_p.Z()));
 			} else {
 				router->moveTo(
 						PositionXYZ(0.0, 0.0, -new_pos.Z() - params[PARAM_R]));
 			}
 		} else {
 			if (last_word[GROUP3] == G90) {
-				router->moveTo(router->getPos().Z(params[PARAM_R]));
+				router->moveTo(router->getProcessed().Z(params[PARAM_R]));
 			} else {
 				router->moveTo(PositionXYZ(0.0, 0.0, -new_pos.Z()));
 			}
-		}
-		if (runMotion() == -1) {
-			parser_status = STATUS_LIMITI_SWITCH_TRG;
-			return;
 		}
 		parser_status = STATUS_OK;
 	}
@@ -141,7 +209,7 @@ void GCode::cycleG81() {
 
 void GCode::motionG2G3() {
 	PositionXYZ center;
-	PositionXYZ start_p = router->getPos();
+	PositionXYZ start_p = router->getProcessed();
 	float alpha, angle_next_p, angle_end, r;
 	boolean can_move = false;
 
@@ -183,8 +251,8 @@ void GCode::motionG2G3() {
 		angle_end = center.angleXY(new_pos);
 		angle_next_p = center.angleXY(start_p);
 
-
-		float delta_z_offset = router->getPos().offsetZ(new_pos) * alpha / abs(angle_end - angle_next_p); // delta forward on Z-axis for each segment of the circle.
+		float delta_z_offset = router->getProcessed().offsetZ(new_pos)
+				* alpha/ abs(angle_end - angle_next_p); // delta forward on Z-axis for each segment of the circle.
 		float i_seg = 1.0;
 
 		PositionXYZ tmp;
@@ -195,42 +263,29 @@ void GCode::motionG2G3() {
 
 			angle_next_p += alpha;
 
-
 			while (angle_next_p < angle_end) {
-				router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(delta_z_offset * i_seg),
-						feed_rate);
-				if (runMotion() == -1) {
-					parser_status = STATUS_LIMITI_SWITCH_TRG;
-					return;
-				}
+				router->moveTo(
+						center
+								+ tmp.polarXY(r, angle_next_p).Z(
+										delta_z_offset * i_seg), feed_rate);
 				angle_next_p += alpha;
 				i_seg += 1.0;
 			}
 			router->moveTo(new_pos, feed_rate);
-			if (runMotion() == -1) {
-				parser_status = STATUS_LIMITI_SWITCH_TRG;
-				return;
-			}
 		} else {
 			if (angle_end > angle_next_p) // In the case of the atan2 function returns a angle_end value greater then the start angle.
 				angle_end -= 2 * PI;
 
 			angle_next_p -= alpha;
 			while (angle_next_p > angle_end) {
-				router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(delta_z_offset * i_seg),
-						feed_rate);
-				if (runMotion() == -1) {
-					parser_status = STATUS_LIMITI_SWITCH_TRG;
-					return;
-				}
+				router->moveTo(
+						center
+								+ tmp.polarXY(r, angle_next_p).Z(
+										delta_z_offset * i_seg), feed_rate);
 				angle_next_p -= alpha;
 				i_seg += 1.0;
 			}
 			router->moveTo(new_pos, feed_rate);
-			if (runMotion() == -1) {
-				parser_status = STATUS_LIMITI_SWITCH_TRG;
-				return;
-			}
 		}
 	}
 }
@@ -243,14 +298,9 @@ void GCode::motionG0G1() {
 		} else {
 			router->moveTo(new_pos, feed_rate);
 		}
-		if (runMotion() == -1) {
-			parser_status = STATUS_LIMITI_SWITCH_TRG;
-			return;
-		}
 	} else {
 		parser_status = STATUS_SYNTAX_ERROR;
 	}
-
 }
 
 boolean GCode::getWord(char &code, float &val, uint8_t &pos) {
@@ -298,14 +348,6 @@ boolean GCode::getControlComm(char &code, float &val) {
 	return true;
 }
 
-int GCode::runMotion() {
-	int res = router->update();
-	while (res == 0) {
-		res = router->update();
-	}
-	return res;
-}
-
 int GCode::parseLine() {
 	removeSpaces();
 //Special commands that starts with "$"
@@ -321,30 +363,25 @@ int GCode::parseLine() {
 				router->resetPos();
 				break;
 			case 'h':		// search the home position
-				router->searchHomePos();
+				if (router->searchHomePos())
+					parser_status = STATUS_OP_ERROR;
 				break;
 			case 'z':		// search the z=0
-				router->searchZ0Pos();
+				if (router->searchZ0Pos())
+					parser_status = STATUS_OP_ERROR;
 				break;
 			case 't':// tool change, it moves up the utensil to allow the tool change
 				router->moveTo(
 						router->getPos()
 								+ PositionXYZ(0, 0, TOOL_CHANGE_HEIGHT));
-				if (runMotion() == -1) {
-					parser_status = STATUS_LIMITI_SWITCH_TRG;
-				}
-
 				break;
 			};
 
 		}
-
-		returnStatus();
 		return parser_status;
 	}
 
 	if (parser_status != STATUS_OK) {
-		returnStatus();
 		return parser_status;
 	}
 
@@ -352,7 +389,7 @@ int GCode::parseLine() {
 	if (last_word[GROUP3] == G91) {
 		new_pos = PositionXYZ();
 	} else {
-		new_pos = router->getPos();
+		new_pos = router->getProcessed();
 	}
 	boolean motion_command = false;
 	boolean pause = false;
@@ -543,7 +580,6 @@ int GCode::parseLine() {
 			break;
 		default:
 			parser_status = STATUS_UNSUPPORTED;
-			returnStatus();
 			return parser_status;
 		};
 
@@ -551,7 +587,6 @@ int GCode::parseLine() {
 
 // check status
 	if (parser_status != STATUS_OK) {
-		returnStatus();
 		return parser_status;
 	}
 
@@ -577,7 +612,6 @@ int GCode::parseLine() {
 
 	}
 
-	returnStatus();
 	return parser_status;
 }
 
@@ -592,3 +626,10 @@ void GCode::removeSpaces() {
 			i++;
 	}
 }
+
+ISR(TIMER5_COMPA_vect) {
+	if (_gc != NULL) {
+		_gc->returnStatus();
+	}
+}
+

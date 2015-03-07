@@ -69,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>All</span></a></li>
       <li><a href="globals_func.html"><span>Functions</span></a></li>
       <li><a href="globals_vars.html"><span>Variables</span></a></li>
+      <li><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li class="current"><a href="globals_defs.html"><span>Macros</span></a></li>
     </ul>
   </div>
@@ -76,6 +77,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="#index__"><span>_</span></a></li>
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
@@ -97,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,9 +122,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>_MILLING_MACHINE_SPEED_PIN
 : <a class="el" href="config_8h.html#a11bacbdfb698dadd088b8d0ba265ace4">config.h</a>
 </li>
-<li>_TEST_1
-: <a class="el" href="debugger_8h.html#aecd839af11bb1c00171fb5c03b1bcc99">debugger.h</a>
-</li>
 </ul>
 
 
@@ -132,36 +132,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>BUFF_LEN
+: <a class="el" href="_motion_planner_8h.html#a6ac7d11a56af31a55035980e2fed464a">MotionPlanner.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>CLEAR_COUNTER_TIMER3
+: <a class="el" href="_motion_performer_8cpp.html#a96f2cb62be6be8aacae1eca2ee681dc6">MotionPerformer.cpp</a>
+</li>
+<li>CLEAR_COUNTER_TIMER4
+: <a class="el" href="_motion_performer_8cpp.html#a68be61a7d506ea68b3e037f9d3e9a355">MotionPerformer.cpp</a>
+</li>
+<li>CLEAR_COUNTER_TIMER5
+: <a class="el" href="_g_code_8cpp.html#a608c513899d871a5a8f71d3e74f4c1a4">GCode.cpp</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>DBG
+: <a class="el" href="debugger_8h.html#a32adf79142f0a426b5e782fb7cd4cad3">debugger.h</a>
+</li>
 <li>DBG_BP
 : <a class="el" href="debugger_8h.html#a7ee9b3e27ee0f4a1e08aa09c08446d82">debugger.h</a>
 </li>
 <li>DBG_MSG
 : <a class="el" href="debugger_8h.html#ae36991d84a8c0a9ed723a801fc644814">debugger.h</a>
 </li>
+<li>DBG_TEST
+: <a class="el" href="debugger_8h.html#a1d3e5c66062b4545b50f7e08b57970c5">debugger.h</a>
+</li>
 <li>DBG_VAR
-: <a class="el" href="debugger_8h.html#ae6882a73eccf98b443761957707519fd">debugger.h</a>
+: <a class="el" href="debugger_8h.html#ad3d76e925e705980fc9d78d02648671a">debugger.h</a>
 </li>
 <li>DEBUG
 : <a class="el" href="debugger_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">debugger.h</a>
 </li>
-<li>DOWN
-: <a class="el" href="_plotter_servo_8h.html#a4193cd1c8c2e6ebd0e056fa2364a663f">PlotterServo.h</a>
+<li>DELAY_STEP_UP
+: <a class="el" href="_motion_performer_8h.html#ad13da0dff147fb6c2ce7987a4260ff66">MotionPerformer.h</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>EIGHTH_STEP
-: <a class="el" href="_m_s_m_c___a4988_8h.html#ac3f074c3e3b349fc9f6487a9d9a77399">MSMC_A4988.h</a>
+: <a class="el" href="_motor_driver_8h.html#ac3f074c3e3b349fc9f6487a9d9a77399">MotorDriver.h</a>
+, <a class="el" href="_m_s_m_c___a4988_8h.html#ac3f074c3e3b349fc9f6487a9d9a77399">MSMC_A4988.h</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>FULL_STEP
-: <a class="el" href="_m_s_m_c___a4988_8h.html#a65ffcc85557e6fc00e865d67e20f720e">MSMC_A4988.h</a>
+: <a class="el" href="_motor_driver_8h.html#a65ffcc85557e6fc00e865d67e20f720e">MotorDriver.h</a>
 , <a class="el" href="_m_s_m_c___u_l_n2003_a_8h.html#a65ffcc85557e6fc00e865d67e20f720e">MSMC_ULN2003A.h</a>
+, <a class="el" href="_m_s_m_c___a4988_8h.html#a65ffcc85557e6fc00e865d67e20f720e">MSMC_A4988.h</a>
 </li>
 </ul>
 
@@ -382,13 +410,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
 <li>HALF_STEP
-: <a class="el" href="_m_s_m_c___a4988_8h.html#af078dda416ad0114e9c81a6c36c0801f">MSMC_A4988.h</a>
+: <a class="el" href="_motor_driver_8h.html#af078dda416ad0114e9c81a6c36c0801f">MotorDriver.h</a>
 , <a class="el" href="_m_s_m_c___u_l_n2003_a_8h.html#af078dda416ad0114e9c81a6c36c0801f">MSMC_ULN2003A.h</a>
+, <a class="el" href="_m_s_m_c___a4988_8h.html#af078dda416ad0114e9c81a6c36c0801f">MSMC_A4988.h</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>IDLE_FREQ
+: <a class="el" href="_motion_performer_8h.html#aa48576cb4dbc00460548a2e292960066">MotionPerformer.h</a>
+</li>
+<li>INIT_TIMER3
+: <a class="el" href="_motion_performer_8cpp.html#ac95954aa2377ff4c9a3f14898c7543a6">MotionPerformer.cpp</a>
+</li>
+<li>INIT_TIMER4
+: <a class="el" href="_motion_performer_8cpp.html#a220948193b8848a83277129f0a1aa05e">MotionPerformer.cpp</a>
+</li>
+<li>INIT_TIMER5
+: <a class="el" href="_g_code_8cpp.html#a39b0c37c3c4f4966017cab218b055fad">GCode.cpp</a>
+</li>
 <li>INTERRUPT_STOP_MOTION
 : <a class="el" href="config_8h.html#a11cc693021583511d43ba72c445120ea">config.h</a>
 </li>
@@ -486,7 +527,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
 <li>QUARTER_STEP
-: <a class="el" href="_m_s_m_c___a4988_8h.html#a5bf980ea8dd6df6a0271f6d30d66931b">MSMC_A4988.h</a>
+: <a class="el" href="_motor_driver_8h.html#a5bf980ea8dd6df6a0271f6d30d66931b">MotorDriver.h</a>
+, <a class="el" href="_m_s_m_c___a4988_8h.html#a5bf980ea8dd6df6a0271f6d30d66931b">MSMC_A4988.h</a>
 </li>
 </ul>
 
@@ -498,6 +540,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>ROUTE_MX_ENABLE_CONTROL_PIN
 : <a class="el" href="config_8h.html#aa440cb6779843ab1068ff26919b75db4">config.h</a>
 </li>
+<li>ROUTE_MX_MODE
+: <a class="el" href="config_8h.html#a40d4a3ddd9f57ccbf4a39547f75aaffd">config.h</a>
+</li>
 <li>ROUTE_MX_STEP_CONTROL_PIN
 : <a class="el" href="config_8h.html#a2772e27b33c24fca3e756e98e4da0528">config.h</a>
 </li>
@@ -507,6 +552,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>ROUTE_MY_ENABLE_CONTROL_PIN
 : <a class="el" href="config_8h.html#a3e30826a0cbcd6ac91bae8b83651bc78">config.h</a>
 </li>
+<li>ROUTE_MY_MODE
+: <a class="el" href="config_8h.html#a2d8287db2902bf9aa81078f7131854f1">config.h</a>
+</li>
 <li>ROUTE_MY_STEP_CONTROL_PIN
 : <a class="el" href="config_8h.html#ab22bf58b0951dd8f3ae5d94bda82d87e">config.h</a>
 </li>
@@ -515,6 +563,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>ROUTE_MZ_ENABLE_CONTROL_PIN
 : <a class="el" href="config_8h.html#a5cbe1ee81d34630a1e50fa9c42436082">config.h</a>
+</li>
+<li>ROUTE_MZ_MODE
+: <a class="el" href="config_8h.html#a54facf4e6f0019a0b22b92d523fe2cdc">config.h</a>
 </li>
 <li>ROUTE_MZ_STEP_CONTROL_PIN
 : <a class="el" href="config_8h.html#a19711e5668de2b87dad0e16a5e863743">config.h</a>
@@ -531,6 +582,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>ROUTER_MX_CONTROLLER_A4988
 : <a class="el" href="config_8h.html#aa2ba8973ad8e317ff2808a08cd03109d">config.h</a>
 </li>
+<li>ROUTER_MX_ORIENTATION
+: <a class="el" href="config_8h.html#a67b3c67678c03bf1911716033c3ea33d">config.h</a>
+</li>
 <li>ROUTER_MX_SPEED
 : <a class="el" href="config_8h.html#aeb39dfe1cecb49617c2de68f2b7863ad">config.h</a>
 </li>
@@ -543,6 +597,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>ROUTER_MY_CONTROLLER_A4988
 : <a class="el" href="config_8h.html#ab43f3d9753eb04addb3ecf892d43e9b3">config.h</a>
 </li>
+<li>ROUTER_MY_ORIENTATION
+: <a class="el" href="config_8h.html#a28b6bbdef359a6ba4d79d34fe398ce65">config.h</a>
+</li>
 <li>ROUTER_MY_SPEED
 : <a class="el" href="config_8h.html#a561a2d9e0685a3f1ef859e8fe82c44ee">config.h</a>
 </li>
@@ -554,6 +611,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>ROUTER_MZ_CONTROLLER_A4988
 : <a class="el" href="config_8h.html#a09fa750e355606467364b15acc58a814">config.h</a>
+</li>
+<li>ROUTER_MZ_ORIENTATION
+: <a class="el" href="config_8h.html#a7e901586d0efb8802e56099c23b52124">config.h</a>
 </li>
 <li>ROUTER_MZ_SPEED
 : <a class="el" href="config_8h.html#a8437dbcba761d0ae49161e7e16dbe94d">config.h</a>
@@ -580,11 +640,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SERIAL_BOUND
 : <a class="el" href="config_8h.html#a58562c1eea53acf4d89ae2e8ed79e7ac">config.h</a>
 </li>
+<li>SET_TIMER3
+: <a class="el" href="_motion_performer_8cpp.html#afad9139b7b960bf05d358cc77a9d2974">MotionPerformer.cpp</a>
+</li>
+<li>SET_TIMER4
+: <a class="el" href="_motion_performer_8cpp.html#ad01a372224709fd0f5b43df663ef13c0">MotionPerformer.cpp</a>
+</li>
+<li>SET_TIMER5
+: <a class="el" href="_g_code_8cpp.html#a86b0bfd51976379140d0e45e7d24a8bc">GCode.cpp</a>
+</li>
 <li>SIXTEENTH_STEP
-: <a class="el" href="_m_s_m_c___a4988_8h.html#a8493986c329fb4bfde621461028b3a31">MSMC_A4988.h</a>
+: <a class="el" href="_motor_driver_8h.html#a8493986c329fb4bfde621461028b3a31">MotorDriver.h</a>
+, <a class="el" href="_m_s_m_c___a4988_8h.html#a8493986c329fb4bfde621461028b3a31">MSMC_A4988.h</a>
+</li>
+<li>START_TIMER3
+: <a class="el" href="_motion_performer_8cpp.html#a31db31949c4b12cd7f4892a56ce7f7c1">MotionPerformer.cpp</a>
+</li>
+<li>START_TIMER4
+: <a class="el" href="_motion_performer_8cpp.html#ab7bd45c9a7ee62beffb6d8a0d542c306">MotionPerformer.cpp</a>
+</li>
+<li>START_TIMER5
+: <a class="el" href="_g_code_8cpp.html#a705ef9d9ee593818fb469476ddd3e356">GCode.cpp</a>
 </li>
 <li>STATUS_BAD_WORD
 : <a class="el" href="_g_code__def_8h.html#a0d5d3e84a2e7607a8fdd20931629c900">GCode_def.h</a>
+</li>
+<li>STATUS_FEEDBACK
+: <a class="el" href="_g_code_8h.html#a123967d38c572aa780cd5003ea4ad8f7">GCode.h</a>
 </li>
 <li>STATUS_LIMITI_SWITCH_TRG
 : <a class="el" href="_g_code__def_8h.html#a3344d16238760748b66b871c77d25457">GCode_def.h</a>
@@ -604,6 +686,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>STATUS_WORKING
 : <a class="el" href="_g_code__def_8h.html#a3ea0e8bcc1b16bf4b8f6f830c92fbef4">GCode_def.h</a>
 </li>
+<li>STOP_TIMER3
+: <a class="el" href="_motion_performer_8cpp.html#a06fd6b6ba052568ad018428b8b1a6214">MotionPerformer.cpp</a>
+</li>
+<li>STOP_TIMER4
+: <a class="el" href="_motion_performer_8cpp.html#a721868faf68cfb52d561b3c1ad9b69f6">MotionPerformer.cpp</a>
+</li>
+<li>STOP_TIMER5
+: <a class="el" href="_g_code_8cpp.html#a3fb09bba5efe566360228921b326be69">GCode.cpp</a>
+</li>
 </ul>
 
 
@@ -618,14 +709,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>UNSPECIFIED
 : <a class="el" href="_g_code__def_8h.html#a6e889fe84444fe8e3b224da21dd80a40">GCode_def.h</a>
 </li>
-<li>UP
-: <a class="el" href="_plotter_servo_8h.html#a1965eaca47dbf3f87acdafc2208f04eb">PlotterServo.h</a>
-</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 16:21:08 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 11 2015 11:39:16 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

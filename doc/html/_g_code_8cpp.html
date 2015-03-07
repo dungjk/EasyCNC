@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,6 +84,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">GCode.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -92,16 +96,163 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>G-Code parser.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_g_code_8h_source.html">GCode.h</a>&quot;</code><br />
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a39b0c37c3c4f4966017cab218b055fad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code_8cpp.html#a39b0c37c3c4f4966017cab218b055fad">INIT_TIMER5</a></td></tr>
+<tr class="separator:a39b0c37c3c4f4966017cab218b055fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b0bfd51976379140d0e45e7d24a8bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code_8cpp.html#a86b0bfd51976379140d0e45e7d24a8bc">SET_TIMER5</a>(x)&#160;&#160;&#160;{ OCR5A = x;}</td></tr>
+<tr class="separator:a86b0bfd51976379140d0e45e7d24a8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608c513899d871a5a8f71d3e74f4c1a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code_8cpp.html#a608c513899d871a5a8f71d3e74f4c1a4">CLEAR_COUNTER_TIMER5</a>&#160;&#160;&#160;{ TCNT5 = 0; }</td></tr>
+<tr class="separator:a608c513899d871a5a8f71d3e74f4c1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705ef9d9ee593818fb469476ddd3e356"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code_8cpp.html#a705ef9d9ee593818fb469476ddd3e356">START_TIMER5</a></td></tr>
+<tr class="separator:a705ef9d9ee593818fb469476ddd3e356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb09bba5efe566360228921b326be69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code_8cpp.html#a3fb09bba5efe566360228921b326be69">STOP_TIMER5</a>&#160;&#160;&#160;{   TCCR5B &amp;= ~((1 &lt;&lt; CS50) | (1 &lt;&lt; CS52));}</td></tr>
+<tr class="separator:a3fb09bba5efe566360228921b326be69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a332352d7fb4b7b02401910478cec92fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code_8cpp.html#a332352d7fb4b7b02401910478cec92fa">ISR</a> (TIMER5_COMPA_vect)</td></tr>
+<tr class="separator:a332352d7fb4b7b02401910478cec92fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a81fadbfd2d764c2bb3122ec2e104ff02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_code.html">GCode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_code_8cpp.html#a81fadbfd2d764c2bb3122ec2e104ff02">_gc</a> = NULL</td></tr>
+<tr class="memdesc:a81fadbfd2d764c2bb3122ec2e104ff02"><td class="mdescLeft">&#160;</td><td class="mdescRight">It is used to bind the timer5 handler and the <a class="el" href="class_g_code.html#a9f7a4d057f394dcc4163f00a2dc6770e" title="It returns the status of the CNC machine. ">GCode::returnStatus</a> of the last instanced <a class="el" href="class_g_code.html" title="The class interprets lines of RS274/NGC language. ">GCode</a> object.  <a href="#a81fadbfd2d764c2bb3122ec2e104ff02">More...</a><br /></td></tr>
+<tr class="separator:a81fadbfd2d764c2bb3122ec2e104ff02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>G-Code parser. </p>
 <p>The class allows to parse the G-Code lines and runs the operation to actuate the command. </p><dl class="section author"><dt>Author</dt><dd>Francesco Giurlanda </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2014</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a>. </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a608c513899d871a5a8f71d3e74f4c1a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLEAR_COUNTER_TIMER5&#160;&#160;&#160;{ TCNT5 = 0; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set to 0 the TCNT5 register. </p>
+
+</div>
+</div>
+<a class="anchor" id="a39b0c37c3c4f4966017cab218b055fad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_TIMER5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{   TCCR5A = 0;    \</div>
+<div class="line">                        TCCR5B = 0;    \</div>
+<div class="line">                        TCNT5 = 0;   \</div>
+<div class="line">                        TIMSK5 |= (1 &lt;&lt; OCIE5A);    \</div>
+<div class="line">                        TCCR5B |= (1 &lt;&lt; WGM52); }</div>
+</div><!-- fragment --><p>Below the description of the operations performed by the macro:</p><ul>
+<li>TCCR5A = 0; set entire TCCR5A register to 0</li>
+<li>TCCR5B = 0; set entire TCCR5B register to 0</li>
+<li>TCNT5 = 0; initialize counter value to B0</li>
+<li>TCCR5B |= (1 &lt;&lt; WGM52); turn on CTC mode </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a86b0bfd51976379140d0e45e7d24a8bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_TIMER5</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;{ OCR5A = x;}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>It sets the value od the Output Compare Register A of the timer 3. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The value of the register </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a705ef9d9ee593818fb469476ddd3e356"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define START_TIMER5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{  TCNT5 = 0;  \</div>
+<div class="line">                        TCCR5B |= (1 &lt;&lt; CS50) | (1 &lt;&lt; CS52);}</div>
+</div><!-- fragment --><p>The macro runs the timer 3 with a 1024 prescaler.</p><ul>
+<li>TCNT5 = 0; clear the TCNT5 register</li>
+<li>TCCR5B |= (1 &lt;&lt; CS50) | (1 &lt;&lt; CS52); set 1024 prescaler </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a3fb09bba5efe566360228921b326be69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STOP_TIMER5&#160;&#160;&#160;{   TCCR5B &amp;= ~((1 &lt;&lt; CS50) | (1 &lt;&lt; CS52));}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The macro stops the timer 3. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a332352d7fb4b7b02401910478cec92fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">TIMER5_COMPA_vect&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a81fadbfd2d764c2bb3122ec2e104ff02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_code.html">GCode</a>* _gc = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>It is used to bind the timer5 handler and the <a class="el" href="class_g_code.html#a9f7a4d057f394dcc4163f00a2dc6770e" title="It returns the status of the CNC machine. ">GCode::returnStatus</a> of the last instanced <a class="el" href="class_g_code.html" title="The class interprets lines of RS274/NGC language. ">GCode</a> object. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 23 2014 16:21:07 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 11 2015 11:39:15 for Easy CNC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
