@@ -43,7 +43,7 @@ public:
 	MotionPlanner m_planner;
 	MotionPerformer m_performer;
 
-	volatile  boolean ls_x_down, //!< State of the down limit switch of X-axis: true = not triggered, false = triggered
+	 volatile boolean ls_x_down, //!< State of the down limit switch of X-axis: true = not triggered, false = triggered
 			ls_x_up, //!< State of the up limit switch of X-axis: true = not triggered, false = triggered
 			ls_y_down, //!< State of the down limit switch of Y-axis: true = not triggered, false = triggered
 			ls_y_up, //!< State of the up limit switch of Y-axis: true = not triggered, false = triggered
@@ -199,7 +199,10 @@ public:
 	 * \brief It returns the feed rate of the current performing motion
 	 * \return Current feed rate*/
 	float getCurrFR();
-
+	/*! \brief It returns info about the free space size of the buffer
+	 *  \return Free buffer size
+	 */
+	int buffInfo();
 };
 
 #endif /* CNCROUTERISR_H_ */

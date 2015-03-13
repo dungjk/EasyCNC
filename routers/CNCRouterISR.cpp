@@ -11,16 +11,18 @@ CNC_Router_ISR *_crt = NULL; //!< It is used to bind the interrupts due to the l
 
 void CNC_Router_ISR::ls_x_down_routine() {
 	if (_crt != NULL) {
-		_crt->ls_x_down = (ROUTER_DOWN_LIMIT_SWITCH_X_ACTIVE_HIGH == 1)?
-				digitalRead(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT)) : !digitalRead(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT));
+		_crt->ls_x_down =
+				(ROUTER_DOWN_LIMIT_SWITCH_X_ACTIVE_HIGH == 1) ?
+						digitalRead(getPinFromInterrupt(
+						ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT)) :
+						!digitalRead(getPinFromInterrupt(
+						ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT));
 		if (_crt->ls_x_down) {
-			_crt->m_performer.stopMotion();
-			_crt->m_planner.clear();
-			PositionXYZ tmp = _crt->getPos();
-			_crt->processed_p = tmp;
+			_crt->stop();
+			PositionXYZ tmp = _crt->processed_p;
 			tmp.X(tmp.X() + 1.0);
 			_crt->moveTo(tmp);
-			_crt->m_performer.startMotion();
+			_crt->restart();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -29,17 +31,19 @@ void CNC_Router_ISR::ls_x_down_routine() {
 
 void CNC_Router_ISR::ls_x_up_routine() {
 	if (_crt != NULL) {
-		_crt->ls_x_up = (ROUTER_UP_LIMIT_SWITCH_X_ACTIVE_HIGH == 1)?
-				digitalRead(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT)) : !digitalRead(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT));
+		_crt->ls_x_up =
+				(ROUTER_UP_LIMIT_SWITCH_X_ACTIVE_HIGH == 1) ?
+						digitalRead(getPinFromInterrupt(
+						ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT)) :
+						!digitalRead(getPinFromInterrupt(
+						ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT));
 		if (!_crt->ls_x_up) {
-			_crt->m_performer.stopMotion();
-			_crt->m_planner.clear();
-			PositionXYZ tmp = _crt->getPos();
-			_crt->processed_p = tmp;
+			_crt->stop();
+			PositionXYZ tmp = _crt->processed_p;
 			tmp.X(tmp.X() - 1.0);
 			_crt->moveTo(tmp);
-			_crt->m_performer.startMotion();
-		}else {
+			_crt->restart();
+		} else {
 			_crt->searchProc = false;
 		}
 	}
@@ -47,16 +51,18 @@ void CNC_Router_ISR::ls_x_up_routine() {
 
 void CNC_Router_ISR::ls_y_down_routine() {
 	if (_crt != NULL) {
-		_crt->ls_y_down = (ROUTER_DOWN_LIMIT_SWITCH_Y_ACTIVE_HIGH == 1)?
-				digitalRead(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT)) : !digitalRead(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT));
+		_crt->ls_y_down =
+				(ROUTER_DOWN_LIMIT_SWITCH_Y_ACTIVE_HIGH == 1) ?
+						digitalRead(getPinFromInterrupt(
+						ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT)) :
+						!digitalRead(getPinFromInterrupt(
+						ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT));
 		if (!_crt->ls_y_down) {
-			_crt->m_performer.stopMotion();
-			_crt->m_planner.clear();
-			PositionXYZ tmp = _crt->getPos();
-			_crt->processed_p = tmp;
+			_crt->stop();
+			PositionXYZ tmp = _crt->processed_p;
 			tmp.Y(tmp.Y() + 1.0);
 			_crt->moveTo(tmp);
-			_crt->m_performer.startMotion();
+			_crt->restart();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -65,17 +71,19 @@ void CNC_Router_ISR::ls_y_down_routine() {
 
 void CNC_Router_ISR::ls_y_up_routine() {
 	if (_crt != NULL) {
-		_crt->ls_y_up = (ROUTER_UP_LIMIT_SWITCH_Y_ACTIVE_HIGH == 1)?
-				digitalRead(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT)) : !digitalRead(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT));
+		_crt->ls_y_up =
+				(ROUTER_UP_LIMIT_SWITCH_Y_ACTIVE_HIGH == 1) ?
+						digitalRead(getPinFromInterrupt(
+						ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT)) :
+						!digitalRead(getPinFromInterrupt(
+						ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT));
 		if (!_crt->ls_y_up) {
-			_crt->m_performer.stopMotion();
-			_crt->m_planner.clear();
-			PositionXYZ tmp = _crt->getPos();
-			_crt->processed_p = tmp;
+			_crt->stop();
+			PositionXYZ tmp = _crt->processed_p;
 			tmp.Y(tmp.Y() - 1.0);
 			_crt->moveTo(tmp);
-			_crt->m_performer.startMotion();
-		}else {
+			_crt->restart();
+		} else {
 			_crt->searchProc = false;
 		}
 	}
@@ -83,16 +91,18 @@ void CNC_Router_ISR::ls_y_up_routine() {
 
 void CNC_Router_ISR::ls_z_down_routine() {
 	if (_crt != NULL) {
-		_crt->ls_z_down = (ROUTER_DOWN_LIMIT_SWITCH_Z_ACTIVE_HIGH == 1)?
-				digitalRead(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT)) : !digitalRead(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT));
+		_crt->ls_z_down =
+				(ROUTER_DOWN_LIMIT_SWITCH_Z_ACTIVE_HIGH == 1) ?
+						digitalRead(getPinFromInterrupt(
+						ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT)) :
+						!digitalRead(getPinFromInterrupt(
+						ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT));
 		if (!_crt->ls_z_down) {
-			_crt->m_performer.stopMotion();
-			_crt->m_planner.clear();
-			PositionXYZ tmp = _crt->getPos();
-			_crt->processed_p = tmp;
+			_crt->stop();
+			PositionXYZ tmp = _crt->processed_p;
 			tmp.Z(tmp.Z() + 0.1);
 			_crt->moveTo(tmp);
-			_crt->m_performer.startMotion();
+			_crt->restart();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -101,16 +111,18 @@ void CNC_Router_ISR::ls_z_down_routine() {
 
 void CNC_Router_ISR::ls_z_up_routine() {
 	if (_crt != NULL) {
-		_crt->ls_z_up = (ROUTER_UP_LIMIT_SWITCH_Z_ACTIVE_HIGH == 1)?
-				digitalRead(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT)) : !digitalRead(getPinFromInterrupt(ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT));
+		_crt->ls_z_up =
+				(ROUTER_UP_LIMIT_SWITCH_Z_ACTIVE_HIGH == 1) ?
+						digitalRead(getPinFromInterrupt(
+						ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT)) :
+						!digitalRead(getPinFromInterrupt(
+						ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT));
 		if (!_crt->ls_z_up) {
-			_crt->m_performer.stopMotion();
-			_crt->m_planner.clear();
-			PositionXYZ tmp = _crt->getPos();
-			_crt->processed_p = tmp;
+			_crt->stop();
+			PositionXYZ tmp = _crt->processed_p;
 			tmp.Z(tmp.Z() - 1.0);
 			_crt->moveTo(tmp);
-			_crt->m_performer.startMotion();
+			_crt->restart();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -118,14 +130,14 @@ void CNC_Router_ISR::ls_z_up_routine() {
 }
 
 CNC_Router_ISR::CNC_Router_ISR() :
-		processed_p(), spmmx(ROUTER_MX_STEPS_PER_MM), spmmy(ROUTER_MY_STEPS_PER_MM), spmmz(ROUTER_MZ_STEPS_PER_MM),
-		v_max_x(ROUTE_MX_MODE * ROUTER_MX_STEPS_PER_MM * ROUTER_MX_SPEED / 60),
-		v_max_y(ROUTE_MY_MODE * ROUTER_MY_STEPS_PER_MM * ROUTER_MY_SPEED / 60),
-		v_max_z(ROUTE_MZ_MODE * ROUTER_MZ_STEPS_PER_MM * ROUTER_MZ_SPEED / 60),
-		pos_type(false),
-		round_off_x(0.0), round_off_y(0.0), round_off_z(0.0),
-		searchProc(false), m_planner(), m_performer(&(this->m_planner)) {
-	ls_x_down = ls_x_up = ls_y_down = ls_y_up = ls_z_down = ls_z_up = true;
+		processed_p(), spmmx(ROUTER_MX_STEPS_PER_MM), spmmy(
+		ROUTER_MY_STEPS_PER_MM), spmmz(ROUTER_MZ_STEPS_PER_MM), v_max_x(
+		ROUTE_MX_MODE * ROUTER_MX_STEPS_PER_MM * ROUTER_MX_SPEED / 60), v_max_y(
+		ROUTE_MY_MODE * ROUTER_MY_STEPS_PER_MM * ROUTER_MY_SPEED / 60), v_max_z(
+		ROUTE_MZ_MODE * ROUTER_MZ_STEPS_PER_MM * ROUTER_MZ_SPEED / 60), pos_type(
+		false), round_off_x(0.0), round_off_y(0.0), round_off_z(0.0), searchProc(
+		false), m_planner(), m_performer(&(this->m_planner)) {
+	ls_x_down = ls_x_up = ls_y_down = ls_y_up = ls_z_down = ls_z_up = false;
 	_crt = this;
 }
 
@@ -374,6 +386,8 @@ void CNC_Router_ISR::moveTo(const PositionXYZ &np, float spd) {
 
 void CNC_Router_ISR::stop() {
 	m_performer.stopMotion();
+	m_planner.clear();
+	processed_p = getPos();
 }
 
 void CNC_Router_ISR::pause() {
@@ -501,3 +515,8 @@ void CNC_Router_ISR::orientationZ(int8_t v) {
 float CNC_Router_ISR::getCurrFR() {
 	return m_performer.current_fr;
 }
+
+int CNC_Router_ISR::buffInfo(){
+	return m_planner.getFreeBuffSize();
+}
+

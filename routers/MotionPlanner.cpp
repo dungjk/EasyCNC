@@ -55,3 +55,9 @@ void MotionPlanner::clear() {
 boolean MotionPlanner::isEmpty() const {
 	return empty;
 }
+
+int MotionPlanner::getFreeBuffSize() const{
+	if(empty)
+		return BUFF_LEN;
+	return  ((first - last) > 0)? BUFF_LEN - first + last : last - first;
+}

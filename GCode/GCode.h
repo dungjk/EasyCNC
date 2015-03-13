@@ -98,7 +98,10 @@ public:
 	 */
 	boolean getFloat(uint8_t &pos, float &val);
 
-	//! \brief It sends a response after a reception of GCode line, with the state of the parser
+	/*! \brief It sends a response after a reception of GCode line, with the state of the parser
+	 *  \details The function sends a string through the serial connection, the information sent are
+	 *           the G-Code parser status and the free space in the
+	 */
 	void sendAck();
 
 	/*! \brief It returns the status of the CNC machine.

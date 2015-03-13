@@ -106,7 +106,9 @@ void GCode::sendAck() {
 		sync = false;
 		sei();
 		Serial.print("#");
-		Serial.println(parser_status);
+		Serial.print(parser_status);
+		Serial.print(":");
+		Serial.println(router->buffInfo());
 		cli();
 		sync = true;
 		sei();
@@ -122,8 +124,8 @@ void GCode::returnStatus() {
 	}
 	PositionXYZ tmp = router->getPos();
 	float fr = router->getCurrFR();
-	if (!(_crt->ls_x_down && _crt->ls_x_up && _crt->ls_y_down && _crt->ls_y_up
-			&& _crt->ls_z_down && _crt->ls_z_up)) {
+	if (_crt->ls_x_down || _crt->ls_x_up || _crt->ls_y_down || _crt->ls_y_up
+			|| _crt->ls_z_down || _crt->ls_z_up) {
 		parser_status = STATUS_LIMITI_SWITCH_TRG;
 	}
 	sei();
@@ -342,6 +344,7 @@ boolean GCode::getControlComm(char &code, float &val) {
 		return true;
 	}
 
+
 	if (getFloat(pos, val)) {
 		return false;
 	}
@@ -374,6 +377,9 @@ int GCode::parseLine() {
 				router->moveTo(
 						router->getPos()
 								+ PositionXYZ(0, 0, TOOL_CHANGE_HEIGHT));
+				break;
+			case 's':
+				router->stop();
 				break;
 			};
 

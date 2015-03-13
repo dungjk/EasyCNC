@@ -60,6 +60,11 @@ public:
 	 *  \return True if id empty, false otherwise.
 	 */
 	boolean isEmpty() const;
+
+	/*! \brief It returns how many free position are into the buffer
+	 *  \return Number of free buffer slots
+	 */
+	int getFreeBuffSize() const;
 };
 
 #endif /* MOTIONPLANNER_H_ */
