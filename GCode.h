@@ -15,11 +15,11 @@
 
 #include "GCode_def.h"
 #include "Arduino.h"
-#include "../routers/CNCRouterISR.h"
-#include "../utensils/MillingMachine.h"
-#include "../tools/utility.h"
+#include "CNCRouterISR.h"
+#include "MillingMachine.h"
+#include "utility.h"
 #include <stdint.h>
-#include "../config.h"
+#include "config.h"
 
 #define STATUS_FEEDBACK 3000  //15650   //!< It allows about a feedback rate of once per second
 

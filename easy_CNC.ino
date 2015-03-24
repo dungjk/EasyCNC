@@ -7,34 +7,33 @@
 //  versione: 0.1
 
 #include "config.h"
-#include "GCode/GCode.h"
-
+#include "GCode.h"
+#include "GCode_def.h"
+#include "MillingMachine.h"
+#include "CNCRouterISR.h"
+#include "Position.h"
+#include "MotorDriver.h"
+#include "debugger.h"
 
 MillingMachine mill(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
-
-CNC_Router cncrt(ROUTER_MX_STEPS_PER_MM, ROUTER_MY_STEPS_PER_MM, ROUTER_MZ_STEPS_PER_MM, ROUTER_MX_SPEED, ROUTER_MY_SPEED, ROUTER_MZ_SPEED);  //200.0 at lowPrecision
+CNC_Router_ISR cncrt;
 
 GCode gc(&cncrt, &mill);
 char new_line[256];
 
 void setup(){
-        cncrt.initMotorX();
-	cncrt.initMotorY();
-	cncrt.initMotorZ();
+       Serial.begin(SERIAL_BOUND);
+	//new_line.reserve(256);
+	cncrt.initMotors();
 	cncrt.resetPos();
-	cncrt.setMotionModeX(QUARTER_STEP);
-	cncrt.setMotionModeY(QUARTER_STEP);
-	cncrt.setMotionModeZ(QUARTER_STEP);
-	cncrt.setAbsolPos(); gc.last_word[GROUP3] = G90;
+	cncrt.setAbsolPos();
 	cncrt.initInterrupts();
-	cncrt.orientationX(-1);
+	cncrt.initMotionPerformer();
+
+	gc.last_word[GROUP3] = G90;
+	gc.init();
 
 	mill.init();
-
-	//attachInterrupt(INTERRUPT_STOP_MOTION, stopButton, FALLING);
-	//digitalWrite(INTERRUPT_STOP_MOTION, HIGH);
-
-	Serial.begin(SERIAL_BOUND);
 }
 
 void loop(){
@@ -42,6 +41,7 @@ void loop(){
 		new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
 		gc.line = new_line;
 		gc.parseLine();
+		gc.sendAck();
 	}
 }
 

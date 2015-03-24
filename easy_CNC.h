@@ -19,14 +19,13 @@
 #include "Arduino.h"
 
 #include "config.h"
-#include "GCode/GCode.h"
-#include "GCode/GCode_def.h"
-#include "utensils/MillingMachine.h"
-#include "routers/CNCRouterISR.h"
-#include "tools/Position.h"
-#include "motor_drivers/MotorDriver.h"
-#include "tools/debugger.h"
-
+#include "GCode.h"
+#include "GCode_def.h"
+#include "MillingMachine.h"
+#include "CNCRouterISR.h"
+#include "Position.h"
+#include "MotorDriver.h"
+#include "debugger.h"
 
 #ifdef __cplusplus
 extern "C" {

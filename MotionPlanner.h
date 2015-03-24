@@ -9,7 +9,7 @@
 #define MOTIONPLANNER_H_
 
 #include "Arduino.h"
-#include "../tools/debugger.h"
+#include "debugger.h"
 
 #define BUFF_LEN 20  //!< Max number of linear motions in the buffer.
 

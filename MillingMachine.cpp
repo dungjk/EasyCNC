@@ -6,6 +6,7 @@
  */
 
 #include "MillingMachine.h"
+
 MillingMachine::MillingMachine(uint8_t e, uint8_t c) :
 		enable_pin(e), control_pin(c), bit_speed(0), bit_dir(true), state(
 				false) {

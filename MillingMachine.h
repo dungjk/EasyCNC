@@ -11,10 +11,9 @@
 #ifndef MILLINGMACHINE_H_
 #define MILLINGMACHINE_H_
 
-#include "Utensil.h"
-
 #include <Arduino.h>
 #include <stdint.h>
+#include "Utensil.h"
 
 /*! \class MillingMachine
  *  \brief Class to control a the milling machine and its position on the z-axis.

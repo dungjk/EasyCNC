@@ -8,17 +8,13 @@
 #ifndef MOTIONPERFORMER_H_
 #define MOTIONPERFORMER_H_
 
-#include "../motor_drivers/MotorDriver.h"
+#include "MotorDriver.h"
 #include "MotionPlanner.h"
 #include "arduino.h"
-#include "../tools/debugger.h"
-//#include <avr/io.h>
-//#include <avr/interrupt.h>
+#include "debugger.h"
 
 #define DELAY_STEP_UP 39        //!<  ticks of timer4 with 8 prescaler to create a valid pulse on the step pin  ~ 20us
 #define IDLE_FREQ 3125          //!<  Value of OCR3A, it is the interval to check the motion planner when it is empty ~ 200ms
-//#define DELAY_STEP_UP 10000
-//#define IDLE_FREQ 5000
 
 /*! \class MotionPlanner
  *  \brief The class manages the motors movements.
