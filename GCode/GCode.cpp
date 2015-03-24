@@ -85,7 +85,7 @@ int GCode::getInt(int &i) {
 	i = ptr - 1;
 	return tmp.toInt();
 }
-
+/*
 boolean GCode::getFloat(uint8_t &pos, float &val) {
 	int ptr = pos;
 	while ((line[ptr] >= '0' && line[ptr] <= '9') || line[ptr] == '.'
@@ -98,7 +98,7 @@ boolean GCode::getFloat(uint8_t &pos, float &val) {
 	pos = ptr;
 	val = tmp.toFloat();
 	return false;
-}
+}*/
 
 void GCode::sendAck() {
 	if (sync) {
@@ -139,8 +139,9 @@ void GCode::returnStatus() {
 	Serial.print(":");
 	Serial.print(fr * 60);
 	Serial.print(":");
-	Serial.println(parser_status);
-
+	Serial.print(parser_status);
+	Serial.print(":");
+	Serial.println(router->buffInfo());
 	cli();
 	sync = true;
 	sei();
@@ -318,7 +319,7 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos) {
 	code = line[pos];
 	pos++;
 
-	if (getFloat(pos, val)) {
+	if (getFloat(pos, val, line)) {
 
 		parser_status = STATUS_BAD_WORD;
 		return false;
@@ -326,7 +327,7 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos) {
 	return true;
 }
 
-boolean GCode::getControlComm(char &code, float &val) {
+/*boolean GCode::getControlComm(char &code, float &val) {
 	uint8_t len = line.length();
 	uint8_t pos = 1;
 
@@ -349,15 +350,15 @@ boolean GCode::getControlComm(char &code, float &val) {
 		return false;
 	}
 	return true;
-}
+}*/
 
 int GCode::parseLine() {
-	removeSpaces();
+	removeSpaces(line);
 //Special commands that starts with "$"
 	if (line[0] == '$') {
 		char c;
 		float v;
-		if (getControlComm(c, v)) {
+		if (getControlComm(c, v, line)) {
 			switch (c) {
 			case 'r':       // errors reset
 				resetStatus();
@@ -380,6 +381,7 @@ int GCode::parseLine() {
 				break;
 			case 's':
 				router->stop();
+				router->start();
 				break;
 			};
 
@@ -620,7 +622,7 @@ int GCode::parseLine() {
 
 	return parser_status;
 }
-
+/*
 void GCode::removeSpaces() {
 	int len = line.length();
 	int i = 0;
@@ -631,7 +633,7 @@ void GCode::removeSpaces() {
 		} else
 			i++;
 	}
-}
+}*/
 
 ISR(TIMER5_COMPA_vect) {
 	if (_gc != NULL) {

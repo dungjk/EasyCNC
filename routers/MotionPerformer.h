@@ -86,7 +86,7 @@ public:
 	 *           the function is triggered.
 	 */
 	void stepPulse();
-	/*! \brief The function return true is the motion planner is not working.
+	/*! \brief The function return true if the motion planner is not working.
 	 *  \return True if it is not working, false otherwise.	 */
 	bool isNotWorking();
 

@@ -17,6 +17,8 @@
 #include "MotionPlanner.h"
 #include "MotionPerformer.h"
 
+extern char new_line[256];
+
 /*! \classs CNC_Router_ISR
  *  \brief The class controls the motors motion and the coordinates of the utensil.
  *  \author Francesco Giurlanda
@@ -146,6 +148,9 @@ public:
 
 	//! \brief It restarts a paused motion.
 	void restart();
+
+	//! \brief Start afetr a stop command
+	void start();
 
 	//! \brief It selects the incremental positioning mode.
 	void setIncrPos();

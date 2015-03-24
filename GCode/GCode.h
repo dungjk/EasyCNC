@@ -17,6 +17,7 @@
 #include "Arduino.h"
 #include "../routers/CNCRouterISR.h"
 #include "../utensils/MillingMachine.h"
+#include "../tools/utility.h"
 #include <stdint.h>
 #include "../config.h"
 
@@ -40,7 +41,7 @@ class GCode {
 	 *  \return It returns a boolean value that is true if the operation ends correctly, false if is occurred an error. See GCode::parser_status to get more information about the error.
 	 */
 	boolean getWord(char &code, float &val, uint8_t &pos);
-	boolean getControlComm(char &code, float &val);
+	//boolean getControlComm(char &code, float &val);
 	void cycleG81();
 	void motionG2G3();
 	void motionG0G1();
@@ -79,8 +80,8 @@ public:
 	 */
 	int parseLine();
 
-	//! \brief The function removes all spaces and \r \n char from the variable GCode::line.
-	void removeSpaces();
+//	//! \brief The function removes all spaces and \r \n char from the variable GCode::line.
+//	void removeSpaces();
 
 	/*! \brief The function reads a integer value from the variable GCode::line at the specified position.
 	 *  \param p It mast contains the position in the GCode::line from where the function starts to read an integer. The variable return a value equal the the position of the next char after the integer.
@@ -96,7 +97,7 @@ public:
 	 *  \param val  The function returns here the red value
 	 *  \return The function returns false if it is ok, true if the line is end.
 	 */
-	boolean getFloat(uint8_t &pos, float &val);
+	//boolean getFloat(uint8_t &pos, float &val);
 
 	/*! \brief It sends a response after a reception of GCode line, with the state of the parser
 	 *  \details The function sends a string through the serial connection, the information sent are

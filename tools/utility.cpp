@@ -9,6 +9,8 @@
             To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
+#include "utility.h"
+
 int getPinFromInterrupt(int i){
 #if defined(__AVR_ATmega2560__)
 	switch (i){
@@ -28,4 +30,57 @@ int getPinFromInterrupt(int i){
 #endif
 	/* you can add other controls here to support other Arduino boards. */
 	return 0;
+}
+
+void removeSpaces(String &l) {
+	int len = l.length();
+	int i = 0;
+	while (i < len) {
+		if (l[i] == ' ' || l[i] == '\n' || l[i] == '\r') {
+			l.remove(i, 1);
+			len--;
+		} else
+			i++;
+	}
+}
+
+
+boolean getFloat(uint8_t &pos, float &val, String &l) {
+	int ptr = pos;
+	while ((l[ptr] >= '0' && l[ptr] <= '9') || l[ptr] == '.'
+			|| l[ptr] == '-' || l[ptr] == '+') {
+		ptr++;
+	}
+	if (ptr == pos)
+		return true;
+	String tmp = l.substring(pos, ptr);
+	pos = ptr;
+	val = tmp.toFloat();
+	return false;
+}
+
+
+boolean getControlComm(char &code, float &val, String &l) {
+	uint8_t len = l.length();
+	uint8_t pos = 1;
+
+	if (pos == len) {
+		return false;
+	}
+	if (l[pos] < 'a' || l[pos] > 'z') {
+		return false;
+	}
+	code = l[pos];
+	pos++;
+
+	if (pos == len) {
+		val = 0;
+		return true;
+	}
+
+
+	if (getFloat(pos, val, l)) {
+		return false;
+	}
+	return true;
 }

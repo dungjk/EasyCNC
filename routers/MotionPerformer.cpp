@@ -233,7 +233,6 @@ void MotionPerformer::init() {
 void MotionPerformer::startMotion() {
 	uint8_t old_sreg = SREG; //!< Here I use this technique to restore the interrupts because i don't know the value of the I flag in SREG. Someone could have already the cli() function.
 	cli();
-	enableMotors();
 	START_TIMER3
 	;
 	SREG = old_sreg;
@@ -260,6 +259,7 @@ void MotionPerformer::pauseMotion() {
 }
 
 void MotionPerformer::restartMotion() {
+	enableMotors();
 	startMotion();
 }
 
@@ -270,7 +270,7 @@ void MotionPerformer::update() {
 			// No job
 			return;
 		}
-		// Job loades
+		// Job loaded
 		idle = false;
 		enableMotors();
 	}else if (motor[0]->act_steps == motor[0]->tot_steps) {
@@ -284,6 +284,7 @@ void MotionPerformer::update() {
 			idle = true;
 			return;
 		}
+		enableMotors();
 	}
 
 	old_sreg = SREG;

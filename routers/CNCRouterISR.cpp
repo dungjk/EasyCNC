@@ -22,7 +22,7 @@ void CNC_Router_ISR::ls_x_down_routine() {
 			PositionXYZ tmp = _crt->processed_p;
 			tmp.X(tmp.X() + 1.0);
 			_crt->moveTo(tmp);
-			_crt->restart();
+			_crt->start();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -42,7 +42,7 @@ void CNC_Router_ISR::ls_x_up_routine() {
 			PositionXYZ tmp = _crt->processed_p;
 			tmp.X(tmp.X() - 1.0);
 			_crt->moveTo(tmp);
-			_crt->restart();
+			_crt->start();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -62,7 +62,7 @@ void CNC_Router_ISR::ls_y_down_routine() {
 			PositionXYZ tmp = _crt->processed_p;
 			tmp.Y(tmp.Y() + 1.0);
 			_crt->moveTo(tmp);
-			_crt->restart();
+			_crt->start();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -82,7 +82,7 @@ void CNC_Router_ISR::ls_y_up_routine() {
 			PositionXYZ tmp = _crt->processed_p;
 			tmp.Y(tmp.Y() - 1.0);
 			_crt->moveTo(tmp);
-			_crt->restart();
+			_crt->start();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -102,7 +102,7 @@ void CNC_Router_ISR::ls_z_down_routine() {
 			PositionXYZ tmp = _crt->processed_p;
 			tmp.Z(tmp.Z() + 0.1);
 			_crt->moveTo(tmp);
-			_crt->restart();
+			_crt->start();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -122,7 +122,7 @@ void CNC_Router_ISR::ls_z_up_routine() {
 			PositionXYZ tmp = _crt->processed_p;
 			tmp.Z(tmp.Z() - 1.0);
 			_crt->moveTo(tmp);
-			_crt->restart();
+			_crt->start();
 		} else {
 			_crt->searchProc = false;
 		}
@@ -370,8 +370,28 @@ void CNC_Router_ISR::moveTo(float px, float py, float pz, float spd) {
 		//new_line_motion.delay = F_CPU / (spd_z * 256.0) - 1.0; //F_CPU = 16000000; The value of the OCR3A reg. it must be smaller than 65534
 	}
 
-	while (m_planner.addMotion(new_line_motion))
+	while (m_planner.addMotion(new_line_motion)) {
+		if (Serial.available() > 0) {
+			new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
+			String line = new_line;
+			if (line[0] == '$') {
+				char c;
+				float v;
+				if (getControlComm(c, v, line)) {
+					switch (c) {
+
+					case 's':
+						m_performer.stopMotion();
+						m_planner.clear();
+						processed_p = getPos();
+						m_performer.startMotion();
+						return;
+					};
+				}
+			}
+		}
 		delay(100); //It waits for a correct insertion into the motion planner
+	}
 
 	processed_p = new_p;
 }
@@ -388,6 +408,10 @@ void CNC_Router_ISR::stop() {
 	m_performer.stopMotion();
 	m_planner.clear();
 	processed_p = getPos();
+}
+
+void CNC_Router_ISR::start() {
+	m_performer.startMotion();
 }
 
 void CNC_Router_ISR::pause() {
@@ -516,7 +540,7 @@ float CNC_Router_ISR::getCurrFR() {
 	return m_performer.current_fr;
 }
 
-int CNC_Router_ISR::buffInfo(){
+int CNC_Router_ISR::buffInfo() {
 	return m_planner.getFreeBuffSize();
 }
 
