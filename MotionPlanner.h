@@ -9,6 +9,7 @@
 #define MOTIONPLANNER_H_
 
 #include "Arduino.h"
+#include "P_Info.h"
 #include "debugger.h"
 
 #define BUFF_LEN 20  //!< Max number of linear motions in the buffer.
@@ -36,9 +37,12 @@ class MotionPlanner {
 	LM movs[BUFF_LEN];   //!< Circular  buffer of linear motions.
 	uint8_t last, first;
 	boolean empty;     //!< It is false if at least one element is stored in the buffer, true otherwise.
+	PinInfo pin_cooling;  //!< Pin that controls the cooling of the motors drivers
 public:
-	//! Default constructor
-	MotionPlanner();
+	/*! Default constructor
+	 * \param pcl Pin connected to the motors drivers cooling system
+	 */
+	MotionPlanner(uint8_t pcl);
 	/*! \brief The function returns a LinearMotion object through a
 	 *         return argument and a boolean value that is false if the operation is done, true otherwise.
 	 *  \param mov It is a reference to a return value that will store the LinearMotion object.
@@ -57,7 +61,7 @@ public:
 	void clear();
 
 	/*! \brief It returns the status of the buffer
-	 *  \return True if id empty, false otherwise.
+	 *  \return True if it is empty, false otherwise.
 	 */
 	boolean isEmpty() const;
 

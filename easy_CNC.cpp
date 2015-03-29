@@ -12,6 +12,12 @@
 #include "easy_CNC.h"
 
 void setup() {
+
+	lcd.backlight();
+	lcd.clear();
+	lcd.setCursor(4, 1);
+	lcd.print("EasyCNC v0.2");
+
 	Serial.begin(SERIAL_BOUND);
 	//new_line.reserve(256);
 	cncrt.initMotors();

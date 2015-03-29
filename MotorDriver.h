@@ -10,25 +10,13 @@
 
 #include "Arduino.h"
 #include <stdint.h>
+#include "P_Info.h"
 
 #define FULL_STEP 1			//!< Identify the full step mode \sa MSMC_A4988::setMode(uint8_t)
 #define HALF_STEP 2         //!< Identify the half step mode \sa MSMC_A4988::setMode(uint8_t)
 #define QUARTER_STEP 4		//!< Identify the quarter step mode \sa MSMC_A4988::setMode(uint8_t)
 #define EIGHTH_STEP 8		//!< Identify the eighth step mode \sa MSMC_A4988::setMode(uint8_t)
 #define SIXTEENTH_STEP 16	//!< Identify the sixteenth step mode \sa MSMC_A4988::setMode(uint8_t)
-
-/*! \struct PinInfo
- *  \brief It keeps the info about the register of a specified pin
- */
-struct P_Info {
-	uint8_t bit;  //!< The bit mask of the pin in the register.
-	volatile uint8_t *outreg; //!< The output register of the specified pin.
-
-	inline void set() {*outreg |= bit;};      //<! It requires an atomic block, use cli() and sei() functions
-	inline void reset() {*outreg &= ~bit;};   //<! It requires an atomic block, use cli() and sei() functions
-};
-
-typedef struct P_Info PinInfo;
 
 /*! \class MotorDriver
  *  \brief The class is the base class to control a stepper driver with a SED interface (step-enable-direction)

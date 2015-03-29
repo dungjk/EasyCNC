@@ -86,19 +86,19 @@ int GCode::getInt(int &i) {
 	return tmp.toInt();
 }
 /*
-boolean GCode::getFloat(uint8_t &pos, float &val) {
-	int ptr = pos;
-	while ((line[ptr] >= '0' && line[ptr] <= '9') || line[ptr] == '.'
-			|| line[ptr] == '-' || line[ptr] == '+') {
-		ptr++;
-	}
-	if (ptr == pos)
-		return true;
-	String tmp = line.substring(pos, ptr);
-	pos = ptr;
-	val = tmp.toFloat();
-	return false;
-}*/
+ boolean GCode::getFloat(uint8_t &pos, float &val) {
+ int ptr = pos;
+ while ((line[ptr] >= '0' && line[ptr] <= '9') || line[ptr] == '.'
+ || line[ptr] == '-' || line[ptr] == '+') {
+ ptr++;
+ }
+ if (ptr == pos)
+ return true;
+ String tmp = line.substring(pos, ptr);
+ pos = ptr;
+ val = tmp.toFloat();
+ return false;
+ }*/
 
 void GCode::sendAck() {
 	if (sync) {
@@ -117,9 +117,9 @@ void GCode::sendAck() {
 
 void GCode::returnStatus() {
 	//Interrupts disabled
-	if(sync){
+	if (sync) {
 		sync = false;
-	}else{
+	} else {
 		return;
 	}
 	PositionXYZ tmp = router->getPos();
@@ -328,29 +328,29 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos) {
 }
 
 /*boolean GCode::getControlComm(char &code, float &val) {
-	uint8_t len = line.length();
-	uint8_t pos = 1;
+ uint8_t len = line.length();
+ uint8_t pos = 1;
 
-	if (pos == len) {
-		return false;
-	}
-	if (line[pos] < 'a' || line[pos] > 'z') {
-		return false;
-	}
-	code = line[pos];
-	pos++;
+ if (pos == len) {
+ return false;
+ }
+ if (line[pos] < 'a' || line[pos] > 'z') {
+ return false;
+ }
+ code = line[pos];
+ pos++;
 
-	if (pos == len) {
-		val = 0;
-		return true;
-	}
+ if (pos == len) {
+ val = 0;
+ return true;
+ }
 
 
-	if (getFloat(pos, val)) {
-		return false;
-	}
-	return true;
-}*/
+ if (getFloat(pos, val)) {
+ return false;
+ }
+ return true;
+ }*/
 
 int GCode::parseLine() {
 	removeSpaces(line);
@@ -527,6 +527,28 @@ int GCode::parseLine() {
 				break;
 			case 5:
 				// switch off the spindle
+				// I have to wait for the ending of the last motion command
+				while (!router->m_planner.isEmpty()) {
+					if (Serial.available() > 0) {
+						new_line[Serial.readBytesUntil('\n', new_line, 256)] =
+								'\0';
+						String line = new_line;
+						if (line[0] == '$') {
+							char c;
+							float v;
+							if (getControlComm(c, v, line)) {
+								switch (c) {
+
+								case 's':
+									router->stop();
+									router->start();
+								};
+							}
+						}
+					}
+					delay(100); //It waits for a correct insertion into the motion planner
+				}
+
 				utensil->disable();
 				break;
 			case 6:
@@ -623,17 +645,17 @@ int GCode::parseLine() {
 	return parser_status;
 }
 /*
-void GCode::removeSpaces() {
-	int len = line.length();
-	int i = 0;
-	while (i < len) {
-		if (line[i] == ' ' || line[i] == '\n' || line[i] == '\r') {
-			line.remove(i, 1);
-			len--;
-		} else
-			i++;
-	}
-}*/
+ void GCode::removeSpaces() {
+ int len = line.length();
+ int i = 0;
+ while (i < len) {
+ if (line[i] == ' ' || line[i] == '\n' || line[i] == '\r') {
+ line.remove(i, 1);
+ len--;
+ } else
+ i++;
+ }
+ }*/
 
 ISR(TIMER5_COMPA_vect) {
 	if (_gc != NULL) {

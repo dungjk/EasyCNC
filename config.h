@@ -64,6 +64,7 @@
 #define ROUTER_UP_LIMIT_SWITCH_Y_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
 #define ROUTER_UP_LIMIT_SWITCH_Z_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
 
+#define ROUTER_DRIVERS_COOLING 8							/*!< \brief Pin that controls the cooling of the motors drivers*/
 
 //#define ROUTER_MX_CONTROLLER_ULN2003A
 #define ROUTER_MX_CONTROLLER_A4988

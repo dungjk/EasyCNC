@@ -136,7 +136,7 @@ CNC_Router_ISR::CNC_Router_ISR() :
 		ROUTE_MY_MODE * ROUTER_MY_STEPS_PER_MM * ROUTER_MY_SPEED / 60), v_max_z(
 		ROUTE_MZ_MODE * ROUTER_MZ_STEPS_PER_MM * ROUTER_MZ_SPEED / 60), pos_type(
 		false), round_off_x(0.0), round_off_y(0.0), round_off_z(0.0), searchProc(
-		false), m_planner(), m_performer(&(this->m_planner)) {
+		false), m_planner(ROUTER_DRIVERS_COOLING), m_performer(&(this->m_planner)) {
 	ls_x_down = ls_x_up = ls_y_down = ls_y_up = ls_z_down = ls_z_up = false;
 	_crt = this;
 }
