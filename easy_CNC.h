@@ -25,9 +25,6 @@
 #include "CNCRouterISR.h"
 #include "Position.h"
 #include "MotorDriver.h"
-#include "debugger.h"
-#include <Wire.h>
-#include "LC_I2C.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,8 +42,5 @@ CNC_Router_ISR cncrt;
 
 GCode gc(&cncrt, &mill);
 char new_line[256];
-
-LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 16 chars and 2 line display
-
 
 #endif /* _easy_CNC_H_ */

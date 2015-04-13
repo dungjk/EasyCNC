@@ -13,7 +13,6 @@
 #include "config.h"
 #include "Position.h"
 #include "utility.h"
-#include "debugger.h"
 #include "MotionPlanner.h"
 #include "MotionPerformer.h"
 
@@ -149,7 +148,7 @@ public:
 	//! \brief It restarts a paused motion.
 	void restart();
 
-	//! \brief Start afetr a stop command
+	//! \brief Start after a stop command
 	void start();
 
 	//! \brief It selects the incremental positioning mode.

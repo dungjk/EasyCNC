@@ -276,8 +276,6 @@ void CNC_Router_ISR::moveToXY(float px, float py, float spd) {
 		}
 		new_line_motion.delay = F_CPU / (spd_y * 1024.0) - 1.0; //F_CPU=16000000; The value of the OCR3A reg. it must be smaller than 65534
 	}
-//DBG(if(new_line_motion.steps_x > ){});
-
 	while (m_planner.addMotion(new_line_motion))
 		delay(100);
 //It waits for a correct insertion into the motion planner
