@@ -2,8 +2,8 @@
  \file      PlotterServo.h
  \brief     The file contains the classes which implement the control of an utensil composed by a pen which up/down motion is controlled by a servo motor.
  \author    Francesco Giurlanda
- \version   0.1
- \date      2014
+ \version   0.2
+ \date      2015
 
  \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
             To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.

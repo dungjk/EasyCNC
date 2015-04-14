@@ -1,8 +1,12 @@
-/*
- * MotioPerformer.h
- *
- *  Created on: 30/nov/2014
- *      Author: francescogiurlanda
+/*!
+ \file MotioPerformer.h
+ \brief Implementation of the class MotionPerformer.
+ \author    Francesco Giurlanda
+ \version   0.2
+ \date      2015
+ \warning   If you change Arduino board some parameters could change too.
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+ To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef MOTIONPERFORMER_H_
@@ -16,7 +20,7 @@
 #define DELAY_STEP_UP 39        //!<  ticks of timer4 with 8 prescaler to create a valid pulse on the step pin  ~ 20us
 #define IDLE_FREQ 3125          //!<  Value of OCR3A, it is the interval to check the motion planner when it is empty ~ 200ms
 
-/*! \class MotionPlanner
+/*! \class MotionPerformer
  *  \brief The class manages the motors movements.
  *  \detailes The class manages the motors movements, it is binded to a
  *            MotionPlanner object that keeps all the linear movements.

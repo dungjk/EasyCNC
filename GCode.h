@@ -3,8 +3,8 @@
  \brief     G-Code parser.
  \details   The class allows to parse the G-Code lines and runs the operation to actuate the command.
  \author    Francesco Giurlanda
- \version   0.1
- \date      2014
+ \version   0.2
+ \date      2015
 
  \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
             To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.

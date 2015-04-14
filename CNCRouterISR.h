@@ -1,8 +1,12 @@
-/*
- * CNCRouterISR.h
- *
- *  Created on: 03/dic/2014
- *      Author: francescogiurlanda
+/*!
+ \file      CNCRouterISR.h
+ \brief     Data structure that coordinates the motors motion
+ \author    Francesco Giurlanda
+ \version   0.2
+ \date      2015
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+ To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef CNCROUTERISR_H_

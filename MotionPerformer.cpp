@@ -2,8 +2,8 @@
  \file MotioPerformer.cpp
  \brief Implementation of the class MotionPerformer.
  \author    Francesco Giurlanda
- \version   0.1
- \date      2014
+ \version   0.2
+ \date      2015
  \warning   If you change Arduino board some parameters could change too.
  \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
  To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.

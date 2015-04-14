@@ -1,10 +1,11 @@
-//  Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione 
-//  - Condividi allo stesso modo 4.0 Internazionale. 
-//  Per leggere una copia della licenza visita il sito web http://creativecommons.org/licenses/by-sa/4.0/.
-//
-//  Autor: Francesco Giurlanda
-//  Project: Easy CNC
-//  versione: 0.1
+/*! 
+    \file      easy_CNC.ino
+    \author    Francesco Giurlanda
+    \version   0.2
+    \date      2015
+    \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+               To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ */
 
 #include "config.h"
 #include "GCode.h"
@@ -13,7 +14,6 @@
 #include "CNCRouterISR.h"
 #include "Position.h"
 #include "MotorDriver.h"
-#include "debugger.h"
 
 MillingMachine mill(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
 CNC_Router_ISR cncrt;
@@ -23,7 +23,6 @@ char new_line[256];
 
 void setup(){
        Serial.begin(SERIAL_BOUND);
-	//new_line.reserve(256);
 	cncrt.initMotors();
 	cncrt.resetPos();
 	cncrt.setAbsolPos();

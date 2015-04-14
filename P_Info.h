@@ -1,14 +1,18 @@
-/*
- * P_Info.h
- *
- *  Created on: 29/mar/2015
- *      Author: francescogiurlanda
+/*!
+ \file      P_Info.h
+ \brief     Data structure that keeps the info about the register of a specified pin.
+ \author    Francesco Giurlanda
+ \version   0.2
+ \date      2015
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef P_INFO_H_
 #define P_INFO_H_
 
-/*! \struct PinInfo
+/*! \struct P_Info
  *  \brief It keeps the info about the register of a specified pin
  */
 struct P_Info {

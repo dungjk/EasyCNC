@@ -1,8 +1,12 @@
-/*
- * MotionPlanner.cpp
- *
- *  Created on: 30/nov/2014
- *      Author: francescogiurlanda
+/*!
+ \file      MotorPlanner.cpp
+ \brief     Data structure that plans the machine motions.
+ \author    Francesco Giurlanda
+ \version   0.2
+ \date      2015
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #include "MotionPlanner.h"

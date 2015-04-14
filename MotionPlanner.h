@@ -1,8 +1,12 @@
-/*
- * MotionPlanner.h
- *
- *  Created on: 30/nov/2014
- *      Author: francescogiurlanda
+/*!
+ \file      MotorPlanner.h
+ \brief     Data structure that plans the machine motions.
+ \author    Francesco Giurlanda
+ \version   0.2
+ \date      2015
+
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef MOTIONPLANNER_H_
@@ -14,7 +18,7 @@
 
 #define BUFF_LEN 20  //!< Max number of linear motions in the buffer.
 
-/*! \struct LineaeMotion
+/*! \struct LinearMotion
  *  \brief The structure keeps the data of a linear motion.
  *  \details The structure keeps the data of a linear motion:
  *           coordinates and delay between each step update.

@@ -1,10 +1,13 @@
-/*
- * CNCRouterISR.cpp
- *
- *  Created on: 03/dic/2014
- *      Author: francescogiurlanda
- */
+/*!
+ \file      CNCRouterISR.cpp
+ \brief     Data structure that coordinates the motors motion
+ \author    Francesco Giurlanda
+ \version   0.2
+ \date      2015
 
+ \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+ To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ */
 #include "CNCRouterISR.h"
 
 CNC_Router_ISR *_crt = NULL; //!< It is used to bind the interrupts due to the limits switches to the MotionPerformer::stopMotion function of the last instanced CNC_Router_ISR object
