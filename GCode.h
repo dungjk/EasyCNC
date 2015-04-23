@@ -17,6 +17,7 @@
 #include "Arduino.h"
 #include "CNCRouterISR.h"
 #include "MillingMachine.h"
+#include "Laser.h"
 #include "utility.h"
 #include <stdint.h>
 #include "config.h"
@@ -37,7 +38,6 @@ class GCode {
 	 *  \param val It is a return value and it is going to contain a numeric value associated to the code.
 	 *  \param pos Here we must specify the position in the line where the function starts to find the word.
 	 *             At the end, the function returns in it the position of the next letter after the found word.
-	 *  \param len The max length of the line.
 	 *  \return It returns a boolean value that is true if the operation ends correctly, false if is occurred an error. See GCode::parser_status to get more information about the error.
 	 */
 	boolean getWord(char &code, float &val, uint8_t &pos);
@@ -45,6 +45,7 @@ class GCode {
 	void cycleG81();
 	void motionG2G3();
 	void motionG0G1();
+	void waitMotionFinish();
 
 	volatile boolean sync;              //!< It synchronizes the Serial print of the functions sendAck() and the status send
 
@@ -56,19 +57,24 @@ public:
 	uint8_t parser_status;      //!< The status of the parser. \sa GCode_def.h
 	uint8_t last_word[16];      //!< Here the class stores the last word red for each group. \sa GCode_def.h
 	PositionXYZ new_pos;        //!< The class stores the new position red from the G-Code line
-				//last_pos;		//!< The final position of the last processed G-Code line
 	float params[PARAMS];       //!< The array stores the values of the parameters red from the G-Code line. \sa GCode_def.h
 	boolean pars_spec[PARAMS];  //!< The array says which parameters were found in parsed G-Code line. \sa GCode_def.h
 
 	CNC_Router_ISR *router;        //!< Pointer to the CNC_Router object
+
+#ifdef _MILLING_MACHINE
 	MillingMachine *utensil;    //!< Pointer to the MillingMachine object
+#endif
+#ifdef _LASER
+	Laser * utensil;             //!< Pointer to the Laser object
+#endif
 
 
 	/*! \brief Constructor
 	 * 	\param r Address of the CNC_Router object
-	 * 	\param m Address of the MillingMachine object
+	 * 	\param m Address of the Utensil object
 	 */
-	GCode(CNC_Router_ISR *r, MillingMachine *m);
+	GCode(CNC_Router_ISR *r, Utensil *m);
 
 	//! \brief It initializes the timer that manage the status feedback to the GUI controller. It mast be call into the setup function.
 	void init();
@@ -80,24 +86,11 @@ public:
 	 */
 	int parseLine();
 
-//	//! \brief The function removes all spaces and \r \n char from the variable GCode::line.
-//	void removeSpaces();
-
 	/*! \brief The function reads a integer value from the variable GCode::line at the specified position.
 	 *  \param p It mast contains the position in the GCode::line from where the function starts to read an integer. The variable return a value equal the the position of the next char after the integer.
 	 *  \return  The integer value that has been red from the GCode::line
 	 */
 	int getInt(int &p);//TODO: make it similar to getFloat, mi sa che non è più stata usata questa funzione
-
-	//! \brief The function calls the update functions to perform the motors motion. See CNC_Router::update and MillingMachine::update.
-	//int runMotion();
-
-	/*! \brief The function reads a float value in the GCode::line variable, from the specified position and return false if it is ok, else true if the function is arrived at the end of the line.
-	 *  \param pos Is the position where it starts to read a float value. The function returns here the position of the next char after the float value.
-	 *  \param val  The function returns here the red value
-	 *  \return The function returns false if it is ok, true if the line is end.
-	 */
-	//boolean getFloat(uint8_t &pos, float &val);
 
 	/*! \brief It sends a response after a reception of GCode line, with the state of the parser
 	 *  \details The function sends a string through the serial connection, the information sent are

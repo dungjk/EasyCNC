@@ -1,5 +1,5 @@
 /*!
- \file MotioPerformer.h
+ \file MotionPerformer.h
  \brief Implementation of the class MotionPerformer.
  \author    Francesco Giurlanda
  \version   0.2
@@ -22,7 +22,7 @@
 
 /*! \class MotionPerformer
  *  \brief The class manages the motors movements.
- *  \detailes The class manages the motors movements, it is binded to a
+ *  \details The class manages the motors movements, it is binded to a
  *            MotionPlanner object that keeps all the linear movements.
  *  \author Francesco Giurlanda
  */

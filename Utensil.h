@@ -1,5 +1,5 @@
 /*!
- \file      Utensils.h
+ \file      Utensil.h
  \brief     The file contains the base class which implement the control of an utensils.
  \author    Francesco Giurlanda
  \version   0.2

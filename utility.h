@@ -20,7 +20,7 @@
  */
 int getPinFromInterrupt(int i);
 
-/*! \brief The function removes all spaces and \r \n chars from the string.
+/*! \brief The function removes all spaces and \\r \\n chars from the string.
  *  \param l String
  */
 void removeSpaces(String &l);

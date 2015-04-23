@@ -23,7 +23,13 @@ void setup() {
 	gc.last_word[GROUP3] = G90;
 	gc.init();
 
-	mill.init();
+#ifdef _MILLING_MACHINE
+	tool.init();
+#endif
+#ifdef _LASER
+	tool.init();
+#endif
+
 }
 
 void loop() {

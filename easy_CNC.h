@@ -21,10 +21,17 @@
 #include "config.h"
 #include "GCode.h"
 #include "GCode_def.h"
-#include "MillingMachine.h"
 #include "CNCRouterISR.h"
 #include "Position.h"
 #include "MotorDriver.h"
+
+#ifdef _MILLING_MACHINE
+#include "MillingMachine.h"
+#endif
+#ifdef _LASER
+#include "Laser.h"
+#endif
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,11 +43,17 @@ void setup();
 #endif
 
 //add your function definitions for the project easy_CNC here
+#ifdef _MILLING_MACHINE
+MillingMachine tool(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
+#endif
 
-MillingMachine mill(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
+#ifdef _LASER
+Laser tool(_LASER_CONTROL_PIN, _LASER_CONTROL_ACTIVE_HIGH);
+#endif
+
 CNC_Router_ISR cncrt;
 
-GCode gc(&cncrt, &mill);
+GCode gc(&cncrt, &tool);
 char new_line[256];
 
 #endif /* _easy_CNC_H_ */

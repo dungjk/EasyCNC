@@ -1,5 +1,5 @@
 /*!
- \file      MotorPlanner.h
+ \file      MotionPlanner.h
  \brief     Data structure that plans the machine motions.
  \author    Francesco Giurlanda
  \version   0.2

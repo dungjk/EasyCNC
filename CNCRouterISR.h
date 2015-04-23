@@ -22,13 +22,12 @@
 
 extern char new_line[256];
 
-/*! \classs CNC_Router_ISR
+/*! \class CNC_Router_ISR
  *  \brief The class controls the motors motion and the coordinates of the utensil.
  *  \author Francesco Giurlanda
  */
 class CNC_Router_ISR {
 	PositionXYZ processed_p; //!< It keeps the position of the utensil at the last call of the moveTo function
-	//actual_p; //!< It keeps the actual position of the utensil during an motion
 	float spmmx, //!< Steps to move of a mm in the X-axis (steps/mm). \sa config.h
 			spmmy, //!< Steps to move of a mm in the Y-axis (steps/mm). \sa config.h
 			spmmz; //!< Steps to move of a mm in the Z-axis (steps/mm). \sa config.h
@@ -83,7 +82,6 @@ public:
 			float vmz);
 
 	/*! \brief It initializes the controller for all motors. It must be called one time before starting the motion operations
-	 *  \param md The microstep mode configured on the motor driver. \sa MotorDriver.
 	 */
 	void initMotors();
 

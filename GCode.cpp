@@ -52,9 +52,16 @@ GCode *_gc = NULL; //!< It is used to bind the timer5 handler and the GCode::ret
  */
 #define STOP_TIMER5 {   TCCR5B &= ~((1 << CS50) | (1 << CS52));}
 
-GCode::GCode(CNC_Router_ISR *rt, MillingMachine *ml) :
-		parser_status(STATUS_OK), spindle_speed(0.0), feed_rate(0.0), router(
-				rt), utensil(ml) {
+GCode::GCode(CNC_Router_ISR *rt, Utensil *ml) :
+		parser_status(STATUS_OK), spindle_speed(0.0), feed_rate(0.0), router(rt) {
+#ifdef _MILLING_MACHINE
+	utensil = static_cast<MillingMachine*> (ml);
+#endif
+
+#ifdef _LASER
+	utensil = static_cast<Laser*>(ml);
+#endif
+
 	line = "";
 	sync = true;
 	memset(last_word, UNSPECIFIED, 16);
@@ -145,8 +152,6 @@ void GCode::returnStatus() {
 	cli();
 	sync = true;
 	sei();
-	/*Serial.print(":");
-	 Serial.println(line);*/
 }
 
 void GCode::resetStatus() {
@@ -352,6 +357,28 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos) {
  return true;
  }*/
 
+void GCode::waitMotionFinish() {
+	while (!(router->m_planner.isEmpty() && router->m_performer.isNotWorking()) ) {
+		if (Serial.available() > 0) {
+			new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
+			String line = new_line;
+			if (line[0] == '$') {
+				char c;
+				float v;
+				if (getControlComm(c, v, line)) {
+					switch (c) {
+
+					case 's':
+						router->stop();
+						router->start();
+					};
+				}
+			}
+		}
+		delay(100); //It waits for a correct insertion into the motion planner
+	}
+}
+
 int GCode::parseLine() {
 	removeSpaces(line);
 //Special commands that starts with "$"
@@ -517,39 +544,43 @@ int GCode::parseLine() {
 			switch ((int) val) {
 			case 3:
 				// switch on the spindle in CW
+#ifdef _MILLING_MACHINE
 				utensil->setSpindleDir(true);
+				waitMotionFinish();
 				utensil->enable();
+#endif
+#ifdef _LASER
+				waitMotionFinish();
+				utensil->switchOn();
+#endif
 				break;
 			case 4:
 				// switch on the spindle in CCW
+#ifdef _MILLING_MACHINE
 				utensil->setSpindleDir(false);
+				waitMotionFinish();
 				utensil->enable();
+#endif
+
+#ifdef _LASER
+				waitMotionFinish();
+				utensil->switchOn();
+#endif
 				break;
 			case 5:
+#ifdef _MILLING_MACHINE
 				// switch off the spindle
 				// I have to wait for the ending of the last motion command
-				while (!router->m_planner.isEmpty()) {
-					if (Serial.available() > 0) {
-						new_line[Serial.readBytesUntil('\n', new_line, 256)] =
-								'\0';
-						String line = new_line;
-						if (line[0] == '$') {
-							char c;
-							float v;
-							if (getControlComm(c, v, line)) {
-								switch (c) {
-
-								case 's':
-									router->stop();
-									router->start();
-								};
-							}
-						}
-					}
-					delay(100); //It waits for a correct insertion into the motion planner
-				}
-
+				waitMotionFinish();
 				utensil->disable();
+#endif
+
+#ifdef _LASER
+				// switch off the laser
+				// I have to wait for the ending of the last motion command
+				waitMotionFinish();
+				utensil->SwitchOff();
+#endif
 				break;
 			case 6:
 				// tool change (unsupported)
@@ -571,7 +602,9 @@ int GCode::parseLine() {
 			break;
 		case 'S':
 			spindle_speed = val;
+#ifdef _MILLING_MACHINE
 			utensil->setSpindleSpeed(spindle_speed);
+#endif
 			break;
 		case 'X':
 			new_pos.X(val);

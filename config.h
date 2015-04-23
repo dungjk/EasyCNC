@@ -94,8 +94,9 @@
 // *          UTENSILS         *
 // *****************************
 
-//#define _PLOTTER_SERVO                    /*!< \brief Uncomment to active the servo plotter support. */
-#define _MILLING_MACHINE                 /*!< \brief Uncomment to active the milling machine support. */
+//#define _PLOTTER_SERVO                    /*!< \brief Uncomment to enable the servo plotter support. */
+//#define _MILLING_MACHINE                 /*!< \brief Uncomment to enable the milling machine support. */
+#define _LASER							/*! \brief Uncomment to enable the laser support. */
 
 // *****************************
 // *       UTENSIL SETUP       *
@@ -115,6 +116,10 @@
 #define _MILLING_MACHINE_SPEED_PIN   11    /*!< \brief The pin number connected to the speed control circuit of the milling machine.*/
 #endif
 
+#ifdef _LASER
+#define _LASER_CONTROL_PIN 32				/*!< \brief The pin number connected to the enable circuit of the laser */
+#define _LASER_CONTROL_ACTIVE_HIGH 0		/*!< \brief 1 if the laser driver is active high, 0 otherwise. */
+#endif
 
 #endif //CONFIG_H
 

@@ -16,12 +16,11 @@
 #include "Utensil.h"
 
 /*! \class MillingMachine
- *  \brief Class to control a the milling machine and its position on the z-axis.
- *  \details The class allows to control a milling machine. It is possible change the position on the z-axis and the
+ *  \brief Class to control a the milling machine.
+ *  \details The class allows to control a milling machine. It is possible change the
  *           speed of the drill bit.
  *  \author    Francesco Giurlanda
  */
-
 class MillingMachine: public Utensil {
 
 	uint8_t bit_speed; //!< The speed of the drill bit

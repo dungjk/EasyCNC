@@ -1,5 +1,5 @@
 /*!
- \file MotioPerformer.cpp
+ \file MotionPerformer.cpp
  \brief Implementation of the class MotionPerformer.
  \author    Francesco Giurlanda
  \version   0.2
