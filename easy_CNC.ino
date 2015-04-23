@@ -10,12 +10,25 @@
 #include "config.h"
 #include "GCode.h"
 #include "GCode_def.h"
-#include "MillingMachine.h"
 #include "CNCRouterISR.h"
 #include "Position.h"
 #include "MotorDriver.h"
 
-MillingMachine mill(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
+#ifdef _MILLING_MACHINE
+#include "MillingMachine.h"
+#endif
+#ifdef _LASER
+#include "Laser.h"
+#endif
+
+#ifdef _MILLING_MACHINE
+MillingMachine tool(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
+#endif
+
+#ifdef _LASER
+Laser tool(_LASER_CONTROL_PIN, _LASER_CONTROL_ACTIVE_HIGH);
+#endif
+
 CNC_Router_ISR cncrt;
 
 GCode gc(&cncrt, &mill);
@@ -32,7 +45,12 @@ void setup(){
 	gc.last_word[GROUP3] = G90;
 	gc.init();
 
-	mill.init();
+#ifdef _MILLING_MACHINE
+	tool.init();
+#endif
+#ifdef _LASER
+	tool.init();
+#endif
 }
 
 void loop(){
