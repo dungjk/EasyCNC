@@ -14,7 +14,6 @@
 
 #include "Arduino.h"
 #include "P_Info.h"
-#include "debugger.h"
 
 #define BUFF_LEN 20  //!< Max number of linear motions in the buffer.
 
