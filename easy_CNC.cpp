@@ -29,7 +29,9 @@ void setup() {
 #ifdef _LASER
 	tool.init();
 #endif
-
+#ifdef _PLOTTER_SERVO
+	tool.init();
+#endif
 }
 
 void loop() {

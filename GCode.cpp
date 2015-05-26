@@ -62,6 +62,10 @@ GCode::GCode(CNC_Router_ISR *rt, Utensil *ml) :
 	utensil = static_cast<Laser*>(ml);
 #endif
 
+#ifdef _PLOTTER_SERVO
+	utensil = static_cast<PlotterServo*>(ml);
+#endif
+
 	line = "";
 	sync = true;
 	memset(last_word, UNSPECIFIED, 16);
@@ -358,7 +362,7 @@ boolean GCode::getWord(char &code, float &val, uint8_t &pos) {
  }*/
 
 void GCode::waitMotionFinish() {
-	while (!(router->m_planner.isEmpty() && router->m_performer.isNotWorking()) ) {
+	while (!(router->m_planner.isEmpty() && router->m_performer.isNotWorking())) {
 		if (Serial.available() > 0) {
 			new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
 			String line = new_line;
@@ -553,6 +557,10 @@ int GCode::parseLine() {
 				waitMotionFinish();
 				utensil->switchOn();
 #endif
+#ifdef _PLOTTER_SERVO
+				waitMotionFinish();
+				utensil->down();
+#endif
 				break;
 			case 4:
 				// switch on the spindle in CCW
@@ -561,10 +569,13 @@ int GCode::parseLine() {
 				waitMotionFinish();
 				utensil->enable();
 #endif
-
 #ifdef _LASER
 				waitMotionFinish();
 				utensil->switchOn();
+#endif
+#ifdef _PLOTTER_SERVO
+				waitMotionFinish();
+				utensil->down();
 #endif
 				break;
 			case 5:
@@ -580,6 +591,10 @@ int GCode::parseLine() {
 				// I have to wait for the ending of the last motion command
 				waitMotionFinish();
 				utensil->SwitchOff();
+#endif
+#ifdef _PLOTTER_SERVO
+				waitMotionFinish();
+				utensil->up();
 #endif
 				break;
 			case 6:

@@ -25,6 +25,9 @@
 #include "Position.h"
 #include "MotorDriver.h"
 
+#ifdef _PLOTTER_SERVO
+#include "PlotterServo.h"
+#endif
 #ifdef _MILLING_MACHINE
 #include "MillingMachine.h"
 #endif
@@ -46,9 +49,11 @@ void setup();
 #ifdef _MILLING_MACHINE
 MillingMachine tool(_MILLING_MACHINE_ENABLE_PIN, _MILLING_MACHINE_SPEED_PIN);
 #endif
-
 #ifdef _LASER
 Laser tool(_LASER_CONTROL_PIN, _LASER_CONTROL_ACTIVE_HIGH);
+#endif
+#ifdef _PLOTTER_SERVO
+PlotterServo tool(_PLOTTER_SERVO_PIN, _PLOTTER_SERVO_UP_POS, _PLOTTER_SERVO_DOWN_POS);
 #endif
 
 CNC_Router_ISR cncrt;

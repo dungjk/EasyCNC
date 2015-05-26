@@ -94,9 +94,9 @@
 // *          UTENSILS         *
 // *****************************
 
-//#define _PLOTTER_SERVO                    /*!< \brief Uncomment to enable the servo plotter support. */
+#define _PLOTTER_SERVO                    /*!< \brief Uncomment to enable the servo plotter support. */
 //#define _MILLING_MACHINE                 /*!< \brief Uncomment to enable the milling machine support. */
-#define _LASER							/*! \brief Uncomment to enable the laser support. */
+//#define _LASER							/*! \brief Uncomment to enable the laser support. */
 
 // *****************************
 // *       UTENSIL SETUP       *
@@ -105,7 +105,7 @@
 
 #ifdef _PLOTTER_SERVO
 
-#define _PLOTTER_SERVO_PIN       5        /*!< \brief The PWN pin where is attached the servo motor. */
+#define _PLOTTER_SERVO_PIN       11        /*!< \brief The PWN pin where is attached the servo motor. */
 #define _PLOTTER_SERVO_UP_POS    80       /*!< \brief The value on the range [0, 180] that moves up the pen of the plotter. */
 #define _PLOTTER_SERVO_DOWN_POS  136      /*!< \brief The value on the range [0, 180] that moves down the pen of the plotter. */
 

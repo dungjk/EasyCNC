@@ -18,6 +18,7 @@
 #include "CNCRouterISR.h"
 #include "MillingMachine.h"
 #include "Laser.h"
+#include "PlotterServo.h"
 #include "utility.h"
 #include <stdint.h>
 #include "config.h"
@@ -62,6 +63,10 @@ public:
 
 	CNC_Router_ISR *router;        //!< Pointer to the CNC_Router object
 
+
+#ifdef _PLOTTER_SERVO
+	PlotterServo *utensil;    //!< Pointer to the MillingMachine object
+#endif
 #ifdef _MILLING_MACHINE
 	MillingMachine *utensil;    //!< Pointer to the MillingMachine object
 #endif
