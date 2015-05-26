@@ -43,9 +43,9 @@ class MotionPlanner {
 	PinInfo pin_cooling;  //!< Pin that controls the cooling of the motors drivers
 public:
 	/*! Default constructor
-	 * \param pcl Pin connected to the motors drivers cooling system
+	 * \param pcl Pin connected to the motors drivers cooling system. -1 if there is not a cooling system
 	 */
-	MotionPlanner(uint8_t pcl);
+	MotionPlanner(int8_t pcl);
 	/*! \brief The function returns a LinearMotion object through a
 	 *         return argument and a boolean value that is false if the operation is done, true otherwise.
 	 *  \param mov It is a reference to a return value that will store the LinearMotion object.
