@@ -94,8 +94,8 @@
 // *          UTENSILS         *
 // *****************************
 
-#define _PLOTTER_SERVO                    /*!< \brief Uncomment to enable the servo plotter support. */
-//#define _MILLING_MACHINE                 /*!< \brief Uncomment to enable the milling machine support. */
+//#define _PLOTTER_SERVO                    /*!< \brief Uncomment to enable the servo plotter support. */
+#define _MILLING_MACHINE                 /*!< \brief Uncomment to enable the milling machine support. */
 //#define _LASER							/*! \brief Uncomment to enable the laser support. */
 
 // *****************************
@@ -122,5 +122,4 @@
 #endif
 
 #endif //CONFIG_H
-
 
