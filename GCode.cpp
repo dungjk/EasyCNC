@@ -55,7 +55,7 @@ GCode *_gc = NULL; //!< It is used to bind the timer5 handler and the GCode::ret
 GCode::GCode(CNC_Router_ISR *rt, Utensil *ml) :
 		parser_status(STATUS_OK), spindle_speed(0.0), feed_rate(0.0), router(rt) {
 #ifdef _MILLING_MACHINE
-	utensil = static_cast<MillingMachine*> (ml);
+	utensil = static_cast<MillingMachine*>(ml);
 #endif
 
 #ifdef _LASER
@@ -410,9 +410,31 @@ int GCode::parseLine() {
 						router->getPos()
 								+ PositionXYZ(0, 0, TOOL_CHANGE_HEIGHT));
 				break;
-			case 's':
+			case 's': // Stop motion, it stops immediately the operations
 				router->stop();
 				router->start();
+				break;
+			case 'a': // Pause motion, it pauses the operations
+				router->pause();
+				break;
+			case 'b': // Restart motion, it pauses the operations
+				router->restart();
+				break;
+			case 'c':  // Cooling systems commands
+				switch((int)v){
+				case 1:
+					router->cool1_on();
+					break;
+				case 2:
+					router->cool1_off();
+					break;
+				case 3:
+					router->cool2_on();
+					break;
+				case 4:
+					router->cool2_off();
+					break;
+				};
 				break;
 			};
 

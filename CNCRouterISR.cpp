@@ -139,9 +139,55 @@ CNC_Router_ISR::CNC_Router_ISR() :
 		ROUTE_MY_MODE * ROUTER_MY_STEPS_PER_MM * ROUTER_MY_SPEED / 60), v_max_z(
 		ROUTE_MZ_MODE * ROUTER_MZ_STEPS_PER_MM * ROUTER_MZ_SPEED / 60), pos_type(
 		false), round_off_x(0.0), round_off_y(0.0), round_off_z(0.0), searchProc(
-		false), m_planner(ROUTER_DRIVERS_COOLING), m_performer(&(this->m_planner)) {
+		false), m_planner(ROUTER_DRIVERS_COOLING), m_performer(
+				&(this->m_planner)) {
 	ls_x_down = ls_x_up = ls_y_down = ls_y_up = ls_z_down = ls_z_up = false;
 	_crt = this;
+
+#if defined(COOLING_SYS_1)
+	if (COOLING_SYS_1 >= 0) {
+		byte port;                   //!< Port identifier
+		volatile uint8_t *reg; //!< Pointer to the DDRx register (Data Direction Register)
+
+		pin_cooling_sys_1.bit = digitalPinToBitMask(COOLING_SYS_1);	//!< Get the bit mask of the specified pin number e.g. B00100000
+		port = digitalPinToPort(COOLING_SYS_1);	//!< Get the port identifier of the specified pin number
+		reg = portModeRegister(port);//!< Get the pointer to the DDR of the specified port
+		pin_cooling_sys_1.outreg = portOutputRegister(port);//!< Get the pointer to the output register of the specified port
+
+		cli();
+		//!< Disable interrupts
+		*reg |= pin_cooling_sys_1.bit;//!< Configure the pin in output mode setting the corresponding bit
+		*pin_cooling_sys_1.outreg &= ~pin_cooling_sys_1.bit;//!< Reset the output of the pin
+		sei();
+	} else {
+		pin_cooling_sys_1.outreg = NULL;
+	}
+#else
+	pin_cooling_sys_1.outreg = NULL;
+#endif
+
+#if defined(COOLING_SYS_2)
+	if (COOLING_SYS_2 >= 0) {
+		byte port;                   //!< Port identifier
+		volatile uint8_t *reg; //!< Pointer to the DDRx register (Data Direction Register)
+
+		pin_cooling_sys_2.bit = digitalPinToBitMask(COOLING_SYS_2);	//!< Get the bit mask of the specified pin number e.g. B00100000
+		port = digitalPinToPort(COOLING_SYS_2);	//!< Get the port identifier of the specified pin number
+		reg = portModeRegister(port);//!< Get the pointer to the DDR of the specified port
+		pin_cooling_sys_2.outreg = portOutputRegister(port);//!< Get the pointer to the output register of the specified port
+
+		cli();
+		//!< Disable interrupts
+		*reg |= pin_cooling_sys_2.bit;//!< Configure the pin in output mode setting the corresponding bit
+		*pin_cooling_sys_2.outreg &= ~pin_cooling_sys_2.bit;//!< Reset the output of the pin
+		sei();
+	} else {
+		pin_cooling_sys_2.outreg = NULL;
+	}
+#else
+	pin_cooling_sys_2.outreg = NULL;
+#endif
+
 }
 
 void CNC_Router_ISR::initMotors() {
@@ -545,3 +591,26 @@ int CNC_Router_ISR::buffInfo() {
 	return m_planner.getFreeBuffSize();
 }
 
+void CNC_Router_ISR::cool1_on() {
+	if (pin_cooling_sys_1.outreg != NULL) {
+		pin_cooling_sys_1.set();
+	}
+}
+
+void CNC_Router_ISR::cool1_off() {
+	if (pin_cooling_sys_1.outreg != NULL) {
+		pin_cooling_sys_1.reset();
+	}
+}
+
+void CNC_Router_ISR::cool2_on() {
+	if (pin_cooling_sys_2.outreg != NULL) {
+		pin_cooling_sys_2.set();
+	}
+}
+
+void CNC_Router_ISR::cool2_off() {
+	if (pin_cooling_sys_2.outreg != NULL) {
+		pin_cooling_sys_2.reset();
+	}
+}

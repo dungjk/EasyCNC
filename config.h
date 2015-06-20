@@ -63,6 +63,9 @@
 
 #define ROUTER_DRIVERS_COOLING 8							/*!< \brief Pin that controls the cooling of the motors drivers*/
 
+#define COOLING_SYS_1  9									/*!< \brief Pin that controls the cooling system 1.*/
+#define COOLING_SYS_2  10									/*!< Pin that controls the cooling system 2.*/
+
 #define ROUTER_MX_CONTROLLER_A4988
 
 #if defined(ROUTER_MX_CONTROLLER_A4988)

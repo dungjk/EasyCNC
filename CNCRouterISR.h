@@ -43,6 +43,9 @@ class CNC_Router_ISR {
 			round_off_z; //!< It contains the difference of numerical rounding to compute the number of step in Z-axis
 	boolean searchProc;
 
+	PinInfo pin_cooling_sys_1, //!< Pin that controls the cooling system 1
+	        pin_cooling_sys_2; //!< Pin that controls the cooling system 2
+
 public:
 
 	MotionPlanner m_planner;
@@ -210,6 +213,18 @@ public:
 	 *  \return Free buffer size
 	 */
 	int buffInfo();
+
+	/*! \brief The function switch on the cooling system 1.*/
+	void cool1_on();
+
+	/*! \brief The function switch off the cooling system 1. */
+	void cool1_off();
+
+	/*! \brief The function switch on the cooling system 2.*/
+	void cool2_on();
+
+	/*! \brief The function switch off the cooling system 2. */
+	void cool2_off();
 };
 
 #endif /* CNCROUTERISR_H_ */
