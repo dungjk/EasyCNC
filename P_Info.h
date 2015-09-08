@@ -21,6 +21,7 @@ struct P_Info {
 
 	inline void set() {*outreg |= bit;};      //<! It requires an atomic block, use cli() and sei() functions
 	inline void reset() {*outreg &= ~bit;};   //<! It requires an atomic block, use cli() and sei() functions
+	inline bool read(){return (*outreg & bit) != 0x00;}; //<! It returns true if the pin is high, false otherwise. It requires an atomic block, use cli() and sei() functions.
 };
 
 typedef struct P_Info PinInfo;

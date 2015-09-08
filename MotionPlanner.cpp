@@ -85,3 +85,13 @@ int MotionPlanner::getFreeBuffSize() const {
 		return BUFF_LEN;
 	return ((first - last) > 0) ? BUFF_LEN - first + last : last - first;
 }
+
+boolean MotionPlanner::getAccelerationInfo(float &direction) const{
+	if(empty)
+		return true;
+	uint8_t old_sreg = SREG;
+	cli();
+    direction = movs[last].direction;
+	SREG = old_sreg;
+	return false;
+}

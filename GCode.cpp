@@ -442,7 +442,9 @@ int GCode::parseLine() {
 		return parser_status;
 	}
 
+
 	if (parser_status != STATUS_OK) {
+		//The The line parsing tops here if there is a parser error. The state can be reset  through the relative control command.
 		return parser_status;
 	}
 

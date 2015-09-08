@@ -26,7 +26,8 @@
 struct LinearMotion {
 	uint16_t delay;				//!< It will be the value of the OCR3A register.
 	int32_t steps_x, steps_y, steps_z;  //!< They could be negative, it specify the direction.
-	float act_fr;     //!< The feed rate related to this linear motion. It is useful to get the current feed rate of the linear motion in execution
+	float direction;    //!< It is the angle of the projection of the vector XYZ on the plane XY. Its value is in the range (-PI, PI]
+	float act_fr;       //!< The feed rate related to this linear motion. It is useful to get the current feed rate of the linear motion in execution
 };
 
 typedef struct LinearMotion LM;
@@ -72,6 +73,16 @@ public:
 	 *  \return Number of free buffer slots
 	 */
 	int getFreeBuffSize() const;
+
+	/*! \brief The function returns the some information about the next LinearMotion in order
+	 *         to plan the acceleration near the junction point
+	 *  \details
+	 *  \param direction It is a return value the direction of the vector on the plane XY
+	 *	\return The function return true if the buffer is empty
+	 *
+	 */
+	boolean getAccelerationInfo(float &direction) const;
+
 };
 
 #endif /* MOTIONPLANNER_H_ */

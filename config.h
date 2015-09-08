@@ -48,18 +48,18 @@
 #define ROUTER_MX_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of X-axis (mm/min). */
 #define ROUTER_MY_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of Y-axis (mm/min). */
 #define ROUTER_MZ_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of Z-axis (mm/min). */
-#define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT -1// 0                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT -1 //5                  /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  -1 //1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT -1 // 0                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT  5                  /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_DOWN_LIMIT_SWITCH_X_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_DOWN_LIMIT_SWITCH_X_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
 #define ROUTER_DOWN_LIMIT_SWITCH_Y_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
 #define ROUTER_DOWN_LIMIT_SWITCH_Z_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
-#define ROUTER_UP_LIMIT_SWITCH_X_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
-#define ROUTER_UP_LIMIT_SWITCH_Y_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
-#define ROUTER_UP_LIMIT_SWITCH_Z_ACTIVE_HIGH 1				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_UP_LIMIT_SWITCH_X_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_UP_LIMIT_SWITCH_Y_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
+#define ROUTER_UP_LIMIT_SWITCH_Z_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
 
 #define ROUTER_DRIVERS_COOLING 8							/*!< \brief Pin that controls the cooling of the motors drivers*/
 
@@ -98,8 +98,8 @@
 // *****************************
 
 //#define _PLOTTER_SERVO                    /*!< \brief Uncomment to enable the servo plotter support. */
-#define _MILLING_MACHINE                 /*!< \brief Uncomment to enable the milling machine support. */
-//#define _LASER							/*! \brief Uncomment to enable the laser support. */
+//#define _MILLING_MACHINE                 /*!< \brief Uncomment to enable the milling machine support. */
+#define _LASER							/*! \brief Uncomment to enable the laser support. */
 
 // *****************************
 // *       UTENSIL SETUP       *

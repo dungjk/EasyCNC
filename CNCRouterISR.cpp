@@ -9,6 +9,7 @@
  To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 #include "CNCRouterISR.h"
+//#include "debugger.h"
 
 CNC_Router_ISR *_crt = NULL; //!< It is used to bind the interrupts due to the limits switches to the MotionPerformer::stopMotion function of the last instanced CNC_Router_ISR object
 
@@ -103,7 +104,7 @@ void CNC_Router_ISR::ls_z_down_routine() {
 		if (!_crt->ls_z_down) {
 			_crt->stop();
 			PositionXYZ tmp = _crt->processed_p;
-			tmp.Z(tmp.Z() + 0.1);
+			tmp.Z(tmp.Z() + 1.0);
 			_crt->moveTo(tmp);
 			_crt->start();
 		} else {
@@ -227,6 +228,7 @@ void CNC_Router_ISR::initInterrupts() {
 	if (ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT > -1) {
 		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT),
 		INPUT_PULLUP);
+		digitalWrite(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT), HIGH);
 		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT,
 				CNC_Router_ISR::ls_z_down_routine, CHANGE);
 	}
@@ -301,6 +303,7 @@ void CNC_Router_ISR::moveToXY(float px, float py, float spd) {
 	new_line_motion.steps_x = steps_x; //This value could be smaller than 0 so that it can specify the direction to the motor driver
 	new_line_motion.steps_y = steps_y;
 	new_line_motion.steps_z = 0;
+	new_line_motion.direction = atan2(steps_y, steps_x);
 	new_line_motion.act_fr = spd;
 	if (tmp_stx == 0 && tmp_sty == 0) {
 		//This check is important to avoid insidious condition where more than one LM object with x, y and z steps are 0.
@@ -325,8 +328,29 @@ void CNC_Router_ISR::moveToXY(float px, float py, float spd) {
 		}
 		new_line_motion.delay = F_CPU / (spd_y * 1024.0) - 1.0; //F_CPU=16000000; The value of the OCR3A reg. it must be smaller than 65534
 	}
-	while (m_planner.addMotion(new_line_motion))
-		delay(100);
+	while (m_planner.addMotion(new_line_motion)){
+		if (Serial.available() > 0) {
+					new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
+					String line = new_line;
+					if (line[0] == '$') {
+						char c;
+						float v;
+						if (getControlComm(c, v, line)) {
+							switch (c) {
+
+							case 's':
+								m_performer.stopMotion();
+								m_planner.clear();
+								processed_p = getPos();
+								m_performer.startMotion();
+								return;
+							};
+						}
+					}
+				}
+		delay(500);
+	}
+
 //It waits for a correct insertion into the motion planner
 	processed_p = new_p;
 }
@@ -377,7 +401,7 @@ void CNC_Router_ISR::moveTo(float px, float py, float pz, float spd) {
 	new_line_motion.steps_x = steps_x; //This value could be smaller than 0 so that it can specify the direction to the motor driver
 	new_line_motion.steps_y = steps_y;
 	new_line_motion.steps_z = steps_z;
-
+    new_line_motion.direction = atan2(steps_y, steps_x);
 	new_line_motion.act_fr = spd;
 
 	float ratio = spd / dist;          // (mm/s)/mm = 1/s
@@ -437,7 +461,7 @@ void CNC_Router_ISR::moveTo(float px, float py, float pz, float spd) {
 				}
 			}
 		}
-		delay(100); //It waits for a correct insertion into the motion planner
+		delay(500); //It waits for a correct insertion into the motion planner
 	}
 
 	processed_p = new_p;

@@ -276,6 +276,7 @@ void MotionPerformer::update() {
 	}else if (motor[0]->act_steps == motor[0]->tot_steps) {
 		//Case of end of the segment, loading new job
 		if (loadMotion()) {
+			//There aren't segments in the motion planner
 			old_sreg = SREG;
 			cli();
 			SET_TIMER3(IDLE_FREQ);
