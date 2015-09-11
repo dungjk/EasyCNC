@@ -15,6 +15,7 @@
 
 #include "GCode_def.h"
 #include "Arduino.h"
+#include "AVR2569Timers.h"
 #include "CNCRouterISR.h"
 #include "MillingMachine.h"
 #include "Laser.h"

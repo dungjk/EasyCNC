@@ -37,7 +37,7 @@ public:
 	//! \brief It switches on the laser
 	void switchOn();
 	//! brief It switches off the laser
-	void SwitchOff();
+	void switchOff();
 
 	void preMotion();
 	void postMotion();

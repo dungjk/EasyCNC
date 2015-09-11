@@ -11,84 +11,7 @@
 
 #include "MotionPerformer.h"
 
-/*! \def INIT_TIMER3
- *  \details Below the description of the operations performed by the macro:
- *           - TCCR3A = 0;  set entire TCCR3A register to 0
- *           - TCCR3B = 0;  set entire TCCR3B register to 0
- *           - TCNT3 = 0;   initialize counter value to B0
- *			 - TCCR3B |= (1 << WGM32); turn on CTC mode
- */
-#define INIT_TIMER3 {	TCCR3A = 0;    \
-	             	 	TCCR3B = 0;    \
-	             	 	TCNT3 = 0;   \
-	             	 	TIMSK3 |= (1 << OCIE3A);    \
-	             	 	TCCR3B |= (1 << WGM32); }
 
-/*! \def SET_TIMER3
- *  \details It sets the value od the Output Compare Register A of the timer 3.
- *  \param x The value of the register
- */
-#define SET_TIMER3(x) { OCR3A = x;}
-
-/*! \def CLEAR_COUNTER_TIMER3
- *  \details Set to 0 the TCNT3 register.
- */
-#define CLEAR_COUNTER_TIMER3 { TCNT3 = 0; }
-
-/*! \def START_TIMER3
- *  \details The macro runs the timer 3 with a 1024 prescaler.
- *           - TIMSK3 |= (1 << OCIE3A); turn on CTC mode
- *           - TCCR3B |= (1 << CS30) | (1 << CS32); set 1024 prescaler
- */
-//#define START_TIMER3 {  TCNT3 = 0;  \
-//						TCCR3B |= (1 << CS32);}
-#define START_TIMER3 {  TCNT3 = 0;  \
-						TCCR3B |= (1 << CS30) | (1 << CS32);}
-/*! \def STOP_TIMER3
- *  \details The macro stops the timer 3.
- */
-//#define STOP_TIMER3 {   TCCR3B &= ~(1 << CS32);}
-#define STOP_TIMER3 {   TCCR3B &= ~((1 << CS30) | (1 << CS32));}
-
-/*! \def INIT_TIMER4
- *  \details Below the description of the operations performed by the macro:
- *           - TCCR4A = 0;  set entire TCCR4A register to 0
- *           - TCCR4B = 0;  set entire TCCR4B register to 0
- *           - TCNT4 = 0;   initialize counter value to B0
- *			 - TCCR4B |= (1 << WGM42); turn on CTC mode
- */
-#define INIT_TIMER4 {	TCCR4A = 0;  \
-	             	 	TCCR4B = 0;     \
-	             	 	TCNT4 = 0;  \
-	             	 	TIMSK4 |= (1 << OCIE4A); \
-	             	 	TCCR4B |= (1 << WGM42);}
-/*! \def SET_TIMER4
- *  \details It sets the value od the Output Compare Register A of the timer 4.
- *  \param x The value of the register
- */
-#define SET_TIMER4(x) { OCR4A = x;}
-
-/*! \def CLEAR_COUNTER_TIMER4
- *  \details Set to 0 the TCNT4 register.
- */
-#define CLEAR_COUNTER_TIMER4 { TCNT4 = 0; }
-
-/*! \def START_TIMER4
- *  \details The macro runs the timer 4 with a 8 prescaler.
- *           - TIMSK4 |= (1 << OCIE4A); turn on CTC mode
- *           - TCCR4B |= (1 << CS41); set 8 prescaler
- */
-#define START_TIMER4 {  TCNT4 = 0;  \
-						TCCR4B |= (1 << CS41);}
-
-/*! \def STOP_TIMER4
- *  \details The macro stops the timer 4.
- */
-#define STOP_TIMER4 {	TCCR4B &= ~(1 << CS41);}
-
-int n_update = 0;    //debug
-int n_stepdwn = 0;   //debug
-boolean state = false; //debug
 
 MotionPerformer *_mp = NULL; //!< It is used to bind the timer3 and timer4 handlers respectively to MotionPerformer::update and MotionPerformer::stepPulse functions of the last instanced MotionPerformer object.
 
@@ -225,16 +148,14 @@ void MotionPerformer::init() {
 	;
 	SET_TIMER3(IDLE_FREQ);
 	SET_TIMER4(DELAY_STEP_UP);
-	START_TIMER3
-	;
+	START_TIMER3(CS_1024);
 	SREG = oldSREG;
 }
 
 void MotionPerformer::startMotion() {
 	uint8_t old_sreg = SREG; //!< Here I use this technique to restore the interrupts because i don't know the value of the I flag in SREG. Someone could have already the cli() function.
 	cli();
-	START_TIMER3
-	;
+	START_TIMER3(CS_1024);
 	SREG = old_sreg;
 }
 
@@ -319,8 +240,7 @@ void MotionPerformer::update() {
 	motor[0]->act_steps++;
 	motor[0]->global_steps += motor[0]->direction;
 
-	START_TIMER4
-	;
+	START_TIMER4(CS_8);
 	SREG = old_sreg;
 }
 

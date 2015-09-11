@@ -15,6 +15,7 @@
 #include "MotorDriver.h"
 #include "MotionPlanner.h"
 #include "Arduino.h"
+#include "AVR2569Timers.h"
 
 #define DELAY_STEP_UP 39        //!<  ticks of timer4 with 8 prescaler to create a valid pulse on the step pin  ~ 20us
 #define IDLE_FREQ 3125          //!<  Value of OCR3A, it is the interval to check the motion planner when it is empty ~ 200ms

@@ -16,41 +16,6 @@ extern CNC_Router_ISR *_crt;
 
 GCode *_gc = NULL; //!< It is used to bind the timer5 handler and the GCode::returnStatus of the last instanced GCode object
 
-/*! \def INIT_TIMER5
- *  \details Below the description of the operations performed by the macro:
- *           - TCCR5A = 0;  set entire TCCR5A register to 0
- *           - TCCR5B = 0;  set entire TCCR5B register to 0
- *           - TCNT5 = 0;   initialize counter value to B0
- *			 - TCCR5B |= (1 << WGM52); turn on CTC mode
- */
-#define INIT_TIMER5 {	TCCR5A = 0;    \
-	             	 	TCCR5B = 0;    \
-	             	 	TCNT5 = 0;   \
-	             	 	TIMSK5 |= (1 << OCIE5A);    \
-	             	 	TCCR5B |= (1 << WGM52); }
-
-/*! \def SET_TIMER5
- *  \details It sets the value od the Output Compare Register A of the timer 3.
- *  \param x The value of the register
- */
-#define SET_TIMER5(x) { OCR5A = x;}
-
-/*! \def CLEAR_COUNTER_TIMER5
- *  \details Set to 0 the TCNT5 register.
- */
-#define CLEAR_COUNTER_TIMER5 { TCNT5 = 0; }
-
-/*! \def START_TIMER5
- *  \details The macro runs the timer 3 with a 1024 prescaler.
- *           - TCNT5 = 0; clear the TCNT5 register
- *           - TCCR5B |= (1 << CS50) | (1 << CS52); set 1024 prescaler
- */
-#define START_TIMER5 {  TCNT5 = 0;  \
-						TCCR5B |= (1 << CS50) | (1 << CS52);}
-/*! \def STOP_TIMER5
- *  \details The macro stops the timer 3.
- */
-#define STOP_TIMER5 {   TCCR5B &= ~((1 << CS50) | (1 << CS52));}
 
 GCode::GCode(CNC_Router_ISR *rt, Utensil *ml) :
 		parser_status(STATUS_OK), spindle_speed(0.0), feed_rate(0.0), router(rt) {
@@ -81,8 +46,7 @@ void GCode::init() {
 	INIT_TIMER5
 	;
 	SET_TIMER5(STATUS_FEEDBACK);
-	START_TIMER5
-	;
+	START_TIMER5(CS_1024);
 	SREG = oldSREG;
 }
 
@@ -614,7 +578,7 @@ int GCode::parseLine() {
 				// switch off the laser
 				// I have to wait for the ending of the last motion command
 				waitMotionFinish();
-				utensil->SwitchOff();
+				utensil->switchOff();
 #endif
 #ifdef _PLOTTER_SERVO
 				waitMotionFinish();

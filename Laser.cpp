@@ -21,7 +21,7 @@ void Laser::switchOn() {
 	digitalWrite(control_pin, ((state ^ (~active_high)) & 0x01));
 }
 
-void Laser::SwitchOff() {
+void Laser::switchOff() {
 	state = false;
 	digitalWrite(control_pin, ((state ^ (~active_high)) & 0x01));
 }
