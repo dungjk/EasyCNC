@@ -228,7 +228,8 @@ void CNC_Router_ISR::initInterrupts() {
 	if (ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT > -1) {
 		pinMode(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT),
 		INPUT_PULLUP);
-		digitalWrite(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT), HIGH);
+		digitalWrite(getPinFromInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT),
+		HIGH);
 		attachInterrupt(ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT,
 				CNC_Router_ISR::ls_z_down_routine, CHANGE);
 	}
@@ -270,7 +271,6 @@ void CNC_Router_ISR::resetPos() {
 }
 
 void CNC_Router_ISR::moveToXY(float px, float py, float spd) {
-
 	float dx, dy, dist, spd_x, spd_y, actual_spmmx, actual_spmmy;
 	actual_spmmx = spmmx * m_performer.mx.control_mode;
 	actual_spmmy = spmmy * m_performer.my.control_mode;
@@ -312,42 +312,54 @@ void CNC_Router_ISR::moveToXY(float px, float py, float spd) {
 	}
 
 	float ratio = spd / dist;          // (mm/s)/mm = 1/s
-	if (tmp_stx > tmp_sty) {
-		spd_x = tmp_stx * ratio;   // steps/s
-		if (spd_x > v_max_x || spd_x <= 0.0) {
-			spd_x = v_max_x;   // steps/s
-			new_line_motion.act_fr = dist * v_max_x / tmp_stx; // (mm * steps/s / steps = mm/s)
-		}
-		new_line_motion.delay = F_CPU / (spd_x * 1024.0) - 1.0; //F_CPU=16000000; The value of the OCR3A reg. it must be smaller than 65534
+	spd_x = tmp_stx * ratio;   // steps/s
+	spd_y = tmp_sty * ratio;   // steps/s
+	//Check on max speed x
+	if(tmp_stx > 0 && (spd_x > v_max_x || spd_x <= 0.0)) {
+	//if (spd_x > v_max_x || (spd_x <= 0.0 && tmp_stx > 0)) {
+		spd_x = v_max_x;   // steps/s
+		new_line_motion.act_fr = dist * v_max_x / tmp_stx; // (mm * steps/s / steps = mm/s)
+		ratio = new_line_motion.act_fr / dist;
+		spd_y = (float) tmp_sty * ratio;
+	}
+	//Check on max speed y
+	if(tmp_sty > 0 && (spd_y > v_max_y || spd_y <= 0.0)){
+	//if (spd_y > v_max_y || (spd_y <= 0.0 && tmp_sty > 0)) {
+		spd_y = v_max_y;   // steps/s
+		new_line_motion.act_fr = dist * v_max_y / tmp_sty; // (mm * steps/s / steps = mm/s)
+		ratio = new_line_motion.act_fr / dist;
+		spd_x = (float) tmp_stx * ratio;
+	}
 
+	//Compute interrupt interval
+	if (tmp_stx > tmp_sty) {
+		//X > Y
+		new_line_motion.delay = F_CPU / (spd_x * 1024.0) - 1.0; //F_CPU=16000000; The value of the OCR3A reg. it must be smaller than 65534
 	} else {
-		spd_y = tmp_sty * ratio;   // steps/s
-		if (spd_y > v_max_y || spd_y <= 0.0) {
-			spd_y = v_max_y;   // steps/s
-			new_line_motion.act_fr = dist * v_max_y / tmp_sty; // (mm * steps/s / steps = mm/s)
-		}
+		//Y > X
 		new_line_motion.delay = F_CPU / (spd_y * 1024.0) - 1.0; //F_CPU=16000000; The value of the OCR3A reg. it must be smaller than 65534
 	}
-	while (m_planner.addMotion(new_line_motion)){
-		if (Serial.available() > 0) {
-					new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
-					String line = new_line;
-					if (line[0] == '$') {
-						char c;
-						float v;
-						if (getControlComm(c, v, line)) {
-							switch (c) {
 
-							case 's':
-								m_performer.stopMotion();
-								m_planner.clear();
-								processed_p = getPos();
-								m_performer.startMotion();
-								return;
-							};
-						}
-					}
+	while (m_planner.addMotion(new_line_motion)) {
+		if (Serial.available() > 0) {
+			new_line[Serial.readBytesUntil('\n', new_line, 256)] = '\0';
+			String line = new_line;
+			if (line[0] == '$') {
+				char c;
+				float v;
+				if (getControlComm(c, v, line)) {
+					switch (c) {
+
+					case 's':
+						m_performer.stopMotion();
+						m_planner.clear();
+						processed_p = getPos();
+						m_performer.startMotion();
+						return;
+					};
 				}
+			}
+		}
 		delay(500);
 	}
 
@@ -401,42 +413,54 @@ void CNC_Router_ISR::moveTo(float px, float py, float pz, float spd) {
 	new_line_motion.steps_x = steps_x; //This value could be smaller than 0 so that it can specify the direction to the motor driver
 	new_line_motion.steps_y = steps_y;
 	new_line_motion.steps_z = steps_z;
-    new_line_motion.direction = atan2(steps_y, steps_x);
+	new_line_motion.direction = atan2(steps_y, steps_x);
 	new_line_motion.act_fr = spd;
 
 	float ratio = spd / dist;          // (mm/s)/mm = 1/s
+	spd_x = (float) tmp_stx * ratio;   // steps/s
+	spd_y = (float) tmp_sty * ratio;
+	spd_z = (float) tmp_stz * ratio;
+
+	//Check on max speed x
+	if(tmp_stx > 0 && (spd_x > v_max_x || spd_x <= 0.0)) {
+	//if (spd_x > v_max_x || (spd_x <= 0.0 && tmp_stx > 0)) {
+		spd_x = v_max_x;   // steps/s
+		new_line_motion.act_fr = dist * v_max_x / tmp_stx; // (mm * steps/s / steps = mm/s)
+		ratio = new_line_motion.act_fr / dist;
+		spd_y = (float) tmp_sty * ratio;
+		spd_z = (float) tmp_stz * ratio;
+	}
+	//Check on max speed y
+	if(tmp_sty > 0 && (spd_y > v_max_y || spd_y <= 0.0)) {
+		spd_y = v_max_y;   // steps/s
+		new_line_motion.act_fr = dist * v_max_y / tmp_sty; // (mm * steps/s / steps = mm/s)
+		ratio = new_line_motion.act_fr / dist;
+		spd_x = (float) tmp_stx * ratio;
+		spd_z = (float) tmp_stz * ratio;
+	}
+	//Check on max speed z
+	if(tmp_stz > 0 && (spd_z > v_max_z || spd_z <= 0.0)) {
+	//if (spd_z > v_max_z || (spd_z <= 0.0 && tmp_stz > 0)) {
+		spd_z = v_max_z;   // steps/s
+		new_line_motion.act_fr = dist * v_max_z / tmp_stz; // (mm * steps/s / steps = mm/s)
+		ratio = new_line_motion.act_fr / dist;
+		spd_x = (float) tmp_stx * ratio;
+		spd_y = (float) tmp_sty * ratio;
+	}
+
+	//Compute interrupt interval
 	if (tmp_stx >= tmp_sty && tmp_stx >= tmp_stz) {
 		//X > Y && X > Z
-		spd_x = (float) tmp_stx * ratio;   // steps/s
-
-		if (spd_x > v_max_x || spd_x <= 0.0) {
-			spd_x = v_max_x;   // steps/s
-			new_line_motion.act_fr = dist * v_max_x / tmp_stx; // (mm * steps/s / steps = mm/s)
-		}
-
 		new_line_motion.delay = F_CPU / (spd_x * 1024.0) - 1.0; //F_CPU = 16000000; Range: 64uS; 8388.608mS; The value of the OCR3A reg. it must be smaller than 65534
 		//new_line_motion.delay = F_CPU / (spd_x * 256.0) - 1.0; //F_CPU = 16000000; Range: 16uS; 2097.152mS The value of the OCR3A reg. it must be smaller than 65534
 
 	} else if (tmp_sty >= tmp_stx && tmp_sty >= tmp_stz) {
 		//Y > X && Y > Z
-		spd_y = (float) tmp_sty * ratio;   // steps/s
-
-		if (spd_y > v_max_y || spd_y <= 0.0) {
-			spd_y = v_max_y;   // steps/s
-			new_line_motion.act_fr = dist * v_max_y / tmp_sty; // (mm * steps/s / steps = mm/s)
-		}
-
 		new_line_motion.delay = F_CPU / (spd_y * 1024.0) - 1.0; //F_CPU = 16000000; The value of the OCR3A reg. it must be smaller than 65534
 		//new_line_motion.delay = F_CPU / (spd_y * 256.0) - 1.0; //F_CPU = 16000000; The value of the OCR3A reg. it must be smaller than 65534
 
 	} else {
 		//Z > X && Z > Y
-		spd_z = (float) tmp_stz * ratio;   // steps/s
-
-		if (spd_z > v_max_z || spd_z <= 0.0) {
-			spd_z = v_max_z;   // steps/s
-			new_line_motion.act_fr = dist * v_max_z / tmp_stz; // (mm * steps/s / steps = mm/s)
-		}
 		new_line_motion.delay = F_CPU / (spd_z * 1024.0) - 1.0; //F_CPU = 16000000; The value of the OCR3A reg. it must be smaller than 65534
 		//new_line_motion.delay = F_CPU / (spd_z * 256.0) - 1.0; //F_CPU = 16000000; The value of the OCR3A reg. it must be smaller than 65534
 	}

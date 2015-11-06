@@ -16,7 +16,6 @@ extern CNC_Router_ISR *_crt;
 
 GCode *_gc = NULL; //!< It is used to bind the timer5 handler and the GCode::returnStatus of the last instanced GCode object
 
-
 GCode::GCode(CNC_Router_ISR *rt, Utensil *ml) :
 		parser_status(STATUS_OK), spindle_speed(0.0), feed_rate(0.0), router(rt) {
 #ifdef _MILLING_MACHINE
@@ -227,9 +226,14 @@ void GCode::motionG2G3() {
 		angle_end = center.angleXY(new_pos);
 		angle_next_p = center.angleXY(start_p);
 
-		float delta_z_offset = router->getProcessed().offsetZ(new_pos)
-				* alpha/ abs(angle_end - angle_next_p); // delta forward on Z-axis for each segment of the circle.
-		float i_seg = 1.0;
+		float delta_z_offset, i_seg;
+		if (pars_spec[PARAM_Z]) {
+			delta_z_offset = router->getProcessed().offsetZ(new_pos)
+					* alpha/ abs(angle_end - angle_next_p); // delta forward on Z-axis for each segment of the circle.
+			i_seg = 1.0;
+		} else {
+			delta_z_offset = i_seg = 0;
+		}
 
 		PositionXYZ tmp;
 
@@ -239,29 +243,41 @@ void GCode::motionG2G3() {
 
 			angle_next_p += alpha;
 
-			while (angle_next_p < angle_end) {
-				router->moveTo(
-						center
-								+ tmp.polarXY(r, angle_next_p).Z(
-										delta_z_offset * i_seg), feed_rate);
-				angle_next_p += alpha;
-				i_seg += 1.0;
+			if (pars_spec[PARAM_Z]) {
+				// The Z parameter is specified
+				while (angle_next_p < angle_end) {
+					router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(	delta_z_offset * i_seg), feed_rate);
+					angle_next_p += alpha;
+					i_seg += 1.0;
+				}
+				router->moveTo(new_pos, feed_rate);
+			} else {
+				// The Z parameter is not specified
+				while (angle_next_p < angle_end) {
+					router->moveToXY(center	+ tmp.polarXY(r, angle_next_p), feed_rate);
+					angle_next_p += alpha;
+				}
+				router->moveToXY(new_pos, feed_rate);
 			}
-			router->moveTo(new_pos, feed_rate);
 		} else {
 			if (angle_end > angle_next_p) // In the case of the atan2 function returns a angle_end value greater then the start angle.
 				angle_end -= 2 * PI;
 
 			angle_next_p -= alpha;
-			while (angle_next_p > angle_end) {
-				router->moveTo(
-						center
-								+ tmp.polarXY(r, angle_next_p).Z(
-										delta_z_offset * i_seg), feed_rate);
-				angle_next_p -= alpha;
-				i_seg += 1.0;
+			if (pars_spec[PARAM_Z]) {
+				while (angle_next_p > angle_end) {
+					router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(	delta_z_offset * i_seg), feed_rate);
+					angle_next_p -= alpha;
+					i_seg += 1.0;
+				}
+				router->moveTo(new_pos, feed_rate);
+			}else {
+				while (angle_next_p > angle_end) {
+					router->moveToXY(center + tmp.polarXY(r, angle_next_p), feed_rate);
+					angle_next_p -= alpha;
+				}
+				router->moveToXY(new_pos, feed_rate);
 			}
-			router->moveTo(new_pos, feed_rate);
 		}
 	}
 }
@@ -270,9 +286,12 @@ void GCode::motionG0G1() {
 
 	if (pars_spec[PARAM_X] || pars_spec[PARAM_Y] || pars_spec[PARAM_Z]) {
 		if (last_word[GROUP1] == G0) {
-			router->moveTo(new_pos);
+			(pars_spec[PARAM_Z]) ?
+					router->moveTo(new_pos) : router->moveToXY(new_pos);
 		} else {
-			router->moveTo(new_pos, feed_rate);
+			(pars_spec[PARAM_Z]) ?
+					router->moveTo(new_pos, feed_rate) :
+					router->moveToXY(new_pos, feed_rate);
 		}
 	} else {
 		parser_status = STATUS_SYNTAX_ERROR;
@@ -358,9 +377,9 @@ int GCode::parseLine() {
 			case 'r':       // errors reset
 				resetStatus();
 				break;
-			case 'p':       // position reset
-				router->resetPos();
-				break;
+				/*case 'p':       // position reset
+				 router->resetPos();
+				 break;*/
 			case 'h':		// search the home position
 				if (router->searchHomePos())
 					parser_status = STATUS_OP_ERROR;
@@ -385,7 +404,7 @@ int GCode::parseLine() {
 				router->restart();
 				break;
 			case 'c':  // Cooling systems commands
-				switch((int)v){
+				switch ((int) v) {
 				case 1:
 					router->cool1_on();
 					break;
@@ -398,14 +417,14 @@ int GCode::parseLine() {
 				case 4:
 					router->cool2_off();
 					break;
-				};
+				}
+				;
 				break;
 			};
 
 		}
 		return parser_status;
 	}
-
 
 	if (parser_status != STATUS_OK) {
 		//The The line parsing tops here if there is a parser error. The state can be reset  through the relative control command.
@@ -418,8 +437,15 @@ int GCode::parseLine() {
 	} else {
 		new_pos = router->getProcessed();
 	}
+	/*DBG_MSG("pos processed");
+	DBG_VAR(new_pos.X());
+	DBG_VAR(new_pos.Y());
+	DBG_VAR(new_pos.Z());*/
 	boolean motion_command = false;
 	boolean pause = false;
+	for (int i = 0; i < GROUPS; i++) {
+		word_in_line[i] = false;
+	}
 	for (int i = 0; i < PARAMS; i++) {
 		if (i == PARAM_R) {
 			//this condition depends on the behavior of the parameter R when a drilling cycle is active. It is a "sticky" number in this case.
@@ -442,73 +468,103 @@ int GCode::parseLine() {
 		case 'G':
 			switch ((int) val) {
 			case 0:  // Rapid positioning
+				//Group 1
 				motion_command = true;
-				last_word[GROUP1] = G0;
+				last_word[GROUP(G0)] = G0;
+				word_in_line[GROUP(G0)] = true;
 				break;
 			case 1:
+				//Group 1
 				motion_command = true;
-				last_word[GROUP1] = G1;
+				last_word[GROUP(G1)] = G1;
+				word_in_line[GROUP(G1)] = true;
 				break;
 			case 2:
+				//Group 1
 				motion_command = true;
-				last_word[GROUP1] = G2;
+				last_word[GROUP(G2)] = G2;
+				word_in_line[GROUP(G2)] = true;
 				break;
 			case 3:
+				//Group 1
 				motion_command = true;
-				last_word[GROUP1] = G3;
+				last_word[GROUP(G3)] = G3;
+				word_in_line[GROUP(G3)] = true;
 				break;
-			case 4:
+			case 4: // Pause
+				//Group 0
+				last_word[GROUP(G4)] = G4;
+				word_in_line[GROUP(G4)] = true;
 				pause = true;
 				break;
-			case 17:
-				// plane XY
-				last_word[GROUP2] = G17;
+			case 17: // plane XY
+				//Group 2
+				last_word[GROUP(G17)] = G17;
+				word_in_line[GROUP(G17)] = true;
 				break;
-			case 18:
-				// plane XZ (unsupported)
-				last_word[GROUP2] = G18;
+			case 18:				// plane XZ (unsupported)
+				//Group 2
+				last_word[GROUP(18)] = G18;
+				word_in_line[GROUP(G18)] = true;
 				break;
-			case 19:
-				// plane YZ (unsupported)
-				last_word[GROUP2] = G19;
+			case 19:				// plane YZ (unsupported)
+				//Group 2
+				last_word[GROUP(19)] = G19;
+				word_in_line[GROUP(G19)] = true;
 				break;
-			case 20:
-				// Inches
-				last_word[GROUP6] = G20;
+			case 20:				// Inches
+				//Group 6
+				last_word[GROUP(20)] = G20;
+				word_in_line[GROUP(G20)] = true;
 				break;
-			case 21:
-				// Millimeters
-				last_word[GROUP6] = G21;
+			case 21:				// Millimeters
+				//Group 6
+				last_word[GROUP(21)] = G21;
+				word_in_line[GROUP(G21)] = true;
 				break;
-			case 40:
-				// Disable radius compensation
-				last_word[GROUP7] = G40;
+			case 40:				// Disable radius compensation
+				//Group 7
+				last_word[GROUP(G40)] = G40;
+				word_in_line[GROUP(G40)] = true;
 				break;
-			case 54:
-				//Coordinate job 1
-				last_word[GROUP12] = G54;
+			case 54:				//Coordinate job 1
+				//Group 12
+				last_word[GROUP(G54)] = G54;
+				word_in_line[GROUP(G54)] = true;
 				break;
-			case 64:
-				// Continuous mode
-				last_word[GROUP13] = G64;
+			case 64:				// Continuous mode
+				//Group 13
+				last_word[GROUP(G64)] = G64;
+				word_in_line[GROUP(G64)] = true;
 				break;
-			case 80:
+			case 80: // Delete moving mode
+				//Group 1
 				motion_command = false;
-				last_word[GROUP1] = G80;
+				last_word[GROUP(80)] = G80;
+				word_in_line[GROUP(G80)] = true;
 				break;
-			case 81:
+			case 81: //Drilling cycle
+				//Group 1
 				motion_command = true;
-				last_word[GROUP1] = G81;
+				last_word[GROUP(81)] = G81;
+				word_in_line[GROUP(G81)] = true;
 				break;
-			case 90:
-				// Absolute distance mode
-				last_word[GROUP3] = G90;
+			case 90:				// Absolute distance mode
+				//Group 3
+				last_word[GROUP(90)] = G90;
+				word_in_line[GROUP(G90)] = true;
 				router->setAbsolPos();
 				break;
-			case 91:
-				// Incremental distance mode
-				last_word[GROUP3] = G91;
+			case 91:				// Incremental distance mode
+				//Group 3
+				last_word[GROUP(G91)] = G91;
+				word_in_line[GROUP(G91)] = true;
 				router->setIncrPos();
+				break;
+			case 92:				// Set position
+				//Group 0
+				last_word[GROUP(G92)] = G92;
+				word_in_line[GROUP(G92)] = true;
 				break;
 			case 93:
 				// Forwarding mode in time inverse
@@ -534,6 +590,10 @@ int GCode::parseLine() {
 			break;
 		case 'M':
 			switch ((int) val) {
+			case 0:
+				router->stop();
+				router->start();
+				break;
 			case 3:
 				// switch on the spindle in CW
 #ifdef _MILLING_MACHINE
@@ -612,17 +672,20 @@ int GCode::parseLine() {
 		case 'X':
 			new_pos.X(val);
 			params[PARAM_X] = val;
-			motion_command = pars_spec[PARAM_X] = true;
+			pars_spec[PARAM_X] = true;
+			motion_command = !word_in_line[GROUP0];
 			break;
 		case 'Y':
 			new_pos.Y(val);
 			params[PARAM_Y] = val;
-			motion_command = pars_spec[PARAM_Y] = true;
+			pars_spec[PARAM_Y] = true;
+			motion_command = !word_in_line[GROUP0];
 			break;
 		case 'Z':
 			new_pos.Z(val);
 			params[PARAM_Z] = val;
-			motion_command = pars_spec[PARAM_Z] = true;
+			pars_spec[PARAM_Z] = true;
+			motion_command = !word_in_line[GROUP0];
 			break;
 		case 'I':
 			pars_spec[PARAM_I] = true;
@@ -656,6 +719,22 @@ int GCode::parseLine() {
 		return parser_status;
 	}
 
+// modal group operations
+	if (word_in_line[GROUP0]) {
+		switch (last_word[GROUP0]) {
+		case G92:
+			router->setPos(
+					PositionXYZ((pars_spec[PARAM_X]) ? params[PARAM_X] : 0,
+							(pars_spec[PARAM_Y]) ? params[PARAM_Y] : 0,
+							(pars_spec[PARAM_Z]) ? params[PARAM_Z] : 0));
+
+			break;
+		default:
+			;
+
+		}
+	}
+
 // motion execution
 	if (pause && pars_spec[PARAM_P]) {
 		router->pause();
@@ -665,6 +744,10 @@ int GCode::parseLine() {
 		switch (last_word[GROUP1]) {
 		case G0:
 		case G1:
+			/*DBG_MSG("after line parsing");
+			DBG_VAR(new_pos.X());
+			DBG_VAR(new_pos.Y());
+			DBG_VAR(new_pos.Z());*/
 			motionG0G1();
 			break;
 		case G2:

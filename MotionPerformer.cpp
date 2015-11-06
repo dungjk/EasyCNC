@@ -19,6 +19,11 @@ MotionPerformer::MotionPerformer(MotionPlanner *mp) :
 		d1(0), d2(0), current_fr(0.0), idle(true) {
 	motor[0] = motor[1] = motor[2] = NULL;
 	planner = mp;
+#ifdef ACCELERATION_CONTROL
+	actual_interstep_delay = max_delay =  F_CPU / (((MIN_SPEED/60) * ROUTER_MX_STEPS_PER_MM * EIGHTH_STEP) * 1024.0) - 1.0;
+	desired_interstep_delay = 0;
+	acc_state = 0;
+#endif
 
 	_mp = this;
 }
@@ -141,7 +146,6 @@ void MotionPerformer::init() {
 	uint8_t oldSREG = SREG;
 	//disable global interrupt
 	cli();
-	//disable global interrupt
 	INIT_TIMER3
 	;
 	INIT_TIMER4

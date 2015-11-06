@@ -9,6 +9,7 @@
     \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
                To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
+
 #ifndef CONFIG_H
 #define CONFIG_H
 
@@ -27,6 +28,7 @@
 */
 
 #include "pins_arduino.h"
+//#include "debugger.h"
 
 #define SERIAL_BOUND 115200
 //#define INTERRUPT_STOP_MOTION 1
@@ -47,10 +49,10 @@
 #define ROUTER_MZ_ORIENTATION 1			/*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation.*/
 #define ROUTER_MX_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of X-axis (mm/min). */
 #define ROUTER_MY_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of Y-axis (mm/min). */
-#define ROUTER_MZ_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of Z-axis (mm/min). */
-#define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  -1 //1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT -1 // 0                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
-#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT  5                  /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_MZ_SPEED 60.0           /*!< \brief The maximum speed used to control the motor of Z-axis (mm/min). */
+#define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  1 //1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT 0 // 0                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
+#define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_UP_LIMIT_SWITCH_X_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_UP_LIMIT_SWITCH_Y_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_UP_LIMIT_SWITCH_Z_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the up limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
@@ -93,6 +95,15 @@
 #define ROUTE_MZ_MODE EIGHTH_STEP           //!< \brief The microstep mode of the driver of the motor Z
 #endif
 
+#define ACCELERATION_CONTROL                //!< \brief Comment this line to disable the acceleration control
+
+#ifdef ACCELERATION_CONTROL
+#define ACC_PER 20.0                        //!< \brief The percentage of increment/decrement of the delta T between two steps
+#define MIN_SPEED 10.0						//!< \brief The minimum speed before stopping that is taken as reference to calculate the deceleration start point and acceleration end point (mm per minute)
+
+#endif
+
+
 // *****************************
 // *          UTENSILS         *
 // *****************************
@@ -125,4 +136,5 @@
 #endif
 
 #endif //CONFIG_H
+
 

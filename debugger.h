@@ -20,24 +20,24 @@
 
 #define DBG(x) {if(DEBUG) {x;} };
 
-#define DBG_BP(x) {if(DEBUG) { Serial.print("#<"); \
+#define DBG_BP(x) {if(DEBUG) { Serial.print("@<"); \
 	                         Serial.print(x); \
 							 Serial.println(">"); \
 							 Serial.flush(); \
 							 while(Serial.available() == 0 ) delay(500); \
 						     Serial.read();}};
 
-#define DBG_MSG(x) {if(DEBUG){ Serial.print("#["); \
+#define DBG_MSG(x) {if(DEBUG){ Serial.print("@["); \
 	                 Serial.print(x);  \
 	                 Serial.println("]"); \
 	                 Serial.flush();}};
 
-#define DBG_VAR(X) { if(DEBUG){ Serial.print("#{"#X" = "); \
+#define DBG_VAR(X) { if(DEBUG){ Serial.print("@{"#X" = "); \
 	                 Serial.print(X);  \
 	                 Serial.println("}"); \
 	                 Serial.flush();}};
 
-#define DBG_TEST(x, y) {Serial.print("#(TEST "); \
+#define DBG_TEST(x, y) {Serial.print("@(TEST "); \
 	                    Serial.print(x); \
 	                    Serial.print(": "); \
 	                    Serial.println((y)? "OK)" : "FAILED)");};

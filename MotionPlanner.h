@@ -15,7 +15,7 @@
 #include "Arduino.h"
 #include "P_Info.h"
 
-#define BUFF_LEN 20  //!< Max number of linear motions in the buffer.
+#define BUFF_LEN 40  //!< Max number of linear motions in the buffer.
 
 /*! \struct LinearMotion
  *  \brief The structure keeps the data of a linear motion.

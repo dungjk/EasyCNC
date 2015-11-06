@@ -15,10 +15,11 @@
 
 #define GROUP_MASK B11110000
 #define GROUP(x) (x>>4)
+#define GROUPS 16
 
 //NON MODAL GROUP
 #define GROUP0 0
-#define G4 1
+#define G4 1       //!< The machine does nothing for a specified period of time
 #define G10 2
 #define G28 3
 #define G30 4
@@ -134,7 +135,7 @@
 #define UNSPECIFIED 0
 
 //other parameters
-#define PARAMS	12
+#define PARAMS	13
 #define PARAM_X 0
 #define PARAM_Y 1
 #define PARAM_Z 2
@@ -146,7 +147,8 @@
 #define PARAM_J 8
 #define PARAM_K 9
 #define PARAM_R 10
-#define PARAM_L 11
+#define PARAM_S 11
+#define PARAM_L 12
 
 //PARSER STATUS
 #define STATUS_OK 0

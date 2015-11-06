@@ -12,13 +12,19 @@
 #ifndef MOTIONPERFORMER_H_
 #define MOTIONPERFORMER_H_
 
+#include "config.h"
 #include "MotorDriver.h"
 #include "MotionPlanner.h"
 #include "Arduino.h"
 #include "AVR2569Timers.h"
 
-#define DELAY_STEP_UP 39        //!<  ticks of timer4 with 8 prescaler to create a valid pulse on the step pin  ~ 20us
+#define DELAY_STEP_UP 39        //!<  Ticks of timer4 with 8 prescaler to create a valid pulse on the step pin  ~ 20us
 #define IDLE_FREQ 3125          //!<  Value of OCR3A, it is the interval to check the motion planner when it is empty ~ 200ms
+
+#define SPEED_UP_V 1			//!<  It is the state where the MotionPerformer reduces the speed at each tick
+#define COSTANT_V 2				//!<  It is the state where the MotionPerformer keeps constant the speed
+#define SLOW_DOWN_V 3			//!<  It is the state where the MotionPerformer slows down at each tick
+
 
 /*! \class MotionPerformer
  *  \brief The class manages the motors movements.
@@ -30,6 +36,10 @@ class MotionPerformer {
 	int32_t d1, d2; //<! \brief Variables used by  Bresenham algorithm.
 	MotorDriver *motor[3]; //<! \brief Pointers to the motor drivers, they are ordered according the Bresenham algorithm. The first element stores the driver of the motor of the main axis, the others store the secondary axes.
 	boolean idle; //<! \brief It is false if the MotionPerformer is already working, true if the motion performer does not working.
+#ifdef ACCELERATION_CONTROL
+	uint16_t actual_interstep_delay, desired_interstep_delay, max_delay;
+	uint8_t acc_state;
+#endif
 
 	/*! \brief The function loads a new linear motion from the MotionPlanner.
 	 * 	\details The function should be run with the interrupt flag active.
@@ -49,6 +59,8 @@ public:
 	MotorDriver my;
 	MotorDriver mz;
 	MotionPlanner *planner;
+
+
 
 	/*! \brief Constructor
 	 *  \param mp It is the pointer to the MotionPlanner object.
