@@ -41,15 +41,18 @@
 #define ROUTER_MX_STEPS_PER_ROUND 200L  /*!< \brief Number of steps to make a round for the motor of the X-axis. */
 #define ROUTER_MY_STEPS_PER_ROUND 200L  /*!< \brief Number of steps to make a round for the motor of the Y-axis. */
 #define ROUTER_MZ_STEPS_PER_ROUND 200L  /*!< \brief Number of steps to make a round for the motor of the Z-axis. */
-#define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
-#define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25  /*!< \brief Number of steps to forward of a mm. */
-#define ROUTER_MZ_STEPS_PER_MM ROUTER_MZ_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
+//#define ROUTER_MX_STEPS_PER_MM ROUTER_MX_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
+//#define ROUTER_MY_STEPS_PER_MM ROUTER_MY_STEPS_PER_ROUND/1.25  /*!< \brief Number of steps to forward of a mm. */
+//#define ROUTER_MZ_STEPS_PER_MM ROUTER_MZ_STEPS_PER_ROUND/1.256  /*!< \brief Number of steps to forward of a mm. */
+#define ROUTER_MX_STEPS_PER_MM 5.000
+#define ROUTER_MY_STEPS_PER_MM 5.000
+#define ROUTER_MZ_STEPS_PER_MM 160.000
 #define ROUTER_MX_ORIENTATION 1         /*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation. */
 #define ROUTER_MY_ORIENTATION -1		/*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation. */
 #define ROUTER_MZ_ORIENTATION 1			/*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation.*/
-#define ROUTER_MX_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of X-axis (mm/min). */
-#define ROUTER_MY_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of Y-axis (mm/min). */
-#define ROUTER_MZ_SPEED 60.0           /*!< \brief The maximum speed used to control the motor of Z-axis (mm/min). */
+#define ROUTER_MX_SPEED 2000          /*!< \brief The maximum speed used to control the motor of X-axis (mm/min). */
+#define ROUTER_MY_SPEED 2000.0           /*!< \brief The maximum speed used to control the motor of Y-axis (mm/min). */
+#define ROUTER_MZ_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of Z-axis (mm/min). */
 #define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  1 //1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT 0 // 0                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_DOWN_LIMIT_SWITCH_Z_INTERRUPT  -1                  /*!< \brief The number of the interrupt which is connected to the down limit switch of the Z-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
@@ -95,11 +98,11 @@
 #define ROUTE_MZ_MODE EIGHTH_STEP           //!< \brief The microstep mode of the driver of the motor Z
 #endif
 
-#define ACCELERATION_CONTROL                //!< \brief Comment this line to disable the acceleration control
+//#define ACCELERATION_CONTROL                //!< \brief Comment this line to disable the acceleration control
 
 #ifdef ACCELERATION_CONTROL
 #define ACC_PER 20.0                        //!< \brief The percentage of increment/decrement of the delta T between two steps
-#define MIN_SPEED 10.0						//!< \brief The minimum speed before stopping that is taken as reference to calculate the deceleration start point and acceleration end point (mm per minute)
+#define MIN_SPEED 1.0						//!< \brief The minimum speed before stopping that is taken as reference to calculate the deceleration start point and acceleration end point (mm per minute)
 
 #endif
 

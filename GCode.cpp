@@ -377,9 +377,9 @@ int GCode::parseLine() {
 			case 'r':       // errors reset
 				resetStatus();
 				break;
-				/*case 'p':       // position reset
+			case 'p':       // position reset
 				 router->resetPos();
-				 break;*/
+				 break;
 			case 'h':		// search the home position
 				if (router->searchHomePos())
 					parser_status = STATUS_OP_ERROR;
@@ -437,10 +437,6 @@ int GCode::parseLine() {
 	} else {
 		new_pos = router->getProcessed();
 	}
-	/*DBG_MSG("pos processed");
-	DBG_VAR(new_pos.X());
-	DBG_VAR(new_pos.Y());
-	DBG_VAR(new_pos.Z());*/
 	boolean motion_command = false;
 	boolean pause = false;
 	for (int i = 0; i < GROUPS; i++) {
@@ -744,10 +740,6 @@ int GCode::parseLine() {
 		switch (last_word[GROUP1]) {
 		case G0:
 		case G1:
-			/*DBG_MSG("after line parsing");
-			DBG_VAR(new_pos.X());
-			DBG_VAR(new_pos.Y());
-			DBG_VAR(new_pos.Z());*/
 			motionG0G1();
 			break;
 		case G2:
