@@ -27,7 +27,8 @@
     The pin depends on the arduino board version. See http://arduino.cc/en/Main/Products
 */
 
-#include "pins_arduino.h"
+#include <pins_arduino.h>
+
 //#include "debugger.h"
 
 #define SERIAL_BOUND 115200

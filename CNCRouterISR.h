@@ -13,7 +13,6 @@
 #define CNCROUTERISR_H_
 
 #include <Arduino.h>
-
 #include "config.h"
 #include "Position.h"
 #include "utility.h"
