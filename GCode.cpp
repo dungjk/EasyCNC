@@ -547,7 +547,7 @@ int GCode::parseLine() {
 				break;
 			case 90:				// Absolute distance mode
 				//Group 3
-				last_word[GROUP(90)] = G90;
+				last_word[GROUP(G90)] = G90;
 				word_in_line[GROUP(G90)] = true;
 				router->setAbsolPos();
 				break;

@@ -364,7 +364,10 @@ void CNC_Router_ISR::moveToXY(float px, float py, float spd) {
 	}
 
 //It waits for a correct insertion into the motion planner
-	processed_p = new_p;
+	if(pos_type)
+			processed_p += new_p;
+		else
+			processed_p = new_p;
 }
 
 void CNC_Router_ISR::moveTo(float px, float py, float pz, float spd) {
@@ -488,7 +491,10 @@ void CNC_Router_ISR::moveTo(float px, float py, float pz, float spd) {
 		delay(500); //It waits for a correct insertion into the motion planner
 	}
 
-	processed_p = new_p;
+	if(pos_type)
+		processed_p += new_p;
+	else
+		processed_p = new_p;
 }
 
 void CNC_Router_ISR::moveToXY(const PositionXYZ &np, float spd) {
