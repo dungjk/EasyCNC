@@ -438,7 +438,6 @@ int GCode::parseLine() {
 		new_pos = router->getProcessed();
 	}
 	boolean motion_command = false;
-	boolean pause = false;
 	for (int i = 0; i < GROUPS; i++) {
 		word_in_line[i] = false;
 	}
@@ -491,7 +490,6 @@ int GCode::parseLine() {
 				//Group 0
 				last_word[GROUP(G4)] = G4;
 				word_in_line[GROUP(G4)] = true;
-				pause = true;
 				break;
 			case 17: // plane XY
 				//Group 2
@@ -732,9 +730,10 @@ int GCode::parseLine() {
 	}
 
 // motion execution
-	if (pause && pars_spec[PARAM_P]) {
+	if (word_in_line[GROUP(G4)] && last_word[GROUP(G4)] == G4 && pars_spec[PARAM_P]) {
+		waitMotionFinish();
 		router->pause();
-		delay(params[PARAM_P] * 1000);
+		delay(params[PARAM_P]);
 		router->restart();
 	} else if (motion_command) {
 		switch (last_word[GROUP1]) {

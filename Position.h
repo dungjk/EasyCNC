@@ -7,7 +7,7 @@
  \date      2015
 
  \copyright This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-            To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+ To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
  */
 
 #ifndef Position_h
@@ -15,6 +15,174 @@
 
 #include "Arduino.h"
 #include <stdint.h>
+
+#define N_AXES 3
+
+/*! \class Position
+ *  \brief Class to manage n dimension positions
+ *  \details The class provides the operations to operate with points of n coordinates.
+ *  \author Francesco Giurlanda
+ */
+class Position {
+	float axis[N_AXES];
+public:
+
+	//! \brief Default costructor
+	Position();
+
+	/*! \brief Copy constructor.
+	 *  \param p The object that we want to copy.
+	 */
+	Position(const Position &p);
+
+	/*! \brief Operator of subscription
+	 *  \details The operator returns the reference to the axis specified.
+	 *  \param a The index that identify the axis
+	 *  \return The reference to the value of the axis
+	 */
+	float& operator[](const int a);
+
+	/*! \brief It return the module of the n dimension vector
+	 * 	\return The module.
+	 */
+	float module() const;
+
+	/*! \brief It returns the module of two dimension of the vector
+	 *  \param d1 The first dimension.
+	 *  \param d2 The second dimension.
+	 *  \return The module.
+	 */
+	float module2d(int d1, int d2) const;
+
+	/*! \brief It returns the module of three dimension of the vector.
+	 *  \param d1 The first dimension
+	 *  \param d2 The second dimension
+	 *  \param d3 The third dimension.
+	 *  \return The module
+	 */
+	float module3d(int d1, int d2, int d3) const;
+
+	/*! \brief It returns the offset of the axis specified between two positions
+	 *  \param d The axis
+	 * 	\param p The position
+	 * 	\return The offset
+	 */
+	float offset(int d, const Position &p) const;
+
+	/*! \brief It returns the angle of the vector projection on the plane of the axes specified .
+	 *  \param d1 First axis
+	 *  \param d2 Second axis
+	 *  \return The angle.
+	 */
+	float angle(int d1, int d2) const;
+
+	/*! \brief It returns the angle of the vector projection on the plane of the axes specified, obtained by the difference of the two vectors .
+	 *  \param d1 First axis
+	 *  \param d2 Second axis
+	 *  \param p The second vector
+	 *  \return The angle.
+	 */
+	float angle(int d1, int d2, const Position &p) const;
+
+	/*! \brief It setups the specified two coordinate from polar coordinate
+	 *  \details This function allows to configure the value of two specified axis using the polar coordinates.
+	 *      	 The first coordinate is the reference for the angle. For instance, if the first axis is X the angle of
+	 *      	 the polar coordinate is calculated starting from it.
+	 *  \param d1 First axis
+	 *  \param d2 Second axis
+	 *  \param m The module
+	 *  \param a The angle
+	 *  \return Reference to this object
+	 */
+	Position& polar(int d1, int d2, float m, float a);
+
+	/*! \brief It considers the positions as vectors and returns one that is the vectors sum.
+	 *  \param p The reference to the added vector.
+	 *  \return The vector which is the sum of two vectors
+	 */
+	Position operator +(const Position &p) const;
+
+	/*! \brief It considers the positions as vectors and returns one that is equal to the first vector except for
+	 *         the specified axes whose are the sum of the two specified vectors.
+	 *  \param d1 First axis
+	 *  \param d2 Second axis
+	 *  \param p Second vector
+	 *  \return The vector which is the sum of two vectors for the specified axes
+	 */
+	Position sum2d(int d1, int d2, const Position &p) const;
+
+	/*! \brief It considers the positions as vectors and returns one that is equal to the first vector except for
+	 *         the specified axes whose are the sum of the two specified vectors.
+	 *  \param d1 First axis
+	 *  \param d2 Second axis
+	 *  \param d3 Third axis
+	 *  \param p Second vector
+	 *  \return The vector which is the sum of two vectors for the specified axes
+	 */
+	Position sum3d(int d1, int d2, int d3, const Position &p) const;
+
+	/*! \brief It adds to the current position the specified position and it considers them as vectors.
+	 *  \param p The position to add.
+	 *  \return The reference to the object.
+	 */
+	Position& operator +=(const Position &p);
+
+	/*! \brief It considers the positions as vectors and returns one that is the vectors subtraction.
+	 *  \param p The reference to the added vector.
+	 *  \return The vector which is the subtraction of two vectors
+	 */
+	Position operator -(const Position &p) const;
+
+	/*! \brief It considers the positions as vectors and returns one that is equal to the first vector except for
+	 *         the specified axes whose are the subtraction of the two specified vectors.
+	 *  \param d1 First axis
+	 *  \param d2 Second axis
+	 *  \param p Second vector
+	 *  \return The vector which is the subtraction of two vectors for the specified axes
+	 */
+	Position sub2d(int d1, int d2, const Position &p) const;
+
+	/*! \brief It considers the positions as vectors and returns one that is equal to the first vector except for
+	 *         the specified axes whose are the subtraction of the two specified vectors.
+	 *  \param d1 First axis
+	 *  \param d2 Second axis
+	 *  \param d3 Third axis
+	 *  \param p Second vector
+	 *  \return The vector which is the subtraction of two vectors for the specified axes
+	 */
+	Position sub3d(int d1, int d2, int d3, const Position &p) const;
+
+	/*! \brief It subtracts to the current position the specified position and it considers them as vectors.
+	 *  \param p The position to subtract.
+	 *  \return The reference to the object.
+	 */
+	Position& operator -=(const Position &p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module multiplied by the scalar value p.
+	 *  \param p Scalar value
+	 *  \return The vector
+	 */
+	Position operator *(const float p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module multiplied by the scalar value p.
+	 *  \param p Scalar value
+	 *  \return The reference to the object
+	 */
+	Position& operator *=(const float p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module divided by the scalar value p.
+	 *  \param p Scalar value
+	 *  \return The vector
+	 */
+	Position operator /(const float p);
+
+	/*! \brief The function returns a vector with the same direction of the original one and the module divided by the scalar value p.
+	 *  \param p Scalar value
+	 *  \return The reference to the object
+	 */
+	Position& operator /=(const float p);
+
+};
 
 /*! \class PositionXY
  \brief Class to manage Cartesian positions.
@@ -177,26 +345,26 @@ public:
 	/*! \brief It return the module of the vector
 	 * 	\return The module.
 	 */
-	float module();
+	float module() const;
 
 	/*! \brief It return the module of the equivalent vector, projected on XY plane
 	 * 	\return The module.
 	 */
-	float moduleXY();
+	float moduleXY() const;
 
 	/*! \brief It returns the module of the difference between the two vectors .
 	 *  \details The distance between \f$(x_1,y_1,z_1)\f$ and \f$(x_2,y_2,z_2)\f$ is computed according the formula \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\f$.
 	 *  \param p The reference to the next position.
 	 *  \return The distance value.
 	 */
-	float module(const PositionXYZ &p);
+	float module(const PositionXYZ &p) const;
 
 	/*! \brief It returns the module of the difference between the two vectors projected on the XY plane.
 	 *  \details The distance between \f$(x_1,y_1,z_1)\f$ and \f$(x_2,y_2,z_2)\f$ is computed according the formula \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
 	 *  \param p The reference to the next position.
 	 *  \return The distance value.
 	 */
-	float moduleXY(const PositionXYZ &p);
+	float moduleXY(const PositionXYZ &p) const;
 
 	/*! \brief It returns the x-axis distance between two positions.
 	 *  \details The x-axis distance between \f$(x_1,y_1,z_1)\f$ and \f$(x_2,y_2,z_2)\f$ is computed according the formula \f$(x_2-x_1)\f$.
@@ -262,25 +430,25 @@ public:
 	PositionXYZ& operator -=(const PositionXYZ &p);
 
 	/*! \brief The function returns a vector with the same direction of the original one and the module multiplied by the scalar value p.
-	 *  \param p Scala value
+	 *  \param p Scalar value
 	 *  \return The vector
 	 */
 	PositionXYZ operator *(float p);
 
 	/*! \brief The function returns a vector with the same direction of the original one and the module multiplied by the scalar value p.
-	 *  \param p Scala value
+	 *  \param p Scalar value
 	 *  \return The reference to the object
 	 */
 	PositionXYZ& operator *=(float p);
 
 	/*! \brief The function returns a vector with the same direction of the original one and the module divided by the scalar value p.
-	 *  \param p Scala value
+	 *  \param p Scalar value
 	 *  \return The vector
 	 */
 	PositionXYZ operator /(float p);
 
 	/*! \brief The function returns a vector with the same direction of the original one and the module divided by the scalar value p.
-	 *  \param p Scala value
+	 *  \param p Scalar value
 	 *  \return The reference to the object
 	 */
 	PositionXYZ& operator /=(float p);
