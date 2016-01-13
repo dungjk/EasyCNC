@@ -39,7 +39,10 @@ void removeSpaces(String &l) {
 		if (l[i] == ' ' || l[i] == '\n' || l[i] == '\r') {
 			l.remove(i, 1);
 			len--;
-		} else
+		} else if(l[i] == ';') {
+			l.remove(i, len - i);
+			return;
+		}else
 			i++;
 	}
 }

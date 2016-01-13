@@ -100,18 +100,19 @@ void GCode::returnStatus() {
 	float fr = router->getCurrFR();
 	if (_crt->ls_x_down || _crt->ls_x_up || _crt->ls_y_down || _crt->ls_y_up
 			|| _crt->ls_z_down || _crt->ls_z_up) {
-		parser_status = STATUS_LIMITI_SWITCH_TRG;
+		parser_status = STATUS_LIMIT_SWITCH_TRG;
 	}
 	sei();
 	//Imterrupt enabled
+
 	Serial.print("$");
-	Serial.print(tmp.X());
+	(last_word[GROUP6] == G20)?Serial.print(tmp.X() / MM_X_INCH) : Serial.print(tmp.X());
 	Serial.print(":");
-	Serial.print(tmp.Y());
+	(last_word[GROUP6] == G20)?Serial.print(tmp.Y() / MM_X_INCH) : Serial.print(tmp.Y());
 	Serial.print(":");
-	Serial.print(tmp.Z());
+	(last_word[GROUP6] == G20)?Serial.print(tmp.Z() / MM_X_INCH) : Serial.print(tmp.Z());
 	Serial.print(":");
-	Serial.print(fr * 60);
+	(last_word[GROUP6] == G20)?Serial.print(fr * 60 / MM_X_INCH)  : Serial.print(fr * 60);
 	Serial.print(":");
 	Serial.print(parser_status);
 	Serial.print(":");
@@ -139,6 +140,15 @@ void GCode::cycleG81() {
 
 	int loops = (pars_spec[PARAM_L]) ? params[PARAM_L] : 1;
 	PositionXYZ old_p = router->getProcessed();
+	float r_par;
+	if (last_word[GROUP6] == G21)
+		r_par = params[PARAM_R];
+	else if (last_word[GROUP6] == G20)
+		r_par = params[PARAM_R] * MM_X_INCH;
+	else{
+		parser_status = STATUS_OP_ERROR;
+		return;
+	}
 
 	for (int l = 0; l < loops; l++) {
 		//Step 1: rapid motion to XY
@@ -146,13 +156,13 @@ void GCode::cycleG81() {
 		//Step 2: rapid motion to Z specified by R parameter (clear position)
 		if (l == 0) {
 			if (last_word[GROUP3] == G90) {
-				router->moveTo(router->getProcessed().Z(params[PARAM_R]));
+				router->moveTo(router->getProcessed().Z(r_par));
 			} else {
-				router->moveTo(PositionXYZ(0.0, 0.0, params[PARAM_R]));
+				router->moveTo(PositionXYZ(0.0, 0.0, r_par));
 			}
 		} else {
-			if (last_word[GROUP10] == G98 && old_p.Z() > params[PARAM_R]) {
-				router->moveTo(PositionXYZ(0.0, 0.0, params[PARAM_R]));
+			if (last_word[GROUP10] == G98 && old_p.Z() > r_par) {
+				router->moveTo(PositionXYZ(0.0, 0.0, r_par));
 			}
 		}
 
@@ -164,16 +174,15 @@ void GCode::cycleG81() {
 		}
 
 		//Step 4: return to the clear position specified by R with a rapid motion
-		if (last_word[GROUP10] == G98 && old_p.Z() > params[PARAM_R]) {
+		if (last_word[GROUP10] == G98 && old_p.Z() > r_par) {
 			if (last_word[GROUP3] == G90) {
 				router->moveTo(router->getProcessed().Z(old_p.Z()));
 			} else {
-				router->moveTo(
-						PositionXYZ(0.0, 0.0, -new_pos.Z() - params[PARAM_R]));
+				router->moveTo(PositionXYZ(0.0, 0.0, -new_pos.Z() - r_par));
 			}
 		} else {
 			if (last_word[GROUP3] == G90) {
-				router->moveTo(router->getProcessed().Z(params[PARAM_R]));
+				router->moveTo(router->getProcessed().Z(r_par));
 			} else {
 				router->moveTo(PositionXYZ(0.0, 0.0, -new_pos.Z()));
 			}
@@ -193,7 +202,15 @@ void GCode::motionG2G3() {
 		can_move = true;
 		float beta = start_p.angleXY(new_pos);
 		float dist = start_p.moduleXY(new_pos);
-		r = params[PARAM_R];
+		if (last_word[GROUP6] == G21)
+			r = params[PARAM_R];
+		else if (last_word[GROUP6] == G20)
+			r = params[PARAM_R] * MM_X_INCH;
+		else {
+			parser_status = STATUS_OP_ERROR;
+			return;
+		}
+
 		float gamma = acos(dist / (2 * r));
 
 		//it depends on the sign of the radius value
@@ -209,7 +226,17 @@ void GCode::motionG2G3() {
 			&& (pars_spec[PARAM_I] || pars_spec[PARAM_J])) { //Computation of arch from offset of the center
 
 		can_move = true;
-		PositionXYZ offset(params[PARAM_I], params[PARAM_J], 0.0);
+		PositionXYZ offset;
+
+		if (last_word[GROUP6] == G21)
+			offset.X(params[PARAM_I]).Y(params[PARAM_J]);
+		else if (last_word[GROUP6] == G20)
+			offset.X(params[PARAM_I] * MM_X_INCH).Y(
+					params[PARAM_J] * MM_X_INCH);
+		else {
+			parser_status = STATUS_OP_ERROR;
+			return;
+		}
 		center = start_p;
 		r = offset.module();
 		center += offset;  // the center of the cyrcle
@@ -246,7 +273,10 @@ void GCode::motionG2G3() {
 			if (pars_spec[PARAM_Z]) {
 				// The Z parameter is specified
 				while (angle_next_p < angle_end) {
-					router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(	delta_z_offset * i_seg), feed_rate);
+					router->moveTo(
+							center
+									+ tmp.polarXY(r, angle_next_p).Z(
+											delta_z_offset * i_seg), feed_rate);
 					angle_next_p += alpha;
 					i_seg += 1.0;
 				}
@@ -254,7 +284,8 @@ void GCode::motionG2G3() {
 			} else {
 				// The Z parameter is not specified
 				while (angle_next_p < angle_end) {
-					router->moveToXY(center	+ tmp.polarXY(r, angle_next_p), feed_rate);
+					router->moveToXY(center + tmp.polarXY(r, angle_next_p),
+							feed_rate);
 					angle_next_p += alpha;
 				}
 				router->moveToXY(new_pos, feed_rate);
@@ -266,14 +297,18 @@ void GCode::motionG2G3() {
 			angle_next_p -= alpha;
 			if (pars_spec[PARAM_Z]) {
 				while (angle_next_p > angle_end) {
-					router->moveTo(center + tmp.polarXY(r, angle_next_p).Z(	delta_z_offset * i_seg), feed_rate);
+					router->moveTo(
+							center
+									+ tmp.polarXY(r, angle_next_p).Z(
+											delta_z_offset * i_seg), feed_rate);
 					angle_next_p -= alpha;
 					i_seg += 1.0;
 				}
 				router->moveTo(new_pos, feed_rate);
-			}else {
+			} else {
 				while (angle_next_p > angle_end) {
-					router->moveToXY(center + tmp.polarXY(r, angle_next_p), feed_rate);
+					router->moveToXY(center + tmp.polarXY(r, angle_next_p),
+							feed_rate);
 					angle_next_p -= alpha;
 				}
 				router->moveToXY(new_pos, feed_rate);
@@ -378,8 +413,8 @@ int GCode::parseLine() {
 				resetStatus();
 				break;
 			case 'p':       // position reset
-				 router->resetPos();
-				 break;
+				router->resetPos();
+				break;
 			case 'h':		// search the home position
 				if (router->searchHomePos())
 					parser_status = STATUS_OP_ERROR;
@@ -586,6 +621,15 @@ int GCode::parseLine() {
 			switch ((int) val) {
 			case 0:
 				router->stop();
+#ifdef _MILLING_MACHINE
+				utensil->disable();
+#endif
+#ifdef _LASER
+				utensil->switchOn();
+#endif
+#ifdef _PLOTTER_SERVO
+				utensil->up();
+#endif
 				router->start();
 				break;
 			case 3:
@@ -651,7 +695,12 @@ int GCode::parseLine() {
 			break;
 		case 'F':
 			//the F's value is in units/minute, instead the motion control needs a feed rate in units/s
-			feed_rate = val / 60.0;
+			if (last_word[GROUP6] == G21)
+				feed_rate = val / 60.0;
+			else if (last_word[GROUP6] == G20)
+				feed_rate = val * MM_X_INCH / 60.0;
+			else
+				parser_status = STATUS_OP_ERROR;
 			break;
 		case 'R':
 			motion_command = pars_spec[PARAM_R] = true;
@@ -664,19 +713,37 @@ int GCode::parseLine() {
 #endif
 			break;
 		case 'X':
-			new_pos.X(val);
+			if (last_word[GROUP6] == G21)
+				new_pos.X(val);
+			else if (last_word[GROUP6] == G20)
+				new_pos.X(val * MM_X_INCH);
+			else
+				parser_status = STATUS_OP_ERROR;
+
 			params[PARAM_X] = val;
 			pars_spec[PARAM_X] = true;
 			motion_command = !word_in_line[GROUP0];
 			break;
 		case 'Y':
-			new_pos.Y(val);
+			if (last_word[GROUP6] == G21)
+				new_pos.Y(val);
+			else if (last_word[GROUP6] == G20)
+				new_pos.Y(val * MM_X_INCH);
+			else
+				parser_status = STATUS_OP_ERROR;
+
 			params[PARAM_Y] = val;
 			pars_spec[PARAM_Y] = true;
 			motion_command = !word_in_line[GROUP0];
 			break;
 		case 'Z':
-			new_pos.Z(val);
+			if (last_word[GROUP6] == G21)
+				new_pos.Z(val);
+			else if (last_word[GROUP6] == G20)
+				new_pos.Z(val * MM_X_INCH);
+			else
+				parser_status = STATUS_OP_ERROR;
+
 			params[PARAM_Z] = val;
 			pars_spec[PARAM_Z] = true;
 			motion_command = !word_in_line[GROUP0];
@@ -716,13 +783,22 @@ int GCode::parseLine() {
 // modal group operations
 	if (word_in_line[GROUP0]) {
 		switch (last_word[GROUP0]) {
-		case G92:
-			router->setPos(
-					PositionXYZ((pars_spec[PARAM_X]) ? params[PARAM_X] : 0,
-							(pars_spec[PARAM_Y]) ? params[PARAM_Y] : 0,
-							(pars_spec[PARAM_Z]) ? params[PARAM_Z] : 0));
+		case G92: {
+			PositionXYZ tmp;
+			if (last_word[GROUP6] == G21) {
+				tmp.X((pars_spec[PARAM_X]) ? params[PARAM_X] : 0).Y(
+						(pars_spec[PARAM_Y]) ? params[PARAM_Y] : 0).Z(
+						(pars_spec[PARAM_Z]) ? params[PARAM_Z] : 0);
+			} else if (last_word[GROUP6] == G20) {
+				tmp.X((pars_spec[PARAM_X]) ? params[PARAM_X] * MM_X_INCH : 0).Y(
+						(pars_spec[PARAM_Y]) ? params[PARAM_Y] * MM_X_INCH : 0).Z(
+						(pars_spec[PARAM_Z]) ? params[PARAM_Z] * MM_X_INCH : 0);
+			} else
+				parser_status = STATUS_OP_ERROR;
 
+			router->setPos(tmp);
 			break;
+		}
 		default:
 			;
 
@@ -730,7 +806,8 @@ int GCode::parseLine() {
 	}
 
 // motion execution
-	if (word_in_line[GROUP(G4)] && last_word[GROUP(G4)] == G4 && pars_spec[PARAM_P]) {
+	if (word_in_line[GROUP(G4)] && last_word[GROUP(G4)] == G4
+			&& pars_spec[PARAM_P]) {
 		waitMotionFinish();
 		router->pause();
 		delay(params[PARAM_P]);

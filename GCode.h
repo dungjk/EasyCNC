@@ -25,6 +25,7 @@
 #include "config.h"
 
 #define STATUS_FEEDBACK 3000  //15650   //!< It allows about a feedback rate of once per second
+#define MM_X_INCH 25.4                  //!< Millimeters per inch
 
 /*! \class GCode
  *  \brief The class interprets lines of RS274/NGC language.

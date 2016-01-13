@@ -49,6 +49,7 @@ void setup(){
 	cncrt.initMotionPerformer();
 
 	gc.last_word[GROUP3] = G90;
+        gc.last_word[GROUP6] = G21;
 	gc.init();
 
 #ifdef _MILLING_MACHINE

@@ -49,10 +49,10 @@
 #define ROUTER_MY_STEPS_PER_MM 5.000
 #define ROUTER_MZ_STEPS_PER_MM 160.000
 #define ROUTER_MX_ORIENTATION 1         /*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation. */
-#define ROUTER_MY_ORIENTATION -1		/*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation. */
+#define ROUTER_MY_ORIENTATION 1		/*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation. */
 #define ROUTER_MZ_ORIENTATION 1			/*!< \brief The value can be 1 or -1 and it is used to invert the axis orientation.*/
-#define ROUTER_MX_SPEED 4000.0          /*!< \brief The maximum speed used to control the motor of X-axis (mm/min). */
-#define ROUTER_MY_SPEED 4000.0           /*!< \brief The maximum speed used to control the motor of Y-axis (mm/min). */
+#define ROUTER_MX_SPEED 2000.0          /*!< \brief The maximum speed used to control the motor of X-axis (mm/min). */
+#define ROUTER_MY_SPEED 2000.0           /*!< \brief The maximum speed used to control the motor of Y-axis (mm/min). */
 #define ROUTER_MZ_SPEED 160.0           /*!< \brief The maximum speed used to control the motor of Z-axis (mm/min). */
 #define ROUTER_DOWN_LIMIT_SWITCH_X_INTERRUPT  1 //1                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the X-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
 #define ROUTER_DOWN_LIMIT_SWITCH_Y_INTERRUPT 0 // 0                 /*!< \brief The number of the interrupt which is connected to the down limit switch of the Y-axis. It is different by the pin number. More details <a href="http://arduino.cc/en/Reference/AttachInterrupt">here</a>. The value -1 means that it is disconnected.*/
@@ -75,19 +75,19 @@
 #define ROUTER_MX_CONTROLLER_A4988
 
 #if defined(ROUTER_MX_CONTROLLER_A4988)
-#define ROUTE_MX_STEP_CONTROL_PIN   A0  		 //!< \brief Pin connected to the step control pin of the A4988
-#define ROUTE_MX_DIRECTION_CONTROL_PIN A1	 //!< \brief Pin connected to the direction control pin of the A4988
-#define ROUTE_MX_ENABLE_CONTROL_PIN 38		 //!< \brief Pin connected to the enable pin of the A4988
-#define ROUTE_MX_MODE SIXTEENTH_STEP           //!< \brief The microstep mode of the driver of the motor X
+#define ROUTE_MX_STEP_CONTROL_PIN   46	 		 //!< \brief Pin connected to the step control pin of the A4988
+#define ROUTE_MX_DIRECTION_CONTROL_PIN 48	     //!< \brief Pin connected to the direction control pin of the A4988
+#define ROUTE_MX_ENABLE_CONTROL_PIN A8	 		 //!< \brief Pin connected to the enable pin of the A4988
+#define ROUTE_MX_MODE SIXTEENTH_STEP             //!< \brief The microstep mode of the driver of the motor X
 #endif
 
 #define ROUTER_MY_CONTROLLER_A4988
 
 #if defined(ROUTER_MY_CONTROLLER_A4988)
-#define ROUTE_MY_STEP_CONTROL_PIN 46    		 //!< \brief Pin connected to the step control pin of the A4988
-#define ROUTE_MY_DIRECTION_CONTROL_PIN 48	 //!< \brief Pin connected to the direction control pin of the A4988
-#define ROUTE_MY_ENABLE_CONTROL_PIN A8		 //!< \brief Pin connected to the enable pin of the A4988
-#define ROUTE_MY_MODE SIXTEENTH_STEP           //!< \brief The microstep mode of the driver of the motor Y
+#define ROUTE_MY_STEP_CONTROL_PIN A0 		 //!< \brief Pin connected to the step control pin of the A4988
+#define ROUTE_MY_DIRECTION_CONTROL_PIN A1	 //!< \brief Pin connected to the direction control pin of the A4988
+#define ROUTE_MY_ENABLE_CONTROL_PIN 38	 	 //!< \brief Pin connected to the enable pin of the A4988
+#define ROUTE_MY_MODE SIXTEENTH_STEP         //!< \brief The microstep mode of the driver of the motor Y
 #endif
 
 #define ROUTER_MZ_CONTROLLER_A4988
