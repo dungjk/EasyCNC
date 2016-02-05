@@ -67,6 +67,9 @@
 #define ROUTER_UP_LIMIT_SWITCH_Y_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
 #define ROUTER_UP_LIMIT_SWITCH_Z_ACTIVE_HIGH 0				/*!< \brief 1 if the switch is active high, 0 otherwise */
 
+#define KEEP_ENABLE_XY								/*!< \brief It keepss enable the X and Y motors during working even if one of them is not moving*/
+#define KEEP_ENABLE_Z									/*!< \brief It keeps enable the z motor during working even if it is not moving*/
+
 #define ROUTER_DRIVERS_COOLING 8							/*!< \brief Pin that controls the cooling of the motors drivers*/
 
 #define COOLING_SYS_1  9									/*!< \brief Pin that controls the cooling system 1.*/

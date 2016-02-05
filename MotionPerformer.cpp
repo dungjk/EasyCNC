@@ -278,17 +278,23 @@ void MotionPerformer::enableMotors() {
 	if (mx.tot_steps > 0) {
 		mx.pin_enable.reset();   // LOW active
 	} else {
+#ifdef KEEP_ENABLE_XY
 		mx.pin_enable.set();
+#endif
 	}
 	if (my.tot_steps > 0) {
 		my.pin_enable.reset();
 	} else {
+#ifdef KEEP_ENABLE_XY
 		my.pin_enable.set();
+#endif
 	}
 	if (mz.tot_steps > 0) {
 		mz.pin_enable.reset();
 	} else {
+#ifdef KEEP_ENABLE_Z
 		mz.pin_enable.set();
+#endif
 	}
 
 	SREG = old_sreg;
